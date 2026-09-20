@@ -1,0 +1,104 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum PostStatus {
+  DRAFT
+  PENDING
+  PUBLISHED
+  ARCHIVED
+}
+
+enum Section {
+  FOUNDATIONS
+  TRENDS
+  PATTERNS
+  TOOLING
+}
+
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  username     String    @unique
+  name         String
+  passwordHash String
+  bio          String?
+  avatarUrl    String?
+  website      String?
+  role         Role      @default(USER)
+  isBanned     Boolean   @default(false)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  posts        Post[]
+  comments     Comment[]
+  videos       Video[]
+}
+
+model Topic {
+  id          String  @id @default(cuid())
+  slug        String  @unique
+  name        String
+  description String
+  section     Section
+  icon        String  @default("sparkles")
+  order       Int     @default(0)
+  posts       Post[]
+}
+
+model Post {
+  id             String     @id @default(cuid())
+  slug           String     @unique
+  title          String
+  excerpt        String
+  content        String
+  coverUrl       String?
+  status         PostStatus @default(DRAFT)
+  featured       Boolean    @default(false)
+  views          Int        @default(0)
+  readingMinutes Int        @default(1)
+  authorId       String
+  author         User       @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  topicId        String
+  topic          Topic      @relation(fields: [topicId], references: [id])
+  comments       Comment[]
+  publishedAt    DateTime?
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+
+  @@index([status, publishedAt])
+  @@index([topicId])
+  @@index([authorId])
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  content   String
+  postId    String
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  authorId  String
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@index([postId])
+}
+
+model Video {
+  id          String   @id @default(cuid())
+  title       String
+  youtubeId   String
+  description String?
+  order       Int      @default(0)
+  addedById   String?
+  addedBy     User?    @relation(fields: [addedById], references: [id], onDelete: SetNull)
+  createdAt   DateTime @default(now())
+}
