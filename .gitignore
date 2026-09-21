@@ -31,3 +31,8 @@ infra/.terraform/
 infra/*.tfstate*
 infra/.terraform.lock.hcl
 infra/*.tfplan
+
+# Radio
+radio-worker/dist/
+infra/.build/
+static/media/

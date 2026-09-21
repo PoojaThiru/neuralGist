@@ -14,6 +14,7 @@ export const GET: RequestHandler = async ({ url }) => {
 		{ loc: '/articles', p: '0.9' },
 		{ loc: '/topics', p: '0.8' },
 		{ loc: '/videos', p: '0.6' },
+		{ loc: '/radio', p: '0.6' },
 		{ loc: '/about', p: '0.6' },
 		...posts.map((p) => ({ loc: `/articles/${p.slug}`, p: '0.8', mod: p.updatedAt.toISOString() })),
 		...topics.map((t) => ({ loc: `/topics/${t.slug}`, p: '0.7' })),

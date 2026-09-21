@@ -1,8 +1,9 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    aws    = { source = "hashicorp/aws", version = "~> 5.0" }
-    random = { source = "hashicorp/random", version = "~> 3.0" }
+    aws     = { source = "hashicorp/aws", version = "~> 5.0" }
+    random  = { source = "hashicorp/random", version = "~> 3.0" }
+    archive = { source = "hashicorp/archive", version = "~> 2.0" }
   }
   # State bucket is created once by deploy.sh (neuralgist-tfstate-<account>); passed via -backend-config.
   backend "s3" {}

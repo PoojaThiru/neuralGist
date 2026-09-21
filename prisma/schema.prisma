@@ -102,3 +102,40 @@ model Video {
   addedBy     User?    @relation(fields: [addedById], references: [id], onDelete: SetNull)
   createdAt   DateTime @default(now())
 }
+
+enum EpisodeStatus {
+  QUEUED
+  GENERATING
+  READY
+  PUBLISHED
+  FAILED
+}
+
+// NeuralGist Radio. Rows are created QUEUED (by an admin or the weekly auto-schedule); the radio worker Lambda
+// claims one (GENERATING), writes + voices the script, uploads the MP3 and reports back (READY or FAILED).
+model Episode {
+  id          String        @id @default(cuid())
+  title       String        @default("")
+  summary     String        @default("")
+  theme       String?
+  sourceSlugs String[]
+  transcript  Json?
+  audioPath   String?
+  durationSec Int           @default(0)
+  characters  Int           @default(0)
+  status      EpisodeStatus @default(QUEUED)
+  auto        Boolean       @default(false)
+  attempts    Int           @default(0)
+  error       String?
+  publishedAt DateTime?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([status, publishedAt])
+}
+
+// Small key/value store for site switches (radio.autoWeekly, radio.autoPublish).
+model Setting {
+  key   String @id
+  value String
+}

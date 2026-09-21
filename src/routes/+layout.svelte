@@ -2,6 +2,7 @@
 	import '../app.css';
 	import Nav from '$lib/components/Nav.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import RadioPlayer from '$lib/components/RadioPlayer.svelte';
 	import { site } from '$lib/site';
 	import { page } from '$app/state';
 
@@ -22,4 +23,5 @@
 		{@render children()}
 	</main>
 	<Footer />
+	<RadioPlayer />
 </div>

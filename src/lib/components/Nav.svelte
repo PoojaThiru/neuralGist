@@ -3,6 +3,7 @@
 	import { page } from '$app/state';
 	import Avatar from './Avatar.svelte';
 	import Logo from './Logo.svelte';
+	import RadioToggle from './RadioToggle.svelte';
 	import { Menu, X, PenLine, ChevronDown, LayoutDashboard, Settings, Shield, LogOut } from '@lucide/svelte';
 
 	let { user }: { user: { id: string; name: string; username: string; role: string; image: string | null } | null } = $props();
@@ -32,6 +33,7 @@
 		</nav>
 
 		<div class="hidden items-center gap-2 md:flex">
+			<RadioToggle />
 			{#if user}
 				<a href="/write" class="btn-primary"><PenLine size={16} /> Write</a>
 				<div class="relative">
@@ -60,9 +62,12 @@
 			{/if}
 		</div>
 
-		<button type="button" class="btn-ghost md:hidden" onclick={() => (open = !open)} aria-label="Toggle menu" aria-expanded={open}>
-			{#if open}<X size={20} />{:else}<Menu size={20} />{/if}
-		</button>
+		<div class="flex items-center gap-1 md:hidden">
+			<RadioToggle />
+			<button type="button" class="btn-ghost" onclick={() => (open = !open)} aria-label="Toggle menu" aria-expanded={open}>
+				{#if open}<X size={20} />{:else}<Menu size={20} />{/if}
+			</button>
+		</div>
 	</div>
 
 	{#if open}

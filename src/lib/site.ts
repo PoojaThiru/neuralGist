@@ -24,6 +24,7 @@ export const site = {
 		{ href: '/articles', label: 'Articles' },
 		{ href: '/topics', label: 'Topics' },
 		{ href: '/videos', label: 'Videos' },
+		{ href: '/radio', label: 'Radio' },
 		{ href: '/about', label: 'About' }
 	]
 } as const;

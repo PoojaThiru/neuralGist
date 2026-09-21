@@ -86,6 +86,35 @@ and let it issue TLS. Same env vars as above.
 Set `AUTH_GOOGLE_ID/SECRET` or `AUTH_GITHUB_ID/SECRET` with callback `https://neuralgist.ai/auth/callback/<provider>`;
 the buttons appear automatically.
 
+## NeuralGist Radio
+
+Two AI hosts, **Theo** (ElevenLabs "Brian", deep male) and **Maya** ("Matilda", warm female), talk through NeuralGist
+articles in roughly seven-minute episodes. Visitors press **Radio** in the header; a player docks at the bottom of the page and
+keeps playing across navigation, newest episode first. Episodes, transcripts and sources are listed at `/radio`.
+
+**How an episode is made**
+
+1. An admin queues one at `/admin/radio` (optional theme + up to 5 source articles), or the weekly auto-schedule does.
+2. The `neuralgist-radio` Lambda (outside the VPC) polls `GET /api/radio/jobs` every 5 minutes with the `x-radio-secret` header
+   and claims the oldest queued episode.
+3. Claude (`claude-opus-5`, structured output, server-side refusal fallback) writes the two-host script.
+4. ElevenLabs `eleven_v3` text-to-dialogue voices it in ~1,800-character chunks; the MP3 goes to S3 at `media/radio/<id>.mp3`,
+   which CloudFront serves at `/media/radio/<id>.mp3`.
+5. The worker reports to `POST /api/radio/callback`; the episode becomes READY (or PUBLISHED if auto-publish is on). An admin
+   listens and publishes.
+
+**Cost**: roughly 6,000–9,000 ElevenLabs credits per episode (the Creator plan's 100k/month covers about a dozen), plus a few
+cents of Claude API usage. Idle polls are free-tier Lambda invocations. Keys come from SSM `/admitcrew/elevenlabs` and
+`/admitcrew/anthropic`. To change voices, edit `HOSTS` in `src/lib/radio.ts`.
+
+**Run the worker locally** against the dev server (writes the MP3 into `static/media/radio/`):
+
+```bash
+export SITE_URL=http://localhost:5173 RADIO_SECRET=<from .env> LOCAL_MEDIA_DIR=static \
+  ANTHROPIC_API_KEY=… ELEVENLABS_API_KEY=… RADIO_TARGET_WORDS=150   # short test episode
+npx tsx radio-worker/local.ts
+```
+
 ## Database
 
 Schema in `prisma/schema.prisma`: `User` (role USER/ADMIN, ban flag), `Topic` (section + order), `Post`

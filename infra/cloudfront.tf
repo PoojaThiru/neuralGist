@@ -68,6 +68,12 @@ resource "aws_cloudfront_distribution" "app" {
     }
   }
 
+  origin {
+    domain_name              = aws_s3_bucket.media.bucket_regional_domain_name
+    origin_id                = "media"
+    origin_access_control_id = aws_cloudfront_origin_access_control.media.id
+  }
+
   default_cache_behavior {
     target_origin_id         = "lambda"
     viewer_protocol_policy   = "redirect-to-https"
@@ -90,6 +96,21 @@ resource "aws_cloudfront_distribution" "app" {
     allowed_methods        = ["GET", "HEAD", "OPTIONS"]
     cached_methods         = ["GET", "HEAD"]
     compress               = true
+    cache_policy_id        = data.aws_cloudfront_cache_policy.optimized.id
+    function_association {
+      event_type   = "viewer-request"
+      function_arn = aws_cloudfront_function.canonical_host.arn
+    }
+  }
+
+  # Radio audio and other media from S3, cached at the edge (keys are immutable).
+  ordered_cache_behavior {
+    path_pattern           = "/media/*"
+    target_origin_id       = "media"
+    viewer_protocol_policy = "redirect-to-https"
+    allowed_methods        = ["GET", "HEAD", "OPTIONS"]
+    cached_methods         = ["GET", "HEAD"]
+    compress               = false
     cache_policy_id        = data.aws_cloudfront_cache_policy.optimized.id
     function_association {
       event_type   = "viewer-request"

@@ -6,6 +6,7 @@
 		{ href: '/admin/posts', label: 'Articles' },
 		{ href: '/admin/users', label: 'Members' },
 		{ href: '/admin/videos', label: 'Videos' },
+		{ href: '/admin/radio', label: 'Radio' },
 		{ href: '/admin/topics', label: 'Topics' }
 	];
 	const active = (h: string) => (h === '/admin' ? page.url.pathname === h : page.url.pathname.startsWith(h));

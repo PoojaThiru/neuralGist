@@ -70,6 +70,7 @@ resource "aws_lambda_function" "app" {
       PGSSLROOTCERT        = "/app/certs/rds-global-bundle.pem"
       ADMIN_EMAILS         = var.admin_emails
       PUBLIC_SITE_URL      = "https://${var.domain}"
+      RADIO_SECRET         = random_password.radio_secret.result
     }
   }
 

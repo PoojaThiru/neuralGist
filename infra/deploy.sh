@@ -39,5 +39,6 @@ if [[ "$MODE" != "--infra" ]]; then
   docker push --platform linux/arm64 "${REPO}:latest"
 fi
 
-tf apply -input=false -auto-approve -var "admin_cidr=$ADMIN_CIDR" "$@"
+npm run build:worker >/dev/null
+tf apply -input=false -auto-approve -var "admin_cidr=$ADMIN_CIDR" -var dns_ready=true "$@"
 tf output

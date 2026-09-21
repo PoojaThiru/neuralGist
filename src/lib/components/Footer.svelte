@@ -35,6 +35,7 @@
 					<li><a href="/topics#{s.key.toLowerCase()}" class="text-muted hover:text-ink">{s.label}</a></li>
 				{/each}
 				<li><a href="/videos" class="text-muted hover:text-ink">Videos</a></li>
+				<li><a href="/radio" class="text-muted hover:text-ink">Radio</a></li>
 			</ul>
 		</div>
 		<div>
