@@ -59,8 +59,8 @@ async function main() {
 		update: { role: 'ADMIN' },
 		create: {
 			email,
-			username: 'surendra',
-			name: 'Surendra Thirupuranthakam',
+			username: 'pooja',
+			name: 'Pooja Thirupuranthakam',
 			passwordHash,
 			role: 'ADMIN',
 			bio: 'Senior in Artificial Intelligence at Purdue. I write about how modern AI systems actually get built.',

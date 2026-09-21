@@ -6,7 +6,7 @@ export const site = {
 	description:
 		'Neuralgist is a student-run publication on AI engineering: prompt and context engineering, agent loops, harnesses, MCP servers, model routing, GPUs, observability, and the foundations underneath it all.',
 	author: {
-		name: 'Surendra Thirupuranthakam',
+		name: 'Pooja Thirupuranthakam',
 		role: 'Senior, Artificial Intelligence @ Purdue University',
 		blurb:
 			'I write about the stuff I actually wrestle with while building: how to shape context for a model, how agent loops go wrong, what a harness is for, and why the semantic layer matters more than the model.'
