@@ -107,7 +107,7 @@ resource "aws_lambda_function" "radio_worker" {
       MEDIA_BUCKET       = aws_s3_bucket.media.bucket
       ANTHROPIC_API_KEY  = data.aws_ssm_parameter.anthropic.value
       ELEVENLABS_API_KEY = data.aws_ssm_parameter.elevenlabs.value
-      RADIO_TARGET_WORDS = "1100"
+      RADIO_TARGET_WORDS = "800" # the model runs ~30% long; 800 lands near 7 minutes
       RADIO_MAX_CHARS    = "9000"
     }
   }

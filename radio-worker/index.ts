@@ -10,7 +10,7 @@ import { HOSTS, JobSchema, ScriptSchema, SHOW, type Line, type RadioCallback, ty
 
 const env = process.env;
 const SITE = (env.SITE_URL ?? 'https://neuralgist.ai').replace(/\/$/, '');
-const TARGET_WORDS = Number(env.RADIO_TARGET_WORDS ?? 1100); // ~7 minutes of audio
+const TARGET_WORDS = Number(env.RADIO_TARGET_WORDS ?? 800); // scripts run ~30% long; 800 lands near 7 minutes
 const MAX_CHARS = Number(env.RADIO_MAX_CHARS ?? 9000); // hard cap on voiced characters (ElevenLabs credits)
 const CHUNK_CHARS = 1800; // per text-to-dialogue request
 const MP3_KBPS = 128;
