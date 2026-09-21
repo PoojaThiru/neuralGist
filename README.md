@@ -49,7 +49,25 @@ Useful scripts: `npm run check` (svelte-check), `npm run db:studio` (Prisma Stud
 
 ## Deploying
 
-### Option A — AWS, same pattern as admitcrew (Lambda + CloudFront)
+### Option A — AWS (what's live): Lambda + API Gateway + CloudFront + RDS, via Terraform in `infra/`
+
+State: S3 bucket `neuralgist-tfstate-<account>`, key `neuralgist/terraform.tfstate`. Everything is tagged `Project=neuralgist`.
+
+```bash
+./infra/deploy.sh                     # build arm64 image → ECR → terraform apply → Lambda picks up the new digest
+./infra/deploy.sh --infra             # Terraform only
+ADMIN_PASSWORD=… ./infra/deploy.sh --migrate   # prisma migrate deploy + seed against RDS (from an allowed IP)
+```
+
+First-time DNS (two phases, so the first apply doesn't block on the registrar):
+1. Apply once; take `nameservers` from the output and set them as Custom DNS at Namecheap for neuralgist.ai.
+2. When `dig NS neuralgist.ai` shows the AWS servers, run `./infra/deploy.sh --infra -var dns_ready=true`. That validates the
+   certificate, creates the CloudFront distribution and the apex/www alias records.
+
+The RDS security group only admits the Lambda and `admin_cidr` (your current IP, auto-detected by deploy.sh). The app verifies
+the database's TLS certificate against Amazon's CA bundle in `certs/`.
+
+#### Original notes
 
 1. `docker build -t neuralgist .` and push to ECR.
 2. Lambda from the image (the Web Adapter layer is baked in), env vars from SSM: `DATABASE_URL`, `AUTH_SECRET`,

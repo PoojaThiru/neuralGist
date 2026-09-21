@@ -30,3 +30,4 @@ vite.config.ts.timestamp-*
 infra/.terraform/
 infra/*.tfstate*
 infra/.terraform.lock.hcl
+infra/*.tfplan
