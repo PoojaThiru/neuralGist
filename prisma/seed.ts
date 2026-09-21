@@ -7,7 +7,10 @@ import { PrismaClient } from '../src/generated/prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
 import { argon2id } from 'hash-wasm';
 
-const db = new PrismaClient({ adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL }) });
+const ssl = process.env.PGSSLROOTCERT ? { ca: readFileSync(process.env.PGSSLROOTCERT, 'utf8'), rejectUnauthorized: true } : undefined;
+const dbUrl = new URL(process.env.DATABASE_URL ?? '');
+if (ssl) dbUrl.searchParams.delete('sslmode');
+const db = new PrismaClient({ adapter: new PrismaPg({ connectionString: dbUrl.toString(), ...(ssl ? { ssl } : {}) }) });
 
 const TOPICS = [
 	['FOUNDATIONS', 'machine-learning', 'Machine Learning', 'The learning loop: models, loss, gradients, generalization, and how not to fool yourself.'],

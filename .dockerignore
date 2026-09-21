@@ -4,5 +4,4 @@ build
 .git
 infra
 content
-*.md
 .env*

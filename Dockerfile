@@ -14,4 +14,5 @@ ENV NODE_ENV=production PORT=8080 AWS_LWA_PORT=8080 HOST=0.0.0.0 AWS_LWA_READINE
 COPY --from=build /app/build ./build
 COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/package.json ./package.json
+COPY --from=build /app/certs ./certs
 CMD ["node", "build"]

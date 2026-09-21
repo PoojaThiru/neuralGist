@@ -24,7 +24,7 @@ tf init -input=false -backend-config="bucket=$BUCKET" -backend-config="key=neura
 
 if [[ "$MODE" == "--migrate" ]]; then
   DATABASE_URL=$(aws ssm get-parameter --name /neuralgist/database_url --with-decryption --query Parameter.Value --output text)
-  export DATABASE_URL
+  export DATABASE_URL PGSSLROOTCERT=certs/rds-global-bundle.pem
   npx prisma migrate deploy
   [[ -n "${ADMIN_PASSWORD:-}" ]] && npx prisma db seed || echo "ADMIN_PASSWORD not set: skipping seed"
   exit 0

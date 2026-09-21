@@ -67,6 +67,7 @@ resource "aws_lambda_function" "app" {
       AUTH_SECRET          = random_password.auth_secret.result
       ORIGIN_VERIFY_SECRET = random_password.origin_secret.result
       DATABASE_URL         = local.database_url
+      PGSSLROOTCERT        = "/app/certs/rds-global-bundle.pem"
       ADMIN_EMAILS         = var.admin_emails
       PUBLIC_SITE_URL      = "https://${var.domain}"
     }
