@@ -62,6 +62,7 @@ async function main() {
 		update: { role: 'ADMIN' },
 		create: {
 			email,
+			createdAt: new Date(Date.UTC(2025, 4, 1, 12)),
 			username: 'pooja',
 			name: 'Pooja Thirupuranthakam',
 			passwordHash,
@@ -80,15 +81,20 @@ async function main() {
 	console.log(`videos: ${VIDEOS.length}`);
 
 	const dir = join(process.cwd(), 'content', 'seed');
-	const files = readdirSync(dir).filter((f) => f.endsWith('.md')).sort();
+	// Publish in topic order (Foundations → Trends → Patterns → Tooling), spread evenly from mid-May 2025 to now.
+	const topicOrder = new Map(TOPICS.map(([, slug], i) => [slug, i]));
+	const files = readdirSync(dir)
+		.filter((f) => f.endsWith('.md'))
+		.map((f) => ({ f, ...frontmatter(readFileSync(join(dir, f), 'utf8')) }))
+		.sort((a, b) => (topicOrder.get(a.meta.topic) ?? 99) - (topicOrder.get(b.meta.topic) ?? 99));
+	const start = Date.UTC(2025, 4, 15, 12);
+	const end = Date.now() - 7 * 86_400_000;
 	let n = 0;
-	for (const [i, f] of files.entries()) {
-		const { meta, body } = frontmatter(readFileSync(join(dir, f), 'utf8'));
+	for (const [i, { f, meta, body }] of files.entries()) {
 		const topic = await db.topic.findUniqueOrThrow({ where: { slug: meta.topic } });
 		const slug = f.replace(/\.md$/, '');
 		const words = body.split(/\s+/).length;
-		// stagger publish dates so the list has an order
-		const publishedAt = new Date(Date.now() - (files.length - i) * 86_400_000 * 3);
+		const publishedAt = new Date(start + ((end - start) * i) / Math.max(files.length - 1, 1));
 		const data = {
 			title: meta.title,
 			excerpt: meta.excerpt,
@@ -98,7 +104,7 @@ async function main() {
 			readingMinutes: Math.max(1, Math.round(words / 220)),
 			status: 'PUBLISHED' as const
 		};
-		await db.post.upsert({ where: { slug }, update: data, create: { ...data, slug, authorId: admin.id, publishedAt } });
+		await db.post.upsert({ where: { slug }, update: data, create: { ...data, slug, authorId: admin.id, publishedAt, createdAt: publishedAt } });
 		n++;
 	}
 	console.log(`articles: ${n}`);
