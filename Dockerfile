@@ -5,7 +5,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci --ignore-scripts
 COPY . .
-RUN npx prisma generate && npm run build && npm prune --omit=dev
+RUN npx svelte-kit sync && npx prisma generate && npm run build && npm prune --omit=dev
 
 FROM node:22-slim
 COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:0.8.4 /lambda-adapter /opt/extensions/lambda-adapter

@@ -35,8 +35,8 @@ if [[ "$MODE" != "--infra" ]]; then
   tf apply -input=false -auto-approve -var "admin_cidr=$ADMIN_CIDR" -target=aws_ecr_repository.app >/dev/null
   REPO=$(tf output -raw ecr_repository)
   aws ecr get-login-password --region "$REGION" | docker login --username AWS --password-stdin "${REPO%%/*}" >/dev/null
-  docker build --platform linux/arm64 -t "$REPO:latest" .
-  docker push "$REPO:latest"
+  docker build --platform linux/arm64 -t "${REPO}:latest" .
+  docker push --platform linux/arm64 "${REPO}:latest"
 fi
 
 tf apply -input=false -auto-approve -var "admin_cidr=$ADMIN_CIDR" "$@"
