@@ -16,9 +16,14 @@ function sslConfig() {
 function create() {
 	const ssl = sslConfig();
 	// pg lets connection-string params override explicit config, so drop sslmode when we supply the CA ourselves.
-	const url = new URL(env.DATABASE_URL ?? '');
-	if (ssl) url.searchParams.delete('sslmode');
-	const adapter = new PrismaPg({ connectionString: url.toString(), ...(ssl ? { ssl } : {}) });
+	// (DATABASE_URL is absent during `vite build`'s analysis pass; the pool doesn't connect until first use.)
+	let connectionString = env.DATABASE_URL;
+	if (ssl && connectionString) {
+		const url = new URL(connectionString);
+		url.searchParams.delete('sslmode');
+		connectionString = url.toString();
+	}
+	const adapter = new PrismaPg({ connectionString, ...(ssl ? { ssl } : {}) });
 	return new PrismaClient({ adapter, log: dev ? ['warn', 'error'] : ['error'] });
 }
 
