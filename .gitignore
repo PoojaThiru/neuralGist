@@ -25,3 +25,8 @@ vite.config.ts.timestamp-*
 # Prisma generated client (rebuilt by postinstall)
 /src/generated
 .scratch/
+
+# Terraform
+infra/.terraform/
+infra/*.tfstate*
+infra/.terraform.lock.hcl
