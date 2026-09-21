@@ -4,7 +4,7 @@
 	let { data, form } = $props();
 </script>
 
-<svelte:head><title>Members · Admin · Neuralgist</title></svelte:head>
+<svelte:head><title>Members · Admin · NeuralGist</title></svelte:head>
 
 <div class="flex flex-wrap items-end justify-between gap-4">
 	<h1 class="font-display text-2xl font-bold">Members <span class="font-mono text-sm text-dim">({data.users.length})</span></h1>

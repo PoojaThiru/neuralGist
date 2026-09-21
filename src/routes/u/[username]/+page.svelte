@@ -6,8 +6,8 @@
 </script>
 
 <svelte:head>
-	<title>{data.user.name} · Neuralgist</title>
-	<meta name="description" content={data.user.bio ?? `${data.user.name} on Neuralgist`} />
+	<title>{data.user.name} · NeuralGist</title>
+	<meta name="description" content={data.user.bio ?? `${data.user.name} on NeuralGist`} />
 </svelte:head>
 
 <section class="container-x py-12">

@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<title>{p.title} · Neuralgist</title>
+	<title>{p.title} · NeuralGist</title>
 	<meta name="description" content={p.excerpt} />
 	<meta property="og:title" content={p.title} />
 	<meta property="og:description" content={p.excerpt} />

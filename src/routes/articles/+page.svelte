@@ -7,8 +7,8 @@
 </script>
 
 <svelte:head>
-	<title>Articles · Neuralgist</title>
-	<meta name="description" content="Every published Neuralgist article on AI engineering, searchable by topic." />
+	<title>Articles · NeuralGist</title>
+	<meta name="description" content="Every published NeuralGist article on AI engineering, searchable by topic." />
 </svelte:head>
 
 <section class="container-x py-12">

@@ -4,8 +4,8 @@
 </script>
 
 <svelte:head>
-	<title>Videos · Neuralgist</title>
-	<meta name="description" content="Talks, lectures and walkthroughs on AI engineering, curated by Neuralgist." />
+	<title>Videos · NeuralGist</title>
+	<meta name="description" content="Talks, lectures and walkthroughs on AI engineering, curated by NeuralGist." />
 </svelte:head>
 
 <section class="container-x py-12">

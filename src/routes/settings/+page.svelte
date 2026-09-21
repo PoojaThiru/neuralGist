@@ -3,7 +3,7 @@
 	let { data, form } = $props();
 </script>
 
-<svelte:head><title>Settings · Neuralgist</title></svelte:head>
+<svelte:head><title>Settings · NeuralGist</title></svelte:head>
 
 <section class="container-x max-w-2xl py-12">
 	<p class="font-mono text-xs text-cyan">// settings</p>

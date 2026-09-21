@@ -1,4 +1,4 @@
-# Neuralgist — neuralgist.ai
+# NeuralGist — neuralgist.ai
 
 A student-run publication on AI engineering: prompt & context engineering, agent loops, harnesses, MCP servers,
 model routing, GPUs, observability, and the foundations underneath. Members create accounts, write in Markdown,

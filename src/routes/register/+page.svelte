@@ -3,10 +3,10 @@
 	let { form } = $props();
 </script>
 
-<svelte:head><title>Join · Neuralgist</title></svelte:head>
+<svelte:head><title>Join · NeuralGist</title></svelte:head>
 
 <section class="container-x flex max-w-md flex-col py-16">
-	<h1 class="font-display text-3xl font-bold">Join Neuralgist</h1>
+	<h1 class="font-display text-3xl font-bold">Join NeuralGist</h1>
 	<p class="mt-1 text-muted">Write articles, join discussions, build a byline.</p>
 	{#if form?.error}<p class="card mt-6 border-rose/40 bg-rose/10 p-3 text-sm text-rose">{form.error}</p>{/if}
 	<form method="POST" class="card mt-6 space-y-4 p-6" use:enhance>

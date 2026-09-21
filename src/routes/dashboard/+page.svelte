@@ -6,7 +6,7 @@
 	const by = (s: string) => data.posts.filter((p) => p.status === s).length;
 </script>
 
-<svelte:head><title>My articles · Neuralgist</title></svelte:head>
+<svelte:head><title>My articles · NeuralGist</title></svelte:head>
 
 <section class="container-x py-12">
 	<div class="flex flex-wrap items-end justify-between gap-4">

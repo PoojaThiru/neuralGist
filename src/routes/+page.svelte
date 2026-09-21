@@ -31,7 +31,7 @@
 			</p>
 			<div class="mt-8 flex flex-wrap gap-3">
 				<a href="/articles" class="btn-primary">Start reading <ArrowRight size={16} /></a>
-				<a href="/register" class="btn-secondary">Write for Neuralgist</a>
+				<a href="/register" class="btn-secondary">Write for NeuralGist</a>
 			</div>
 			<dl class="mt-10 flex gap-8 font-mono text-sm text-dim">
 				<div><dt class="sr-only">Articles</dt><dd><span class="text-2xl font-semibold text-ink">{data.stats.posts}</span> articles</dd></div>

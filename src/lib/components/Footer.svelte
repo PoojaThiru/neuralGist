@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Logo from './Logo.svelte';
 	import { site, SECTIONS } from '$lib/site';
 	import SocialIcon from './SocialIcon.svelte';
 
@@ -16,7 +17,8 @@
 <footer class="mt-24 border-t border-line bg-surface/60">
 	<div class="container-x grid gap-10 py-12 md:grid-cols-4">
 		<div class="md:col-span-2">
-			<a href="/" class="font-display text-lg font-bold">neuralgist<span class="text-cyan">.ai</span></a>
+			<Logo size={26} />
+			<p class="mt-2 text-xs text-muted">{site.domain}</p>
 			<p class="mt-3 max-w-sm text-sm text-muted">{site.tagline}</p>
 			<div class="mt-5 flex flex-wrap gap-2">
 				{#each socials as s (s.key)}
@@ -39,7 +41,7 @@
 			<h3 class="text-xs font-semibold uppercase tracking-wide text-dim">Site</h3>
 			<ul class="mt-3 space-y-2 text-sm">
 				<li><a href="/about" class="text-muted hover:text-ink">About</a></li>
-				<li><a href="/register" class="text-muted hover:text-ink">Write for Neuralgist</a></li>
+				<li><a href="/register" class="text-muted hover:text-ink">Write for NeuralGist</a></li>
 				<li><a href="/articles" class="text-muted hover:text-ink">All articles</a></li>
 				<li><a href="/sitemap.xml" class="text-muted hover:text-ink">Sitemap</a></li>
 			</ul>

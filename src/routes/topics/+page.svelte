@@ -4,8 +4,8 @@
 </script>
 
 <svelte:head>
-	<title>Topics · Neuralgist</title>
-	<meta name="description" content="Foundations, trends, patterns and tooling: every topic Neuralgist covers." />
+	<title>Topics · NeuralGist</title>
+	<meta name="description" content="Foundations, trends, patterns and tooling: every topic NeuralGist covers." />
 </svelte:head>
 
 <section class="container-x py-12">

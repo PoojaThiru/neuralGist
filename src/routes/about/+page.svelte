@@ -11,8 +11,8 @@
 </script>
 
 <svelte:head>
-	<title>About · Neuralgist</title>
-	<meta name="description" content="Who writes Neuralgist, what it covers, and how to contribute." />
+	<title>About · NeuralGist</title>
+	<meta name="description" content="Who writes NeuralGist, what it covers, and how to contribute." />
 </svelte:head>
 
 <section class="container-x max-w-3xl py-12">
@@ -23,7 +23,7 @@
 	<div class="prose-ng mt-8">
 		<p>{site.author.blurb}</p>
 		<p>
-			<strong>Neuralgist</strong> started as my own notes: the concepts I kept re-deriving, the patterns I kept seeing in real
+			<strong>NeuralGist</strong> started as my own notes: the concepts I kept re-deriving, the patterns I kept seeing in real
 			systems, and the trends that were actually changing how people build with models rather than just trending on social
 			media. It's now open to anyone who wants to write with the same standard: concrete, honest about trade-offs, and useful
 			to someone shipping something next week.
@@ -49,7 +49,7 @@
 		{/each}
 	</div>
 	<div class="mt-10 flex gap-3">
-		<a href="/register" class="btn-primary">Write for Neuralgist</a>
+		<a href="/register" class="btn-primary">Write for NeuralGist</a>
 		<a href="/articles" class="btn-secondary">Read the articles</a>
 	</div>
 </section>

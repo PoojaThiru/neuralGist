@@ -11,7 +11,7 @@
 	]);
 </script>
 
-<svelte:head><title>Admin · Neuralgist</title></svelte:head>
+<svelte:head><title>Admin · NeuralGist</title></svelte:head>
 
 <h1 class="font-display text-2xl font-bold">Overview</h1>
 <div class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">

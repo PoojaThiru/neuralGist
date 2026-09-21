@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.topic.name} · Neuralgist</title>
+	<title>{data.topic.name} · NeuralGist</title>
 	<meta name="description" content={data.topic.description} />
 </svelte:head>
 

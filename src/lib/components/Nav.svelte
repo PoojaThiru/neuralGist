@@ -2,6 +2,7 @@
 	import { site } from '$lib/site';
 	import { page } from '$app/state';
 	import Avatar from './Avatar.svelte';
+	import Logo from './Logo.svelte';
 	import { Menu, X, PenLine, ChevronDown, LayoutDashboard, Settings, Shield, LogOut } from '@lucide/svelte';
 
 	let { user }: { user: { id: string; name: string; username: string; role: string; image: string | null } | null } = $props();
@@ -18,10 +19,7 @@
 
 <header class="sticky top-0 z-40 border-b border-line bg-canvas/80 backdrop-blur">
 	<div class="container-x flex h-16 items-center justify-between gap-4">
-		<a href="/" class="font-display flex items-center gap-2 text-lg font-bold tracking-tight">
-			<span class="inline-block h-3 w-3 rounded-full bg-gradient-to-br from-violet to-cyan"></span>
-			neuralgist<span class="text-cyan">.ai</span>
-		</a>
+		<Logo size={34} />
 
 		<nav class="hidden items-center gap-1 md:flex" aria-label="Primary">
 			{#each site.nav as item (item.href)}
@@ -82,7 +80,7 @@
 					<form method="POST" action="/logout"><button class="btn-ghost w-full justify-start">Log out</button></form>
 				{:else}
 					<a href="/login" class="btn-secondary">Log in</a>
-					<a href="/register" class="btn-primary">Join Neuralgist</a>
+					<a href="/register" class="btn-primary">Join NeuralGist</a>
 				{/if}
 			</nav>
 		</div>

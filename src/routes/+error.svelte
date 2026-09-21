@@ -2,7 +2,7 @@
 	import { page } from '$app/state';
 </script>
 
-<svelte:head><title>{page.status} · Neuralgist</title></svelte:head>
+<svelte:head><title>{page.status} · NeuralGist</title></svelte:head>
 
 <section class="container-x flex min-h-[60vh] flex-col items-center justify-center py-24 text-center">
 	<p class="font-mono text-sm text-cyan">error {page.status}</p>

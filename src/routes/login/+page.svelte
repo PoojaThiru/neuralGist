@@ -8,7 +8,7 @@
 	);
 </script>
 
-<svelte:head><title>Log in · Neuralgist</title></svelte:head>
+<svelte:head><title>Log in · NeuralGist</title></svelte:head>
 
 <section class="container-x flex max-w-md flex-col py-16">
 	<h1 class="font-display text-3xl font-bold">Welcome back</h1>

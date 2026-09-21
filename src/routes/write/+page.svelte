@@ -3,5 +3,5 @@
 	let { data, form } = $props();
 </script>
 
-<svelte:head><title>Write · Neuralgist</title></svelte:head>
+<svelte:head><title>Write · NeuralGist</title></svelte:head>
 <Editor topics={data.topics} isAdmin={data.isAdmin} post={null} {form} />

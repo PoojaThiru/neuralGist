@@ -1,10 +1,10 @@
 // Site-wide facts. Edit here — nav, footer, About and metadata all read from this file.
 export const site = {
-	name: 'Neuralgist',
+	name: 'NeuralGist',
 	domain: 'neuralgist.ai',
 	tagline: 'Field notes on how modern AI actually gets built.',
 	description:
-		'Neuralgist is a student-run publication on AI engineering: prompt and context engineering, agent loops, harnesses, MCP servers, model routing, GPUs, observability, and the foundations underneath it all.',
+		'NeuralGist is a student-run publication on AI engineering: prompt and context engineering, agent loops, harnesses, MCP servers, model routing, GPUs, observability, and the foundations underneath it all.',
 	author: {
 		name: 'Pooja Thirupuranthakam',
 		role: 'Senior, Artificial Intelligence @ Purdue University',

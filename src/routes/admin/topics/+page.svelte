@@ -4,7 +4,7 @@
 	let { data, form } = $props();
 </script>
 
-<svelte:head><title>Topics · Admin · Neuralgist</title></svelte:head>
+<svelte:head><title>Topics · Admin · NeuralGist</title></svelte:head>
 
 <h1 class="font-display text-2xl font-bold">Topics</h1>
 <form method="POST" action="?/save" class="card mt-6 grid gap-3 p-5 sm:grid-cols-2" use:enhance>

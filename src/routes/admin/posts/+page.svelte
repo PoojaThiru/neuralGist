@@ -6,7 +6,7 @@
 	const filters = ['PENDING', 'PUBLISHED', 'DRAFT', 'ARCHIVED', 'ALL'];
 </script>
 
-<svelte:head><title>Articles · Admin · Neuralgist</title></svelte:head>
+<svelte:head><title>Articles · Admin · NeuralGist</title></svelte:head>
 
 <h1 class="font-display text-2xl font-bold">Articles</h1>
 <div class="mt-4 flex flex-wrap gap-2">
