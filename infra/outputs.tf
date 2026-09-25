@@ -18,3 +18,11 @@ output "ecr_repository" {
 output "media_bucket" {
   value = aws_s3_bucket.media.bucket
 }
+
+# So CI can read back the CIDR already in state and pass it through unchanged. `admin_cidr` has no default — it is
+# the developer's own IP and the only address besides the Lambda that may reach Postgres — so a deploy that does not
+# know it would otherwise have to invent one and would silently rewrite the database's security group.
+output "admin_cidr" {
+  value       = var.admin_cidr
+  description = "The address allowed to reach Postgres for migrations. CI reads this and passes it back unchanged."
+}

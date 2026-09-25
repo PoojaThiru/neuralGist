@@ -1,0 +1,126 @@
+name: Deploy NeuralGist
+
+# Builds the container image and applies the Terraform on every push to main that touches the app or infra.
+#
+# WHY THIS EXISTS (2026-09-25). The image used to be built on a laptop: infra/deploy.sh ran docker build, docker push
+# and terraform apply locally, so a deploy was possible from exactly one machine and only while Docker Desktop was
+# healthy on it. On 2026-09-25 it was not — a four-day-old com.docker.backend held the daemon's sockets and ignored
+# SIGTERM, and an hour went into watching a build that was never building. The runner has a clean Docker every time.
+#
+# The runner is ARM: the Lambda is arm64 (infra/lambda.tf), so an x64 runner would have to emulate, which is slow and
+# occasionally subtly different. ubuntu-24.04-arm is native and free for this public repository.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'static/**'
+      - 'prisma/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'svelte.config.js'
+      - 'vite.config.ts'
+      - 'Dockerfile'
+      - 'infra/**'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch: {}
+
+# One apply at a time. Two concurrent applies race for the Terraform state lock, and the loser fails in a way that
+# looks like an infrastructure problem rather than a scheduling one.
+concurrency:
+  group: deploy-neuralgist
+  cancel-in-progress: false
+
+# Required for GitHub OIDC: lets the job request an identity token for AWS.
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials (OIDC — no stored keys)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - name: Log in to ECR
+        run: |
+          set -euo pipefail
+          ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+          REGISTRY="${ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com"
+          aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin "$REGISTRY"
+          echo "REPO=${REGISTRY}/neuralgist" >> "$GITHUB_ENV"
+          echo "TF_STATE_BUCKET=neuralgist-tfstate-${ACCOUNT_ID}" >> "$GITHUB_ENV"
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.9.8"
+          terraform_wrapper: false
+
+      - name: Terraform Init
+        working-directory: infra
+        run: |
+          terraform init -input=false \
+            -backend-config="bucket=${TF_STATE_BUCKET}" \
+            -backend-config="key=neuralgist/terraform.tfstate" \
+            -backend-config="region=us-east-1" \
+            -backend-config="use_lockfile=true"
+
+      - name: Terraform Format Check
+        working-directory: infra
+        run: terraform fmt -check -recursive
+
+      # admin_cidr is the developer's own IP: the only address besides the Lambda that may reach Postgres, and what
+      # `deploy.sh --migrate` needs. It has no default, so CI must pass something — and passing the runner's
+      # ephemeral address would rewrite the database's security group and lock the developer out on every deploy.
+      # So CI reads what is already in state and passes that back: preserved here, never decided here. This runs
+      # AFTER init, because `terraform output` cannot read state before the backend is configured.
+      - name: Read back the CIDR CI must not change
+        working-directory: infra
+        run: |
+          set -euo pipefail
+          CURRENT=$(terraform output -raw admin_cidr 2>/dev/null || true)
+          if [ -z "$CURRENT" ] || [ "$CURRENT" = "None" ]; then
+            CURRENT=$(aws ec2 describe-security-groups --filters 'Name=group-name,Values=neuralgist-db' \
+              --query 'SecurityGroups[0].IpPermissions[?FromPort==`5432`].IpRanges[].CidrIp | [0]' \
+              --output text 2>/dev/null || true)
+          fi
+          if [ -z "$CURRENT" ] || [ "$CURRENT" = "None" ]; then
+            echo "could not determine admin_cidr from state or the security group — refusing to guess" >&2
+            exit 1
+          fi
+          echo "ADMIN_CIDR=$CURRENT" >> "$GITHUB_ENV"
+          echo "preserving admin_cidr=$CURRENT"
+
+      # The ECR repository has to exist before there is anywhere to push to, and the full apply reads the image
+      # digest — so it cannot be the thing that creates the repository. deploy.sh bootstraps it the same way.
+      - name: Ensure the ECR repository exists
+        working-directory: infra
+        run: terraform apply -input=false -auto-approve -var "admin_cidr=${ADMIN_CIDR}" -target=aws_ecr_repository.app
+
+      - name: Build and push the image
+        run: |
+          set -euo pipefail
+          docker build --platform linux/arm64 -t "${REPO}:latest" .
+          docker push --platform linux/arm64 "${REPO}:latest"
+
+      - name: Terraform Apply
+        working-directory: infra
+        run: terraform apply -input=false -auto-approve -var "admin_cidr=${ADMIN_CIDR}" -var dns_ready=true
+
+      - name: Confirm the site is serving the new build
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 20); do
+            code=$(curl -s -o /dev/null -w '%{http_code}' https://neuralgist.ai/health || true)
+            [ "$code" = "200" ] && { echo "healthy"; exit 0; }
+            sleep 10
+          done
+          echo "site did not return 200 within 200s"; exit 1
