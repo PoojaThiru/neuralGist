@@ -28,7 +28,15 @@ resource "aws_iam_role" "github_actions" {
       Action    = "sts:AssumeRoleWithWebIdentity"
       Condition = {
         StringEquals = { "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com" }
-        StringLike   = { "token.actions.githubusercontent.com:sub" = "repo:PoojaThiru/neuralGist:ref:refs/heads/main" }
+        # GitHub issues an IMMUTABLE subject claim for this account: it carries the numeric owner and repository
+        # IDs, not just their names. The familiar `repo:owner/name:ref:...` form never matches, and the failure is
+        # an unhelpful "Not authorized to perform sts:AssumeRoleWithWebIdentity" with no mention of the claim.
+        # AdmitCrew's hand-made role has the same shape — it looked like a typo until this failed the same way.
+        #
+        # Matching on the IDs is the better half of the bargain anyway: renaming the repository or the account
+        # breaks a name-based condition and does not break this one.
+        #   PoojaThiru = 86157874, neuralGist = 1378914462
+        StringLike = { "token.actions.githubusercontent.com:sub" = "repo:*@86157874/*@1378914462:ref:refs/heads/main" }
       }
     }]
   })
