@@ -654,3 +654,343 @@ export const PROBABILITY: Lesson[] = [
   "captions": "/media/learn/probability/probability-13.vtt"
  }
 ];
+
+export const NEO4J: Lesson[] = [
+ {
+  "n": 1,
+  "title": "Knowledge Graphs vs. SQL: When and Why to Use Graph Databases",
+  "summary": "Learn what knowledge graphs and graph databases are, and why they solve problems that SQL tables struggle with. Using a concrete example of a student researching colleges, this video shows how graph traversal through nodes and relationships stays fast even when answering complex, multi-hop questions that would require many table joins.",
+  "runs": "6:42",
+  "chapters": [
+   {
+    "at": "0:00",
+    "title": "The Question"
+   },
+   {
+    "at": "0:55",
+    "title": "What Tables Do Well — And Where They Strain"
+   },
+   {
+    "at": "2:04",
+    "title": "Nodes and Relationships"
+   },
+   {
+    "at": "3:43",
+    "title": "Why This Shape Answers Ana's Question Fast"
+   },
+   {
+    "at": "4:42",
+    "title": "Where People Get Confused"
+   },
+   {
+    "at": "5:41",
+    "title": "Recap"
+   }
+  ],
+  "tags": [
+   "graph database",
+   "knowledge graph",
+   "SQL",
+   "database design",
+   "graph traversal",
+   "relationships"
+  ],
+  "src": "/media/learn/neo4j/neo4j-01.mp4",
+  "poster": "/media/learn/neo4j/neo4j-01.jpg",
+  "captions": "/media/learn/neo4j/neo4j-01.vtt"
+ },
+ {
+  "n": 2,
+  "title": "Graph Database Fundamentals: Nodes, Labels, Relationships, and Properties",
+  "summary": "Learn the precise definitions of the core building blocks of graph databases: nodes, labels, relationships, and properties. This video replaces intuition with actual rules, using a real-world example of a student choosing a college, and shows you the common mistakes that turn graphs back into tables.",
+  "runs": "7:33",
+  "chapters": [
+   {
+    "at": "0:00",
+    "title": "The Question"
+   },
+   {
+    "at": "0:44",
+    "title": "Part One: The Node"
+   },
+   {
+    "at": "1:50",
+    "title": "Part Two: The Label"
+   },
+   {
+    "at": "2:51",
+    "title": "Part Three: The Relationship and the Relationship Type"
+   },
+   {
+    "at": "4:14",
+    "title": "Part Four: The Property"
+   },
+   {
+    "at": "5:18",
+    "title": "Common Mistakes"
+   },
+   {
+    "at": "6:25",
+    "title": "Recap"
+   }
+  ],
+  "tags": [
+   "graph database",
+   "nodes",
+   "relationships",
+   "labels",
+   "properties",
+   "database design"
+  ],
+  "src": "/media/learn/neo4j/neo4j-02.mp4",
+  "poster": "/media/learn/neo4j/neo4j-02.jpg",
+  "captions": "/media/learn/neo4j/neo4j-02.vtt"
+ },
+ {
+  "n": 3,
+  "title": "Index-Free Adjacency: Why Graph Traversal Doesn't Slow Down",
+  "summary": "Learn why querying relationships in Neo4j stays fast regardless of graph size, unlike SQL where more rows means more work. This video explains how Neo4j physically stores nodes and relationships on disk, then walks through the pointer-hopping mechanism that makes traversal instant without repeated index searches.",
+  "runs": "6:33",
+  "chapters": [
+   {
+    "at": "0:00",
+    "title": "The Question"
+   },
+   {
+    "at": "1:00",
+    "title": "What's Actually on Disk"
+   },
+   {
+    "at": "2:19",
+    "title": "Following the Pointer Hop"
+   },
+   {
+    "at": "3:29",
+    "title": "Why SQL Can't Just Do This"
+   },
+   {
+    "at": "4:30",
+    "title": "Where People Get Confused"
+   },
+   {
+    "at": "5:33",
+    "title": "Bringing It Together"
+   }
+  ],
+  "tags": [
+   "Neo4j",
+   "graph database",
+   "index-free adjacency",
+   "query performance",
+   "database design",
+   "pointer traversal"
+  ],
+  "src": "/media/learn/neo4j/neo4j-03.mp4",
+  "poster": "/media/learn/neo4j/neo4j-03.jpg",
+  "captions": "/media/learn/neo4j/neo4j-03.vtt"
+ },
+ {
+  "n": 4,
+  "title": "Cypher Query Basics: Nodes, Relationships, and MATCH",
+  "summary": "Learn the fundamentals of querying a Neo4j graph database using Cypher, the query language built to mirror the structure of graphs themselves. This video teaches you how to represent nodes in parentheses, relationships in square brackets, and use MATCH, WHERE, RETURN, and ORDER BY clauses to extract answers from your graph — with an emphasis on how direction actually matters in graph relationships, unlike SQL joins.",
+  "runs": "7:06",
+  "chapters": [
+   {
+    "at": "0:00",
+    "title": "The Question"
+   },
+   {
+    "at": "0:46",
+    "title": "Nodes in Parentheses"
+   },
+   {
+    "at": "1:41",
+    "title": "Relationships in Square Brackets"
+   },
+   {
+    "at": "2:44",
+    "title": "Why Direction Matters"
+   },
+   {
+    "at": "3:37",
+    "title": "MATCH and WHERE"
+   },
+   {
+    "at": "4:35",
+    "title": "RETURN and ORDER BY"
+   },
+   {
+    "at": "5:18",
+    "title": "Common Mistakes"
+   },
+   {
+    "at": "6:07",
+    "title": "Recap"
+   }
+  ],
+  "tags": [
+   "Neo4j",
+   "Cypher",
+   "graph database",
+   "query language",
+   "nodes",
+   "relationships"
+  ],
+  "src": "/media/learn/neo4j/neo4j-04.mp4",
+  "poster": "/media/learn/neo4j/neo4j-04.jpg",
+  "captions": "/media/learn/neo4j/neo4j-04.vtt"
+ },
+ {
+  "n": 5,
+  "title": "Safe Graph Writes: CREATE vs MERGE in Cypher",
+  "summary": "Learn how to write data to a Neo4j graph without creating duplicates or breaking relationships. This lesson covers CREATE, MERGE, ON CREATE SET, ON MATCH SET, SET, REMOVE, DELETE, and DETACH DELETE—and the three common mistakes that cause data problems. You'll understand when to use each command and why MERGE should be your default.",
+  "runs": "8:20",
+  "chapters": [
+   {
+    "at": "0:00",
+    "title": "The Question"
+   },
+   {
+    "at": "0:48",
+    "title": "CREATE: Always Makes a New Thing"
+   },
+   {
+    "at": "1:44",
+    "title": "MERGE: Find It, Or Make It"
+   },
+   {
+    "at": "2:58",
+    "title": "ON CREATE SET vs ON MATCH SET"
+   },
+   {
+    "at": "4:04",
+    "title": "SET and REMOVE: Editing What's Already There"
+   },
+   {
+    "at": "5:13",
+    "title": "DELETE and DETACH DELETE"
+   },
+   {
+    "at": "6:21",
+    "title": "Where People Get Burned"
+   },
+   {
+    "at": "7:14",
+    "title": "Recap"
+   }
+  ],
+  "tags": [
+   "Cypher",
+   "Neo4j",
+   "MERGE",
+   "CREATE",
+   "graph database",
+   "data writes"
+  ],
+  "src": "/media/learn/neo4j/neo4j-05.mp4",
+  "poster": "/media/learn/neo4j/neo4j-05.jpg",
+  "captions": "/media/learn/neo4j/neo4j-05.vtt"
+ },
+ {
+  "n": 6,
+  "title": "Embeddings and Vector Search: From Concept to GraphRAG",
+  "summary": "Learn what embeddings are—lists of numbers that capture the meaning of text—and how to use them to find semantically similar documents without recomputing them constantly. Discover how to build a vector index in Cypher, why vector search alone isn't enough for real-world queries, and how to combine it with graph traversal in a GraphRAG pattern to get both semantic relevance and structured facts.",
+  "runs": "9:19",
+  "chapters": [
+   {
+    "at": "0:00",
+    "title": "The Question"
+   },
+   {
+    "at": "0:59",
+    "title": "What An Embedding Actually Is"
+   },
+   {
+    "at": "2:35",
+    "title": "Building and Querying a Vector Index"
+   },
+   {
+    "at": "4:15",
+    "title": "Why Vector Search Alone Falls Short"
+   },
+   {
+    "at": "5:42",
+    "title": "Putting It Together: GraphRAG"
+   },
+   {
+    "at": "7:07",
+    "title": "Mistakes People Make"
+   },
+   {
+    "at": "8:11",
+    "title": "Recap"
+   }
+  ],
+  "tags": [
+   "embeddings",
+   "vector search",
+   "GraphRAG",
+   "Cypher",
+   "vector index",
+   "semantic search"
+  ],
+  "src": "/media/learn/neo4j/neo4j-06.mp4",
+  "poster": "/media/learn/neo4j/neo4j-06.jpg",
+  "captions": "/media/learn/neo4j/neo4j-06.vtt"
+ },
+ {
+  "n": 7,
+  "title": "Neo4j in Production: Aura vs Self-Hosting and Using Drivers",
+  "summary": "Learn when to use Neo4j Aura (the managed cloud database) versus self-hosting, how to connect your code through the official Neo4j driver, and best practices for security and AI-generated queries. After watching, you'll understand the tradeoffs between managed and self-hosted databases, how to safely parameterize your Cypher queries, and the common mistakes teams make when moving to production.",
+  "runs": "6:54",
+  "chapters": [
+   {
+    "at": "0:00",
+    "title": "Someone Still Has to Run the Thing"
+   },
+   {
+    "at": "0:50",
+    "title": "What Aura Actually Is"
+   },
+   {
+    "at": "1:42",
+    "title": "What You Give Up"
+   },
+   {
+    "at": "2:24",
+    "title": "When To Choose Aura"
+   },
+   {
+    "at": "2:59",
+    "title": "The Official Driver"
+   },
+   {
+    "at": "4:15",
+    "title": "Don't Paste, Parameterize"
+   },
+   {
+    "at": "4:47",
+    "title": "Letting a Model Write Cypher"
+   },
+   {
+    "at": "5:39",
+    "title": "The Mistakes People Make"
+   },
+   {
+    "at": "6:07",
+    "title": "Recap"
+   }
+  ],
+  "tags": [
+   "Neo4j",
+   "Aura",
+   "database operations",
+   "graph database",
+   "Cypher",
+   "drivers"
+  ],
+  "src": "/media/learn/neo4j/neo4j-07.mp4",
+  "poster": "/media/learn/neo4j/neo4j-07.jpg",
+  "captions": "/media/learn/neo4j/neo4j-07.vtt"
+ }
+];
