@@ -61,7 +61,11 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: "1.9.8"
+          # Matches the version used locally. 1.9.8 was copied from AdmitCrew's workflow and could not init this
+          # backend at all: `use_lockfile` — S3 state locking without a DynamoDB table — arrived in 1.10, so the
+          # same command that works on the developer's machine failed in CI with "Invalid backend configuration
+          # argument". CI and local should run the same Terraform; a version skew here shows up as a state problem.
+          terraform_version: "1.15.7"
           terraform_wrapper: false
 
       - name: Terraform Init
