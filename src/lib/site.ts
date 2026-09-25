@@ -23,6 +23,7 @@ export const site = {
 	nav: [
 		{ href: '/articles', label: 'Articles' },
 		{ href: '/topics', label: 'Topics' },
+		{ href: '/learn', label: 'Learn' },
 		{ href: '/videos', label: 'Videos' },
 		{ href: '/radio', label: 'Radio' },
 		{ href: '/about', label: 'About' }
