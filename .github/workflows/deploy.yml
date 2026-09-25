@@ -115,6 +115,23 @@ jobs:
           docker build --platform linux/arm64 -t "${REPO}:latest" .
           docker push --platform linux/arm64 "${REPO}:latest"
 
+      # The radio worker is a SECOND Lambda, zipped from radio-worker/dist/index.mjs by data.archive_file. That path
+      # is a build artefact and is gitignored, so it exists on the developer's machine and not in a fresh checkout —
+      # deploy.sh builds it just before applying and it never looked like a step, because locally the file was
+      # always already there. In CI its absence failed the apply outright.
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Build the radio worker bundle
+        run: |
+          set -euo pipefail
+          npm ci --ignore-scripts
+          npm run build:worker
+          test -f radio-worker/dist/index.mjs
+
       - name: Terraform Apply
         working-directory: infra
         run: terraform apply -input=false -auto-approve -var "admin_cidr=${ADMIN_CIDR}" -var dns_ready=true
