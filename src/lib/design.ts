@@ -13,6 +13,132 @@ export type Block =
 	| { kind: 'note'; title: string; text: string }
 	| { kind: 'diagram'; caption: string; src: string };
 
+/** A recorded walkthrough, served from the media bucket alongside the Learn videos. */
+export type Watch = {
+	slug: string;
+	title: string;
+	summary: string;
+	runs: string;
+	chapters: { at: string; title: string }[];
+};
+
+/** GENERATED from the finished videos by compose_meta — runtimes measured, chapters taken from the scenes actually
+ *  drawn. Regenerate rather than edit. */
+export const WATCH: Watch[] = [
+ {
+  "slug": "runs-everywhere",
+  "title": "How Your App Runs Everywhere: Adapters, Containers, and Lambda",
+  "summary": "Learn how the same SvelteKit application code runs unchanged on your laptop, in containers, on Lambda, and behind edge networks. This video traces the complete journey from local development through adapters, container images, and cloud deployment, plus the common pitfalls that break portability.",
+  "runs": "6:51",
+  "chapters": [
+   {
+    "at": "0:00",
+    "title": "The Question"
+   },
+   {
+    "at": "0:42",
+    "title": "Part One: adapter-node and the Disappear"
+   },
+   {
+    "at": "1:55",
+    "title": "Part Two: What a Container Image Actuall"
+   },
+   {
+    "at": "3:26",
+    "title": "Part Three: Lambda, the Edge, and the Re"
+   },
+   {
+    "at": "4:56",
+    "title": "Where People Get This Wrong"
+   },
+   {
+    "at": "5:51",
+    "title": "Recap"
+   }
+  ]
+ },
+ {
+  "slug": "trust-automation",
+  "title": "How Do You Trust an Automated System to Generate Correct Output?",
+  "summary": "Learn the three-layer approach to building AI systems that can't produce wrong output: contracts (schemas that make bad data impossible), guard rails (structural and voice rules), and tests (validation before and after generation). You'll see concrete examples of how each layer catches different kinds of errors and why skipping any one of them leaves your system vulnerable.",
+  "runs": "7:36",
+  "chapters": [
+   {
+    "at": "0:00",
+    "title": "The Question: How Do You Trust an Automa"
+   },
+   {
+    "at": "0:47",
+    "title": "Part One: The Contract That Makes Bad Ou"
+   },
+   {
+    "at": "2:03",
+    "title": "Part Two: Structural Rules as Guard Rail"
+   },
+   {
+    "at": "2:54",
+    "title": "Part Three: Voice Rules as Guard Rails"
+   },
+   {
+    "at": "3:49",
+    "title": "Where This Goes Wrong If You Skip a Laye"
+   },
+   {
+    "at": "4:38",
+    "title": "Tests That Run Before Generation"
+   },
+   {
+    "at": "5:30",
+    "title": "Tests That Run After Generation"
+   },
+   {
+    "at": "6:26",
+    "title": "Recap: Three Layers, One Guarantee"
+   }
+  ]
+ },
+ {
+  "slug": "preventing-bad-output",
+  "title": "Preventing Bad Output: Schema, Validation, and Testing",
+  "summary": "Learn how to prevent defects in automatically generated content by building validation at multiple layers: an enforced schema that makes wrong shapes impossible, content guard rails that catch logic errors, and unit and post-build tests that verify both the validator and the final artifact. This video teaches a systematic approach to quality control that catches timing issues, dialogue errors, and rendering failures before they reach users.",
+  "runs": "7:29",
+  "chapters": [
+   {
+    "at": "0:00",
+    "title": "The Question"
+   },
+   {
+    "at": "0:45",
+    "title": "The Contract: Making Bad Output Unrepres"
+   },
+   {
+    "at": "2:08",
+    "title": "Guard Rail One: At Generation Time"
+   },
+   {
+    "at": "2:59",
+    "title": "Guard Rail Two: The Rules a Schema Can't"
+   },
+   {
+    "at": "3:57",
+    "title": "Tests Before: Unit Tests on the Contract"
+   },
+   {
+    "at": "4:49",
+    "title": "Tests After: Checking the Finished Video"
+   },
+   {
+    "at": "5:36",
+    "title": "Where Teams Get This Wrong"
+   },
+   {
+    "at": "6:32",
+    "title": "Recap"
+   }
+  ]
+ }
+];
+
 export type Piece = {
 	slug: string;
 	title: string;

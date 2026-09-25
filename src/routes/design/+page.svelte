@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { PIECES } from '$lib/design';
+	import { PIECES, WATCH } from '$lib/design';
+	import WatchList from '$lib/components/WatchList.svelte';
 	import { Clock, ArrowRight } from '@lucide/svelte';
 </script>
 
@@ -16,7 +17,19 @@
 		what each one actually cost. Written from real systems, after the thing broke.
 	</p>
 
-	<div class="mt-10 grid gap-4">
+	{#if WATCH.length}
+		<section class="mt-10">
+			<h2 class="font-mono text-[11px] uppercase tracking-[0.12em] text-dim">Watch</h2>
+			<p class="mt-1 text-sm text-muted">
+				{WATCH.length} walkthroughs, two hosts each — the same ground as the written pieces, for when being told it is
+				easier than reading it.
+			</p>
+			<div class="mt-4"><WatchList videos={WATCH} /></div>
+		</section>
+	{/if}
+
+	<h2 class="mt-12 font-mono text-[11px] uppercase tracking-[0.12em] text-dim">Read</h2>
+	<div class="mt-4 grid gap-4">
 		{#each PIECES as p (p.slug)}
 			<a
 				href="/design/{p.slug}"
