@@ -660,7 +660,7 @@ export const NEO4J: Lesson[] = [
   "n": 1,
   "title": "Knowledge Graphs vs SQL: When to Use Graph Databases",
   "summary": "Learn why graph databases solve problems that SQL tables can't handle efficiently, using a concrete example of finding colleges whose professors match a student's background. You'll understand how relationships work as first-class citizens in graphs, why traversing connections is faster than joining tables, and when to reach for a graph database instead of SQL.",
-  "runs": "6:42",
+  "runs": "6:43",
   "chapters": [
    {
     "at": "0:00",
@@ -668,23 +668,27 @@ export const NEO4J: Lesson[] = [
    },
    {
     "at": "0:55",
-    "title": "What Tables Do Well — And Where They Strain"
+    "title": "Tables Store Things, Not Connections"
    },
    {
     "at": "2:04",
     "title": "Nodes and Relationships"
    },
    {
-    "at": "3:43",
+    "at": "3:42",
     "title": "Why This Shape Answers Ana's Question Fast"
    },
    {
-    "at": "4:42",
+    "at": "4:41",
     "title": "Where People Get Confused"
    },
    {
-    "at": "5:41",
-    "title": "Recap"
+    "at": "5:39",
+    "title": "Recap: Knowledge Graphs vs Tables"
+   },
+   {
+    "at": "6:33",
+    "title": "Closing Card"
    }
   ],
   "tags": [
@@ -703,7 +707,7 @@ export const NEO4J: Lesson[] = [
   "n": 2,
   "title": "Graph Database Fundamentals: Nodes, Labels, Relationships, and Properties",
   "summary": "Learn the precise definitions of the core concepts in graph databases: nodes, labels, relationships, and properties. Using the example of a student choosing a college, this video moves beyond metaphors to teach you the actual rules, including why properties can exist on both nodes and relationships, and what mistakes to avoid when designing a graph.",
-  "runs": "7:33",
+  "runs": "7:32",
   "chapters": [
    {
     "at": "0:00",
@@ -714,24 +718,28 @@ export const NEO4J: Lesson[] = [
     "title": "Part One: The Node"
    },
    {
-    "at": "1:50",
+    "at": "1:47",
     "title": "Part Two: The Label"
    },
    {
-    "at": "2:51",
-    "title": "Part Three: The Relationship and the Relationship Type"
+    "at": "2:48",
+    "title": "Relationships and Relationship Types"
    },
    {
-    "at": "4:14",
+    "at": "4:09",
     "title": "Part Four: The Property"
    },
    {
-    "at": "5:18",
+    "at": "5:13",
     "title": "Common Mistakes"
    },
    {
-    "at": "6:25",
-    "title": "Recap"
+    "at": "6:18",
+    "title": "Recap: Graph vocabulary"
+   },
+   {
+    "at": "7:17",
+    "title": "Closing Card"
    }
   ],
   "tags": [
@@ -750,31 +758,35 @@ export const NEO4J: Lesson[] = [
   "n": 3,
   "title": "Why Graph Queries Stay Fast: Index-Free Adjacency",
   "summary": "Discover why finding connected nodes in Neo4j doesn't slow down as your graph grows, unlike SQL joins on large tables. This video explains how node and relationship records are physically stored on disk and how pointers let you traverse connections through direct hops instead of index searches—a pattern called index-free adjacency.",
-  "runs": "6:33",
+  "runs": "6:35",
   "chapters": [
    {
     "at": "0:00",
-    "title": "The Question"
+    "title": "Why No Searching?"
    },
    {
-    "at": "1:00",
+    "at": "1:01",
     "title": "What's Actually on Disk"
    },
    {
-    "at": "2:20",
+    "at": "2:22",
     "title": "Following the Pointer Hop"
    },
    {
-    "at": "3:29",
+    "at": "3:30",
     "title": "Why SQL Can't Just Do This"
    },
    {
-    "at": "4:30",
+    "at": "4:28",
     "title": "Where People Get Confused"
    },
    {
-    "at": "5:33",
+    "at": "5:31",
     "title": "Bringing It Together"
+   },
+   {
+    "at": "6:22",
+    "title": "Closing Card"
    }
   ],
   "tags": [
@@ -844,26 +856,26 @@ export const NEO4J: Lesson[] = [
   "n": 5,
   "title": "Writing to Graphs Safely: CREATE, MERGE, and Beyond",
   "summary": "Learn how to write data to Neo4j without accidentally creating duplicates or orphaned relationships. This video covers CREATE versus MERGE, the ON CREATE SET and ON MATCH SET branches, and the critical difference between DELETE and DETACH DELETE, plus three common mistakes that cause problems in production.",
-  "runs": "8:21",
+  "runs": "8:26",
   "chapters": [
    {
     "at": "0:00",
     "title": "The Question"
    },
    {
-    "at": "0:48",
+    "at": "0:47",
     "title": "CREATE: Always Makes a New Thing"
    },
    {
-    "at": "1:44",
+    "at": "1:43",
     "title": "MERGE: Find It, Or Make It"
    },
    {
-    "at": "2:59",
+    "at": "2:57",
     "title": "ON CREATE SET vs ON MATCH SET"
    },
    {
-    "at": "4:04",
+    "at": "4:05",
     "title": "SET and REMOVE: Editing What's Already There"
    },
    {
@@ -875,8 +887,12 @@ export const NEO4J: Lesson[] = [
     "title": "Where People Get Burned"
    },
    {
-    "at": "7:14",
+    "at": "7:13",
     "title": "Recap"
+   },
+   {
+    "at": "8:11",
+    "title": "Closing Card"
    }
   ],
   "tags": [
@@ -895,7 +911,7 @@ export const NEO4J: Lesson[] = [
   "n": 6,
   "title": "Graph Embeddings and Vector Search: Building GraphRAG Systems",
   "summary": "Learn what embeddings actually are—lists of numbers that capture the meaning of text—and how to store them on graph nodes for fast similarity search. This video teaches you to build a vector index in Cypher and combine vector search with graph traversal (GraphRAG) to answer nuanced questions that pure text matching can't handle.",
-  "runs": "9:20",
+  "runs": "9:21",
   "chapters": [
    {
     "at": "0:00",
@@ -906,24 +922,28 @@ export const NEO4J: Lesson[] = [
     "title": "What An Embedding Actually Is"
    },
    {
-    "at": "2:36",
+    "at": "2:34",
     "title": "Building and Querying a Vector Index"
    },
    {
-    "at": "4:16",
+    "at": "4:14",
     "title": "Why Vector Search Alone Falls Short"
    },
    {
-    "at": "5:43",
+    "at": "5:40",
     "title": "Putting It Together: GraphRAG"
    },
    {
-    "at": "7:08",
+    "at": "7:04",
     "title": "Mistakes People Make"
    },
    {
-    "at": "8:12",
-    "title": "Recap"
+    "at": "8:08",
+    "title": "Recap: Embeddings and GraphRAG"
+   },
+   {
+    "at": "9:03",
+    "title": "Closing Card"
    }
   ],
   "tags": [
@@ -949,36 +969,40 @@ export const NEO4J: Lesson[] = [
     "title": "Someone Still Has to Run the Thing"
    },
    {
-    "at": "0:50",
+    "at": "0:49",
     "title": "What Aura Actually Is"
    },
    {
-    "at": "1:42",
+    "at": "1:41",
     "title": "What You Give Up"
    },
    {
-    "at": "2:25",
+    "at": "2:23",
     "title": "When To Choose Aura"
    },
    {
-    "at": "2:59",
+    "at": "2:57",
     "title": "The Official Driver"
    },
    {
-    "at": "4:16",
+    "at": "4:14",
     "title": "Don't Paste, Parameterize"
    },
    {
-    "at": "4:48",
+    "at": "4:46",
     "title": "Letting a Model Write Cypher"
    },
    {
-    "at": "5:40",
+    "at": "5:37",
     "title": "The Mistakes People Make"
    },
    {
-    "at": "6:08",
-    "title": "Recap"
+    "at": "6:04",
+    "title": "Recap: Running Neo4j"
+   },
+   {
+    "at": "6:39",
+    "title": "Closing Card"
    }
   ],
   "tags": [
