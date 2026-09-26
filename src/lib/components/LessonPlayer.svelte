@@ -69,19 +69,26 @@
 
 		<div class="min-h-0 flex-1 overflow-y-auto">
 			<!-- svelte-ignore a11y_media_has_caption -- a VTT track is attached below -->
-			<video
-				bind:this={video}
-				src={lesson.src}
-				poster={lesson.poster}
-				controls
-				autoplay
-				preload="metadata"
-				playsinline
-				class="w-full bg-black"
-				style="aspect-ratio: 16 / 9"
-			>
-				<track kind="captions" src={lesson.captions} srclang="en" label="English" default />
-			</video>
+			<!-- The video is constrained by HEIGHT as well as width. It used to be `w-full` with a 16/9 ratio and
+			     nothing else, so maximising (max-w-[110rem] = 1760px) made it 990px tall — taller than most laptop
+			     viewports before the header and summary are counted. The scroll container then put a scrollbar on the
+			     video itself, and you had to scroll to see the bottom of the picture (owner, 2026-09-26).
+			     Capping the height and letting width follow the ratio keeps the whole frame on screen at any size. -->
+			<div class="flex justify-center bg-black">
+				<video
+					bind:this={video}
+					src={lesson.src}
+					poster={lesson.poster}
+					controls
+					autoplay
+					preload="metadata"
+					playsinline
+					class="h-auto w-auto max-h-[calc(100dvh-11rem)] max-w-full"
+					style="aspect-ratio: 16 / 9"
+				>
+					<track kind="captions" src={lesson.captions} srclang="en" label="English" default />
+				</video>
+			</div>
 
 			<div class="grid gap-5 px-4 py-4 sm:px-5 {big ? 'lg:grid-cols-[1fr_22rem]' : ''}">
 				<div>
