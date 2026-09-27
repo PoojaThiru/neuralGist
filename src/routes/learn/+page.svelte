@@ -9,7 +9,7 @@
 	// scroll, not a menu — and on a phone, which is where this gets read, it is a very long scroll. The first series
 	// opens; the rest are one tap away and announce their size before you commit to them.
 	import { Play, Clock, ListVideo, ChevronDown } from '@lucide/svelte';
-	import { PROBABILITY, NEO4J, LLM_EVAL, SERVING, LEARNING, type Lesson } from '$lib/learn.generated';
+	import { PROBABILITY, NEO4J, LLM_EVAL, SERVING, LEARNING, COUNTING, type Lesson } from '$lib/learn.generated';
 	import LessonPlayer from '$lib/components/LessonPlayer.svelte';
 
 	type Series = { key: string; eyebrow: string; title: string; blurb: string; lessons: Lesson[] };
@@ -54,6 +54,14 @@
 			blurb:
 				'Machine learning from the first model to a model somebody else relies on, worked throughout on one dataset of apartment rents near campus: fitting versus memorising, gradient descent, overfitting, classification and how to judge it honestly, features and the leakage that makes a model look too good.',
 			lessons: LEARNING
+		},
+		{
+			key: 'counting',
+			eyebrow: 'Series 06',
+			title: 'From Counting to Bayes',
+			blurb:
+				'A rigorous first course: the multiplication principle, permutations and combinations, the axioms of probability and what they force, conditional probability, total probability and Bayes. Five of the twenty lessons are problem workshops, because the point is to be able to sit the exam.',
+			lessons: COUNTING
 		}
 	];
 
