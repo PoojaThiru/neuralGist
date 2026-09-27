@@ -1820,8 +1820,8 @@ export const SERVING: Lesson[] = [
 export const LEARNING: Lesson[] = [
   {
    "n": 1,
-   "title": "Fitting vs. Memorizing: What Machine Learning Models Actually Learn",
-   "summary": "Learn what it means for a machine learning model to \"learn\" from data by exploring the critical difference between fitting a good predictive rule and simply memorizing patterns. This video explains how overfitting and underfitting happen, why splitting data into training and test sets matters, and how to catch when a model has learned noise instead of true patterns.",
+   "title": "Fitting vs. Memorizing: What Machine Learning Models Actually Do",
+   "summary": "Learn what it really means for a model to \"learn\" from data—the difference between finding true patterns and just memorizing noise. Using apartment rental data as an example, this video explains fitting, overfitting, underfitting, and why splitting your data into training and test sets is essential for building models that work on new data they've never seen.",
    "runs": "5:53",
    "chapters": [
     {
@@ -1852,14 +1852,13 @@ export const LEARNING: Lesson[] = [
    "tags": [
     "machine learning",
     "fitting",
-    "memorizing",
     "overfitting",
     "underfitting",
     "training data",
-    "test data",
+    "test set",
     "model evaluation",
-    "parameters",
-    "prediction error"
+    "supervised learning",
+    "pattern recognition"
    ],
    "src": "/media/learn/learning/learning-01.mp4",
    "poster": "/media/learn/learning/learning-01.jpg",
@@ -1867,8 +1866,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 2,
-   "title": "What Does 'Best Fit' Even Mean? Understanding Linear Regression",
-   "summary": "Learn what \"best fit\" actually means in linear regression and how to measure it. This video shows you how to build a simple linear model (rent-hat = w × size + b), calculate residuals to see how wrong your predictions are, and use the sum of squared errors (SSE) as a single number that tells you whether a line is actually a good fit. By the end, you'll understand the complete goal of linear regression and why we square residuals instead of just adding them up.",
+   "title": "What Does \"Best Fit\" Even Mean? Building the Linear Model",
+   "summary": "Learn what \"best fit\" actually means mathematically instead of just a vague idea. This video teaches you how to build a linear model (rent = w × size + b), use residuals to measure prediction error, and combine them into a single number (sum of squared errors) that tells you which line fits best. By the end, you'll understand the goal of fitting: finding the slope and intercept values that minimize total squared error.",
    "runs": "5:15",
    "chapters": [
     {
@@ -1905,12 +1904,11 @@ export const LEARNING: Lesson[] = [
     "best fit",
     "residuals",
     "sum of squared errors",
-    "SSE",
-    "linear model",
-    "prediction error",
-    "machine learning fundamentals",
-    "data modeling",
-    "slope and intercept"
+    "machine learning",
+    "prediction models",
+    "least squares",
+    "model fitting",
+    "statistics"
    ],
    "src": "/media/learn/learning/learning-02.mp4",
    "poster": "/media/learn/learning/learning-02.jpg",
@@ -1918,8 +1916,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 3,
-   "title": "How Models Learn: Loss Functions and Gradient Descent",
-   "summary": "This video explains the core mechanism of how machine learning models actually learn: by measuring error with a loss function and using calculus to nudge parameters downhill. You'll see why simply guessing and checking works, what loss functions measure, how gradients point toward improvement, and the complete gradient descent algorithm with real examples using a rent prediction model.",
+   "title": "How Machine Learning Models Learn: Gradient Descent Explained",
+   "summary": "This video explains how machine learning models pick their internal numbers by guessing, measuring how wrong they are, and adjusting step by step. You'll learn what a loss function is, why the gradient tells you which direction to improve, and how gradient descent—the core algorithm of all modern machine learning—actually works with a concrete rent-prediction example.",
    "runs": "7:08",
    "chapters": [
     {
@@ -1955,13 +1953,13 @@ export const LEARNING: Lesson[] = [
     "machine learning",
     "gradient descent",
     "loss function",
-    "learning rate",
-    "calculus",
-    "optimization",
     "neural networks",
+    "optimization",
+    "learning algorithm",
     "model training",
-    "mean squared error",
-    "parameters"
+    "calculus",
+    "parameters",
+    "predictions"
    ],
    "src": "/media/learn/learning/learning-03.mp4",
    "poster": "/media/learn/learning/learning-03.jpg",
@@ -1970,7 +1968,7 @@ export const LEARNING: Lesson[] = [
   {
    "n": 4,
    "title": "Overfitting, Underfitting, and the Bias-Variance Tradeoff",
-   "summary": "Learn why a model that predicts perfectly on training data might fail on new data, and how to catch the trap. This video teaches you the difference between overfitting and underfitting, introduces the bias-variance tradeoff, and shows you practical techniques like train-test-validation splits and regularization to build models that actually generalize.",
+   "summary": "Learn why a model with zero training error can fail catastrophically on new data, and how to detect and prevent overfitting before deployment. This video teaches the essential techniques—train/validation/test splits, the bias-variance tradeoff, and regularization—that separate models that memorize from models that genuinely learn patterns.",
    "runs": "6:24",
    "chapters": [
     {
@@ -2012,10 +2010,10 @@ export const LEARNING: Lesson[] = [
     "bias-variance tradeoff",
     "model validation",
     "regularization",
+    "machine learning",
     "training error",
     "test error",
     "generalization",
-    "machine learning",
     "model complexity"
    ],
    "src": "/media/learn/learning/learning-04.mp4",
@@ -2025,7 +2023,7 @@ export const LEARNING: Lesson[] = [
   {
    "n": 5,
    "title": "Logistic Regression: Predicting Categories Instead of Numbers",
-   "summary": "Learn how to predict categories (like \"yes\" or \"no\") instead of continuous numbers using logistic regression. You'll discover why a straight line fails for classification, how the sigmoid function squashes predictions into probabilities between 0 and 1, and how to use a decision boundary and threshold to make actual yes-or-no predictions from your model.",
+   "summary": "Learn how to shift from predicting quantities (like rent price) to predicting categories (like yes/no outcomes). This video explains why linear regression fails for classification, introduces the sigmoid function to constrain predictions between 0 and 1, and teaches you how to use logistic regression with decision boundaries and thresholds to make practical yes-or-no predictions.",
    "runs": "6:30",
    "chapters": [
     {
@@ -2063,10 +2061,11 @@ export const LEARNING: Lesson[] = [
     "sigmoid function",
     "decision boundary",
     "machine learning",
-    "probability",
-    "threshold",
     "categorical prediction",
-    "supervised learning"
+    "threshold",
+    "probability",
+    "supervised learning",
+    "binary classification"
    ],
    "src": "/media/learn/learning/learning-05.mp4",
    "poster": "/media/learn/learning/learning-05.jpg",
@@ -2074,8 +2073,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 6,
-   "title": "Why 92% Accuracy Can Be Useless: Precision, Recall, and Class Imbalance",
-   "summary": "Learn why a model's accuracy score can be dangerously misleading, especially with imbalanced datasets. This video teaches you to use confusion matrices, precision, and recall to evaluate models properly, and shows you how to avoid the critical mistake of testing on training data.",
+   "title": "Why 92% Accuracy Can Be Useless: The Right Way to Evaluate Models",
+   "summary": "Learn why accuracy alone is a misleading metric for evaluating machine learning models, especially with imbalanced data. This video teaches you to use confusion matrices, precision, and recall to truly understand model performance, and how to avoid the critical mistake of testing on training data.",
    "runs": "6:37",
    "chapters": [
     {
@@ -2104,16 +2103,16 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "accuracy",
+    "machine learning",
+    "model evaluation",
     "confusion matrix",
-    "precision",
-    "recall",
+    "precision and recall",
+    "accuracy metric",
     "class imbalance",
-    "machine learning evaluation",
-    "train-test split",
-    "model validation",
-    "false positives",
-    "false negatives"
+    "training and testing",
+    "data science",
+    "classification metrics",
+    "model validation"
    ],
    "src": "/media/learn/learning/learning-06.mp4",
    "poster": "/media/learn/learning/learning-06.jpg",
@@ -2121,8 +2120,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 7,
-   "title": "Data Leakage: Why Your Model Seems Too Good to Be True",
-   "summary": "Learn to spot and fix data leakage — the hidden information that makes models look perfect in testing but fail in the real world. This video walks through concrete examples like features recorded too late, averages computed before splitting, and improper encoding, then shows you how to scale features, encode categories correctly, handle missing values, and split your data properly to build models you can actually trust.",
+   "title": "The Model That Was Too Good: Spotting Data Leakage",
+   "summary": "Learn why a machine learning model that performs suspiciously well on test data might be secretly broken due to data leakage. This video teaches you how to build honest features—including scaling, encoding categories, handling missing values, and avoiding information that leaks from the future or test set into your training data.",
    "runs": "7:56",
    "chapters": [
     {
@@ -2163,12 +2162,12 @@ export const LEARNING: Lesson[] = [
     "machine learning",
     "feature engineering",
     "model validation",
-    "scaling",
-    "one-hot encoding",
-    "target encoding",
-    "missing values",
+    "supervised learning",
+    "data preprocessing",
     "train-test split",
-    "data preprocessing"
+    "target encoding",
+    "categorical variables",
+    "missing data"
    ],
    "src": "/media/learn/learning/learning-07.mp4",
    "poster": "/media/learn/learning/learning-07.jpg",
@@ -2176,8 +2175,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "The Complete ML Pipeline: From Raw Data to Honest Predictions",
-   "summary": "Watch all seven steps of machine learning work together as a single integrated system: data cleaning, feature engineering, model design, loss functions, gradient descent training, train/test splitting, and regularization. You'll see the correct order and dependencies, and learn how to avoid three critical mistakes that derail most practitioners.",
+   "title": "The Full ML Pipeline: From Raw Data to Trustworthy Predictions",
+   "summary": "Watch all seven machine learning pieces work together as one complete system: cleaning data, engineering features, building a model, computing loss, running gradient descent, splitting train and test sets, and applying regularization. You'll see the exact order these steps must happen in and understand how to avoid the three most common mistakes that derail real ML projects.",
    "runs": "5:02",
    "chapters": [
     {
@@ -2215,15 +2214,15 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "machine learning",
+    "supervised learning",
     "gradient descent",
     "regularization",
+    "overfitting",
     "train test split",
     "feature engineering",
+    "loss function",
     "model training",
-    "mean squared error",
-    "overfitting",
-    "pipeline",
-    "data preprocessing"
+    "data pipeline"
    ],
    "src": "/media/learn/learning/learning-08.mp4",
    "poster": "/media/learn/learning/learning-08.jpg",
@@ -2231,8 +2230,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 9,
-   "title": "K-Fold Cross-Validation: Testing Models Reliably",
-   "summary": "Learn why a single train-test split can give misleading results and how k-fold cross-validation provides a more trustworthy model evaluation. You'll discover how to fairly compare different models by rotating which data you test on, and avoid common pitfalls like data leakage during preprocessing.",
+   "title": "K-Fold Cross-Validation: Getting a Trustworthy Model Score",
+   "summary": "A single train-test split can give you a lucky or unlucky score just by chance. This video shows how k-fold cross-validation solves that problem by rotating which data gets tested, then averaging the results for a steadier, more honest estimate. You'll learn how to use cross-validation to fairly compare different models and avoid common pitfalls like preprocessing before splitting.",
    "runs": "6:07",
    "chapters": [
     {
@@ -2270,10 +2269,11 @@ export const LEARNING: Lesson[] = [
     "model evaluation",
     "train-test split",
     "machine learning",
-    "data science",
     "model comparison",
-    "data leakage",
-    "preprocessing"
+    "data preprocessing",
+    "validation",
+    "mean absolute error",
+    "data leakage"
    ],
    "src": "/media/learn/learning/learning-09.mp4",
    "poster": "/media/learn/learning/learning-09.jpg",
@@ -2281,8 +2281,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 10,
-   "title": "Decision Trees: Building a Question-Asking Prediction Model",
-   "summary": "Learn how decision trees make predictions by asking a series of yes-or-no questions about data, starting from a root node and following branches until reaching a leaf that gives the answer. This video explains how trees choose which questions to ask first by measuring variance (for numbers) or impurity (for categories), and how to prevent overfitting by controlling tree depth to avoid memorizing individual data points instead of learning real patterns.",
+   "title": "Decision Trees: How to Predict by Asking Questions",
+   "summary": "Learn how decision trees make predictions by asking a series of yes-or-no questions about your data, starting from a root node and branching down to a final answer at a leaf. Discover how trees choose which questions to ask first by measuring variance (for numbers) or impurity (for categories), and understand the critical danger of overfitting when trees grow too deep and memorize individual data points instead of learning real patterns.",
    "runs": "5:59",
    "chapters": [
     {
@@ -2312,14 +2312,15 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "decision trees",
-    "machine learning",
     "regression trees",
     "classification trees",
-    "overfitting",
+    "prediction",
     "variance",
     "impurity",
-    "prediction models",
-    "feature selection"
+    "overfitting",
+    "machine learning",
+    "supervised learning",
+    "model selection"
    ],
    "src": "/media/learn/learning/learning-10.mp4",
    "poster": "/media/learn/learning/learning-10.jpg",
@@ -2327,8 +2328,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 11,
-   "title": "Why Many Weak Models Beat One Strong Model: Bagging and Random Forests",
-   "summary": "Learn why training hundreds of simple, slightly different decision trees and averaging their predictions often outperforms one carefully tuned tree. This video explains bootstrap sampling, bagging, and random forests using real apartment price data—and shows how variance (not smarter trees) is what makes the difference.",
+   "title": "Bagging and Random Forests: Why Many Weak Models Beat One Strong Tree",
+   "summary": "Learn why training hundreds of simple, slightly different decision trees and averaging their predictions often outperforms one carefully tuned tree. This video explains bootstrap sampling, bagging, and random forests using apartment price data, showing how combining mediocre models reduces prediction variance and when this technique actually helps.",
    "runs": "6:49",
    "chapters": [
     {
@@ -2365,15 +2366,14 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "ensemble learning",
     "bagging",
-    "random forests",
     "bootstrap sampling",
+    "random forests",
+    "ensemble learning",
     "decision trees",
-    "variance",
+    "variance reduction",
     "machine learning",
-    "model averaging",
-    "predictive modeling"
+    "model averaging"
    ],
    "src": "/media/learn/learning/learning-11.mp4",
    "poster": "/media/learn/learning/learning-11.jpg",
@@ -2381,8 +2381,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 12,
-   "title": "Hyperparameters: Choosing Settings Before Training",
-   "summary": "Learn the critical difference between parameters (values the model learns during training) and hyperparameters (settings you choose beforehand), and discover why these choices matter enormously for model performance. You'll master the practical workflow of using validation sets and grid search to find optimal hyperparameter values, and learn the three most common mistakes that undermine this process.",
+   "title": "Hyperparameters: Choosing the Settings Before Training",
+   "summary": "Learn the critical difference between parameters (learned during training) and hyperparameters (chosen beforehand), and discover how to pick the right hyperparameter values like learning rate and regularization strength. You'll master the three-way data split—training, validation, and test sets—and apply grid search and cross-validation to find settings that prevent both overfitting and underfitting.",
    "runs": "6:20",
    "chapters": [
     {
@@ -2420,15 +2420,15 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "hyperparameters",
-    "regularization",
-    "learning rate",
-    "lambda",
+    "machine learning",
+    "model tuning",
     "validation set",
     "grid search",
+    "regularization",
     "cross-validation",
     "overfitting",
     "underfitting",
-    "model tuning"
+    "lambda"
    ],
    "src": "/media/learn/learning/learning-12.mp4",
    "poster": "/media/learn/learning/learning-12.jpg",
@@ -2436,8 +2436,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 13,
-   "title": "Imbalanced Classification: Why Accuracy Fails on Rare Events",
-   "summary": "Learn why predicting a rare event (like detecting apartment scams that occur 1% of the time) can't be solved with accuracy alone—a model can be 99% accurate while catching zero scams. This video teaches you how to use confusion matrices, precision, recall, and the precision-recall tradeoff to build models that actually detect rare events, and covers practical techniques like oversampling and class weights to train better models on imbalanced data.",
+   "title": "Accuracy Lies: Precision, Recall, and Class Imbalance",
+   "summary": "Learn why accuracy is a dangerous metric when predicting rare events — a model can be 99% accurate while catching zero scams. This video teaches you to use confusion matrices, precision, recall, and the tradeoff between them, then shows practical fixes like resampling and class weights to train models that actually catch what matters.",
    "runs": "7:17",
    "chapters": [
     {
@@ -2474,25 +2474,74 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "imbalanced classification",
-    "accuracy trap",
-    "precision recall",
-    "confusion matrix",
+    "accuracy",
+    "precision",
+    "recall",
     "class imbalance",
-    "rare events",
-    "machine learning",
+    "confusion matrix",
     "base rate",
-    "oversampling",
-    "model evaluation"
+    "resampling",
+    "class weights",
+    "decision threshold",
+    "imbalanced data"
    ],
    "src": "/media/learn/learning/learning-13.mp4",
    "poster": "/media/learn/learning/learning-13.jpg",
    "captions": "/media/learn/learning/learning-13.vtt"
   },
   {
+   "n": 14,
+   "title": "Introduction to Unsupervised Learning and K-Means Clustering",
+   "summary": "Learn how to find structure in data without labels or answers using unsupervised learning and the k-means clustering algorithm. This video teaches you how to group similar data points together, how to choose the right number of clusters, and common mistakes to avoid like failing to scale features or being affected by outliers.",
+   "runs": "8:57",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "No Labels This Time"
+    },
+    {
+     "at": "1:01",
+     "title": "Defining Unsupervised Learning"
+    },
+    {
+     "at": "2:09",
+     "title": "Meet K-Means"
+    },
+    {
+     "at": "3:38",
+     "title": "Sorting the Apartments by Hand"
+    },
+    {
+     "at": "5:24",
+     "title": "How Many Clusters?"
+    },
+    {
+     "at": "6:40",
+     "title": "Where People Go Wrong"
+    },
+    {
+     "at": "7:50",
+     "title": "Putting It Together"
+    }
+   ],
+   "tags": [
+    "unsupervised learning",
+    "k-means clustering",
+    "cluster analysis",
+    "data grouping",
+    "feature scaling",
+    "elbow method",
+    "machine learning fundamentals",
+    "outliers"
+   ],
+   "src": "/media/learn/learning/learning-14.mp4",
+   "poster": "/media/learn/learning/learning-14.jpg",
+   "captions": "/media/learn/learning/learning-14.vtt"
+  },
+  {
    "n": 16,
-   "title": "After Training: Calibration, Explanation, and Drift",
-   "summary": "Passing your test set isn't the end—it's the beginning. Learn the three critical gaps between lab performance and real-world reliability: calibration (does confidence mean what it claims?), explanation (why did the model decide this?), and drift (do next year's applicants still match your training data?). You'll understand how to keep a deployed model trustworthy and actionable.",
+   "title": "From Model Training to Deployment: Calibration, Explanation, and Drift",
+   "summary": "After a machine learning model passes testing, three critical questions remain unanswered: Is the model's confidence score honest? Can you explain its decisions to people affected by them? Will it work on next year's applicants? This video teaches you what calibration, explanation, and drift mean—and why model accuracy alone isn't enough to deploy safely.",
    "runs": "6:59",
    "chapters": [
     {
@@ -2525,15 +2574,16 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
+    "machine learning",
     "model deployment",
     "calibration",
-    "confidence",
-    "explainability",
-    "data drift",
-    "machine learning",
-    "model monitoring",
+    "explanation",
+    "drift",
     "SHAP",
-    "model validation"
+    "model monitoring",
+    "confidence scoring",
+    "data drift",
+    "model interpretability"
    ],
    "src": "/media/learn/learning/learning-16.mp4",
    "poster": "/media/learn/learning/learning-16.jpg",
