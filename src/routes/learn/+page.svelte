@@ -9,7 +9,7 @@
 	// scroll, not a menu — and on a phone, which is where this gets read, it is a very long scroll. The first series
 	// opens; the rest are one tap away and announce their size before you commit to them.
 	import { Play, Clock, ListVideo, ChevronDown } from '@lucide/svelte';
-	import { PROBABILITY, NEO4J, type Lesson } from '$lib/learn.generated';
+	import { PROBABILITY, NEO4J, LLM_EVAL, SERVING, type Lesson } from '$lib/learn.generated';
 	import LessonPlayer from '$lib/components/LessonPlayer.svelte';
 
 	type Series = { key: string; eyebrow: string; title: string; blurb: string; lessons: Lesson[] };
@@ -30,6 +30,22 @@
 			blurb:
 				'Seven lessons on graph databases: what a knowledge graph is, the property graph model, why traversal stays fast, Cypher for reading and writing, embeddings and GraphRAG, and running it in production.',
 			lessons: NEO4J
+		},
+		{
+			key: 'llm-eval',
+			eyebrow: 'Series 03',
+			title: 'Evaluating Language Models',
+			blurb:
+				'How to tell whether a language model is actually any good: why the usual accuracy number does not apply, building an evaluation set that means something, using a model as a judge and the biases that come with it, scoring retrieval, and running the whole thing on every commit.',
+			lessons: LLM_EVAL
+		},
+		{
+			key: 'serving',
+			eyebrow: 'Series 04',
+			title: 'Serving the Model',
+			blurb:
+				'What happens between a request and a token: why a model server is nothing like a web app, continuous batching, the KV cache and how it is paged, quantisation, speculative decoding, spreading one model across several GPUs, and operating the result.',
+			lessons: SERVING
 		}
 	];
 
@@ -53,7 +69,7 @@
 	<title>Learn · NeuralGist</title>
 	<meta
 		name="description"
-		content="Video series on probability and graph databases — two hosts, drawn explanations, {totalMinutes} minutes end to end."
+		content="Video series on probability, graph databases, evaluating language models and serving them — two hosts, drawn explanations, {totalMinutes} minutes end to end."
 	/>
 </svelte:head>
 

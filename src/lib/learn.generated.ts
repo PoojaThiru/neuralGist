@@ -1018,3 +1018,355 @@ export const NEO4J: Lesson[] = [
   "captions": "/media/learn/neo4j/neo4j-07.vtt"
  }
 ];
+
+export const LLM_EVAL: Lesson[] = [
+  {
+   "n": 1,
+   "title": "Why Testing Language Models Is Different From Testing Software",
+   "summary": "Language model outputs have multiple valid answers, non-deterministic behavior, and varying degrees of wrongness—making traditional pass/fail testing insufficient. Learn why exact string matching fails, how to think about acceptable outputs, and what makes evaluation fundamentally different from conventional software testing.",
+   "runs": "7:06",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "1:04",
+     "title": "Part One: Many Acceptable Outputs"
+    },
+    {
+     "at": "2:05",
+     "title": "Part Two: No Automatic Judge"
+    },
+    {
+     "at": "3:09",
+     "title": "Part Three: The Model Isn't Even Consistent With Itself"
+    },
+    {
+     "at": "4:07",
+     "title": "Part Four: Different Ways to Be Wrong"
+    },
+    {
+     "at": "4:59",
+     "title": "Common Mistakes Teams Make"
+    },
+    {
+     "at": "5:58",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "language models",
+    "testing",
+    "evaluation",
+    "LLM",
+    "software testing",
+    "hallucination",
+    "non-deterministic",
+    "acceptable outputs",
+    "model evaluation"
+   ],
+   "src": "/media/learn/llm-eval/llm-eval-01.mp4",
+   "poster": "/media/learn/llm-eval/llm-eval-01.jpg",
+   "captions": "/media/learn/llm-eval/llm-eval-01.vtt"
+  },
+  {
+   "n": 2,
+   "title": "Building an Evaluation System for AI Models",
+   "summary": "Learn how to systematically evaluate AI model outputs when there's no single \"right answer\" to check against. This video teaches you to build a rubric that defines quality, choose and calibrate a judge (human or model-based) to apply it, generate multiple outputs per prompt, and calculate pass rates across a full test set—so you can actually measure whether your model is working.",
+   "runs": "5:30",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Where Do We Even Start"
+    },
+    {
+     "at": "0:43",
+     "title": "Part One: Writing the Rubric"
+    },
+    {
+     "at": "1:39",
+     "title": "Part Two: Picking a Judge"
+    },
+    {
+     "at": "2:30",
+     "title": "Calibrating the Judge"
+    },
+    {
+     "at": "3:15",
+     "title": "Part Three: Many Outputs, Not One"
+    },
+    {
+     "at": "3:56",
+     "title": "Where People Get It Wrong"
+    },
+    {
+     "at": "4:40",
+     "title": "Putting It Together"
+    }
+   ],
+   "tags": [
+    "AI evaluation",
+    "rubric design",
+    "LLM-as-judge",
+    "model grading",
+    "calibration",
+    "inter-rater agreement",
+    "quality metrics",
+    "prompt testing",
+    "machine learning evaluation"
+   ],
+   "src": "/media/learn/llm-eval/llm-eval-02.mp4",
+   "poster": "/media/learn/llm-eval/llm-eval-02.jpg",
+   "captions": "/media/learn/llm-eval/llm-eval-02.vtt"
+  },
+  {
+   "n": 4,
+   "title": "Hidden Biases in Judge Models: Four Ways They Systematically Fail",
+   "summary": "Judge models can pass accuracy checks on average yet harbor specific, predictable biases that skew results in consistent ways. This video teaches you to identify and test for four systematic biases: position bias (favoring the first answer), verbosity bias (favoring longer answers), self-preference bias (favoring their own writing style), and the real-world mistakes that let these biases slip through. You'll learn how to catch these patterns and remember that calibration hides bias—a judge needs both overall accuracy and individual comparison integrity.",
+   "runs": "5:19",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "A Judge That Grades Itself an A"
+    },
+    {
+     "at": "0:42",
+     "title": "Position Bias: The One That Goes First Wins"
+    },
+    {
+     "at": "1:36",
+     "title": "Verbosity Bias: Longer Isn't Better, Just Louder"
+    },
+    {
+     "at": "2:29",
+     "title": "Self-Preference: A Judge That Likes Its Own Voice"
+    },
+    {
+     "at": "3:19",
+     "title": "Mistakes People Actually Make"
+    },
+    {
+     "at": "4:08",
+     "title": "Recap: A Judge Is a Tool, Not an Oracle"
+    }
+   ],
+   "tags": [
+    "judge model",
+    "bias detection",
+    "position bias",
+    "verbosity bias",
+    "self-preference bias",
+    "model evaluation",
+    "pairwise comparison",
+    "systematic bias",
+    "calibration",
+    "AI evaluation"
+   ],
+   "src": "/media/learn/llm-eval/llm-eval-04.mp4",
+   "poster": "/media/learn/llm-eval/llm-eval-04.jpg",
+   "captions": "/media/learn/llm-eval/llm-eval-04.vtt"
+  },
+  {
+   "n": 5,
+   "title": "Metrics That Mean Something: Why BLEU, ROUGE, and Exact Match Fail",
+   "summary": "Learn why standard metrics like exact match, BLEU, and ROUGE—borrowed from translation and summarization research—measure surface-level word overlap rather than actual correctness when applied to language models and agents. This video shows you what these metrics actually measure, why they produce misleading scores, and what alternative approaches (semantic similarity, LLM-as-judge, and task-based evaluation) actually work for assessing model output quality.",
+   "runs": "8:11",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "0:44",
+     "title": "Exact Match — Right For The Wrong Reason"
+    },
+    {
+     "at": "1:49",
+     "title": "BLEU — Built For A Different Job"
+    },
+    {
+     "at": "3:06",
+     "title": "ROUGE — Overlap's Cousin, Same Blind Spot"
+    },
+    {
+     "at": "4:18",
+     "title": "What The Score Is Really Measuring"
+    },
+    {
+     "at": "5:04",
+     "title": "What Actually Works Instead"
+    },
+    {
+     "at": "6:25",
+     "title": "Where Teams Go Wrong"
+    },
+    {
+     "at": "7:16",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "evaluation metrics",
+    "BLEU",
+    "ROUGE",
+    "exact match",
+    "LLM evaluation",
+    "language model assessment",
+    "semantic similarity",
+    "LLM-as-judge",
+    "model quality",
+    "AI benchmarking"
+   ],
+   "src": "/media/learn/llm-eval/llm-eval-05.mp4",
+   "poster": "/media/learn/llm-eval/llm-eval-05.jpg",
+   "captions": "/media/learn/llm-eval/llm-eval-05.vtt"
+  },
+  {
+   "n": 6,
+   "title": "Scoring RAG Systems: Split Retrieval and Generation",
+   "summary": "Learn how to diagnose failures in retrieval-augmented generation (RAG) systems by scoring the retriever and generator separately instead of relying on one end-to-end score. You'll discover how to measure retriever performance with recall and precision at k, evaluate generator faithfulness, and identify exactly which component to fix when your RAG pipeline produces bad answers.",
+   "runs": "7:19",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "One Score, Two Ways to Fail"
+    },
+    {
+     "at": "1:11",
+     "title": "Scoring the Retriever by Itself"
+    },
+    {
+     "at": "2:42",
+     "title": "Scoring the Generator by Itself"
+    },
+    {
+     "at": "4:09",
+     "title": "Walking Through One Real Failure"
+    },
+    {
+     "at": "5:24",
+     "title": "Where Teams Get This Wrong"
+    },
+    {
+     "at": "6:27",
+     "title": "Two Scores, Not One"
+    }
+   ],
+   "tags": [
+    "RAG",
+    "retrieval augmented generation",
+    "evaluation metrics",
+    "scoring",
+    "retriever",
+    "generator",
+    "recall",
+    "precision",
+    "faithfulness",
+    "LLM evaluation"
+   ],
+   "src": "/media/learn/llm-eval/llm-eval-06.mp4",
+   "poster": "/media/learn/llm-eval/llm-eval-06.jpg",
+   "captions": "/media/learn/llm-eval/llm-eval-06.vtt"
+  },
+  {
+   "n": 7,
+   "title": "Building a Safety Net: Automated Model Evaluation in CI/CD",
+   "summary": "Learn the difference between a one-time study and a continuous safety net for AI model evaluation. This video teaches you how to build a golden set of test examples, choose the right metrics and thresholds, wire evaluation into your CI/CD pipeline, and avoid common pitfalls like stale tests and threshold gaming.",
+   "runs": "5:48",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "A Study Versus a Safety Net"
+    },
+    {
+     "at": "0:45",
+     "title": "Choosing a Golden Set"
+    },
+    {
+     "at": "1:54",
+     "title": "Metrics and Thresholds"
+    },
+    {
+     "at": "2:57",
+     "title": "Wiring It Into Every Change"
+    },
+    {
+     "at": "3:54",
+     "title": "Where Daily Evaluation Goes Wrong"
+    },
+    {
+     "at": "5:01",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "model evaluation",
+    "CI/CD pipeline",
+    "golden set",
+    "testing",
+    "safety net",
+    "metrics",
+    "thresholds",
+    "automated testing",
+    "LLM evaluation",
+    "machine learning"
+   ],
+   "src": "/media/learn/llm-eval/llm-eval-07.mp4",
+   "poster": "/media/learn/llm-eval/llm-eval-07.jpg",
+   "captions": "/media/learn/llm-eval/llm-eval-07.vtt"
+  }
+ ];
+
+export const SERVING: Lesson[] = [
+  {
+   "n": 1,
+   "title": "Why Language Models on Servers Are Hard: Batching, Latency, and Memory",
+   "summary": "Learn why serving a language model to hundreds of concurrent users is fundamentally different from running a normal web app. This video explains how language models generate tokens one at a time, why servers batch requests together, and the tension between keeping latency low for individual users while maximizing throughput for everyone—plus the memory constraints that make it all even trickier.",
+   "runs": "7:09",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Three Hundred Students, One Sunday Night"
+    },
+    {
+     "at": "1:03",
+     "title": "Part One: Words Come Out One at a Time"
+    },
+    {
+     "at": "2:09",
+     "title": "Part Two: Batching — Sharing the GPU"
+    },
+    {
+     "at": "3:13",
+     "title": "Part Three: Latency Versus Throughput"
+    },
+    {
+     "at": "4:30",
+     "title": "Part Four: The Memory the Model Has to Carry"
+    },
+    {
+     "at": "5:34",
+     "title": "Common Mistakes"
+    },
+    {
+     "at": "6:22",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "language models",
+    "batching",
+    "GPU",
+    "latency",
+    "throughput",
+    "KV cache",
+    "token generation",
+    "inference",
+    "systems design"
+   ],
+   "src": "/media/learn/serving/serving-01.mp4",
+   "poster": "/media/learn/serving/serving-01.jpg",
+   "captions": "/media/learn/serving/serving-01.vtt"
+  }
+ ];
