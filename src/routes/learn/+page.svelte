@@ -66,7 +66,7 @@
 		{
 			key: 'patterns',
 			eyebrow: 'Series 07',
-			title: 'Patterns Worth Trusting (Data Mining and Machine Learning)',
+			title: 'Patterns Worth Trusting (Machine Learning)',
 			blurb:
 				'Twenty lessons on finding a pattern and deciding whether to believe it: exploring data, hypothesis testing and confidence intervals, then k-nearest neighbours, naive Bayes, the perceptron, logistic regression, decision trees, and support vector machines with kernels — judged by cross-validation, precision and recall. Three problem workshops, a one-page cheatsheet and an exam-readiness lesson.',
 			lessons: PATTERNS
