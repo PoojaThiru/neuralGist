@@ -9,7 +9,7 @@
 	// scroll, not a menu — and on a phone, which is where this gets read, it is a very long scroll. The first series
 	// opens; the rest are one tap away and announce their size before you commit to them.
 	import { Play, Clock, ListVideo, ChevronDown } from '@lucide/svelte';
-	import { PROBABILITY, NEO4J, LLM_EVAL, SERVING, LEARNING, COUNTING, type Lesson } from '$lib/learn.generated';
+	import { PROBABILITY, NEO4J, LLM_EVAL, SERVING, LEARNING, COUNTING, PATTERNS, type Lesson } from '$lib/learn.generated';
 	import LessonPlayer from '$lib/components/LessonPlayer.svelte';
 
 	type Series = { key: string; eyebrow: string; title: string; blurb: string; lessons: Lesson[] };
@@ -26,7 +26,7 @@
 		{
 			key: 'neo4j',
 			eyebrow: 'Series 02',
-			title: 'Neo4j from the Ground Up',
+			title: 'Neo4j from the Ground Up (Graph Databases)',
 			blurb:
 				'Seven lessons on graph databases: what a knowledge graph is, the property graph model, why traversal stays fast, Cypher for reading and writing, embeddings and GraphRAG, and running it in production.',
 			lessons: NEO4J
@@ -42,7 +42,7 @@
 		{
 			key: 'serving',
 			eyebrow: 'Series 04',
-			title: 'Serving the Model',
+			title: 'Serving the Model (LLM Inference and Deployment)',
 			blurb:
 				'What happens between a request and a token: why a model server is nothing like a web app, continuous batching, the KV cache and how it is paged, quantisation, speculative decoding, spreading one model across several GPUs, and operating the result.',
 			lessons: SERVING
@@ -50,7 +50,7 @@
 		{
 			key: 'learning',
 			eyebrow: 'Series 05',
-			title: 'Learning From Data',
+			title: 'Learning From Data (Machine Learning)',
 			blurb:
 				'Machine learning from the first model to a model somebody else relies on, worked throughout on one dataset of apartment rents near campus: fitting versus memorising, gradient descent, overfitting, classification and how to judge it honestly, features and the leakage that makes a model look too good.',
 			lessons: LEARNING
@@ -58,10 +58,18 @@
 		{
 			key: 'counting',
 			eyebrow: 'Series 06',
-			title: 'From Counting to Bayes',
+			title: 'From Counting to Bayes (Probability and Combinatorics)',
 			blurb:
 				'A rigorous first course: the multiplication principle, permutations and combinations, the axioms of probability and what they force, conditional probability, total probability and Bayes. Five of the twenty lessons are problem workshops, because the point is to be able to sit the exam.',
 			lessons: COUNTING
+		},
+		{
+			key: 'patterns',
+			eyebrow: 'Series 07',
+			title: 'Patterns Worth Trusting (Data Mining and Machine Learning)',
+			blurb:
+				'Twenty lessons on finding a pattern and deciding whether to believe it: exploring data, hypothesis testing and confidence intervals, then k-nearest neighbours, naive Bayes, the perceptron, logistic regression, decision trees, and support vector machines with kernels — judged by cross-validation, precision and recall. Three problem workshops, a one-page cheatsheet and an exam-readiness lesson.',
+			lessons: PATTERNS
 		}
 	];
 

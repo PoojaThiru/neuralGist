@@ -2640,55 +2640,9 @@ export const LEARNING: Lesson[] = [
 
 export const COUNTING: Lesson[] = [
   {
-   "n": 1,
-   "title": "Why Multiply for \"And\" in Counting Problems",
-   "summary": "Learn why the multiplication principle applies when counting outcomes with \"and\" in the problem—not as a memorized rule, but as something you can see and count directly. Using a cafe menu example and tree diagrams, this video shows how chaining multiple independent choices leads to multiplication, and what mistakes to watch out for when applying the rule.",
-   "runs": "6:08",
-   "chapters": [
-    {
-     "at": "0:00",
-     "title": "The Question: Why Multiply At All?"
-    },
-    {
-     "at": "0:53",
-     "title": "Part One: Just List Them"
-    },
-    {
-     "at": "1:45",
-     "title": "Part Two: The Tree Makes It Obvious"
-    },
-    {
-     "at": "2:45",
-     "title": "Part Three: The General Rule"
-    },
-    {
-     "at": "3:48",
-     "title": "Part Four: Where People Go Wrong"
-    },
-    {
-     "at": "5:05",
-     "title": "Recap"
-    }
-   ],
-   "tags": [
-    "multiplication principle",
-    "counting",
-    "combinatorics",
-    "tree diagrams",
-    "independent events",
-    "outcomes",
-    "fundamental counting principle",
-    "probability",
-    "discrete math"
-   ],
-   "src": "/media/learn/counting/counting-01.mp4",
-   "poster": "/media/learn/counting/counting-01.jpg",
-   "captions": "/media/learn/counting/counting-01.vtt"
-  },
-  {
    "n": 2,
    "title": "Permutations: Arranging Things in Order",
-   "summary": "Learn how to count the number of ways to arrange objects in order using the multiplication principle and permutation formulas. You'll discover when order matters in counting problems and how to distinguish permutations from combinations by asking whether swapping two outcomes produces something different.",
+   "summary": "Learn how to count the number of ways to arrange people or objects in order using the multiplication principle. This video covers permutations when you use all items or only some of them, explains the factorial formula, and shows you how to recognize when order matters versus when it doesn't. By the end, you'll be able to set up and solve permutation problems by thinking through your choices step-by-step.",
    "runs": "5:44",
    "chapters": [
     {
@@ -2718,14 +2672,13 @@ export const COUNTING: Lesson[] = [
    ],
    "tags": [
     "permutations",
-    "counting",
-    "arrangements",
+    "factorial",
     "multiplication principle",
-    "factorials",
+    "arrangements",
+    "counting",
     "order matters",
-    "combinatorics",
-    "permutation formula",
-    "podium problem"
+    "combination vs permutation",
+    "n choose r"
    ],
    "src": "/media/learn/counting/counting-02.mp4",
    "poster": "/media/learn/counting/counting-02.jpg",
@@ -2733,8 +2686,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 3,
-   "title": "Combinations: Counting Groups When Order Doesn't Matter",
-   "summary": "Learn how to count the number of ways to choose a group of items when order doesn't matter—like selecting committee members or lottery numbers. You'll discover why the multiplication rule overcounts in these situations, derive the combinations formula (n choose k), and master the key distinction between ordered and unordered selection.",
+   "title": "Combinations: Choosing When Order Doesn't Matter",
+   "summary": "Learn when and how to count combinations—groups where order doesn't matter—using the formula \"n choose k\". This video teaches you to distinguish between ordered and unordered selection problems, then walks you through the formula's logic and how to apply it to real scenarios like committees and lotteries.",
    "runs": "6:43",
    "chapters": [
     {
@@ -2768,23 +2721,78 @@ export const COUNTING: Lesson[] = [
    ],
    "tags": [
     "combinations",
-    "counting",
     "n choose k",
-    "permutations",
-    "combinatorics",
-    "unordered selection",
-    "factorial",
+    "counting",
     "multiplication rule",
-    "probability"
+    "factorials",
+    "permutations vs combinations",
+    "order doesn't matter",
+    "counting principles",
+    "mathematics"
    ],
    "src": "/media/learn/counting/counting-03.mp4",
    "poster": "/media/learn/counting/counting-03.jpg",
    "captions": "/media/learn/counting/counting-03.vtt"
   },
   {
+   "n": 4,
+   "title": "Combinatorial Identities: Structure in Binomial Coefficients",
+   "summary": "Discover why binomial coefficients C(n,k) aren't just formulas to compute, but objects with hidden structure that unlock shortcuts and insights. Learn five key identities—symmetry, Pascal's recurrence, the binomial theorem, the power of 2, and the hockey-stick identity—proved through counting arguments rather than algebra, so you can see *why* they're true and use them to dodge computation.",
+   "runs": "8:07",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "A Question About Committees"
+    },
+    {
+     "at": "0:46",
+     "title": "Choosing Who's In vs Who's Out"
+    },
+    {
+     "at": "2:01",
+     "title": "Ada the Fixed Member"
+    },
+    {
+     "at": "3:16",
+     "title": "Expanding (1+x)^n by Counting"
+    },
+    {
+     "at": "4:21",
+     "title": "2 to the n, Proved Twice"
+    },
+    {
+     "at": "5:52",
+     "title": "The Hockey-Stick Shortcut"
+    },
+    {
+     "at": "6:26",
+     "title": "C(40,37) Without the Big Numbers"
+    },
+    {
+     "at": "7:08",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "binomial coefficients",
+    "combinatorics",
+    "Pascal's triangle",
+    "binomial theorem",
+    "combinatorial identities",
+    "counting proofs",
+    "bijection",
+    "C(n,k)",
+    "mathematical structure",
+    "discrete mathematics"
+   ],
+   "src": "/media/learn/counting/counting-04.mp4",
+   "poster": "/media/learn/counting/counting-04.jpg",
+   "captions": "/media/learn/counting/counting-04.vtt"
+  },
+  {
    "n": 5,
-   "title": "The Four Flavors of Counting: Order and Repetition",
-   "summary": "Learn how to sort any counting problem into one of four categories by answering two key questions: does order matter, and are repeats allowed? This video teaches you which counting method to apply to each situation, from passwords to committees, so you can stop guessing and confidently get the right answer.",
+   "title": "Counting: The Four Cases (Order and Repeats)",
+   "summary": "Learn the two key questions that determine which counting method to use: does order matter, and are repeats allowed? This video shows how the same items produce wildly different answers depending on your setup, and walks through the four cases—from passwords to podiums to committees to ice cream—with a clear framework for solving any counting problem.",
    "runs": "6:53",
    "chapters": [
     {
@@ -2821,15 +2829,15 @@ export const COUNTING: Lesson[] = [
     }
    ],
    "tags": [
+    "counting",
     "combinatorics",
-    "counting principles",
     "permutations",
     "combinations",
+    "order",
+    "repetition",
     "multiplication principle",
-    "discrete math",
     "problem-solving",
-    "order matters",
-    "repetition"
+    "mathematics"
    ],
    "src": "/media/learn/counting/counting-05.mp4",
    "poster": "/media/learn/counting/counting-05.jpg",
@@ -2837,8 +2845,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 6,
-   "title": "Modelling Counting Problems: From Stories to Stage Sequences",
-   "summary": "This video teaches you how to translate word problems into structured counting problems by identifying stages and checking whether order matters. You'll learn to spot the decisions within a story, determine which choices can repeat, and set up problems correctly before applying the multiplication principle—turning the hard part of counting (the setup) into a clear, systematic skill.",
+   "title": "Counting Problems: Breaking Word Problems into Stages",
+   "summary": "Learn how to translate counting word problems into a clear sequence of stages—the hard part of combinatorics that comes before you ever touch the multiplication principle. This video teaches you to identify what counts as \"a thing,\" determine whether order matters, and figure out how many choices each stage actually has.",
    "runs": "5:42",
    "chapters": [
     {
@@ -2867,14 +2875,14 @@ export const COUNTING: Lesson[] = [
     }
    ],
    "tags": [
-    "counting principle",
+    "counting principles",
     "combinatorics",
+    "word problems",
     "multiplication principle",
     "problem modelling",
-    "order matters",
+    "stages and decisions",
     "permutations",
-    "stage sequences",
-    "word problem translation"
+    "order matters"
    ],
    "src": "/media/learn/counting/counting-06.mp4",
    "poster": "/media/learn/counting/counting-06.jpg",
@@ -2882,8 +2890,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 7,
-   "title": "Combining Counting Techniques: Choose, Arrange, and Restrict",
-   "summary": "Learn how to solve counting problems that require stacking multiple techniques together—choosing groups, arranging within those groups, and handling restrictions without double-counting or missing cases. By working through each problem's wrong attempt first, you'll build the intuition to avoid the four costly mistakes that cost marks on exams: treating unordered groups as ordered, guessing instead of carefully counting bad cases, double-subtracting overlaps, and multiplying by arbitrary numbers instead of actually choosing what you need.",
+   "title": "Stacking Counting Tools: Combinations with Restrictions",
+   "summary": "Learn how to solve counting problems that require two or more techniques combined, like picking a committee then assigning roles within it, or handling restrictions with inclusion-exclusion. By working through the wrong approach first on each problem, you'll learn to spot the costly mistakes that cause double-counting or missed cases.",
    "runs": "8:59",
    "chapters": [
     {
@@ -2924,225 +2932,25 @@ export const COUNTING: Lesson[] = [
     }
    ],
    "tags": [
-    "counting",
     "combinatorics",
     "combinations",
     "permutations",
     "inclusion-exclusion",
+    "counting problems",
+    "arrangements",
     "restrictions",
-    "exam strategies",
+    "exam prep",
     "problem-solving",
-    "defective items",
-    "committee problems"
+    "mathematical reasoning"
    ],
    "src": "/media/learn/counting/counting-07.mp4",
    "poster": "/media/learn/counting/counting-07.jpg",
    "captions": "/media/learn/counting/counting-07.vtt"
   },
   {
-   "n": 8,
-   "title": "What Even Is an Event? Events as Subsets of the Sample Space",
-   "summary": "Learn how to formally define events in probability using set theory. This video teaches you that the sample space contains all possible outcomes, events are subsets of that space, and how to combine events using union, intersection, and complement. By the end, you'll understand the complete toolkit for building and analyzing events before moving on to probability calculations.",
-   "runs": "6:01",
-   "chapters": [
-    {
-     "at": "0:00",
-     "title": "What Even Is an Event?"
-    },
-    {
-     "at": "0:42",
-     "title": "The Sample Space: All Possible Outcomes"
-    },
-    {
-     "at": "1:40",
-     "title": "Events as Subsets"
-    },
-    {
-     "at": "2:28",
-     "title": "Combining Events: Union and Intersection"
-    },
-    {
-     "at": "3:29",
-     "title": "The Complement: Everything Else"
-    },
-    {
-     "at": "4:09",
-     "title": "Common Mixups"
-    },
-    {
-     "at": "5:03",
-     "title": "Recap"
-    }
-   ],
-   "tags": [
-    "probability",
-    "events",
-    "sample space",
-    "set theory",
-    "union",
-    "intersection",
-    "complement",
-    "mutually exclusive",
-    "outcomes",
-    "discrete math"
-   ],
-   "src": "/media/learn/counting/counting-08.mp4",
-   "poster": "/media/learn/counting/counting-08.jpg",
-   "captions": "/media/learn/counting/counting-08.vtt"
-  },
-  {
-   "n": 9,
-   "title": "The Three Axioms of Probability",
-   "summary": "Learn the three fundamental rules (axioms) that every probability assignment must obey: non-negativity, the sample space summing to one, and the addition rule for disjoint events. This video explains why these axioms form the foundation of probability theory and shows you how to use them correctly, including common mistakes to avoid.",
-   "runs": "7:10",
-   "chapters": [
-    {
-     "at": "0:00",
-     "title": "Why Do We Need Rules at All?"
-    },
-    {
-     "at": "0:41",
-     "title": "Sample Space and Events, Quickly"
-    },
-    {
-     "at": "1:22",
-     "title": "Axiom One: Nothing Negative"
-    },
-    {
-     "at": "2:09",
-     "title": "Axiom Two: The Whole Thing Sums to One"
-    },
-    {
-     "at": "2:58",
-     "title": "Axiom Three: Splitting Probability Over Disjoint Events"
-    },
-    {
-     "at": "4:20",
-     "title": "Two Quick Things That Fall Out for Free"
-    },
-    {
-     "at": "5:10",
-     "title": "Where People Trip Up"
-    },
-    {
-     "at": "6:12",
-     "title": "Putting the Three Rules Together"
-    }
-   ],
-   "tags": [
-    "probability axioms",
-    "probability rules",
-    "sample space",
-    "disjoint events",
-    "probability theory foundations",
-    "complement rule",
-    "probability addition",
-    "mathematical axioms"
-   ],
-   "src": "/media/learn/counting/counting-09.mp4",
-   "poster": "/media/learn/counting/counting-09.jpg",
-   "captions": "/media/learn/counting/counting-09.vtt"
-  },
-  {
-   "n": 10,
-   "title": "Complement, Union, and Inclusion-Exclusion in Probability",
-   "summary": "Learn three essential probability tools: the complement rule for finding \"not this event,\" the union rule for \"this or that,\" and inclusion-exclusion to avoid the double-counting mistake almost everyone makes at first. By the end, you'll be able to answer questions like \"what's the chance at least one of two dice shows a six?\" using circles and a single habit—asking whether events can happen together.",
-   "runs": "6:25",
-   "chapters": [
-    {
-     "at": "0:00",
-     "title": "The question: what if you just want 'not' or 'or'?"
-    },
-    {
-     "at": "0:47",
-     "title": "Part one: the complement rule"
-    },
-    {
-     "at": "2:14",
-     "title": "Part two: the union, 'this or that'"
-    },
-    {
-     "at": "3:10",
-     "title": "Working the card example fully"
-    },
-    {
-     "at": "4:02",
-     "title": "Part three: stretching to three events"
-    },
-    {
-     "at": "5:04",
-     "title": "Where people go wrong"
-    },
-    {
-     "at": "5:48",
-     "title": "Recap"
-    }
-   ],
-   "tags": [
-    "probability",
-    "complement rule",
-    "union",
-    "inclusion-exclusion",
-    "counting overlap",
-    "sample space",
-    "mutually exclusive",
-    "Venn diagrams"
-   ],
-   "src": "/media/learn/counting/counting-10.mp4",
-   "poster": "/media/learn/counting/counting-10.jpg",
-   "captions": "/media/learn/counting/counting-10.vtt"
-  },
-  {
-   "n": 11,
-   "title": "Probability: The Equally Likely Outcomes Model",
-   "summary": "Learn why we divide to calculate probability, and discover the hidden assumption behind \"one out of six.\" This video teaches you the equally likely outcomes model—how to count favorable outcomes and divide by total outcomes to find probability. You'll understand when this method works, what mistakes to avoid, and how to identify the correct sample space.",
-   "runs": "5:12",
-   "chapters": [
-    {
-     "at": "0:00",
-     "title": "The question: why divide at all?"
-    },
-    {
-     "at": "0:43",
-     "title": "The equally likely outcomes model"
-    },
-    {
-     "at": "1:45",
-     "title": "Worked example: two dice, a sum of seven"
-    },
-    {
-     "at": "2:53",
-     "title": "Worked example: drawing one card"
-    },
-    {
-     "at": "3:34",
-     "title": "Where it goes wrong"
-    },
-    {
-     "at": "4:28",
-     "title": "Recap"
-    }
-   ],
-   "tags": [
-    "probability",
-    "equally likely outcomes",
-    "sample space",
-    "counting",
-    "fair dice",
-    "fractions",
-    "basic probability",
-    "how to calculate probability",
-    "outcomes",
-    "conditional probability"
-   ],
-   "src": "/media/learn/counting/counting-11.mp4",
-   "poster": "/media/learn/counting/counting-11.jpg",
-   "captions": "/media/learn/counting/counting-11.vtt"
-  },
-  {
    "n": 12,
-   "title": "One Sensor, One Number: Continuity and Probability Meaning",
-   "summary": "This video explores what happens when events accumulate infinitely and what a single probability number actually means. You'll learn the continuity rule—how probability behaves for nested sequences of events—and discover two rigorous interpretations of probability: long-run frequency and degree of belief. By the end, you'll understand why the probability axioms are silent on meaning and how to apply these concepts correctly.",
+   "title": "One Sensor, One Number: Continuity and Probability Interpretation",
+   "summary": "Learn how probability behaves when events form nested sequences that grow or shrink toward a limit, and discover the two rigorous interpretations of what a probability number actually means. You'll understand why continuity of probability follows from the axioms themselves, and how to distinguish between frequency-based and belief-based readings when applying probability to real situations.",
    "runs": "8:07",
    "chapters": [
     {
@@ -3183,179 +2991,74 @@ export const COUNTING: Lesson[] = [
     }
    ],
    "tags": [
-    "continuity axiom",
+    "continuity of probability",
     "nested sequences",
-    "probability interpretation",
+    "probability axioms",
     "frequentist",
     "subjective probability",
     "degree of belief",
-    "probability limits",
-    "sensor testing",
-    "axioms of probability",
-    "event sequences"
+    "probability interpretation",
+    "limit theorems",
+    "diagnostic testing",
+    "measure theory"
    ],
    "src": "/media/learn/counting/counting-12.mp4",
    "poster": "/media/learn/counting/counting-12.jpg",
    "captions": "/media/learn/counting/counting-12.vtt"
   },
   {
-   "n": 13,
-   "title": "Three Essential Proofs in Probability Theory",
-   "summary": "Learn how to build rigorous proofs in probability starting from only three axioms and basic set facts. This video proves three fundamental results—the complement rule, monotonicity, and the union bound—showing how each one uses a simple technique: partition events into non-overlapping pieces, then apply the axioms systematically. By the end, you'll see how mathematical claims trace back to axioms rather than intuition.",
-   "runs": "7:02",
-   "chapters": [
-    {
-     "at": "0:00",
-     "title": "Why bother proving anything?"
-    },
-    {
-     "at": "0:53",
-     "title": "Setting up the complement rule"
-    },
-    {
-     "at": "1:30",
-     "title": "The complement rule, proved"
-    },
-    {
-     "at": "2:27",
-     "title": "Bigger set, bigger probability"
-    },
-    {
-     "at": "3:36",
-     "title": "Saying it back"
-    },
-    {
-     "at": "4:05",
-     "title": "When at least one of several things might happen"
-    },
-    {
-     "at": "4:47",
-     "title": "Proving the bound"
-    },
-    {
-     "at": "5:40",
-     "title": "Where people trip up"
-    },
-    {
-     "at": "6:23",
-     "title": "Recap"
-    }
-   ],
-   "tags": [
-    "probability theory",
-    "mathematical proofs",
-    "axioms",
-    "complement rule",
-    "monotonicity",
-    "union bound",
-    "set theory",
-    "rigorous mathematics",
-    "proof techniques"
-   ],
-   "src": "/media/learn/counting/counting-13.mp4",
-   "poster": "/media/learn/counting/counting-13.jpg",
-   "captions": "/media/learn/counting/counting-13.vtt"
-  },
-  {
-   "n": 14,
-   "title": "Conditional Probability: Shrinking the Sample Space",
-   "summary": "Learn what happens to a probability when you discover new information is true. This video teaches the formula for conditional probability and why it works, then walks through common mistakes like confusing P(A|B) with P(B|A) and forgetting to complete the division. You'll understand conditional probability not as a formula to memorize, but as a way of shrinking your sample space to only the outcomes that are still possible.",
-   "runs": "6:45",
-   "chapters": [
-    {
-     "at": "0:00",
-     "title": "The Question"
-    },
-    {
-     "at": "0:43",
-     "title": "Shrinking the Sample Space"
-    },
-    {
-     "at": "1:33",
-     "title": "The Formula"
-    },
-    {
-     "at": "2:29",
-     "title": "Two Dice, Worked Out"
-    },
-    {
-     "at": "3:38",
-     "title": "Saying It Back"
-    },
-    {
-     "at": "4:19",
-     "title": "Mistake One: Order Matters"
-    },
-    {
-     "at": "5:15",
-     "title": "Mistake Two: Forgetting the Shrink"
-    },
-    {
-     "at": "5:51",
-     "title": "Recap"
-    }
-   ],
-   "tags": [
-    "conditional probability",
-    "sample space",
-    "probability formula",
-    "given that",
-    "dice",
-    "Bayes",
-    "joint probability",
-    "independent events",
-    "probability mistakes"
-   ],
-   "src": "/media/learn/counting/counting-14.mp4",
-   "poster": "/media/learn/counting/counting-14.jpg",
-   "captions": "/media/learn/counting/counting-14.vtt"
-  },
-  {
    "n": 15,
-   "title": "The Multiplication Rule: Counting Outcomes of Multi-Stage Experiments",
-   "summary": "Learn the multiplication rule—the fundamental counting principle that lets you count all possible outcomes of multi-stage experiments without listing them out. You'll understand why you multiply (not add) the number of outcomes at each stage, see how it applies to everything from coin flips and dice to menus and passwords, and discover the common mistakes to avoid.",
-   "runs": "6:03",
+   "title": "The Multiplication Rule & Probability Trees",
+   "summary": "Learn where the multiplication rule comes from and how probability trees visualize multi-stage experiments. You'll see why multiplying probabilities along a path gives you the answer, how the shape of the tree reveals whether events are independent, and how to avoid the two most common mistakes when drawing without replacement.",
+   "runs": "9:09",
    "chapters": [
     {
      "at": "0:00",
-     "title": "The Question"
+     "title": "Two draws, one question"
     },
     {
-     "at": "0:43",
-     "title": "Stages of an Experiment"
+     "at": "0:42",
+     "title": "Where the multiplication rule comes from"
     },
     {
-     "at": "1:24",
-     "title": "The Rule Itself"
+     "at": "2:04",
+     "title": "Three events: the chain rule"
     },
     {
-     "at": "2:32",
-     "title": "Worked Example: The Diner Menu"
+     "at": "3:03",
+     "title": "Building the tree"
     },
     {
-     "at": "3:21",
-     "title": "Why Order Matters, But Independence Doesn't"
+     "at": "4:22",
+     "title": "Reading a path both ways"
     },
     {
-     "at": "4:18",
-     "title": "Common Mistakes"
+     "at": "5:19",
+     "title": "With replacement — the contrast"
     },
     {
-     "at": "5:07",
+     "at": "6:15",
+     "title": "First defective on the third draw"
+    },
+    {
+     "at": "7:27",
+     "title": "Where people slip"
+    },
+    {
+     "at": "8:11",
      "title": "Recap"
     }
    ],
    "tags": [
     "multiplication rule",
-    "counting principle",
-    "sample space",
-    "combinatorics",
-    "probability",
-    "multi-stage experiments",
-    "tree diagrams",
-    "fundamental counting",
-    "outcomes",
-    "discrete math"
+    "probability trees",
+    "conditional probability",
+    "chain rule",
+    "dependent events",
+    "without replacement",
+    "independence",
+    "conditional independence",
+    "probability paths"
    ],
    "src": "/media/learn/counting/counting-15.mp4",
    "poster": "/media/learn/counting/counting-15.jpg",
@@ -3363,110 +3066,61 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 16,
-   "title": "Law of Total Probability: Breaking Down Complex Events",
-   "summary": "Learn how to find a single probability for an event when the odds change depending on which situation occurs first. This video teaches the law of total probability: how to split your sample space into non-overlapping pieces, calculate the event's probability in each piece, then combine them with proper weighting. After watching, you'll be able to handle real problems like factory defect rates or cascading random experiments.",
-   "runs": "6:36",
+   "title": "The Law of Total Probability",
+   "summary": "Learn how to find the probability of an event when there are multiple disjoint paths to it using the law of total probability. You'll see how to partition a sample space and combine conditional probabilities weighted by the probability of each partition, with worked examples using sensor defects and diagnostic tests.",
+   "runs": "8:06",
    "chapters": [
     {
      "at": "0:00",
-     "title": "The question"
+     "title": "The bin you can't sort"
     },
     {
-     "at": "0:50",
-     "title": "Splitting the sample space"
+     "at": "0:39",
+     "title": "Slicing the sample space"
     },
     {
-     "at": "1:45",
-     "title": "The law itself"
+     "at": "1:46",
+     "title": "Stating the law"
     },
     {
-     "at": "2:52",
-     "title": "Worked example: the factory"
+     "at": "2:34",
+     "title": "Two lines from the axioms"
     },
     {
-     "at": "3:57",
-     "title": "A second flavor: coin then dice"
+     "at": "3:41",
+     "title": "The sensor bin, worked"
     },
     {
-     "at": "4:44",
-     "title": "Where people go wrong"
+     "at": "5:09",
+     "title": "Partitioning on what happened first"
     },
     {
-     "at": "5:56",
+     "at": "6:35",
+     "title": "Where this goes wrong"
+    },
+    {
+     "at": "7:28",
      "title": "Recap"
     }
    ],
    "tags": [
     "law of total probability",
-    "conditional probability",
     "partition",
+    "conditional probability",
     "sample space",
-    "probability theory",
+    "probability rules",
     "weighted average",
-    "statistics",
-    "Bayes theorem foundations"
+    "axioms of probability",
+    "counting paths"
    ],
    "src": "/media/learn/counting/counting-16.mp4",
    "poster": "/media/learn/counting/counting-16.jpg",
    "captions": "/media/learn/counting/counting-16.vtt"
   },
   {
-   "n": 17,
-   "title": "Bayes' Formula: Flipping Conditional Probability Around",
-   "summary": "Learn why a positive test result doesn't necessarily mean you have a disease—especially when the illness is rare. This video derives Bayes' formula from the definition of conditional probability and shows you how to correctly calculate the probability of a hypothesis given evidence by accounting for the base rate.",
-   "runs": "6:40",
-   "chapters": [
-    {
-     "at": "0:00",
-     "title": "The Question: Which Way Does the Evidence Point?"
-    },
-    {
-     "at": "0:55",
-     "title": "Recall: What Conditional Probability Means"
-    },
-    {
-     "at": "1:40",
-     "title": "Deriving Bayes' Formula"
-    },
-    {
-     "at": "2:32",
-     "title": "The Tricky Part: Finding P of B"
-    },
-    {
-     "at": "3:17",
-     "title": "Worked Example: The Rare Illness Test"
-    },
-    {
-     "at": "4:34",
-     "title": "Priya Restates It"
-    },
-    {
-     "at": "5:20",
-     "title": "The Classic Mistake: Ignoring the Base Rate"
-    },
-    {
-     "at": "5:55",
-     "title": "Recap"
-    }
-   ],
-   "tags": [
-    "Bayes theorem",
-    "conditional probability",
-    "base rate fallacy",
-    "false positives",
-    "medical testing",
-    "probability",
-    "statistics",
-    "hypothesis testing"
-   ],
-   "src": "/media/learn/counting/counting-17.mp4",
-   "poster": "/media/learn/counting/counting-17.jpg",
-   "captions": "/media/learn/counting/counting-17.vtt"
-  },
-  {
    "n": 18,
-   "title": "Independence: The Precise Definition Beyond Intuition",
-   "summary": "Independence isn't about whether events feel connected—it's a precise mathematical equation: P(A and B) = P(A) × P(B). You'll learn to distinguish independence from disjointness, see why physically linked events can be independent while seemingly unrelated events are dependent, and master the conditions for three or more events.",
+   "title": "Independence: The Precise Definition",
+   "summary": "Independence isn't about whether two things are \"connected\"—it's a precise numerical equation: P(A and B) = P(A) × P(B). Learn why events can be physically linked yet independent, why unrelated-feeling events can be dependent, and why \"disjoint\" is the opposite of independent. By the end you'll know how to test independence rigorously and handle multiple events correctly.",
    "runs": "7:10",
    "chapters": [
     {
@@ -3503,72 +3157,382 @@ export const COUNTING: Lesson[] = [
     }
    ],
    "tags": [
-    "probability",
     "independence",
-    "disjoint events",
+    "probability",
     "conditional probability",
-    "pairwise independence",
-    "mutually independent",
-    "binomial",
-    "statistical dependence"
+    "disjoint events",
+    "mutual independence",
+    "dependent events",
+    "binomial distributions",
+    "repeated trials"
    ],
    "src": "/media/learn/counting/counting-18.mp4",
    "poster": "/media/learn/counting/counting-18.jpg",
    "captions": "/media/learn/counting/counting-18.vtt"
   },
   {
-   "n": 20,
-   "title": "How to Read Probability Questions on Exams: A Strategic Framework",
-   "summary": "Knowing probability formulas isn't enough—you need to know which one to use. This video teaches a practical strategy for reading exam questions carefully: identify what the question is asking (counting, probability, or expectation), then apply a systematic approach to avoid the three most common mistakes. You'll learn to catch errors before they happen and manage your time across the whole exam, turning your existing knowledge into reliable exam performance.",
-   "runs": "6:24",
+   "n": 19,
+   "title": "Six probability problems: picking the tool",
+   "summary": "Work through six realistic problems using conditional probability, Bayes' theorem, total probability, and independence—without being told which tool to use. Learn to recognize which technique applies, avoid common pitfalls like reversed conditionals and overcounting, and develop the judgment to solve problems under exam pressure.",
+   "runs": "9:56",
    "chapters": [
     {
      "at": "0:00",
-     "title": "The Real Problem Isn't the Formula"
+     "title": "Six problems, no re-runs"
     },
     {
-     "at": "0:33",
-     "title": "Step One: What Kind of Object Is This?"
+     "at": "0:36",
+     "title": "Problem one: yesterday's posterior is today's prior"
     },
     {
-     "at": "1:30",
-     "title": "Worked Example: Reading the Question Correctly"
+     "at": "2:09",
+     "title": "Problem two: you have to choose the partition"
     },
     {
-     "at": "2:24",
-     "title": "The Three Mistakes That Cost the Most Marks"
+     "at": "3:21",
+     "title": "Problem three: looks like Bayes, isn't"
     },
     {
-     "at": "3:15",
-     "title": "Worked Example: Catching a Mistake Mid-Solution"
+     "at": "4:17",
+     "title": "Problem four: compute it, don't guess it"
     },
     {
-     "at": "4:05",
-     "title": "The Sixty-Second Sanity Check"
+     "at": "5:29",
+     "title": "Problem five: without replacement"
     },
     {
-     "at": "4:53",
-     "title": "Managing the Whole Exam, Not Just One Question"
+     "at": "6:28",
+     "title": "Problem six: the counterintuitive classic"
     },
     {
-     "at": "5:32",
+     "at": "8:03",
+     "title": "The three that cost the most marks"
+    },
+    {
+     "at": "9:11",
      "title": "Recap"
     }
    ],
    "tags": [
-    "probability",
-    "exam strategy",
-    "counting",
+    "conditional probability",
+    "Bayes theorem",
+    "total probability",
     "independence",
-    "permutations",
     "problem-solving",
-    "test-taking",
-    "mathematics",
-    "worked examples",
-    "error detection"
+    "exam preparation",
+    "probability tools",
+    "decision-making",
+    "common mistakes"
    ],
-   "src": "/media/learn/counting/counting-20.mp4",
-   "poster": "/media/learn/counting/counting-20.jpg",
-   "captions": "/media/learn/counting/counting-20.vtt"
+   "src": "/media/learn/counting/counting-19.mp4",
+   "poster": "/media/learn/counting/counting-19.jpg",
+   "captions": "/media/learn/counting/counting-19.vtt"
+  }
+ ];
+
+export const PATTERNS: Lesson[] = [
+  {
+   "n": 4,
+   "title": "Confidence Intervals: From Point Estimates to Honest Uncertainty",
+   "summary": "Learn why a single statistic like \"average commute is 27 minutes\" can mislead, and how to build confidence intervals that honestly communicate uncertainty. You'll discover what confidence actually means, how to calculate margin of error from sample data, and why this matters for reporting model accuracy and other results in data work.",
+   "runs": "5:47",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Number That Was Lying"
+    },
+    {
+     "at": "0:43",
+     "title": "Why One Number Is Dishonest"
+    },
+    {
+     "at": "1:24",
+     "title": "Building One From Scratch"
+    },
+    {
+     "at": "2:26",
+     "title": "What 'Confident' Actually Means"
+    },
+    {
+     "at": "3:29",
+     "title": "Where People Trip"
+    },
+    {
+     "at": "4:27",
+     "title": "Why This Matters for Data Mining"
+    },
+    {
+     "at": "4:52",
+     "title": "Saying It Back"
+    }
+   ],
+   "tags": [
+    "confidence intervals",
+    "point estimate",
+    "margin of error",
+    "standard error",
+    "statistical inference",
+    "sampling uncertainty",
+    "data literacy",
+    "statistics fundamentals",
+    "machine learning evaluation"
+   ],
+   "src": "/media/learn/patterns/patterns-04.mp4",
+   "poster": "/media/learn/patterns/patterns-04.jpg",
+   "captions": "/media/learn/patterns/patterns-04.vtt"
+  },
+  {
+   "n": 11,
+   "title": "Decision Tree Root Selection: Entropy & Information Gain",
+   "summary": "Learn why question order matters in decision trees and how to pick the best root question using entropy and information gain. This video teaches you to measure group \"messiness\" with a number, calculate how much a question reduces that messiness, and understand why greedy selection by information gain works—plus how to avoid common traps like ID columns that fake high gain.",
+   "runs": "5:10",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Why does question order even matter?"
+    },
+    {
+     "at": "0:34",
+     "title": "Measuring messiness: impurity"
+    },
+    {
+     "at": "1:13",
+     "title": "Entropy: the standard ruler"
+    },
+    {
+     "at": "2:02",
+     "title": "Worked example: picking the root question"
+    },
+    {
+     "at": "3:05",
+     "title": "Saying it back"
+    },
+    {
+     "at": "3:44",
+     "title": "Where people trip up"
+    },
+    {
+     "at": "4:33",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "decision trees",
+    "entropy",
+    "information gain",
+    "impurity",
+    "root node selection",
+    "machine learning",
+    "classification",
+    "greedy algorithm",
+    "uncertainty measurement"
+   ],
+   "src": "/media/learn/patterns/patterns-11.mp4",
+   "poster": "/media/learn/patterns/patterns-11.jpg",
+   "captions": "/media/learn/patterns/patterns-11.vtt"
+  },
+  {
+   "n": 12,
+   "title": "Decision Tree Pruning: Stop Your Trees from Memorizing",
+   "summary": "Learn why decision trees that perfectly fit training data fail on new data, and how to fix it through pruning. This video teaches both pre-pruning (stopping tree growth early with rules like maximum depth) and post-pruning (growing the full tree then trimming branches using a validation set). You'll understand the difference between a tree that memorizes versus one that truly learns the underlying pattern.",
+   "runs": "5:09",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The tree that got every training example right"
+    },
+    {
+     "at": "0:34",
+     "title": "Why deep trees memorise"
+    },
+    {
+     "at": "1:24",
+     "title": "Part one: pre-pruning, stopping early"
+    },
+    {
+     "at": "2:21",
+     "title": "Part two: post-pruning, grow then cut back"
+    },
+    {
+     "at": "3:36",
+     "title": "Mistakes people make"
+    },
+    {
+     "at": "4:26",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "decision trees",
+    "pruning",
+    "overfitting",
+    "machine learning",
+    "validation set",
+    "pre-pruning",
+    "post-pruning",
+    "model evaluation",
+    "tree depth",
+    "generalization"
+   ],
+   "src": "/media/learn/patterns/patterns-12.mp4",
+   "poster": "/media/learn/patterns/patterns-12.jpg",
+   "captions": "/media/learn/patterns/patterns-12.vtt"
+  },
+  {
+   "n": 16,
+   "title": "K-Fold Cross-Validation: Why One Train-Test Split Isn't Enough",
+   "summary": "Learn why a single train-test split can give misleading results, and how k-fold cross-validation provides a more trustworthy estimate of model performance. This video teaches the mechanics of cross-validation, shows a worked example with real numbers, and clarifies common misconceptions—including why your cross-validation models aren't your final model.",
+   "runs": "5:24",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "One Split, One Lucky Guess"
+    },
+    {
+     "at": "0:42",
+     "title": "Why a Single Split Can Fool You"
+    },
+    {
+     "at": "1:22",
+     "title": "K-Fold Cross-Validation, Defined"
+    },
+    {
+     "at": "2:15",
+     "title": "Five Folds of Station Data"
+    },
+    {
+     "at": "3:07",
+     "title": "Not the Same as Training on Everything"
+    },
+    {
+     "at": "3:52",
+     "title": "Two Ways to Ruin It"
+    },
+    {
+     "at": "4:37",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "cross-validation",
+    "k-fold",
+    "model evaluation",
+    "train-test split",
+    "machine learning",
+    "overfitting",
+    "error estimation",
+    "validation",
+    "time series",
+    "forecasting"
+   ],
+   "src": "/media/learn/patterns/patterns-16.mp4",
+   "poster": "/media/learn/patterns/patterns-16.jpg",
+   "captions": "/media/learn/patterns/patterns-16.vtt"
+  },
+  {
+   "n": 19,
+   "title": "The One-Page ML Cheatsheet: Finding the Right Model Fast",
+   "summary": "When facing a new dataset, this lesson compresses 18 lessons into a one-page decision map: what question shape are you solving (classification, regression, or clustering), what does your data look like, which simple baseline model should you start with, and how will you know it worked. After watching, you'll be able to quickly navigate from panic to the right first move, avoiding common mistakes like skipping baselines or using mismatched scoring metrics.",
+   "runs": "6:19",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Why one page at all"
+    },
+    {
+     "at": "0:46",
+     "title": "First fork: what's the question shape"
+    },
+    {
+     "at": "1:50",
+     "title": "Second fork: what does your data look like"
+    },
+    {
+     "at": "2:50",
+     "title": "Third fork: pick a first model, not the best model"
+    },
+    {
+     "at": "3:48",
+     "title": "Fourth box: how will I know it worked"
+    },
+    {
+     "at": "4:40",
+     "title": "Where the page gets misused"
+    },
+    {
+     "at": "5:29",
+     "title": "Recap: the page in one breath"
+    }
+   ],
+   "tags": [
+    "machine learning",
+    "cheatsheet",
+    "workflow",
+    "baseline model",
+    "classification",
+    "regression",
+    "clustering",
+    "model evaluation",
+    "decision-making",
+    "quick reference"
+   ],
+   "src": "/media/learn/patterns/patterns-19.mp4",
+   "poster": "/media/learn/patterns/patterns-19.jpg",
+   "captions": "/media/learn/patterns/patterns-19.vtt"
+  },
+  {
+   "n": 20,
+   "title": "Exam Strategy: From Derivations to Partial Credit",
+   "summary": "Learn the four core exam strategies for machine learning problems: identifying problem types by checking for labels, deriving key formulas like least squares and gradient descent from scratch, distinguishing bias-variance as causes rather than synonyms for overfitting, and avoiding common mistakes with units and assumptions. After watching, you'll know how to tackle regression, classification, and clustering problems on an exam by executing derivations cleanly and earning partial credit through careful setup and clear reasoning.",
+   "runs": "5:51",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Night Before the Exam"
+    },
+    {
+     "at": "0:34",
+     "title": "Spotting the Problem Type"
+    },
+    {
+     "at": "1:14",
+     "title": "The Derivation Examiners Love: Least Squares"
+    },
+    {
+     "at": "2:04",
+     "title": "Gradient Descent, One More Time"
+    },
+    {
+     "at": "2:47",
+     "title": "The Correction: Bias-Variance Isn't Overfitting Itself"
+    },
+    {
+     "at": "3:31",
+     "title": "Trees and Clusters, the Quick Versions"
+    },
+    {
+     "at": "4:10",
+     "title": "Where Points Get Lost"
+    },
+    {
+     "at": "4:55",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "regression",
+    "classification",
+    "clustering",
+    "least squares",
+    "gradient descent",
+    "bias-variance tradeoff",
+    "exam preparation",
+    "derivations",
+    "decision trees",
+    "overfitting"
+   ],
+   "src": "/media/learn/patterns/patterns-20.mp4",
+   "poster": "/media/learn/patterns/patterns-20.jpg",
+   "captions": "/media/learn/patterns/patterns-20.vtt"
   }
  ];
