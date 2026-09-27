@@ -73,7 +73,15 @@
 
 	let playing = $state<Lesson | null>(null);
 	let open = $state<string | null>(null);              // which lesson's detail is expanded, as "<series>:<n>"
-	let shown = $state<string[]>([SERIES[0].key]);       // which series are expanded
+	// THE NEWEST SERIES OPENS, NOT THE OLDEST (2026-09-27).
+	//
+	// This opened SERIES[0], which is the first course ever made — so every series added since sat collapsed behind
+	// a tap, and the owner twice reported newly published work as missing when it was on the page the whole time,
+	// counted and titled. If it happens to the person who commissioned the videos it happens to a student.
+	//
+	// The newest is also the better editorial default: freshest work forward, and the older courses still announce
+	// their size one tap away, which is what the collapsing was for.
+	let shown = $state<string[]>([SERIES[SERIES.length - 1].key]);
 
 	const toggle = (key: string) =>
 		(shown = shown.includes(key) ? shown.filter((k) => k !== key) : [...shown, key]);
@@ -85,7 +93,7 @@
 	<title>Learn · NeuralGist</title>
 	<meta
 		name="description"
-		content="Video series on probability, graph databases, evaluating language models and serving them — two hosts, drawn explanations, {totalMinutes} minutes end to end."
+		content="Video series on probability and counting, graph databases, machine learning, and evaluating and serving language models — two hosts, drawn explanations, {totalMinutes} minutes end to end."
 	/>
 </svelte:head>
 
