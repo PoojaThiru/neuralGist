@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { Eye, EyeOff } from '@lucide/svelte';
+
 	let { data } = $props();
+	let show = $state(false); // reveal the typed password
 	const code = $derived(page.url.searchParams.get('code'));
 	const err = $derived(page.url.searchParams.get('error'));
 	const message = $derived(
@@ -26,7 +29,19 @@
 		</div>
 		<div>
 			<label class="label" for="password">Password</label>
-			<input class="input" id="password" name="password" type="password" autocomplete="current-password" required />
+			<div class="relative">
+				<input class="input pr-11" id="password" name="password" type={show ? 'text' : 'password'} autocomplete="current-password" required />
+				<button
+					type="button"
+					class="absolute inset-y-0 right-0 flex w-11 items-center justify-center text-dim transition-colors hover:text-ink focus-visible:ring-2 focus-visible:ring-violet focus-visible:outline-none"
+					onclick={() => (show = !show)}
+					aria-pressed={show}
+					aria-label={show ? 'Hide password' : 'Show password'}
+					title={show ? 'Hide password' : 'Show password'}
+				>
+					{#if show}<EyeOff size={16} />{:else}<Eye size={16} />{/if}
+				</button>
+			</div>
 		</div>
 		<button class="btn-primary w-full">Log in</button>
 	</form>
