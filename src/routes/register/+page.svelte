@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import PasswordField from '$lib/components/PasswordField.svelte';
 	let { form } = $props();
 </script>
 
@@ -23,10 +24,7 @@
 			<label class="label" for="email">Email</label>
 			<input class="input" id="email" name="email" type="email" required value={form?.values?.email ?? ''} autocomplete="email" />
 		</div>
-		<div>
-			<label class="label" for="password">Password</label>
-			<input class="input" id="password" name="password" type="password" required minlength="8" autocomplete="new-password" />
-		</div>
+		<PasswordField id="password" label="Password" autocomplete="new-password" minlength={8} hint="At least 8 characters." />
 		<button class="btn-primary w-full">Create account</button>
 	</form>
 	<p class="mt-6 text-center text-sm text-muted">Already a member? <a href="/login" class="text-cyan">Log in</a></p>

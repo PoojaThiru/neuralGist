@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import PasswordField from '$lib/components/PasswordField.svelte';
 	let { data, form } = $props();
 </script>
 
@@ -25,8 +26,8 @@
 		<h2 class="font-display text-lg font-semibold">Change password</h2>
 		{#if form?.passwordSaved}<p class="text-sm text-lime">Password updated.</p>{/if}
 		{#if form?.passwordError}<p class="text-sm text-rose">{form.passwordError}</p>{/if}
-		<div><label class="label" for="current">Current password</label><input class="input" id="current" name="current" type="password" autocomplete="current-password" required /></div>
-		<div><label class="label" for="next">New password</label><input class="input" id="next" name="next" type="password" autocomplete="new-password" required minlength="8" /></div>
+		<PasswordField id="current" label="Current password" autocomplete="current-password" />
+		<PasswordField id="next" label="New password" autocomplete="new-password" minlength={8} />
 		<button class="btn-secondary">Update password</button>
 	</form>
 </section>
