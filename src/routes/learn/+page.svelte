@@ -9,7 +9,7 @@
 	// scroll, not a menu — and on a phone, which is where this gets read, it is a very long scroll. The first series
 	// opens; the rest are one tap away and announce their size before you commit to them.
 	import { Play, Clock, ListVideo, ChevronDown } from '@lucide/svelte';
-	import { PROBABILITY, NEO4J, LLM_EVAL, SERVING, type Lesson } from '$lib/learn.generated';
+	import { PROBABILITY, NEO4J, LLM_EVAL, SERVING, LEARNING, type Lesson } from '$lib/learn.generated';
 	import LessonPlayer from '$lib/components/LessonPlayer.svelte';
 
 	type Series = { key: string; eyebrow: string; title: string; blurb: string; lessons: Lesson[] };
@@ -46,6 +46,14 @@
 			blurb:
 				'What happens between a request and a token: why a model server is nothing like a web app, continuous batching, the KV cache and how it is paged, quantisation, speculative decoding, spreading one model across several GPUs, and operating the result.',
 			lessons: SERVING
+		},
+		{
+			key: 'learning',
+			eyebrow: 'Series 05',
+			title: 'Learning From Data',
+			blurb:
+				'Machine learning from the first model to a model somebody else relies on, worked throughout on one dataset of apartment rents near campus: fitting versus memorising, gradient descent, overfitting, classification and how to judge it honestly, features and the leakage that makes a model look too good.',
+			lessons: LEARNING
 		}
 	];
 

@@ -1022,8 +1022,8 @@ export const NEO4J: Lesson[] = [
 export const LLM_EVAL: Lesson[] = [
   {
    "n": 1,
-   "title": "Why Testing Language Models Is Different From Testing Software",
-   "summary": "Language model outputs have multiple valid answers, non-deterministic behavior, and varying degrees of wrongness—making traditional pass/fail testing insufficient. Learn why exact string matching fails, how to think about acceptable outputs, and what makes evaluation fundamentally different from conventional software testing.",
+   "title": "Testing Language Models: Why It's Different From Software Testing",
+   "summary": "Learn why testing language models requires a completely different approach than traditional software testing. This video explains four core challenges: multiple acceptable outputs, the difficulty of automatically judging meaning, non-deterministic behavior, and varying degrees of wrongness including hallucination. You'll understand how to avoid common testing mistakes and recognize what makes LLM evaluation fundamentally different.",
    "runs": "7:06",
    "chapters": [
     {
@@ -1063,8 +1063,9 @@ export const LLM_EVAL: Lesson[] = [
     "software testing",
     "hallucination",
     "non-deterministic",
-    "acceptable outputs",
-    "model evaluation"
+    "quality assurance",
+    "AI testing",
+    "oracle problem"
    ],
    "src": "/media/learn/llm-eval/llm-eval-01.mp4",
    "poster": "/media/learn/llm-eval/llm-eval-01.jpg",
@@ -1072,8 +1073,8 @@ export const LLM_EVAL: Lesson[] = [
   },
   {
    "n": 2,
-   "title": "Building an Evaluation System for AI Models",
-   "summary": "Learn how to systematically evaluate AI model outputs when there's no single \"right answer\" to check against. This video teaches you to build a rubric that defines quality, choose and calibrate a judge (human or model-based) to apply it, generate multiple outputs per prompt, and calculate pass rates across a full test set—so you can actually measure whether your model is working.",
+   "title": "Building Evaluations for AI Systems: Rubrics, Judges, and Testing",
+   "summary": "Learn how to evaluate AI model outputs when there's no single right answer. This video teaches you to build a three-part evaluation system: writing clear rubrics that break down what \"good\" looks like, choosing and calibrating a judge (human or model-based) to apply those standards, and testing multiple generations per prompt to get reliable pass rates across your test set.",
    "runs": "5:30",
    "chapters": [
     {
@@ -1107,23 +1108,70 @@ export const LLM_EVAL: Lesson[] = [
    ],
    "tags": [
     "AI evaluation",
-    "rubric design",
-    "LLM-as-judge",
-    "model grading",
-    "calibration",
-    "inter-rater agreement",
+    "rubrics",
+    "LLM grading",
+    "model assessment",
     "quality metrics",
-    "prompt testing",
-    "machine learning evaluation"
+    "inter-rater agreement",
+    "testing frameworks",
+    "machine learning",
+    "output validation"
    ],
    "src": "/media/learn/llm-eval/llm-eval-02.mp4",
    "poster": "/media/learn/llm-eval/llm-eval-02.jpg",
    "captions": "/media/learn/llm-eval/llm-eval-02.vtt"
   },
   {
+   "n": 3,
+   "title": "Writing Guidelines: Making Your Rubric Actually Work",
+   "summary": "A rubric alone isn't enough—you need guidelines to make sure real annotators agree on real outputs. Learn how to write explicit scoring rules using worked examples, measure agreement with Cohen's kappa, and turn annotator disagreements into the rules that make labeling consistent.",
+   "runs": "5:28",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Rubric Isn't the Finish Line"
+    },
+    {
+     "at": "0:48",
+     "title": "Why Smart People Disagree"
+    },
+    {
+     "at": "1:34",
+     "title": "Writing Guidelines That Survive Contact"
+    },
+    {
+     "at": "2:44",
+     "title": "Measuring If They Actually Agree"
+    },
+    {
+     "at": "3:42",
+     "title": "Where Teams Go Wrong"
+    },
+    {
+     "at": "4:24",
+     "title": "Bringing It Together"
+    }
+   ],
+   "tags": [
+    "rubric",
+    "annotation guidelines",
+    "inter-rater agreement",
+    "Cohen's kappa",
+    "data labeling",
+    "scoring rules",
+    "worked examples",
+    "quality assurance",
+    "annotator training",
+    "measurement"
+   ],
+   "src": "/media/learn/llm-eval/llm-eval-03.mp4",
+   "poster": "/media/learn/llm-eval/llm-eval-03.jpg",
+   "captions": "/media/learn/llm-eval/llm-eval-03.vtt"
+  },
+  {
    "n": 4,
-   "title": "Hidden Biases in Judge Models: Four Ways They Systematically Fail",
-   "summary": "Judge models can pass accuracy checks on average yet harbor specific, predictable biases that skew results in consistent ways. This video teaches you to identify and test for four systematic biases: position bias (favoring the first answer), verbosity bias (favoring longer answers), self-preference bias (favoring their own writing style), and the real-world mistakes that let these biases slip through. You'll learn how to catch these patterns and remember that calibration hides bias—a judge needs both overall accuracy and individual comparison integrity.",
+   "title": "Judge Bias: Why Your Scoring Model May Be Systematically Wrong",
+   "summary": "Learn four systematic biases that cause judge models to consistently score outputs incorrectly, even when they appear well-calibrated overall: position bias (favoring first answers), verbosity bias (rewarding length), self-preference bias (rating their own outputs higher), and practical mistakes teams make in evaluation. After watching, you'll be able to identify these hidden biases in your own judge model and design tests to catch them.",
    "runs": "5:19",
    "chapters": [
     {
@@ -1152,16 +1200,16 @@ export const LLM_EVAL: Lesson[] = [
     }
    ],
    "tags": [
-    "judge model",
-    "bias detection",
+    "judge bias",
+    "model evaluation",
     "position bias",
     "verbosity bias",
     "self-preference bias",
-    "model evaluation",
+    "LLM calibration",
     "pairwise comparison",
-    "systematic bias",
-    "calibration",
-    "AI evaluation"
+    "bias testing",
+    "evaluation methodology",
+    "model grading"
    ],
    "src": "/media/learn/llm-eval/llm-eval-04.mp4",
    "poster": "/media/learn/llm-eval/llm-eval-04.jpg",
@@ -1170,7 +1218,7 @@ export const LLM_EVAL: Lesson[] = [
   {
    "n": 5,
    "title": "Metrics That Mean Something: Why BLEU, ROUGE, and Exact Match Fail",
-   "summary": "Learn why standard metrics like exact match, BLEU, and ROUGE—borrowed from translation and summarization research—measure surface-level word overlap rather than actual correctness when applied to language models and agents. This video shows you what these metrics actually measure, why they produce misleading scores, and what alternative approaches (semantic similarity, LLM-as-judge, and task-based evaluation) actually work for assessing model output quality.",
+   "summary": "Most teams evaluate LLMs and agents using metrics borrowed from translation and summarization research—exact match, BLEU, and ROUGE—but these measure word overlap, not correctness or meaning. This video explains why these metrics fail for chat models, what they actually measure, and which approaches—semantic similarity, LLM-as-judge, and task-based evaluation—work better in practice.",
    "runs": "8:11",
    "chapters": [
     {
@@ -1207,16 +1255,16 @@ export const LLM_EVAL: Lesson[] = [
     }
    ],
    "tags": [
-    "evaluation metrics",
+    "LLM evaluation",
+    "metrics",
     "BLEU",
     "ROUGE",
     "exact match",
-    "LLM evaluation",
-    "language model assessment",
     "semantic similarity",
-    "LLM-as-judge",
-    "model quality",
-    "AI benchmarking"
+    "model evaluation",
+    "hallucination",
+    "embedding similarity",
+    "LLM-as-judge"
    ],
    "src": "/media/learn/llm-eval/llm-eval-05.mp4",
    "poster": "/media/learn/llm-eval/llm-eval-05.jpg",
@@ -1224,8 +1272,8 @@ export const LLM_EVAL: Lesson[] = [
   },
   {
    "n": 6,
-   "title": "Scoring RAG Systems: Split Retrieval and Generation",
-   "summary": "Learn how to diagnose failures in retrieval-augmented generation (RAG) systems by scoring the retriever and generator separately instead of relying on one end-to-end score. You'll discover how to measure retriever performance with recall and precision at k, evaluate generator faithfulness, and identify exactly which component to fix when your RAG pipeline produces bad answers.",
+   "title": "Scoring RAG Systems: Two Scores, Not One",
+   "summary": "Learn how to diagnose failures in retrieval-augmented generation (RAG) systems by splitting evaluation into two independent measurements: retriever performance and generator performance. You'll discover why tracking a single end-to-end score masks problems and how to measure recall, precision, faithfulness, and answer relevance separately so you know exactly which component to fix.",
    "runs": "7:19",
    "chapters": [
     {
@@ -1257,13 +1305,13 @@ export const LLM_EVAL: Lesson[] = [
     "RAG",
     "retrieval augmented generation",
     "evaluation metrics",
-    "scoring",
     "retriever",
     "generator",
-    "recall",
-    "precision",
+    "LLM",
+    "recall at k",
+    "precision at k",
     "faithfulness",
-    "LLM evaluation"
+    "debugging"
    ],
    "src": "/media/learn/llm-eval/llm-eval-06.mp4",
    "poster": "/media/learn/llm-eval/llm-eval-06.jpg",
@@ -1271,8 +1319,8 @@ export const LLM_EVAL: Lesson[] = [
   },
   {
    "n": 7,
-   "title": "Building a Safety Net: Automated Model Evaluation in CI/CD",
-   "summary": "Learn the difference between a one-time study and a continuous safety net for AI model evaluation. This video teaches you how to build a golden set of test examples, choose the right metrics and thresholds, wire evaluation into your CI/CD pipeline, and avoid common pitfalls like stale tests and threshold gaming.",
+   "title": "Safety Nets for Model Evaluation: Automated Testing in CI/CD",
+   "summary": "Learn the difference between one-time model evaluation and continuous safety nets that catch regressions automatically. This video teaches you how to build a golden set of test examples, define metrics and thresholds, and integrate evaluation into your CI/CD pipeline so that changes get blocked before they ship if they fail your standards.",
    "runs": "5:48",
    "chapters": [
     {
@@ -1302,27 +1350,74 @@ export const LLM_EVAL: Lesson[] = [
    ],
    "tags": [
     "model evaluation",
+    "safety nets",
     "CI/CD pipeline",
     "golden set",
-    "testing",
-    "safety net",
-    "metrics",
-    "thresholds",
     "automated testing",
-    "LLM evaluation",
-    "machine learning"
+    "metrics and thresholds",
+    "regression detection",
+    "quality assurance",
+    "LLM testing",
+    "continuous deployment"
    ],
    "src": "/media/learn/llm-eval/llm-eval-07.mp4",
    "poster": "/media/learn/llm-eval/llm-eval-07.jpg",
    "captions": "/media/learn/llm-eval/llm-eval-07.vtt"
+  },
+  {
+   "n": 8,
+   "title": "Trust Your Score—But Only for What You Actually Tested",
+   "summary": "A high evaluation score tells you how your model performed on the specific test cases you ran, but nothing about how it will handle questions you never thought to ask. This video distinguishes evaluation from red-teaming, shows why a passing score cannot guarantee safety, and explains three common mistakes teams make when they forget this crucial difference.",
+   "runs": "5:01",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "0:26",
+     "title": "Two Different Jobs: Measuring vs. Attacking"
+    },
+    {
+     "at": "1:26",
+     "title": "Worked Example: The Ninety-Four Percent Model"
+    },
+    {
+     "at": "2:19",
+     "title": "Why a Passing Score Can't See What You Didn't Think Of"
+    },
+    {
+     "at": "3:14",
+     "title": "The Mistakes People Make"
+    },
+    {
+     "at": "4:08",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "model evaluation",
+    "red-teaming",
+    "testing methodology",
+    "AI safety",
+    "model performance",
+    "test sets",
+    "security attacks",
+    "adversarial testing",
+    "model validation",
+    "machine learning"
+   ],
+   "src": "/media/learn/llm-eval/llm-eval-08.mp4",
+   "poster": "/media/learn/llm-eval/llm-eval-08.jpg",
+   "captions": "/media/learn/llm-eval/llm-eval-08.vtt"
   }
  ];
 
 export const SERVING: Lesson[] = [
   {
    "n": 1,
-   "title": "Why Language Models on Servers Are Hard: Batching, Latency, and Memory",
-   "summary": "Learn why serving a language model to hundreds of concurrent users is fundamentally different from running a normal web app. This video explains how language models generate tokens one at a time, why servers batch requests together, and the tension between keeping latency low for individual users while maximizing throughput for everyone—plus the memory constraints that make it all even trickier.",
+   "title": "Why Language Models Are Hard to Deploy: Latency, Throughput, and GPU Memory",
+   "summary": "Learn why serving a language model to hundreds of simultaneous users is fundamentally different from running a normal web app. This video explains how models generate text one token at a time, why batching requests together improves throughput at the cost of latency, and how the key-value cache limits how many users you can serve simultaneously.",
    "runs": "7:09",
    "chapters": [
     {
@@ -1356,17 +1451,778 @@ export const SERVING: Lesson[] = [
    ],
    "tags": [
     "language models",
-    "batching",
+    "deployment",
     "GPU",
+    "batching",
     "latency",
     "throughput",
     "KV cache",
-    "token generation",
-    "inference",
-    "systems design"
+    "autoregressive generation",
+    "systems design",
+    "machine learning infrastructure"
    ],
    "src": "/media/learn/serving/serving-01.mp4",
    "poster": "/media/learn/serving/serving-01.jpg",
    "captions": "/media/learn/serving/serving-01.vtt"
+  },
+  {
+   "n": 2,
+   "title": "Continuous Batching: Why It Saves GPU Time",
+   "summary": "Learn why static batching wastes GPU compute by locking requests together until the slowest one finishes, and how continuous batching solves this by reusing request slots after each token step. You'll see a concrete example of how continuous batching handles multiple requests of different lengths, and understand the real limits—batch size and memory—that still apply.",
+   "runs": "6:22",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Waiting Room Problem"
+    },
+    {
+     "at": "0:53",
+     "title": "Static Batching: One Group, One Finish Line"
+    },
+    {
+     "at": "2:22",
+     "title": "Continuous Batching: Swap Seats, Not Whole Tables"
+    },
+    {
+     "at": "3:38",
+     "title": "Worked Example: A Small Serving Queue"
+    },
+    {
+     "at": "4:31",
+     "title": "Where People Get Tripped Up"
+    },
+    {
+     "at": "5:39",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "continuous batching",
+    "static batching",
+    "GPU scheduling",
+    "LLM inference",
+    "token generation",
+    "batch processing",
+    "inference optimization",
+    "GPU utilization"
+   ],
+   "src": "/media/learn/serving/serving-02.mp4",
+   "poster": "/media/learn/serving/serving-02.jpg",
+   "captions": "/media/learn/serving/serving-02.vtt"
+  },
+  {
+   "n": 3,
+   "title": "Why GPUs Run Out of Memory: The KV Cache Problem and Paging Solution",
+   "summary": "Learn why a single GPU serving multiple concurrent requests fills up so quickly, even though most requests use only a fraction of reserved memory. This video explains how the KV cache causes memory fragmentation, and shows how applying operating system paging techniques—breaking the cache into fixed-size blocks and using a lookup table—solves both the fragmentation and waste problems, plus enables efficient cache sharing across requests with identical prompts.",
+   "runs": "6:42",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Why does one GPU run out of room so fast?"
+    },
+    {
+     "at": "0:50",
+     "title": "Reserving for the worst case"
+    },
+    {
+     "at": "1:56",
+     "title": "How the waste shows up as fragmentation"
+    },
+    {
+     "at": "2:45",
+     "title": "The fix: pages, blocks, and a lookup table"
+    },
+    {
+     "at": "4:09",
+     "title": "The bonus: sharing blocks across requests"
+    },
+    {
+     "at": "5:03",
+     "title": "Where people trip up"
+    },
+    {
+     "at": "5:48",
+     "title": "Recap: what paging buys you"
+    }
+   ],
+   "tags": [
+    "GPU memory",
+    "KV cache",
+    "memory fragmentation",
+    "paging",
+    "large language models",
+    "token generation",
+    "memory optimization",
+    "block allocation",
+    "inference serving"
+   ],
+   "src": "/media/learn/serving/serving-03.mp4",
+   "poster": "/media/learn/serving/serving-03.jpg",
+   "captions": "/media/learn/serving/serving-03.vtt"
+  },
+  {
+   "n": 4,
+   "title": "Making Models Smaller: Quantization, Distillation, and Pruning",
+   "summary": "Learn three practical techniques for reducing a model's size and runtime: quantization (rounding numbers to fewer bits), distillation (training a small model to copy a large one), and pruning (removing barely-used parameters). You'll understand how each method trades off precision against speed and storage, and learn the key mistake to avoid: always measure performance on your own real tasks before and after compression.",
+   "runs": "7:42",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question: Can the Model Just Weigh Less?"
+    },
+    {
+     "at": "0:55",
+     "title": "Idea One: Quantization — Rounding the Numbers"
+    },
+    {
+     "at": "2:29",
+     "title": "Idea Two: Distillation — Teaching a Small Model to Copy a Big One"
+    },
+    {
+     "at": "4:08",
+     "title": "Idea Three: Pruning — Cutting Out Knobs That Barely Matter"
+    },
+    {
+     "at": "5:23",
+     "title": "Where Engineers Get This Wrong"
+    },
+    {
+     "at": "6:38",
+     "title": "Recap: Three Ways to Shrink a Model"
+    }
+   ],
+   "tags": [
+    "model compression",
+    "quantization",
+    "distillation",
+    "pruning",
+    "neural networks",
+    "machine learning optimization",
+    "inference speed",
+    "parameter reduction",
+    "model efficiency",
+    "large language models"
+   ],
+   "src": "/media/learn/serving/serving-04.mp4",
+   "poster": "/media/learn/serving/serving-04.jpg",
+   "captions": "/media/learn/serving/serving-04.vtt"
+  },
+  {
+   "n": 5,
+   "title": "Serving Custom Language Models at Scale: Adapters and Routing",
+   "summary": "Learn how companies serve hundreds of custom language models without running hundreds of full models. This video explains the practical architecture: one shared base model, tiny per-customer adapters, cold start trade-offs, and smart routing that keeps requests on warm machines. You'll understand why this approach isn't just cheaper—it's the only way to fit.",
+   "runs": "6:54",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "0:30",
+     "title": "Why One Copy Per Customer Doesn't Fit"
+    },
+    {
+     "at": "1:32",
+     "title": "Adapters: The Small Add-On"
+    },
+    {
+     "at": "2:43",
+     "title": "Swapping Adapters Between Requests"
+    },
+    {
+     "at": "3:48",
+     "title": "Cold Starts"
+    },
+    {
+     "at": "4:30",
+     "title": "The Router: Which Machine Gets the Request"
+    },
+    {
+     "at": "5:19",
+     "title": "Where People Get Tripped Up"
+    },
+    {
+     "at": "5:57",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "language models",
+    "adapters",
+    "model serving",
+    "GPU memory",
+    "routing",
+    "fine-tuning",
+    "distributed systems",
+    "machine learning infrastructure",
+    "cold starts",
+    "scaling"
+   ],
+   "src": "/media/learn/serving/serving-05.mp4",
+   "poster": "/media/learn/serving/serving-05.jpg",
+   "captions": "/media/learn/serving/serving-05.vtt"
+  },
+  {
+   "n": 6,
+   "title": "Speculative Decoding: How AI Models Guess Ahead to Speed Up Inference",
+   "summary": "Learn how speculative decoding allows language models to generate multiple tokens in parallel instead of one at a time, using a small fast model to propose guesses that a large model verifies in a single pass. You'll understand why this technique doesn't lower output quality, what mistakes teams make when implementing it, and how the math ensures the final answer is identical to what the big model would have produced anyway.",
+   "runs": "5:36",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "0:45",
+     "title": "Two Models, Different Jobs"
+    },
+    {
+     "at": "1:35",
+     "title": "Guess, Then Check All At Once"
+    },
+    {
+     "at": "2:52",
+     "title": "Why the Output Doesn't Get Worse"
+    },
+    {
+     "at": "3:48",
+     "title": "Where People Trip Up"
+    },
+    {
+     "at": "4:38",
+     "title": "Saying It Back"
+    }
+   ],
+   "tags": [
+    "speculative decoding",
+    "language models",
+    "inference optimization",
+    "draft model",
+    "token generation",
+    "machine learning",
+    "model inference",
+    "computational efficiency"
+   ],
+   "src": "/media/learn/serving/serving-06.mp4",
+   "poster": "/media/learn/serving/serving-06.jpg",
+   "captions": "/media/learn/serving/serving-06.vtt"
+  },
+  {
+   "n": 7,
+   "title": "Three Ways to Scale AI Models Across Multiple GPUs",
+   "summary": "When one GPU isn't enough to run an AI model, you have three different strategies to add more hardware—and they solve three completely different problems. Learn data parallelism for handling more requests simultaneously, tensor parallelism for splitting massive calculations, and pipeline parallelism for splitting models into processing stages, plus the common mistakes teams make when combining them.",
+   "runs": "7:07",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "One GPU Was Never Going to Be Enough"
+    },
+    {
+     "at": "0:44",
+     "title": "Copies of the Whole Model — Data Parallelism"
+    },
+    {
+     "at": "1:44",
+     "title": "When the Model Doesn't Fit on One Card"
+    },
+    {
+     "at": "2:27",
+     "title": "Splitting the Work Inside a Single Step — Tensor Parallelism"
+    },
+    {
+     "at": "3:37",
+     "title": "Splitting the Model Into Stages — Pipeline Parallelism"
+    },
+    {
+     "at": "4:38",
+     "title": "Maya Checks Her Understanding"
+    },
+    {
+     "at": "5:27",
+     "title": "Where Teams Get This Wrong"
+    },
+    {
+     "at": "6:17",
+     "title": "Putting It Together"
+    }
+   ],
+   "tags": [
+    "GPU parallelism",
+    "data parallelism",
+    "tensor parallelism",
+    "pipeline parallelism",
+    "AI model scaling",
+    "machine learning infrastructure",
+    "distributed computing",
+    "model deployment"
+   ],
+   "src": "/media/learn/serving/serving-07.mp4",
+   "poster": "/media/learn/serving/serving-07.jpg",
+   "captions": "/media/learn/serving/serving-07.vtt"
+  },
+  {
+   "n": 8,
+   "title": "Running LLMs in Production: Metrics and Operations",
+   "summary": "Learn what actually matters when you launch an LLM in production: stop measuring averages and watch the tail latency instead, track time-to-first-token separately, understand why autoscaling doesn't work for model servers, and monitor the right dashboard metrics. After this video, you'll know what promises to make to users, how to catch failures before they cascade, and how to optimize the cost per answer.",
+   "runs": "7:59",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question Nobody Asks Before Launch"
+    },
+    {
+     "at": "0:36",
+     "title": "Stop Measuring the Average"
+    },
+    {
+     "at": "1:58",
+     "title": "Two Clocks, Not One"
+    },
+    {
+     "at": "3:04",
+     "title": "The Machine That Wakes Up Slowly"
+    },
+    {
+     "at": "4:10",
+     "title": "What The Dashboard Should Actually Show"
+    },
+    {
+     "at": "5:06",
+     "title": "What Actually Moves The Bill"
+    },
+    {
+     "at": "6:12",
+     "title": "The Three A.M. List"
+    },
+    {
+     "at": "7:02",
+     "title": "Saying It Back"
+    }
+   ],
+   "tags": [
+    "LLM production",
+    "latency monitoring",
+    "p99",
+    "time-to-first-token",
+    "autoscaling",
+    "dashboard metrics",
+    "cost optimization",
+    "operational reliability",
+    "queue depth",
+    "model serving"
+   ],
+   "src": "/media/learn/serving/serving-08.mp4",
+   "poster": "/media/learn/serving/serving-08.jpg",
+   "captions": "/media/learn/serving/serving-08.vtt"
+  }
+ ];
+
+export const LEARNING: Lesson[] = [
+  {
+   "n": 1,
+   "title": "Fitting vs. Memorizing: What Models Actually Learn",
+   "summary": "Learn the critical difference between a model that genuinely learns patterns from data and one that merely memorizes it. This video uses apartment rental data to explain fitting, overfitting, underfitting, and why splitting your data into training and test sets is essential to building models that work on new, unseen examples.",
+   "runs": "5:53",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "0:48",
+     "title": "What Fitting Means"
+    },
+    {
+     "at": "1:59",
+     "title": "What Memorising Looks Like"
+    },
+    {
+     "at": "3:04",
+     "title": "How We Actually Catch This"
+    },
+    {
+     "at": "4:01",
+     "title": "Where People Go Wrong"
+    },
+    {
+     "at": "5:06",
+     "title": "Putting It Together"
+    }
+   ],
+   "tags": [
+    "machine learning",
+    "fitting",
+    "memorization",
+    "overfitting",
+    "underfitting",
+    "training set",
+    "test set",
+    "model evaluation",
+    "parameters",
+    "generalization"
+   ],
+   "src": "/media/learn/learning/learning-01.mp4",
+   "poster": "/media/learn/learning/learning-01.jpg",
+   "captions": "/media/learn/learning/learning-01.vtt"
+  },
+  {
+   "n": 2,
+   "title": "What Does 'Best Fit' Even Mean? — The Sum of Squared Errors",
+   "summary": "Learn what \"best fit\" actually means mathematically when fitting a line to data. This video teaches you that the best line is the one that minimizes the sum of squared residuals (SSE), showing you why we square errors instead of just adding them up, and how to measure whether a model prediction is any good.",
+   "runs": "5:15",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "What Does 'Best Fit' Even Mean?"
+    },
+    {
+     "at": "0:45",
+     "title": "The Linear Model"
+    },
+    {
+     "at": "1:41",
+     "title": "The Residual: How Wrong Were We?"
+    },
+    {
+     "at": "2:25",
+     "title": "Turning Residuals Into One Number"
+    },
+    {
+     "at": "3:12",
+     "title": "So How Do You Find That Best Line?"
+    },
+    {
+     "at": "3:45",
+     "title": "Where People Trip Up"
+    },
+    {
+     "at": "4:30",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "linear regression",
+    "best fit",
+    "residuals",
+    "sum of squared errors",
+    "SSE",
+    "model fitting",
+    "machine learning basics",
+    "prediction error",
+    "least squares",
+    "statistics"
+   ],
+   "src": "/media/learn/learning/learning-02.mp4",
+   "poster": "/media/learn/learning/learning-02.jpg",
+   "captions": "/media/learn/learning/learning-02.vtt"
+  },
+  {
+   "n": 3,
+   "title": "How Machine Learning Models Learn: Gradient Descent Explained",
+   "summary": "This video reveals how machine learning models actually learn by adjusting their internal knobs based on prediction errors. You'll discover the loss function that measures how wrong a model is, and then learn the gradient descent algorithm that finds which direction to nudge each parameter to reduce that error. By the end, you'll understand the core mechanism behind training any machine learning model, and recognize common pitfalls like choosing the wrong learning rate.",
+   "runs": "7:08",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question: what does 'learning' even mean?"
+    },
+    {
+     "at": "0:41",
+     "title": "Part one: the loss function"
+    },
+    {
+     "at": "2:02",
+     "title": "Part two: which way is downhill?"
+    },
+    {
+     "at": "3:07",
+     "title": "Part three: gradient descent, the actual recipe"
+    },
+    {
+     "at": "4:21",
+     "title": "Walking it through with real numbers"
+    },
+    {
+     "at": "5:20",
+     "title": "Where people trip up"
+    },
+    {
+     "at": "6:12",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "machine learning",
+    "gradient descent",
+    "loss function",
+    "model training",
+    "learning rate",
+    "optimization",
+    "neural networks basics",
+    "parameter tuning",
+    "calculus for ML",
+    "regression"
+   ],
+   "src": "/media/learn/learning/learning-03.mp4",
+   "poster": "/media/learn/learning/learning-03.jpg",
+   "captions": "/media/learn/learning/learning-03.vtt"
+  },
+  {
+   "n": 4,
+   "title": "Overfitting vs. Underfitting: The Bias-Variance Tradeoff",
+   "summary": "Learn why a model with zero training error can still fail on new data, and how to catch overfitting before it happens. This video teaches you to split data into training, validation, and test sets, understand the bias-variance tradeoff, and use regularization to build models that generalize well.",
+   "runs": "6:24",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Model That Aced the Homework"
+    },
+    {
+     "at": "0:48",
+     "title": "Two Kinds of Error"
+    },
+    {
+     "at": "1:34",
+     "title": "Overfitting: The Wiggly Curve"
+    },
+    {
+     "at": "2:31",
+     "title": "Underfitting: The Model That's Too Lazy"
+    },
+    {
+     "at": "3:16",
+     "title": "The Tradeoff: Bias and Variance"
+    },
+    {
+     "at": "4:14",
+     "title": "Catching It Before You Ship It"
+    },
+    {
+     "at": "4:55",
+     "title": "A Quick Fix: Regularization"
+    },
+    {
+     "at": "5:37",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "overfitting",
+    "underfitting",
+    "bias-variance tradeoff",
+    "generalization",
+    "regularization",
+    "training error",
+    "test error",
+    "model validation",
+    "machine learning",
+    "model complexity"
+   ],
+   "src": "/media/learn/learning/learning-04.mp4",
+   "poster": "/media/learn/learning/learning-04.jpg",
+   "captions": "/media/learn/learning/learning-04.vtt"
+  },
+  {
+   "n": 5,
+   "title": "Classification with Logistic Regression",
+   "summary": "Learn how to predict categories instead of numbers using logistic regression. This video explains why a simple straight line fails for classification, introduces the sigmoid function to keep predictions between 0 and 1, and shows how to set decision thresholds to convert probabilities into yes-or-no predictions.",
+   "runs": "6:30",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question: what if the answer isn't a number?"
+    },
+    {
+     "at": "0:56",
+     "title": "Why not just reuse linear regression?"
+    },
+    {
+     "at": "1:40",
+     "title": "The sigmoid function"
+    },
+    {
+     "at": "2:57",
+     "title": "A worked example with real numbers"
+    },
+    {
+     "at": "3:55",
+     "title": "What a decision boundary looks like"
+    },
+    {
+     "at": "4:41",
+     "title": "The mistakes people make"
+    },
+    {
+     "at": "5:38",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "logistic regression",
+    "classification",
+    "sigmoid function",
+    "decision boundary",
+    "categorical prediction",
+    "machine learning",
+    "probability",
+    "threshold",
+    "supervised learning",
+    "predictive modeling"
+   ],
+   "src": "/media/learn/learning/learning-05.mp4",
+   "poster": "/media/learn/learning/learning-05.jpg",
+   "captions": "/media/learn/learning/learning-05.vtt"
+  },
+  {
+   "n": 6,
+   "title": "Why 92% Accuracy Can Be Useless: Confusion Matrices and Better Metrics",
+   "summary": "Learn why accuracy alone is a misleading metric for evaluating machine learning models, especially with imbalanced data. This video teaches you how to build and read a confusion matrix, then use precision and recall to truly understand your model's performance—plus why you must always test on data your model never saw during training.",
+   "runs": "6:37",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "0:42",
+     "title": "Why Accuracy Lies"
+    },
+    {
+     "at": "1:42",
+     "title": "The Confusion Matrix"
+    },
+    {
+     "at": "2:59",
+     "title": "Precision and Recall"
+    },
+    {
+     "at": "4:26",
+     "title": "The Trap of Testing on What You Trained On"
+    },
+    {
+     "at": "5:36",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "machine learning",
+    "accuracy",
+    "confusion matrix",
+    "precision and recall",
+    "model evaluation",
+    "class imbalance",
+    "train-test split",
+    "classification metrics"
+   ],
+   "src": "/media/learn/learning/learning-06.mp4",
+   "poster": "/media/learn/learning/learning-06.jpg",
+   "captions": "/media/learn/learning/learning-06.vtt"
+  },
+  {
+   "n": 7,
+   "title": "The Model That Was Too Good: Spotting Data Leakage",
+   "summary": "Learn why a machine learning model's perfect test performance can be a warning sign of hidden problems. This video teaches you how to build a real apartment-rent predictor by avoiding leakage—the sneaky way information from the future or test set can slip into training. You'll master feature scaling, encoding categories, handling missing data, and the two main patterns of leakage that break models in practice.",
+   "runs": "7:56",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Model That Was Too Good"
+    },
+    {
+     "at": "0:50",
+     "title": "What a Feature Actually Is"
+    },
+    {
+     "at": "1:43",
+     "title": "Why Distance Falls Apart Without Scaling"
+    },
+    {
+     "at": "2:53",
+     "title": "Categories Without Inventing an Order"
+    },
+    {
+     "at": "3:54",
+     "title": "What To Do With Missing Values"
+    },
+    {
+     "at": "4:36",
+     "title": "Leakage Part One: The Column Recorded Too Late"
+    },
+    {
+     "at": "5:37",
+     "title": "Leakage Part Two: Averaging Before Splitting, and the Date That Knows"
+    },
+    {
+     "at": "6:59",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "machine learning",
+    "data leakage",
+    "feature engineering",
+    "model validation",
+    "data preprocessing",
+    "regression",
+    "k-nearest neighbors",
+    "overfitting"
+   ],
+   "src": "/media/learn/learning/learning-07.mp4",
+   "poster": "/media/learn/learning/learning-07.jpg",
+   "captions": "/media/learn/learning/learning-07.vtt"
+  },
+  {
+   "n": 8,
+   "title": "The Full Machine Learning Pipeline: From Raw Data to Predictions",
+   "summary": "Watch all seven pieces of machine learning work together as one complete system—data cleaning, feature building, model training, and honest testing—using a real apartment rental prediction problem. By the end, you'll understand the exact order of operations and how to avoid the three mistakes that trip up most people when they try to do this themselves: peeking at test data, setting the learning rate wrong, and forgetting to scale features.",
+   "runs": "5:02",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Whole Thing, Start to Finish"
+    },
+    {
+     "at": "0:31",
+     "title": "Step One and Two: Data and Features"
+    },
+    {
+     "at": "1:13",
+     "title": "Step Three and Four: Model and Loss"
+    },
+    {
+     "at": "1:51",
+     "title": "Step Five: Gradient Descent Finds the Weights"
+    },
+    {
+     "at": "2:24",
+     "title": "Step Six and Seven: Split It, Then Rein It In"
+    },
+    {
+     "at": "3:05",
+     "title": "Maya Checks Her Understanding"
+    },
+    {
+     "at": "3:42",
+     "title": "Where People Trip"
+    },
+    {
+     "at": "4:24",
+     "title": "Recap: The Full Pipeline"
+    }
+   ],
+   "tags": [
+    "machine learning",
+    "linear regression",
+    "gradient descent",
+    "data pipeline",
+    "feature engineering",
+    "regularization",
+    "train-test split",
+    "model validation",
+    "overfitting"
+   ],
+   "src": "/media/learn/learning/learning-08.mp4",
+   "poster": "/media/learn/learning/learning-08.jpg",
+   "captions": "/media/learn/learning/learning-08.vtt"
   }
  ];
