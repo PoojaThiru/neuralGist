@@ -2639,4 +2639,936 @@ export const LEARNING: Lesson[] = [
  ];
 
 export const COUNTING: Lesson[] = [
-];
+  {
+   "n": 1,
+   "title": "Why Multiply for \"And\" in Counting Problems",
+   "summary": "Learn why the multiplication principle applies when counting outcomes with \"and\" in the problem—not as a memorized rule, but as something you can see and count directly. Using a cafe menu example and tree diagrams, this video shows how chaining multiple independent choices leads to multiplication, and what mistakes to watch out for when applying the rule.",
+   "runs": "6:08",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question: Why Multiply At All?"
+    },
+    {
+     "at": "0:53",
+     "title": "Part One: Just List Them"
+    },
+    {
+     "at": "1:45",
+     "title": "Part Two: The Tree Makes It Obvious"
+    },
+    {
+     "at": "2:45",
+     "title": "Part Three: The General Rule"
+    },
+    {
+     "at": "3:48",
+     "title": "Part Four: Where People Go Wrong"
+    },
+    {
+     "at": "5:05",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "multiplication principle",
+    "counting",
+    "combinatorics",
+    "tree diagrams",
+    "independent events",
+    "outcomes",
+    "fundamental counting principle",
+    "probability",
+    "discrete math"
+   ],
+   "src": "/media/learn/counting/counting-01.mp4",
+   "poster": "/media/learn/counting/counting-01.jpg",
+   "captions": "/media/learn/counting/counting-01.vtt"
+  },
+  {
+   "n": 2,
+   "title": "Permutations: Arranging Things in Order",
+   "summary": "Learn how to count the number of ways to arrange objects in order using the multiplication principle and permutation formulas. You'll discover when order matters in counting problems and how to distinguish permutations from combinations by asking whether swapping two outcomes produces something different.",
+   "runs": "5:44",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Podium Problem"
+    },
+    {
+     "at": "0:48",
+     "title": "Arranging Everything: Factorial"
+    },
+    {
+     "at": "1:53",
+     "title": "When You Don't Use Everything"
+    },
+    {
+     "at": "3:07",
+     "title": "Where People Trip Up"
+    },
+    {
+     "at": "4:09",
+     "title": "Put It Together: Password Case"
+    },
+    {
+     "at": "4:54",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "permutations",
+    "counting",
+    "arrangements",
+    "multiplication principle",
+    "factorials",
+    "order matters",
+    "combinatorics",
+    "permutation formula",
+    "podium problem"
+   ],
+   "src": "/media/learn/counting/counting-02.mp4",
+   "poster": "/media/learn/counting/counting-02.jpg",
+   "captions": "/media/learn/counting/counting-02.vtt"
+  },
+  {
+   "n": 3,
+   "title": "Combinations: Counting Groups When Order Doesn't Matter",
+   "summary": "Learn how to count the number of ways to choose a group of items when order doesn't matter—like selecting committee members or lottery numbers. You'll discover why the multiplication rule overcounts in these situations, derive the combinations formula (n choose k), and master the key distinction between ordered and unordered selection.",
+   "runs": "6:43",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Committee Problem"
+    },
+    {
+     "at": "0:49",
+     "title": "Start With Order, On Purpose"
+    },
+    {
+     "at": "1:37",
+     "title": "How Many Orders Hide Inside One Group"
+    },
+    {
+     "at": "2:36",
+     "title": "The Combinations Formula"
+    },
+    {
+     "at": "3:51",
+     "title": "A New Example: Lottery Numbers"
+    },
+    {
+     "at": "4:44",
+     "title": "The Trap: Looks Ordered But Isn't"
+    },
+    {
+     "at": "5:42",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "combinations",
+    "counting",
+    "n choose k",
+    "permutations",
+    "combinatorics",
+    "unordered selection",
+    "factorial",
+    "multiplication rule",
+    "probability"
+   ],
+   "src": "/media/learn/counting/counting-03.mp4",
+   "poster": "/media/learn/counting/counting-03.jpg",
+   "captions": "/media/learn/counting/counting-03.vtt"
+  },
+  {
+   "n": 5,
+   "title": "The Four Flavors of Counting: Order and Repetition",
+   "summary": "Learn how to sort any counting problem into one of four categories by answering two key questions: does order matter, and are repeats allowed? This video teaches you which counting method to apply to each situation, from passwords to committees, so you can stop guessing and confidently get the right answer.",
+   "runs": "6:53",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Same Numbers, Different Answers"
+    },
+    {
+     "at": "1:02",
+     "title": "The Two Questions"
+    },
+    {
+     "at": "1:46",
+     "title": "Order Matters, Repeats Allowed"
+    },
+    {
+     "at": "2:41",
+     "title": "Order Matters, No Repeats"
+    },
+    {
+     "at": "3:33",
+     "title": "Order Doesn't Matter, No Repeats"
+    },
+    {
+     "at": "4:29",
+     "title": "Order Doesn't Matter, Repeats Allowed"
+    },
+    {
+     "at": "5:13",
+     "title": "Where People Slip Up"
+    },
+    {
+     "at": "5:58",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "combinatorics",
+    "counting principles",
+    "permutations",
+    "combinations",
+    "multiplication principle",
+    "discrete math",
+    "problem-solving",
+    "order matters",
+    "repetition"
+   ],
+   "src": "/media/learn/counting/counting-05.mp4",
+   "poster": "/media/learn/counting/counting-05.jpg",
+   "captions": "/media/learn/counting/counting-05.vtt"
+  },
+  {
+   "n": 6,
+   "title": "Modelling Counting Problems: From Stories to Stage Sequences",
+   "summary": "This video teaches you how to translate word problems into structured counting problems by identifying stages and checking whether order matters. You'll learn to spot the decisions within a story, determine which choices can repeat, and set up problems correctly before applying the multiplication principle—turning the hard part of counting (the setup) into a clear, systematic skill.",
+   "runs": "5:42",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "0:42",
+     "title": "Idea One: Break It Into Stages"
+    },
+    {
+     "at": "1:41",
+     "title": "Idea Two: Does Order Matter?"
+    },
+    {
+     "at": "2:42",
+     "title": "A Full Worked Example"
+    },
+    {
+     "at": "3:53",
+     "title": "Where People Go Wrong"
+    },
+    {
+     "at": "4:41",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "counting principle",
+    "combinatorics",
+    "multiplication principle",
+    "problem modelling",
+    "order matters",
+    "permutations",
+    "stage sequences",
+    "word problem translation"
+   ],
+   "src": "/media/learn/counting/counting-06.mp4",
+   "poster": "/media/learn/counting/counting-06.jpg",
+   "captions": "/media/learn/counting/counting-06.vtt"
+  },
+  {
+   "n": 7,
+   "title": "Combining Counting Techniques: Choose, Arrange, and Restrict",
+   "summary": "Learn how to solve counting problems that require stacking multiple techniques together—choosing groups, arranging within those groups, and handling restrictions without double-counting or missing cases. By working through each problem's wrong attempt first, you'll build the intuition to avoid the four costly mistakes that cost marks on exams: treating unordered groups as ordered, guessing instead of carefully counting bad cases, double-subtracting overlaps, and multiplying by arbitrary numbers instead of actually choosing what you need.",
+   "runs": "8:59",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question"
+    },
+    {
+     "at": "0:46",
+     "title": "Problem one: choose then arrange"
+    },
+    {
+     "at": "2:14",
+     "title": "Sanity check"
+    },
+    {
+     "at": "2:46",
+     "title": "Problem two: at least one restriction"
+    },
+    {
+     "at": "4:06",
+     "title": "Two restrictions overlapping"
+    },
+    {
+     "at": "5:09",
+     "title": "Problem three: exactly k defective"
+    },
+    {
+     "at": "6:43",
+     "title": "Sanity check on the shipment"
+    },
+    {
+     "at": "7:15",
+     "title": "The costly mistakes"
+    },
+    {
+     "at": "8:12",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "counting",
+    "combinatorics",
+    "combinations",
+    "permutations",
+    "inclusion-exclusion",
+    "restrictions",
+    "exam strategies",
+    "problem-solving",
+    "defective items",
+    "committee problems"
+   ],
+   "src": "/media/learn/counting/counting-07.mp4",
+   "poster": "/media/learn/counting/counting-07.jpg",
+   "captions": "/media/learn/counting/counting-07.vtt"
+  },
+  {
+   "n": 8,
+   "title": "What Even Is an Event? Events as Subsets of the Sample Space",
+   "summary": "Learn how to formally define events in probability using set theory. This video teaches you that the sample space contains all possible outcomes, events are subsets of that space, and how to combine events using union, intersection, and complement. By the end, you'll understand the complete toolkit for building and analyzing events before moving on to probability calculations.",
+   "runs": "6:01",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "What Even Is an Event?"
+    },
+    {
+     "at": "0:42",
+     "title": "The Sample Space: All Possible Outcomes"
+    },
+    {
+     "at": "1:40",
+     "title": "Events as Subsets"
+    },
+    {
+     "at": "2:28",
+     "title": "Combining Events: Union and Intersection"
+    },
+    {
+     "at": "3:29",
+     "title": "The Complement: Everything Else"
+    },
+    {
+     "at": "4:09",
+     "title": "Common Mixups"
+    },
+    {
+     "at": "5:03",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "probability",
+    "events",
+    "sample space",
+    "set theory",
+    "union",
+    "intersection",
+    "complement",
+    "mutually exclusive",
+    "outcomes",
+    "discrete math"
+   ],
+   "src": "/media/learn/counting/counting-08.mp4",
+   "poster": "/media/learn/counting/counting-08.jpg",
+   "captions": "/media/learn/counting/counting-08.vtt"
+  },
+  {
+   "n": 9,
+   "title": "The Three Axioms of Probability",
+   "summary": "Learn the three fundamental rules (axioms) that every probability assignment must obey: non-negativity, the sample space summing to one, and the addition rule for disjoint events. This video explains why these axioms form the foundation of probability theory and shows you how to use them correctly, including common mistakes to avoid.",
+   "runs": "7:10",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Why Do We Need Rules at All?"
+    },
+    {
+     "at": "0:41",
+     "title": "Sample Space and Events, Quickly"
+    },
+    {
+     "at": "1:22",
+     "title": "Axiom One: Nothing Negative"
+    },
+    {
+     "at": "2:09",
+     "title": "Axiom Two: The Whole Thing Sums to One"
+    },
+    {
+     "at": "2:58",
+     "title": "Axiom Three: Splitting Probability Over Disjoint Events"
+    },
+    {
+     "at": "4:20",
+     "title": "Two Quick Things That Fall Out for Free"
+    },
+    {
+     "at": "5:10",
+     "title": "Where People Trip Up"
+    },
+    {
+     "at": "6:12",
+     "title": "Putting the Three Rules Together"
+    }
+   ],
+   "tags": [
+    "probability axioms",
+    "probability rules",
+    "sample space",
+    "disjoint events",
+    "probability theory foundations",
+    "complement rule",
+    "probability addition",
+    "mathematical axioms"
+   ],
+   "src": "/media/learn/counting/counting-09.mp4",
+   "poster": "/media/learn/counting/counting-09.jpg",
+   "captions": "/media/learn/counting/counting-09.vtt"
+  },
+  {
+   "n": 10,
+   "title": "Complement, Union, and Inclusion-Exclusion in Probability",
+   "summary": "Learn three essential probability tools: the complement rule for finding \"not this event,\" the union rule for \"this or that,\" and inclusion-exclusion to avoid the double-counting mistake almost everyone makes at first. By the end, you'll be able to answer questions like \"what's the chance at least one of two dice shows a six?\" using circles and a single habit—asking whether events can happen together.",
+   "runs": "6:25",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question: what if you just want 'not' or 'or'?"
+    },
+    {
+     "at": "0:47",
+     "title": "Part one: the complement rule"
+    },
+    {
+     "at": "2:14",
+     "title": "Part two: the union, 'this or that'"
+    },
+    {
+     "at": "3:10",
+     "title": "Working the card example fully"
+    },
+    {
+     "at": "4:02",
+     "title": "Part three: stretching to three events"
+    },
+    {
+     "at": "5:04",
+     "title": "Where people go wrong"
+    },
+    {
+     "at": "5:48",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "probability",
+    "complement rule",
+    "union",
+    "inclusion-exclusion",
+    "counting overlap",
+    "sample space",
+    "mutually exclusive",
+    "Venn diagrams"
+   ],
+   "src": "/media/learn/counting/counting-10.mp4",
+   "poster": "/media/learn/counting/counting-10.jpg",
+   "captions": "/media/learn/counting/counting-10.vtt"
+  },
+  {
+   "n": 11,
+   "title": "Probability: The Equally Likely Outcomes Model",
+   "summary": "Learn why we divide to calculate probability, and discover the hidden assumption behind \"one out of six.\" This video teaches you the equally likely outcomes model—how to count favorable outcomes and divide by total outcomes to find probability. You'll understand when this method works, what mistakes to avoid, and how to identify the correct sample space.",
+   "runs": "5:12",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question: why divide at all?"
+    },
+    {
+     "at": "0:43",
+     "title": "The equally likely outcomes model"
+    },
+    {
+     "at": "1:45",
+     "title": "Worked example: two dice, a sum of seven"
+    },
+    {
+     "at": "2:53",
+     "title": "Worked example: drawing one card"
+    },
+    {
+     "at": "3:34",
+     "title": "Where it goes wrong"
+    },
+    {
+     "at": "4:28",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "probability",
+    "equally likely outcomes",
+    "sample space",
+    "counting",
+    "fair dice",
+    "fractions",
+    "basic probability",
+    "how to calculate probability",
+    "outcomes",
+    "conditional probability"
+   ],
+   "src": "/media/learn/counting/counting-11.mp4",
+   "poster": "/media/learn/counting/counting-11.jpg",
+   "captions": "/media/learn/counting/counting-11.vtt"
+  },
+  {
+   "n": 12,
+   "title": "One Sensor, One Number: Continuity and Probability Meaning",
+   "summary": "This video explores what happens when events accumulate infinitely and what a single probability number actually means. You'll learn the continuity rule—how probability behaves for nested sequences of events—and discover two rigorous interpretations of probability: long-run frequency and degree of belief. By the end, you'll understand why the probability axioms are silent on meaning and how to apply these concepts correctly.",
+   "runs": "8:07",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "One Sensor, One Number"
+    },
+    {
+     "at": "0:40",
+     "title": "Nested Sets Growing Outward"
+    },
+    {
+     "at": "1:56",
+     "title": "Shrinking Sets and the Mirror Version"
+    },
+    {
+     "at": "2:34",
+     "title": "Will the Test Ever Catch the Defect?"
+    },
+    {
+     "at": "3:45",
+     "title": "Back to the One Sensor on the Bench"
+    },
+    {
+     "at": "4:22",
+     "title": "The Long-Run Reading"
+    },
+    {
+     "at": "5:10",
+     "title": "Degree of Belief, and Updating on a Test"
+    },
+    {
+     "at": "6:29",
+     "title": "Where People Slip"
+    },
+    {
+     "at": "7:16",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "continuity axiom",
+    "nested sequences",
+    "probability interpretation",
+    "frequentist",
+    "subjective probability",
+    "degree of belief",
+    "probability limits",
+    "sensor testing",
+    "axioms of probability",
+    "event sequences"
+   ],
+   "src": "/media/learn/counting/counting-12.mp4",
+   "poster": "/media/learn/counting/counting-12.jpg",
+   "captions": "/media/learn/counting/counting-12.vtt"
+  },
+  {
+   "n": 13,
+   "title": "Three Essential Proofs in Probability Theory",
+   "summary": "Learn how to build rigorous proofs in probability starting from only three axioms and basic set facts. This video proves three fundamental results—the complement rule, monotonicity, and the union bound—showing how each one uses a simple technique: partition events into non-overlapping pieces, then apply the axioms systematically. By the end, you'll see how mathematical claims trace back to axioms rather than intuition.",
+   "runs": "7:02",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Why bother proving anything?"
+    },
+    {
+     "at": "0:53",
+     "title": "Setting up the complement rule"
+    },
+    {
+     "at": "1:30",
+     "title": "The complement rule, proved"
+    },
+    {
+     "at": "2:27",
+     "title": "Bigger set, bigger probability"
+    },
+    {
+     "at": "3:36",
+     "title": "Saying it back"
+    },
+    {
+     "at": "4:05",
+     "title": "When at least one of several things might happen"
+    },
+    {
+     "at": "4:47",
+     "title": "Proving the bound"
+    },
+    {
+     "at": "5:40",
+     "title": "Where people trip up"
+    },
+    {
+     "at": "6:23",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "probability theory",
+    "mathematical proofs",
+    "axioms",
+    "complement rule",
+    "monotonicity",
+    "union bound",
+    "set theory",
+    "rigorous mathematics",
+    "proof techniques"
+   ],
+   "src": "/media/learn/counting/counting-13.mp4",
+   "poster": "/media/learn/counting/counting-13.jpg",
+   "captions": "/media/learn/counting/counting-13.vtt"
+  },
+  {
+   "n": 14,
+   "title": "Conditional Probability: Shrinking the Sample Space",
+   "summary": "Learn what happens to a probability when you discover new information is true. This video teaches the formula for conditional probability and why it works, then walks through common mistakes like confusing P(A|B) with P(B|A) and forgetting to complete the division. You'll understand conditional probability not as a formula to memorize, but as a way of shrinking your sample space to only the outcomes that are still possible.",
+   "runs": "6:45",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "0:43",
+     "title": "Shrinking the Sample Space"
+    },
+    {
+     "at": "1:33",
+     "title": "The Formula"
+    },
+    {
+     "at": "2:29",
+     "title": "Two Dice, Worked Out"
+    },
+    {
+     "at": "3:38",
+     "title": "Saying It Back"
+    },
+    {
+     "at": "4:19",
+     "title": "Mistake One: Order Matters"
+    },
+    {
+     "at": "5:15",
+     "title": "Mistake Two: Forgetting the Shrink"
+    },
+    {
+     "at": "5:51",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "conditional probability",
+    "sample space",
+    "probability formula",
+    "given that",
+    "dice",
+    "Bayes",
+    "joint probability",
+    "independent events",
+    "probability mistakes"
+   ],
+   "src": "/media/learn/counting/counting-14.mp4",
+   "poster": "/media/learn/counting/counting-14.jpg",
+   "captions": "/media/learn/counting/counting-14.vtt"
+  },
+  {
+   "n": 15,
+   "title": "The Multiplication Rule: Counting Outcomes of Multi-Stage Experiments",
+   "summary": "Learn the multiplication rule—the fundamental counting principle that lets you count all possible outcomes of multi-stage experiments without listing them out. You'll understand why you multiply (not add) the number of outcomes at each stage, see how it applies to everything from coin flips and dice to menus and passwords, and discover the common mistakes to avoid.",
+   "runs": "6:03",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "0:43",
+     "title": "Stages of an Experiment"
+    },
+    {
+     "at": "1:24",
+     "title": "The Rule Itself"
+    },
+    {
+     "at": "2:32",
+     "title": "Worked Example: The Diner Menu"
+    },
+    {
+     "at": "3:21",
+     "title": "Why Order Matters, But Independence Doesn't"
+    },
+    {
+     "at": "4:18",
+     "title": "Common Mistakes"
+    },
+    {
+     "at": "5:07",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "multiplication rule",
+    "counting principle",
+    "sample space",
+    "combinatorics",
+    "probability",
+    "multi-stage experiments",
+    "tree diagrams",
+    "fundamental counting",
+    "outcomes",
+    "discrete math"
+   ],
+   "src": "/media/learn/counting/counting-15.mp4",
+   "poster": "/media/learn/counting/counting-15.jpg",
+   "captions": "/media/learn/counting/counting-15.vtt"
+  },
+  {
+   "n": 16,
+   "title": "Law of Total Probability: Breaking Down Complex Events",
+   "summary": "Learn how to find a single probability for an event when the odds change depending on which situation occurs first. This video teaches the law of total probability: how to split your sample space into non-overlapping pieces, calculate the event's probability in each piece, then combine them with proper weighting. After watching, you'll be able to handle real problems like factory defect rates or cascading random experiments.",
+   "runs": "6:36",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question"
+    },
+    {
+     "at": "0:50",
+     "title": "Splitting the sample space"
+    },
+    {
+     "at": "1:45",
+     "title": "The law itself"
+    },
+    {
+     "at": "2:52",
+     "title": "Worked example: the factory"
+    },
+    {
+     "at": "3:57",
+     "title": "A second flavor: coin then dice"
+    },
+    {
+     "at": "4:44",
+     "title": "Where people go wrong"
+    },
+    {
+     "at": "5:56",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "law of total probability",
+    "conditional probability",
+    "partition",
+    "sample space",
+    "probability theory",
+    "weighted average",
+    "statistics",
+    "Bayes theorem foundations"
+   ],
+   "src": "/media/learn/counting/counting-16.mp4",
+   "poster": "/media/learn/counting/counting-16.jpg",
+   "captions": "/media/learn/counting/counting-16.vtt"
+  },
+  {
+   "n": 17,
+   "title": "Bayes' Formula: Flipping Conditional Probability Around",
+   "summary": "Learn why a positive test result doesn't necessarily mean you have a disease—especially when the illness is rare. This video derives Bayes' formula from the definition of conditional probability and shows you how to correctly calculate the probability of a hypothesis given evidence by accounting for the base rate.",
+   "runs": "6:40",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question: Which Way Does the Evidence Point?"
+    },
+    {
+     "at": "0:55",
+     "title": "Recall: What Conditional Probability Means"
+    },
+    {
+     "at": "1:40",
+     "title": "Deriving Bayes' Formula"
+    },
+    {
+     "at": "2:32",
+     "title": "The Tricky Part: Finding P of B"
+    },
+    {
+     "at": "3:17",
+     "title": "Worked Example: The Rare Illness Test"
+    },
+    {
+     "at": "4:34",
+     "title": "Priya Restates It"
+    },
+    {
+     "at": "5:20",
+     "title": "The Classic Mistake: Ignoring the Base Rate"
+    },
+    {
+     "at": "5:55",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "Bayes theorem",
+    "conditional probability",
+    "base rate fallacy",
+    "false positives",
+    "medical testing",
+    "probability",
+    "statistics",
+    "hypothesis testing"
+   ],
+   "src": "/media/learn/counting/counting-17.mp4",
+   "poster": "/media/learn/counting/counting-17.jpg",
+   "captions": "/media/learn/counting/counting-17.vtt"
+  },
+  {
+   "n": 18,
+   "title": "Independence: The Precise Definition Beyond Intuition",
+   "summary": "Independence isn't about whether events feel connected—it's a precise mathematical equation: P(A and B) = P(A) × P(B). You'll learn to distinguish independence from disjointness, see why physically linked events can be independent while seemingly unrelated events are dependent, and master the conditions for three or more events.",
+   "runs": "7:10",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question"
+    },
+    {
+     "at": "0:40",
+     "title": "The definition"
+    },
+    {
+     "at": "1:35",
+     "title": "Connected yet independent"
+    },
+    {
+     "at": "2:15",
+     "title": "Unrelated yet dependent"
+    },
+    {
+     "at": "2:55",
+     "title": "Disjoint is not independent"
+    },
+    {
+     "at": "4:04",
+     "title": "Three or more events"
+    },
+    {
+     "at": "5:04",
+     "title": "Repeated trials and the binomial coefficient"
+    },
+    {
+     "at": "6:14",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "probability",
+    "independence",
+    "disjoint events",
+    "conditional probability",
+    "pairwise independence",
+    "mutually independent",
+    "binomial",
+    "statistical dependence"
+   ],
+   "src": "/media/learn/counting/counting-18.mp4",
+   "poster": "/media/learn/counting/counting-18.jpg",
+   "captions": "/media/learn/counting/counting-18.vtt"
+  },
+  {
+   "n": 20,
+   "title": "How to Read Probability Questions on Exams: A Strategic Framework",
+   "summary": "Knowing probability formulas isn't enough—you need to know which one to use. This video teaches a practical strategy for reading exam questions carefully: identify what the question is asking (counting, probability, or expectation), then apply a systematic approach to avoid the three most common mistakes. You'll learn to catch errors before they happen and manage your time across the whole exam, turning your existing knowledge into reliable exam performance.",
+   "runs": "6:24",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Real Problem Isn't the Formula"
+    },
+    {
+     "at": "0:33",
+     "title": "Step One: What Kind of Object Is This?"
+    },
+    {
+     "at": "1:30",
+     "title": "Worked Example: Reading the Question Correctly"
+    },
+    {
+     "at": "2:24",
+     "title": "The Three Mistakes That Cost the Most Marks"
+    },
+    {
+     "at": "3:15",
+     "title": "Worked Example: Catching a Mistake Mid-Solution"
+    },
+    {
+     "at": "4:05",
+     "title": "The Sixty-Second Sanity Check"
+    },
+    {
+     "at": "4:53",
+     "title": "Managing the Whole Exam, Not Just One Question"
+    },
+    {
+     "at": "5:32",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "probability",
+    "exam strategy",
+    "counting",
+    "independence",
+    "permutations",
+    "problem-solving",
+    "test-taking",
+    "mathematics",
+    "worked examples",
+    "error detection"
+   ],
+   "src": "/media/learn/counting/counting-20.mp4",
+   "poster": "/media/learn/counting/counting-20.jpg",
+   "captions": "/media/learn/counting/counting-20.vtt"
+  }
+ ];
