@@ -6665,3 +6665,793 @@ export const CHANCE: Lesson[] = [
    "captions": "/media/learn/chance/chance-19.vtt"
   }
  ];
+
+export const SHIFT: Lesson[] = [
+  {
+   "n": 1,
+   "title": "Why Legacy Systems Can't Do Everything: The Structural Limits",
+   "summary": "This video explains why long-standing business systems fail not because they're poorly built, but because they're fundamentally bounded by documented requirements written years ago. You'll learn to identify what legacy systems structurally cannot do—like reading intent from unstructured text, noticing patterns across separate events, or composing coherent narratives—and whether addressing these gaps is actually worth the cost.",
+   "runs": "5:58",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "0:39",
+     "title": "Bounded By a Document"
+    },
+    {
+     "at": "1:34",
+     "title": "The Angry Email"
+    },
+    {
+     "at": "2:25",
+     "title": "The Shared Cause"
+    },
+    {
+     "at": "3:16",
+     "title": "The Incident Summary"
+    },
+    {
+     "at": "4:01",
+     "title": "The System Isn't Bad"
+    },
+    {
+     "at": "4:53",
+     "title": "The Real Question"
+    }
+   ],
+   "tags": [
+    "legacy systems",
+    "system design",
+    "business processes",
+    "automation limits",
+    "requirements documentation",
+    "human-computer tasks",
+    "operational efficiency",
+    "technical debt",
+    "pattern recognition",
+    "system modernization"
+   ],
+   "src": "/media/learn/shift/shift-01.mp4",
+   "poster": "/media/learn/shift/shift-01.jpg",
+   "captions": "/media/learn/shift/shift-01.vtt"
+  },
+  {
+   "n": 2,
+   "title": "Three Shifts That Changed Software: From APIs to Foundation Models",
+   "summary": "This video explains three fundamental shifts that brought language models into production software: models learned to handle plain-language instructions instead of fixed APIs, a single model could perform multiple different jobs, and they became fast and cheap enough to run during live transactions. You'll understand what a foundation model actually is, what crucially did not change about them, and why this matters for building real systems.",
+   "runs": "7:22",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "0:55",
+     "title": "Shift One: Instructions, Not APIs"
+    },
+    {
+     "at": "2:16",
+     "title": "Shift Two: One Model, Many Jobs"
+    },
+    {
+     "at": "3:29",
+     "title": "Shift Three: Fast and Cheap Enough to Matter"
+    },
+    {
+     "at": "4:29",
+     "title": "What A Foundation Model Actually Is"
+    },
+    {
+     "at": "5:23",
+     "title": "What Did NOT Change"
+    },
+    {
+     "at": "6:16",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "foundation models",
+    "language models",
+    "software architecture",
+    "APIs",
+    "dispatch systems",
+    "machine learning",
+    "software engineering",
+    "reliability",
+    "technology evolution",
+    "practical AI"
+   ],
+   "src": "/media/learn/shift/shift-02.mp4",
+   "poster": "/media/learn/shift/shift-02.jpg",
+   "captions": "/media/learn/shift/shift-02.vtt"
+  },
+  {
+   "n": 3,
+   "title": "Why Adding AI to Existing Systems Fails (And What Works Instead)",
+   "summary": "Most companies add AI features to screens that already work well, which is why adoption dies after two weeks. Learn the architectural difference between bolting on a model versus placing it where humans are manually gluing steps together—and see how a logistics company uses that principle to actually solve messy, exception-driven processes.",
+   "runs": "6:15",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "0:38",
+     "title": "The First Attempt"
+    },
+    {
+     "at": "1:37",
+     "title": "Why It Keeps Happening"
+    },
+    {
+     "at": "2:15",
+     "title": "The Other Way"
+    },
+    {
+     "at": "3:47",
+     "title": "The Architectural Difference"
+    },
+    {
+     "at": "4:46",
+     "title": "The Expensive Mistake, Named"
+    },
+    {
+     "at": "5:28",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "AI implementation",
+    "system design",
+    "architecture",
+    "dispatch systems",
+    "process automation",
+    "adoption failure",
+    "human-AI workflow",
+    "exceptions handling",
+    "integration strategy"
+   ],
+   "src": "/media/learn/shift/shift-03.mp4",
+   "poster": "/media/learn/shift/shift-03.jpg",
+   "captions": "/media/learn/shift/shift-03.vtt"
+  },
+  {
+   "n": 7,
+   "title": "The Honest Model Call: What You're Actually Building",
+   "summary": "Learn what a model call actually is in code: text in, text out, stateless, and often unpredictable. This video breaks down the five-part component (input, prompt, model, validate, fallback) you need to ship reliably, and the common mistakes teams make when treating models as magic instead of engineering.",
+   "runs": "8:00",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The smallest honest unit"
+    },
+    {
+     "at": "0:52",
+     "title": "Request in, text out, nothing remembered"
+    },
+    {
+     "at": "2:02",
+     "title": "Making output usable by code"
+    },
+    {
+     "at": "3:13",
+     "title": "Same input, different output"
+    },
+    {
+     "at": "4:03",
+     "title": "Where you're allowed to put it"
+    },
+    {
+     "at": "4:44",
+     "title": "The exception classifier"
+    },
+    {
+     "at": "5:35",
+     "title": "Decide the wrong answer before you ship"
+    },
+    {
+     "at": "6:24",
+     "title": "Where people trip"
+    },
+    {
+     "at": "6:56",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "model API",
+    "LLM integration",
+    "prompt engineering",
+    "software architecture",
+    "error handling",
+    "latency",
+    "temperature sampling",
+    "production systems",
+    "fallback design",
+    "validation"
+   ],
+   "src": "/media/learn/shift/shift-07.mp4",
+   "poster": "/media/learn/shift/shift-07.jpg",
+   "captions": "/media/learn/shift/shift-07.vtt"
+  },
+  {
+   "n": 8,
+   "title": "What Is an Agent? A Concrete Definition",
+   "summary": "Learn the specific definition of an AI agent: a model in a loop with tools that sets a goal, takes actions, observes results, and decides what to do next. By the end, you'll be able to distinguish agents from single model calls, understand when to use them versus fixed pipelines, and know the engineering controls needed to keep them safe and bounded.",
+   "runs": "8:04",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The most over-used word in the field"
+    },
+    {
+     "at": "0:44",
+     "title": "A model in a loop, with tools"
+    },
+    {
+     "at": "1:41",
+     "title": "Function versus process"
+    },
+    {
+     "at": "2:19",
+     "title": "Classifying is a call"
+    },
+    {
+     "at": "2:55",
+     "title": "Resolving is an agent"
+    },
+    {
+     "at": "3:58",
+     "title": "The honest engineering reality"
+    },
+    {
+     "at": "5:04",
+     "title": "The controls are the subject"
+    },
+    {
+     "at": "6:10",
+     "title": "The rule of thumb"
+    },
+    {
+     "at": "7:06",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "agent",
+    "AI",
+    "definition",
+    "loop",
+    "tools",
+    "model",
+    "safety",
+    "engineering",
+    "process",
+    "control"
+   ],
+   "src": "/media/learn/shift/shift-08.mp4",
+   "poster": "/media/learn/shift/shift-08.jpg",
+   "captions": "/media/learn/shift/shift-08.vtt"
+  },
+  {
+   "n": 9,
+   "title": "The Glue Problem: Why Tools Need a Common Interface",
+   "summary": "Learn why connecting AI agents to real systems is harder than it sounds, and how a common protocol prevents wasted rewrites when frameworks change. This video teaches you to distinguish between making a tool describable (which is easy) and making it safe for an AI to call (which is your responsibility).",
+   "runs": "7:32",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "0:41",
+     "title": "The Glue Problem"
+    },
+    {
+     "at": "1:45",
+     "title": "A Common Way to Describe What You Offer"
+    },
+    {
+     "at": "2:55",
+     "title": "The Integration Becomes an Asset"
+    },
+    {
+     "at": "3:47",
+     "title": "What It Doesn't Promise"
+    },
+    {
+     "at": "4:57",
+     "title": "The Mistake Teams Make"
+    },
+    {
+     "at": "5:41",
+     "title": "The CTO Decision"
+    },
+    {
+     "at": "6:37",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "AI agents",
+    "MCP",
+    "system integration",
+    "tool exposure",
+    "framework interoperability",
+    "API design",
+    "safety boundaries",
+    "CTO decision-making",
+    "protocol standards",
+    "technical debt"
+   ],
+   "src": "/media/learn/shift/shift-09.mp4",
+   "poster": "/media/learn/shift/shift-09.jpg",
+   "captions": "/media/learn/shift/shift-09.vtt"
+  },
+  {
+   "n": 10,
+   "title": "From RAG to GraphRAG: Grounding AI in Your Business Data",
+   "summary": "Learn why foundation models hallucinate when asked about your company's specifics, and how two generations of retrieval techniques—RAG and GraphRAG—solve that problem differently. This video shows you how to move from vector search over documents to structured knowledge graphs, and why storing embeddings in a graph database matters operationally.",
+   "runs": "8:19",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "It doesn't know anything about us"
+    },
+    {
+     "at": "1:15",
+     "title": "Search by meaning, not keyword"
+    },
+    {
+     "at": "2:13",
+     "title": "The business, written down as a graph"
+    },
+    {
+     "at": "3:18",
+     "title": "Naming the two generations"
+    },
+    {
+     "at": "4:34",
+     "title": "One question, answered both ways"
+    },
+    {
+     "at": "5:30",
+     "title": "One store instead of two"
+    },
+    {
+     "at": "6:22",
+     "title": "The honest cost"
+    },
+    {
+     "at": "7:04",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "RAG",
+    "GraphRAG",
+    "knowledge graphs",
+    "semantic search",
+    "retrieval-augmented generation",
+    "vector embeddings",
+    "Neo4j",
+    "AI grounding",
+    "foundation models",
+    "graph databases"
+   ],
+   "src": "/media/learn/shift/shift-10.mp4",
+   "poster": "/media/learn/shift/shift-10.jpg",
+   "captions": "/media/learn/shift/shift-10.vtt"
+  },
+  {
+   "n": 11,
+   "title": "Three Controls: Guardrails, Routing, and Context Engineering",
+   "summary": "Learn the three essential control systems that prevent bad outputs, control costs, and protect your LLM application in production. This video explains guardrails (checking input and output), routing (matching task difficulty to model cost), and context engineering (controlling what the model sees)—and why each one is necessary when your system meets real customers and real budgets.",
+   "runs": "8:06",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "0:57",
+     "title": "Guardrails: In and Out"
+    },
+    {
+     "at": "2:00",
+     "title": "Where the List Comes From"
+    },
+    {
+     "at": "2:47",
+     "title": "Not Every Job Needs the Expensive Model"
+    },
+    {
+     "at": "3:48",
+     "title": "The Catch: You Have to Catch the Mistake"
+    },
+    {
+     "at": "4:37",
+     "title": "Context Engineering: What the Model Sees"
+    },
+    {
+     "at": "5:33",
+     "title": "Where This Goes Wrong"
+    },
+    {
+     "at": "6:21",
+     "title": "What Each One Costs"
+    },
+    {
+     "at": "7:03",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "LLM safety",
+    "guardrails",
+    "routing",
+    "context engineering",
+    "AI controls",
+    "production systems",
+    "cost optimization",
+    "evaluation systems",
+    "model deployment",
+    "system design"
+   ],
+   "src": "/media/learn/shift/shift-11.mp4",
+   "poster": "/media/learn/shift/shift-11.jpg",
+   "captions": "/media/learn/shift/shift-11.vtt"
+  },
+  {
+   "n": 12,
+   "title": "One Word, Four Jobs: What \"Prompt Engineering\" Really Means",
+   "summary": "Prompt engineering isn't one skill—it's four different disciplines that teams often confuse, wasting budget on the visible parts while neglecting the invisible ones. This video separates prompt engineering, context engineering, loop engineering, and harness engineering, showing how each operates on a real exception-handling pipeline. By the end, you'll know which of the four actually matters most in production, and why most teams are funding the wrong one.",
+   "runs": "6:37",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "One Word, Four Jobs"
+    },
+    {
+     "at": "0:39",
+     "title": "Prompt Engineering: The Smallest One"
+    },
+    {
+     "at": "1:29",
+     "title": "Context Engineering: What Goes In The Window"
+    },
+    {
+     "at": "2:33",
+     "title": "Loop Engineering: What Happens On Attempt Two"
+    },
+    {
+     "at": "3:34",
+     "title": "Harness Engineering: Everything Around It"
+    },
+    {
+     "at": "4:40",
+     "title": "All Four On One Exception"
+    },
+    {
+     "at": "5:13",
+     "title": "The Mistake: Funding The Wrong One"
+    },
+    {
+     "at": "5:58",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "prompt engineering",
+    "context engineering",
+    "loop engineering",
+    "harness engineering",
+    "LLM systems",
+    "production ML",
+    "model deployment",
+    "system design",
+    "AI infrastructure",
+    "validation and monitoring"
+   ],
+   "src": "/media/learn/shift/shift-12.mp4",
+   "poster": "/media/learn/shift/shift-12.jpg",
+   "captions": "/media/learn/shift/shift-12.vtt"
+  },
+  {
+   "n": 14,
+   "title": "When Not to Use AI: Choosing the Right Tool",
+   "summary": "Learn when to skip language models entirely and use classical machine learning instead. This video teaches you to match the problem to the tool: structured data → regression or classification, unstructured text → foundation models, format consistency → fine-tuning, and company facts → retrieval. You'll understand why choosing wrong can waste months of work and how to avoid costly mistakes like fine-tuning when you should be updating a database.",
+   "runs": "6:25",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question nobody asks"
+    },
+    {
+     "at": "0:36",
+     "title": "Regression: numbers from numbers"
+    },
+    {
+     "at": "1:51",
+     "title": "Classification: same argument, different output"
+    },
+    {
+     "at": "2:35",
+     "title": "The honest boundary"
+    },
+    {
+     "at": "3:17",
+     "title": "Fine-tuning: the piece in between"
+    },
+    {
+     "at": "4:44",
+     "title": "The mistake in the wild"
+    },
+    {
+     "at": "5:18",
+     "title": "Recap: shape of the input, shape of the answer"
+    }
+   ],
+   "tags": [
+    "machine learning",
+    "regression",
+    "classification",
+    "language models",
+    "fine-tuning",
+    "retrieval",
+    "structured data",
+    "practical AI",
+    "cost optimization",
+    "tool selection"
+   ],
+   "src": "/media/learn/shift/shift-14.mp4",
+   "poster": "/media/learn/shift/shift-14.jpg",
+   "captions": "/media/learn/shift/shift-14.vtt"
+  },
+  {
+   "n": 15,
+   "title": "The Real Cost of AI Agents: Building Your Cost Model",
+   "summary": "Learn how to calculate and break down the true cost of running AI agents in production, from tokens and steps to retries and human review. You'll understand why costs scale with transaction volume rather than seats, and discover the four concrete levers that actually control your bill.",
+   "runs": "7:27",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question that kills projects after launch"
+    },
+    {
+     "at": "0:51",
+     "title": "The first layer: tokens in, tokens out"
+    },
+    {
+     "at": "1:31",
+     "title": "Multiply by steps, add retries"
+    },
+    {
+     "at": "2:19",
+     "title": "Add evaluation runs and the human you haven't removed"
+    },
+    {
+     "at": "3:17",
+     "title": "Per transaction, not per seat"
+    },
+    {
+     "at": "4:05",
+     "title": "The levers that actually move the number"
+    },
+    {
+     "at": "5:04",
+     "title": "Two fifty versus seven dollars — same system, same day"
+    },
+    {
+     "at": "5:54",
+     "title": "What to instrument from day one"
+    },
+    {
+     "at": "6:30",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "AI cost model",
+    "tokens in tokens out",
+    "agent pricing",
+    "production costs",
+    "evaluation runs",
+    "cost optimization",
+    "per-transaction billing",
+    "AI economics",
+    "instrumentation",
+    "cost metering"
+   ],
+   "src": "/media/learn/shift/shift-15.mp4",
+   "poster": "/media/learn/shift/shift-15.jpg",
+   "captions": "/media/learn/shift/shift-15.vtt"
+  },
+  {
+   "n": 16,
+   "title": "How AI Systems Fail Quietly: When Everything Looks Fine But Isn't",
+   "summary": "AI systems rarely crash—instead they confidently produce plausible but wrong answers while all dashboards show green. This video teaches you the four ways intelligent systems degrade silently (confident wrong answers, silent degradation, stalls, and compounding errors), and how to design systems that catch these failures through logging, auditability, and governance policies that define what the system can do alone, what requires human approval, and what it should never touch.",
+   "runs": "7:31",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "It Doesn't Fall Over"
+    },
+    {
+     "at": "0:44",
+     "title": "The Confident Wrong Answer"
+    },
+    {
+     "at": "1:31",
+     "title": "Silent Degradation"
+    },
+    {
+     "at": "2:25",
+     "title": "The Stall"
+    },
+    {
+     "at": "3:13",
+     "title": "Compounding Error"
+    },
+    {
+     "at": "4:04",
+     "title": "Who's Responsible"
+    },
+    {
+     "at": "4:53",
+     "title": "What You Actually Log"
+    },
+    {
+     "at": "5:39",
+     "title": "Alone, Propose, Never"
+    },
+    {
+     "at": "6:34",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "AI failures",
+    "silent degradation",
+    "system reliability",
+    "accountability",
+    "logging and monitoring",
+    "AI governance",
+    "intelligent systems",
+    "decision auditing",
+    "production AI",
+    "error prevention"
+   ],
+   "src": "/media/learn/shift/shift-16.mp4",
+   "poster": "/media/learn/shift/shift-16.jpg",
+   "captions": "/media/learn/shift/shift-16.vtt"
+  },
+  {
+   "n": 18,
+   "title": "What Changes for You: Backend Skills in AI-Augmented Systems",
+   "summary": "Learn what backend engineering skills transfer directly to building systems with unreliable AI components—and which genuinely new skills you need. This lesson breaks down exactly what stays the same (systems thinking, testing, not trusting components), what's actually new (thinking in distributions, building evaluation sets, designing for quiet failures), and what's worth studying first.",
+   "runs": "8:39",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "So what do I actually need to learn?"
+    },
+    {
+     "at": "0:42",
+     "title": "What Transfers Almost Entirely"
+    },
+    {
+     "at": "1:51",
+     "title": "New Skill One: Thinking in Distributions"
+    },
+    {
+     "at": "2:41",
+     "title": "New Skill Two: Owning an Evaluation Set"
+    },
+    {
+     "at": "3:36",
+     "title": "New Skill Three and Four: The Loop and the Cost"
+    },
+    {
+     "at": "4:40",
+     "title": "What's Not Worth Your Time"
+    },
+    {
+     "at": "5:28",
+     "title": "Where Each Role Lands"
+    },
+    {
+     "at": "6:20",
+     "title": "A Realistic Order of Learning"
+    },
+    {
+     "at": "7:02",
+     "title": "The Mistake People Make"
+    },
+    {
+     "at": "7:35",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "backend development",
+    "AI systems",
+    "evaluation sets",
+    "system design",
+    "model deployment",
+    "skill transfer",
+    "engineering transitions",
+    "distribution thinking",
+    "reliability",
+    "cost per transaction"
+   ],
+   "src": "/media/learn/shift/shift-18.mp4",
+   "poster": "/media/learn/shift/shift-18.jpg",
+   "captions": "/media/learn/shift/shift-18.vtt"
+  },
+  {
+   "n": 19,
+   "title": "Six Questions to Decide if Your Company Should Build AI Systems",
+   "summary": "This video teaches the six questions you need to answer honestly to decide whether your company should invest in probabilistic AI systems, in the order they must be asked. You'll learn how to evaluate unhandled work costs, risk tolerance, data availability, running costs, team capability, and sponsor commitment—and how saying \"not yet\" is often the responsible answer. By the end, you'll have a framework to make this decision based on business realities rather than technology hype.",
+   "runs": "6:35",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question Nobody Answers Honestly"
+    },
+    {
+     "at": "0:40",
+     "title": "Question One — What Can't Software Do, and What's It Costing You"
+    },
+    {
+     "at": "1:28",
+     "title": "Question Two — Can a Wrong Answer Reach the Customer"
+    },
+    {
+     "at": "2:05",
+     "title": "Question Three — Do You Have the Data"
+    },
+    {
+     "at": "2:49",
+     "title": "Question Four — Can You Afford the Curve"
+    },
+    {
+     "at": "3:18",
+     "title": "Question Five — Who Owns the Probabilistic Component"
+    },
+    {
+     "at": "3:45",
+     "title": "Question Six — Will the Sponsor Still Be There"
+    },
+    {
+     "at": "4:17",
+     "title": "Three Honest Scenarios"
+    },
+    {
+     "at": "5:20",
+     "title": "The Mistake — Starting From the Technology"
+    },
+    {
+     "at": "5:52",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "AI implementation",
+    "decision framework",
+    "business strategy",
+    "cost analysis",
+    "risk assessment",
+    "data requirements",
+    "team capability",
+    "technology adoption"
+   ],
+   "src": "/media/learn/shift/shift-19.mp4",
+   "poster": "/media/learn/shift/shift-19.jpg",
+   "captions": "/media/learn/shift/shift-19.vtt"
+  }
+ ];

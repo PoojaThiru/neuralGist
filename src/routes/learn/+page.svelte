@@ -9,7 +9,7 @@
 	// scroll, not a menu — and on a phone, which is where this gets read, it is a very long scroll. The first series
 	// opens; the rest are one tap away and announce their size before you commit to them.
 	import { Play, Clock, ListVideo, ChevronDown } from '@lucide/svelte';
-	import { PROBABILITY, NEO4J, LLM_EVAL, SERVING, LEARNING, COUNTING, PATTERNS, CHANCE, type Lesson } from '$lib/learn.generated';
+	import { PROBABILITY, NEO4J, LLM_EVAL, SERVING, LEARNING, COUNTING, PATTERNS, CHANCE, SHIFT, type Lesson } from '$lib/learn.generated';
 	import LessonPlayer from '$lib/components/LessonPlayer.svelte';
 
 	type Series = { key: string; eyebrow: string; title: string; blurb: string; lessons: Lesson[] };
@@ -78,6 +78,14 @@
 			blurb:
 				'What happens once an outcome has a number attached to it: random variables, expectation and variance, the distributions worth knowing by name — binomial, geometric, Poisson, normal — and how to tell which one a situation is asking for. Then two variables at once, and why averages converge and sums turn normal however the pieces were shaped.',
 			lessons: CHANCE
+		},
+		{
+			key: 'shift',
+			eyebrow: 'Series 09',
+			title: 'Rebuilt Around the Model (AI Systems for Engineering Leaders)',
+			blurb:
+				'For the people deciding what to build: why bolting AI onto an existing system fails, what an agent actually is, giving tools one interface, grounding answers in your own data with RAG and GraphRAG, the three controls that keep a system honest, what an agent really costs, how these systems fail quietly, and six questions worth asking before you commit.',
+			lessons: SHIFT
 		}
 	];
 
