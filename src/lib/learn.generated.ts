@@ -1820,8 +1820,8 @@ export const SERVING: Lesson[] = [
 export const LEARNING: Lesson[] = [
   {
    "n": 1,
-   "title": "What Models Actually Learn: Fitting vs. Memorizing",
-   "summary": "This video explains what it really means for a model to \"learn\" from data by distinguishing between fitting (finding a rule that generalizes to new examples) and memorizing (wiggling perfectly through training data but failing on unseen data). Through the apartment rental example, you'll learn how splitting data into training and test sets reveals overfitting, and why predicting well on new data—not just the data you have—is the actual goal.",
+   "title": "Fitting vs. Memorizing: What Machine Learning Models Actually Learn",
+   "summary": "This video explains the crucial difference between a model that learns a genuine pattern and one that memorizes noise in the training data. Using apartment rent as an example, you'll learn what fitting means, why overfitting happens, and how to catch it using train-test splits—so your model works on new data, not just the data it's seen.",
    "runs": "5:53",
    "chapters": [
     {
@@ -1851,15 +1851,15 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "machine learning",
-    "overfitting",
-    "memorizing",
     "fitting",
-    "training set",
+    "overfitting",
+    "memorization",
+    "training data",
     "test set",
-    "generalization",
-    "model validation",
+    "model generalization",
     "parameters",
-    "underfitting"
+    "underfitting",
+    "prediction"
    ],
    "src": "/media/learn/learning/learning-01.mp4",
    "poster": "/media/learn/learning/learning-01.jpg",
@@ -1867,8 +1867,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 2,
-   "title": "What Does 'Best Fit' Even Mean? Measuring Model Error",
-   "summary": "Learn what \"best fit\" really means in linear regression—it's not just a vibe, it's a measurable mathematical concept. You'll discover how residuals (prediction errors) are quantified using sum of squared errors (SSE), and why this single number tells you which line actually fits your data best. By the end, you'll understand the core goal of fitting a model: finding the parameters that minimize total error.",
+   "title": "What Does 'Best Fit' Actually Mean?",
+   "summary": "Learn what \"best fit\" means in the context of linear models—it's not a vague concept, but something measurable using math. This video walks you through the linear model (rent-hat = w × size + b), residuals, and the sum of squared errors (SSE), explaining why we square residuals and how SSE becomes the single number we're trying to minimize. By the end, you'll understand exactly what we mean when we say a line is the \"best fit\" and what problem we're solving to find it.",
    "runs": "5:15",
    "chapters": [
     {
@@ -1902,15 +1902,14 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "linear regression",
-    "best fit",
+    "best fit line",
     "residuals",
     "sum of squared errors",
     "SSE",
-    "model fitting",
+    "modeling",
+    "line of best fit",
     "least squares",
-    "prediction error",
-    "regression line",
-    "machine learning basics"
+    "prediction error"
    ],
    "src": "/media/learn/learning/learning-02.mp4",
    "poster": "/media/learn/learning/learning-02.jpg",
@@ -1919,7 +1918,7 @@ export const LEARNING: Lesson[] = [
   {
    "n": 3,
    "title": "How Models Learn: Loss Functions and Gradient Descent",
-   "summary": "Learn the fundamental mechanism behind how machine learning models actually learn. This video teaches you the loss function—a single number measuring how wrong a model is—and gradient descent, the recipe that iteratively adjusts model parameters by stepping downhill through the loss landscape. After watching, you'll understand exactly how models guess, measure error, and nudge their knobs to make better predictions.",
+   "summary": "This video explains the fundamental mechanism behind how machine learning models learn: defining a loss function to measure errors, using calculus to find the direction of improvement, and then repeatedly nudging the model's parameters downhill. You'll walk through the complete process with a concrete rent-prediction example, from initial setup through the gradient descent algorithm, and learn the common pitfalls that derail training.",
    "runs": "7:08",
    "chapters": [
     {
@@ -1955,13 +1954,13 @@ export const LEARNING: Lesson[] = [
     "machine learning",
     "gradient descent",
     "loss function",
-    "model training",
     "optimization",
     "neural networks",
     "learning rate",
-    "backpropagation",
     "parameters",
-    "calculus"
+    "calculus",
+    "model training",
+    "mean squared error"
    ],
    "src": "/media/learn/learning/learning-03.mp4",
    "poster": "/media/learn/learning/learning-03.jpg",
@@ -1969,8 +1968,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 4,
-   "title": "Overfitting, Underfitting, and the Bias-Variance Tradeoff",
-   "summary": "Learn why zero error on training data can be a dangerous trap, and how to build models that actually generalize to new data. This video teaches you to spot overfitting and underfitting, split your data into training, validation, and test sets, and use regularization to prevent your model from chasing noise instead of real patterns.",
+   "title": "Overfitting vs. Underfitting: The Bias-Variance Tradeoff",
+   "summary": "Learn why a model with zero training error can still fail on new data, and how overfitting and underfitting represent two sides of the same problem. This video teaches you to split data into training, validation, and test sets, recognize the bias-variance tradeoff, and use regularization to build models that actually generalize.",
    "runs": "6:24",
    "chapters": [
     {
@@ -2010,11 +2009,11 @@ export const LEARNING: Lesson[] = [
     "overfitting",
     "underfitting",
     "bias-variance tradeoff",
-    "model validation",
+    "generalization",
     "regularization",
     "training error",
     "test error",
-    "generalization",
+    "model validation",
     "machine learning fundamentals"
    ],
    "src": "/media/learn/learning/learning-04.mp4",
@@ -2023,8 +2022,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 5,
-   "title": "Classification with Logistic Regression",
-   "summary": "Learn how to predict categories instead of numbers—like whether an apartment will rent fast or slow. You'll discover why linear regression fails for this task, how the sigmoid function solves it, and how to set a decision boundary to make yes-or-no predictions from probabilities.",
+   "title": "Logistic Regression: Predicting Categories Instead of Numbers",
+   "summary": "Learn how to shift from predicting quantities (like rent prices) to predicting categories (like yes/no outcomes) using logistic regression. This video shows why a straight line fails for classification, how the sigmoid function keeps predictions between 0 and 1, and how decision boundaries split your data into yes and no regions. You'll understand the common mistakes to avoid and be ready to build your own classification models.",
    "runs": "6:30",
    "chapters": [
     {
@@ -2061,11 +2060,11 @@ export const LEARNING: Lesson[] = [
     "classification",
     "sigmoid function",
     "decision boundary",
-    "probability",
     "machine learning",
+    "probability",
     "categorical prediction",
     "threshold",
-    "binary classification"
+    "supervised learning"
    ],
    "src": "/media/learn/learning/learning-05.mp4",
    "poster": "/media/learn/learning/learning-05.jpg",
@@ -2073,8 +2072,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 6,
-   "title": "Why 92% Accuracy Can Be Useless: Precision, Recall, and the Confusion Matrix",
-   "summary": "High accuracy can hide serious model failures when data is imbalanced. Learn to use the confusion matrix, precision, and recall to catch deceptive performance metrics, and discover why testing on separate data is essential to avoid fooling yourself.",
+   "title": "Why 92% Accuracy Can Be Useless: Precision, Recall, and Confusion Matrices",
+   "summary": "A high accuracy score can hide a fundamentally broken model, especially when data is imbalanced. This video teaches you how to see through misleading accuracy by using confusion matrices, precision, and recall to truly evaluate model performance, and shows why testing on separate data is critical.",
    "runs": "6:37",
    "chapters": [
     {
@@ -2103,14 +2102,15 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "machine learning",
-    "model evaluation",
     "confusion matrix",
-    "precision recall",
+    "precision and recall",
+    "accuracy misleading",
     "class imbalance",
-    "accuracy trap",
+    "model evaluation",
     "train-test split",
-    "classification metrics"
+    "machine learning metrics",
+    "classification",
+    "overfitting"
    ],
    "src": "/media/learn/learning/learning-06.mp4",
    "poster": "/media/learn/learning/learning-06.jpg",
@@ -2118,8 +2118,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 7,
-   "title": "Data Leakage: Why Your Model Seems Too Good to Be True",
-   "summary": "Learn why a machine learning model that performs perfectly on test data might fail catastrophically in the real world. This video teaches the concept of data leakage—how information from the future or test set can secretly slip into training—and walks through concrete examples like using features recorded after the fact, encoding categories incorrectly, and improperly computing averages. You'll leave knowing how to scale features properly, encode categorical variables, handle missing values responsibly, and spot and prevent the most common leakage traps.",
+   "title": "Data Leakage: Why Your Model Is Too Good To Be True",
+   "summary": "Learn why a machine learning model that performs suspiciously well on test data might fail completely in the real world. This video teaches you to spot and prevent data leakage — the sneaky problem where information from the future or test set leaks into training — and shows you the essential practices for cleaning features, handling categories and missing values, and splitting data properly.",
    "runs": "7:56",
    "chapters": [
     {
@@ -2156,15 +2156,16 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "machine learning",
     "data leakage",
+    "machine learning",
     "feature engineering",
-    "model validation",
-    "overfitting",
+    "train test split",
     "data preprocessing",
-    "test train split",
-    "categorical encoding",
-    "feature scaling"
+    "overfitting",
+    "prediction",
+    "data science",
+    "feature scaling",
+    "one-hot encoding"
    ],
    "src": "/media/learn/learning/learning-07.mp4",
    "poster": "/media/learn/learning/learning-07.jpg",
@@ -2172,8 +2173,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Building a Rent Predictor: The Complete Pipeline Start to Finish",
-   "summary": "Watch all seven steps of machine learning come together as one working system: cleaning data, engineering features, building a model, training with gradient descent, and validating on honest test data. By the end, you'll understand the full pipeline for building a trustworthy rent prediction model and be able to apply this same sequence to any supervised learning problem.",
+   "title": "End-to-End Machine Learning: The Complete Pipeline",
+   "summary": "Watch all seven steps of machine learning work together as one complete system, using apartment rental data as a real example. You'll see the full pipeline from raw data through model training to honest testing, and learn the critical ordering and pitfalls that determine whether your model actually works or just memorizes.",
    "runs": "5:02",
    "chapters": [
     {
@@ -2211,13 +2212,12 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "machine learning",
-    "gradient descent",
     "linear regression",
-    "data pipeline",
-    "training and testing",
+    "gradient descent",
+    "model training",
     "regularization",
-    "feature engineering",
-    "loss function"
+    "train-test split",
+    "feature engineering"
    ],
    "src": "/media/learn/learning/learning-08.mp4",
    "poster": "/media/learn/learning/learning-08.jpg",
@@ -2225,8 +2225,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 9,
-   "title": "K-Fold Cross-Validation: Reliable Model Comparison",
-   "summary": "Learn why a single train-test split can give misleading results, and how k-fold cross-validation provides a more trustworthy estimate of model performance. This video shows you how to fairly compare competing models by rotating which fold serves as the test set, avoiding the luck of the draw.",
+   "title": "K-Fold Cross-Validation: Testing Models Fairly",
+   "summary": "A single train-test split can give lucky or unlucky results just by chance—so how do you know if your model is truly better than another? Learn k-fold cross-validation, a method that rotates which data is held out for testing across multiple rounds, then averages the results to get a trustworthy estimate. You'll also discover two common mistakes that invalidate your results: preprocessing before splitting and ignoring natural groups in your data.",
    "runs": "6:07",
    "chapters": [
     {
@@ -2264,9 +2264,10 @@ export const LEARNING: Lesson[] = [
     "model evaluation",
     "train-test split",
     "machine learning",
-    "mean absolute error",
     "model comparison",
-    "data leakage"
+    "data preprocessing",
+    "statistical validation",
+    "testing methodology"
    ],
    "src": "/media/learn/learning/learning-09.mp4",
    "poster": "/media/learn/learning/learning-09.jpg",
@@ -2274,8 +2275,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 10,
-   "title": "Decision Trees: Prediction Through Yes-or-No Questions",
-   "summary": "Learn how decision trees make predictions by asking a series of yes-or-no questions about data, starting from a root node and following branches down to leaf nodes that give final answers. Discover how trees choose their questions by measuring variance (for numbers) or impurity (for categories), and understand the critical danger of overfitting when trees grow too deep and memorize noise instead of learning patterns. After watching, you'll understand the complete structure of decision trees and how to recognize when they've been trained too much.",
+   "title": "Decision Trees: Making Predictions with Yes-or-No Questions",
+   "summary": "Learn how decision trees predict values by asking a series of yes-or-no questions about data, starting from a root node and branching down to leaf nodes that provide final answers. You'll understand how trees automatically pick the best questions to ask by minimizing variance (for numerical predictions) or impurity (for categories), and how to prevent overfitting by controlling tree depth. After watching, you'll see how this question-based approach offers a fundamentally different way to think about prediction compared to lines or nearest neighbors.",
    "runs": "5:59",
    "chapters": [
     {
@@ -2305,15 +2306,13 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "decision trees",
-    "regression trees",
-    "classification trees",
-    "variance",
-    "impurity",
-    "overfitting",
     "machine learning",
     "prediction",
-    "yes-or-no questions",
-    "model selection"
+    "regression trees",
+    "classification trees",
+    "overfitting",
+    "variance",
+    "impurity"
    ],
    "src": "/media/learn/learning/learning-10.mp4",
    "poster": "/media/learn/learning/learning-10.jpg",
@@ -2321,8 +2320,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 11,
-   "title": "Bagging and Random Forests: Why Many Mediocre Models Beat One Perfect Tree",
-   "summary": "Learn why a single carefully-tuned decision tree can produce wildly different predictions from small changes in data, and how training many simpler trees on random samples and averaging their results—a technique called bagging—can be more reliable. This video explains the difference between bias and variance, introduces bootstrap sampling and random forests, and shows with real apartment pricing examples why combining many slightly-off models often outperforms one \"correct\" one.",
+   "title": "Bagging and Random Forests: Why Many Weak Models Beat One Strong One",
+   "summary": "Learn why training hundreds of simpler, slightly different decision trees and averaging their predictions often outperforms one carefully tuned tree. This video explains bootstrap sampling, bagging, and random forests using apartment price data, and clarifies when ensemble methods actually help (high variance) and when they don't (high bias).",
    "runs": "6:49",
    "chapters": [
     {
@@ -2359,16 +2358,14 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "decision trees",
     "bagging",
     "random forests",
     "bootstrap sampling",
-    "variance",
-    "bias-variance tradeoff",
     "ensemble methods",
+    "decision trees",
+    "variance reduction",
     "machine learning",
-    "model averaging",
-    "prediction stability"
+    "predictive modeling"
    ],
    "src": "/media/learn/learning/learning-11.mp4",
    "poster": "/media/learn/learning/learning-11.jpg",
@@ -2376,8 +2373,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 12,
-   "title": "Hyperparameters: Settings You Choose Before Training",
-   "summary": "Learn the crucial distinction between parameters (learned during training) and hyperparameters (set before training starts), and why the numbers you choose matter enormously. This video teaches you how to use training, validation, and test sets to systematically find good hyperparameter values like learning rate and regularization strength, and shows you the common mistakes that leak information and break your model's trustworthiness.",
+   "title": "Hyperparameters: Tuning the Settings Before Training",
+   "summary": "Learn the crucial difference between parameters (values your model learns from data) and hyperparameters (settings you must choose beforehand), and discover how to pick good hyperparameter values using a validation set. This video shows you the standard three-way data split, grid search, and common pitfalls that undermine honest model evaluation.",
    "runs": "6:20",
    "chapters": [
     {
@@ -2416,12 +2413,12 @@ export const LEARNING: Lesson[] = [
    "tags": [
     "hyperparameters",
     "parameters",
+    "regularization",
+    "lambda",
+    "learning rate",
     "validation set",
-    "test set",
     "grid search",
     "cross-validation",
-    "regularization",
-    "learning rate",
     "model tuning",
     "overfitting"
    ],
@@ -2431,8 +2428,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 13,
-   "title": "Imbalanced Classification: Why Accuracy Lies and How to Fix It",
-   "summary": "Learn why a model that predicts \"not a scam\" for every apartment listing can be 99% accurate yet completely useless, and discover the metrics and techniques that actually work for rare events. This video teaches the confusion matrix, precision, recall, and practical methods like oversampling and class weights to build classifiers that catch real problems instead of just matching the base rate.",
+   "title": "Imbalanced Classification: Why Accuracy Lies",
+   "summary": "When your data contains a rare class—like scams in a dataset of mostly legitimate listings—accuracy becomes a misleading metric and simple models can be dangerously useless. Learn how confusion matrices, precision, and recall reveal what your model really does, why they trade off against each other, and how to fix imbalanced data through resampling and class weights.",
    "runs": "7:17",
    "chapters": [
     {
@@ -2470,15 +2467,15 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "imbalanced classification",
-    "accuracy trap",
+    "accuracy paradox",
     "confusion matrix",
-    "precision recall",
+    "precision and recall",
     "class imbalance",
-    "oversampling",
-    "base rate",
+    "machine learning evaluation",
     "decision threshold",
-    "F1 score",
-    "class weights"
+    "oversampling",
+    "class weights",
+    "base rate"
    ],
    "src": "/media/learn/learning/learning-13.mp4",
    "poster": "/media/learn/learning/learning-13.jpg",
@@ -2487,7 +2484,7 @@ export const LEARNING: Lesson[] = [
   {
    "n": 14,
    "title": "Unsupervised Learning and K-Means Clustering",
-   "summary": "Learn unsupervised learning, where you work with data that has no answer key—just features to explore. This video teaches k-means clustering, the most common technique for grouping similar data points together, including how to choose the right number of clusters and avoid common mistakes like unscaled features and outliers.",
+   "summary": "Learn what to do when your data has no answer key. This video introduces unsupervised learning and the k-means algorithm for grouping similar data points together into clusters. You'll understand how k-means works, how to choose the right number of clusters, and the common mistakes to avoid when applying it to real data.",
    "runs": "8:57",
    "chapters": [
     {
@@ -2522,13 +2519,12 @@ export const LEARNING: Lesson[] = [
    "tags": [
     "unsupervised learning",
     "k-means clustering",
-    "clustering",
-    "machine learning",
+    "clustering algorithms",
+    "data grouping",
     "elbow method",
     "feature scaling",
-    "data analysis",
-    "centroids",
-    "inertia"
+    "machine learning",
+    "data science"
    ],
    "src": "/media/learn/learning/learning-14.mp4",
    "poster": "/media/learn/learning/learning-14.jpg",
@@ -2536,8 +2532,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 15,
-   "title": "Principal Component Analysis: Reducing High-Dimensional Data",
-   "summary": "Learn how to handle datasets with too many features using Principal Component Analysis (PCA). This video shows why more columns don't always help, how to find the directions in your data that matter most, and the critical mistakes to avoid when applying PCA—like forgetting to standardize your columns first.",
+   "title": "Principal Component Analysis: Simplifying High-Dimensional Data",
+   "summary": "Learn how Principal Component Analysis (PCA) reduces noisy, redundant datasets down to their essential dimensions. This video shows you why adding more features spreads data thin, how correlated columns waste information, and the practical steps—including standardization and covariance matrices—to find and keep only the principal components that matter most.",
    "runs": "8:01",
    "chapters": [
     {
@@ -2570,16 +2566,15 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
+    "dimensionality reduction",
     "principal component analysis",
     "PCA",
-    "dimensionality reduction",
-    "high-dimensional data",
+    "curse of dimensionality",
     "covariance matrix",
     "eigenvectors",
-    "feature engineering",
+    "feature selection",
     "data preprocessing",
-    "variance",
-    "correlation"
+    "standardization"
    ],
    "src": "/media/learn/learning/learning-15.mp4",
    "poster": "/media/learn/learning/learning-15.jpg",
@@ -2588,7 +2583,7 @@ export const LEARNING: Lesson[] = [
   {
    "n": 16,
    "title": "After Training: Calibration, Explanation, and Drift",
-   "summary": "Learn what happens after you've built and tested a machine learning model—the three critical issues that emerge in the real world. You'll understand how to verify that a model's confidence scores are honest, explain individual predictions to stakeholders, and detect when the data the model sees has shifted over time.",
+   "summary": "Building a good model is only half the work—learn the three critical issues that emerge once it goes live. This video teaches calibration (ensuring confidence scores are honest), explanation (helping users understand individual predictions), and drift (detecting when your data changes over time), using a loan approval scenario to show why each matters and how to handle common mistakes.",
    "runs": "6:59",
    "chapters": [
     {
@@ -2621,16 +2616,16 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "machine learning",
     "model calibration",
-    "model explanation",
+    "explainability",
     "data drift",
-    "production ML",
+    "machine learning deployment",
+    "confidence scores",
     "SHAP",
-    "temperature scaling",
     "model monitoring",
-    "loan prediction",
-    "interpretability"
+    "prediction explanation",
+    "concept drift",
+    "production ML"
    ],
    "src": "/media/learn/learning/learning-16.mp4",
    "poster": "/media/learn/learning/learning-16.jpg",
@@ -2640,9 +2635,64 @@ export const LEARNING: Lesson[] = [
 
 export const COUNTING: Lesson[] = [
   {
+   "n": 1,
+   "title": "Multiplication vs Addition: When to Count with Products",
+   "summary": "Learn why you multiply option counts in some situations and add in others, starting from a concrete badge code problem. Through rectangles, trees, and clear logic, you'll discover the exact condition that makes multiplication work—and how dependent stages can still use it. By the end, you'll know the test that separates multiplying from adding, and be able to count arrangements with or without repeats.",
+   "runs": "8:43",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Badge Code Question"
+    },
+    {
+     "at": "0:41",
+     "title": "The Rectangle of Possibilities"
+    },
+    {
+     "at": "1:57",
+     "title": "Drawing the Tree"
+    },
+    {
+     "at": "2:49",
+     "title": "Extending to k Stages"
+    },
+    {
+     "at": "3:47",
+     "title": "With Replacement vs Without"
+    },
+    {
+     "at": "4:50",
+     "title": "The Rule That Saves You From Mistakes"
+    },
+    {
+     "at": "6:30",
+     "title": "The Partner Rule: When You Add Instead"
+    },
+    {
+     "at": "7:29",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "counting",
+    "combinatorics",
+    "multiplication principle",
+    "permutations",
+    "addition rule",
+    "conditional counting",
+    "decision trees",
+    "with replacement",
+    "without replacement",
+    "problem solving"
+   ],
+   "src": "/media/learn/counting/counting-01.mp4",
+   "poster": "/media/learn/counting/counting-01.jpg",
+   "captions": "/media/learn/counting/counting-01.vtt"
+  },
+  {
    "n": 2,
    "title": "Permutations: Arranging Things in Order",
-   "summary": "Learn how to count the number of ways to arrange people or objects in order using the multiplication principle. This video covers permutations when you use all items or only some of them, explains the factorial formula, and shows you how to recognize when order matters versus when it doesn't. By the end, you'll be able to set up and solve permutation problems by thinking through your choices step-by-step.",
+   "summary": "Learn how to count arrangements of objects using the multiplication principle, from filling a podium with runners to encoding passwords. You'll master permutations and factorials, understand when order matters versus when it doesn't, and use formulas like n! and P(n,r) to solve real counting problems.",
    "runs": "5:44",
    "chapters": [
     {
@@ -2673,12 +2723,12 @@ export const COUNTING: Lesson[] = [
    "tags": [
     "permutations",
     "factorial",
-    "multiplication principle",
+    "counting principle",
+    "combinations",
     "arrangements",
-    "counting",
     "order matters",
-    "combination vs permutation",
-    "n choose r"
+    "multiplication principle",
+    "podium problem"
    ],
    "src": "/media/learn/counting/counting-02.mp4",
    "poster": "/media/learn/counting/counting-02.jpg",
@@ -2686,8 +2736,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 3,
-   "title": "Combinations: Choosing When Order Doesn't Matter",
-   "summary": "Learn when and how to count combinations—groups where order doesn't matter—using the formula \"n choose k\". This video teaches you to distinguish between ordered and unordered selection problems, then walks you through the formula's logic and how to apply it to real scenarios like committees and lotteries.",
+   "title": "Combinations: Counting When Order Doesn't Matter",
+   "summary": "Learn why picking a committee is different from assigning roles, and discover the combinations formula. This video teaches you how to count groups where order doesn't matter by building on the multiplication rule, using a simple division trick to eliminate overcounting. You'll master the \"n choose k\" formula and learn to identify when to use combinations instead of permutations in real problems.",
    "runs": "6:43",
    "chapters": [
     {
@@ -2723,12 +2773,11 @@ export const COUNTING: Lesson[] = [
     "combinations",
     "n choose k",
     "counting",
-    "multiplication rule",
-    "factorials",
     "permutations vs combinations",
-    "order doesn't matter",
-    "counting principles",
-    "mathematics"
+    "factorials",
+    "multiplication rule",
+    "committee problem",
+    "probability foundations"
    ],
    "src": "/media/learn/counting/counting-03.mp4",
    "poster": "/media/learn/counting/counting-03.jpg",
@@ -2736,8 +2785,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 4,
-   "title": "Combinatorial Identities: Structure in Binomial Coefficients",
-   "summary": "Discover why binomial coefficients C(n,k) aren't just formulas to compute, but objects with hidden structure that unlock shortcuts and insights. Learn five key identities—symmetry, Pascal's recurrence, the binomial theorem, the power of 2, and the hockey-stick identity—proved through counting arguments rather than algebra, so you can see *why* they're true and use them to dodge computation.",
+   "title": "Binomial Coefficients: Identities and Counting Arguments",
+   "summary": "This video reveals the hidden structure behind binomial coefficients through four key identities: symmetry, Pascal's recurrence, the binomial theorem, and the sum-to-power-of-two rule. You'll learn to see these identities as counting arguments rather than algebraic tricks, and discover how they provide shortcuts for computation and genuine understanding.",
    "runs": "8:07",
    "chapters": [
     {
@@ -2778,12 +2827,11 @@ export const COUNTING: Lesson[] = [
     "combinatorics",
     "Pascal's triangle",
     "binomial theorem",
-    "combinatorial identities",
-    "counting proofs",
+    "counting arguments",
     "bijection",
-    "C(n,k)",
-    "mathematical structure",
-    "discrete mathematics"
+    "identities",
+    "mathematical proof",
+    "club committees"
    ],
    "src": "/media/learn/counting/counting-04.mp4",
    "poster": "/media/learn/counting/counting-04.jpg",
@@ -2791,8 +2839,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 5,
-   "title": "Counting: The Four Cases (Order and Repeats)",
-   "summary": "Learn the two key questions that determine which counting method to use: does order matter, and are repeats allowed? This video shows how the same items produce wildly different answers depending on your setup, and walks through the four cases—from passwords to podiums to committees to ice cream—with a clear framework for solving any counting problem.",
+   "title": "The Four Types of Counting Problems: Order and Repetition",
+   "summary": "Learn how to classify any counting problem by asking two key questions: does order matter, and can items repeat? This video breaks counting into four distinct cases—from passwords to committees to ice cream scoops—and teaches you the specific strategy for each, so you can solve problems correctly instead of guessing which formula to use.",
    "runs": "6:53",
    "chapters": [
     {
@@ -2829,15 +2877,14 @@ export const COUNTING: Lesson[] = [
     }
    ],
    "tags": [
-    "counting",
     "combinatorics",
     "permutations",
     "combinations",
-    "order",
-    "repetition",
+    "counting principles",
+    "order matters",
+    "repetition allowed",
     "multiplication principle",
-    "problem-solving",
-    "mathematics"
+    "discrete math"
    ],
    "src": "/media/learn/counting/counting-05.mp4",
    "poster": "/media/learn/counting/counting-05.jpg",
@@ -2845,8 +2892,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 6,
-   "title": "Counting Problems: Breaking Word Problems into Stages",
-   "summary": "Learn how to translate counting word problems into a clear sequence of stages—the hard part of combinatorics that comes before you ever touch the multiplication principle. This video teaches you to identify what counts as \"a thing,\" determine whether order matters, and figure out how many choices each stage actually has.",
+   "title": "Counting Problems: Breaking Stories Into Stages",
+   "summary": "Learn how to translate real-world counting problems into a sequence of stages—the crucial modelling skill that makes the multiplication principle work. You'll discover how to identify what counts as \"a thing,\" whether order matters, and how to spot whether choices repeat or shrink across stages.",
    "runs": "5:42",
    "chapters": [
     {
@@ -2875,14 +2922,15 @@ export const COUNTING: Lesson[] = [
     }
    ],
    "tags": [
-    "counting principles",
-    "combinatorics",
-    "word problems",
+    "counting",
     "multiplication principle",
-    "problem modelling",
-    "stages and decisions",
+    "combinatorics",
+    "modelling",
+    "problem solving",
     "permutations",
-    "order matters"
+    "stages",
+    "order matters",
+    "word problems"
    ],
    "src": "/media/learn/counting/counting-06.mp4",
    "poster": "/media/learn/counting/counting-06.jpg",
@@ -2891,7 +2939,7 @@ export const COUNTING: Lesson[] = [
   {
    "n": 7,
    "title": "Stacking Counting Tools: Combinations with Restrictions",
-   "summary": "Learn how to solve counting problems that require two or more techniques combined, like picking a committee then assigning roles within it, or handling restrictions with inclusion-exclusion. By working through the wrong approach first on each problem, you'll learn to spot the costly mistakes that cause double-counting or missed cases.",
+   "summary": "Learn how to combine multiple counting techniques to solve the complex multi-step problems that actually appear on exams. This video teaches you to spot when you need combinations plus permutations, how to correctly count restrictions without double-counting overlaps, and how to find exactly k items in a selection—then walks through each technique on realistic problems with intentional wrong attempts to help you avoid the traps.",
    "runs": "8:59",
    "chapters": [
     {
@@ -2932,25 +2980,261 @@ export const COUNTING: Lesson[] = [
     }
    ],
    "tags": [
-    "combinatorics",
     "combinations",
     "permutations",
-    "inclusion-exclusion",
     "counting problems",
-    "arrangements",
+    "inclusion-exclusion",
     "restrictions",
-    "exam prep",
-    "problem-solving",
-    "mathematical reasoning"
+    "exam strategy",
+    "combinatorics",
+    "multi-step problems",
+    "mistake analysis"
    ],
    "src": "/media/learn/counting/counting-07.mp4",
    "poster": "/media/learn/counting/counting-07.jpg",
    "captions": "/media/learn/counting/counting-07.vtt"
   },
   {
+   "n": 8,
+   "title": "Sample Spaces and Set Operations in Probability",
+   "summary": "Learn how to describe what could happen in any uncertain situation using sample spaces and events, and master the set operations—union, intersection, complement, and difference—that form the language of probability. You'll practice translating real-world scenarios into precise set expressions and discover De Morgan's laws, the single most useful tool for turning hard events into easy ones.",
+   "runs": "12:50",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "A Sensor, a Test, and a Question"
+    },
+    {
+     "at": "0:50",
+     "title": "The Experiment and Its Sample Space"
+    },
+    {
+     "at": "1:58",
+     "title": "An Event Is a Subset"
+    },
+    {
+     "at": "3:17",
+     "title": "Union Is 'Or', Intersection Is 'And'"
+    },
+    {
+     "at": "4:33",
+     "title": "Complement, Difference, and Disjoint"
+    },
+    {
+     "at": "5:59",
+     "title": "The Algebra: Commutativity, Associativity, Distributivity"
+    },
+    {
+     "at": "7:29",
+     "title": "De Morgan's Laws: Turning Hard Events Into Easy Ones"
+    },
+    {
+     "at": "8:56",
+     "title": "Countable and Uncountable, Briefly"
+    },
+    {
+     "at": "9:50",
+     "title": "Where People Slip Up"
+    },
+    {
+     "at": "10:37",
+     "title": "Translate Three Sentences"
+    },
+    {
+     "at": "11:49",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "probability",
+    "sample space",
+    "events",
+    "set operations",
+    "union",
+    "intersection",
+    "complement",
+    "De Morgan's laws",
+    "foundations of probability"
+   ],
+   "src": "/media/learn/counting/counting-08.mp4",
+   "poster": "/media/learn/counting/counting-08.jpg",
+   "captions": "/media/learn/counting/counting-08.vtt"
+  },
+  {
+   "n": 9,
+   "title": "What IS Probability, Actually? The Three Axioms",
+   "summary": "This video defines probability rigorously as a function that must obey three axioms: non-negativity, total probability equals one, and additivity for disjoint events. You'll learn why these rules matter, see them verified in practical models like equally likely outcomes and relative frequency, and prove your first theorem—that the empty set has probability zero—directly from the axioms.",
+   "runs": "10:54",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "What IS probability, actually?"
+    },
+    {
+     "at": "1:10",
+     "title": "The stage: sample space and events, one-line reminder"
+    },
+    {
+     "at": "1:39",
+     "title": "Axiom one: non-negativity"
+    },
+    {
+     "at": "2:16",
+     "title": "Axiom two: total probability is one"
+    },
+    {
+     "at": "2:56",
+     "title": "Axiom three: additivity, and the word DISJOINT"
+    },
+    {
+     "at": "4:27",
+     "title": "Finite versus countable additivity"
+    },
+    {
+     "at": "5:33",
+     "title": "Checking the axioms: equally likely outcomes"
+    },
+    {
+     "at": "6:44",
+     "title": "Checking the axioms: relative frequency"
+    },
+    {
+     "at": "7:51",
+     "title": "The first theorem: P of the empty set is zero"
+    },
+    {
+     "at": "9:27",
+     "title": "Where people go wrong"
+    },
+    {
+     "at": "10:07",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "probability",
+    "axioms",
+    "sample space",
+    "events",
+    "disjoint events",
+    "probability function",
+    "finite additivity",
+    "countable additivity",
+    "mathematical definition"
+   ],
+   "src": "/media/learn/counting/counting-09.mp4",
+   "poster": "/media/learn/counting/counting-09.jpg",
+   "captions": "/media/learn/counting/counting-09.vtt"
+  },
+  {
+   "n": 10,
+   "title": "Derived Rules of Probability: From Axioms to the Complement Trick",
+   "summary": "Learn the practical rules of probability derived straight from the axioms, including the complement rule and the general addition rule for overlapping events. Master the crucial \"at least one\" trick that replaces messy multi-term calculations with a single subtraction, and avoid the two common mistakes that trip up most students.",
+   "runs": "10:01",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Six-Term Problem"
+    },
+    {
+     "at": "1:00",
+     "title": "The Complement Rule"
+    },
+    {
+     "at": "2:26",
+     "title": "Never Above One, and Bigger Sets Win"
+    },
+    {
+     "at": "3:46",
+     "title": "The General Addition Rule"
+    },
+    {
+     "at": "5:16",
+     "title": "Extending to Three Events"
+    },
+    {
+     "at": "6:24",
+     "title": "At Least One Becomes One Minus None"
+    },
+    {
+     "at": "8:05",
+     "title": "Where People Trip Up"
+    },
+    {
+     "at": "9:07",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "probability",
+    "complement rule",
+    "inclusion-exclusion",
+    "addition rule",
+    "axioms",
+    "at least one",
+    "dependent events",
+    "Venn diagrams"
+   ],
+   "src": "/media/learn/counting/counting-10.mp4",
+   "poster": "/media/learn/counting/counting-10.jpg",
+   "captions": "/media/learn/counting/counting-10.vtt"
+  },
+  {
+   "n": 11,
+   "title": "Classical Probability: The Formula and When It Works",
+   "summary": "Learn when and how to use the classical probability formula—dividing favorable outcomes by total outcomes. This lesson connects counting techniques from earlier lessons to probability, shows why the formula requires equally likely outcomes, and walks through worked examples with committees and shipments to demonstrate the method and common pitfalls.",
+   "runs": "10:46",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "0:54",
+     "title": "The Classical Probability Formula"
+    },
+    {
+     "at": "2:24",
+     "title": "When It Fails"
+    },
+    {
+     "at": "3:43",
+     "title": "Worked Example: The Committee"
+    },
+    {
+     "at": "5:39",
+     "title": "Worked Example: The Shipment"
+    },
+    {
+     "at": "7:32",
+     "title": "Worked Example: Side by Side"
+    },
+    {
+     "at": "8:44",
+     "title": "Two Common Mistakes"
+    },
+    {
+     "at": "9:45",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "probability",
+    "classical probability formula",
+    "counting",
+    "equally likely outcomes",
+    "combinations",
+    "sample space",
+    "worked examples"
+   ],
+   "src": "/media/learn/counting/counting-11.mp4",
+   "poster": "/media/learn/counting/counting-11.jpg",
+   "captions": "/media/learn/counting/counting-11.vtt"
+  },
+  {
    "n": 12,
-   "title": "One Sensor, One Number: Continuity and Probability Interpretation",
-   "summary": "Learn how probability behaves when events form nested sequences that grow or shrink toward a limit, and discover the two rigorous interpretations of what a probability number actually means. You'll understand why continuity of probability follows from the axioms themselves, and how to distinguish between frequency-based and belief-based readings when applying probability to real situations.",
+   "title": "One Sensor, One Number: Continuity and Probability Meaning",
+   "summary": "This video explores two foundational ideas that most courses skip too quickly: what happens to probability when events nest infinitely, and what a probability number actually means for a single real object. You'll learn the continuity axiom through growing and shrinking sequences of events, see how to apply it to practical problems like repeated testing, and understand the two legitimate interpretations of probability—long-run frequencies and degrees of belief—that both obey the axioms but differ in what they describe.",
    "runs": "8:07",
    "chapters": [
     {
@@ -2991,25 +3275,134 @@ export const COUNTING: Lesson[] = [
     }
    ],
    "tags": [
-    "continuity of probability",
-    "nested sequences",
-    "probability axioms",
-    "frequentist",
-    "subjective probability",
+    "continuity axiom",
+    "probability limit",
+    "nested events",
+    "long-run frequency",
     "degree of belief",
+    "Bayesian",
     "probability interpretation",
-    "limit theorems",
-    "diagnostic testing",
-    "measure theory"
+    "disjoint rings",
+    "conditional probability",
+    "probability foundations"
    ],
    "src": "/media/learn/counting/counting-12.mp4",
    "poster": "/media/learn/counting/counting-12.jpg",
    "captions": "/media/learn/counting/counting-12.vtt"
   },
   {
+   "n": 13,
+   "title": "Probability Proofs: The Four Essential Moves",
+   "summary": "Learn the four fundamental techniques—disjoint decomposition, the complement trick, monotonicity, and De Morgan's laws—that underpin nearly every probability proof. This lesson bridges the gap between knowing the axioms and being able to prove theorems from them, working through key results like the three-event addition rule, Boole's inequality, and common pitfalls.",
+   "runs": "14:42",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question Exams Actually Ask"
+    },
+    {
+     "at": "1:08",
+     "title": "The Four Moves, Named"
+    },
+    {
+     "at": "3:01",
+     "title": "Warm-Up Proof: Monotonicity"
+    },
+    {
+     "at": "4:04",
+     "title": "The Addition Rule for Three Events"
+    },
+    {
+     "at": "6:32",
+     "title": "Boole's Inequality: Bounding Without Computing"
+    },
+    {
+     "at": "8:48",
+     "title": "If P(A) is Zero"
+    },
+    {
+     "at": "9:55",
+     "title": "A Plausible Claim That's False"
+    },
+    {
+     "at": "12:05",
+     "title": "What Earns Full Marks"
+    },
+    {
+     "at": "13:28",
+     "title": "Recap: The Whole Toolkit"
+    }
+   ],
+   "tags": [
+    "probability",
+    "proofs",
+    "axioms",
+    "addition rule",
+    "Boole's inequality",
+    "disjoint decomposition",
+    "complement",
+    "monotonicity",
+    "De Morgan's laws"
+   ],
+   "src": "/media/learn/counting/counting-13.mp4",
+   "poster": "/media/learn/counting/counting-13.jpg",
+   "captions": "/media/learn/counting/counting-13.vtt"
+  },
+  {
+   "n": 14,
+   "title": "Conditional Probability: Restricting the Sample Space",
+   "summary": "Learn how conditional probability works by shrinking the sample space to just the outcomes where we know an event occurred. Using a concrete example of defective sensors and a diagnostic test, you'll understand why P(A given B) ≠ P(B given A), and how conditioning creates a genuine probability measure that obeys all the familiar rules.",
+   "runs": "11:18",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Two different numbers about the same sensor"
+    },
+    {
+     "at": "0:54",
+     "title": "Restricting the sample space"
+    },
+    {
+     "at": "2:22",
+     "title": "On equally likely outcomes: just counting inside B"
+    },
+    {
+     "at": "3:38",
+     "title": "Proving conditioning is a genuine probability"
+    },
+    {
+     "at": "6:03",
+     "title": "Worked example: the full table, shaded"
+    },
+    {
+     "at": "7:28",
+     "title": "Worked example: the tree, shaded"
+    },
+    {
+     "at": "8:41",
+     "title": "The mistake that will haunt Bayes"
+    },
+    {
+     "at": "10:17",
+     "title": "Recap: what conditioning does and doesn't do"
+    }
+   ],
+   "tags": [
+    "conditional probability",
+    "sample space",
+    "Bayes theorem",
+    "probability measure",
+    "axioms",
+    "worked example"
+   ],
+   "src": "/media/learn/counting/counting-14.mp4",
+   "poster": "/media/learn/counting/counting-14.jpg",
+   "captions": "/media/learn/counting/counting-14.vtt"
+  },
+  {
    "n": 15,
-   "title": "The Multiplication Rule & Probability Trees",
-   "summary": "Learn where the multiplication rule comes from and how probability trees visualize multi-stage experiments. You'll see why multiplying probabilities along a path gives you the answer, how the shape of the tree reveals whether events are independent, and how to avoid the two most common mistakes when drawing without replacement.",
+   "title": "The Multiplication Rule and Probability Trees",
+   "summary": "Learn where the multiplication rule comes from—not as a new axiom, but as a direct consequence of conditional probability—and how to use probability trees to solve multi-stage probability problems. By the end, you'll be able to handle dependent events like drawing without replacement, spot common mistakes, and use tree diagrams to organize and compute probabilities for any sequence of outcomes.",
    "runs": "9:09",
    "chapters": [
     {
@@ -3057,8 +3450,8 @@ export const COUNTING: Lesson[] = [
     "dependent events",
     "without replacement",
     "independence",
-    "conditional independence",
-    "probability paths"
+    "probability paths",
+    "multi-stage probability"
    ],
    "src": "/media/learn/counting/counting-15.mp4",
    "poster": "/media/learn/counting/counting-15.jpg",
@@ -3066,8 +3459,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 16,
-   "title": "The Law of Total Probability",
-   "summary": "Learn how to find the probability of an event when there are multiple disjoint paths to it using the law of total probability. You'll see how to partition a sample space and combine conditional probabilities weighted by the probability of each partition, with worked examples using sensor defects and diagnostic tests.",
+   "title": "The Law of Total Probability: Combining Multiple Paths",
+   "summary": "When multiple paths can lead to the same outcome, how do you find the overall probability? This video teaches the law of total probability—how to partition a sample space and combine conditional probabilities into a single answer. You'll learn to set up the partition correctly, avoid common mistakes like overlapping slices, and check your work using a simple sanity test.",
    "runs": "8:06",
    "chapters": [
     {
@@ -3105,22 +3498,80 @@ export const COUNTING: Lesson[] = [
    ],
    "tags": [
     "law of total probability",
-    "partition",
     "conditional probability",
+    "partition",
     "sample space",
     "probability rules",
     "weighted average",
     "axioms of probability",
-    "counting paths"
+    "defective sensors"
    ],
    "src": "/media/learn/counting/counting-16.mp4",
    "poster": "/media/learn/counting/counting-16.jpg",
    "captions": "/media/learn/counting/counting-16.vtt"
   },
   {
+   "n": 17,
+   "title": "Bayes' Theorem: Flipping Conditional Probability",
+   "summary": "Learn how to flip conditional probabilities using Bayes' theorem, starting from basic definitions and building to real applications. You'll discover why a highly accurate test can still give misleading results, and how to update your beliefs when new evidence arrives.",
+   "runs": "8:41",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question That Won't Let Go"
+    },
+    {
+     "at": "0:45",
+     "title": "Three Lines, No New Assumptions"
+    },
+    {
+     "at": "2:05",
+     "title": "Prior, Likelihood, Posterior, Evidence"
+    },
+    {
+     "at": "2:52",
+     "title": "The Flagged Sensor"
+    },
+    {
+     "at": "4:15",
+     "title": "Seeing It With a Thousand Sensors"
+    },
+    {
+     "at": "5:17",
+     "title": "Naming the Mistake"
+    },
+    {
+     "at": "6:07",
+     "title": "Testing Twice"
+    },
+    {
+     "at": "7:11",
+     "title": "Reading the Result Honestly"
+    },
+    {
+     "at": "7:53",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "Bayes' theorem",
+    "conditional probability",
+    "base rate fallacy",
+    "posterior probability",
+    "statistical inference",
+    "likelihood",
+    "prior probability",
+    "evidence",
+    "probability updating"
+   ],
+   "src": "/media/learn/counting/counting-17.mp4",
+   "poster": "/media/learn/counting/counting-17.jpg",
+   "captions": "/media/learn/counting/counting-17.vtt"
+  },
+  {
    "n": 18,
-   "title": "Independence: The Precise Definition",
-   "summary": "Independence isn't about whether two things are \"connected\"—it's a precise numerical equation: P(A and B) = P(A) × P(B). Learn why events can be physically linked yet independent, why unrelated-feeling events can be dependent, and why \"disjoint\" is the opposite of independent. By the end you'll know how to test independence rigorously and handle multiple events correctly.",
+   "title": "Independence: Beyond Intuition",
+   "summary": "Independence is not about whether events feel connected—it's a precise mathematical statement: P(A and B) = P(A) × P(B). This video cuts through intuition to show you how to test independence with an equation, revealing surprising cases where causally connected events are mathematically independent and seemingly unrelated events are actually dependent. By the end, you'll know how to spot disjoint events versus independent events, check independence for three or more events, and apply independence to binomial probability problems.",
    "runs": "7:10",
    "chapters": [
     {
@@ -3159,12 +3610,13 @@ export const COUNTING: Lesson[] = [
    "tags": [
     "independence",
     "probability",
-    "conditional probability",
-    "disjoint events",
-    "mutual independence",
     "dependent events",
-    "binomial distributions",
-    "repeated trials"
+    "disjoint events",
+    "conditional probability",
+    "mutual independence",
+    "binomial coefficient",
+    "repeated trials",
+    "multiplication rule"
    ],
    "src": "/media/learn/counting/counting-18.mp4",
    "poster": "/media/learn/counting/counting-18.jpg",
@@ -3172,8 +3624,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 19,
-   "title": "Six probability problems: picking the tool",
-   "summary": "Work through six realistic problems using conditional probability, Bayes' theorem, total probability, and independence—without being told which tool to use. Learn to recognize which technique applies, avoid common pitfalls like reversed conditionals and overcounting, and develop the judgment to solve problems under exam pressure.",
+   "title": "Six Probability Problems: Applying Bayes, Total Probability, and Independence",
+   "summary": "Master the core probability tools by solving six realistic problems that don't tell you which technique to use. You'll learn to recognize when to apply Bayes' theorem, total probability with the right partition, conditional probability without Bayes, independence testing, tree diagrams with replacement effects, and classic problem setups like the three-box switch.",
    "runs": "9:56",
    "chapters": [
     {
@@ -3214,105 +3666,705 @@ export const COUNTING: Lesson[] = [
     }
    ],
    "tags": [
-    "conditional probability",
     "Bayes theorem",
+    "conditional probability",
     "total probability",
     "independence",
-    "problem-solving",
-    "exam preparation",
-    "probability tools",
-    "decision-making",
-    "common mistakes"
+    "tree diagrams",
+    "problem solving",
+    "probability applications",
+    "partitions",
+    "prior and posterior",
+    "without replacement"
    ],
    "src": "/media/learn/counting/counting-19.mp4",
    "poster": "/media/learn/counting/counting-19.jpg",
    "captions": "/media/learn/counting/counting-19.vtt"
+  },
+  {
+   "n": 20,
+   "title": "Recognising Which Formula to Use Under Pressure",
+   "summary": "When you see an unlabelled word problem on an exam, you have about ten seconds to identify which formula applies — and that skill is harder than memorising the formulas themselves. This video teaches a decision map: first fork on counting versus probability, then follow-on questions about order, repetition, and conditional direction. You'll apply this map to five real unlabelled problems and learn four habits that save you in the exam.",
+   "runs": "8:22",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question under time pressure"
+    },
+    {
+     "at": "0:36",
+     "title": "First fork: counting or probability"
+    },
+    {
+     "at": "1:27",
+     "title": "Inside counting: order and repetition"
+    },
+    {
+     "at": "2:04",
+     "title": "Inside probability: conditional, partition, or reversed"
+    },
+    {
+     "at": "3:01",
+     "title": "Unlabelled problem one: at-least-one"
+    },
+    {
+     "at": "3:50",
+     "title": "Unlabelled problem two: Bayes update"
+    },
+    {
+     "at": "4:42",
+     "title": "Unlabelled problem three: independence and a committee"
+    },
+    {
+     "at": "5:35",
+     "title": "Unlabelled problem four: inclusion-exclusion"
+    },
+    {
+     "at": "6:05",
+     "title": "Unlabelled problem five: plain equally-likely count"
+    },
+    {
+     "at": "6:31",
+     "title": "What actually saves you in the exam"
+    },
+    {
+     "at": "7:20",
+     "title": "Recap: the whole map in one breath"
+    }
+   ],
+   "tags": [
+    "counting",
+    "probability",
+    "permutations",
+    "combinations",
+    "Bayes theorem",
+    "conditional probability",
+    "word problems",
+    "exam strategy",
+    "decision framework",
+    "problem recognition"
+   ],
+   "src": "/media/learn/counting/counting-20.mp4",
+   "poster": "/media/learn/counting/counting-20.jpg",
+   "captions": "/media/learn/counting/counting-20.vtt"
   }
  ];
 
 export const PATTERNS: Lesson[] = [
   {
-   "n": 4,
-   "title": "Confidence Intervals: From Point Estimates to Honest Uncertainty",
-   "summary": "Learn why a single statistic like \"average commute is 27 minutes\" can mislead, and how to build confidence intervals that honestly communicate uncertainty. You'll discover what confidence actually means, how to calculate margin of error from sample data, and why this matters for reporting model accuracy and other results in data work.",
-   "runs": "5:47",
+   "n": 1,
+   "title": "Data-Mining Pipeline: Question to Decision",
+   "summary": "Learn the complete data-mining pipeline from start to finish: starting with a question, selecting and preprocessing data, fitting a model, and interpreting results into decisions. Using a campus bike-share system as the running example, you'll see how selection and preprocessing actually consume most of the work—not the algorithm itself—and how interpretation closes the loop by generating new questions to investigate.",
+   "runs": "10:56",
    "chapters": [
     {
      "at": "0:00",
-     "title": "The Number That Was Lying"
+     "title": "The question Jamal actually has"
     },
     {
-     "at": "0:43",
-     "title": "Why One Number Is Dishonest"
+     "at": "1:07",
+     "title": "The question comes before the data touches anything"
     },
     {
-     "at": "1:24",
-     "title": "Building One From Scratch"
+     "at": "2:54",
+     "title": "Selection: which trips, and what you throw away by choosing"
+    },
+    {
+     "at": "4:19",
+     "title": "Preprocessing: the part nobody warned you about"
+    },
+    {
+     "at": "6:13",
+     "title": "Modelling: fitting a rule to examples"
+    },
+    {
+     "at": "7:11",
+     "title": "Interpretation: where a number becomes a decision"
+    },
+    {
+     "at": "8:13",
+     "title": "Where the time actually goes"
+    },
+    {
+     "at": "9:07",
+     "title": "A loop, not a line"
+    },
+    {
+     "at": "9:58",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "data mining",
+    "pipeline",
+    "preprocessing",
+    "modeling",
+    "data cleaning",
+    "selection",
+    "interpretation",
+    "bike-share",
+    "machine learning workflow",
+    "data science"
+   ],
+   "src": "/media/learn/patterns/patterns-01.mp4",
+   "poster": "/media/learn/patterns/patterns-01.jpg",
+   "captions": "/media/learn/patterns/patterns-01.vtt"
+  },
+  {
+   "n": 2,
+   "title": "Exploratory Data Analysis: Understanding Your Data Before Modeling",
+   "summary": "Learn why you must inspect and understand your raw data before building a machine learning model—a critical habit that catches silent errors and prevents meaningless predictions. This lesson covers histograms, distributions, summary statistics, scatterplots, and how to handle missing values, outliers, and duplicates using a real bike-trip dataset.",
+   "runs": "12:07",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Why look before you leap"
+    },
+    {
+     "at": "0:56",
+     "title": "The histogram and the shape of duration"
+    },
+    {
+     "at": "2:07",
+     "title": "Mean versus median"
+    },
+    {
+     "at": "3:27",
+     "title": "Spread: variance, standard deviation, and quartiles"
+    },
+    {
+     "at": "4:56",
+     "title": "Scatterplots and correlation"
+    },
+    {
+     "at": "7:04",
+     "title": "Missing values: two very different reasons"
+    },
+    {
+     "at": "8:28",
+     "title": "Outliers versus errors, and duplicates"
+    },
+    {
+     "at": "9:37",
+     "title": "Standardizing, and why distance will demand it"
+    },
+    {
+     "at": "10:53",
+     "title": "Recap: the habit, not just the tools"
+    }
+   ],
+   "tags": [
+    "exploratory data analysis",
+    "data cleaning",
+    "histograms",
+    "correlation",
+    "outliers",
+    "missing values",
+    "standardization",
+    "machine learning preparation",
+    "data validation"
+   ],
+   "src": "/media/learn/patterns/patterns-02.mp4",
+   "poster": "/media/learn/patterns/patterns-02.jpg",
+   "captions": "/media/learn/patterns/patterns-02.vtt"
+  },
+  {
+   "n": 3,
+   "title": "Hypothesis Testing and P-Values: The Logic Behind Statistical Significance",
+   "summary": "Learn how to test whether an observed change in data is real or just random noise by setting up a null hypothesis, calculating a test statistic, and interpreting p-values correctly. You'll work through a real example about whether a new dock increased campus bike trips, and discover the critical distinctions between statistical significance and practical importance, plus two major pitfalls to avoid when testing data.",
+   "runs": "9:59",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "412 to 448 — Is That the Dock?"
+    },
+    {
+     "at": "1:11",
+     "title": "The Null: The Boring Explanation"
     },
     {
      "at": "2:26",
-     "title": "What 'Confident' Actually Means"
+     "title": "One Number to Summarise the Evidence"
     },
     {
-     "at": "3:29",
-     "title": "Where People Trip"
+     "at": "3:33",
+     "title": "What t Would Look Like If Nothing Changed"
     },
     {
-     "at": "4:27",
-     "title": "Why This Matters for Data Mining"
+     "at": "4:42",
+     "title": "The P-Value: Probability of This or Worse, Given the Null"
     },
     {
-     "at": "4:52",
-     "title": "Saying It Back"
+     "at": "6:07",
+     "title": "Running the Numbers on the Dock"
+    },
+    {
+     "at": "7:14",
+     "title": "Significant Isn't the Same as Important"
+    },
+    {
+     "at": "8:00",
+     "title": "Testing Until Something Sticks"
+    },
+    {
+     "at": "8:49",
+     "title": "Recap: The Logic, Not the Ritual"
+    }
+   ],
+   "tags": [
+    "hypothesis testing",
+    "null hypothesis",
+    "p-value",
+    "test statistic",
+    "statistical significance",
+    "sampling distribution",
+    "t-test",
+    "data analysis",
+    "multiple testing",
+    "effect size"
+   ],
+   "src": "/media/learn/patterns/patterns-03.mp4",
+   "poster": "/media/learn/patterns/patterns-03.jpg",
+   "captions": "/media/learn/patterns/patterns-03.vtt"
+  },
+  {
+   "n": 4,
+   "title": "Confidence Intervals: From Standard Error to Effect Size",
+   "summary": "Learn how to build honest confidence intervals around sample estimates and interpret what they actually mean. You'll understand why precision is expensive (requiring four times the data to halve uncertainty), what \"95 percent\" really promises, and how to compare groups while accounting for both statistical significance and practical effect size.",
+   "runs": "7:57",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Fourteen point two minutes, but which fourteen point two"
+    },
+    {
+     "at": "0:44",
+     "title": "The spread of the estimate, not the spread of the data"
+    },
+    {
+     "at": "1:54",
+     "title": "Four times the data buys twice the precision"
+    },
+    {
+     "at": "2:50",
+     "title": "Building the interval"
+    },
+    {
+     "at": "3:42",
+     "title": "What ninety-five percent actually promises"
+    },
+    {
+     "at": "4:55",
+     "title": "Comparing two intervals, honestly"
+    },
+    {
+     "at": "5:56",
+     "title": "Does it matter — effect size"
+    },
+    {
+     "at": "7:05",
+     "title": "Putting it together"
     }
    ],
    "tags": [
     "confidence intervals",
-    "point estimate",
-    "margin of error",
     "standard error",
+    "sample size",
     "statistical inference",
-    "sampling uncertainty",
-    "data literacy",
-    "statistics fundamentals",
-    "machine learning evaluation"
+    "effect size",
+    "normal distribution",
+    "bike-share data",
+    "statistical significance"
    ],
    "src": "/media/learn/patterns/patterns-04.mp4",
    "poster": "/media/learn/patterns/patterns-04.jpg",
    "captions": "/media/learn/patterns/patterns-04.vtt"
   },
   {
-   "n": 11,
-   "title": "Decision Tree Root Selection: Entropy & Information Gain",
-   "summary": "Learn why question order matters in decision trees and how to pick the best root question using entropy and information gain. This video teaches you to measure group \"messiness\" with a number, calculate how much a question reduces that messiness, and understand why greedy selection by information gain works—plus how to avoid common traps like ID columns that fake high gain.",
-   "runs": "5:10",
+   "n": 5,
+   "title": "Testing Claims in Data: Six Real Meeting Sentences Broken Down",
+   "summary": "Learn how to critically examine confident claims made in meetings before they become decisions. This video walks through six real-world data claims about bike-share usage, showing what goes wrong with naive tests, what confounds each one, and how to fix them—or whether to test them at all. Afterward, you'll recognize the four questions that catch bad conclusions before you do any computing.",
+   "runs": "7:16",
    "chapters": [
     {
      "at": "0:00",
-     "title": "Why does question order even matter?"
+     "title": "Six sentences from a meeting"
     },
     {
-     "at": "0:34",
-     "title": "Measuring messiness: impurity"
+     "at": "0:30",
+     "title": "Claim one: the new dock increased usage"
     },
     {
-     "at": "1:13",
-     "title": "Entropy: the standard ruler"
+     "at": "1:35",
+     "title": "Claim two: members ride longer than casuals"
     },
     {
-     "at": "2:02",
-     "title": "Worked example: picking the root question"
+     "at": "2:33",
+     "title": "Claim three: rain halves our trips"
     },
     {
-     "at": "3:05",
-     "title": "Saying it back"
+     "at": "3:23",
+     "title": "Claim four: station fourteen has a broken-bike problem"
     },
     {
-     "at": "3:44",
+     "at": "4:12",
+     "title": "Claim five: weekend trips are different"
+    },
+    {
+     "at": "5:09",
+     "title": "Claim six: our busiest station is the one downtown"
+    },
+    {
+     "at": "5:56",
+     "title": "Four questions for any claim"
+    },
+    {
+     "at": "6:40",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "hypothesis testing",
+    "confounding variables",
+    "statistical claims",
+    "null hypothesis",
+    "two-sample t-test",
+    "effect size",
+    "data quality",
+    "bike-share analysis",
+    "critical thinking",
+    "statistical literacy"
+   ],
+   "src": "/media/learn/patterns/patterns-05.mp4",
+   "poster": "/media/learn/patterns/patterns-05.jpg",
+   "captions": "/media/learn/patterns/patterns-05.vtt"
+  },
+  {
+   "n": 6,
+   "title": "k-Nearest Neighbours: How to Classify with No Formula",
+   "summary": "Learn k-nearest neighbours (kNN), a simple but powerful classification algorithm that works by finding the k most similar past examples and taking a vote. You'll discover why scaling matters, how to choose k to balance between overfitting and oversimplifying, and when kNN is genuinely the right tool rather than something more complex.",
+   "runs": "9:55",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "A trip with no label"
+    },
+    {
+     "at": "0:48",
+     "title": "Voting by hand"
+    },
+    {
+     "at": "1:48",
+     "title": "What 'closest' even means"
+    },
+    {
+     "at": "3:18",
+     "title": "The trap: seconds versus years"
+    },
+    {
+     "at": "4:50",
+     "title": "Choosing k: jagged to smooth"
+    },
+    {
+     "at": "6:19",
+     "title": "Should every neighbour get an equal vote?"
+    },
+    {
+     "at": "7:15",
+     "title": "The honest costs"
+    },
+    {
+     "at": "8:15",
+     "title": "When kNN is genuinely right"
+    },
+    {
+     "at": "8:55",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "k-nearest neighbours",
+    "kNN",
+    "classification",
+    "machine learning",
+    "feature scaling",
+    "Euclidean distance",
+    "bias-variance tradeoff",
+    "lazy learning",
+    "bike-share data"
+   ],
+   "src": "/media/learn/patterns/patterns-06.mp4",
+   "poster": "/media/learn/patterns/patterns-06.jpg",
+   "captions": "/media/learn/patterns/patterns-06.vtt"
+  },
+  {
+   "n": 7,
+   "title": "The Curse of Dimensionality in k-Nearest Neighbours",
+   "summary": "Learn why adding more features to k-nearest neighbours doesn't improve predictions—it actually breaks the algorithm. This lesson explains the geometry behind high-dimensional data and teaches three practical solutions: feature selection, feature engineering, and dimensionality reduction.",
+   "runs": "9:00",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question"
+    },
+    {
+     "at": "0:44",
+     "title": "Setting up the measurement"
+    },
+    {
+     "at": "2:04",
+     "title": "The ratio that goes to one"
+    },
+    {
+     "at": "3:23",
+     "title": "Why: the corners of the cube"
+    },
+    {
+     "at": "4:28",
+     "title": "The exponential data problem"
+    },
+    {
+     "at": "5:32",
+     "title": "The mistakes people make"
+    },
+    {
+     "at": "6:25",
+     "title": "Three ways out, each named"
+    },
+    {
+     "at": "7:44",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "k-nearest neighbours",
+    "curse of dimensionality",
+    "feature selection",
+    "feature engineering",
+    "machine learning",
+    "high-dimensional data",
+    "distance metrics",
+    "data scaling",
+    "indicator variables"
+   ],
+   "src": "/media/learn/patterns/patterns-07.mp4",
+   "poster": "/media/learn/patterns/patterns-07.jpg",
+   "captions": "/media/learn/patterns/patterns-07.vtt"
+  },
+  {
+   "n": 8,
+   "title": "Naive Bayes: Flipping the Question with Probability",
+   "summary": "Learn how to classify data using probability instead of distance, with Bayes' rule. You'll walk through the naive assumption that simplifies joint probabilities into independent features, master practical fixes like Laplace smoothing and log-space arithmetic, and understand why this false assumption still picks the right class—even if confidence numbers are off.",
+   "runs": "11:14",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "A classifier that isn't geometry"
+    },
+    {
+     "at": "0:51",
+     "title": "Flipping the question with Bayes' rule"
+    },
+    {
+     "at": "2:04",
+     "title": "The joint probability nobody has enough data for"
+    },
+    {
+     "at": "3:15",
+     "title": "The naive assumption"
+    },
+    {
+     "at": "4:28",
+     "title": "Working it by hand"
+    },
+    {
+     "at": "6:00",
+     "title": "The zero-probability trap and Laplace smoothing"
+    },
+    {
+     "at": "7:07",
+     "title": "Why we add instead of multiply"
+    },
+    {
+     "at": "7:51",
+     "title": "Right answer, wrong confidence"
+    },
+    {
+     "at": "8:43",
+     "title": "Why the false assumption still wins"
+    },
+    {
+     "at": "9:22",
      "title": "Where people trip up"
     },
     {
-     "at": "4:33",
+     "at": "10:05",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "naive Bayes",
+    "classification",
+    "Bayes rule",
+    "probability",
+    "Laplace smoothing",
+    "conditional probability",
+    "feature independence",
+    "machine learning",
+    "likelihood estimation"
+   ],
+   "src": "/media/learn/patterns/patterns-08.mp4",
+   "poster": "/media/learn/patterns/patterns-08.jpg",
+   "captions": "/media/learn/patterns/patterns-08.vtt"
+  },
+  {
+   "n": 9,
+   "title": "The Perceptron: Learning a Line from Mistakes",
+   "summary": "Learn how a perceptron algorithm finds a straight boundary between two classes of data by repeatedly adjusting a line whenever it makes a mistake. You'll understand the weighted sum formula, the learning rule, and the two fundamental limits: the algorithm only converges if the data is linearly separable, and even then it may find a barely-adequate boundary rather than the optimal one.",
+   "runs": "8:16",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "A line that learns"
+    },
+    {
+     "at": "0:40",
+     "title": "The weighted sum and the threshold"
+    },
+    {
+     "at": "1:45",
+     "title": "The learning rule"
+    },
+    {
+     "at": "2:42",
+     "title": "Four steps, by hand"
+    },
+    {
+     "at": "4:28",
+     "title": "The promise, stated precisely"
+    },
+    {
+     "at": "5:21",
+     "title": "When it never stops"
+    },
+    {
+     "at": "6:20",
+     "title": "Converged, but not good"
+    },
+    {
+     "at": "7:20",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "perceptron",
+    "linear classification",
+    "machine learning",
+    "supervised learning",
+    "decision boundary",
+    "weights and bias",
+    "convergence",
+    "linear separability"
+   ],
+   "src": "/media/learn/patterns/patterns-09.mp4",
+   "poster": "/media/learn/patterns/patterns-09.jpg",
+   "captions": "/media/learn/patterns/patterns-09.vtt"
+  },
+  {
+   "n": 10,
+   "title": "Logistic Regression: From Lines to Probabilities",
+   "summary": "Learn how to turn a perceptron's yes-or-no classification into a probability between 0 and 1 using the sigmoid function and logistic regression. You'll understand how to interpret coefficients as odds multipliers, why cross-entropy loss is better than squared error for classification, and how to choose a decision threshold based on the real cost of mistakes.",
+   "runs": "9:01",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "A Number, Not a Label"
+    },
+    {
+     "at": "0:45",
+     "title": "Why a Straight Line Can't Give You a Probability"
+    },
+    {
+     "at": "1:38",
+     "title": "The Sigmoid: Squashing Any Number Into (0, 1)"
+    },
+    {
+     "at": "2:38",
+     "title": "The Model: A Line Inside a Squash"
+    },
+    {
+     "at": "3:44",
+     "title": "Log-Odds: What a Coefficient Actually Means"
+    },
+    {
+     "at": "5:05",
+     "title": "Training: Cross-Entropy, Not Squared Error"
+    },
+    {
+     "at": "6:26",
+     "title": "The Threshold Is a Choice, Not Part of the Model"
+    },
+    {
+     "at": "7:21",
+     "title": "Two Ways People Get This Wrong"
+    },
+    {
+     "at": "7:59",
+     "title": "Recap: Line In, Probability Out"
+    }
+   ],
+   "tags": [
+    "logistic regression",
+    "sigmoid function",
+    "probability",
+    "classification",
+    "cross-entropy loss",
+    "odds",
+    "coefficients",
+    "threshold",
+    "machine learning",
+    "binary classification"
+   ],
+   "src": "/media/learn/patterns/patterns-10.mp4",
+   "poster": "/media/learn/patterns/patterns-10.jpg",
+   "captions": "/media/learn/patterns/patterns-10.vtt"
+  },
+  {
+   "n": 11,
+   "title": "Decision Trees: How to Pick the Best Questions",
+   "summary": "Learn how decision trees make predictions by asking a series of yes-or-no questions about your data. This lesson teaches you how to measure entropy and information gain to automatically choose which question to ask first at each step, and how to handle numeric features by testing different thresholds. You'll understand why weighting by branch size matters and what common pitfalls to avoid when building trees.",
+   "runs": "11:19",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question the lesson answers"
+    },
+    {
+     "at": "1:01",
+     "title": "Node, branch, leaf, prediction"
+    },
+    {
+     "at": "2:03",
+     "title": "Entropy: measuring how mixed a node is"
+    },
+    {
+     "at": "3:27",
+     "title": "Information gain: entropy before minus entropy after"
+    },
+    {
+     "at": "5:42",
+     "title": "Gini impurity: the cheaper cousin"
+    },
+    {
+     "at": "7:23",
+     "title": "Numeric thresholds and a trap for many-valued features"
+    },
+    {
+     "at": "9:02",
+     "title": "Where people trip up"
+    },
+    {
+     "at": "9:53",
      "title": "Recap"
     }
    ],
@@ -3320,12 +4372,13 @@ export const PATTERNS: Lesson[] = [
     "decision trees",
     "entropy",
     "information gain",
-    "impurity",
-    "root node selection",
     "machine learning",
     "classification",
-    "greedy algorithm",
-    "uncertainty measurement"
+    "tree splitting",
+    "gini impurity",
+    "feature selection",
+    "thresholds",
+    "bike trips"
    ],
    "src": "/media/learn/patterns/patterns-11.mp4",
    "poster": "/media/learn/patterns/patterns-11.jpg",
@@ -3333,55 +4386,244 @@ export const PATTERNS: Lesson[] = [
   },
   {
    "n": 12,
-   "title": "Decision Tree Pruning: Stop Your Trees from Memorizing",
-   "summary": "Learn why decision trees that perfectly fit training data fail on new data, and how to fix it through pruning. This video teaches both pre-pruning (stopping tree growth early with rules like maximum depth) and post-pruning (growing the full tree then trimming branches using a validation set). You'll understand the difference between a tree that memorizes versus one that truly learns the underlying pattern.",
-   "runs": "5:09",
+   "title": "Tree Overfitting: Pre-Pruning, Post-Pruning, and Finding the Right Size",
+   "summary": "Learn why decision trees grown to pure leaves memorize training data instead of learning real patterns, and how to fix it. You'll master pre-pruning (stopping growth early with depth or leaf-size limits) and post-pruning (growing the full tree then cutting back with validation data), then read your final tree as interpretable if-then rules.",
+   "runs": "8:33",
    "chapters": [
     {
      "at": "0:00",
-     "title": "The tree that got every training example right"
+     "title": "The Tree That Got Everything Right"
     },
     {
-     "at": "0:34",
-     "title": "Why deep trees memorise"
+     "at": "0:53",
+     "title": "Why the Failure Is Structural"
     },
     {
-     "at": "1:24",
-     "title": "Part one: pre-pruning, stopping early"
+     "at": "1:55",
+     "title": "Pre-Pruning: Stop It Early"
     },
     {
-     "at": "2:21",
-     "title": "Part two: post-pruning, grow then cut back"
+     "at": "3:02",
+     "title": "Post-Pruning: Grow It, Then Cut"
     },
     {
-     "at": "3:36",
-     "title": "Mistakes people make"
+     "at": "4:19",
+     "title": "The Classic Curve"
     },
     {
-     "at": "4:26",
+     "at": "5:22",
+     "title": "Where People Go Wrong"
+    },
+    {
+     "at": "6:19",
+     "title": "Reading the Pruned Tree as Rules"
+    },
+    {
+     "at": "7:19",
      "title": "Recap"
     }
    ],
    "tags": [
     "decision trees",
-    "pruning",
     "overfitting",
-    "machine learning",
-    "validation set",
+    "pruning",
     "pre-pruning",
     "post-pruning",
-    "model evaluation",
+    "validation",
     "tree depth",
-    "generalization"
+    "information gain",
+    "machine learning",
+    "model selection"
    ],
    "src": "/media/learn/patterns/patterns-12.mp4",
    "poster": "/media/learn/patterns/patterns-12.jpg",
    "captions": "/media/learn/patterns/patterns-12.vtt"
   },
   {
+   "n": 13,
+   "title": "Support Vector Machines: From Maximum Margin to Soft Margins",
+   "summary": "Learn the core ideas behind support vector machines: why finding the widest gap between classes matters more than just separating them, how only the closest points (support vectors) determine the boundary, and how the hyperparameter C controls the trade-off between a wide margin and tolerating misclassified points. You'll understand the full optimization statement and see how SVMs handle real, messy data.",
+   "runs": "10:06",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Which line do you trust?"
+    },
+    {
+     "at": "1:09",
+     "title": "Defining the margin"
+    },
+    {
+     "at": "2:58",
+     "title": "The points that matter"
+    },
+    {
+     "at": "4:11",
+     "title": "Stating the optimisation"
+    },
+    {
+     "at": "5:36",
+     "title": "Real data isn't that clean"
+    },
+    {
+     "at": "6:06",
+     "title": "The soft margin and C"
+    },
+    {
+     "at": "7:30",
+     "title": "Small, medium, large C on the same data"
+    },
+    {
+     "at": "8:22",
+     "title": "Where people trip up"
+    },
+    {
+     "at": "9:10",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "support vector machines",
+    "maximum margin",
+    "support vectors",
+    "slack variables",
+    "soft margin",
+    "hyperparameter tuning",
+    "classification",
+    "optimization",
+    "machine learning",
+    "SVM"
+   ],
+   "src": "/media/learn/patterns/patterns-13.mp4",
+   "poster": "/media/learn/patterns/patterns-13.jpg",
+   "captions": "/media/learn/patterns/patterns-13.vtt"
+  },
+  {
+   "n": 14,
+   "title": "Kernel Methods: Separating Data That Can't Be Separated Linearly",
+   "summary": "Learn how to separate classes that no straight line can divide by adding computed features and using kernel functions. You'll understand how kernels let a support vector machine solve curved boundary problems without explicitly creating high-dimensional feature spaces, and when to use polynomial versus RBF kernels in practice.",
+   "runs": "9:46",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The line that refuses to exist"
+    },
+    {
+     "at": "0:49",
+     "title": "Add a feature, watch it separate"
+    },
+    {
+     "at": "2:08",
+     "title": "The bill for all those new coordinates"
+    },
+    {
+     "at": "3:16",
+     "title": "The trick: only dot products, ever"
+    },
+    {
+     "at": "4:27",
+     "title": "A kernel function, computed directly"
+    },
+    {
+     "at": "6:01",
+     "title": "Two kernels worth knowing by name"
+    },
+    {
+     "at": "7:13",
+     "title": "Turn gamma up and watch it memorise"
+    },
+    {
+     "at": "8:02",
+     "title": "When to actually reach for this"
+    },
+    {
+     "at": "8:49",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "kernel methods",
+    "support vector machines",
+    "feature mapping",
+    "polynomial kernel",
+    "RBF kernel",
+    "non-linear classification",
+    "kernel trick",
+    "machine learning",
+    "SVM",
+    "gamma tuning"
+   ],
+   "src": "/media/learn/patterns/patterns-14.mp4",
+   "poster": "/media/learn/patterns/patterns-14.jpg",
+   "captions": "/media/learn/patterns/patterns-14.vtt"
+  },
+  {
+   "n": 15,
+   "title": "Choosing a Classifier: Defense Over Leaderboard",
+   "summary": "Learn how to pick the right classifier for your problem by matching model assumptions to your data, not by chasing accuracy numbers. Work through five real bike-share scenarios where logistic regression, decision trees, naive Bayes, k-nearest neighbours, and kernel SVMs each have their moment, then build a comparison table you can use to defend your choice under pressure.",
+   "runs": "12:08",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question Nobody Answers Honestly"
+    },
+    {
+     "at": "0:58",
+     "title": "Case One — Fifty Thousand Trips, Ten Clean Numbers"
+    },
+    {
+     "at": "2:36",
+     "title": "Case Two — Two Hundred Rows, Eighty Features"
+    },
+    {
+     "at": "4:12",
+     "title": "Case Three — A Model the Council Must Read"
+    },
+    {
+     "at": "5:29",
+     "title": "Case Four — Text Notes from the Mechanics"
+    },
+    {
+     "at": "6:50",
+     "title": "Case Five — A Boundary That Visibly Curves"
+    },
+    {
+     "at": "7:50",
+     "title": "When Two Answers Are Both Right"
+    },
+    {
+     "at": "8:41",
+     "title": "Head to Head, on the Axes That Matter"
+    },
+    {
+     "at": "10:39",
+     "title": "The Trap: Picking by Leaderboard, Not by Reason"
+    },
+    {
+     "at": "11:22",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "classification",
+    "model selection",
+    "machine learning",
+    "logistic regression",
+    "decision trees",
+    "naive Bayes",
+    "k-nearest neighbours",
+    "SVM",
+    "model assumptions",
+    "interpretability"
+   ],
+   "src": "/media/learn/patterns/patterns-15.mp4",
+   "poster": "/media/learn/patterns/patterns-15.jpg",
+   "captions": "/media/learn/patterns/patterns-15.vtt"
+  },
+  {
    "n": 16,
-   "title": "K-Fold Cross-Validation: Why One Train-Test Split Isn't Enough",
-   "summary": "Learn why a single train-test split can give misleading results, and how k-fold cross-validation provides a more trustworthy estimate of model performance. This video teaches the mechanics of cross-validation, shows a worked example with real numbers, and clarifies common misconceptions—including why your cross-validation models aren't your final model.",
+   "title": "K-Fold Cross-Validation: Trust Your Model's Error",
+   "summary": "Learn why a single train-test split can give you misleading results and how k-fold cross-validation fixes that problem. This video teaches you to estimate a model's true performance by splitting data into folds, training and testing on each fold in turn, and averaging the results—then explains how to build your final model afterward.",
    "runs": "5:24",
    "chapters": [
     {
@@ -3418,63 +4660,185 @@ export const PATTERNS: Lesson[] = [
     "k-fold",
     "model evaluation",
     "train-test split",
-    "machine learning",
-    "overfitting",
     "error estimation",
-    "validation",
-    "time series",
-    "forecasting"
+    "machine learning",
+    "data splitting",
+    "model validation",
+    "avoiding overfitting",
+    "statistical reliability"
    ],
    "src": "/media/learn/patterns/patterns-16.mp4",
    "poster": "/media/learn/patterns/patterns-16.jpg",
    "captions": "/media/learn/patterns/patterns-16.vtt"
   },
   {
-   "n": 19,
-   "title": "The One-Page ML Cheatsheet: Finding the Right Model Fast",
-   "summary": "When facing a new dataset, this lesson compresses 18 lessons into a one-page decision map: what question shape are you solving (classification, regression, or clustering), what does your data look like, which simple baseline model should you start with, and how will you know it worked. After watching, you'll be able to quickly navigate from panic to the right first move, avoiding common mistakes like skipping baselines or using mismatched scoring metrics.",
-   "runs": "6:19",
+   "n": 17,
+   "title": "Accuracy Lies: Precision, Recall, and the Right Metric for Rare Classes",
+   "summary": "When one class is rare (like faulty bikes in a mostly-functional fleet), raw accuracy becomes misleading—a model predicting \"no fault\" always can score 97% while catching nothing. This video teaches you to see past accuracy, understand the confusion matrix and the precision-recall tradeoff, and learn when to use F1, ROC curves, and precision-recall curves. You'll be able to pick a threshold that matches the real-world cost of your mistakes, not just optimize a number.",
+   "runs": "8:59",
    "chapters": [
     {
      "at": "0:00",
-     "title": "Why one page at all"
+     "title": "Ninety-Seven Percent Accurate and Useless"
+    },
+    {
+     "at": "0:58",
+     "title": "The Four Cells, In Mechanic's Words"
+    },
+    {
+     "at": "2:02",
+     "title": "Two Questions, Two Numbers"
+    },
+    {
+     "at": "2:55",
+     "title": "Moving the Threshold"
+    },
+    {
+     "at": "3:55",
+     "title": "Squashing Two Numbers Into One"
+    },
+    {
+     "at": "4:50",
+     "title": "Sweeping the Threshold: The ROC Curve"
+    },
+    {
+     "at": "6:08",
+     "title": "When ROC Flatters You"
+    },
+    {
+     "at": "7:01",
+     "title": "The Threshold Is a Decision About People"
+    },
+    {
+     "at": "7:49",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "precision",
+    "recall",
+    "confusion matrix",
+    "imbalanced classes",
+    "F1 score",
+    "ROC curve",
+    "threshold selection",
+    "rare events",
+    "model evaluation",
+    "classification metrics"
+   ],
+   "src": "/media/learn/patterns/patterns-17.mp4",
+   "poster": "/media/learn/patterns/patterns-17.jpg",
+   "captions": "/media/learn/patterns/patterns-17.vtt"
+  },
+  {
+   "n": 18,
+   "title": "Five Suspiciously Good Models: Data Leakage and Validation Traps",
+   "summary": "Learn why perfect model scores can hide serious problems through five real examples: leaking future information, test-set statistics, class imbalance, overfitting to validation data, and ignoring time order. You'll gain a five-question checklist to catch these bugs before training anything, and understand how correct math on wrong data still gives wrong answers.",
+   "runs": "8:37",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Five Suspiciously Good Models"
     },
     {
      "at": "0:46",
-     "title": "First fork: what's the question shape"
+     "title": "Model A: The Feature From the Future"
     },
     {
-     "at": "1:50",
-     "title": "Second fork: what does your data look like"
+     "at": "2:00",
+     "title": "Model B: Standardized Before the Split"
     },
     {
-     "at": "2:50",
-     "title": "Third fork: pick a first model, not the best model"
+     "at": "3:14",
+     "title": "Model C: Ninety-Eight Percent Accurate, Two Percent Positive"
     },
     {
-     "at": "3:48",
-     "title": "Fourth box: how will I know it worked"
+     "at": "4:18",
+     "title": "Model D: Best of Forty, Worst in the World"
     },
     {
-     "at": "4:40",
-     "title": "Where the page gets misused"
+     "at": "5:37",
+     "title": "Model E: Trained on Yesterday, Deployed on Tomorrow"
     },
     {
-     "at": "5:29",
-     "title": "Recap: the page in one breath"
+     "at": "6:52",
+     "title": "The Pre-Flight Checklist"
+    },
+    {
+     "at": "7:40",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "data leakage",
+    "model validation",
+    "train-test split",
+    "overfitting",
+    "class imbalance",
+    "feature engineering",
+    "evaluation metrics",
+    "baseline comparison",
+    "time series",
+    "machine learning mistakes"
+   ],
+   "src": "/media/learn/patterns/patterns-18.mp4",
+   "poster": "/media/learn/patterns/patterns-18.jpg",
+   "captions": "/media/learn/patterns/patterns-18.vtt"
+  },
+  {
+   "n": 19,
+   "title": "The One-Page Cheat Sheet for Six Machine Learning Algorithms",
+   "summary": "Learn how to compress the essentials of six machine learning algorithms—kNN, naive Bayes, perceptron, logistic regression, decision trees, and SVMs—into a single reference page that fits in ten minutes of handwriting. You'll master the eight key questions to ask of any method, memorize the critical formulas, and use a decision flowchart to pick the right algorithm for your data.",
+   "runs": "13:13",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The night before the exam"
+    },
+    {
+     "at": "0:49",
+     "title": "The eight questions"
+    },
+    {
+     "at": "1:39",
+     "title": "Row one and two: kNN, naive Bayes"
+    },
+    {
+     "at": "3:30",
+     "title": "Row three and four: perceptron, logistic regression"
+    },
+    {
+     "at": "4:48",
+     "title": "Row five and six: decision trees, SVM"
+    },
+    {
+     "at": "6:51",
+     "title": "The formulas worth knowing cold"
+    },
+    {
+     "at": "9:39",
+     "title": "The decision flow"
+    },
+    {
+     "at": "11:12",
+     "title": "How people misuse the sheet"
+    },
+    {
+     "at": "12:14",
+     "title": "Recap: what's actually on the page"
     }
    ],
    "tags": [
     "machine learning",
-    "cheatsheet",
-    "workflow",
-    "baseline model",
-    "classification",
-    "regression",
-    "clustering",
-    "model evaluation",
-    "decision-making",
-    "quick reference"
+    "algorithms",
+    "kNN",
+    "naive Bayes",
+    "decision trees",
+    "SVM",
+    "logistic regression",
+    "perceptron",
+    "study guide",
+    "cheat sheet"
    ],
    "src": "/media/learn/patterns/patterns-19.mp4",
    "poster": "/media/learn/patterns/patterns-19.jpg",
@@ -3482,8 +4846,8 @@ export const PATTERNS: Lesson[] = [
   },
   {
    "n": 20,
-   "title": "Exam Strategy: From Derivations to Partial Credit",
-   "summary": "Learn the four core exam strategies for machine learning problems: identifying problem types by checking for labels, deriving key formulas like least squares and gradient descent from scratch, distinguishing bias-variance as causes rather than synonyms for overfitting, and avoiding common mistakes with units and assumptions. After watching, you'll know how to tackle regression, classification, and clustering problems on an exam by executing derivations cleanly and earning partial credit through careful setup and clear reasoning.",
+   "title": "Exam Prep: How to Derive, Not Just Memorize",
+   "summary": "Learn the four-step strategy for acing machine learning exams: identify problem types from their structure, reproduce key derivations like least squares and gradient descent from first principles, distinguish bias and variance as causes rather than outcomes, and avoid common point-loss mistakes with labeling and assumptions. You'll practice spotting regression, classification, and clustering problems, and understand how to execute the mathematics cleanly under exam pressure.",
    "runs": "5:51",
    "chapters": [
     {
@@ -3520,16 +4884,16 @@ export const PATTERNS: Lesson[] = [
     }
    ],
    "tags": [
-    "regression",
-    "classification",
-    "clustering",
+    "exam preparation",
+    "machine learning fundamentals",
+    "derivations",
     "least squares",
     "gradient descent",
     "bias-variance tradeoff",
-    "exam preparation",
-    "derivations",
-    "decision trees",
-    "overfitting"
+    "classification",
+    "regression",
+    "clustering",
+    "study strategy"
    ],
    "src": "/media/learn/patterns/patterns-20.mp4",
    "poster": "/media/learn/patterns/patterns-20.jpg",
