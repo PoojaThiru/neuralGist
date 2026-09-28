@@ -6432,8 +6432,8 @@ export const HOWITWORKS: Lesson[] = [
 export const CHANCE: Lesson[] = [
   {
    "n": 1,
-   "title": "Random Variables: Not Random, Not Variables",
-   "summary": "A random variable is not a number waiting to be revealed—it's a function that transforms messy real-world outcomes into numbers you can actually compute with. This video clarifies the concept using a helpdesk example, explaining why the distinction between discrete and continuous random variables matters, and how probability notation like P(X=3) really refers to sets of outcomes underneath. After watching, you'll understand what random variables actually are and how they enable all of probability's computational power.",
+   "title": "Random Variables: Functions, Not Values",
+   "summary": "Learn what a random variable actually is—a function that maps messy real-world outcomes to numbers, not a mysterious hidden value waiting to be revealed. Using a helpdesk ticket example, this video clarifies the difference between discrete and continuous random variables and shows why this framework lets you compute averages, comparisons, and probabilities that would be impossible with raw outcomes alone.",
    "runs": "6:47",
    "chapters": [
     {
@@ -6470,14 +6470,15 @@ export const CHANCE: Lesson[] = [
     }
    ],
    "tags": [
-    "random variables",
-    "probability",
-    "discrete vs continuous",
-    "functions",
+    "random variable",
+    "discrete",
+    "continuous",
+    "probability function",
     "sample space",
-    "probability notation",
-    "foundations of probability",
-    "what is a random variable"
+    "outcomes",
+    "notation",
+    "expectation",
+    "helpdesk example"
    ],
    "src": "/media/learn/chance/chance-01.mp4",
    "poster": "/media/learn/chance/chance-01.jpg",
@@ -6485,8 +6486,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 2,
-   "title": "PMF and CDF: Two Ways to Describe a Random Variable's Distribution",
-   "summary": "Learn the two standard ways to write down the distribution of a random variable: the probability mass function (PMF) and the cumulative distribution function (CDF). After watching, you'll understand when to use each function, how they relate to each other, and how to use them to answer questions about exact values, at-most values, and ranges.",
+   "title": "PMF and CDF: Two Ways to Describe a Distribution",
+   "summary": "Learn the two standard functions for writing down a random variable's distribution: the probability mass function (PMF) for exact probabilities, and the cumulative distribution function (CDF) for cumulative probabilities. You'll master when to use each one, how to convert between them, and how to answer questions about discrete outcomes like ticket counts.",
    "runs": "7:18",
    "chapters": [
     {
@@ -6523,15 +6524,15 @@ export const CHANCE: Lesson[] = [
     }
    ],
    "tags": [
-    "probability mass function",
     "PMF",
-    "cumulative distribution function",
     "CDF",
+    "probability mass function",
+    "cumulative distribution function",
     "random variable",
-    "distribution",
-    "discrete probability",
-    "probability questions",
-    "statistics fundamentals"
+    "discrete distribution",
+    "probability",
+    "staircase function",
+    "endpoints"
    ],
    "src": "/media/learn/chance/chance-02.mp4",
    "poster": "/media/learn/chance/chance-02.jpg",
@@ -6539,8 +6540,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 3,
-   "title": "Expectation: Finding the Center of a Distribution",
-   "summary": "Learn what expectation means and how to calculate it as a weighted average of all possible values. Discover why expectation is the balance point of a distribution (not the tallest bar), and master key properties like linearity and how to handle functions of random variables using the Law of the Unconscious Statistician (LOTUS).",
+   "title": "Expected Value: Definition, Properties, and LOTUS",
+   "summary": "Learn what expectation (expected value) really means—the balance point of a probability distribution, not just the most likely or middle value. Master its key properties including linearity, and discover LOTUS (the law of the unconscious statistician) for finding expectations of functions of random variables.",
    "runs": "9:51",
    "chapters": [
     {
@@ -6577,14 +6578,13 @@ export const CHANCE: Lesson[] = [
     }
    ],
    "tags": [
-    "expectation",
     "expected value",
+    "expectation",
     "probability distribution",
-    "PMF",
-    "LOTUS",
-    "law of unconscious statistician",
     "linearity of expectation",
-    "balance point",
+    "LOTUS",
+    "law of the unconscious statistician",
+    "probability mass function",
     "random variables"
    ],
    "src": "/media/learn/chance/chance-03.mp4",
@@ -6594,7 +6594,7 @@ export const CHANCE: Lesson[] = [
   {
    "n": 4,
    "title": "Variance and Standard Deviation: Measuring Spread",
-   "summary": "Learn why the average alone doesn't tell the whole story: two datasets can have identical means but wildly different spreads. This lesson teaches variance—the expected squared deviation from the mean—and its square root, standard deviation, which brings the measure back to real units. By the end, you'll compute variance both the long way and using the shortcut formula, understand why squaring works better than absolute value, and know how adding or multiplying affects these measures.",
+   "summary": "Learn why the average alone doesn't tell the full story: two shifts with identical mean ticket counts can have wildly different spreads. This video teaches you how to measure and interpret variance and standard deviation, including the shortcut formula, why squaring works better than absolute values, and how these metrics scale under addition and multiplication.",
    "runs": "9:23",
    "chapters": [
     {
@@ -6641,13 +6641,14 @@ export const CHANCE: Lesson[] = [
    "tags": [
     "variance",
     "standard deviation",
-    "spread",
-    "deviation from mean",
     "expected value",
     "probability",
-    "data variability",
-    "shortcut formula",
-    "real units"
+    "spread",
+    "mean absolute deviation",
+    "random variables",
+    "statistics",
+    "data analysis",
+    "expected squared deviation"
    ],
    "src": "/media/learn/chance/chance-04.mp4",
    "poster": "/media/learn/chance/chance-04.jpg",
@@ -6655,8 +6656,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 5,
-   "title": "Expectation and Variance: Exam-Speed Problem Solving",
-   "summary": "Learn to solve expectation and variance problems quickly and correctly under exam conditions—no new formulas, just six worked examples that cover the most common problem shapes and pitfalls. You'll practice the key moves (plugging into formulas, using linearity, reversing the computational formula, avoiding the function trap, finding missing probabilities, and spotting constant shifts) and develop a reliable checking routine so you catch your own mistakes.",
+   "title": "Expectation and Variance: Six Exam-Speed Problems",
+   "summary": "Learn to work expectation and variance problems quickly and accurately under exam conditions. This workshop covers six different problem types—from direct PMF calculations to the function trap—with a repeatable method: identify what's asked, pick the right tool, compute, and sanity-check your answer.",
    "runs": "9:09",
    "chapters": [
     {
@@ -6699,13 +6700,13 @@ export const CHANCE: Lesson[] = [
    "tags": [
     "expectation",
     "variance",
-    "probability",
-    "exam preparation",
-    "problem-solving",
     "PMF",
+    "probability",
+    "exam practice",
+    "random variables",
     "linearity of expectation",
-    "computational formula",
-    "random variables"
+    "probability distributions",
+    "workshop"
    ],
    "src": "/media/learn/chance/chance-05.mp4",
    "poster": "/media/learn/chance/chance-05.jpg",
@@ -6713,8 +6714,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 6,
-   "title": "Binomial Random Variables: The PMF, Mean, and Variance",
-   "summary": "Learn how to model the number of successes across a fixed number of independent trials using the binomial distribution. You'll derive the probability mass function from first principles, calculate the mean and variance, and master the key conditions—fixed n, two outcomes, constant p, and independence—before applying the formula to real problems.",
+   "title": "Binomial Random Variables: Counting Successes Across Fixed Trials",
+   "summary": "Learn how to find the probability distribution when counting successes across a fixed number of independent trials, each with the same success probability. This video builds the binomial PMF from first principles—combining counting patterns with single-outcome probabilities—and shows you how to calculate means, variances, and probabilities like \"at least one success.\" You'll also discover the four conditions that must hold before using the binomial formula, and the common mistakes to avoid.",
    "runs": "8:25",
    "chapters": [
     {
@@ -6760,15 +6761,13 @@ export const CHANCE: Lesson[] = [
    ],
    "tags": [
     "binomial distribution",
-    "random variables",
     "probability mass function",
-    "expectation",
-    "variance",
-    "counting",
-    "independence",
+    "independent trials",
     "success probability",
-    "indicator variables",
-    "probability calculations"
+    "counting outcomes",
+    "expectation and variance",
+    "complement rule",
+    "discrete probability"
    ],
    "src": "/media/learn/chance/chance-06.mp4",
    "poster": "/media/learn/chance/chance-06.jpg",
@@ -6776,8 +6775,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 7,
-   "title": "The Poisson Distribution: Counting Events Over Time",
-   "summary": "Learn how the Poisson distribution models the count of random events occurring over a fixed time window when you don't know a total number upfront—like tickets arriving at a helpdesk. You'll see why it works (by slicing time into tiny slivers), what assumptions it requires, and how to spot when it's actually valid by checking if the mean and variance match.",
+   "title": "The Poisson Distribution: Modeling Events Over Time",
+   "summary": "Learn when and how to use the Poisson distribution to count events—like ticket arrivals—when there's no fixed sample size. This video walks through the derivation from the binomial, explains the key assumptions, and shows you how to spot when the Poisson is the right tool and when it might mislead you.",
    "runs": "8:15",
    "chapters": [
     {
@@ -6815,15 +6814,15 @@ export const CHANCE: Lesson[] = [
    ],
    "tags": [
     "Poisson distribution",
-    "probability",
     "counting events",
-    "lambda parameter",
+    "probability",
+    "statistics",
+    "rate parameter",
+    "binomial limit",
     "mean equals variance",
-    "Poisson PMF",
-    "event rate",
-    "independence assumption",
-    "continuous time",
-    "statistics"
+    "event modeling",
+    "helpdesk example",
+    "independence assumption"
    ],
    "src": "/media/learn/chance/chance-07.mp4",
    "poster": "/media/learn/chance/chance-07.jpg",
@@ -6832,7 +6831,7 @@ export const CHANCE: Lesson[] = [
   {
    "n": 8,
    "title": "Geometric and Negative Binomial Distributions: Waiting for Success",
-   "summary": "This video introduces the geometric and negative binomial distributions, which flip the binomial question: instead of counting successes in a fixed number of trials, you count how many trials it takes until a fixed number of successes occur. You'll learn the formulas for both distributions, understand the critical property of memorylessness, recognize the two different conventions used in textbooks, and see how to avoid three common pitfalls including the gambler's fallacy.",
+   "summary": "This video flips the binomial question: instead of fixing the number of trials and counting successes, you fix what counts as success and ask how many trials until it happens. You'll learn the geometric probability mass function, why the expected wait time is 1/p, the counterintuitive property of memorylessness, and how the negative binomial extends this to waiting for multiple successes. By the end, you'll understand when to use geometric distributions, how they differ from binomial and Poisson, and the common pitfalls that catch people off guard.",
    "runs": "8:15",
    "chapters": [
     {
@@ -6870,14 +6869,14 @@ export const CHANCE: Lesson[] = [
    ],
    "tags": [
     "geometric distribution",
-    "negative binomial distribution",
+    "negative binomial",
     "waiting time",
-    "memorylessness",
     "probability mass function",
+    "memorylessness",
     "expected value",
-    "statistical distributions",
-    "Poisson process",
-    "binomial comparison"
+    "binomial distribution",
+    "Poisson distribution",
+    "probability theory"
    ],
    "src": "/media/learn/chance/chance-08.mp4",
    "poster": "/media/learn/chance/chance-08.jpg",
@@ -6886,7 +6885,7 @@ export const CHANCE: Lesson[] = [
   {
    "n": 9,
    "title": "Recognizing Binomial, Poisson, Geometric, and Negative Binomial Distributions",
-   "summary": "Learn to identify which probability distribution fits a given scenario using a simple three-question checklist: Is there a fixed number of trials, counting in a time window, or waiting for an event? Are the trials or arrivals independent? Is the probability or arrival rate constant? Through twelve realistic helpdesk scenarios, you'll master recognition without learning any new formulas.",
+   "summary": "Learn to identify which distribution applies to a real-world scenario using three key questions: Is there a fixed number of trials, a time window, or are you waiting for something? Are the trials independent? Is the probability or rate constant? Work through twelve scenarios to master recognition without memorizing new formulas.",
    "runs": "7:24",
    "chapters": [
     {
@@ -6927,19 +6926,75 @@ export const CHANCE: Lesson[] = [
     "Poisson distribution",
     "geometric distribution",
     "negative binomial",
-    "probability distribution recognition",
-    "independence and constant probability",
-    "discrete distributions",
-    "probability identification"
+    "distribution recognition",
+    "probability distributions",
+    "independence assumption",
+    "constant probability",
+    "helpdesk scenarios",
+    "statistics skills"
    ],
    "src": "/media/learn/chance/chance-09.mp4",
    "poster": "/media/learn/chance/chance-09.jpg",
    "captions": "/media/learn/chance/chance-09.vtt"
   },
   {
+   "n": 10,
+   "title": "Continuous Probability Distributions: From Density to CDF",
+   "summary": "Learn why a single point on a continuous distribution has zero probability—it's about area, not height. This video shows you how probability density functions (PDFs) work differently from discrete probability, how to integrate to find real probabilities, and how the CDF and PDF are two sides of the same coin. You'll see why the habits from discrete distributions can trap you on exams.",
+   "runs": "7:01",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The number that isn't a whole number"
+    },
+    {
+     "at": "0:48",
+     "title": "Probability as area"
+    },
+    {
+     "at": "1:53",
+     "title": "Defining the density"
+    },
+    {
+     "at": "2:44",
+     "title": "A concrete helpdesk density"
+    },
+    {
+     "at": "3:44",
+     "title": "The CDF and the two-way street"
+    },
+    {
+     "at": "4:39",
+     "title": "The exam trap: endpoints don't matter"
+    },
+    {
+     "at": "5:14",
+     "title": "Expectation and variance as integrals"
+    },
+    {
+     "at": "6:10",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "probability density function",
+    "continuous distribution",
+    "CDF",
+    "integration",
+    "expectation",
+    "variance",
+    "probability theory",
+    "helpdesk tickets",
+    "area under curve"
+   ],
+   "src": "/media/learn/chance/chance-10.mp4",
+   "poster": "/media/learn/chance/chance-10.jpg",
+   "captions": "/media/learn/chance/chance-10.vtt"
+  },
+  {
    "n": 11,
-   "title": "Exponential Distribution: From Poisson Counts to Waiting Times",
-   "summary": "Learn how to model the waiting time until the next random event using the exponential distribution, and discover its surprising connection to the Poisson process. You'll master the exponential's key properties—including its constant mean and standard deviation, and its unique memorylessness property—and see where this model works well and where it fails.",
+   "title": "Waiting Times and the Exponential Distribution",
+   "summary": "Learn how to model the time until the next random event arrives using the exponential distribution, and discover why it's the natural partner to the Poisson process. You'll understand why waiting times are memoryless, how to calculate mean and standard deviation from first principles, and when this model works well in practice versus when it can mislead you.",
    "runs": "9:08",
    "chapters": [
     {
@@ -6982,7 +7037,8 @@ export const CHANCE: Lesson[] = [
     "waiting time",
     "memorylessness",
     "probability density",
-    "probability"
+    "survival function",
+    "helpdesk model"
    ],
    "src": "/media/learn/chance/chance-11.mp4",
    "poster": "/media/learn/chance/chance-11.jpg",
@@ -6990,8 +7046,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 12,
-   "title": "The Normal Distribution: Shape, Parameters, and Standardization",
-   "summary": "Meet the bell curve—the normal distribution that shows up everywhere because it emerges naturally from sums of random effects. Learn what the two parameters (mean and standard deviation) actually do, why we standardize to the standard normal, and how to solve both forward problems (finding probabilities) and reverse problems (finding cutoffs). Walk through worked examples and a useful sanity-check rule.",
+   "title": "The Normal Distribution: Shape, Formula, and How to Use Tables",
+   "summary": "Learn what makes the normal distribution so important, how its two parameters (mean and standard deviation) shape the curve, and why we can't integrate its formula directly. You'll master standardization to convert any normal problem to the standard normal, then use tables to find probabilities and work backwards to find cut-off values—with a quick sanity check built in.",
    "runs": "8:34",
    "chapters": [
     {
@@ -7041,15 +7097,14 @@ export const CHANCE: Lesson[] = [
    ],
    "tags": [
     "normal distribution",
-    "bell curve",
+    "standard normal",
+    "probability",
     "standardization",
     "z-score",
-    "probability",
-    "standard deviation",
-    "mean",
+    "bell curve",
     "statistics",
-    "68-95-99.7 rule",
-    "probability tables"
+    "probability tables",
+    "mean and standard deviation"
    ],
    "src": "/media/learn/chance/chance-12.mp4",
    "poster": "/media/learn/chance/chance-12.jpg",
@@ -7057,8 +7112,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 13,
-   "title": "Six Problems, One Habit to Break: When to Use Which Probability Tool",
-   "summary": "Master the four-step routine for solving density and distribution problems: sketch first, set up the integral, compute, then check your answer against the picture and the bounds [0,1]. Work through six realistic problems that show you how to choose between densities, CDFs, and discrete distributions, with an emphasis on catching mistakes before you write algebra.",
+   "title": "Six Problems, One Habit: When to Use Density, CDF, and Distributions",
+   "summary": "Learn a four-step routine to tackle any probability problem: sketch the density first, set up the integral, compute it, then verify your answer. Through six worked problems—from finding constants and means to working backwards from probabilities—you'll see how to choose the right tool (density, CDF, exponential, normal, or discrete) and avoid the three recurring mistakes that catch most students.",
    "runs": "8:04",
    "chapters": [
     {
@@ -7099,15 +7154,16 @@ export const CHANCE: Lesson[] = [
     }
    ],
    "tags": [
-    "density",
+    "density function",
     "CDF",
-    "probability",
-    "continuous distribution",
-    "exponential",
+    "probability integral",
+    "exponential distribution",
     "normal distribution",
     "discrete vs continuous",
-    "integral",
-    "problem solving"
+    "worked problems",
+    "probability basics",
+    "common mistakes",
+    "helpdesk scenarios"
    ],
    "src": "/media/learn/chance/chance-13.mp4",
    "poster": "/media/learn/chance/chance-13.jpg",
@@ -7115,8 +7171,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 14,
-   "title": "Joint Distributions: Two Random Variables at Once",
-   "summary": "Learn how to work with two random variables on the same sample space using joint probability distributions, marginal distributions, and conditional probability. You'll see how to recognize independence, compute expectations of products, and avoid the two most common traps when analyzing paired data.",
+   "title": "Joint Distributions and Marginals: Two Random Variables",
+   "summary": "Learn how to work with two random variables at the same time using joint distributions, whether as discrete tables or continuous densities. You'll master extracting marginal distributions, understanding independence, conditioning on one variable, and calculating expectations—plus recognize the key traps people fall into when checking independence.",
    "runs": "8:26",
    "chapters": [
     {
@@ -7159,12 +7215,13 @@ export const CHANCE: Lesson[] = [
    "tags": [
     "joint distribution",
     "marginal distribution",
-    "conditional probability",
     "independence",
+    "conditional probability",
     "random variables",
     "joint PMF",
+    "joint density",
     "expectation",
-    "two variables"
+    "bivariate distribution"
    ],
    "src": "/media/learn/chance/chance-14.mp4",
    "poster": "/media/learn/chance/chance-14.jpg",
@@ -7172,8 +7229,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 15,
-   "title": "Covariance and Correlation: Measuring How Two Variables Move Together",
-   "summary": "Learn how to quantify whether two variables move together using covariance and its scaled version, correlation. You'll compute covariance from a joint probability table, discover the computational shortcut, and understand the critical distinction between correlation and causation—plus the key trap that zero covariance does not imply independence.",
+   "title": "Covariance and Correlation: Measuring How Variables Move Together",
+   "summary": "Learn how to quantify whether two variables move together using covariance and its scaled version, correlation. You'll compute covariance from a joint probability table, discover why zero covariance doesn't guarantee independence, and understand correlation's critical limitation: it only detects straight-line patterns, never causation. This video reveals the trap that catches most learners and equips you with a career-long warning about correlation's true scope.",
    "runs": "7:34",
    "chapters": [
     {
@@ -7214,8 +7271,8 @@ export const CHANCE: Lesson[] = [
     "correlation",
     "joint probability",
     "linear association",
-    "causation",
     "independence",
+    "causation",
     "expected value",
     "standard deviation"
    ],
@@ -7224,9 +7281,67 @@ export const CHANCE: Lesson[] = [
    "captions": "/media/learn/chance/chance-15.vtt"
   },
   {
+   "n": 16,
+   "title": "How Variance Adds: Expectation vs. Covariance",
+   "summary": "Learn why expectation of a sum always adds cleanly, but variance only adds when covariance is zero—a distinction critical for understanding risk and variability in real systems. Through a helpdesk example, discover how two variables can have identical expected totals yet wildly different spreads depending on whether their ups and downs cancel out or reinforce each other.",
+   "runs": "8:17",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Two technicians, one total"
+    },
+    {
+     "at": "0:55",
+     "title": "Expectation always adds"
+    },
+    {
+     "at": "2:04",
+     "title": "Deriving Var(X+Y)"
+    },
+    {
+     "at": "3:17",
+     "title": "Same average, different risk"
+    },
+    {
+     "at": "4:17",
+     "title": "The common mistake"
+    },
+    {
+     "at": "5:07",
+     "title": "Extending to n technicians"
+    },
+    {
+     "at": "5:54",
+     "title": "Variance of the mean: sigma-squared over n"
+    },
+    {
+     "at": "6:53",
+     "title": "Which families survive addition"
+    },
+    {
+     "at": "7:29",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "variance",
+    "expectation",
+    "covariance",
+    "probability",
+    "sum of random variables",
+    "independence",
+    "Poisson distribution",
+    "normal distribution",
+    "variability"
+   ],
+   "src": "/media/learn/chance/chance-16.mp4",
+   "poster": "/media/learn/chance/chance-16.jpg",
+   "captions": "/media/learn/chance/chance-16.vtt"
+  },
+  {
    "n": 17,
-   "title": "Distribution Recognition: Which Tool Fits the Problem?",
-   "summary": "Learn to identify which probability distribution a problem requires before solving it. Using a three-question decision flow—discrete or continuous, what output is needed, and whether joint variables apply—you'll work through 15 real helpdesk scenarios to spot the shape of each question fast.",
+   "title": "Recognition: Which Distribution Fits This Problem?",
+   "summary": "Learn to quickly identify which probability distribution a problem requires before solving it. Work through a three-question decision framework (discrete vs. continuous, what output is needed, joint or marginal?) and practice on 15 realistic helpdesk scenarios that reveal common traps like \"how many minutes until\" (exponential, not binomial) and when you need a joint table versus just a sum rule.",
    "runs": "7:00",
    "chapters": [
     {
@@ -7259,16 +7374,16 @@ export const CHANCE: Lesson[] = [
     }
    ],
    "tags": [
-    "distribution recognition",
+    "probability distributions",
     "binomial",
     "Poisson",
     "exponential",
-    "normal",
-    "PMF vs CDF",
-    "problem-solving strategy",
-    "probability",
-    "discrete vs continuous",
-    "joint distributions"
+    "normal distribution",
+    "problem recognition",
+    "PMF",
+    "CDF",
+    "decision framework",
+    "exam skills"
    ],
    "src": "/media/learn/chance/chance-17.mp4",
    "poster": "/media/learn/chance/chance-17.jpg",
@@ -7276,8 +7391,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 18,
-   "title": "The Law of Large Numbers: Why Averages Stabilize",
-   "summary": "Learn why the past doesn't \"catch up\" and why running averages converge to their true expected value over time. This video explains the law of large numbers through the lens of a helpdesk's ticket counts, showing you exactly how variance shrinks with sample size and why the gambler's fallacy is a dangerous misconception. You'll understand both the weak and strong versions of the law, and how to determine how many observations you actually need for a trustworthy average.",
+   "title": "The Law of Large Numbers: Why Averages Converge",
+   "summary": "Learn why sample averages converge to their true expectation over time—not because the past \"catches up,\" but because the variance of the average shrinks mathematically as n grows. This video dispels the gambler's fallacy and shows you the exact mechanism behind averaging out, using a helpdesk ticketing example to build intuition from the ground up.",
    "runs": "8:26",
    "chapters": [
     {
@@ -7315,15 +7430,15 @@ export const CHANCE: Lesson[] = [
    ],
    "tags": [
     "law of large numbers",
-    "running average",
-    "expectation",
-    "variance",
-    "central limit theorem",
-    "gambler's fallacy",
     "sample mean",
+    "variance",
     "convergence",
+    "gambler's fallacy",
+    "expectation",
     "probability",
-    "statistics"
+    "statistical averaging",
+    "random variables",
+    "sigma squared"
    ],
    "src": "/media/learn/chance/chance-18.mp4",
    "poster": "/media/learn/chance/chance-18.jpg",
@@ -7331,8 +7446,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 19,
-   "title": "The Central Limit Theorem: Why Normal Distributions Appear Everywhere",
-   "summary": "This video explains why normal distributions appear so often in statistics, even when individual measurements are skewed. You'll learn that when you add up or average many independent values, the result becomes approximately normal—and discover how to use this principle to solve real problems like predicting shift overruns, along with the key conditions that make this work.",
+   "title": "The Central Limit Theorem: Why Sums of Skewed Data Become Normal",
+   "summary": "This lesson explains why the normal distribution appears everywhere, even when individual measurements are skewed: when you sum many independent values, the total distribution becomes approximately bell-shaped. You'll learn the precise statement of the central limit theorem, how to use it to solve real problems like shift overtime predictions, and the crucial conditions—independence, finite variance, and sufficient sample size—that must hold for the approximation to work.",
    "runs": "8:23",
    "chapters": [
     {
@@ -7372,16 +7487,81 @@ export const CHANCE: Lesson[] = [
     "central limit theorem",
     "normal distribution",
     "sum of random variables",
-    "probability",
-    "statistics fundamentals",
+    "distribution shape",
+    "law of large numbers",
+    "standardization",
     "independent samples",
-    "finite variance",
-    "approximation",
-    "standardization"
+    "skewed distributions"
    ],
    "src": "/media/learn/chance/chance-19.mp4",
    "poster": "/media/learn/chance/chance-19.jpg",
    "captions": "/media/learn/chance/chance-19.vtt"
+  },
+  {
+   "n": 20,
+   "title": "One Sheet: Build Your Probability Distributions Reference",
+   "summary": "Learn which six distributions and six formulas are essential for any probability exam, and how to recognize which tool to use when a problem doesn't tell you. You'll work through realistic helpdesk scenarios to practice the pattern-matching and checklist that separates fast, correct answers from panic and wasted time.",
+   "runs": "7:23",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "What actually needs to be on the page"
+    },
+    {
+     "at": "0:34",
+     "title": "The discrete rows"
+    },
+    {
+     "at": "1:24",
+     "title": "The continuous rows"
+    },
+    {
+     "at": "2:06",
+     "title": "The six formulas worth knowing cold"
+    },
+    {
+     "at": "3:11",
+     "title": "Problem one: name it and compute"
+    },
+    {
+     "at": "3:40",
+     "title": "Problem two: Poisson feeds exponential"
+    },
+    {
+     "at": "4:12",
+     "title": "Problem three: joint table to variance of a sum"
+    },
+    {
+     "at": "5:00",
+     "title": "Problem four: normal in reverse"
+    },
+    {
+     "at": "5:30",
+     "title": "Problem five: the linearity trap"
+    },
+    {
+     "at": "6:03",
+     "title": "The sixty-second check"
+    },
+    {
+     "at": "6:39",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "probability distributions",
+    "binomial poisson exponential normal",
+    "variance formulas",
+    "exam preparation",
+    "helpdesk scenarios",
+    "reference sheet",
+    "probability problem solving",
+    "continuous discrete distributions",
+    "linearity of expectation"
+   ],
+   "src": "/media/learn/chance/chance-20.mp4",
+   "poster": "/media/learn/chance/chance-20.jpg",
+   "captions": "/media/learn/chance/chance-20.vtt"
   }
  ];
 
