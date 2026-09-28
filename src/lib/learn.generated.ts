@@ -5805,4 +5805,863 @@ export const PATTERNS: Lesson[] = [
  ];
 
 export const HOWITWORKS: Lesson[] = [
-];
+  {
+   "n": 2,
+   "title": "Why the Model Describes the Scene Instead of Writing Code",
+   "summary": "Learn why having an AI model write animation code directly creates invisible bugs that slip through to the finished video. Discover how using a fixed vocabulary contract and automated validation catches errors milliseconds before rendering, and why this architectural shift matters more than model quality.",
+   "runs": "6:52",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "0:36",
+     "title": "The Obvious Approach"
+    },
+    {
+     "at": "1:14",
+     "title": "No Safety Net"
+    },
+    {
+     "at": "2:19",
+     "title": "Say Back: Not a Bug Problem"
+    },
+    {
+     "at": "2:58",
+     "title": "Describe, Don't Program"
+    },
+    {
+     "at": "3:44",
+     "title": "The Consequence That Matters"
+    },
+    {
+     "at": "4:37",
+     "title": "The scene/1 Contract"
+    },
+    {
+     "at": "5:28",
+     "title": "Where People Trip"
+    },
+    {
+     "at": "6:07",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "animation",
+    "validation",
+    "architecture",
+    "code generation",
+    "safety nets",
+    "contracts",
+    "scene description",
+    "debugging"
+   ],
+   "src": "/media/learn/howitworks/howitworks-02.mp4",
+   "poster": "/media/learn/howitworks/howitworks-02.jpg",
+   "captions": "/media/learn/howitworks/howitworks-02.vtt"
+  },
+  {
+   "n": 4,
+   "title": "Building Quality Into Scene Specs Before Rendering",
+   "summary": "Learn how scene_spec.py validates teaching videos before a single pixel is drawn by checking the JSON spec—the plan for what a scene will contain. This video covers the four core validation rules: descriptive labels instead of bare numbers, avoiding weak closing figures, numeric axes for computational grids, and distinguishing summaries from collapses through captions.",
+   "runs": "6:44",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "A Picture That Doesn't Exist Yet"
+    },
+    {
+     "at": "0:42",
+     "title": "What's Inside a Spec"
+    },
+    {
+     "at": "1:34",
+     "title": "Rule One: Words, Not Bare Numbers"
+    },
+    {
+     "at": "2:13",
+     "title": "Rule Two: Don't End on Your Weakest Picture"
+    },
+    {
+     "at": "2:56",
+     "title": "Rule Three: The Grid That Died — Sixty-Four Empty Boxes"
+    },
+    {
+     "at": "3:49",
+     "title": "Rule Four: Collapse or Summary — The Caption Test"
+    },
+    {
+     "at": "4:44",
+     "title": "The Retry Loop: Five Chances and a Judgement Call"
+    },
+    {
+     "at": "5:50",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "scene_spec",
+    "validation rules",
+    "JSON spec",
+    "teaching videos",
+    "quality control",
+    "diagram rules",
+    "grid validation",
+    "retry loop"
+   ],
+   "src": "/media/learn/howitworks/howitworks-04.mp4",
+   "poster": "/media/learn/howitworks/howitworks-04.jpg",
+   "captions": "/media/learn/howitworks/howitworks-04.vtt"
+  },
+  {
+   "n": 5,
+   "title": "Six Lies: Why Successful-Looking Wrongness Is the Real Danger",
+   "summary": "Learn to spot the hidden defects that automated checks miss—the failures that don't crash, but silently produce plausible-looking wrong results. Through six real cases from a production system, you'll see how truncated transcripts, string matching errors, stale status fields, and other broken checks can deceive even careful reviewers, and why the rule is always the same: trust the actual artifact, never the dashboard.",
+   "runs": "7:45",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Six Lies"
+    },
+    {
+     "at": "0:44",
+     "title": "Case One: The Check That Created The Defect"
+    },
+    {
+     "at": "1:28",
+     "title": "Case Two: The Word That Passed The Check"
+    },
+    {
+     "at": "2:19",
+     "title": "Case Three: The Job That Finished An Hour Ago"
+    },
+    {
+     "at": "3:18",
+     "title": "Case Four: The Fix That Wasn't Running"
+    },
+    {
+     "at": "4:12",
+     "title": "Case Five: The Guard That Hid Everything"
+    },
+    {
+     "at": "5:01",
+     "title": "Case Six: The Score That Named A Symptom"
+    },
+    {
+     "at": "5:58",
+     "title": "The Rule Underneath All Six"
+    },
+    {
+     "at": "6:48",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "quality assurance",
+    "automated checks",
+    "production bugs",
+    "system failures",
+    "debugging",
+    "verification",
+    "status monitoring",
+    "code review",
+    "testing",
+    "silent failures"
+   ],
+   "src": "/media/learn/howitworks/howitworks-05.mp4",
+   "poster": "/media/learn/howitworks/howitworks-05.jpg",
+   "captions": "/media/learn/howitworks/howitworks-05.vtt"
+  },
+  {
+   "n": 6,
+   "title": "Five Pieces: The Architecture of the Media Pipeline",
+   "summary": "Learn the five core components that make up a video generation system: the AI service that orchestrates decisions, the contract that validates scenes, the renderer that draws videos, the datastore (DynamoDB and S3) that holds state and artifacts, and the harness that lets operators inspect jobs. Understand how these pieces communicate and where most bugs actually come from—when two pieces disagree about what data should exist.",
+   "runs": "7:17",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "What talks to what"
+    },
+    {
+     "at": "0:43",
+     "title": "The AI service — the one that owns the job"
+    },
+    {
+     "at": "1:33",
+     "title": "The contract — no I/O, so it's fast to trust"
+    },
+    {
+     "at": "2:22",
+     "title": "The renderer — a separate container, and a named list"
+    },
+    {
+     "at": "3:27",
+     "title": "The lesson that rendered in one voice"
+    },
+    {
+     "at": "4:18",
+     "title": "DynamoDB and S3 — state and artefacts"
+    },
+    {
+     "at": "4:52",
+     "title": "The harness and the two front ends"
+    },
+    {
+     "at": "5:44",
+     "title": "Where new engineers get lost"
+    },
+    {
+     "at": "6:20",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "architecture",
+    "system design",
+    "pipeline",
+    "AI service",
+    "renderer",
+    "data flow",
+    "software components",
+    "integration",
+    "debugging",
+    "backend engineering"
+   ],
+   "src": "/media/learn/howitworks/howitworks-06.mp4",
+   "poster": "/media/learn/howitworks/howitworks-06.jpg",
+   "captions": "/media/learn/howitworks/howitworks-06.vtt"
+  },
+  {
+   "n": 8,
+   "title": "The Real Cost Drivers: Understanding Lesson Pricing",
+   "summary": "Learn why identical lessons can cost $2.39 or $7.22 depending on how they're built. This lesson breaks down the three cost pieces—model calls, speech synthesis, and Fargate rendering—and reveals that catching defects early, not cheaper models, is the real lever for controlling costs.",
+   "runs": "7:09",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Nova's Question"
+    },
+    {
+     "at": "0:39",
+     "title": "Piece One — Model Calls"
+    },
+    {
+     "at": "1:25",
+     "title": "Piece Two — Speech Synthesis"
+    },
+    {
+     "at": "1:57",
+     "title": "Piece Three — Fargate Time"
+    },
+    {
+     "at": "2:45",
+     "title": "The Measured Spread"
+    },
+    {
+     "at": "3:42",
+     "title": "The Real Cost Lever"
+    },
+    {
+     "at": "4:38",
+     "title": "The One Model Change That Paid"
+    },
+    {
+     "at": "5:32",
+     "title": "Where People Get This Wrong"
+    },
+    {
+     "at": "6:09",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "cost analysis",
+    "pricing model",
+    "quality control",
+    "model calls",
+    "speech synthesis",
+    "Fargate rendering",
+    "defect detection",
+    "cost optimization",
+    "pipeline economics"
+   ],
+   "src": "/media/learn/howitworks/howitworks-08.mp4",
+   "poster": "/media/learn/howitworks/howitworks-08.jpg",
+   "captions": "/media/learn/howitworks/howitworks-08.vtt"
+  }
+ ];
+
+export const CHANCE: Lesson[] = [
+  {
+   "n": 1,
+   "title": "Random Variables: What They Actually Are",
+   "summary": "This video reveals the core concept hidden behind the term \"random variable\"—it's actually a function that maps messy real-world outcomes into numbers you can compute with. Using a university helpdesk as the running example, you'll learn to distinguish discrete variables (like ticket counts) from continuous ones (like wait times), and to read probability notation correctly as statements about sets of outcomes, not abstract numbers. By the end, you'll understand why converting outcomes to numbers is the essential first step that makes everything downstream in probability—averages, comparisons, predictions—actually possible.",
+   "runs": "6:47",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question"
+    },
+    {
+     "at": "0:48",
+     "title": "The helpdesk experiment"
+    },
+    {
+     "at": "1:36",
+     "title": "Assigning a number"
+    },
+    {
+     "at": "2:35",
+     "title": "Discrete and continuous"
+    },
+    {
+     "at": "3:23",
+     "title": "Reading the notation"
+    },
+    {
+     "at": "4:34",
+     "title": "The mistake almost everyone makes"
+    },
+    {
+     "at": "5:14",
+     "title": "Why this pays off"
+    },
+    {
+     "at": "5:52",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "random variable",
+    "probability",
+    "discrete and continuous",
+    "function",
+    "sample space",
+    "probability notation",
+    "outcomes",
+    "probability foundations"
+   ],
+   "src": "/media/learn/chance/chance-01.mp4",
+   "poster": "/media/learn/chance/chance-01.jpg",
+   "captions": "/media/learn/chance/chance-01.vtt"
+  },
+  {
+   "n": 2,
+   "title": "PMF and CDF: Two Ways to Describe a Distribution",
+   "summary": "Learn the two standard ways to describe the distribution of a discrete random variable: the probability mass function (PMF) and the cumulative distribution function (CDF). You'll understand why you need both, how they relate to each other, and how to use each one to answer different probability questions about exact values, at-most values, and ranges.",
+   "runs": "7:18",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "One Variable, Two Descriptions"
+    },
+    {
+     "at": "0:40",
+     "title": "The Probability Mass Function"
+    },
+    {
+     "at": "1:32",
+     "title": "Two Properties That Make It Legitimate"
+    },
+    {
+     "at": "2:32",
+     "title": "The Cumulative Distribution Function"
+    },
+    {
+     "at": "3:27",
+     "title": "Running Total and Jump Size"
+    },
+    {
+     "at": "4:20",
+     "title": "Which Function Answers Which Question"
+    },
+    {
+     "at": "5:13",
+     "title": "The Endpoint Trap"
+    },
+    {
+     "at": "6:19",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "probability mass function",
+    "PMF",
+    "cumulative distribution function",
+    "CDF",
+    "discrete random variables",
+    "probability distributions",
+    "staircase function",
+    "probability tables",
+    "discrete probability"
+   ],
+   "src": "/media/learn/chance/chance-02.mp4",
+   "poster": "/media/learn/chance/chance-02.jpg",
+   "captions": "/media/learn/chance/chance-02.vtt"
+  },
+  {
+   "n": 4,
+   "title": "Variance and Standard Deviation: Measuring Spread",
+   "summary": "Learn why the average alone can't describe a dataset, and how variance and standard deviation quantify spread around the mean. You'll discover why squaring deviations works better than absolute value, compute variance using both direct and shortcut methods, and master the key scaling properties that make variance mathematically powerful and standard deviation practical for real-world reporting.",
+   "runs": "9:23",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Two Shifts, Same Average"
+    },
+    {
+     "at": "0:58",
+     "title": "Why Not Just Use the Distance"
+    },
+    {
+     "at": "1:44",
+     "title": "Absolute Value or Square?"
+    },
+    {
+     "at": "2:48",
+     "title": "Defining Variance"
+    },
+    {
+     "at": "3:22",
+     "title": "Computing Variance the Long Way"
+    },
+    {
+     "at": "4:37",
+     "title": "The Shortcut Formula"
+    },
+    {
+     "at": "5:54",
+     "title": "Standard Deviation: Back to Real Units"
+    },
+    {
+     "at": "6:29",
+     "title": "Two Properties, Proved"
+    },
+    {
+     "at": "7:43",
+     "title": "Common Mistakes"
+    },
+    {
+     "at": "8:14",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "variance",
+    "standard deviation",
+    "spread",
+    "mean absolute deviation",
+    "expectation",
+    "probability distribution",
+    "shortcut formula",
+    "scaling properties",
+    "data variability",
+    "statistics"
+   ],
+   "src": "/media/learn/chance/chance-04.mp4",
+   "poster": "/media/learn/chance/chance-04.jpg",
+   "captions": "/media/learn/chance/chance-04.vtt"
+  },
+  {
+   "n": 6,
+   "title": "Binomial Random Variables: Counting Successes in Fixed Trials",
+   "summary": "Learn to model the number of successes across a fixed number of independent trials, each with the same success probability. This video derives the binomial PMF from first principles—counting patterns and their probabilities—then shows you how to calculate exact, at-least, and at-most probabilities, find the mean and variance, and identify when the binomial model actually applies.",
+   "runs": "8:25",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Twelve Tickets, How Many Fixed?"
+    },
+    {
+     "at": "0:53",
+     "title": "The Probability of One Exact Pattern"
+    },
+    {
+     "at": "1:50",
+     "title": "Counting the Patterns"
+    },
+    {
+     "at": "2:37",
+     "title": "Assembling the PMF"
+    },
+    {
+     "at": "3:15",
+     "title": "The Four Conditions — and When They Break"
+    },
+    {
+     "at": "4:19",
+     "title": "Mean and Variance via Indicators"
+    },
+    {
+     "at": "5:28",
+     "title": "How the Shape Changes"
+    },
+    {
+     "at": "6:05",
+     "title": "Exactly, At Least, At Most"
+    },
+    {
+     "at": "7:02",
+     "title": "Where People Slip Up"
+    },
+    {
+     "at": "7:41",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "binomial distribution",
+    "probability mass function",
+    "random variables",
+    "expected value",
+    "variance",
+    "counting methods",
+    "success probability",
+    "independence assumption",
+    "complement rule"
+   ],
+   "src": "/media/learn/chance/chance-06.mp4",
+   "poster": "/media/learn/chance/chance-06.jpg",
+   "captions": "/media/learn/chance/chance-06.vtt"
+  },
+  {
+   "n": 8,
+   "title": "Geometric and Negative Binomial Distributions: Waiting for Success",
+   "summary": "Learn how the geometric and negative binomial distributions answer a flipped question: instead of fixing the number of trials and counting successes, fix the success and count how many trials it takes. You'll derive the geometric PMF, understand its counterintuitive memorylessness property, and see how to extend the idea to waiting for multiple successes with the negative binomial.",
+   "runs": "8:15",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "A Different Question"
+    },
+    {
+     "at": "0:46",
+     "title": "Deriving the Geometric PMF"
+    },
+    {
+     "at": "1:55",
+     "title": "Two Conventions, Same Idea"
+    },
+    {
+     "at": "2:41",
+     "title": "The Mean: Why 1/p"
+    },
+    {
+     "at": "3:37",
+     "title": "Memorylessness"
+    },
+    {
+     "at": "5:26",
+     "title": "Waiting for the r-th Success"
+    },
+    {
+     "at": "6:37",
+     "title": "Where People Slip"
+    },
+    {
+     "at": "7:11",
+     "title": "Three Families, Three Questions"
+    }
+   ],
+   "tags": [
+    "geometric distribution",
+    "negative binomial",
+    "probability mass function",
+    "memorylessness",
+    "waiting time",
+    "independent trials",
+    "expected value",
+    "probability distributions"
+   ],
+   "src": "/media/learn/chance/chance-08.mp4",
+   "poster": "/media/learn/chance/chance-08.jpg",
+   "captions": "/media/learn/chance/chance-08.vtt"
+  },
+  {
+   "n": 12,
+   "title": "The Normal Distribution: Shape, Formula, and Working with Tables",
+   "summary": "Learn the normal distribution—the bell curve shape that appears everywhere in statistics—and why its formula can't be integrated directly. You'll master standardization (converting any normal problem to Z), solve both forward problems (finding probabilities) and reverse problems (finding cutoffs), and use the 68-95-99.7 rule as a sanity check on your answers.",
+   "runs": "8:34",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The shape everything leans towards"
+    },
+    {
+     "at": "0:52",
+     "title": "The density, mu and sigma"
+    },
+    {
+     "at": "1:48",
+     "title": "Drawing three of them"
+    },
+    {
+     "at": "2:22",
+     "title": "Why tables exist"
+    },
+    {
+     "at": "3:06",
+     "title": "Standardising: z is a distance in standard deviations"
+    },
+    {
+     "at": "3:57",
+     "title": "Worked example: probability it exceeds a threshold"
+    },
+    {
+     "at": "4:42",
+     "title": "Worked example: probability within a range"
+    },
+    {
+     "at": "5:26",
+     "title": "The reverse problem: finding the cut-off"
+    },
+    {
+     "at": "6:37",
+     "title": "The 68-95-99.7 rule, as a sanity check"
+    },
+    {
+     "at": "7:10",
+     "title": "Symmetry and negative z"
+    },
+    {
+     "at": "7:38",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "normal distribution",
+    "bell curve",
+    "standardization",
+    "Z-score",
+    "probability tables",
+    "statistics",
+    "central limit theorem",
+    "standard deviation",
+    "worked examples"
+   ],
+   "src": "/media/learn/chance/chance-12.mp4",
+   "poster": "/media/learn/chance/chance-12.jpg",
+   "captions": "/media/learn/chance/chance-12.vtt"
+  },
+  {
+   "n": 14,
+   "title": "Joint Distributions: Two Random Variables on the Same Clock",
+   "summary": "Learn how to work with two random variables simultaneously through joint PMFs and densities. This video covers marginal distributions, independence, conditional distributions, and when E(XY) equals E(X)E(Y)—tools you'll need whenever two quantities are measured together.",
+   "runs": "8:26",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Two technicians, one shift"
+    },
+    {
+     "at": "0:51",
+     "title": "The joint PMF as a table"
+    },
+    {
+     "at": "1:45",
+     "title": "Marginals: summing along a row"
+    },
+    {
+     "at": "2:42",
+     "title": "The continuous version"
+    },
+    {
+     "at": "3:35",
+     "title": "Independence: the joint factors"
+    },
+    {
+     "at": "4:55",
+     "title": "Conditioning is a renormalised row"
+    },
+    {
+     "at": "5:37",
+     "title": "E of X times Y, both cases"
+    },
+    {
+     "at": "6:44",
+     "title": "Two traps"
+    },
+    {
+     "at": "7:36",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "joint distribution",
+    "joint PMF",
+    "joint density",
+    "marginal distribution",
+    "independence",
+    "conditional distribution",
+    "two random variables",
+    "correlation",
+    "bivariate",
+    "probability"
+   ],
+   "src": "/media/learn/chance/chance-14.mp4",
+   "poster": "/media/learn/chance/chance-14.jpg",
+   "captions": "/media/learn/chance/chance-14.vtt"
+  },
+  {
+   "n": 17,
+   "title": "Distribution Recognition: Picking the Right Tool",
+   "summary": "Learn to identify which probability distribution a problem is asking for before solving it. Through 15 guided helpdesk problems, you'll master a three-question decision flow that cuts through tricky wording and helps you spot binomial, Poisson, exponential, normal, and other distributions in plain sight.",
+   "runs": "7:00",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The last skill: recognition"
+    },
+    {
+     "at": "0:39",
+     "title": "The decision flow"
+    },
+    {
+     "at": "1:28",
+     "title": "Warm-up: five singles"
+    },
+    {
+     "at": "2:34",
+     "title": "Two-step problems"
+    },
+    {
+     "at": "3:39",
+     "title": "The three that trick people"
+    },
+    {
+     "at": "5:05",
+     "title": "Last three, mixed"
+    },
+    {
+     "at": "6:09",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "distribution recognition",
+    "binomial",
+    "Poisson",
+    "exponential",
+    "normal distribution",
+    "discrete vs continuous",
+    "PMF",
+    "CDF",
+    "probability tools",
+    "decision flow"
+   ],
+   "src": "/media/learn/chance/chance-17.mp4",
+   "poster": "/media/learn/chance/chance-17.jpg",
+   "captions": "/media/learn/chance/chance-17.vtt"
+  },
+  {
+   "n": 18,
+   "title": "The Law of Large Numbers: Why Averages Converge",
+   "summary": "Why does the past seem to even out in the long run? This video reveals that nothing \"catches up\"—instead, the variance of an average shrinks mathematically as you collect more data. You'll learn the real mechanism behind the law of large numbers and why it says nothing about what happens next, debunking the gambler's fallacy in the process.",
+   "runs": "8:26",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question"
+    },
+    {
+     "at": "0:52",
+     "title": "Noisy hour, settled week"
+    },
+    {
+     "at": "2:00",
+     "title": "Stating the law properly"
+    },
+    {
+     "at": "2:59",
+     "title": "The mechanism: variance of the mean"
+    },
+    {
+     "at": "4:12",
+     "title": "Weak law, strong law, honestly"
+    },
+    {
+     "at": "5:14",
+     "title": "The mistake: the gambler's fallacy"
+    },
+    {
+     "at": "6:45",
+     "title": "How large is 'large'?"
+    },
+    {
+     "at": "7:30",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "law of large numbers",
+    "probability",
+    "expected value",
+    "variance",
+    "gambler's fallacy",
+    "running average",
+    "sample mean",
+    "statistics fundamentals",
+    "convergence"
+   ],
+   "src": "/media/learn/chance/chance-18.mp4",
+   "poster": "/media/learn/chance/chance-18.jpg",
+   "captions": "/media/learn/chance/chance-18.vtt"
+  },
+  {
+   "n": 19,
+   "title": "Why Normal Distributions Appear Everywhere: The Central Limit Theorem",
+   "summary": "Discover why the bell curve shows up repeatedly in real data, even when individual measurements are skewed. This lesson explains the central limit theorem: when you sum or average many independent observations, the result becomes approximately normal regardless of the original shape. Learn to apply this powerful principle to predict probabilities in practical situations like workforce scheduling.",
+   "runs": "8:23",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question"
+    },
+    {
+     "at": "0:51",
+     "title": "Watching it happen"
+    },
+    {
+     "at": "1:53",
+     "title": "The precise statement"
+    },
+    {
+     "at": "3:15",
+     "title": "Will the shift's work fit?"
+    },
+    {
+     "at": "4:40",
+     "title": "A common mix-up"
+    },
+    {
+     "at": "5:35",
+     "title": "The fine print"
+    },
+    {
+     "at": "6:38",
+     "title": "Connecting back"
+    },
+    {
+     "at": "7:20",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "central limit theorem",
+    "normal distribution",
+    "bell curve",
+    "sum of random variables",
+    "probability approximation",
+    "skewed distributions",
+    "statistical inference",
+    "independent samples",
+    "variance",
+    "real-world applications"
+   ],
+   "src": "/media/learn/chance/chance-19.mp4",
+   "poster": "/media/learn/chance/chance-19.jpg",
+   "captions": "/media/learn/chance/chance-19.vtt"
+  }
+ ];

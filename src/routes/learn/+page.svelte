@@ -9,7 +9,7 @@
 	// scroll, not a menu — and on a phone, which is where this gets read, it is a very long scroll. The first series
 	// opens; the rest are one tap away and announce their size before you commit to them.
 	import { Play, Clock, ListVideo, ChevronDown } from '@lucide/svelte';
-	import { PROBABILITY, NEO4J, LLM_EVAL, SERVING, LEARNING, COUNTING, PATTERNS, type Lesson } from '$lib/learn.generated';
+	import { PROBABILITY, NEO4J, LLM_EVAL, SERVING, LEARNING, COUNTING, PATTERNS, CHANCE, type Lesson } from '$lib/learn.generated';
 	import LessonPlayer from '$lib/components/LessonPlayer.svelte';
 
 	type Series = { key: string; eyebrow: string; title: string; blurb: string; lessons: Lesson[] };
@@ -70,6 +70,14 @@
 			blurb:
 				'Twenty lessons on finding a pattern and deciding whether to believe it: exploring data, hypothesis testing and confidence intervals, then k-nearest neighbours, naive Bayes, the perceptron, logistic regression, decision trees, and support vector machines with kernels — judged by cross-validation, precision and recall. Three problem workshops, a one-page cheatsheet and an exam-readiness lesson.',
 			lessons: PATTERNS
+		},
+		{
+			key: 'chance',
+			eyebrow: 'Series 08',
+			title: 'The Shape of Chance (Random Variables and Distributions)',
+			blurb:
+				'What happens once an outcome has a number attached to it: random variables, expectation and variance, the distributions worth knowing by name — binomial, geometric, Poisson, normal — and how to tell which one a situation is asking for. Then two variables at once, and why averages converge and sums turn normal however the pieces were shaped.',
+			lessons: CHANCE
 		}
 	];
 
