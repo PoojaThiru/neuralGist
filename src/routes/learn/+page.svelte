@@ -9,12 +9,15 @@
 	// scroll, not a menu — and on a phone, which is where this gets read, it is a very long scroll. The first series
 	// opens; the rest are one tap away and announce their size before you commit to them.
 	import { Play, Clock, ListVideo, ChevronDown } from '@lucide/svelte';
-	import { PROBABILITY, NEO4J, LLM_EVAL, SERVING, LEARNING, COUNTING, PATTERNS, CHANCE, SHIFT, type Lesson } from '$lib/learn.generated';
+	import { PROBABILITY, NEO4J, LLM_EVAL, SERVING, LEARNING, COUNTING, PATTERNS, CHANCE, SHIFT, CYPHER, MODELLING, NEPTUNE, type Lesson } from '$lib/learn.generated';
 	import LessonPlayer from '$lib/components/LessonPlayer.svelte';
 
 	type Series = { key: string; eyebrow: string; title: string; blurb: string; lessons: Lesson[] };
 
-	const SERIES: Series[] = [
+	// A SERIES WITH NO FINISHED LESSON IS NOT LISTED (2026-09-29). Lessons are published continuously as they
+	// render, so an export exists — empty — from the moment a course is wired up. An empty card on the page is a
+	// promise rather than something to watch, and it would also take the "newest series opens" default with it.
+	const ALL: Series[] = [
 		{
 			key: 'probability',
 			eyebrow: 'Series 01',
@@ -86,8 +89,33 @@
 			blurb:
 				'For the people deciding what to build: why bolting AI onto an existing system fails, what an agent actually is, giving tools one interface, grounding answers in your own data with RAG and GraphRAG, the three controls that keep a system honest, what an agent really costs, how these systems fail quietly, and six questions worth asking before you commit.',
 			lessons: SHIFT
+		},
+		{
+			key: 'cypher',
+			eyebrow: 'Series 10',
+			title: 'Cypher in Depth (Querying a Graph Database)',
+			blurb:
+				'The Neo4j query language taught properly: patterns as the real unit, WITH as a pipeline, aggregation with no GROUP BY, paths of unknown length, lists and UNWIND, subqueries, writing idempotently, loading real data, reading a query plan, and the five mistakes that cost a day each.',
+			lessons: CYPHER
+		},
+		{
+			key: 'modelling',
+			eyebrow: 'Series 11',
+			title: 'Modelling for Neo4j (Graph Data Modelling)',
+			blurb:
+				'The decisions you make before any query: modelling from the questions rather than the entities, node versus relationship versus property, labels, relationship design, when a relationship has to become a node, time and history, constraints, indexes, embeddings and the vector index, and refactoring a graph that is already live.',
+			lessons: MODELLING
+		},
+		{
+			key: 'neptune',
+			eyebrow: 'Series 12',
+			title: 'Neptune to Neo4j (Migrating a Production Graph)',
+			blurb:
+				'Moving a live graph between engines, honestly: what actually differs, the two property-graph models, Gremlin and SPARQL translated to Cypher, getting forty million nodes out of Neptune and into Neo4j, rewriting the application layer, and a cutover with dual writes and a rollback you could actually use.',
+			lessons: NEPTUNE
 		}
 	];
+	const SERIES: Series[] = ALL.filter((s) => s.lessons.length > 0);
 
 	const secondsOf = (l: Lesson) => {
 		const [m, s] = l.runs.split(':').map(Number);

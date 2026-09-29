@@ -8856,3 +8856,415 @@ export const SHIFT: Lesson[] = [
    "captions": "/media/learn/shift/shift-19.vtt"
   }
  ];
+
+export const MODELLING: Lesson[] = [
+  {
+   "n": 3,
+   "title": "When to Use Labels in Neo4j: Kinds vs. State vs. Values",
+   "summary": "Labels in Neo4j should answer exactly one question: \"What kind of thing is this?\" Learn why using labels for status, values, or tenant IDs creates messy data models, and discover the three wrong patterns to avoid. After watching, you'll know when a label truly belongs on a node and when to use a property instead.",
+   "runs": "6:31",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question"
+    },
+    {
+     "at": "0:37",
+     "title": "A label is an index, not a description"
+    },
+    {
+     "at": "1:10",
+     "title": "Good use — two stable kinds at once"
+    },
+    {
+     "at": "2:00",
+     "title": "Bad use — status as a label"
+    },
+    {
+     "at": "3:04",
+     "title": "Bad use — value as a label"
+    },
+    {
+     "at": "4:01",
+     "title": "Bad use — a label per tenant"
+    },
+    {
+     "at": "4:44",
+     "title": "The rule and the limits of hierarchy"
+    },
+    {
+     "at": "5:43",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "Neo4j",
+    "labels",
+    "graph modeling",
+    "data design",
+    "properties",
+    "status",
+    "best practices",
+    "database schema",
+    "Cypher"
+   ],
+   "src": "/media/learn/modelling/modelling-03.mp4",
+   "poster": "/media/learn/modelling/modelling-03.jpg",
+   "captions": "/media/learn/modelling/modelling-03.vtt"
+  },
+  {
+   "n": 4,
+   "title": "Relationship Direction and Granularity in Neo4j",
+   "summary": "Learn how to design relationship types in Neo4j by understanding why direction matters and when to split relationships into multiple types. You'll discover how direction should capture the actual fact of what happened, not your query patterns, and how relationship granularity affects query performance on dense nodes.",
+   "runs": "6:56",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "An Arrow Only Points One Way"
+    },
+    {
+     "at": "0:47",
+     "title": "Direction Records the Fact, Not the Query"
+    },
+    {
+     "at": "1:45",
+     "title": "The Duplicate-Edge Trap"
+    },
+    {
+     "at": "2:35",
+     "title": "Now the Real Lesson: How Many Types?"
+    },
+    {
+     "at": "3:19",
+     "title": "The Arithmetic on a Dense Node"
+    },
+    {
+     "at": "4:22",
+     "title": "The Limit — When Splitting Goes Too Far"
+    },
+    {
+     "at": "5:36",
+     "title": "Naming: Read It Like a Sentence"
+    },
+    {
+     "at": "6:07",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "Neo4j",
+    "relationships",
+    "graph database",
+    "schema design",
+    "direction",
+    "granularity",
+    "Cypher",
+    "database performance",
+    "relational thinking",
+    "property vs type"
+   ],
+   "src": "/media/learn/modelling/modelling-04.mp4",
+   "poster": "/media/learn/modelling/modelling-04.jpg",
+   "captions": "/media/learn/modelling/modelling-04.vtt"
+  },
+  {
+   "n": 5,
+   "title": "Reified Relationships: When to Promote a Relationship to a Node",
+   "summary": "This video explains when a relationship between two nodes needs to become its own node in a graph database. You'll learn to recognize three key signals—accumulating properties, the need to connect to other things, and repeated pairs—and understand the trade-off: reified relationships cost an extra hop per query, but enable the questions your data actually needs to answer.",
+   "runs": "6:53",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question nobody's relationship can answer"
+    },
+    {
+     "at": "0:54",
+     "title": "A relationship joins exactly two nodes"
+    },
+    {
+     "at": "1:30",
+     "title": "Promoting the relationship to a node"
+    },
+    {
+     "at": "2:58",
+     "title": "How you know you've hit this"
+    },
+    {
+     "at": "3:40",
+     "title": "The same pattern, twice more"
+    },
+    {
+     "at": "4:24",
+     "title": "The reified relationship"
+    },
+    {
+     "at": "5:04",
+     "title": "The honest cost"
+    },
+    {
+     "at": "5:34",
+     "title": "Where people go wrong"
+    },
+    {
+     "at": "6:10",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "graph databases",
+    "data modeling",
+    "reified relationships",
+    "relationships to nodes",
+    "many-to-many",
+    "database design",
+    "Neo4j",
+    "entity relationships",
+    "property accumulation",
+    "query optimization"
+   ],
+   "src": "/media/learn/modelling/modelling-05.mp4",
+   "poster": "/media/learn/modelling/modelling-05.jpg",
+   "captions": "/media/learn/modelling/modelling-05.vtt"
+  },
+  {
+   "n": 10,
+   "title": "Live Schema Refactors: Moving Properties to Nodes at Scale",
+   "summary": "When your data grows, yesterday's schema decisions stop making sense—a property becomes a relationship, and you have to migrate millions of rows without downtime. Learn the five-step migration pattern (add, batch, verify, run parallel, remove) that keeps the database live and every step reversible, plus how the same method works for splitting relationships and promoting edges to nodes.",
+   "runs": "8:07",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question Nobody Asks Until Four Million Students Show Up"
+    },
+    {
+     "at": "0:40",
+     "title": "The Principle: Expand, Migrate, Contract"
+    },
+    {
+     "at": "1:24",
+     "title": "Step One: The Constraint Before the Nodes"
+    },
+    {
+     "at": "2:04",
+     "title": "Step Two: Nodes From the Distinct Values"
+    },
+    {
+     "at": "2:45",
+     "title": "Step Three: Attaching Relationships in Batches"
+    },
+    {
+     "at": "3:41",
+     "title": "Step Four: Count Both, Compare — The Step Everyone Skips"
+    },
+    {
+     "at": "4:35",
+     "title": "Step Five and Six: Run Both, Then Drop the Old"
+    },
+    {
+     "at": "5:21",
+     "title": "Three Harder Refactors, in Brief"
+    },
+    {
+     "at": "6:41",
+     "title": "Recap: Additive, Batched, Proven"
+    },
+    {
+     "at": "7:15",
+     "title": "The Real Lesson of the Whole Series"
+    }
+   ],
+   "tags": [
+    "graph database",
+    "schema refactor",
+    "cypher",
+    "migrations",
+    "neo4j",
+    "data integrity",
+    "constraints",
+    "live systems",
+    "batching",
+    "production data"
+   ],
+   "src": "/media/learn/modelling/modelling-10.mp4",
+   "poster": "/media/learn/modelling/modelling-10.jpg",
+   "captions": "/media/learn/modelling/modelling-10.vtt"
+  }
+ ];
+
+export const NEPTUNE: Lesson[] = [
+  {
+   "n": 2,
+   "title": "Same Model, Different Shape: Five Critical Differences Between Neptune and Neo4j",
+   "summary": "Neptune and Neo4j both use property graphs, but differ in five specific ways that break migrations in practice: labels, IDs, properties, types, and edges. This lesson walks through each difference—from Neptune's single label per vertex versus Neo4j's multiple labels, to the critical ID handling bug, to property cardinality and type strictness—and shows where your current graph shape was really a workaround waiting to be redesigned. Afterwards you'll understand exactly where to watch for migration failures and what decisions to make about your data model in Neo4j.",
+   "runs": "8:47",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Same Model, Different Shape"
+    },
+    {
+     "at": "1:02",
+     "title": "Labels: One Versus Several"
+    },
+    {
+     "at": "2:09",
+     "title": "IDs: The Bug Everyone Hits"
+    },
+    {
+     "at": "3:38",
+     "title": "Properties: Multi-Valued and Meta"
+    },
+    {
+     "at": "5:04",
+     "title": "Types: Smaller and Stricter"
+    },
+    {
+     "at": "5:51",
+     "title": "Edges: Mostly the Same Story"
+    },
+    {
+     "at": "6:23",
+     "title": "The Opportunity: Fix the Shape You're Stuck With"
+    },
+    {
+     "at": "7:08",
+     "title": "The Mapping Table"
+    },
+    {
+     "at": "8:02",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "Neptune",
+    "Neo4j",
+    "property graphs",
+    "graph migration",
+    "data modeling",
+    "graph databases",
+    "Gremlin",
+    "Cypher",
+    "schema design",
+    "database conversion"
+   ],
+   "src": "/media/learn/neptune/neptune-02.mp4",
+   "poster": "/media/learn/neptune/neptune-02.jpg",
+   "captions": "/media/learn/neptune/neptune-02.vtt"
+  },
+  {
+   "n": 7,
+   "title": "Migrating from Gremlin to Cypher: The Application Layer",
+   "summary": "Moving data to Neo4j requires rewriting far more than just query strings—your entire application layer between the service and graph changes. Learn how to restructure drivers, sessions, transactions, result handling, and routing, then implement a two-engine testing strategy that lets you migrate query by query instead of all at once.",
+   "runs": "7:11",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The part everyone underestimates"
+    },
+    {
+     "at": "0:45",
+     "title": "Traversal source versus driver and sessions"
+    },
+    {
+     "at": "1:47",
+     "title": "Implicit versus explicit transactions"
+    },
+    {
+     "at": "3:04",
+     "title": "Reading results back"
+    },
+    {
+     "at": "3:56",
+     "title": "Routing reads and parameters"
+    },
+    {
+     "at": "4:53",
+     "title": "The interface: running both engines at once"
+    },
+    {
+     "at": "5:45",
+     "title": "One test suite, two engines"
+    },
+    {
+     "at": "6:23",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "Neo4j",
+    "Gremlin",
+    "Cypher",
+    "graph database migration",
+    "application layer",
+    "session management",
+    "transactions",
+    "testing",
+    "database driver",
+    "query routing"
+   ],
+   "src": "/media/learn/neptune/neptune-07.mp4",
+   "poster": "/media/learn/neptune/neptune-07.jpg",
+   "captions": "/media/learn/neptune/neptune-07.vtt"
+  },
+  {
+   "n": 8,
+   "title": "Database Migration: The Five-Phase Cutover Strategy",
+   "summary": "Learn why you can't simply switch from one graph database to another in a single move, and the exact five-phase strategy to migrate safely. After watching, you'll understand how to use shadow reads, dual writes, and feature flags to prove the new system works before serving real traffic, and why the rollback plan matters more than the technical correctness.",
+   "runs": "6:36",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question Nobody Wants To Ask"
+    },
+    {
+     "at": "0:42",
+     "title": "Phase One — Shadow Reads"
+    },
+    {
+     "at": "1:47",
+     "title": "Phase Two — Dual Writes"
+    },
+    {
+     "at": "2:46",
+     "title": "Phase Three — Read Migration By Query Class"
+    },
+    {
+     "at": "3:20",
+     "title": "Phase Four and Five — Neptune As Shadow, Then Decommission"
+    },
+    {
+     "at": "4:02",
+     "title": "What To Measure, And The Rollback"
+    },
+    {
+     "at": "4:48",
+     "title": "Where This Goes Wrong"
+    },
+    {
+     "at": "5:28",
+     "title": "Recap"
+    },
+    {
+     "at": "6:07",
+     "title": "What To Tell Whoever Approves This"
+    }
+   ],
+   "tags": [
+    "database migration",
+    "graph databases",
+    "Neo4j",
+    "cutover strategy",
+    "shadow reads",
+    "dual writes",
+    "feature flags",
+    "database reliability",
+    "rollback planning",
+    "production safety"
+   ],
+   "src": "/media/learn/neptune/neptune-08.mp4",
+   "poster": "/media/learn/neptune/neptune-08.jpg",
+   "captions": "/media/learn/neptune/neptune-08.vtt"
+  }
+ ];
+
+export const CYPHER: Lesson[] = [];
