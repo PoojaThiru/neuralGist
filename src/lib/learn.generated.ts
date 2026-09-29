@@ -1022,8 +1022,8 @@ export const NEO4J: Lesson[] = [
 export const LLM_EVAL: Lesson[] = [
   {
    "n": 1,
-   "title": "Why Testing Language Models Is Different From Testing Software",
-   "summary": "Learn why traditional software testing strategies fail for language models, and understand the four core challenges: multiple acceptable outputs, the difficulty of automated evaluation, non-deterministic behavior, and varying degrees of wrongness. This video explains why binary pass/fail testing doesn't work and what teams need to think about instead.",
+   "title": "Why Testing Language Models Is Different",
+   "summary": "Learn why testing language models requires a fundamentally different approach than traditional software testing. This video explains the four core challenges: multiple acceptable outputs, the difficulty of automatically judging meaning, non-deterministic behavior, and varying degrees of wrongness—and shows you how teams commonly stumble on each one.",
    "runs": "7:06",
    "chapters": [
     {
@@ -1056,15 +1056,15 @@ export const LLM_EVAL: Lesson[] = [
     }
    ],
    "tags": [
-    "language model testing",
+    "language models",
+    "testing",
     "LLM evaluation",
     "software testing",
-    "AI quality assurance",
     "hallucination",
-    "non-deterministic systems",
-    "automated testing",
-    "oracle problem",
-    "prompt testing"
+    "non-deterministic",
+    "quality assurance",
+    "AI testing",
+    "model validation"
    ],
    "src": "/media/learn/llm-eval/llm-eval-01.mp4",
    "poster": "/media/learn/llm-eval/llm-eval-01.jpg",
@@ -1169,8 +1169,8 @@ export const LLM_EVAL: Lesson[] = [
   },
   {
    "n": 4,
-   "title": "The Hidden Biases in Judge Models: Calibration Isn't Enough",
-   "summary": "Learn the four systematic biases that cause judge models to make predictable mistakes even when they pass average calibration checks: position bias (favoring the first answer), verbosity bias (rewarding length over quality), self-preference bias (rating their own writing higher), and the pitfall of using the same model as both system and judge. You'll discover how to detect these biases and why checking calibration on average isn't enough to ensure consistent fairness.",
+   "title": "Hidden Biases in Judge Models: Position, Length, and Self-Preference",
+   "summary": "Learn why a judge model can pass overall accuracy checks but still systematically favor wrong answers in predictable ways. This video teaches four hidden biases that break pairwise comparisons—position bias, verbosity bias, self-preference bias, and common mistakes—and shows you how to detect and control for each one so your evaluations stay fair.",
    "runs": "5:19",
    "chapters": [
     {
@@ -1200,14 +1200,15 @@ export const LLM_EVAL: Lesson[] = [
    ],
    "tags": [
     "judge models",
-    "bias detection",
-    "LLM evaluation",
+    "evaluation bias",
     "pairwise comparison",
     "position bias",
     "verbosity bias",
     "self-preference bias",
     "model calibration",
-    "evaluation methodology"
+    "LLM evaluation",
+    "systematic bias",
+    "testing methods"
    ],
    "src": "/media/learn/llm-eval/llm-eval-04.mp4",
    "poster": "/media/learn/llm-eval/llm-eval-04.jpg",
@@ -1215,8 +1216,8 @@ export const LLM_EVAL: Lesson[] = [
   },
   {
    "n": 5,
-   "title": "Metrics That Mean Something: Beyond BLEU, ROUGE, and Exact Match",
-   "summary": "Most teams use translation and summarization metrics like exact match, BLEU, and ROUGE to evaluate language models and agents—but these metrics measure word-level overlap with a reference, not actual correctness or meaning. Learn why these metrics fail for paraphrasing, what they're actually measuring, and three proven alternatives (semantic similarity, LLM-as-judge, and task-based evaluation) that work for modern chat models.",
+   "title": "Metrics That Mean Something: Why Standard Evaluation Metrics Fail for LLMs",
+   "summary": "Learn why exact match, BLEU, and ROUGE—the most common metrics for evaluating chat models and agents—measure surface-level word overlap, not actual correctness or meaning. This video shows you what these metrics were designed for, where they break down, and what actually works instead: semantic similarity, LLM-as-judge approaches, and task-based evaluation.",
    "runs": "8:11",
    "chapters": [
     {
@@ -1253,16 +1254,16 @@ export const LLM_EVAL: Lesson[] = [
     }
    ],
    "tags": [
+    "LLM evaluation",
     "metrics",
-    "evaluation",
     "BLEU",
     "ROUGE",
     "exact match",
-    "LLM evaluation",
     "semantic similarity",
-    "LLM-as-judge",
     "model assessment",
-    "benchmarking"
+    "LLM-as-judge",
+    "evaluation methodology",
+    "AI quality measurement"
    ],
    "src": "/media/learn/llm-eval/llm-eval-05.mp4",
    "poster": "/media/learn/llm-eval/llm-eval-05.jpg",
@@ -1271,7 +1272,7 @@ export const LLM_EVAL: Lesson[] = [
   {
    "n": 6,
    "title": "Diagnosing RAG Failures: Score the Retriever and Generator Separately",
-   "summary": "Learn how to identify whether failures in a RAG (retrieval augmented generation) system come from the retriever or the generator by scoring each component independently. You'll discover why end-to-end scores hide problems and how to measure retriever performance with recall and precision, and generator performance with faithfulness and relevance.",
+   "summary": "Learn why tracking a single end-to-end score for RAG systems is useless and how to split evaluation into two independent measurements instead. This video teaches you to score your retriever (recall@k and precision@k against labeled passages) and generator (faithfulness and answer relevance) separately, so you can immediately identify whether a bad answer came from search failure or model failure and know which component to fix.",
    "runs": "7:19",
    "chapters": [
     {
@@ -1303,13 +1304,13 @@ export const LLM_EVAL: Lesson[] = [
     "RAG",
     "retrieval augmented generation",
     "evaluation metrics",
-    "debugging",
-    "information retrieval",
-    "language models",
-    "recall",
-    "precision",
+    "LLM evaluation",
+    "retriever scoring",
+    "generator scoring",
+    "recall at k",
+    "precision at k",
     "faithfulness",
-    "LLM evaluation"
+    "debugging ML systems"
    ],
    "src": "/media/learn/llm-eval/llm-eval-06.mp4",
    "poster": "/media/learn/llm-eval/llm-eval-06.jpg",
@@ -1317,8 +1318,8 @@ export const LLM_EVAL: Lesson[] = [
   },
   {
    "n": 7,
-   "title": "Safety Nets for AI: Automated Evaluation in CI/CD Pipelines",
-   "summary": "Learn how to move beyond one-time model evaluations to continuous, automated safety nets that catch regressions before they reach production. This video teaches you to build a golden set of test examples, define thresholds, and wire evaluation into your CI/CD pipeline so every code change is validated automatically—and how to avoid the three common failure modes that let problems slip through.",
+   "title": "Building a Safety Net: Automated Evaluation for Model Changes",
+   "summary": "Learn how to set up continuous automated evaluation to catch model degradation before it reaches customers. This video shows you how to build a golden set of test cases, establish quality thresholds, and wire evaluation into your CI/CD pipeline so every code change is automatically validated against your model's expected behavior.",
    "runs": "5:48",
    "chapters": [
     {
@@ -1348,15 +1349,15 @@ export const LLM_EVAL: Lesson[] = [
    ],
    "tags": [
     "model evaluation",
-    "golden set",
+    "testing",
     "CI/CD pipeline",
-    "safety nets",
-    "automated testing",
-    "machine learning",
-    "metrics and thresholds",
-    "continuous deployment",
-    "regression detection",
-    "LLM evaluation"
+    "golden set",
+    "safety net",
+    "quality metrics",
+    "threshold testing",
+    "machine learning ops",
+    "model monitoring",
+    "automated testing"
    ],
    "src": "/media/learn/llm-eval/llm-eval-07.mp4",
    "poster": "/media/learn/llm-eval/llm-eval-07.jpg",
@@ -1364,8 +1365,8 @@ export const LLM_EVAL: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Why a Passing Score Isn't a Safety Guarantee",
-   "summary": "Learn why model evaluation scores only measure performance on the specific questions you tested—not on attacks or scenarios you never anticipated. This video explains the critical difference between evaluation and red-teaming, shows why even high scores can mask serious vulnerabilities, and identifies the three most common mistakes teams make when assessing model safety.",
+   "title": "Why a High Evaluation Score Doesn't Guarantee Safety",
+   "summary": "Learn why passing test scores measure performance only on the questions you asked, not on real-world scenarios you didn't anticipate. This video distinguishes evaluation from red-teaming and explains the three common mistakes teams make when validating AI systems before deployment.",
    "runs": "5:01",
    "chapters": [
     {
@@ -1394,14 +1395,15 @@ export const LLM_EVAL: Lesson[] = [
     }
    ],
    "tags": [
-    "model evaluation",
+    "evaluation",
     "red-teaming",
-    "AI safety",
-    "testing limitations",
-    "model assessment",
-    "adversarial testing",
-    "machine learning validation",
-    "security gaps"
+    "model safety",
+    "testing",
+    "AI validation",
+    "generalization",
+    "security testing",
+    "machine learning",
+    "deployment risk"
    ],
    "src": "/media/learn/llm-eval/llm-eval-08.mp4",
    "poster": "/media/learn/llm-eval/llm-eval-08.jpg",
@@ -1412,8 +1414,8 @@ export const LLM_EVAL: Lesson[] = [
 export const SERVING: Lesson[] = [
   {
    "n": 1,
-   "title": "Why Language Model Servers Are Nothing Like Normal Web Apps",
-   "summary": "Learn why running a language model server is fundamentally different from serving a traditional web app, even when thousands of requests arrive at once. This video explains token-by-token generation, GPU batching, the latency-throughput tradeoff, and memory constraints from the key-value cache — the core challenges that make language model infrastructure complex.",
+   "title": "Why Language Models Break on Sunday Night",
+   "summary": "Learn why serving language model requests is fundamentally different from running a normal web app. This video explains how tokens stream one at a time, why batching requests matters for GPU efficiency, and how the tension between latency and throughput creates challenges when hundreds of students hit your system at once.",
    "runs": "7:09",
    "chapters": [
     {
@@ -1447,15 +1449,14 @@ export const SERVING: Lesson[] = [
    ],
    "tags": [
     "language models",
-    "GPU inference",
+    "GPU optimization",
     "batching",
-    "throughput",
     "latency",
+    "throughput",
     "key-value cache",
+    "system design",
     "token generation",
-    "systems design",
-    "LLM infrastructure",
-    "web server"
+    "machine learning infrastructure"
    ],
    "src": "/media/learn/serving/serving-01.mp4",
    "poster": "/media/learn/serving/serving-01.jpg",
@@ -1463,8 +1464,8 @@ export const SERVING: Lesson[] = [
   },
   {
    "n": 2,
-   "title": "Continuous Batching: Why It's Better Than Static Batching",
-   "summary": "Learn why naive static batching wastes GPU compute by forcing finished requests to wait, and how continuous batching schedules requests at the token level instead to fill idle slots instantly. You'll understand the key limits of continuous batching, see a worked example with five real requests, and be able to explain where people commonly misunderstand it.",
+   "title": "Continuous Batching: Making LLMs Use GPU Time Efficiently",
+   "summary": "Learn why static batching wastes GPU time when requests finish at different speeds, and how continuous batching solves this by freeing up slots for new requests as soon as each one completes. This video teaches you the scheduling difference between the two approaches and why continuous batching lets you serve more requests with the same hardware, while clarifying common misconceptions like thinking it eliminates queues entirely.",
    "runs": "6:22",
    "chapters": [
     {
@@ -1493,16 +1494,14 @@ export const SERVING: Lesson[] = [
     }
    ],
    "tags": [
+    "batching",
     "continuous batching",
     "static batching",
-    "GPU scheduling",
     "LLM inference",
-    "batch processing",
+    "GPU scheduling",
     "token generation",
-    "request queueing",
-    "compute efficiency",
-    "machine learning",
-    "inference optimization"
+    "request scheduling",
+    "transformer inference"
    ],
    "src": "/media/learn/serving/serving-02.mp4",
    "poster": "/media/learn/serving/serving-02.jpg",
@@ -1510,8 +1509,8 @@ export const SERVING: Lesson[] = [
   },
   {
    "n": 3,
-   "title": "Why GPUs Run Out of Memory: The KV Cache and Paging Fix",
-   "summary": "Learn why a single GPU can only serve a handful of requests despite having plenty of capacity, and how memory fragmentation from the KV cache causes the bottleneck. This video explains how applying the operating system paging technique to GPU memory—splitting the cache into fixed-size blocks and using a lookup table—solves fragmentation while enabling request batching, along with the common pitfalls to avoid.",
+   "title": "Why GPUs Run Out of Memory: The KV Cache Problem and Paging Solution",
+   "summary": "Learn why a single GPU can only serve a handful of concurrent requests despite having plenty of capacity, and discover how paging—breaking the KV cache into small fixed-size blocks—solves both fragmentation and memory waste. You'll understand the tradeoffs in block sizing and how to avoid common mistakes like failing to split blocks when conversations diverge.",
    "runs": "6:42",
    "chapters": [
     {
@@ -1546,13 +1545,13 @@ export const SERVING: Lesson[] = [
    "tags": [
     "GPU memory",
     "KV cache",
-    "memory fragmentation",
     "paging",
+    "memory fragmentation",
+    "token allocation",
     "LLM serving",
-    "token cache",
+    "block allocation",
     "memory management",
-    "batch serving",
-    "block allocation"
+    "concurrent requests"
    ],
    "src": "/media/learn/serving/serving-03.mp4",
    "poster": "/media/learn/serving/serving-03.jpg",
@@ -1560,8 +1559,8 @@ export const SERVING: Lesson[] = [
   },
   {
    "n": 4,
-   "title": "Making Models Smaller: Quantization, Distillation, and Pruning",
-   "summary": "Learn three practical techniques for reducing model size and improving inference speed without sacrificing performance: quantization (rounding parameters to fewer bits), distillation (training a small model to imitate a large teacher model), and pruning (removing parameters that barely contribute to outputs). You'll also learn the critical mistakes engineers make when compressing models and why measuring on your own real tasks matters more than generic benchmarks.",
+   "title": "Making LLMs Smaller: Quantization, Distillation, and Pruning",
+   "summary": "Learn three practical techniques for shrinking language models to use less memory and run faster: quantization (rounding numbers to fewer bits), distillation (training a small model to copy a large one), and pruning (removing barely-used parameters). You'll understand how each method works and what mistakes to avoid when compressing models for production.",
    "runs": "7:42",
    "chapters": [
     {
@@ -1590,16 +1589,15 @@ export const SERVING: Lesson[] = [
     }
    ],
    "tags": [
-    "model compression",
     "quantization",
+    "model compression",
     "distillation",
     "pruning",
-    "inference optimization",
-    "LLM efficiency",
+    "language models",
+    "LLM optimization",
     "machine learning",
-    "model size reduction",
-    "parameter optimization",
-    "neural networks"
+    "inference efficiency",
+    "parameters"
    ],
    "src": "/media/learn/serving/serving-04.mp4",
    "poster": "/media/learn/serving/serving-04.jpg",
@@ -1607,8 +1605,8 @@ export const SERVING: Lesson[] = [
   },
   {
    "n": 5,
-   "title": "How Companies Run Custom Language Models for Hundreds of Customers",
-   "summary": "Learn how companies serve hundreds of customers with personalized language models without running 500 separate copies. This video teaches the adapter pattern: one shared base model combined with tiny customer-specific add-ons, plus the routing system that keeps everything running efficiently.",
+   "title": "How to Serve Hundreds of Custom Language Models on One Machine",
+   "summary": "Learn why running separate language models for each customer is impossible, and how companies actually do it: one shared base model plus tiny customer-specific adapters. You'll understand adapters, cold starts, adapter swapping, and the router that ties it all together.",
    "runs": "6:54",
    "chapters": [
     {
@@ -1648,12 +1646,12 @@ export const SERVING: Lesson[] = [
     "language models",
     "adapters",
     "model serving",
-    "infrastructure",
-    "fine-tuning",
     "GPU memory",
+    "machine learning infrastructure",
+    "fine-tuning",
     "routers",
     "cold starts",
-    "machine learning systems"
+    "scaling ML"
    ],
    "src": "/media/learn/serving/serving-05.mp4",
    "poster": "/media/learn/serving/serving-05.jpg",
@@ -1661,8 +1659,8 @@ export const SERVING: Lesson[] = [
   },
   {
    "n": 6,
-   "title": "Speculative Decoding: How AI Guesses Ahead to Speed Up Generation",
-   "summary": "Learn how speculative decoding uses a small, fast draft model to guess multiple tokens ahead while a large, trusted model verifies them all at once—speeding up AI responses without sacrificing quality. You'll understand why this works, what can go wrong in practice, and how the output stays exactly as good as it would have been without the optimization.",
+   "title": "Speculative Decoding: How Models Guess Ahead to Speed Up Inference",
+   "summary": "Learn how speculative decoding uses a small, fast draft model to guess several tokens at once while a large target model verifies them in a single pass—speeding up inference without sacrificing output quality. You'll understand how two models work together, why the final answer stays exactly the same, and what mistakes teams make when implementing this technique.",
    "runs": "5:36",
    "chapters": [
     {
@@ -1692,13 +1690,15 @@ export const SERVING: Lesson[] = [
    ],
    "tags": [
     "speculative decoding",
-    "large language models",
-    "token generation",
     "inference optimization",
-    "draft model",
-    "target model",
-    "AI performance",
-    "machine learning"
+    "draft models",
+    "token generation",
+    "language models",
+    "model efficiency",
+    "fast inference",
+    "target models",
+    "machine learning",
+    "LLM acceleration"
    ],
    "src": "/media/learn/serving/serving-06.mp4",
    "poster": "/media/learn/serving/serving-06.jpg",
@@ -1706,8 +1706,8 @@ export const SERVING: Lesson[] = [
   },
   {
    "n": 7,
-   "title": "Three Ways to Use Multiple GPUs for Large Language Models",
-   "summary": "When one GPU isn't enough for serving a large language model, there are actually three fundamentally different approaches to add more: data parallelism (copies of the model), tensor parallelism (splitting individual calculations), and pipeline parallelism (splitting the model into processing stages). Learn when to use each method and the common mistakes teams make when implementing them.",
+   "title": "Three Ways to Use Multiple GPUs: Data, Tensor, and Pipeline Parallelism",
+   "summary": "When one GPU isn't enough, there are actually three different strategies to scale with more GPUs—each solving a different problem. Learn how data parallelism, tensor parallelism, and pipeline parallelism work, how they differ, and why teams often combine all three in production systems.",
    "runs": "7:07",
    "chapters": [
     {
@@ -1745,13 +1745,13 @@ export const SERVING: Lesson[] = [
    ],
    "tags": [
     "GPU parallelism",
-    "large language models",
     "data parallelism",
     "tensor parallelism",
     "pipeline parallelism",
-    "distributed computing",
+    "distributed inference",
     "model scaling",
-    "inference optimization"
+    "machine learning systems",
+    "GPU optimization"
    ],
    "src": "/media/learn/serving/serving-07.mp4",
    "poster": "/media/learn/serving/serving-07.jpg",
@@ -1759,8 +1759,8 @@ export const SERVING: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Running LLMs in Production: Monitoring and Cost",
-   "summary": "Learn what actually matters when you deploy an LLM to real users—not average latency, but tail latency and time-to-first-token. This video teaches you how to set realistic performance promises, design dashboards that catch problems before they spiral, and understand the real drivers of your inference costs.",
+   "title": "Running LLMs in Production: Promises, Monitoring, and Costs",
+   "summary": "Learn what actually matters when you deploy a language model to real users—not just how it runs, but how to promise speed honestly, monitor health before it breaks, and understand what drives your bill. This video covers the gap between building models and running them safely at scale.",
    "runs": "7:59",
    "chapters": [
     {
@@ -1800,13 +1800,13 @@ export const SERVING: Lesson[] = [
     "LLM deployment",
     "production monitoring",
     "latency",
-    "time-to-first-token",
+    "time to first token",
+    "cost analysis",
     "autoscaling",
-    "cost optimization",
+    "performance metrics",
+    "tail latency",
     "queue depth",
-    "p99 latency",
-    "dashboard design",
-    "inference"
+    "ML operations"
    ],
    "src": "/media/learn/serving/serving-08.mp4",
    "poster": "/media/learn/serving/serving-08.jpg",
@@ -1817,8 +1817,8 @@ export const SERVING: Lesson[] = [
 export const LEARNING: Lesson[] = [
   {
    "n": 1,
-   "title": "What Does It Mean for a Model to Learn?",
-   "summary": "Learn what \"fitting\" actually means when we train a machine learning model on data, and why memorizing every example is different from learning a true pattern. This video explains the critical distinction between training and test sets, and why checking your model on unseen data is the only way to know if it truly learned or just memorized noise.",
+   "title": "What Does It Mean for a Model to Learn? Fitting vs. Memorizing",
+   "summary": "This video explains what machine learning models actually do when they \"learn\" from data, using apartment rental predictions as a concrete example. You'll learn the critical difference between fitting (finding a simple rule that generalizes) and memorizing (perfectly matching training data but failing on new examples), and why catching this distinction with a test set is essential for building models that work in the real world.",
    "runs": "5:53",
    "chapters": [
     {
@@ -1849,14 +1849,14 @@ export const LEARNING: Lesson[] = [
    "tags": [
     "machine learning",
     "fitting",
+    "memorizing",
     "overfitting",
+    "underfitting",
     "training set",
     "test set",
-    "model learning",
+    "model evaluation",
     "generalization",
-    "memorization",
-    "regression",
-    "model evaluation"
+    "parameters"
    ],
    "src": "/media/learn/learning/learning-01.mp4",
    "poster": "/media/learn/learning/learning-01.jpg",
@@ -1864,8 +1864,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 2,
-   "title": "What Does 'Best Fit' Even Mean? The Math Behind Linear Models",
-   "summary": "Learn what \"best fit\" actually means when fitting a line to data—it's not a vibe, it's something you can measure. This video builds from the linear model equation through residuals and the sum of squared errors, so you understand exactly what we're optimizing when we search for the line that best predicts your data.",
+   "title": "What Does 'Best Fit' Even Mean?",
+   "summary": "Learn what \"best fit\" actually means in linear regression—it's not just a vibe, it's a measurable goal. This video teaches you how residuals and sum of squared errors (SSE) turn the abstract idea of a \"good line\" into concrete math you can compute. By the end, you'll understand exactly what makes one line better than another.",
    "runs": "5:15",
    "chapters": [
     {
@@ -1901,12 +1901,13 @@ export const LEARNING: Lesson[] = [
     "linear regression",
     "best fit",
     "residuals",
-    "least squares",
     "sum of squared errors",
+    "SSE",
+    "slope",
+    "intercept",
     "linear model",
-    "machine learning fundamentals",
     "prediction error",
-    "model fitting"
+    "fitting"
    ],
    "src": "/media/learn/learning/learning-02.mp4",
    "poster": "/media/learn/learning/learning-02.jpg",
@@ -1915,7 +1916,7 @@ export const LEARNING: Lesson[] = [
   {
    "n": 3,
    "title": "How Models Learn: Loss Functions and Gradient Descent",
-   "summary": "This video explains the core mechanism of how machine learning models actually learn. You'll see how models measure their errors using a loss function, use calculus to find the downhill direction of improvement, and apply gradient descent to automatically adjust all the knobs (parameters) in the right way. By the end, you'll understand the complete loop: guess, measure wrongness, and nudge toward better predictions.",
+   "summary": "Learn the core mechanism of how machine learning models train: defining a loss function to measure errors, computing gradients to find which direction to adjust, and using gradient descent to iteratively improve predictions. After watching, you'll understand how models automatically tune their parameters by repeatedly guessing, measuring how wrong they are, and nudging in the right direction.",
    "runs": "7:08",
    "chapters": [
     {
@@ -1951,13 +1952,13 @@ export const LEARNING: Lesson[] = [
     "machine learning",
     "gradient descent",
     "loss function",
-    "neural networks",
     "optimization",
+    "neural networks",
+    "training",
     "calculus",
-    "learning rate",
     "parameters",
-    "model training",
-    "error measurement"
+    "learning rate",
+    "mean squared error"
    ],
    "src": "/media/learn/learning/learning-03.mp4",
    "poster": "/media/learn/learning/learning-03.jpg",
@@ -1965,8 +1966,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 4,
-   "title": "Overfitting vs Underfitting: Finding the Right Model Complexity",
-   "summary": "Learn why a model that perfectly matches your training data can fail catastrophically on new data, and how to navigate the bias-variance tradeoff. You'll discover the practical techniques for catching overfitting before deployment: train/validation/test splits, regularization, and choosing the right model complexity.",
+   "title": "Overfitting, Underfitting, and the Bias-Variance Tradeoff",
+   "summary": "Learn why a model with zero training error can fail on new data, and how to catch overfitting before it happens. This video teaches you to split data into training, validation, and test sets, recognize the bias-variance tradeoff, and use regularization to build models that actually generalize.",
    "runs": "6:24",
    "chapters": [
     {
@@ -2005,14 +2006,13 @@ export const LEARNING: Lesson[] = [
    "tags": [
     "overfitting",
     "underfitting",
-    "model validation",
     "bias-variance tradeoff",
+    "model validation",
     "regularization",
-    "test set",
-    "machine learning",
-    "model complexity",
     "generalization",
-    "training data"
+    "machine learning",
+    "training error",
+    "test error"
    ],
    "src": "/media/learn/learning/learning-04.mp4",
    "poster": "/media/learn/learning/learning-04.jpg",
@@ -2021,7 +2021,7 @@ export const LEARNING: Lesson[] = [
   {
    "n": 5,
    "title": "Logistic Regression: Predicting Categories Instead of Numbers",
-   "summary": "Learn how to shift from predicting quantities to predicting categories using logistic regression. This video explains why a straight line fails for classification problems, introduces the sigmoid function to keep predictions between 0 and 1, and shows how to set decision boundaries to make yes-or-no predictions based on probabilities.",
+   "summary": "Learn how to shift from predicting numeric values to predicting categories using logistic regression. This video teaches why a straight line fails for classification problems, how the sigmoid function squashes outputs into probabilities between 0 and 1, and how to set decision thresholds to make yes-or-no predictions. You'll understand the key differences from linear regression and avoid common mistakes when building classification models.",
    "runs": "6:30",
    "chapters": [
     {
@@ -2057,11 +2057,12 @@ export const LEARNING: Lesson[] = [
     "logistic regression",
     "classification",
     "sigmoid function",
-    "machine learning",
     "decision boundary",
     "probability",
     "categorical prediction",
-    "supervised learning"
+    "machine learning",
+    "threshold",
+    "binary classification"
    ],
    "src": "/media/learn/learning/learning-05.mp4",
    "poster": "/media/learn/learning/learning-05.jpg",
@@ -2069,8 +2070,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 6,
-   "title": "Why 92% Accuracy Can Be Useless: Confusion Matrices and Better Metrics",
-   "summary": "A high accuracy score can hide serious problems when your data is imbalanced—learn why a model that's always wrong can still seem 92% correct. This video teaches you to use confusion matrices, precision, and recall to catch misleading models, and shows why testing on fresh data is essential.",
+   "title": "Why 92% Accuracy Can Be Useless: Confusion Matrix, Precision, and Recall",
+   "summary": "Learn why accuracy alone is a misleading metric for evaluating machine learning models, especially with imbalanced datasets. This video teaches you to use confusion matrices, precision, and recall to catch models that look good but fail in practice, and shows you why testing on held-out data matters.",
    "runs": "6:37",
    "chapters": [
     {
@@ -2099,16 +2100,16 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "accuracy",
+    "machine learning",
+    "model evaluation",
     "confusion matrix",
     "precision",
     "recall",
+    "accuracy",
     "class imbalance",
-    "machine learning metrics",
-    "model evaluation",
-    "training vs testing",
-    "false positives",
-    "false negatives"
+    "train-test split",
+    "classification metrics",
+    "data science"
    ],
    "src": "/media/learn/learning/learning-06.mp4",
    "poster": "/media/learn/learning/learning-06.jpg",
@@ -2116,8 +2117,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 7,
-   "title": "The Model That Was Too Good: Spotting Data Leakage",
-   "summary": "Learn why a perfect-looking model on test data can fail silently in the real world, through the lens of building an apartment rent predictor. This video teaches you to recognize data leakage—when information sneaks into training that wouldn't exist at prediction time—and master the practical foundations of clean feature engineering: scaling, encoding categories, handling missing values, and avoiding the subtle ways test data can contaminate your results.",
+   "title": "The Model That Was Too Good: Detecting Data Leakage",
+   "summary": "Learn why a machine learning model that performs suspiciously well on test data might fail in real-world use—the warning sign of data leakage. This video teaches you to spot information sneaking into training that you'd never actually have at prediction time, and covers practical skills like feature scaling, encoding categories, handling missing values, and identifying common leakage patterns like future information or pre-split averaging.",
    "runs": "7:56",
    "chapters": [
     {
@@ -2154,14 +2155,16 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
+    "machine learning",
     "data leakage",
     "feature engineering",
-    "machine learning",
     "data preprocessing",
-    "test train split",
     "model validation",
-    "one-hot encoding",
-    "feature scaling"
+    "test data",
+    "target encoding",
+    "feature scaling",
+    "categorical variables",
+    "data science"
    ],
    "src": "/media/learn/learning/learning-07.mp4",
    "poster": "/media/learn/learning/learning-07.jpg",
@@ -2169,8 +2172,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Machine Learning Pipeline End-to-End: Clean, Train, Test",
-   "summary": "Watch all seven steps of a complete machine learning pipeline work together in one go—from cleaning raw apartment rental data through building features, training a model with gradient descent, and validating it honestly on unseen test data. You'll see exactly how data scientists go from messy raw numbers to a formula that predicts rent based on size, distance, age, and floor, along with three critical mistakes to avoid.",
+   "title": "Machine Learning Pipeline: Data to Predictions Start to Finish",
+   "summary": "Watch all seven steps of a complete machine learning workflow come together—from cleaning raw apartment data to training a model that predicts rent based on size, distance, age, and floor. You'll see how data cleaning, feature engineering, model building, gradient descent, train-test splitting, and regularization all work as one integrated system. After watching, you'll understand the correct order of these steps and be able to recognize the three most common mistakes that derail beginners.",
    "runs": "5:02",
    "chapters": [
     {
@@ -2209,14 +2212,13 @@ export const LEARNING: Lesson[] = [
    "tags": [
     "machine learning",
     "gradient descent",
-    "data cleaning",
     "train-test split",
     "regularization",
-    "overfitting",
     "feature engineering",
-    "loss function",
-    "pipeline",
-    "linear regression"
+    "linear regression",
+    "data pipeline",
+    "overfitting",
+    "loss function"
    ],
    "src": "/media/learn/learning/learning-08.mp4",
    "poster": "/media/learn/learning/learning-08.jpg",
@@ -2224,8 +2226,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 9,
-   "title": "K-Fold Cross-Validation: Testing Models Fairly",
-   "summary": "Learn why a single train-test split can give misleading results and how k-fold cross-validation provides a more reliable estimate of model performance. This video shows you how to split data into k folds, rotate test sets across multiple rounds, and use the averaged error to fairly compare different models.",
+   "title": "K-Fold Cross-Validation: Testing Models Reliably",
+   "summary": "Learn why a single train-test split can give misleading results due to random luck, and how k-fold cross-validation provides a more trustworthy estimate of model performance. You'll see how to rotate through multiple folds to fairly compare different models, and discover the two critical mistakes to avoid when implementing cross-validation.",
    "runs": "6:07",
    "chapters": [
     {
@@ -2262,12 +2264,11 @@ export const LEARNING: Lesson[] = [
     "k-fold",
     "model evaluation",
     "train-test split",
-    "data science",
     "machine learning",
     "model comparison",
-    "test set",
-    "data leakage",
-    "preprocessing"
+    "data preprocessing",
+    "mean absolute error",
+    "overfitting prevention"
    ],
    "src": "/media/learn/learning/learning-09.mp4",
    "poster": "/media/learn/learning/learning-09.jpg",
@@ -2275,8 +2276,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 10,
-   "title": "Decision Trees: Predicting Rent with Yes-or-No Questions",
-   "summary": "Learn how decision trees make predictions by asking a series of yes-or-no questions about data, starting from a root node and branching down to leaf nodes that provide answers. You'll understand how trees choose which questions to ask by measuring variance or impurity, and discover the critical danger of overfitting when trees grow too deep and memorize individual data points instead of learning real patterns.",
+   "title": "Decision Trees: Predicting Values by Asking Questions",
+   "summary": "Learn how decision trees make predictions by asking a series of yes-or-no questions about data. This video teaches you the structure (root, splits, leaves), how trees choose which questions to ask by measuring variance or impurity, and the critical difference between fitting your training data and overfitting. You'll understand both regression trees (predicting numbers like rent) and classification trees (predicting categories), and why limiting tree depth prevents memorizing noise instead of learning patterns.",
    "runs": "5:59",
    "chapters": [
     {
@@ -2306,15 +2307,14 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "decision trees",
+    "machine learning",
     "regression trees",
     "classification trees",
-    "prediction",
     "variance",
     "impurity",
     "overfitting",
-    "machine learning",
-    "data splitting",
-    "tree growth control"
+    "prediction",
+    "data science"
    ],
    "src": "/media/learn/learning/learning-10.mp4",
    "poster": "/media/learn/learning/learning-10.jpg",
@@ -2323,7 +2323,7 @@ export const LEARNING: Lesson[] = [
   {
    "n": 11,
    "title": "Bagging and Random Forests: Combining Weak Models",
-   "summary": "Learn why training many imperfect models and averaging their predictions often beats building one carefully optimized model. This video walks through bootstrap sampling, bagging, and random forests using real apartment pricing data, showing how to reduce prediction wobble through ensemble methods that exploit the randomness in your training data.",
+   "summary": "Learn why training many mediocre decision trees and averaging their predictions beats building one perfect tree. This video explains bootstrap sampling, bagging, and random forests using apartment price data, and shows how combining wobbly models reduces variance and improves predictions.",
    "runs": "6:49",
    "chapters": [
     {
@@ -2361,14 +2361,15 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "bagging",
-    "random forests",
     "bootstrap sampling",
-    "ensemble methods",
+    "random forests",
     "decision trees",
+    "ensemble methods",
     "variance reduction",
     "machine learning",
-    "prediction averaging",
-    "bootstrap aggregating"
+    "ensemble learning",
+    "prediction",
+    "statistical modeling"
    ],
    "src": "/media/learn/learning/learning-11.mp4",
    "poster": "/media/learn/learning/learning-11.jpg",
@@ -2376,8 +2377,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 12,
-   "title": "Hyperparameters: Choosing Settings Before Training Starts",
-   "summary": "Learn the difference between parameters (values the model learns) and hyperparameters (settings you choose before training), and why it matters that the wrong hyperparameter setting can cause either overfitting or underfitting. This video teaches you how to use validation sets and grid search to systematically find good hyperparameter values, and warns against common mistakes like peeking at your test set during tuning.",
+   "title": "Hyperparameters: Learning Rates, Regularization, and Validation",
+   "summary": "Learn the critical distinction between parameters (learned during training) and hyperparameters (chosen before training begins), and discover how to find optimal hyperparameter values like lambda and learning rate. You'll master the three-way data split—training, validation, and test sets—and understand why validation sets judge hyperparameter choices without ever touching the model's weights.",
    "runs": "6:20",
    "chapters": [
     {
@@ -2415,15 +2416,15 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "hyperparameters",
-    "machine learning",
-    "model tuning",
-    "validation set",
+    "parameters",
+    "learning rate",
     "regularization",
     "lambda",
+    "validation set",
     "grid search",
     "cross-validation",
     "overfitting",
-    "test set"
+    "underfitting"
    ],
    "src": "/media/learn/learning/learning-12.mp4",
    "poster": "/media/learn/learning/learning-12.jpg",
@@ -2431,8 +2432,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 13,
-   "title": "Imbalanced Classification: Accuracy Lies and How to Catch Scams",
-   "summary": "Learn why accuracy can be a meaningless metric when predicting rare events, like fraud detection, and discover how a model can appear correct 99% of the time while catching zero scams. You'll master the confusion matrix, precision, recall, and the threshold tradeoff, then apply resampling and class weights to train models that actually work on imbalanced data.",
+   "title": "Imbalanced Data: Accuracy Traps and Precision-Recall",
+   "summary": "Learn why accuracy is a misleading metric when your target class is rare—a model can achieve 99% accuracy while catching zero cases. This video teaches you to use confusion matrices, precision, recall, and the precision-recall tradeoff to build models that actually work on imbalanced datasets, and shows you how to fix imbalance through resampling, class weights, and proper train-test splitting.",
    "runs": "7:17",
    "chapters": [
     {
@@ -2469,16 +2470,16 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "imbalanced classification",
+    "imbalanced data",
     "accuracy trap",
-    "confusion matrix",
     "precision recall",
+    "confusion matrix",
     "class imbalance",
+    "machine learning metrics",
     "resampling",
     "class weights",
-    "threshold",
-    "fraud detection",
-    "machine learning"
+    "decision threshold",
+    "base rate"
    ],
    "src": "/media/learn/learning/learning-13.mp4",
    "poster": "/media/learn/learning/learning-13.jpg",
@@ -2487,7 +2488,7 @@ export const LEARNING: Lesson[] = [
   {
    "n": 14,
    "title": "Unsupervised Learning and K-Means Clustering",
-   "summary": "Learn unsupervised learning: how to find hidden structure and groups in data that has no answer key. This video teaches k-means clustering, the most common method for splitting data into groups, and covers practical issues like choosing the right number of clusters and scaling features correctly.",
+   "summary": "Learn what happens when you have data without answer labels—the core idea behind unsupervised learning and clustering. This video teaches k-means, the most common clustering algorithm, walks through how it groups similar data points together, and covers practical tips like how to choose the right number of clusters and why you need to scale your features first.",
    "runs": "8:57",
    "chapters": [
     {
@@ -2524,10 +2525,10 @@ export const LEARNING: Lesson[] = [
     "k-means clustering",
     "clustering algorithms",
     "machine learning",
-    "data groups",
-    "centroids",
+    "data grouping",
     "elbow method",
     "feature scaling",
+    "centroids",
     "inertia"
    ],
    "src": "/media/learn/learning/learning-14.mp4",
@@ -2536,8 +2537,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 15,
-   "title": "Dimensionality Reduction with Principal Component Analysis",
-   "summary": "Learn how to handle datasets with too many features by understanding the curse of dimensionality and using Principal Component Analysis (PCA) to find the most important directions in your data. This video teaches you how PCA identifies and ranks new features that capture the key variance in your dataset, while avoiding common mistakes like forgetting to standardize your columns.",
+   "title": "Principal Component Analysis: Taming High-Dimensional Data",
+   "summary": "Learn how to handle datasets with too many features using Principal Component Analysis (PCA). This video explains the curse of dimensionality, how redundant columns waste information, and the step-by-step method PCA uses to find the most important directions in your data—then walks through common mistakes to avoid when applying it.",
    "runs": "8:01",
    "chapters": [
     {
@@ -2571,15 +2572,15 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "PCA",
-    "dimensionality reduction",
     "principal component analysis",
-    "feature selection",
+    "dimensionality reduction",
+    "feature engineering",
     "covariance matrix",
     "eigenvectors",
-    "data preprocessing",
+    "data science",
+    "machine learning",
     "variance",
-    "correlation",
-    "machine learning"
+    "high-dimensional data"
    ],
    "src": "/media/learn/learning/learning-15.mp4",
    "poster": "/media/learn/learning/learning-15.jpg",
@@ -2587,8 +2588,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 16,
-   "title": "Deploying ML Models: Calibration, Explanation, and Drift",
-   "summary": "A trained model with good test accuracy isn't ready to deploy—you need to ensure its confidence scores are honest, explain individual decisions to stakeholders, and monitor for drift as real-world data changes over time. This video teaches the three critical checks that separate lab success from production reliability, using a loan approval model as a running example.",
+   "title": "After Training: Calibration, Explanation, and Drift",
+   "summary": "A trained model is just the beginning. This video covers three critical checks you need before deploying a model to the real world: calibration (whether confidence scores actually mean something), explanation (why a model made a specific decision), and drift (whether new data still matches what it learned from). You'll learn how to diagnose and fix overconfident predictions and spot when your model has become outdated.",
    "runs": "6:59",
    "chapters": [
     {
@@ -2621,16 +2622,15 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "machine learning deployment",
-    "model calibration",
-    "feature explanation",
-    "data drift",
+    "model deployment",
+    "calibration",
+    "confidence scores",
+    "explainability",
     "SHAP",
-    "temperature scaling",
+    "data drift",
     "model monitoring",
-    "confidence confidence",
-    "production ML",
-    "interpretability"
+    "temperature scaling",
+    "machine learning production"
    ],
    "src": "/media/learn/learning/learning-16.mp4",
    "poster": "/media/learn/learning/learning-16.jpg",
@@ -2639,7 +2639,7 @@ export const LEARNING: Lesson[] = [
   {
    "n": 17,
    "title": "Neural Networks: From Logistic Regression to Stacked Neurons",
-   "summary": "Discover why neural networks aren't actually new—logistic regression is just one neuron. Learn what happens when you stack neurons together and why adding a nonlinearity between layers is the crucial ingredient that makes a neural network powerful enough to solve problems a single line cannot. By the end, you'll understand exactly why with algebra, not just diagrams.",
+   "summary": "Discover how neural networks build directly from logistic regression—a single neuron—and learn why stacking neurons only works when you add nonlinearity between layers. This video reveals the algebra behind why linear stacking collapses into one model, and how the sigmoid activation function enables networks to separate complex patterns that a straight line cannot.",
    "runs": "6:58",
    "chapters": [
     {
@@ -2674,13 +2674,14 @@ export const LEARNING: Lesson[] = [
    "tags": [
     "neural networks",
     "logistic regression",
-    "neurons",
     "activation functions",
     "nonlinearity",
     "hidden layers",
-    "deep learning",
+    "deep learning fundamentals",
+    "sigmoid function",
+    "network architecture",
     "overfitting",
-    "parameters"
+    "machine learning"
    ],
    "src": "/media/learn/learning/learning-17.mp4",
    "poster": "/media/learn/learning/learning-17.jpg",
@@ -2688,8 +2689,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 18,
-   "title": "What Hidden Units Actually Compute in Neural Networks",
-   "summary": "Learn what happens inside a neural network's hidden layer and how activation functions like ReLU allow networks to learn non-linear patterns. By the end, you'll understand that hidden units detect weighted combinations of inputs (not individual features), why ReLU outperforms sigmoid, and how to choose between adding more units or more layers when designing networks.",
+   "title": "What Hidden Units Learn: Activation Functions and Features",
+   "summary": "This video opens the box on neural network hidden layers to show what hidden units actually do and what they learn. You'll understand how activation functions like ReLU enable networks to bend and fit complex patterns, and you'll see that each hidden unit learns to recognize a weighted combination of inputs—a direction in input space—rather than corresponding to any single input column. By the end you'll be able to explain what a hidden unit means, why ReLU training works better than sigmoid, and the tradeoff between network width and depth.",
    "runs": "7:38",
    "chapters": [
     {
@@ -2739,11 +2740,11 @@ export const LEARNING: Lesson[] = [
     "activation functions",
     "ReLU",
     "sigmoid",
-    "gradient descent",
-    "deep learning",
     "feature learning",
+    "gradient descent",
     "network architecture",
-    "machine learning"
+    "deep learning",
+    "black box explainability"
    ],
    "src": "/media/learn/learning/learning-18.mp4",
    "poster": "/media/learn/learning/learning-18.jpg",
@@ -2751,8 +2752,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 19,
-   "title": "Backpropagation: Computing Gradients Through Deep Networks",
-   "summary": "Learn how to compute gradients for weights buried deep in a neural network using the chain rule applied repeatedly. After working through a concrete example with real numbers, you'll understand backpropagation as an efficient method for calculating derivatives layer by layer, and see why it's essential for training deep networks while avoiding vanishing and exploding gradients.",
+   "title": "Backpropagation: How Gradients Flow Through Deep Networks",
+   "summary": "Learn how gradients are computed for weights buried deep inside a neural network using the chain rule applied repeatedly—the core mechanism behind backpropagation. By working through a concrete example with a tiny two-layer network, you'll see exactly how the loss gets distributed backward to each weight, and understand why long chains of layers can cause vanishing or exploding gradients.",
    "runs": "7:54",
    "chapters": [
     {
@@ -2798,15 +2799,13 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "backpropagation",
+    "neural networks",
     "chain rule",
     "gradient descent",
-    "neural networks",
     "deep learning",
-    "derivatives",
-    "forward pass",
-    "backward pass",
+    "vanishing gradients",
     "ReLU",
-    "vanishing gradients"
+    "weight updates"
    ],
    "src": "/media/learn/learning/learning-19.mp4",
    "poster": "/media/learn/learning/learning-19.jpg",
@@ -2814,8 +2813,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 20,
-   "title": "Training Neural Networks: The Knobs Between Math and Practice",
-   "summary": "Gradient descent tells you the direction to step, but not where to start, how far to step, or when to stop—those are hyperparameters that can make or break training. This video teaches the practical knobs that govern model training: weight initialization, learning rate, batch size, epochs, and regularization techniques like dropout. Learn to read loss curves and diagnose training failures so you can actually convert mathematical understanding into working models.",
+   "title": "Training Neural Networks: Hyperparameters and the Practical Knobs",
+   "summary": "Gradient descent shows you the direction to step, but doesn't tell you where to start, how big a step to take, or when to stop—those are hyperparameters, and learning to tune them is what turns mathematical knowledge into working models. This lesson covers weight initialization, learning rate, batch size, epochs, regularization techniques, and how to read loss curves to diagnose what's broken. You'll finish able to make the critical decisions before and during training that actually get networks to converge.",
    "runs": "9:52",
    "chapters": [
     {
@@ -2856,16 +2855,16 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "neural networks",
-    "hyperparameter tuning",
+    "hyperparameters",
     "learning rate",
     "batch size",
     "weight initialization",
-    "gradient descent",
+    "training neural networks",
+    "loss curves",
     "regularization",
     "dropout",
-    "loss curves",
-    "model training"
+    "gradient descent",
+    "deep learning"
    ],
    "src": "/media/learn/learning/learning-20.mp4",
    "poster": "/media/learn/learning/learning-20.jpg",
@@ -2873,8 +2872,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 21,
-   "title": "Convolutions: Why pixel grids need a different architecture",
-   "summary": "Learn why fully connected layers fail on images and how convolutional kernels solve the problem. This video teaches parameter sharing, locality, and translation invariance—the three core ideas that make convolutions efficient for images—and shows how stacking convolution layers builds up from edges to textures to parts.",
+   "title": "Convolutional Neural Networks: From Pixels to Features",
+   "summary": "Learn why fully connected layers fail on images and how convolutional neural networks solve the problem by sliding small weight kernels across pixels. You'll understand parameter sharing, locality, and translation invariance, then see how stacked convolutions learn to detect edges, textures, parts, and higher-level features through layers of increasing depth.",
    "runs": "8:47",
    "chapters": [
     {
@@ -2915,15 +2914,16 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "convolution",
     "convolutional neural networks",
     "CNN",
-    "image processing",
     "kernels",
-    "filters",
+    "convolution",
+    "image processing",
     "parameter sharing",
+    "edge detection",
     "deep learning",
-    "neural networks"
+    "pixels",
+    "neural network architecture"
    ],
    "src": "/media/learn/learning/learning-21.mp4",
    "poster": "/media/learn/learning/learning-21.jpg",
@@ -2931,8 +2931,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 22,
-   "title": "Word Embeddings: Turning Words Into Numbers",
-   "summary": "Learn why you can't feed raw words into machine learning models and how dense vectors trained from context solve the problem. This video shows why naive approaches like numbering words or one-hot encoding fail, then builds up to embeddings—the standard way to represent words as meaningful numbers that capture relationships and proximity in trained vector space.",
+   "title": "Word Embeddings: Turning Text into Numbers",
+   "summary": "Learn how to convert words into numbers so machine learning models can process text. This video explores why naive approaches fail, introduces the concept of dense embeddings trained from context, and shows how word relationships can be captured in vector space.",
    "runs": "8:01",
    "chapters": [
     {
@@ -2979,12 +2979,13 @@ export const LEARNING: Lesson[] = [
    "tags": [
     "embeddings",
     "word vectors",
-    "natural language processing",
-    "categorical features",
-    "one-hot encoding",
-    "neural networks",
-    "context",
-    "vector spaces"
+    "NLP",
+    "text representation",
+    "machine learning",
+    "gradient descent",
+    "semantic meaning",
+    "context learning",
+    "categorical encoding"
    ],
    "src": "/media/learn/learning/learning-22.mp4",
    "poster": "/media/learn/learning/learning-22.jpg",
@@ -2992,8 +2993,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 23,
-   "title": "How Transformers Work: Attention, Query, Key, Value",
-   "summary": "This video builds transformers from first principles by solving the problem of fading memory in sequential processing: how to let a neural network look at all words in a sentence at once, weighted by relevance, instead of processing left-to-right. You'll learn how query, key, and value vectors work like a database lookup, how to compute attention scores by hand, and how to assemble these pieces—multi-head attention, feed-forward layers, positional encoding, and residuals—into a complete large language model architecture.",
+   "title": "How Transformers Work: From the Fading Memory Problem to Large Language Models",
+   "summary": "This video builds transformers from first principles, starting with the core problem: words fade from memory as you process a sentence sequentially. You'll learn how attention solves this by letting every word look at every other word at once, using queries, keys, and values—then see how stacking these blocks with multi-head attention, feed-forward layers, and positional encoding creates a large language model trained to predict the next word.",
    "runs": "9:18",
    "chapters": [
     {
@@ -3040,14 +3041,13 @@ export const LEARNING: Lesson[] = [
    "tags": [
     "transformers",
     "attention mechanism",
-    "query key value",
     "large language models",
     "neural networks",
-    "sequence processing",
+    "deep learning",
+    "query key value",
     "multi-head attention",
     "positional encoding",
-    "deep learning",
-    "gradient descent"
+    "machine learning architecture"
    ],
    "src": "/media/learn/learning/learning-23.mp4",
    "poster": "/media/learn/learning/learning-23.jpg",
@@ -3055,8 +3055,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 24,
-   "title": "When to Use Deep Learning vs. Gradient Boosting on Tabular Data",
-   "summary": "This video explains why deep learning isn't the universal solution—and when gradient boosting actually wins on tabular data like rent prediction. You'll learn the five key questions to ask before choosing a model: data size, input type, compute costs, explainability needs, and whether a pretrained model exists.",
+   "title": "When to Use Deep Learning vs. Gradient Boosting",
+   "summary": "This video explains why deep learning isn't the right choice for every problem, and when it actually wins against simpler methods like gradient boosting. You'll learn what specific data structures and problem conditions favor neural networks, and walk through a five-question checklist to decide which model to use before starting a project.",
    "runs": "8:18",
    "chapters": [
     {
@@ -3107,14 +3107,14 @@ export const LEARNING: Lesson[] = [
    "tags": [
     "deep learning",
     "gradient boosting",
-    "tabular data",
     "model selection",
-    "machine learning",
+    "tabular data",
     "neural networks",
-    "decision trees",
+    "machine learning",
     "transfer learning",
-    "model evaluation",
-    "feature engineering"
+    "decision making",
+    "structured data",
+    "trade-offs"
    ],
    "src": "/media/learn/learning/learning-24.mp4",
    "poster": "/media/learn/learning/learning-24.jpg",
@@ -3122,8 +3122,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 25,
-   "title": "Time Series Data & Chronological Splits: Why Random Splits Fail",
-   "summary": "Learn why standard random train-test splits leak the future into the past when working with time-ordered data, and how it causes models to cheat. You'll discover chronological splits and rolling-origin validation—the proper way to evaluate time series models—plus how to audit any split for hidden leakage from delayed labels and slow-arriving features.",
+   "title": "Time Series Data: Why Random Splits Fail and How to Fix Them",
+   "summary": "Learn why k-fold cross-validation and random train-test splits leak future information into the past when working with time-ordered data, and how to properly validate time series models using chronological splits and rolling-origin validation. You'll understand autocorrelation, trend, seasonality, and the audit question to catch subtle data leaks in any split.",
    "runs": "7:30",
    "chapters": [
     {
@@ -3165,15 +3165,15 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "time series",
-    "train-test split",
     "cross-validation",
-    "chronological split",
+    "train-test split",
     "rolling-origin validation",
-    "data leakage",
     "autocorrelation",
-    "walk-forward validation",
-    "model evaluation",
-    "machine learning"
+    "data leakage",
+    "chronological split",
+    "seasonality",
+    "trend",
+    "data validation"
    ],
    "src": "/media/learn/learning/learning-25.mp4",
    "poster": "/media/learn/learning/learning-25.jpg",
@@ -3182,7 +3182,7 @@ export const LEARNING: Lesson[] = [
   {
    "n": 26,
    "title": "Time Series Forecasting: From Persistence to Prediction Intervals",
-   "summary": "Learn how to build effective time series forecasts by starting with a simple persistence baseline, decomposing data into trend and seasonality, and converting forecasting into a supervised regression problem with lag features. You'll understand key metrics, the horizon problem, common pitfalls, and why honest prediction intervals beat false precision.",
+   "summary": "Learn how to forecast future values in time series data by starting with simple baselines and building up to regression-based models. You'll discover how to decompose a series into trend, seasonality, and remainder, use lag features to turn forecasting into supervised learning, evaluate models honestly with appropriate metrics, and—most importantly—communicate predictions as uncertainty ranges rather than false precision.",
    "runs": "7:26",
    "chapters": [
     {
@@ -3226,12 +3226,12 @@ export const LEARNING: Lesson[] = [
     "time series forecasting",
     "persistence baseline",
     "lag features",
-    "seasonal decomposition",
     "prediction intervals",
-    "forecasting metrics",
-    "MAE RMSE",
-    "horizon problem",
-    "regression"
+    "trend seasonality",
+    "RMSE MAE",
+    "forecast horizon",
+    "supervised regression",
+    "data leakage"
    ],
    "src": "/media/learn/learning/learning-26.mp4",
    "poster": "/media/learn/learning/learning-26.jpg",
@@ -3239,8 +3239,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 27,
-   "title": "Prediction vs. Causation: Why Your Model Can't Answer Action Questions",
-   "summary": "Learn the critical difference between predictive questions (\"what will happen\") and causal questions (\"what will happen if I do this\")—and why a model with perfect test-set accuracy can still be the wrong basis for action. You'll see how confounders hide in plain sight and discover the discipline needed before building anything: knowing which kind of question you're actually trying to answer.",
+   "title": "Prediction vs. Causation: Why Good Models Can Give Bad Decisions",
+   "summary": "This video reveals the critical difference between asking \"what will happen?\" and \"what will happen if I do this?\"—two questions that sound identical but require completely different approaches. You'll learn why a model can predict apartment rents perfectly based on doorman presence yet be worthless for deciding whether to actually hire one, and how to identify confounders that masquerade as causal relationships. By the end, you'll know how to distinguish predictive questions from causal ones and what to ask before building any model.",
    "runs": "5:35",
    "chapters": [
     {
@@ -3274,13 +3274,14 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "causation",
-    "prediction",
+    "confounding variables",
     "causal inference",
-    "confounders",
-    "counterfactuals",
-    "observational data",
+    "prediction vs causation",
+    "counterfactual",
+    "doorman effect",
     "model interpretation",
-    "decision-making"
+    "hidden variables",
+    "intervention"
    ],
    "src": "/media/learn/learning/learning-27.mp4",
    "poster": "/media/learn/learning/learning-27.jpg",
@@ -3288,8 +3289,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 28,
-   "title": "Randomized Experiments: From Correlation to Causation",
-   "summary": "Learn how randomization lets you isolate true causal effects by ensuring treatment and control groups are balanced on all traits—measured and unmeasured. This lesson walks through a university shuttle-stop experiment, showing you how to design experiments correctly, interpret their results, and avoid three common pitfalls: peeking at results early, testing multiple variants and cherry-picking, and interference between groups.",
+   "title": "From Correlation to Causation: Randomized Experiments",
+   "summary": "Learn why randomization is the gold standard for proving causation rather than correlation, using a real-world shuttle stop experiment as an example. This video teaches you how randomization balances hidden confounders, what mistakes derail experiments (peeking, multiple testing, interference), and when randomization simply isn't possible. You'll understand both statistical and practical significance, and what causal questions randomized trials can and cannot answer.",
    "runs": "7:49",
    "chapters": [
     {
@@ -3330,15 +3331,16 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
+    "causation",
     "randomized experiments",
     "causal inference",
-    "treatment and control",
     "statistical significance",
     "experimental design",
-    "confounding",
+    "confounding variables",
+    "correlation vs causation",
+    "treatment and control groups",
     "p-hacking",
-    "multiple testing",
-    "causation vs correlation"
+    "observational studies"
    ],
    "src": "/media/learn/learning/learning-28.mp4",
    "poster": "/media/learn/learning/learning-28.jpg",
@@ -3346,8 +3348,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 29,
-   "title": "Causation vs. Correlation: Testing the Shuttle's Effect on Rent",
-   "summary": "When you can't run a randomized experiment, how do you know if a treatment actually caused an outcome? This video teaches three techniques for causal inference—controlling for confounders, difference-in-differences, and matching—and the critical trap to avoid: controlling for the wrong variables. You'll learn how to design a causal analysis and report its conclusions carefully.",
+   "title": "Causal Inference: Moving Beyond Correlation to Test Real Effects",
+   "summary": "Regression shows correlation, but did the shuttle route really cause rents to rise, or was it neighborhood desirability driving both? Learn three techniques—controlling, difference-in-differences, and matching—to identify causal effects in observational data, plus the critical trap of controlling for the wrong variable.",
    "runs": "7:14",
    "chapters": [
     {
@@ -3380,16 +3382,15 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "causation",
     "causal inference",
-    "confounding variables",
+    "confounder",
+    "natural experiment",
     "difference in differences",
     "matching",
     "regression",
-    "confounder",
-    "natural experiment",
     "observational data",
-    "causal diagrams"
+    "causation vs correlation",
+    "treatment effect"
    ],
    "src": "/media/learn/learning/learning-29.mp4",
    "poster": "/media/learn/learning/learning-29.jpg",
@@ -3397,8 +3398,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 30,
-   "title": "Reinforcement Learning: Q-Learning and the Rent-Setting Agent",
-   "summary": "This video introduces reinforcement learning through a practical example: an agent that must set apartment rent each month and learn from the market's response. You'll learn how agents navigate the credit assignment problem—figuring out which past decisions caused which outcomes—and how Q-learning uses state-action pairs and discount factors to train effective policies with simulators instead of costly real-world experimentation.",
+   "title": "Reinforcement Learning: From State Values to Q-Learning",
+   "summary": "Learn how agents learn by taking actions and observing consequences, using an apartment rental pricing problem as the running example. This video teaches the core concepts of reinforcement learning: state values, credit assignment, Q-learning, and why simulators matter when exploration is costly in the real world.",
    "runs": "7:41",
    "chapters": [
     {
@@ -3437,13 +3438,12 @@ export const LEARNING: Lesson[] = [
    "tags": [
     "reinforcement learning",
     "Q-learning",
+    "state values",
     "credit assignment",
-    "state-action pairs",
-    "discount factor",
-    "policy learning",
-    "simulator training",
-    "Markov decision process",
-    "exploration exploitation"
+    "agent learning",
+    "dynamic decisions",
+    "policy optimization",
+    "exploration vs exploitation"
    ],
    "src": "/media/learn/learning/learning-30.mp4",
    "poster": "/media/learn/learning/learning-30.jpg",
@@ -3451,8 +3451,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 31,
-   "title": "Exploration vs. Exploitation: The Multi-Armed Bandit Problem",
-   "summary": "Learn how to make smart decisions when you don't know all the answers yet. This video teaches the tension between exploiting what looks good now and exploring to find what's actually best, using the apartment-pricing problem as a guide through strategies like epsilon-greedy, UCB, and Thompson sampling.",
+   "title": "The Explore-Exploit Tradeoff: Bandits and Real-Time Learning",
+   "summary": "Learn how to make smart sequential decisions when you don't know which option is best, using real-world examples like apartment pricing. This video covers why always picking what looks best fails, and teaches practical strategies like epsilon-greedy and upper confidence bounds (UCB) that balance exploration and exploitation as you learn.",
    "runs": "7:22",
    "chapters": [
     {
@@ -3493,16 +3493,16 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "multi-armed bandit",
-    "exploration exploitation",
+    "explore-exploit tradeoff",
+    "multi-armed bandits",
     "UCB algorithm",
     "epsilon-greedy",
     "Thompson sampling",
-    "regret",
-    "decision making",
-    "A/B testing",
     "online learning",
-    "statistical inference"
+    "A/B testing",
+    "regret analysis",
+    "decision making",
+    "sequential decisions"
    ],
    "src": "/media/learn/learning/learning-31.mp4",
    "poster": "/media/learn/learning/learning-31.jpg",
@@ -3510,8 +3510,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 32,
-   "title": "Four Paradigms: Choosing the Right ML Tool for Your Question",
-   "summary": "Learn to match your data question to the right machine learning paradigm before you write any code. This video teaches supervised learning (prediction with labels), unsupervised learning (finding structure), causal inference (testing interventions), and reinforcement learning (repeated action and observation)—and shows you how to recognize which one your question actually needs.",
+   "title": "Four Paradigms: Choosing the Right Tool for Your Question",
+   "summary": "Learn to match your data question to the right machine learning paradigm before writing any code. This guide teaches when to use supervised learning (predicting with labels), unsupervised learning (finding structure), causal inference (testing interventions), and reinforcement learning (repeated action and learning). After watching, you'll know which paradigm each question requires and what data demands each one makes.",
    "runs": "7:42",
    "chapters": [
     {
@@ -3552,15 +3552,16 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "machine learning paradigms",
     "supervised learning",
     "unsupervised learning",
     "causal inference",
     "reinforcement learning",
-    "model selection",
-    "data analysis decision-making",
-    "apartment rental prediction",
-    "algorithm choice"
+    "machine learning paradigms",
+    "regression",
+    "clustering",
+    "decision guide",
+    "predictive modeling",
+    "data science methodology"
    ],
    "src": "/media/learn/learning/learning-32.mp4",
    "poster": "/media/learn/learning/learning-32.jpg",
@@ -3569,7 +3570,7 @@ export const LEARNING: Lesson[] = [
   {
    "n": 33,
    "title": "Regularization: Ridge, Lasso, and Elastic Net",
-   "summary": "Learn how regularization fixes overfitting by penalizing large coefficients. This video builds ridge regression, lasso, and elastic net from scratch, showing how each penalty works geometrically and how to choose the penalty strength with cross-validation.",
+   "summary": "Learn how regularization fixes overfitting by penalizing large coefficients, and understand the key differences between ridge regression (which shrinks coefficients smoothly), lasso regression (which zeros out features), and elastic net (which combines both). You'll see the geometry behind why lasso creates exact zeros while ridge doesn't, and learn the critical mistakes to avoid when choosing the regularization strength.",
    "runs": "8:11",
    "chapters": [
     {
@@ -3611,10 +3612,11 @@ export const LEARNING: Lesson[] = [
     "lasso",
     "elastic net",
     "overfitting",
+    "coefficient shrinkage",
     "cross-validation",
+    "feature selection",
     "machine learning",
-    "coefficients",
-    "feature selection"
+    "model stability"
    ],
    "src": "/media/learn/learning/learning-33.mp4",
    "poster": "/media/learn/learning/learning-33.jpg",
@@ -3622,8 +3624,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 34,
-   "title": "Gradient Boosting: Sequential Corrections Beat the Crowd",
-   "summary": "Learn how gradient boosting trains a sequence of weak models to fix the errors of the previous ones, turning residuals into correction steps that iteratively improve predictions. See the step-by-step mechanics with a real apartment pricing example, understand why it's called \"gradient\" boosting, and find out how modern libraries like XGBoost build on this core idea. This video fills a critical gap in the series and covers one of the most practical techniques for tabular data in real jobs.",
+   "title": "Gradient Boosting: How Sequential Corrections Beat Crowd Voting",
+   "summary": "Learn gradient boosting, one of the most powerful techniques for tabular data: how it trains weak models sequentially to fix each previous model's errors, rather than averaging independent guesses like bagging does. You'll see the mechanism step-by-step with a concrete apartment rental example, understand why residuals are gradients, and discover what XGBoost and LightGBM add to the core algorithm. After this video, you'll understand the single most useful technique in machine learning for real-world structured data.",
    "runs": "8:15",
    "chapters": [
     {
@@ -3669,15 +3671,15 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "gradient boosting",
-    "boosting",
-    "weak learners",
-    "residuals",
-    "stumps",
-    "ensemble methods",
     "XGBoost",
+    "LightGBM",
+    "ensemble learning",
+    "sequential models",
+    "residuals",
+    "weak learners",
+    "overfitting",
     "AdaBoost",
-    "tabular data",
-    "machine learning"
+    "tabular data"
    ],
    "src": "/media/learn/learning/learning-34.mp4",
    "poster": "/media/learn/learning/learning-34.jpg",
@@ -3685,8 +3687,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 35,
-   "title": "Clustering's Fine Print: K-Means, Hierarchical, and DBSCAN",
-   "summary": "K-means assumes round clusters and a fixed number chosen in advance—assumptions that fail on real data like apartment rentals along multiple roads. This lesson covers three clustering methods with different tradeoffs: hierarchical clustering lets you choose the number of clusters by reading a dendrogram, and DBSCAN groups by density to handle any shape including thin bands and outliers. By the end, you'll know which algorithm fits your data's actual structure.",
+   "title": "Clustering: When K-means Fails (Hierarchical & DBSCAN)",
+   "summary": "K-means works well for round, evenly-sized clusters with a known count, but fails on real data with elongated shapes and density variation. This video teaches hierarchical clustering and DBSCAN as alternatives, showing how dendrograms let you choose cluster count after seeing the data structure, and how DBSCAN follows arbitrary shapes by grouping dense regions instead of forcing roundness.",
    "runs": "7:02",
    "chapters": [
     {
@@ -3733,10 +3735,10 @@ export const LEARNING: Lesson[] = [
     "DBSCAN",
     "dendrogram",
     "linkage",
-    "density-based clustering",
+    "density clustering",
     "machine learning",
     "unsupervised learning",
-    "algorithm comparison"
+    "data analysis"
    ],
    "src": "/media/learn/learning/learning-35.mp4",
    "poster": "/media/learn/learning/learning-35.jpg",
@@ -3744,8 +3746,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 36,
-   "title": "Dimensionality Reduction Beyond PCA: t-SNE and UMAP",
-   "summary": "Learn why PCA fails on curved data structures and when to use t-SNE or UMAP instead. This lesson teaches you how each method works, what perplexity controls, and crucially, how to correctly interpret the resulting visualizations without falling into common pitfalls.",
+   "title": "When PCA Fails: t-SNE, UMAP, and Dimension Reduction for Curved Data",
+   "summary": "Learn why PCA can't capture curved structure in data and when to reach for t-SNE or UMAP instead. This lesson teaches you how each method works, how to read their visualizations correctly, and the critical differences between tools designed to preserve shape versus those that only keep neighbors close.",
    "runs": "7:02",
    "chapters": [
     {
@@ -3782,16 +3784,16 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "dimensionality reduction",
+    "PCA",
     "t-SNE",
     "UMAP",
-    "PCA",
+    "dimension reduction",
     "data visualization",
+    "nonlinear methods",
     "perplexity",
-    "neighbours",
-    "curved structure",
-    "cluster analysis",
-    "data exploration"
+    "clustering",
+    "data exploration",
+    "machine learning"
    ],
    "src": "/media/learn/learning/learning-36.mp4",
    "poster": "/media/learn/learning/learning-36.jpg",
@@ -3802,8 +3804,8 @@ export const LEARNING: Lesson[] = [
 export const COUNTING: Lesson[] = [
   {
    "n": 1,
-   "title": "Counting with Multiplication vs. Addition: When and Why",
-   "summary": "Learn why we multiply to count arrangements and codes instead of adding—and discover the fundamental principle behind the multiplication rule. Using rectangles and trees, you'll visualize independent stages of choice and discover when to multiply versus when to add for separate cases.",
+   "title": "The Multiplication Principle: Counting with Codes and Trees",
+   "summary": "Learn why you multiply option counts instead of adding them when building sequences like badge codes. This video visualizes the multiplication principle through rectangles and trees, explains the critical distinction between choices with and without replacement, and shows when to add instead—giving you a reliable method to count complex arrangements correctly.",
    "runs": "8:43",
    "chapters": [
     {
@@ -3844,12 +3846,12 @@ export const COUNTING: Lesson[] = [
     "multiplication principle",
     "combinatorics",
     "permutations",
+    "combinations",
+    "badge codes",
+    "tree diagrams",
     "with replacement",
     "without replacement",
-    "independent choices",
-    "disjoint cases",
-    "visual learning",
-    "problem-solving"
+    "fundamental counting principle"
    ],
    "src": "/media/learn/counting/counting-01.mp4",
    "poster": "/media/learn/counting/counting-01.jpg",
@@ -3858,7 +3860,7 @@ export const COUNTING: Lesson[] = [
   {
    "n": 2,
    "title": "Permutations: Arranging Things in Order",
-   "summary": "Learn how to count the number of ways to arrange objects in a specific order using the multiplication principle. You'll master permutations—from arranging all items to selecting and arranging only some—and discover the key difference between permutations and combinations: whether order matters.",
+   "summary": "Learn how to count the number of ways to arrange objects in order using the multiplication principle. This video teaches permutations—when order matters—and shows you how to apply formulas like n! and P(n,r), plus how to spot the common mistake of using permutations when order actually doesn't matter.",
    "runs": "5:44",
    "chapters": [
     {
@@ -3888,14 +3890,15 @@ export const COUNTING: Lesson[] = [
    ],
    "tags": [
     "permutations",
-    "arrangements",
-    "multiplication principle",
-    "counting",
     "factorial",
-    "combinatorics",
+    "counting",
+    "multiplication principle",
+    "arrangements",
     "order matters",
-    "arrangements and selections",
-    "permutation formula"
+    "combinatorics",
+    "formulas",
+    "race podium",
+    "committees"
    ],
    "src": "/media/learn/counting/counting-02.mp4",
    "poster": "/media/learn/counting/counting-02.jpg",
@@ -3903,8 +3906,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 3,
-   "title": "Combinations: Counting Groups When Order Doesn't Matter",
-   "summary": "Learn how to count groups of items when the order doesn't matter — like picking a committee versus assigning ranked roles. This video builds from the multiplication rule to derive the combinations formula (n choose k), and shows how to recognize when to use it by asking whether swapping two items creates a different situation.",
+   "title": "Combinations: Counting When Order Doesn't Matter",
+   "summary": "Learn how to count selections where order doesn't matter, like forming committees or picking lottery numbers. This video shows why picking an unordered group is different from picking an ordered sequence, and teaches you the combinations formula: n choose k. By the end, you'll know how to recognize when order matters and when it doesn't, and how to apply the right counting method.",
    "runs": "6:43",
    "chapters": [
     {
@@ -3938,14 +3941,14 @@ export const COUNTING: Lesson[] = [
    ],
    "tags": [
     "combinations",
-    "n choose k",
     "counting",
+    "n choose k",
     "permutations",
-    "multiplication rule",
-    "binomial coefficient",
-    "committees",
-    "lottery",
-    "order doesn't matter"
+    "factorials",
+    "combinatorics",
+    "unordered selection",
+    "probability",
+    "discrete math"
    ],
    "src": "/media/learn/counting/counting-03.mp4",
    "poster": "/media/learn/counting/counting-03.jpg",
@@ -3953,8 +3956,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 4,
-   "title": "Combinatorial Identities: Structure and Shortcuts",
-   "summary": "Learn why binomial coefficients C(n,k) have deep structure beyond just being formulas to compute. This video proves four essential identities—symmetry, Pascal's recurrence, the binomial theorem, and the sum 2^n—by using counting arguments and bijections rather than algebra, revealing practical shortcuts for calculation and real understanding of why these identities are true.",
+   "title": "Binomial Coefficients: Structure, Identities, and Shortcuts",
+   "summary": "Learn five powerful identities for binomial coefficients—symmetry, Pascal's recurrence, the binomial theorem, and the hockey-stick identity—proven through counting arguments rather than algebra. You'll see why C(n,k) has deep structure, and how to use these identities to compute binomial coefficients efficiently and understand the mathematics behind them.",
    "runs": "8:07",
    "chapters": [
     {
@@ -3992,13 +3995,15 @@ export const COUNTING: Lesson[] = [
    ],
    "tags": [
     "binomial coefficients",
-    "combinatorial identities",
+    "combinatorics",
     "Pascal's triangle",
     "binomial theorem",
     "counting proofs",
-    "bijection",
-    "hockey stick identity",
-    "combinatorics"
+    "symmetry",
+    "Pascal's recurrence",
+    "mathematical identities",
+    "combinatorial mathematics",
+    "proof techniques"
    ],
    "src": "/media/learn/counting/counting-04.mp4",
    "poster": "/media/learn/counting/counting-04.jpg",
@@ -4006,8 +4011,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 5,
-   "title": "The Four Flavors of Counting Problems",
-   "summary": "Learn how to solve any counting problem by asking just two questions: does order matter, and can items repeat? This video reveals why the same four items can give wildly different answers depending on the setup, and teaches you which counting method applies to each of four distinct problem types—from passwords to committees to podiums.",
+   "title": "Counting Principles: The Four Boxes",
+   "summary": "Learn how to solve any basic counting problem by answering two key questions: does order matter, and can items repeat? This video teaches you to classify problems into four categories (order matters with/without repeats, order doesn't matter with/without repeats) and apply the right counting method for each, from simple multiplication to division-based correction.",
    "runs": "6:53",
    "chapters": [
     {
@@ -4044,14 +4049,14 @@ export const COUNTING: Lesson[] = [
     }
    ],
    "tags": [
-    "combinatorics",
     "counting problems",
+    "combinatorics",
     "permutations",
     "combinations",
     "order matters",
-    "repetition",
     "multiplication principle",
-    "discrete math"
+    "repetition",
+    "problem solving"
    ],
    "src": "/media/learn/counting/counting-05.mp4",
    "poster": "/media/learn/counting/counting-05.jpg",
@@ -4059,8 +4064,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 6,
-   "title": "Modeling Counting Problems: Breaking Into Stages",
-   "summary": "Learn how to translate real-world counting problems into sequences of clear stages, which is the hard part that comes before using the multiplication principle. You'll discover when order matters in your outcomes, how to correctly count choices at each stage, and how repeats work differently across problems like padlocks versus task assignments. After watching, you'll be able to set up and model counting problems correctly instead of jumping straight to multiplication.",
+   "title": "Translating Word Problems into Counting Stages",
+   "summary": "Learn how to set up counting problems by breaking them into stages and identifying whether order matters and choices repeat. This video teaches the modelling skill behind the multiplication principle, showing how to translate real-world scenarios into clear mathematical structures so you can count correctly.",
    "runs": "5:42",
    "chapters": [
     {
@@ -4091,14 +4096,13 @@ export const COUNTING: Lesson[] = [
    "tags": [
     "counting problems",
     "multiplication principle",
-    "combinatorics",
-    "problem modeling",
+    "modelling",
     "stages",
-    "order matters",
-    "combinations",
+    "combinatorics",
     "word problems",
-    "mathematical reasoning",
-    "decision sequences"
+    "order matters",
+    "repeated choices",
+    "problem setup"
    ],
    "src": "/media/learn/counting/counting-06.mp4",
    "poster": "/media/learn/counting/counting-06.jpg",
@@ -4107,7 +4111,7 @@ export const COUNTING: Lesson[] = [
   {
    "n": 7,
    "title": "Stacking Counting Tools: Combinations, Permutations, and Restrictions",
-   "summary": "Learn how to combine multiple counting techniques—like choosing then arranging, or subtracting bad cases—to solve harder combinatorics problems. This video walks through the most common mistakes on exams (double-counting, guessing instead of calculating, incorrect subtraction) and shows how to avoid them by working through multi-step problems that require stacking lessons together.",
+   "summary": "Learn how to combine multiple counting techniques to solve harder problems where one tool isn't enough. You'll master the most common pitfalls—double-counting, guessing instead of counting, and overlapping restrictions—by working through them deliberately before fixing each mistake.",
    "runs": "8:59",
    "chapters": [
     {
@@ -4151,13 +4155,11 @@ export const COUNTING: Lesson[] = [
     "combinations",
     "permutations",
     "counting problems",
-    "inclusion-exclusion",
-    "combinatorics",
-    "problem-solving",
-    "exam preparation",
-    "multi-step techniques",
+    "inclusion-exclusion principle",
     "restrictions",
-    "arrangements"
+    "exam strategies",
+    "combinatorics",
+    "problem-solving"
    ],
    "src": "/media/learn/counting/counting-07.mp4",
    "poster": "/media/learn/counting/counting-07.jpg",
@@ -4165,8 +4167,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Sample Spaces and Events: The Language of Probability",
-   "summary": "Learn how to describe what could happen in any probability experiment using sample spaces and events. This video teaches you the set operations—union, intersection, complement, and difference—that form the foundation of probability, then shows you how to translate English descriptions into precise mathematical notation using a sensor-testing scenario.",
+   "title": "Sample Spaces and Events: Set Operations in Probability",
+   "summary": "Learn how to model uncertain outcomes using sample spaces and events, where events are subsets of all possible outcomes. Master set operations—union, intersection, complement, and difference—and their probability language equivalents ('or', 'and', 'not'), including the critical De Morgan's laws that flip 'or' and 'and' when negating compound statements.",
    "runs": "12:50",
    "chapters": [
     {
@@ -4215,16 +4217,16 @@ export const COUNTING: Lesson[] = [
     }
    ],
    "tags": [
+    "probability",
     "sample space",
     "events",
-    "probability",
     "set operations",
-    "union",
-    "intersection",
+    "union intersection",
     "complement",
     "De Morgan's laws",
-    "outcomes",
-    "set notation"
+    "uncertain outcomes",
+    "robotics sensor",
+    "translating English to sets"
    ],
    "src": "/media/learn/counting/counting-08.mp4",
    "poster": "/media/learn/counting/counting-08.jpg",
@@ -4232,8 +4234,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 9,
-   "title": "Probability Axioms: The Definition of a Function",
-   "summary": "This video defines probability formally as a function from events to numbers, introducing the three axioms that any probability function must satisfy: non-negativity, total probability equals one, and additivity for disjoint events. You'll learn why these rules matter, how to check them against familiar models like equally likely outcomes and relative frequency, and how to prove results like P(∅) = 0 directly from the axioms.",
+   "title": "What IS Probability, Actually? The Three Axioms",
+   "summary": "This lesson defines probability rigorously as a function from events to numbers, governed by three foundational axioms: non-negativity, total probability equals one, and additivity for disjoint events. You'll learn why these rules matter, see them verified in two concrete models (equally likely outcomes and relative frequency), and prove your first theorem: that the empty set has probability zero.",
    "runs": "10:54",
    "chapters": [
     {
@@ -4282,14 +4284,16 @@ export const COUNTING: Lesson[] = [
     }
    ],
    "tags": [
-    "probability axioms",
-    "probability function",
-    "disjoint events",
-    "additivity",
+    "probability",
+    "axioms",
     "sample space",
-    "probability definition",
-    "Kolmogorov axioms",
-    "probability theory"
+    "events",
+    "disjoint",
+    "non-negativity",
+    "additivity",
+    "foundations",
+    "proof",
+    "probability function"
    ],
    "src": "/media/learn/counting/counting-09.mp4",
    "poster": "/media/learn/counting/counting-09.jpg",
@@ -4297,8 +4301,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 10,
-   "title": "The Addition Rule for Probability: Deriving the \"At Least One\" Trick",
-   "summary": "Learn how to derive the complement rule, monotonicity, and the general addition rule directly from probability axioms—then use these tools to transform \"at least one\" problems from nightmarish multi-term expansions into simple one-step calculations. This video shows you why inclusion-exclusion works for overlapping events and teaches you the alternating pattern that extends from two events to three or more.",
+   "title": "Deriving Probability Rules: Complements, Monotonicity, and Addition",
+   "summary": "Learn how to derive essential probability rules from first principles, building from the axioms to the complement rule, monotonicity, and the general addition rule for overlapping events. Master how to handle \"at least one\" problems by flipping them to \"one minus none,\" turning complicated multi-term calculations into single subtractions.",
    "runs": "10:01",
    "chapters": [
     {
@@ -4336,15 +4340,15 @@ export const COUNTING: Lesson[] = [
    ],
    "tags": [
     "probability",
-    "addition rule",
+    "axioms",
     "complement rule",
+    "addition rule",
     "inclusion-exclusion",
     "at least one",
-    "axioms",
-    "venn diagram",
-    "disjoint events",
-    "overlapping events",
-    "monotonicity"
+    "monotonicity",
+    "Venn diagrams",
+    "probability distributions",
+    "mathematical proofs"
    ],
    "src": "/media/learn/counting/counting-10.mp4",
    "poster": "/media/learn/counting/counting-10.jpg",
@@ -4352,8 +4356,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 11,
-   "title": "Classical Probability: The Formula and Common Mistakes",
-   "summary": "Learn when and how to apply the classical probability formula—dividing the count of favorable outcomes by the total count of possible outcomes. This lesson shows you why the formula only works when outcomes are equally likely, walks through worked examples including committees and sensor shipments, and highlights two critical mistakes to avoid when combining counting and probability.",
+   "title": "Classical Probability: The Formula and When It Works",
+   "summary": "Learn the classical probability formula—dividing favorable outcomes by total outcomes—and understand when it's valid to use. You'll see worked examples like computing probabilities for committees and shipment inspections, plus the two critical mistakes that make the formula fail.",
    "runs": "10:46",
    "chapters": [
     {
@@ -4392,13 +4396,12 @@ export const COUNTING: Lesson[] = [
    "tags": [
     "probability",
     "classical probability formula",
-    "counting",
-    "combinations",
     "equally likely outcomes",
-    "worked examples",
-    "common mistakes",
+    "counting problems",
+    "combinatorics",
     "sample space",
-    "events"
+    "worked examples",
+    "common mistakes"
    ],
    "src": "/media/learn/counting/counting-11.mp4",
    "poster": "/media/learn/counting/counting-11.jpg",
@@ -4406,8 +4409,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 12,
-   "title": "One Sensor, One Number: Continuity and Interpretations of Probability",
-   "summary": "Learn what happens to probability when events form an infinite nested sequence, and what a probability number actually means for a single case. This video explores the continuity axiom and its proof through disjoint rings, then clarifies two rigorous interpretations: long-run frequency and degree of belief, showing why the axioms alone cannot tell you which is intended.",
+   "title": "One Sensor, One Number: Continuity and What Probabilities Mean",
+   "summary": "Learn continuity of probability—how probability behaves when events grow or shrink in nested chains—and discover the two rigorous interpretations of a probability number: long-run frequency and degree of belief. After this video, you'll understand what the axioms guarantee about limits of probabilities and what a single probability actually means when applied to one specific case.",
    "runs": "8:07",
    "chapters": [
     {
@@ -4449,14 +4452,14 @@ export const COUNTING: Lesson[] = [
    ],
    "tags": [
     "continuity of probability",
-    "nested sets",
-    "limit of probabilities",
+    "nested events",
+    "probability limit",
     "frequentist interpretation",
     "subjective probability",
     "degree of belief",
     "probability axioms",
-    "defect detection",
-    "probability meaning"
+    "diagnostic testing",
+    "Bayesian thinking"
    ],
    "src": "/media/learn/counting/counting-12.mp4",
    "poster": "/media/learn/counting/counting-12.jpg",
@@ -4464,8 +4467,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 13,
-   "title": "Proving Theorems from Probability Axioms",
-   "summary": "This lesson teaches the four core techniques for constructing rigorous proofs in probability: disjoint decomposition, the complement trick, monotonicity, and De Morgan's laws. You'll see these moves applied to prove key results like the addition rule for three events, Boole's inequality, and properties of zero-probability events, and learn what full-marks proof writing looks like on an exam.",
+   "title": "Proving Probability: The Four Moves Exam Questions Demand",
+   "summary": "Learn the four fundamental proof techniques—disjoint decomposition, the complement trick, monotonicity, and De Morgan's laws—that turn probability axioms into rigorous proofs. This lesson bridges knowing the axioms and actually proving theorems on an exam, with detailed walkthroughs of monotonicity, the addition rule for three events, Boole's inequality, and the common proof pitfalls to avoid.",
    "runs": "14:42",
    "chapters": [
     {
@@ -4512,9 +4515,10 @@ export const COUNTING: Lesson[] = [
     "addition rule",
     "Boole's inequality",
     "monotonicity",
-    "complement",
+    "exam preparation",
     "De Morgan's laws",
-    "exam preparation"
+    "mathematical proofs",
+    "probability theory"
    ],
    "src": "/media/learn/counting/counting-13.mp4",
    "poster": "/media/learn/counting/counting-13.jpg",
@@ -4522,8 +4526,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 14,
-   "title": "Conditional Probability: Definition and the Axioms",
-   "summary": "Learn what conditional probability is and why it's genuinely a probability measure. This video shows how conditioning restricts the sample space, derives the formula P(A given B) = P(A and B) / P(B), and demonstrates the critical mistake of confusing P(A given B) with P(B given A)—the foundation for Bayes' theorem.",
+   "title": "Conditional Probability: Restricting the Sample Space",
+   "summary": "Learn what conditional probability is and how to compute P(A given B) by restricting your sample space. This lesson proves that conditioning produces a genuine probability measure, then works through a sensor-defect example to show the method in action and reveal the critical mistake that Bayes' theorem addresses: P(A given B) ≠ P(B given A).",
    "runs": "11:18",
    "chapters": [
     {
@@ -4561,13 +4565,12 @@ export const COUNTING: Lesson[] = [
    ],
    "tags": [
     "conditional probability",
-    "sample space",
-    "probability axioms",
-    "Bayes theorem",
-    "counting outcomes",
-    "sensor defects",
     "probability measure",
-    "complement rule"
+    "sample space",
+    "Bayes",
+    "axioms",
+    "equally likely outcomes",
+    "worked example"
    ],
    "src": "/media/learn/counting/counting-14.mp4",
    "poster": "/media/learn/counting/counting-14.jpg",
@@ -4576,7 +4579,7 @@ export const COUNTING: Lesson[] = [
   {
    "n": 15,
    "title": "The Multiplication Rule and Probability Trees",
-   "summary": "Learn why the multiplication rule (P(A and B) = P(B) × P(A|B)) is true and how probability trees visualize multi-stage random processes. You'll master drawing and reading trees for sampling with and without replacement, spot common mistakes, and calculate exact probabilities for sequences of dependent events.",
+   "summary": "Learn where the multiplication rule comes from—a rearrangement of conditional probability—and how to use probability trees to solve multi-stage probability problems. You'll see why multiplication captures drawing without replacement, how to build and read trees correctly, and spot the common mistakes that break the model.",
    "runs": "9:09",
    "chapters": [
     {
@@ -4621,12 +4624,11 @@ export const COUNTING: Lesson[] = [
     "probability trees",
     "conditional probability",
     "chain rule",
-    "sampling without replacement",
-    "dependent events",
+    "drawing without replacement",
     "independence",
-    "sequential probability",
-    "branching diagrams",
-    "multi-stage experiments"
+    "multi-stage probability",
+    "probability model",
+    "sequential events"
    ],
    "src": "/media/learn/counting/counting-15.mp4",
    "poster": "/media/learn/counting/counting-15.jpg",
@@ -4634,8 +4636,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 16,
-   "title": "The Law of Total Probability: Partitioning Sample Spaces",
-   "summary": "Learn how to find the probability of an event when there are multiple disjoint paths or causes leading to it. You'll discover what makes a valid partition of a sample space, see why the law of total probability works from first principles, and practice applying it to real problems like finding defect rates across multiple suppliers.",
+   "title": "The Law of Total Probability",
+   "summary": "Learn how to find the probability of an event when there are multiple paths to it—by partitioning the sample space and combining conditional probabilities. This video teaches you the law of total probability through a concrete robotics example, and shows you how to apply it correctly and catch mistakes using a simple sanity check.",
    "runs": "8:06",
    "chapters": [
     {
@@ -4673,13 +4675,13 @@ export const COUNTING: Lesson[] = [
    ],
    "tags": [
     "law of total probability",
+    "partition of sample space",
     "conditional probability",
-    "sample space partition",
-    "probability theory",
+    "probability rules",
     "weighted average",
-    "robotics",
-    "sensor defects",
-    "axioms of probability"
+    "axioms of probability",
+    "sensor defect example",
+    "probability calculation"
    ],
    "src": "/media/learn/counting/counting-16.mp4",
    "poster": "/media/learn/counting/counting-16.jpg",
@@ -4687,8 +4689,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 17,
-   "title": "Bayes' Theorem: Reversing Conditional Probability",
-   "summary": "Learn how to flip conditional probabilities backwards using Bayes' theorem, and discover why a 95% accurate test can still give misleading results. Through concrete examples like defective sensors and rare disease testing, you'll understand the base rate fallacy and how to update beliefs correctly when new evidence arrives.",
+   "title": "Bayes' Formula: Flipping Conditional Probability",
+   "summary": "This lesson introduces Bayes' formula by deriving it from basic probability rules and showing how to reverse a conditional probability — starting from P(B given A) to find P(A given B). Through the concrete example of a faulty sensor test, you'll see why even a 95% accurate test gives only a 28% posterior probability when the condition is rare, and learn how to update beliefs correctly when testing multiple times.",
    "runs": "8:41",
    "chapters": [
     {
@@ -4729,16 +4731,16 @@ export const COUNTING: Lesson[] = [
     }
    ],
    "tags": [
-    "Bayes theorem",
+    "Bayes' formula",
     "conditional probability",
     "base rate fallacy",
-    "Bayesian inference",
     "posterior probability",
     "likelihood",
-    "prior probability",
-    "statistical reasoning",
-    "diagnostic testing",
-    "probability reversal"
+    "Bayesian reasoning",
+    "probability update",
+    "false positives",
+    "evidence",
+    "prior probability"
    ],
    "src": "/media/learn/counting/counting-17.mp4",
    "poster": "/media/learn/counting/counting-17.jpg",
@@ -4746,8 +4748,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 18,
-   "title": "Independence: The Precise Mathematical Definition",
-   "summary": "Independence isn't about intuition or whether events \"feel\" connected—it's a precise equation that checks whether P(A and B) = P(A) × P(B). You'll learn why events can be physically connected yet mathematically independent, why disjoint events are actually dependent, and how to verify independence for three or more events using the complete multiplication rule.",
+   "title": "Independence: The Equation, Not the Intuition",
+   "summary": "Independence isn't about whether two things feel connected—it's a precise mathematical condition: P(A and B) = P(A) × P(B). This video shows you events that are physically linked yet independent by the numbers, events that feel unrelated yet are statistically dependent, and why disjoint events are actually the opposite of independent. By the end, you'll know exactly how to test for independence and how to apply it correctly to problems involving multiple events and repeated trials.",
    "runs": "7:10",
    "chapters": [
     {
@@ -4788,10 +4790,11 @@ export const COUNTING: Lesson[] = [
     "probability",
     "conditional probability",
     "disjoint events",
-    "mutual independence",
-    "binomial",
+    "dependent events",
+    "binomial distribution",
     "repeated trials",
-    "product rule"
+    "mutual independence",
+    "pairwise independence"
    ],
    "src": "/media/learn/counting/counting-18.mp4",
    "poster": "/media/learn/counting/counting-18.jpg",
@@ -4799,8 +4802,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 19,
-   "title": "Six Problems: Conditional Probability, Bayes, and Total Probability",
-   "summary": "Work through six realistic problems using conditional probability, Bayes' theorem, total probability, and independence—without being told which tool to use. Learn to identify when to apply each formula, avoid common reversal and overlap errors, and develop the core skill of selecting the right method under pressure.",
+   "title": "Six Problems: Choosing the Right Probability Tool",
+   "summary": "This workshop presents six realistic probability problems that require you to choose between Bayes' theorem, total probability, independence tests, and conditional probability—without being told which tool applies. You'll learn to recognize problem types, avoid common traps like reversing conditionals, and apply the tools from lessons 14-18 in the right direction and context.",
    "runs": "9:56",
    "chapters": [
     {
@@ -4845,12 +4848,10 @@ export const COUNTING: Lesson[] = [
     "Bayes theorem",
     "total probability",
     "independence",
-    "probability problems",
-    "test preparation",
-    "problem solving",
-    "exam skills",
-    "partition",
-    "without replacement"
+    "problem-solving",
+    "exam preparation",
+    "probability tools",
+    "word problems"
    ],
    "src": "/media/learn/counting/counting-19.mp4",
    "poster": "/media/learn/counting/counting-19.jpg",
@@ -4858,8 +4859,8 @@ export const COUNTING: Lesson[] = [
   },
   {
    "n": 20,
-   "title": "Exam Strategy: Recognizing Counting and Probability Problems Under Pressure",
-   "summary": "Learn the decision map that separates counting problems from probability problems, and identifies which specific tool (permutations, combinations, Bayes, conditional probability, inclusion-exclusion) each unlabelled exam question requires. Work through five real problems without advance labels, then master the four habits—write the sample space, name the tool aloud, sanity-check your answer—that let you recognize the right formula in under ten seconds when pressure hits.",
+   "title": "The Decision Map: Choosing the Right Formula Under Pressure",
+   "summary": "When you open an exam and see an unlabelled problem, how do you know which formula applies? This video teaches a simple decision tree—just four forks—that lets you name the right tool in seconds. You'll practice on five problems with no labels, learning to spot whether you're counting or finding a probability, and whether a conditional runs forward or backward (Bayes).",
    "runs": "8:22",
    "chapters": [
     {
@@ -4908,16 +4909,16 @@ export const COUNTING: Lesson[] = [
     }
    ],
    "tags": [
-    "counting",
+    "combinatorics",
     "probability",
     "permutations",
     "combinations",
-    "Bayes theorem",
     "conditional probability",
+    "Bayes theorem",
+    "word problems",
     "exam strategy",
-    "problem recognition",
-    "decision tree",
-    "unlabelled problems"
+    "decision making",
+    "problem recognition"
    ],
    "src": "/media/learn/counting/counting-20.mp4",
    "poster": "/media/learn/counting/counting-20.jpg",
@@ -4928,8 +4929,8 @@ export const COUNTING: Lesson[] = [
 export const PATTERNS: Lesson[] = [
   {
    "n": 1,
-   "title": "Data-Mining Pipelines: From Questions to Decisions",
-   "summary": "Learn the complete workflow of a real data-mining pipeline, from asking the right question through selection, preprocessing, modeling, and interpretation—using an actual bike-share dataset as a running example. Discover why most of the work happens before you touch any algorithm, and how to structure your approach so a number actually becomes a decision someone acts on.",
+   "title": "The Data-Mining Pipeline: From Question to Decision",
+   "summary": "This video walks through the complete data-mining pipeline using a real campus bike-share system, revealing that the algorithm is just one small piece. You'll learn the four essential stages—selection, preprocessing, modelling, and interpretation—and discover why selection and preprocessing consume most of the actual work time. By the end, you'll understand how to move from a raw question to a decision a human acts on, and recognize that this process loops rather than ends.",
    "runs": "10:56",
    "chapters": [
     {
@@ -4973,13 +4974,13 @@ export const PATTERNS: Lesson[] = [
     "data mining",
     "pipeline",
     "preprocessing",
-    "data selection",
-    "modeling",
-    "interpretation",
-    "bike-share",
-    "workflow",
+    "modelling",
     "data cleaning",
-    "decision-making"
+    "bike share",
+    "selection",
+    "interpretation",
+    "machine learning workflow",
+    "real-world data"
    ],
    "src": "/media/learn/patterns/patterns-01.mp4",
    "poster": "/media/learn/patterns/patterns-01.jpg",
@@ -4987,8 +4988,8 @@ export const PATTERNS: Lesson[] = [
   },
   {
    "n": 2,
-   "title": "Exploratory Data Analysis: Inspecting Your Data Before Building Models",
-   "summary": "Learn the essential first step of any data science project: exploring your raw data to catch errors and understand its structure before you build a model. This lesson covers histograms, summary statistics, scatterplots, and how to identify missing values, outliers, and data errors using a bike-share dataset as a concrete example.",
+   "title": "Data Exploration Before Model Building: A Complete Workflow",
+   "summary": "Learn the essential exploratory data analysis techniques you must perform before building any predictive model. This lesson teaches you how to inspect your data for errors, understand distributions, spot outliers, and prepare variables for modeling—preventing silent failures in your downstream analysis.",
    "runs": "12:07",
    "chapters": [
     {
@@ -5030,15 +5031,15 @@ export const PATTERNS: Lesson[] = [
    ],
    "tags": [
     "exploratory data analysis",
-    "data inspection",
+    "data cleaning",
     "histograms",
-    "correlation",
     "outliers",
     "missing values",
+    "correlation",
     "data preprocessing",
-    "statistics",
-    "data cleaning",
-    "mean vs median"
+    "statistical summaries",
+    "machine learning",
+    "data quality"
    ],
    "src": "/media/learn/patterns/patterns-02.mp4",
    "poster": "/media/learn/patterns/patterns-02.jpg",
@@ -5047,7 +5048,7 @@ export const PATTERNS: Lesson[] = [
   {
    "n": 3,
    "title": "Hypothesis Testing and P-Values: The Logic Behind Statistical Significance",
-   "summary": "Learn the core logic of hypothesis testing through a real example: did a new dock really increase trips, or was the change just random noise? This video walks you through formulating a null hypothesis, calculating a test statistic, understanding sampling distributions, and correctly interpreting p-values—including the most common misunderstandings. You'll also discover two critical traps: confusing statistical significance with practical importance, and the danger of testing multiple hypotheses until one looks significant.",
+   "summary": "Learn how to test whether observed differences in data are real or just random noise using hypothesis testing. This video walks through the core logic—from setting up a null hypothesis, computing a test statistic, to interpreting p-values correctly—using a concrete example of whether a new dock increased campus trips. You'll understand what p-values actually measure and avoid common mistakes like confusing statistical significance with practical importance.",
    "runs": "9:59",
    "chapters": [
     {
@@ -5094,10 +5095,10 @@ export const PATTERNS: Lesson[] = [
     "test statistic",
     "statistical significance",
     "sampling distribution",
-    "inferential statistics",
-    "multiple testing",
-    "effect size",
-    "data analysis"
+    "data analysis",
+    "statistics fundamentals",
+    "t-test",
+    "causal inference"
    ],
    "src": "/media/learn/patterns/patterns-03.mp4",
    "poster": "/media/learn/patterns/patterns-03.jpg",
@@ -5105,8 +5106,8 @@ export const PATTERNS: Lesson[] = [
   },
   {
    "n": 4,
-   "title": "Confidence Intervals: Building and Interpreting Honest Estimates",
-   "summary": "Learn how to attach honest uncertainty to a single reported number—like an average trip duration—using confidence intervals. You'll discover why standard error (not standard deviation) matters for estimates, how sample size affects precision, and what \"95 percent confident\" actually means. By the end, you'll be able to build intervals, compare two groups visually, and distinguish between detecting a real difference and detecting one that actually matters.",
+   "title": "Confidence Intervals: What They Actually Mean",
+   "summary": "Learn how to quantify the uncertainty in a single estimate—not with the spread of your data, but with the spread of what that estimate would be if you resampled. You'll build confidence intervals around sample means, understand what \"95 percent\" actually promises, and see how to honestly compare two groups and account for effect size alongside statistical significance.",
    "runs": "7:57",
    "chapters": [
     {
@@ -5146,11 +5147,11 @@ export const PATTERNS: Lesson[] = [
     "confidence intervals",
     "standard error",
     "sample size",
-    "statistical estimation",
-    "hypothesis testing",
+    "statistical significance",
     "effect size",
     "normal distribution",
-    "statistical significance"
+    "bike-share data",
+    "uncertainty quantification"
    ],
    "src": "/media/learn/patterns/patterns-04.mp4",
    "poster": "/media/learn/patterns/patterns-04.jpg",
@@ -5158,8 +5159,8 @@ export const PATTERNS: Lesson[] = [
   },
   {
    "n": 5,
-   "title": "Six Claims Dissected: Before You Test, Ask These Four Questions",
-   "summary": "Learn to catch flawed conclusions before they become decisions by applying four critical questions to any statistical claim. This video walks through six real-world claims from a meeting—on dock usage, rider types, weather effects, and more—showing which ones hide confounds, outliers, or data gaps. After watching, you'll know how to spot whether a claim is even testable before you run a single test.",
+   "title": "Six Claims, Six Traps: How to Catch Bad Conclusions Before They Become Decisions",
+   "summary": "Learn to interrogate confident-sounding claims from meetings by identifying confounds, checking data adequacy, and assessing practical significance before running a test. Work through six real claims about bike-share operations—two requiring methodological fixes, one overstated, one phantom, one too small to matter, and one untestable—and master four questions that catch most bad conclusions before you compute anything.",
    "runs": "7:16",
    "chapters": [
     {
@@ -5202,11 +5203,12 @@ export const PATTERNS: Lesson[] = [
    "tags": [
     "hypothesis testing",
     "confounding variables",
-    "statistical claims",
-    "data analysis",
-    "null hypothesis",
-    "outliers",
-    "practical statistics",
+    "statistical traps",
+    "practical significance",
+    "two-sample tests",
+    "difference-in-differences",
+    "paired analysis",
+    "data interpretation",
     "critical thinking"
    ],
    "src": "/media/learn/patterns/patterns-05.mp4",
@@ -5215,8 +5217,8 @@ export const PATTERNS: Lesson[] = [
   },
   {
    "n": 6,
-   "title": "k-Nearest Neighbours: Finding Patterns by Voting",
-   "summary": "Learn the k-nearest neighbours algorithm by classifying a mystery bike trip using only past data and votes from similar trips. This video covers how distance works, why scaling matters, how to choose k, and when kNN is actually the right tool to use rather than fitting a formula.",
+   "title": "k-Nearest Neighbours: Voting by Similarity",
+   "summary": "Learn how k-nearest neighbours (kNN) classifies data by finding the k most similar past examples and taking a vote. You'll discover why feature scaling matters, how to choose k to balance accuracy, and when kNN is the right tool—plus its hidden costs in memory and prediction speed.",
    "runs": "9:55",
    "chapters": [
     {
@@ -5261,11 +5263,11 @@ export const PATTERNS: Lesson[] = [
     "kNN",
     "classification",
     "machine learning",
-    "distance metric",
+    "feature scaling",
     "Euclidean distance",
     "bias-variance tradeoff",
-    "feature scaling",
-    "supervised learning"
+    "lazy learning",
+    "bike-share data"
    ],
    "src": "/media/learn/patterns/patterns-06.mp4",
    "poster": "/media/learn/patterns/patterns-06.jpg",
@@ -5273,8 +5275,8 @@ export const PATTERNS: Lesson[] = [
   },
   {
    "n": 7,
-   "title": "The Curse of Dimensionality in k-Nearest Neighbors",
-   "summary": "Learn why adding more features to k-nearest neighbors breaks the algorithm's core assumption that some points are genuinely closer than others. This video explains the geometric reason (most volume in high-dimensional space sits near the corners) and the data requirement (exponential growth), then shows three practical ways out: feature selection, feature engineering, and dimensionality reduction.",
+   "title": "The Curse of Dimensionality in k-Nearest Neighbours",
+   "summary": "Learn why adding more features to k-nearest neighbours breaks the algorithm's core assumption that \"nearest\" means something. This video explains the geometric intuition behind why high-dimensional spaces make all points roughly equidistant, and shows three practical solutions: feature selection, feature engineering, and dimensionality reduction.",
    "runs": "9:00",
    "chapters": [
     {
@@ -5311,16 +5313,16 @@ export const PATTERNS: Lesson[] = [
     }
    ],
    "tags": [
-    "k-nearest neighbors",
     "curse of dimensionality",
+    "k-nearest neighbours",
+    "kNN",
     "feature selection",
     "high-dimensional geometry",
     "machine learning",
+    "bike trip data",
     "distance metrics",
     "feature engineering",
-    "data density",
-    "indicator variables",
-    "model validation"
+    "overfitting"
    ],
    "src": "/media/learn/patterns/patterns-07.mp4",
    "poster": "/media/learn/patterns/patterns-07.jpg",
@@ -5328,8 +5330,8 @@ export const PATTERNS: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Naive Bayes: Classification with Probability, Not Geometry",
-   "summary": "Learn how to classify data using Bayes' rule and probability instead of distance-based methods. This video teaches the naive Bayes algorithm from first principles—how to flip conditional probabilities, handle the curse of high dimensions with independence assumptions, avoid the zero-probability trap with Laplace smoothing, and work in log space to prevent numerical underflow. You'll understand why this approach works despite its false assumptions, and how to avoid the four common pitfalls that trip up practitioners.",
+   "title": "Naive Bayes: Classification with Probability, Not Distance",
+   "summary": "Learn how to classify data using probability instead of measuring distance between points. This video teaches Bayes' rule, the naive independence assumption that makes it practical, and the tricks (smoothing, log probabilities) that make it work despite being based on a false assumption. By the end, you'll be able to build and debug a Naive Bayes classifier on real data.",
    "runs": "11:14",
    "chapters": [
     {
@@ -5378,16 +5380,14 @@ export const PATTERNS: Lesson[] = [
     }
    ],
    "tags": [
-    "naive Bayes",
-    "Bayes rule",
+    "naive bayes",
+    "bayes rule",
     "classification",
     "probability",
-    "conditional probability",
-    "Laplace smoothing",
     "machine learning",
-    "feature independence",
-    "log probabilities",
-    "calibration"
+    "laplace smoothing",
+    "conditional probability",
+    "feature independence"
    ],
    "src": "/media/learn/patterns/patterns-08.mp4",
    "poster": "/media/learn/patterns/patterns-08.jpg",
@@ -5396,7 +5396,7 @@ export const PATTERNS: Lesson[] = [
   {
    "n": 9,
    "title": "The Perceptron: Learning a Line from Mistakes",
-   "summary": "Learn how the perceptron algorithm draws a decision boundary by computing a weighted sum of features and updating whenever it makes a wrong prediction. You'll see exactly how the algorithm learns from errors, understand the math behind the weight updates, and discover when this simple approach works and when it fails.",
+   "summary": "Learn how the perceptron algorithm draws a straight boundary to classify data by repeatedly correcting mistakes. You'll see the math behind weighted sums and thresholds, watch it learn by hand on real examples, and discover when it works perfectly—and when it fails or diverges.",
    "runs": "8:16",
    "chapters": [
     {
@@ -5437,10 +5437,12 @@ export const PATTERNS: Lesson[] = [
     "linear classification",
     "machine learning",
     "decision boundary",
-    "supervised learning",
-    "weight updates",
-    "linear separability",
-    "bias term"
+    "weighted sum",
+    "learning algorithm",
+    "convergence",
+    "mistakes",
+    "bias and weights",
+    "linear separability"
    ],
    "src": "/media/learn/patterns/patterns-09.mp4",
    "poster": "/media/learn/patterns/patterns-09.jpg",
@@ -5448,8 +5450,8 @@ export const PATTERNS: Lesson[] = [
   },
   {
    "n": 10,
-   "title": "Logistic Regression: Turning Predictions into Probabilities",
-   "summary": "Learn how to move beyond binary classification to get probability scores that you can actually use for decision-making. This video shows you how the sigmoid function squashes a linear score into a probability between 0 and 1, how to interpret coefficients through odds ratios, and how to choose a threshold based on the cost of different mistakes.",
+   "title": "Logistic Regression: From Classification to Probability",
+   "summary": "Learn how to move beyond binary classification to predict actual probabilities using logistic regression. This video shows how the sigmoid function squashes a linear score into a probability between 0 and 1, how to interpret coefficients as odds multipliers, and how to choose a decision threshold based on the cost of different mistakes.",
    "runs": "9:01",
    "chapters": [
     {
@@ -5494,11 +5496,11 @@ export const PATTERNS: Lesson[] = [
     "sigmoid function",
     "probability",
     "classification",
-    "odds ratios",
     "cross-entropy loss",
+    "odds",
     "machine learning",
-    "threshold",
-    "coefficients"
+    "model interpretation",
+    "threshold selection"
    ],
    "src": "/media/learn/patterns/patterns-10.mp4",
    "poster": "/media/learn/patterns/patterns-10.jpg",
@@ -5506,8 +5508,8 @@ export const PATTERNS: Lesson[] = [
   },
   {
    "n": 11,
-   "title": "Decision Trees: Entropy, Information Gain, and How to Pick the Best Question",
-   "summary": "Learn how decision trees make predictions by asking yes-or-no questions in sequence, and discover the math that picks which question to ask first. This lesson covers entropy and information gain—the core metrics used to build optimal trees—and shows you how to handle both categorical and numeric features without overfitting.",
+   "title": "Decision Trees: Entropy, Information Gain, and Picking the First Question",
+   "summary": "Learn how decision trees make predictions by asking a sequence of yes-or-no questions instead of using weights like logistic regression. This video teaches you how to measure node impurity with entropy and Gini impurity, then use information gain to automatically select which question to ask first—and how to convert numeric features into binary thresholds.",
    "runs": "11:19",
    "chapters": [
     {
@@ -5547,13 +5549,13 @@ export const PATTERNS: Lesson[] = [
     "decision trees",
     "entropy",
     "information gain",
-    "classification",
-    "machine learning",
-    "tree split",
     "Gini impurity",
+    "machine learning",
+    "tree splitting",
+    "classification",
     "feature selection",
-    "threshold selection",
-    "tree building"
+    "thresholds",
+    "bike trips"
    ],
    "src": "/media/learn/patterns/patterns-11.mp4",
    "poster": "/media/learn/patterns/patterns-11.jpg",
@@ -5561,8 +5563,8 @@ export const PATTERNS: Lesson[] = [
   },
   {
    "n": 12,
-   "title": "Stopping Decision Trees from Memorizing: Pruning and Regularization",
-   "summary": "Learn why decision trees grown to full depth memorize training data instead of learning true patterns, and master two strategies to fix it: pre-pruning (stopping early with rules like depth caps and minimum leaf sizes) and post-pruning (growing then trimming with a validation set). By the end, you'll know how to read a properly constrained tree as plain if-then rules you can trust on new data.",
+   "title": "Decision Tree Pruning: Stopping Overfitting Before It Starts",
+   "summary": "Learn why decision trees grown to full depth memorize training data instead of learning real patterns, and how two pruning strategies—pre-pruning and post-pruning—can stop overfitting. You'll understand the classic U-shaped validation curve, discover the mistakes practitioners make, and see how to read a pruned tree as human-readable if-then rules.",
    "runs": "8:33",
    "chapters": [
     {
@@ -5604,11 +5606,11 @@ export const PATTERNS: Lesson[] = [
     "pruning",
     "pre-pruning",
     "post-pruning",
-    "regularization",
-    "validation set",
+    "validation",
     "tree depth",
-    "memorization",
-    "machine learning"
+    "machine learning",
+    "bias-variance",
+    "model selection"
    ],
    "src": "/media/learn/patterns/patterns-12.mp4",
    "poster": "/media/learn/patterns/patterns-12.jpg",
@@ -5616,8 +5618,8 @@ export const PATTERNS: Lesson[] = [
   },
   {
    "n": 13,
-   "title": "Support Vector Machines: The Margin, Slack, and Hyperparameter C",
-   "summary": "Learn how support vector machines find the best separating line by maximizing the margin between classes, not just any line that separates the data. Discover what support vectors are, how the soft margin handles messy real-world data with slack variables, and how the hyperparameter C controls the trade-off between margin width and tolerance for misclassification.",
+   "title": "Support Vector Machines: Finding the Widest Street",
+   "summary": "This video explains the core idea of support vector machines: finding the decision boundary with the maximum margin between classes, and how to handle real-world messy data using soft margins. You'll learn what support vectors actually are, how to set up the optimization problem, and why the hyperparameter C controls the trade-off between allowing violations and fitting the training data tightly.",
    "runs": "10:06",
    "chapters": [
     {
@@ -5659,15 +5661,15 @@ export const PATTERNS: Lesson[] = [
    ],
    "tags": [
     "support vector machines",
-    "margin maximization",
+    "SVM",
+    "margin",
     "support vectors",
     "soft margin",
-    "slack variables",
-    "hyperparameter C",
     "classification",
     "optimization",
-    "machine learning fundamentals",
-    "SVM theory"
+    "hyperparameter C",
+    "decision boundary",
+    "machine learning"
    ],
    "src": "/media/learn/patterns/patterns-13.mp4",
    "poster": "/media/learn/patterns/patterns-13.jpg",
@@ -5675,8 +5677,8 @@ export const PATTERNS: Lesson[] = [
   },
   {
    "n": 14,
-   "title": "Kernel Methods: Separating Data That Looks Inseparable",
-   "summary": "Learn how to handle classification problems where no straight line can separate your classes. This lesson shows how kernel functions let support vector machines find curved boundaries by computing dot products in transformed feature spaces—without ever explicitly building those transformed features. You'll understand why polynomial and RBF kernels work, how gamma controls overfitting in RBF kernels, and when to actually use kernels versus sticking with linear classifiers.",
+   "title": "Kernel Methods: Separating Non-Linear Data with Support Vector Machines",
+   "summary": "When a straight line cannot separate your data, kernel methods solve the problem by implicitly working in higher dimensions without explicitly creating new features. You'll learn how polynomial and RBF kernels work, why they matter in practice, and when to actually use them instead of jumping straight to the fanciest option.",
    "runs": "9:46",
    "chapters": [
     {
@@ -5718,14 +5720,14 @@ export const PATTERNS: Lesson[] = [
    ],
    "tags": [
     "kernel methods",
-    "support vector machines",
+    "support vector machine",
+    "SVM",
     "polynomial kernel",
     "RBF kernel",
-    "nonlinear classification",
-    "feature transformation",
-    "overfitting",
-    "gamma parameter",
-    "dot products",
+    "Gaussian kernel",
+    "feature mapping",
+    "non-linear classification",
+    "hyperparameter tuning",
     "machine learning"
    ],
    "src": "/media/learn/patterns/patterns-14.mp4",
@@ -5734,8 +5736,8 @@ export const PATTERNS: Lesson[] = [
   },
   {
    "n": 15,
-   "title": "How to Choose a Classifier: Five Real Cases",
-   "summary": "Learn to defend your choice of classifier—logistic regression, decision trees, k-nearest neighbours, naive Bayes, or kernel SVMs—by matching the model's assumptions to your actual data. Through five real bike-share scenarios, you'll see exactly when each algorithm fits best, how to compare them on training cost, prediction speed, data requirements, and interpretability, and why picking by leaderboard accuracy alone is a trap.",
+   "title": "Choosing a Classifier: How to Defend Your Model Choice",
+   "summary": "Learn how to choose between logistic regression, decision trees, k-nearest neighbours, naive Bayes, and kernel SVMs by matching each algorithm's assumptions to your actual data and problem constraints. This workshop teaches you to defend your classifier choice to interviewers, reviewers, and yourself, with five real bike-share case studies that show when each algorithm is the right first try. You'll also learn the comparison framework—training cost, prediction cost, data appetite, interpretability, calibration, and failure modes—that lets you reason through tradeoffs without chasing leaderboard numbers.",
    "runs": "12:08",
    "chapters": [
     {
@@ -5781,14 +5783,15 @@ export const PATTERNS: Lesson[] = [
    ],
    "tags": [
     "classifier selection",
+    "algorithm choice",
     "logistic regression",
     "decision trees",
     "k-nearest neighbours",
     "naive Bayes",
-    "support vector machines",
-    "model assumptions",
-    "interpretability",
-    "algorithmic trade-offs"
+    "SVM kernels",
+    "model evaluation",
+    "machine learning",
+    "interpretability"
    ],
    "src": "/media/learn/patterns/patterns-15.mp4",
    "poster": "/media/learn/patterns/patterns-15.jpg",
@@ -5797,7 +5800,7 @@ export const PATTERNS: Lesson[] = [
   {
    "n": 16,
    "title": "K-Fold Cross-Validation: Why One Test Split Isn't Enough",
-   "summary": "Learn why a single train-test split can give you misleading results, and how k-fold cross-validation solves this problem by testing your model multiple ways. You'll see the step-by-step process of splitting data into folds, training and evaluating across all combinations, and averaging the results to get a trustworthy error estimate. The video also explains two critical mistakes to avoid and clarifies that cross-validation estimates how good your method is—not the final model you actually deploy.",
+   "summary": "Learn why a single train-test split can give you a misleading estimate of your model's performance, and how k-fold cross-validation solves that problem by testing on multiple folds of data. You'll see a concrete example with station trip prediction and discover the correct way to use cross-validation—as a testing method, not your final model. Walk away knowing how to implement cross-validation properly and avoid common pitfalls like peeking at test folds or leaking information across train and test sets.",
    "runs": "5:24",
    "chapters": [
     {
@@ -5832,13 +5835,12 @@ export const PATTERNS: Lesson[] = [
    "tags": [
     "cross-validation",
     "k-fold",
-    "model evaluation",
     "train-test split",
-    "error estimation",
-    "machine learning",
+    "model evaluation",
     "overfitting",
-    "data validation",
-    "predictive modeling"
+    "time series validation",
+    "machine learning",
+    "statistical estimation"
    ],
    "src": "/media/learn/patterns/patterns-16.mp4",
    "poster": "/media/learn/patterns/patterns-16.jpg",
@@ -5846,8 +5848,8 @@ export const PATTERNS: Lesson[] = [
   },
   {
    "n": 17,
-   "title": "Accuracy Isn't Enough: Precision, Recall, and Choosing the Right Metric",
-   "summary": "Learn why accuracy can be dangerously misleading when predicting rare events, and discover the four confusion matrix outcomes that tell the real story. This video teaches you precision, recall, F1, ROC curves, and—most importantly—how to choose a decision threshold based on the actual costs of different kinds of mistakes.",
+   "title": "Precision and Recall: When Accuracy Hides the Real Problem",
+   "summary": "Learn why accuracy is a dangerous metric when predicting rare events—a model that always says \"no fault\" can score 97% correct while catching nothing. You'll master precision, recall, the confusion matrix, and the threshold that connects them, then discover how ROC and precision-recall curves expose when your model is actually fooling you.",
    "runs": "8:59",
    "chapters": [
     {
@@ -5888,16 +5890,16 @@ export const PATTERNS: Lesson[] = [
     }
    ],
    "tags": [
+    "precision",
+    "recall",
     "confusion matrix",
-    "precision and recall",
-    "F1 score",
-    "ROC curve",
-    "classification metrics",
-    "threshold selection",
+    "threshold",
     "imbalanced data",
-    "cost-based decisions",
-    "machine learning evaluation",
-    "logistic regression"
+    "ROC curve",
+    "F1 score",
+    "false positive",
+    "false negative",
+    "classification metrics"
    ],
    "src": "/media/learn/patterns/patterns-17.mp4",
    "poster": "/media/learn/patterns/patterns-17.jpg",
@@ -5905,8 +5907,8 @@ export const PATTERNS: Lesson[] = [
   },
   {
    "n": 18,
-   "title": "Five Suspiciously Good Models: Data Leakage & Validation Traps",
-   "summary": "A model with a 99% accuracy score can still be completely useless if the setup is wrong. This video reveals five different ways a seemingly perfect model can fail—leaking information from the future, contaminating the test set, comparing against the wrong baseline, getting lucky on validation data, and ignoring time. You'll learn a five-question pre-flight checklist to catch these bugs before investing in model training.",
+   "title": "Five Suspiciously Good Models: How Perfect Scores Hide Real Mistakes",
+   "summary": "Learn to spot five common data science mistakes that produce excellent metrics while hiding broken models: data leakage, improper preprocessing, ignoring class imbalance, multiple comparison bias, and temporal contamination. After watching, you'll be able to run a five-question pre-flight checklist that catches these errors before you train anything.",
    "runs": "8:37",
    "chapters": [
     {
@@ -5944,14 +5946,13 @@ export const PATTERNS: Lesson[] = [
    ],
    "tags": [
     "data leakage",
-    "model validation",
-    "train-test split",
-    "data science mistakes",
-    "feature engineering",
-    "evaluation metrics",
-    "machine learning pitfalls",
+    "model evaluation",
+    "validation",
+    "machine learning mistakes",
+    "data preprocessing",
     "class imbalance",
-    "temporal data"
+    "feature engineering",
+    "bias in machine learning"
    ],
    "src": "/media/learn/patterns/patterns-18.mp4",
    "poster": "/media/learn/patterns/patterns-18.jpg",
@@ -5960,7 +5961,7 @@ export const PATTERNS: Lesson[] = [
   {
    "n": 19,
    "title": "One-Page Cheat Sheet: Six ML Algorithms Compared",
-   "summary": "Learn how to compress six machine learning algorithms (kNN, naive Bayes, perceptron, logistic regression, decision trees, and SVM) into one reference page that fits in your hand. You'll build a systematic comparison table answering eight key questions about each method, learn the essential formulas with extreme-case checks, and use a four-question flowchart to choose the right algorithm for any classification problem.",
+   "summary": "Learn how to compress six machine learning algorithms (kNN, naive Bayes, perceptron, logistic regression, decision trees, and SVM) into a single study page organized by eight key questions. You'll build a comparison chart with assumptions, costs, hyperparameters, and characteristic failures for each method, plus essential formulas and a decision flowchart to pick the right algorithm fast.",
    "runs": "13:13",
    "chapters": [
     {
@@ -6004,13 +6005,13 @@ export const PATTERNS: Lesson[] = [
     "machine learning",
     "algorithms",
     "cheat sheet",
+    "study guide",
     "kNN",
     "naive Bayes",
-    "decision trees",
-    "logistic regression",
     "perceptron",
-    "SVM",
-    "classification"
+    "logistic regression",
+    "decision trees",
+    "SVM"
    ],
    "src": "/media/learn/patterns/patterns-19.mp4",
    "poster": "/media/learn/patterns/patterns-19.jpg",
@@ -6018,8 +6019,8 @@ export const PATTERNS: Lesson[] = [
   },
   {
    "n": 20,
-   "title": "Exam Prep: From Derivations to Problem Spotting",
-   "summary": "Learn the four core strategies that examiners test repeatedly: spotting whether a problem is regression, classification, or clustering; deriving key formulas like least squares and gradient descent from first principles; understanding bias and variance as causes rather than synonyms for overfitting; and avoiding common errors like missing units and confusing training versus test error. After watching, you'll be able to reproduce derivations with pen and paper, identify problem types instantly, and structure your exam answers to capture partial credit.",
+   "title": "Machine Learning Exam Strategy: From Derivations to Perfect Score",
+   "summary": "Learn the exam-focused skills that matter: spotting problem types, deriving least squares and gradient descent by hand, distinguishing bias from variance, and avoiding common point-loss mistakes. You'll master the core ML concepts through real worked examples and understand exactly what examiners test—so you can reproduce derivations under pressure, not just memorize formulas.",
    "runs": "5:51",
    "chapters": [
     {
@@ -6056,16 +6057,16 @@ export const PATTERNS: Lesson[] = [
     }
    ],
    "tags": [
-    "exam preparation",
     "machine learning",
+    "exam preparation",
+    "least squares",
+    "gradient descent",
+    "bias-variance tradeoff",
     "regression",
     "classification",
     "clustering",
-    "least squares",
-    "gradient descent",
-    "bias variance",
-    "derivation",
-    "decision trees"
+    "derivations",
+    "test-taking strategy"
    ],
    "src": "/media/learn/patterns/patterns-20.mp4",
    "poster": "/media/learn/patterns/patterns-20.jpg",
@@ -6076,8 +6077,8 @@ export const PATTERNS: Lesson[] = [
 export const HOWITWORKS: Lesson[] = [
   {
    "n": 1,
-   "title": "Why Automated Lesson Production Requires Quality Constraints",
-   "summary": "This video explains the problem that drives automated lesson production: traditional video lessons take a week each to make, which doesn't scale to hundreds of courses. You'll learn why the real challenge isn't just speed and cost, but building a system that automatically catches errors—because polished-looking wrong information is far more dangerous than obvious failures.",
+   "title": "Why Automated Lesson Production Needs Quality Control",
+   "summary": "This video explains the challenge of scaling educational video production: traditionally, a single lesson takes a week of skilled work to create. You'll learn the precise goal that makes automation viable—a subject-expert-approved lesson produced for minimal cost in under an hour—and why the biggest constraint isn't speed or cost, but preventing plausible-sounding errors from slipping through undetected.",
    "runs": "5:47",
    "chapters": [
     {
@@ -6106,14 +6107,14 @@ export const HOWITWORKS: Lesson[] = [
     }
    ],
    "tags": [
-    "lesson production",
+    "educational video production",
     "automation",
     "quality control",
-    "educational video",
-    "scaling",
-    "pipeline design",
-    "error detection",
-    "curriculum development"
+    "curriculum scaling",
+    "lesson design",
+    "production pipeline",
+    "online learning",
+    "educational technology"
    ],
    "src": "/media/learn/howitworks/howitworks-01.mp4",
    "poster": "/media/learn/howitworks/howitworks-01.jpg",
@@ -6122,7 +6123,7 @@ export const HOWITWORKS: Lesson[] = [
   {
    "n": 2,
    "title": "Why We Don't Let Models Write Animation Code",
-   "summary": "Learn why direct code generation for animations fails in practice and how the scene/1 contract solves the problem through validation before rendering. You'll understand the architectural shift from \"model programs\" to \"model describes, code validates\"—and why that gap between output and checking matters.",
+   "summary": "Learn why having a model generate animation code directly creates invisible bugs that only surface in the finished video. This video explains how the scene/1 contract and validation-before-render approach catches errors in milliseconds, and why describing a scene with a fixed vocabulary is fundamentally safer than programming it from scratch.",
    "runs": "6:52",
    "chapters": [
     {
@@ -6166,13 +6167,13 @@ export const HOWITWORKS: Lesson[] = [
     "animation",
     "code generation",
     "validation",
-    "architecture",
-    "Manim",
     "system design",
-    "safety",
+    "Manim",
+    "architecture",
     "contracts",
-    "rendering",
-    "AI mistakes"
+    "error handling",
+    "safety nets",
+    "rendering"
    ],
    "src": "/media/learn/howitworks/howitworks-02.mp4",
    "poster": "/media/learn/howitworks/howitworks-02.jpg",
@@ -6180,8 +6181,8 @@ export const HOWITWORKS: Lesson[] = [
   },
   {
    "n": 3,
-   "title": "The Nine Stops: From Brief to Publish",
-   "summary": "Learn the complete workflow for turning a single sentence into a finished teaching video. This video maps out all nine named stops in the process—from the initial brief through the final human-approved publish step—showing you exactly where each artifact is created and checked.",
+   "title": "The Nine Stops: From Brief to Published Video",
+   "summary": "Learn the complete workflow that transforms a single sentence into a finished teaching video, with stops at scripting, description, validation, proof rendering, rubric scoring, repair loops, final rendering, review, and publication. This video maps out the entire system and explains where each checkpoint matters and why nothing can skip the gate.",
    "runs": "9:51",
    "chapters": [
     {
@@ -6230,16 +6231,16 @@ export const HOWITWORKS: Lesson[] = [
     }
    ],
    "tags": [
-    "workflow",
     "video production",
+    "workflow",
     "automation",
     "rendering",
-    "validation",
-    "lesson structure",
-    "process mapping",
     "quality control",
-    "brief to publish",
-    "scene description"
+    "lesson design",
+    "system architecture",
+    "validation",
+    "content creation",
+    "process mapping"
    ],
    "src": "/media/learn/howitworks/howitworks-03.mp4",
    "poster": "/media/learn/howitworks/howitworks-03.jpg",
@@ -6247,8 +6248,8 @@ export const HOWITWORKS: Lesson[] = [
   },
   {
    "n": 4,
-   "title": "How scene_spec.py Validates Teaching Visuals Before Rendering",
-   "summary": "Learn how teaching videos are quality-checked before a single pixel is rendered by validating the JSON spec—the plan for a scene—instead of the final image itself. This video covers the four core rules that scene_spec.py enforces: no bare numbers on diagram labels, never ending on your weakest figure, grids doing arithmetic must have numeric axes, and icon summaries require captions to distinguish them from collapsing content. You'll understand the retry loop that rewrites failing specs up to five times and why some borderline judgement calls are kept anyway.",
+   "title": "Quality Before the Picture: How Specs Get Validated",
+   "summary": "Before render.py draws a single pixel, scene_spec.py validates the JSON plan for what the scene will look like. Learn the four concrete rules that catch problems early — no bare numbers on diagram labels, don't end on weak images, grids need numeric axes, and icons need captions — and how the retry loop gives specs up to five chances to fix themselves.",
    "runs": "6:44",
    "chapters": [
     {
@@ -6285,14 +6286,16 @@ export const HOWITWORKS: Lesson[] = [
     }
    ],
    "tags": [
-    "video production",
-    "scene specification",
-    "JSON validation",
-    "teaching visuals",
-    "diagram rules",
+    "spec validation",
     "quality control",
-    "rendering pipeline",
-    "content validation"
+    "scene specification",
+    "JSON",
+    "teaching video structure",
+    "diagram rules",
+    "grid axes",
+    "caption requirements",
+    "validation rules",
+    "render pipeline"
    ],
    "src": "/media/learn/howitworks/howitworks-04.mp4",
    "poster": "/media/learn/howitworks/howitworks-04.jpg",
@@ -6300,8 +6303,8 @@ export const HOWITWORKS: Lesson[] = [
   },
   {
    "n": 5,
-   "title": "Six Lies: When Checks Report Defects That Don't Exist",
-   "summary": "Learn why automated checks often blame the artifact for the check's own failures—a pattern that hides real problems. Through six concrete cases from a production pipeline, discover why a successful-looking status is more dangerous than a crash, and master the one rule that matters: always verify the actual artifact yourself.",
+   "title": "Six Lies: When Checks Fail Silently",
+   "summary": "A production system can fail without crashing—by printing successful-looking results that are actually wrong. This video examines six real cases where automated checks reported defects that didn't exist, or missed real defects completely, because the check disagreed with the actual artifact. Learn to spot when dashboard status, scores, and check results are lying to you, and develop the habit of opening the actual file instead of trusting the tools.",
    "runs": "7:45",
    "chapters": [
     {
@@ -6342,16 +6345,16 @@ export const HOWITWORKS: Lesson[] = [
     }
    ],
    "tags": [
-    "pipeline",
-    "testing",
-    "automation",
     "quality assurance",
     "debugging",
-    "systems thinking",
-    "checks and guards",
-    "status fields",
-    "production bugs",
-    "verification"
+    "pipeline failures",
+    "silent failures",
+    "automated checks",
+    "production systems",
+    "verification",
+    "testing",
+    "system design",
+    "artifact validation"
    ],
    "src": "/media/learn/howitworks/howitworks-05.mp4",
    "poster": "/media/learn/howitworks/howitworks-05.jpg",
@@ -6359,8 +6362,8 @@ export const HOWITWORKS: Lesson[] = [
   },
   {
    "n": 6,
-   "title": "Five Pieces: The Architecture of a Video Generation Pipeline",
-   "summary": "This video breaks down the five core components of a video generation system—the AI service, contract, renderer, datastore, and harness—and explains how they communicate and where most bugs originate. You'll learn the architectural boundaries that separate concerns, why certain pieces can only see limited data, and where new engineers typically make mistakes when extending the system.",
+   "title": "The Five Pieces: System Architecture of a Video Generation Pipeline",
+   "summary": "Learn how a video generation system is built from five distinct pieces—the AI service, contract, renderer, datastore, and harness—and how they communicate to avoid bugs. This video maps out the architecture so you understand where each component lives, what it owns, and the common mistakes engineers make when changes cross piece boundaries.",
    "runs": "7:17",
    "chapters": [
     {
@@ -6401,16 +6404,16 @@ export const HOWITWORKS: Lesson[] = [
     }
    ],
    "tags": [
-    "architecture",
-    "system design",
-    "pipeline",
-    "AI service",
-    "contracts",
-    "renderer",
-    "DynamoDB",
-    "S3",
+    "system architecture",
+    "microservices",
+    "API design",
+    "job pipeline",
+    "data flow",
+    "debugging",
+    "software design",
     "named fields",
-    "pure functions"
+    "pure functions",
+    "boundaries"
    ],
    "src": "/media/learn/howitworks/howitworks-06.mp4",
    "poster": "/media/learn/howitworks/howitworks-06.jpg",
@@ -6418,8 +6421,8 @@ export const HOWITWORKS: Lesson[] = [
   },
   {
    "n": 7,
-   "title": "AWS Deployment: Where the Pipeline Actually Runs",
-   "summary": "Learn the concrete AWS services that power a video rendering pipeline: why renders launch on ECS Fargate instead of persistent servers, how to pin container images by digest to avoid silent failures, and where S3, DynamoDB, and CloudFront fit into the system. You'll understand the account quotas, caching strategies, and security gaps that cause real pain when missed.",
+   "title": "AWS Infrastructure: Where the Render Pipeline Actually Runs",
+   "summary": "Learn the concrete AWS services that power the rendering pipeline—Fargate tasks, S3 storage, DynamoDB tracking, and CloudFront delivery—and understand why each piece was chosen. You'll discover critical details like pinning container images by digest instead of tag, the narration cache strategy that protects against quota limits, and the authentication gap that can silently expose video files.",
    "runs": "8:56",
    "chapters": [
     {
@@ -6461,15 +6464,15 @@ export const HOWITWORKS: Lesson[] = [
    ],
    "tags": [
     "AWS",
-    "ECS Fargate",
-    "container deployment",
+    "Fargate",
+    "ECS",
     "S3",
     "DynamoDB",
     "CloudFront",
     "infrastructure",
-    "DevOps",
-    "production systems",
-    "cost optimization"
+    "rendering pipeline",
+    "container images",
+    "deployment"
    ],
    "src": "/media/learn/howitworks/howitworks-07.mp4",
    "poster": "/media/learn/howitworks/howitworks-07.jpg",
@@ -6477,8 +6480,8 @@ export const HOWITWORKS: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "The Cost Model: Where Your Lesson Dollars Go",
-   "summary": "Learn the three cost drivers behind lesson generation—model calls, speech synthesis, and Fargate rendering time—and why the real cost lever is catching defects early, not picking cheaper models. You'll see a real example where two identical lessons cost $2.39 and $7.22, and understand exactly why.",
+   "title": "Where Lesson Cost Actually Comes From",
+   "summary": "Learn the three components that drive lesson production costs: model API calls, speech synthesis, and Fargate rendering time. You'll see exactly why two identical lessons can cost $2.39 or $7.22 depending on how many times they fail quality checks, and discover which cost levers actually work—and which don't.",
    "runs": "7:09",
    "chapters": [
     {
@@ -6519,16 +6522,16 @@ export const HOWITWORKS: Lesson[] = [
     }
    ],
    "tags": [
-    "cost model",
-    "lesson economics",
+    "cost",
+    "pricing",
     "model calls",
     "speech synthesis",
-    "rendering",
     "Fargate",
-    "quality rubric",
+    "quality control",
     "caching",
-    "pipeline costs",
-    "defect detection"
+    "defect detection",
+    "rendering",
+    "cost optimization"
    ],
    "src": "/media/learn/howitworks/howitworks-08.mp4",
    "poster": "/media/learn/howitworks/howitworks-08.jpg",
@@ -6537,7 +6540,7 @@ export const HOWITWORKS: Lesson[] = [
   {
    "n": 9,
    "title": "The Business Case: Why Automated Video Production Matters",
-   "summary": "Learn the three core capabilities that make automated lesson production valuable to organizations: building affordable curricula at scale, remixing lessons cheaply when material changes, and serving different audiences from a single brief. Discover where the actual competitive advantage sits—not in the pipeline diagram itself, but in the accumulated contract rules and failure catalogue that come from lessons shipped.",
+   "summary": "Discover the three core capabilities that make automated lesson production viable as a business model: building full curricula at low cost, updating lessons cheaply when material changes, and serving different audiences from a single brief. Learn where the real competitive advantage lies—not in the pipeline diagram itself, but in the accumulated rules and failure catalogue that prevent defects from shipping.",
    "runs": "8:51",
    "chapters": [
     {
@@ -6580,14 +6583,12 @@ export const HOWITWORKS: Lesson[] = [
    "tags": [
     "business case",
     "automated video production",
-    "curriculum design",
-    "scalability",
-    "automation",
-    "quality gates",
-    "human review",
-    "lesson production",
+    "lesson curriculum",
+    "cost efficiency",
     "competitive advantage",
-    "technical contracts"
+    "quality control",
+    "video pipeline",
+    "instructional design"
    ],
    "src": "/media/learn/howitworks/howitworks-09.mp4",
    "poster": "/media/learn/howitworks/howitworks-09.jpg",
@@ -6595,8 +6596,8 @@ export const HOWITWORKS: Lesson[] = [
   },
   {
    "n": 10,
-   "title": "Five Rejected Ideas: Why These Optimizations Didn't Work",
-   "summary": "This lesson walks through five optimization ideas that were tested and rejected during pipeline development, showing the actual evidence that killed each one. You'll learn why cheaper animation code generation failed, why automatic publishing stays manual, why text similarity checks don't catch repeats, why hard length limits backfire, and why banning full-frame layouts would have been a mistake. The core lesson: always test ideas against real known-answer cases instead of relying on intuition.",
+   "title": "Five Rejected Ideas: Why They Failed (With Evidence)",
+   "summary": "Learn from five plausible ideas that were tested and rejected during the development of an animation lesson pipeline. Each rejection is backed by actual data and measurements rather than assumptions, covering failed optimization attempts like cheaper animation models, automatic publishing, similarity checks, and layout rules. This lesson teaches the critical habit of testing ideas against known-answer cases before committing to them.",
    "runs": "7:34",
    "chapters": [
     {
@@ -6633,14 +6634,16 @@ export const HOWITWORKS: Lesson[] = [
     }
    ],
    "tags": [
-    "pipeline optimization",
-    "testing methodology",
     "rejected ideas",
-    "animation code generation",
-    "lesson validation",
+    "pipeline optimization",
+    "data-driven decisions",
+    "testing",
+    "animation code",
+    "validation",
+    "measurement",
     "known-answer testing",
-    "decision-making",
-    "data-driven decisions"
+    "avoiding mistakes",
+    "lessons learned"
    ],
    "src": "/media/learn/howitworks/howitworks-10.mp4",
    "poster": "/media/learn/howitworks/howitworks-10.jpg",
@@ -6651,8 +6654,8 @@ export const HOWITWORKS: Lesson[] = [
 export const CHANCE: Lesson[] = [
   {
    "n": 1,
-   "title": "Random Variables: Function, Not Value",
-   "summary": "This video reveals what random variables actually are: functions that map sample space outcomes to numbers, not mysterious values waiting to be revealed. You'll learn the critical distinction between discrete and continuous random variables, understand what notation like P(X=3) really means, and see why this foundation is essential for computing probabilities and statistics downstream.",
+   "title": "Random Variables: Functions, Not Values",
+   "summary": "Learn what a random variable actually is—a function that maps messy real-world outcomes to numbers, not a mysterious hidden value. You'll discover why this distinction matters, how to distinguish between discrete and continuous random variables, and how to correctly interpret probability notation like P(X = 3) as statements about sets of outcomes. By the end, you'll understand why turning outcomes into numbers is the essential step that makes all of probability theory computable.",
    "runs": "6:47",
    "chapters": [
     {
@@ -6691,12 +6694,12 @@ export const CHANCE: Lesson[] = [
    "tags": [
     "random variables",
     "probability",
-    "discrete vs continuous",
-    "sample space",
-    "probability notation",
+    "discrete random variables",
+    "continuous random variables",
     "functions",
-    "helpdesk example",
-    "foundations"
+    "probability notation",
+    "outcomes",
+    "sample space"
    ],
    "src": "/media/learn/chance/chance-01.mp4",
    "poster": "/media/learn/chance/chance-01.jpg",
@@ -6704,8 +6707,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 2,
-   "title": "PMF and CDF: Two Ways to Describe a Distribution",
-   "summary": "Learn the two standard ways to write down a probability distribution: the Probability Mass Function (PMF), which gives the exact probability of each value, and the Cumulative Distribution Function (CDF), which gives the probability of being at or below a value. You'll see how these two descriptions relate to each other and which one to use for different types of questions about discrete random variables.",
+   "title": "PMF vs CDF: Two Ways to Describe a Random Variable",
+   "summary": "Learn the two standard ways to write down a probability distribution: the Probability Mass Function (PMF) and the Cumulative Distribution Function (CDF). You'll see why each one exists, how they relate to each other, and which one to use for different questions about your data.",
    "runs": "7:18",
    "chapters": [
     {
@@ -6743,14 +6746,13 @@ export const CHANCE: Lesson[] = [
    ],
    "tags": [
     "probability mass function",
-    "PMF",
     "cumulative distribution function",
+    "PMF",
     "CDF",
-    "probability distribution",
-    "random variable",
-    "discrete distribution",
-    "probability tables",
-    "statistics fundamentals"
+    "random variables",
+    "probability distributions",
+    "discrete probability",
+    "probability basics"
    ],
    "src": "/media/learn/chance/chance-02.mp4",
    "poster": "/media/learn/chance/chance-02.jpg",
@@ -6758,8 +6760,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 3,
-   "title": "Expectation: Definition, Properties, and LOTUS",
-   "summary": "Learn how expectation summarizes a probability distribution as a single number — not by finding the tallest bar, but by balancing the distribution like a seesaw. This video teaches you the formal definition, key properties like linearity, and the law of the unconscious statistician (LOTUS) for handling functions of random variables.",
+   "title": "Expectation: The Balance Point of a Distribution",
+   "summary": "Learn what expectation (E of X) really means—it's the balance point of a probability distribution, not the tallest bar or middle value. You'll see the definition, the physical picture that makes it intuitive, and essential properties like linearity and LOTUS (the law of the unconscious statistician) for finding expectations of functions of random variables.",
    "runs": "9:51",
    "chapters": [
     {
@@ -6800,11 +6802,10 @@ export const CHANCE: Lesson[] = [
     "expected value",
     "probability distribution",
     "PMF",
+    "balance point",
     "linearity",
     "LOTUS",
-    "random variables",
-    "balance point",
-    "discrete distributions"
+    "random variables"
    ],
    "src": "/media/learn/chance/chance-03.mp4",
    "poster": "/media/learn/chance/chance-03.jpg",
@@ -6813,7 +6814,7 @@ export const CHANCE: Lesson[] = [
   {
    "n": 4,
    "title": "Variance and Standard Deviation: Measuring Spread",
-   "summary": "Two datasets can have identical averages but wildly different patterns—this video teaches variance and standard deviation, the tools that measure spread around the mean. You'll learn why squaring deviations works better than absolute value, the practical shortcut formula for computing variance, and how to report results in real units using standard deviation.",
+   "summary": "Learn how variance and standard deviation measure how far data spreads from the mean—the real measure of whether two shifts with identical averages are actually similar. You'll discover why squaring deviations works better than taking absolute values, compute variance both the long way and with a shortcut formula, and learn which metric to report in real units.",
    "runs": "9:23",
    "chapters": [
     {
@@ -6861,12 +6862,11 @@ export const CHANCE: Lesson[] = [
     "variance",
     "standard deviation",
     "spread",
-    "probability",
     "expected value",
+    "probability",
     "mean absolute deviation",
-    "deviation",
-    "distribution",
-    "statistics",
+    "shortcut formula",
+    "statistical measures",
     "data analysis"
    ],
    "src": "/media/learn/chance/chance-04.mp4",
@@ -6875,8 +6875,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 5,
-   "title": "Expectation and Variance: Six Exam-Speed Problems",
-   "summary": "Learn to solve expectation and variance problems quickly and accurately under exam conditions. This workshop covers six different problem types—from basic PMF calculations to function transforms—using a consistent method: identify what's asked, pick the right tool, compute, and sanity-check your answer.",
+   "title": "Expectation and Variance Under Pressure: Six Exam Problems",
+   "summary": "Knowing the definitions of expectation and variance is one thing; computing them quickly and correctly under exam pressure is another. This workshop walks through six different problem types—from reading a PMF and applying linearity, to reversing the computational formula, spotting nonlinear traps, finding missing probabilities, and recognizing shifts—with a single method: identify what's asked, pick the right tool, compute, and sanity-check your answer.",
    "runs": "9:09",
    "chapters": [
     {
@@ -6923,10 +6923,10 @@ export const CHANCE: Lesson[] = [
     "probability",
     "exam practice",
     "linearity of expectation",
+    "computational formula",
+    "probability distribution",
     "random variables",
-    "computational methods",
-    "problem-solving",
-    "helpdesk problems"
+    "exam skills"
    ],
    "src": "/media/learn/chance/chance-05.mp4",
    "poster": "/media/learn/chance/chance-05.jpg",
@@ -6934,8 +6934,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 6,
-   "title": "Binomial Distribution: Counting Successes Across Fixed Trials",
-   "summary": "Learn how to find the probability distribution for the number of successes across a fixed number of independent trials—like how many support tickets get resolved on first contact. You'll derive the binomial PMF from first principles, calculate means and variances, and discover the four essential conditions that must hold before applying this model.",
+   "title": "Binomial Random Variables: Counting Successes Across Multiple Trials",
+   "summary": "Learn how to find the probability distribution for the number of successes across a fixed set of independent trials—like how many support tickets get resolved on first contact. You'll derive the binomial PMF by counting outcome patterns, calculate the mean and variance using indicator variables, and master the three common question types: exactly k successes, at least k, and at most k. After this lesson, you'll know the four conditions that must hold for binomial to apply, and how to avoid the two most common mistakes.",
    "runs": "8:25",
    "chapters": [
     {
@@ -6981,13 +6981,15 @@ export const CHANCE: Lesson[] = [
    ],
    "tags": [
     "binomial distribution",
+    "binomial random variable",
+    "PMF",
     "probability mass function",
-    "counting problems",
-    "binomial coefficients",
-    "expected value",
-    "variance",
+    "counting principles",
+    "success probability",
     "independence",
-    "success probability"
+    "expectation",
+    "variance",
+    "indicator variables"
    ],
    "src": "/media/learn/chance/chance-06.mp4",
    "poster": "/media/learn/chance/chance-06.jpg",
@@ -6995,8 +6997,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 7,
-   "title": "The Poisson Distribution: Counting Events Across Time",
-   "summary": "Learn how to model rare events arriving over time—like support tickets or customer calls—when you don't know a fixed upper limit. This video derives the Poisson distribution from first principles and teaches you when to apply it, what assumptions it requires, and how to catch it when those assumptions break down.",
+   "title": "The Poisson Distribution: From Binomial to Event Rates",
+   "summary": "Learn why the Poisson distribution is the right tool when counting events arriving at a constant rate—situations where there's no fixed total n like in the binomial. This video derives the Poisson PMF by chopping time into tiny slivers, explains its critical assumptions, and shows how to spot whether real data actually follows a Poisson using the mean-variance fingerprint.",
    "runs": "8:15",
    "chapters": [
     {
@@ -7034,14 +7036,12 @@ export const CHANCE: Lesson[] = [
    ],
    "tags": [
     "Poisson distribution",
-    "probability",
-    "event counting",
-    "rates",
-    "random events",
-    "stochastic processes",
+    "event rates",
+    "probability mass function",
     "binomial approximation",
     "mean equals variance",
-    "statistical assumptions"
+    "continuous-time events",
+    "rate parameter lambda"
    ],
    "src": "/media/learn/chance/chance-07.mp4",
    "poster": "/media/learn/chance/chance-07.jpg",
@@ -7050,7 +7050,7 @@ export const CHANCE: Lesson[] = [
   {
    "n": 8,
    "title": "Geometric and Negative Binomial Distributions: Waiting for Success",
-   "summary": "This video flips the probability question: instead of fixing the number of tries and counting successes, we fix what counts as success and ask how many tries until it happens. You'll learn the geometric and negative binomial PMFs, understand why long streaks don't make success more likely (memorylessness), and see how these distributions answer a fundamentally different question than binomial or Poisson.",
+   "summary": "This video flips the typical probability question: instead of fixing the number of tries and counting successes, you fix what counts as success and ask how long you wait. Learn the geometric PMF, understand why past failures tell you nothing about future waits (memorylessness), and extend to the negative binomial for waiting until the r-th success. You'll also see how geometric, binomial, and Poisson distributions answer three fundamentally different questions about the same scenario.",
    "runs": "8:15",
    "chapters": [
     {
@@ -7088,14 +7088,13 @@ export const CHANCE: Lesson[] = [
    ],
    "tags": [
     "geometric distribution",
-    "negative binomial distribution",
+    "negative binomial",
+    "PMF",
     "memorylessness",
     "waiting time",
-    "probability mass function",
-    "escalation",
-    "gambler's fallacy",
-    "independence",
-    "success probability"
+    "probability distributions",
+    "binomial vs poisson vs geometric",
+    "gambler's fallacy"
    ],
    "src": "/media/learn/chance/chance-08.mp4",
    "poster": "/media/learn/chance/chance-08.jpg",
@@ -7103,8 +7102,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 9,
-   "title": "How to Recognize Binomial, Poisson, Geometric, and Negative Binomial Distributions",
-   "summary": "Learn a three-question checklist to identify which distribution applies to any scenario: Is it a fixed number of trials, a count in a time window, or a wait for success? Are the events independent and constant? Work through twelve realistic helpdesk scenarios to practice recognizing binomial, Poisson, geometric, and negative binomial distributions without memorizing new formulas.",
+   "title": "Recognize Binomial, Poisson, Geometric, and Negative Binomial Distributions",
+   "summary": "Learn to identify which distribution applies in any real-world scenario by asking three simple diagnostic questions: Is there a fixed number of trials, a time window, or are you waiting? Are the events independent? Is the probability or rate constant? This video teaches recognition skills through twelve helpdesk-inspired scenarios so you can instantly know which distribution fits before working any math.",
    "runs": "7:24",
    "chapters": [
     {
@@ -7141,15 +7140,15 @@ export const CHANCE: Lesson[] = [
     }
    ],
    "tags": [
-    "distribution recognition",
-    "binomial",
-    "Poisson",
+    "binomial distribution",
+    "Poisson distribution",
     "geometric distribution",
     "negative binomial",
+    "distribution recognition",
     "probability",
     "random variables",
-    "statistical modeling",
-    "discrete distributions",
+    "independence assumption",
+    "constant rate",
     "exam preparation"
    ],
    "src": "/media/learn/chance/chance-09.mp4",
@@ -7158,8 +7157,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 10,
-   "title": "Continuous Probability Distributions: From Density to CDF",
-   "summary": "Learn why exact outcomes have zero probability in continuous distributions and how probability density functions (PDFs) work differently from discrete probabilities. This video teaches you to interpret probability as area under a curve, relate PDFs to cumulative distribution functions through integration and differentiation, and calculate expectations and variances for continuous random variables.",
+   "title": "Continuous Probability: From Density to CDF",
+   "summary": "This video introduces continuous probability distributions, where outcomes take real-number values that can't be counted like discrete cases. You'll learn why a single exact value has probability zero, what a probability density function is and how it differs from probability, and how to work with CDFs using integration and differentiation. By the end, you'll understand how to calculate probabilities, expectations, and variances for continuous random variables.",
    "runs": "7:01",
    "chapters": [
     {
@@ -7200,10 +7199,11 @@ export const CHANCE: Lesson[] = [
     "probability density function",
     "PDF",
     "CDF",
-    "cumulative distribution",
     "integration",
     "expectation",
-    "variance"
+    "variance",
+    "continuous distributions",
+    "probability as area"
    ],
    "src": "/media/learn/chance/chance-10.mp4",
    "poster": "/media/learn/chance/chance-10.jpg",
@@ -7211,8 +7211,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 11,
-   "title": "Exponential Distribution: Waiting Times and Memorylessness",
-   "summary": "Learn how waiting times for random arrivals follow the exponential distribution, derived directly from the Poisson process. You'll discover why the mean and standard deviation are always equal, and explore the counterintuitive memorylessness property—the key insight that past waiting time tells you nothing about your remaining wait.",
+   "title": "Waiting Times: From Poisson Counts to Exponential Waits",
+   "summary": "Learn how waiting times for random arrivals (like helpdesk tickets) follow the exponential distribution, directly connected to the Poisson process you already know. You'll discover why the mean and standard deviation are always equal, understand the surprising memoryless property, and see where this model works in practice and where it breaks down.",
    "runs": "9:08",
    "chapters": [
     {
@@ -7250,13 +7250,13 @@ export const CHANCE: Lesson[] = [
    ],
    "tags": [
     "exponential distribution",
-    "waiting time",
     "Poisson process",
+    "continuous distributions",
+    "waiting times",
     "memorylessness",
-    "continuous probability",
-    "density functions",
+    "probability density",
     "random arrivals",
-    "conditional probability"
+    "mean and variance"
    ],
    "src": "/media/learn/chance/chance-11.mp4",
    "poster": "/media/learn/chance/chance-11.jpg",
@@ -7264,8 +7264,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 12,
-   "title": "The Normal Distribution: Shape, Formula, and How to Use It",
-   "summary": "Learn why the normal distribution is everywhere in statistics and master how to use it. This video teaches you what the formula means, how the two parameters mu and sigma control the shape, how to standardize any normal problem into the standard normal, and how to solve both forward problems (finding probabilities) and reverse problems (finding cutoffs). You'll also learn the 68-95-99.7 rule as a sanity check on your work.",
+   "title": "The Normal Distribution: Shape, Formula, and Standardization",
+   "summary": "Learn why the normal distribution is fundamental to statistics, and meet its two parameters: mu (mean) and sigma (standard deviation). Master the standardization formula to convert any normal problem to the standard normal, then solve forward problems (finding probabilities from values) and reverse problems (finding values from probabilities).",
    "runs": "8:34",
    "chapters": [
     {
@@ -7316,14 +7316,14 @@ export const CHANCE: Lesson[] = [
    "tags": [
     "normal distribution",
     "bell curve",
-    "probability",
-    "standard normal",
     "standardization",
-    "z-scores",
-    "mean and standard deviation",
+    "z-score",
     "probability tables",
-    "68-95-99.7 rule",
-    "statistics"
+    "mu and sigma",
+    "standard normal",
+    "continuous probability",
+    "statistics fundamentals",
+    "68-95-99.7 rule"
    ],
    "src": "/media/learn/chance/chance-12.mp4",
    "poster": "/media/learn/chance/chance-12.jpg",
@@ -7331,8 +7331,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 13,
-   "title": "Six Problems, One Habit: The Four-Step Density Routine",
-   "summary": "Learn the universal four-step method for solving any density problem: sketch first, set up the integral, compute, then verify against zero and one. You'll work through six realistic problems covering constant-finding, CDFs, interval probabilities, exponential and normal distributions, and the critical trap of mistaking a discrete variable for a continuous one.",
+   "title": "Six Problems, One Habit: The Four-Step Routine for Any Density Question",
+   "summary": "Learn the single four-step method that works for every density problem: sketch first, set up the integral, compute it, then check your answer. This video walks through six realistic problems involving exponential, normal, and uniform distributions, showing how to choose the right tool and catch the three most common mistakes before they happen—all by sketching before you integrate.",
    "runs": "8:04",
    "chapters": [
     {
@@ -7373,15 +7373,16 @@ export const CHANCE: Lesson[] = [
     }
    ],
    "tags": [
-    "density functions",
-    "probability",
+    "density",
     "CDF",
+    "probability",
+    "continuous distributions",
+    "exponential",
     "normal distribution",
-    "exponential distribution",
-    "integration",
-    "problem-solving",
-    "continuous vs discrete",
-    "statistics"
+    "integral",
+    "problem solving",
+    "exam prep",
+    "mistake prevention"
    ],
    "src": "/media/learn/chance/chance-13.mp4",
    "poster": "/media/learn/chance/chance-13.jpg",
@@ -7389,8 +7390,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 14,
-   "title": "Joint Distributions and Dependence Between Two Random Variables",
-   "summary": "Learn how to work with two random variables happening simultaneously using joint probability distributions. This video covers joint PMFs and densities, marginal distributions obtained by summing or integrating, independence (when the joint factors as a product of marginals), and conditional distributions. By the end you'll understand why independence is a strict condition, what mistakes to avoid when checking it, and how to compute expectations like E(XY).",
+   "title": "Joint Distributions and Independence: Two Random Variables",
+   "summary": "Learn how to work with two random variables simultaneously using joint PMFs, joint densities, and their marginal distributions. Discover the definition of independence between random variables, how to recognize it in data, and why the shortcut E(XY) = E(X)E(Y) only works when variables are truly independent. Avoid the two most common mistakes when reasoning about joint distributions.",
    "runs": "8:26",
    "chapters": [
     {
@@ -7431,14 +7432,15 @@ export const CHANCE: Lesson[] = [
     }
    ],
    "tags": [
-    "joint distributions",
-    "marginal distributions",
+    "joint distribution",
+    "joint PMF",
+    "marginal distribution",
     "independence",
     "conditional probability",
-    "joint PMF",
+    "random variables",
+    "expected value",
     "joint density",
-    "two random variables",
-    "covariance"
+    "probability"
    ],
    "src": "/media/learn/chance/chance-14.mp4",
    "poster": "/media/learn/chance/chance-14.jpg",
@@ -7446,8 +7448,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 15,
-   "title": "Covariance and Correlation: Measuring How Two Variables Move Together",
-   "summary": "Learn to quantify whether two variables move together using covariance and its scaled version, correlation. You'll compute both from a probability table, discover the key trap that catches most students (zero covariance doesn't prove independence), and understand why correlation only detects straight-line relationships and never proves causation.",
+   "title": "Covariance and Correlation: Measuring How Variables Move Together",
+   "summary": "Learn how to quantify whether two variables move together using covariance and its scaled version, correlation. You'll compute both measures from a joint probability table, discover why zero covariance doesn't guarantee independence, and understand the critical limitations of correlation—it only detects straight-line patterns and never implies causation.",
    "runs": "7:34",
    "chapters": [
     {
@@ -7487,11 +7489,11 @@ export const CHANCE: Lesson[] = [
     "covariance",
     "correlation",
     "joint probability",
-    "linear relationship",
+    "linear association",
     "expected value",
-    "standard deviation",
+    "independence",
     "causation",
-    "independence"
+    "statistics"
    ],
    "src": "/media/learn/chance/chance-15.mp4",
    "poster": "/media/learn/chance/chance-15.jpg",
@@ -7499,8 +7501,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 16,
-   "title": "Expectation and Variance of Sums: When Does Variance Add?",
-   "summary": "Learn why expectation always adds for sums of random variables, but variance only adds when covariance is zero. This video shows how to correctly compute the variance of a sum, why independence matters, and why larger teams produce steadier outcomes—using a helpdesk scheduling example to make the mathematics concrete.",
+   "title": "Variance of a Sum: Why Covariance Matters",
+   "summary": "Learn why expectation and variance behave differently when adding random variables together. Discover the critical covariance term that determines whether combined workloads become steadier or more chaotic, and see how this principle extends to averaging multiple independent observations.",
    "runs": "8:17",
    "chapters": [
     {
@@ -7541,15 +7543,16 @@ export const CHANCE: Lesson[] = [
     }
    ],
    "tags": [
-    "expectation",
     "variance",
     "covariance",
-    "sums of random variables",
-    "independence",
+    "expectation",
+    "random variables",
+    "independent variables",
+    "sum of variables",
+    "statistical distributions",
     "Poisson",
     "normal distribution",
-    "probability theory",
-    "risk analysis"
+    "variance of the mean"
    ],
    "src": "/media/learn/chance/chance-16.mp4",
    "poster": "/media/learn/chance/chance-16.jpg",
@@ -7557,8 +7560,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 17,
-   "title": "Recognition: Choosing the Right Distribution Tool",
-   "summary": "Learn to identify which probability distribution to use for any helpdesk problem by asking three key questions in order: is it discrete or continuous, what output is needed, and are multiple variables involved. Work through 15 realistic problems where you name the tool before solving, building the recognition skill that separates fast problem-solving from getting stuck.",
+   "title": "Recognition: Which Distribution Fits the Problem?",
+   "summary": "Learn to identify which probability distribution (binomial, Poisson, exponential, normal, geometric) a problem is asking for—before solving it. This skill teaches a three-question decision flow: Is the quantity discrete or continuous? What output is needed (PMF, CDF, one number, or joint table)? Are two variables involved? Through fifteen helpdesk problems with guided pauses, you'll practice spotting the shape of questions fast, recognizing tricky wording like \"how many minutes until,\" and avoiding the common mistakes people make in exams and on the job.",
    "runs": "7:00",
    "chapters": [
     {
@@ -7591,16 +7594,16 @@ export const CHANCE: Lesson[] = [
     }
    ],
    "tags": [
-    "probability distributions",
+    "distribution recognition",
     "binomial",
     "Poisson",
     "exponential",
-    "normal distribution",
-    "problem recognition",
+    "normal",
+    "geometric",
+    "probability distributions",
     "discrete vs continuous",
-    "PMF vs CDF",
-    "applied probability",
-    "decision framework"
+    "decision flow",
+    "problem-solving strategy"
    ],
    "src": "/media/learn/chance/chance-17.mp4",
    "poster": "/media/learn/chance/chance-17.jpg",
@@ -7608,8 +7611,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 18,
-   "title": "The Law of Large Numbers: Why Averages Settle",
-   "summary": "Learn why running averages converge to the true expectation—not because the past \"catches up,\" but because variance shrinks mathematically. You'll understand the mechanism behind the law of large numbers and see why the gambler's fallacy is wrong: past quiet hours don't make busy hours more likely.",
+   "title": "The Law of Large Numbers: Why Averages Converge",
+   "summary": "Learn why running averages settle toward their true expected value—not because the past \"catches up,\" but because variance mathematically shrinks. You'll understand both the weak and strong versions of the law, see exactly when you can trust an average, and learn why the gambler's fallacy is wrong.",
    "runs": "8:26",
    "chapters": [
     {
@@ -7648,14 +7651,12 @@ export const CHANCE: Lesson[] = [
    "tags": [
     "law of large numbers",
     "probability",
-    "averages",
+    "expected value",
     "variance",
-    "gambler's fallacy",
-    "expectation",
-    "statistics",
-    "running average",
     "convergence",
-    "random variables"
+    "gambler's fallacy",
+    "sample mean",
+    "statistics fundamentals"
    ],
    "src": "/media/learn/chance/chance-18.mp4",
    "poster": "/media/learn/chance/chance-18.jpg",
@@ -7663,8 +7664,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 19,
-   "title": "The Central Limit Theorem: Why the Bell Curve Appears Everywhere",
-   "summary": "This lesson explains why normal distributions appear so frequently in real data, even when individual measurements are skewed. You'll learn the central limit theorem — that sums of many independent measurements become approximately normal — and how to use it to solve practical problems like predicting whether a shift's workload will exceed available time.",
+   "title": "The Central Limit Theorem: Why Sums of Skewed Data Look Normal",
+   "summary": "This video explains why the normal distribution appears so often in real data, even when individual measurements are skewed. You'll see how adding up independent random variables—like ticket handling times—produces a bell curve shape, and learn to use this principle to solve practical problems like predicting whether a work shift will run over time.",
    "runs": "8:23",
    "chapters": [
     {
@@ -7703,14 +7704,14 @@ export const CHANCE: Lesson[] = [
    "tags": [
     "central limit theorem",
     "normal distribution",
-    "bell curve",
-    "sum of independent variables",
+    "sums of random variables",
+    "skewed distributions",
     "probability",
-    "law of large numbers",
-    "standardization",
+    "statistics",
+    "approximation",
+    "independence",
     "finite variance",
-    "statistical inference",
-    "approximation"
+    "applications"
    ],
    "src": "/media/learn/chance/chance-19.mp4",
    "poster": "/media/learn/chance/chance-19.jpg",
@@ -7718,8 +7719,8 @@ export const CHANCE: Lesson[] = [
   },
   {
    "n": 20,
-   "title": "One Page for the Exam: Distributions and Formulas Under Pressure",
-   "summary": "If you could only bring one page into an exam on probability distributions, what actually goes on it? This video builds a single reference sheet with the six key distributions (binomial, Poisson, geometric, uniform, exponential, normal), six essential formulas, and a sixty-second checklist to identify which tool to use when a problem doesn't tell you. You'll learn how to recognize distributions by their story, not their formula, and practice on five realistic problems where you have to name the tool yourself before solving.",
+   "title": "One Sheet for the Exam: Distributions, Formulas & Problem-Solving",
+   "summary": "Learn the essential content for probability exams: six distributions with their real-world stories, six key formulas, and a 60-second checklist to identify which tool to use. The video teaches you to recognize problem patterns, avoid common traps, and solve under pressure using a single reference sheet.",
    "runs": "7:23",
    "chapters": [
     {
@@ -7768,14 +7769,16 @@ export const CHANCE: Lesson[] = [
     }
    ],
    "tags": [
-    "probability distributions",
-    "exam preparation",
+    "probability",
+    "distributions",
     "binomial",
     "Poisson",
-    "normal distribution",
-    "variance and expectation",
-    "reference sheet",
-    "problem-solving strategy"
+    "exponential",
+    "normal",
+    "exam preparation",
+    "expectation",
+    "variance",
+    "problem-solving"
    ],
    "src": "/media/learn/chance/chance-20.mp4",
    "poster": "/media/learn/chance/chance-20.jpg",
@@ -7786,8 +7789,8 @@ export const CHANCE: Lesson[] = [
 export const SHIFT: Lesson[] = [
   {
    "n": 1,
-   "title": "Why Legacy Systems Can't Do Certain Things",
-   "summary": "This video identifies the fundamental structural limitation of legacy systems: they can only do what was explicitly imagined and documented before they were built. You'll see concrete examples of tasks that require reading customer intent, spotting patterns across separate events, or writing coherent narratives—work that systems simply cannot perform. After watching, you'll know whether the specific work your legacy system hands to people could now be done differently, and how to evaluate the real cost-benefit question.",
+   "title": "Why Legacy Systems Can't Do Certain Things: The Structural Limits",
+   "summary": "Learn the fundamental reason legacy systems fail at specific tasks: they can only do what was explicitly imagined and documented years before. This video identifies three core gaps—reading intent, recognizing patterns across separate events, and composing coherent narratives—that reveal where systems structurally cannot operate, and introduces a framework for deciding case-by-case whether that actually costs you something.",
    "runs": "5:58",
    "chapters": [
     {
@@ -7823,11 +7826,13 @@ export const SHIFT: Lesson[] = [
     "legacy systems",
     "system limitations",
     "requirements documentation",
-    "business process automation",
-    "when to modernize",
-    "human judgment vs systems",
-    "workflow analysis",
-    "delivery logistics"
+    "business processes",
+    "automation gaps",
+    "system design",
+    "operational challenges",
+    "digital transformation",
+    "pattern recognition",
+    "knowledge work"
    ],
    "src": "/media/learn/shift/shift-01.mp4",
    "poster": "/media/learn/shift/shift-01.jpg",
@@ -7835,8 +7840,8 @@ export const SHIFT: Lesson[] = [
   },
   {
    "n": 2,
-   "title": "Three Shifts: How Foundation Models Changed Software Architecture",
-   "summary": "This video explains the three key shifts that made large language models practical for real business software: they accept plain language instructions instead of fixed APIs, they handle multiple jobs without being specifically trained for each one, and they're now fast and cheap enough to run during live transactions instead of overnight batch jobs. You'll learn what a foundation model actually is, what critical limitations still exist, and how this fundamentally changes how modern software gets built.",
+   "title": "Three Shifts: Why Foundation Models Changed Software",
+   "summary": "Learn what fundamentally changed when foundation models entered production software. This video breaks down three core shifts—plain language interfaces, multi-task capability, and real-time feasibility—and explains why they matter for actual systems like dispatch software, while clearly identifying what didn't change: foundation models still don't know your business, aren't reliably consistent, and can confidently give wrong answers.",
    "runs": "7:22",
    "chapters": [
     {
@@ -7870,15 +7875,15 @@ export const SHIFT: Lesson[] = [
    ],
    "tags": [
     "foundation models",
-    "large language models",
     "software architecture",
     "API design",
-    "business applications",
+    "AI systems",
     "machine learning",
     "dispatch systems",
     "system design",
-    "LLM limitations",
-    "real-world deployment"
+    "instructions",
+    "reliability",
+    "production systems"
    ],
    "src": "/media/learn/shift/shift-02.mp4",
    "poster": "/media/learn/shift/shift-02.jpg",
@@ -7886,8 +7891,8 @@ export const SHIFT: Lesson[] = [
   },
   {
    "n": 3,
-   "title": "Why AI Features Fail: The Architecture That Actually Works",
-   "summary": "Learn why adding AI features to existing screens fails silently, and discover the architectural pattern that actually solves real problems. By the end, you'll know exactly where a model belongs in your system and how to avoid the expensive mistake almost everyone makes.",
+   "title": "Where AI Belongs in Your System: Beyond the Chat Box",
+   "summary": "Most teams add AI as a new feature alongside existing screens—and watch usage collapse weeks later. This video shows why bolting on an AI assistant fails quietly, and demonstrates the architectural difference that actually works: putting the model where humans are manually gluing steps together, not where everything already works fine.",
    "runs": "6:15",
    "chapters": [
     {
@@ -7921,13 +7926,14 @@ export const SHIFT: Lesson[] = [
    ],
    "tags": [
     "AI implementation",
-    "system architecture",
-    "product design",
-    "logistics automation",
-    "AI integration",
+    "systems architecture",
     "process automation",
+    "AI failure patterns",
     "dispatch systems",
-    "avoiding failure patterns"
+    "exception handling",
+    "AI integration strategy",
+    "human-in-the-loop",
+    "legacy systems"
    ],
    "src": "/media/learn/shift/shift-03.mp4",
    "poster": "/media/learn/shift/shift-03.jpg",
@@ -7935,8 +7941,8 @@ export const SHIFT: Lesson[] = [
   },
   {
    "n": 4,
-   "title": "One Feature, Five Different Jobs: How AI Changes Team Roles",
-   "summary": "When you add a machine learning model to a feature, the work fundamentally changes for architects, product owners, scrum masters, testers, and developers—each in specific, practical ways. This video walks through a real logistics example, showing how each role adapts to designing around unreliable components, writing examples instead of specs, accepting non-binary completion, and building robust fallbacks. You'll learn what questions each role needs to ask and three critical mistakes teams make when they don't adjust their process.",
+   "title": "One Feature, Five Different Jobs: How ML Changes Your Team",
+   "summary": "When you add machine learning to a feature, the work changes fundamentally for every role on the team—architect, product owner, scrum master, tester, and developer. This video walks through a real logistics example (dispatch suggestions) to show exactly how each job shifts, what questions each role now asks differently, and the three common mistakes teams make when building ML features.",
    "runs": "7:32",
    "chapters": [
     {
@@ -7976,13 +7982,11 @@ export const SHIFT: Lesson[] = [
     "machine learning",
     "software architecture",
     "product management",
-    "agile",
-    "testing",
-    "AI",
     "team roles",
-    "ML systems",
-    "development process",
-    "requirements"
+    "ML engineering",
+    "testing",
+    "agile development",
+    "ML deployment"
    ],
    "src": "/media/learn/shift/shift-04.mp4",
    "poster": "/media/learn/shift/shift-04.jpg",
@@ -7990,8 +7994,8 @@ export const SHIFT: Lesson[] = [
   },
   {
    "n": 5,
-   "title": "AI and Code: The Honest Speed Numbers",
-   "summary": "This video cuts through the hype about AI-assisted coding by examining where it actually saves time and where it doesn't. You'll learn which tasks genuinely speed up (and by how much), why project timelines rarely shrink as much as coding speed improvements suggest, and why review becomes the real bottleneck—complete with a real-world dispatch rewrite case study.",
+   "title": "Where AI Actually Makes Code Faster—and Where It Doesn't",
+   "summary": "This video reveals which parts of software development actually get faster with AI models—and which bottlenecks remain untouched. You'll learn why a 2-5x speedup in writing code doesn't translate to project-wide acceleration, and how to spot the honest limitations behind the hype.",
    "runs": "8:01",
    "chapters": [
     {
@@ -8028,14 +8032,14 @@ export const SHIFT: Lesson[] = [
     }
    ],
    "tags": [
-    "AI coding",
-    "productivity",
-    "software development",
-    "bottlenecks",
-    "code review",
-    "realistic metrics",
+    "AI code generation",
+    "software development efficiency",
+    "developer productivity",
     "well-specified work",
-    "project management"
+    "project bottlenecks",
+    "code review",
+    "realistic expectations",
+    "technical leadership"
    ],
    "src": "/media/learn/shift/shift-05.mp4",
    "poster": "/media/learn/shift/shift-05.jpg",
@@ -8043,8 +8047,8 @@ export const SHIFT: Lesson[] = [
   },
   {
    "n": 6,
-   "title": "Staffing Probabilistic Systems: Why Your Estimates Will Be Wrong",
-   "summary": "This video reveals why machine learning and probabilistic systems staffing and scheduling fail in predictable ways—factors of 2-3x off, not just minor overruns. You'll learn the three roles that must be reshaped (goal specifier, evaluation set owner, reliability owner), why demos create a dangerous illusion of progress, and why these systems never truly finish once deployed.",
+   "title": "Staffing and Planning ML Systems: The Work That Nobody Expects",
+   "summary": "Learn how to staff and estimate probabilistic ML systems like dispatch optimization differently than traditional software projects. This video teaches the three core roles that emerge (goal specifier, evaluation owner, reliability monitor), why demos are deceptive (the last 10% takes as long as the first 90%), and how ongoing model and provider drift creates permanent maintenance costs that traditional estimates miss.",
    "runs": "9:15",
    "chapters": [
     {
@@ -8086,15 +8090,15 @@ export const SHIFT: Lesson[] = [
    ],
    "tags": [
     "machine learning",
-    "project management",
-    "team staffing",
-    "estimation",
-    "probabilistic systems",
-    "AI reliability",
-    "software maintenance",
     "team structure",
-    "delivery planning",
-    "risk management"
+    "project estimation",
+    "probabilistic systems",
+    "logistics",
+    "ML ops",
+    "technical planning",
+    "software engineering",
+    "AI systems",
+    "reliability"
    ],
    "src": "/media/learn/shift/shift-06.mp4",
    "poster": "/media/learn/shift/shift-06.jpg",
@@ -8102,8 +8106,8 @@ export const SHIFT: Lesson[] = [
   },
   {
    "n": 7,
-   "title": "The Smallest Honest Unit: What a Model Call Actually Is",
-   "summary": "Learn what happens when code actually calls a model: plain text goes in, text comes out, with no memory between calls and no guaranteed consistency. This video covers the five-part component structure (input, prompt, model, validate, fallback), latency constraints that determine where you can use models, and the engineering discipline of deciding your fallback plan before shipping.",
+   "title": "Model Calls: The Five Boxes of a Real Implementation",
+   "summary": "Learn what actually happens when code calls a model: text in, text out, no memory, sometimes wrong. This video breaks down the five components (input, prompt, model, validate, fallback) and shows you the mistakes teams make—like forgetting to validate output, assuming consistent results, or discovering your fallback plan in production.",
    "runs": "8:00",
    "chapters": [
     {
@@ -8145,15 +8149,15 @@ export const SHIFT: Lesson[] = [
    ],
    "tags": [
     "model calls",
-    "API design",
-    "machine learning engineering",
-    "system design",
-    "error handling",
+    "prompt engineering",
     "validation",
+    "temperature",
     "latency",
-    "software architecture",
-    "production systems",
-    "fallback strategies"
+    "fallback planning",
+    "exception handling",
+    "LLM integration",
+    "software engineering",
+    "production systems"
    ],
    "src": "/media/learn/shift/shift-07.mp4",
    "poster": "/media/learn/shift/shift-07.jpg",
@@ -8161,8 +8165,8 @@ export const SHIFT: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "What Is an Agent? A Plain Definition",
-   "summary": "This video gives a concrete, testable definition of an AI agent: a model in a loop with tools that works toward a goal, decides what to do next based on results, and repeats until finished. You'll learn how agents differ from single model calls, why they're risky, and what engineering controls (step limits, cost ceilings, safe tools, human approval) are essential to keep them from running away—plus when to actually use one instead of a fixed pipeline.",
+   "title": "What an Agent Actually Is (And When to Build One)",
+   "summary": "Learn the precise, operational definition of an AI agent: a model in a loop with tools that sets its own next steps based on what it finds, unlike a single fixed function. You'll understand the real failure modes agents face—getting stuck, repeating work, building on bad early guesses—and the engineering controls that keep them safe. By the end you'll be able to look at any system and say whether it's truly an agent, and know when to build one instead of a simple fixed pipeline.",
    "runs": "8:04",
    "chapters": [
     {
@@ -8203,16 +8207,16 @@ export const SHIFT: Lesson[] = [
     }
    ],
    "tags": [
-    "AI agents",
-    "agent architecture",
-    "autonomous systems",
-    "LLM loops",
-    "agentic AI",
+    "agents",
+    "AI definitions",
+    "agentic loops",
+    "model in loop",
+    "unbounded steps",
     "tool use",
-    "prompt engineering",
-    "ML engineering",
-    "risk management",
-    "decision-making loops"
+    "engineering controls",
+    "when to use agents",
+    "agent risks",
+    "API patterns"
    ],
    "src": "/media/learn/shift/shift-08.mp4",
    "poster": "/media/learn/shift/shift-08.jpg",
@@ -8220,8 +8224,8 @@ export const SHIFT: Lesson[] = [
   },
   {
    "n": 9,
-   "title": "The Glue Problem: Why AI Needs a Standard Way to Talk to Systems",
-   "summary": "Learn why every AI framework rewriting integration code is wasteful, and how a common protocol lets any model work with the same tools without custom rewiring. You'll understand the real cost-benefit trade-off: standardizing how systems describe themselves solves reusability, but it creates a new problem teams must solve—deciding what a model should actually be allowed to call.",
+   "title": "The Glue Problem: Why Tool Standards Matter for AI Agents",
+   "summary": "Learn why connecting AI agents to real systems—dispatch boards, databases, tools—requires more than ad-hoc integration work, and how a common protocol for describing what tools offer can save teams from rebuilding connections every time they change frameworks. This lesson shows the real value of standardization and the critical safety decisions that must still remain with the company, not the protocol.",
    "runs": "7:32",
    "chapters": [
     {
@@ -8259,13 +8263,15 @@ export const SHIFT: Lesson[] = [
    ],
    "tags": [
     "AI agents",
-    "model integration",
-    "MCP protocol",
-    "tool calling",
-    "system architecture",
-    "framework agnostic",
-    "safety boundaries",
-    "technical leadership"
+    "tool integration",
+    "MCP",
+    "model frameworks",
+    "system design",
+    "API standardization",
+    "safety and constraints",
+    "software architecture",
+    "reusable infrastructure",
+    "logistics automation"
    ],
    "src": "/media/learn/shift/shift-09.mp4",
    "poster": "/media/learn/shift/shift-09.jpg",
@@ -8273,8 +8279,8 @@ export const SHIFT: Lesson[] = [
   },
   {
    "n": 10,
-   "title": "From RAG to GraphRAG: Grounding LLMs in Your Business",
-   "summary": "Learn why foundation models hallucinate about your specific business data and how two generations of retrieval systems solve this problem differently. This video explains semantic search and knowledge graphs, then shows why GraphRAG's unified approach of walking entity relationships—rather than searching disconnected document chunks—answers multi-hop business questions accurately.",
+   "title": "From RAG to GraphRAG: Grounding LLMs in Your Business Data",
+   "summary": "Learn why foundation models hallucinate about your company's specific data and how to ground them with facts at request time. This video contrasts two generations of retrieval systems—semantic search over documents (RAG) versus traversing a knowledge graph (GraphRAG)—and explains how graph databases now handle both vector search and relationship traversal in a single unified system.",
    "runs": "8:19",
    "chapters": [
     {
@@ -8314,13 +8320,13 @@ export const SHIFT: Lesson[] = [
     "RAG",
     "GraphRAG",
     "LLM",
+    "retrieval-augmented generation",
     "knowledge graph",
     "semantic search",
-    "retrieval-augmented generation",
+    "vector embeddings",
     "Neo4j",
-    "vector database",
-    "business intelligence",
-    "LLM grounding"
+    "foundation models",
+    "enterprise AI"
    ],
    "src": "/media/learn/shift/shift-10.mp4",
    "poster": "/media/learn/shift/shift-10.jpg",
@@ -8329,7 +8335,7 @@ export const SHIFT: Lesson[] = [
   {
    "n": 11,
    "title": "Three Controls: Guardrails, Routing, and Context Engineering",
-   "summary": "Learn the three production controls that prevent bad output from reaching customers and keep AI costs under control: guardrails that block unsafe input and output, routing that matches request difficulty to model cost, and context engineering that gives models only the information they need. After watching, you'll understand how mature companies build safety and cost discipline into AI systems using practical, incident-driven rules rather than attempting to predict every failure in advance.",
+   "summary": "Learn the three production safety systems that prevent bad outputs, control costs, and optimize model usage: guardrails that block harmful inputs and outputs, routing that sends easy tasks to cheap models, and context engineering that gives models only the information they need. After watching, you'll understand how these controls work together to keep AI systems safe and within budget when serving real customers.",
    "runs": "8:06",
    "chapters": [
     {
@@ -8374,11 +8380,12 @@ export const SHIFT: Lesson[] = [
     "guardrails",
     "routing",
     "context engineering",
-    "LLM evaluation",
+    "cost optimization",
     "production systems",
-    "cost control",
-    "prompt engineering",
-    "model selection"
+    "model evaluation",
+    "LLM deployment",
+    "system controls",
+    "AI infrastructure"
    ],
    "src": "/media/learn/shift/shift-11.mp4",
    "poster": "/media/learn/shift/shift-11.jpg",
@@ -8386,8 +8393,8 @@ export const SHIFT: Lesson[] = [
   },
   {
    "n": 12,
-   "title": "One Word, Four Jobs: Splitting \"Prompt Engineering\" Apart",
-   "summary": "Learn why \"prompt engineering\" is actually four separate disciplines—prompt, context, loop, and harness engineering—each solving different problems in production AI systems. By the end you'll know where teams actually waste budget, why the smallest job gets the most attention, and which part of the pipeline silently degrades in production when neglected.",
+   "title": "One Word, Four Jobs: What \"Prompt Engineering\" Really Means",
+   "summary": "Most teams use \"prompt engineering\" to mean everything they do with an LLM, but it's actually four distinct disciplines: prompt engineering (wording), context engineering (data selection), loop engineering (retries), and harness engineering (production safety). Learn what each does, why teams waste budget on the wrong one, and which layer actually deserves your investment first.",
    "runs": "6:37",
    "chapters": [
     {
@@ -8428,12 +8435,10 @@ export const SHIFT: Lesson[] = [
     "context engineering",
     "loop engineering",
     "harness engineering",
-    "LLM production",
-    "AI system design",
-    "validation and retries",
-    "observability",
-    "exception handling",
-    "AI workflow"
+    "LLM architecture",
+    "production systems",
+    "validation",
+    "LLM pipeline"
    ],
    "src": "/media/learn/shift/shift-12.mp4",
    "poster": "/media/learn/shift/shift-12.jpg",
@@ -8441,8 +8446,8 @@ export const SHIFT: Lesson[] = [
   },
   {
    "n": 13,
-   "title": "Four Types of Engineering: Prompt, Context, Loop, Harness",
-   "summary": "Learn the four distinct engineering disciplines that get confused in job postings: prompt engineering (wording instructions), context engineering (choosing what data the model sees), loop engineering (handling retries), and harness engineering (production safety systems). After watching, you'll understand which piece your team is probably underinvesting in and the correct order to build them.",
+   "title": "Four Engineering Disciplines: Prompt, Context, Loop, Harness",
+   "summary": "Four terms—prompt engineering, context engineering, loop engineering, and harness engineering—sound interchangeable but are actually four distinct and differently-priced pieces of work that teams often confuse. Learn what each one does, why the order you build them matters, and which one most teams neglect until production breaks. After watching, you'll know which discipline to start with and where most teams waste time.",
    "runs": "6:38",
    "chapters": [
     {
@@ -8479,10 +8484,12 @@ export const SHIFT: Lesson[] = [
     "context engineering",
     "loop engineering",
     "harness engineering",
-    "LLM systems",
-    "AI in production",
-    "dispatch systems",
-    "engineering priorities"
+    "LLM production",
+    "AI systems architecture",
+    "model deployment",
+    "engineering discipline",
+    "system design",
+    "dispatch systems"
    ],
    "src": "/media/learn/shift/shift-13.mp4",
    "poster": "/media/learn/shift/shift-13.jpg",
@@ -8490,8 +8497,8 @@ export const SHIFT: Lesson[] = [
   },
   {
    "n": 14,
-   "title": "When Not to Use a Language Model: The One Lesson That Saves a Year",
-   "summary": "This video teaches you when to use classical machine learning instead of language models—a decision that can save months of wasted work. You'll learn to match the right tool to your problem: regression and classification for structured data, language models for messy unstructured input, and fine-tuning only for format consistency, not for storing facts (use retrieval instead).",
+   "title": "When NOT to Use a Language Model",
+   "summary": "Learn when classical machine learning outperforms language models and when language models actually earn their place. This video teaches you to match the right tool to your data—regression and classification for structured inputs, language models for unstructured text or tasks requiring external knowledge, and fine-tuning for format consistency rather than factual updates.",
    "runs": "6:25",
    "chapters": [
     {
@@ -8525,15 +8532,15 @@ export const SHIFT: Lesson[] = [
    ],
    "tags": [
     "language models",
-    "machine learning",
     "regression",
     "classification",
-    "when not to use AI",
-    "structured data",
+    "machine learning",
     "fine-tuning",
     "retrieval",
-    "practical AI",
-    "model selection"
+    "structured data",
+    "when to use LLMs",
+    "model selection",
+    "practical AI"
    ],
    "src": "/media/learn/shift/shift-14.mp4",
    "poster": "/media/learn/shift/shift-14.jpg",
@@ -8541,8 +8548,8 @@ export const SHIFT: Lesson[] = [
   },
   {
    "n": 15,
-   "title": "The Real Cost of AI in Production: Building Your Cost Model",
-   "summary": "Learn how to calculate and control the true cost of running AI models in production by breaking it into measurable pieces: tokens, steps, retries, evaluation, and human review. You'll discover the four levers that actually reduce costs and how to instrument your system from day one so you can forecast expenses and optimize where it matters, turning cost overruns from \"what happened\" into \"what we controlled.\"",
+   "title": "The Hidden Cost of AI: Building a Real Cost Model for Production Systems",
+   "summary": "Learn how AI system costs actually accumulate in production—from tokens-in and tokens-out to steps, retries, evaluation runs, and human review. You'll discover the four levers that move costs most, why catching failures early versus late can triple your bill, and exactly what metrics to instrument from day one so you can forecast costs and optimize your system instead of guessing.",
    "runs": "7:27",
    "chapters": [
     {
@@ -8583,16 +8590,14 @@ export const SHIFT: Lesson[] = [
     }
    ],
    "tags": [
-    "AI cost modeling",
-    "production optimization",
-    "token accounting",
-    "cost per transaction",
-    "model evaluation",
-    "engineering economics",
-    "system instrumentation",
-    "cost forecasting",
-    "agent pipelines",
-    "failure detection"
+    "AI costs",
+    "cost modeling",
+    "production systems",
+    "tokens",
+    "optimization",
+    "evaluation",
+    "metrics",
+    "business operations"
    ],
    "src": "/media/learn/shift/shift-15.mp4",
    "poster": "/media/learn/shift/shift-15.jpg",
@@ -8600,8 +8605,8 @@ export const SHIFT: Lesson[] = [
   },
   {
    "n": 16,
-   "title": "It Doesn't Fall Over: Failures in Live AI Systems",
-   "summary": "Learn why live AI systems don't crash—they produce plausible, confident wrong answers that slip silently past all monitoring. This video teaches the four failure modes (confident wrong answers, silent degradation, stalls, and compounding errors) and how to build attribution and replay-ability into every consequential decision through proper logging and policy design.",
+   "title": "It Doesn't Fall Over: Failure Modes in Live LLM Systems",
+   "summary": "When AI systems fail in production, they don't crash—they quietly produce plausible but wrong answers. Learn the four failure modes that go undetected (confident wrong answers, silent degradation, stalls, and compounding errors) and how to design systems for full accountability through logging, replayability, and strict policies about what the system can do alone versus what requires human approval.",
    "runs": "7:31",
    "chapters": [
     {
@@ -8642,16 +8647,16 @@ export const SHIFT: Lesson[] = [
     }
    ],
    "tags": [
-    "AI systems",
-    "failure modes",
-    "production AI",
-    "logging",
-    "accountability",
-    "silent failures",
-    "monitoring",
-    "decision logging",
-    "AI safety",
-    "system design"
+    "LLM systems",
+    "production failures",
+    "AI accountability",
+    "logging and monitoring",
+    "system design",
+    "error handling",
+    "human oversight",
+    "logistics AI",
+    "guardrails",
+    "deployment safety"
    ],
    "src": "/media/learn/shift/shift-16.mp4",
    "poster": "/media/learn/shift/shift-16.jpg",
@@ -8659,8 +8664,8 @@ export const SHIFT: Lesson[] = [
   },
   {
    "n": 17,
-   "title": "Deploying AI Without Rewriting Legacy Systems",
-   "summary": "Learn how to integrate AI models into existing business-critical systems without rebuilding them. This video teaches the \"in-front\" architecture pattern: placing your model before the legacy system to handle messy input and act through existing interfaces, then rolling out capability gradually through shadow mode and human-in-the-loop stages. You'll understand why starting with high-volume, forgiving processes like exception triage beats flashy high-risk ones, and how to prove value safely before expanding autonomy.",
+   "title": "Migrating to AI: The Front-Door Pattern Without System Rewrites",
+   "summary": "Learn how to deploy an AI model into an existing system without rebuilding it—by placing the model in front, not inside. This video teaches the proven migration strategy: start with high-volume, low-risk processes in shadow mode, use existing user interfaces and controls, and expand only after earning evidence of success.",
    "runs": "5:49",
    "chapters": [
     {
@@ -8693,16 +8698,14 @@ export const SHIFT: Lesson[] = [
     }
    ],
    "tags": [
-    "AI deployment",
-    "legacy systems",
-    "system architecture",
-    "shadow mode",
-    "human-in-the-loop",
-    "logistics",
     "AI migration",
-    "system integration",
-    "risk management",
-    "process automation"
+    "legacy systems",
+    "model deployment",
+    "shadow mode",
+    "production AI",
+    "dispatch systems",
+    "human-in-the-loop",
+    "system integration"
    ],
    "src": "/media/learn/shift/shift-17.mp4",
    "poster": "/media/learn/shift/shift-17.jpg",
@@ -8710,8 +8713,8 @@ export const SHIFT: Lesson[] = [
   },
   {
    "n": 18,
-   "title": "What Actually Changes for Backend Developers Using AI Models",
-   "summary": "Learn what skills transfer from traditional backend development to AI-augmented systems and what genuinely new capabilities you need to build. This lesson separates the timeless engineering principles that still matter from the specific new competencies like thinking in distributions, owning evaluation sets, and designing loops for quiet failures.",
+   "title": "What Changes and What Doesn't When Building With Models",
+   "summary": "This lesson identifies which of your existing engineering skills transfer directly to building systems with AI models—and which are genuinely new. You'll learn what to actually focus on learning (evaluation sets and loop design, not model internals) and how to answer the core question: if you're already a good backend developer, what specifically changes about the work?",
    "runs": "8:39",
    "chapters": [
     {
@@ -8756,16 +8759,16 @@ export const SHIFT: Lesson[] = [
     }
    ],
    "tags": [
-    "AI systems",
-    "backend development",
+    "model systems",
+    "skill transfer",
     "evaluation sets",
-    "model reliability",
-    "system design",
-    "testing distributions",
-    "engineering skills",
-    "AI guardrails",
-    "cost management",
-    "model deployment"
+    "systems thinking",
+    "AI engineering",
+    "backend development",
+    "unreliable components",
+    "loop design",
+    "learning path",
+    "architecture decisions"
    ],
    "src": "/media/learn/shift/shift-18.mp4",
    "poster": "/media/learn/shift/shift-18.jpg",
@@ -8773,8 +8776,8 @@ export const SHIFT: Lesson[] = [
   },
   {
    "n": 19,
-   "title": "The Six Questions Before You Build a Probabilistic System",
-   "summary": "Learn the six ordered questions that determine whether your company should actually build a machine learning system—and why the answer is often \"not yet.\" This framework teaches you to evaluate the real cost of the work that software can't currently handle, the risk of mistakes reaching customers, and the operational requirements for success.",
+   "title": "The Six Questions for Deciding Whether Your Company Needs ML",
+   "summary": "Most companies decide backwards—starting with the technology and hunting for problems. This video teaches the six ordered questions that let you decide honestly whether probabilistic systems make sense for your business: what work can't software handle and what does it cost, where does a wrong answer land, do you have real data, can you afford the per-use costs, do you have someone to own it, and will leadership stick through the unglamorous months before payoff.",
    "runs": "6:35",
    "chapters": [
     {
@@ -8823,12 +8826,12 @@ export const SHIFT: Lesson[] = [
     "decision framework",
     "business strategy",
     "probabilistic systems",
-    "AI implementation",
+    "AI adoption",
     "cost analysis",
     "data requirements",
+    "implementation planning",
     "risk management",
-    "operational planning",
-    "technology adoption"
+    "technology ROI"
    ],
    "src": "/media/learn/shift/shift-19.mp4",
    "poster": "/media/learn/shift/shift-19.jpg",
@@ -8839,8 +8842,8 @@ export const SHIFT: Lesson[] = [
 export const MODELLING: Lesson[] = [
   {
    "n": 1,
-   "title": "Graph Schema Design: Build From Questions, Not Entities",
-   "summary": "Learn the foundational discipline for designing graph schemas that actually perform. This video teaches you to start with the questions your application needs answered, write them as plain sentences, describe the traversals in words, and only then decide which nouns become nodes—avoiding the relational habit of modeling every entity as a separate node and minimizing hop counts across your queries.",
+   "title": "Graph Modeling: Start With Questions, Not Entities",
+   "summary": "Learn how to design Neo4j graphs by starting with the questions your product needs answered, rather than modeling relational schemas as circles. You'll discover how to translate plain-English questions into node and relationship shapes, and why question-driven design dramatically reduces query hop counts compared to entity-first approaches.",
    "runs": "9:30",
    "chapters": [
     {
@@ -8881,16 +8884,16 @@ export const MODELLING: Lesson[] = [
     }
    ],
    "tags": [
-    "graph schema design",
-    "cypher",
-    "neo4j",
-    "data modeling",
+    "graph modeling",
+    "Neo4j",
+    "Cypher",
+    "schema design",
     "query optimization",
-    "graph traversal",
-    "database design",
-    "node relationships",
+    "relational thinking",
+    "graph database",
+    "data modeling",
     "hop count",
-    "relational to graph"
+    "query performance"
    ],
    "src": "/media/learn/modelling/modelling-01.mp4",
    "poster": "/media/learn/modelling/modelling-01.jpg",
@@ -8898,8 +8901,8 @@ export const MODELLING: Lesson[] = [
   },
   {
    "n": 2,
-   "title": "One Fact, Three Shapes: Modelling Facts in Graph Databases",
-   "summary": "Learn how to model a single fact in three fundamentally different ways within a graph database: as a property, as a relationship to a shared node, or as a node with its own relationships. This video teaches you the decision rules for choosing the right shape based on the questions you'll ask, so you can avoid building either a graph of worthless trivia or a document store pretending to be a graph.",
+   "title": "One Fact, Three Shapes: Modeling Data in Cypher",
+   "summary": "Learn how to model a single fact in three fundamentally different ways in Cypher graph databases — as a property, as a relationship to a shared node, or as a node with its own relationships. You'll discover the decision rules that determine which shape to use (property for single-thing facts, relationships for connections without identity, nodes for \"who else\" questions) and understand how the questions you'll ask, not the facts themselves, decide the shape.",
    "runs": "7:26",
    "chapters": [
     {
@@ -8940,15 +8943,14 @@ export const MODELLING: Lesson[] = [
     }
    ],
    "tags": [
-    "graph database",
     "Cypher",
-    "data modelling",
+    "graph database",
+    "data modeling",
     "schema design",
-    "properties",
+    "Neo4j",
+    "properties vs nodes",
     "relationships",
-    "nodes",
-    "query optimization",
-    "database patterns"
+    "query patterns"
    ],
    "src": "/media/learn/modelling/modelling-02.mp4",
    "poster": "/media/learn/modelling/modelling-02.jpg",
@@ -8956,8 +8958,8 @@ export const MODELLING: Lesson[] = [
   },
   {
    "n": 3,
-   "title": "When to Use Labels in Neo4j: The Right Kind of Thing",
-   "summary": "Learn when labels are the right choice in Neo4j and when they cause problems. This lesson covers the core rule—a label answers \"what kind of thing is this\"—and walks through three common misuses: status, values, and tenant isolation. You'll see why each pattern breaks and what to use instead, plus how to handle label hierarchies.",
+   "title": "When to Use Labels in Neo4j",
+   "summary": "Labels identify what *kind* of thing a node is — but they're often misused for status, values, or tenant isolation, each of which creates problems. Learn which uses of labels are safe, which are traps, and when to model a taxonomy as nodes instead.",
    "runs": "6:31",
    "chapters": [
     {
@@ -8996,12 +8998,13 @@ export const MODELLING: Lesson[] = [
    "tags": [
     "Neo4j",
     "labels",
-    "data modeling",
-    "Cypher",
-    "best practices",
-    "schema design",
     "graph database",
-    "properties vs labels"
+    "schema design",
+    "Cypher",
+    "node modeling",
+    "best practices",
+    "data modeling",
+    "database design"
    ],
    "src": "/media/learn/modelling/modelling-03.mp4",
    "poster": "/media/learn/modelling/modelling-03.jpg",
@@ -9010,7 +9013,7 @@ export const MODELLING: Lesson[] = [
   {
    "n": 4,
    "title": "Relationship Direction and Granularity in Neo4j",
-   "summary": "Learn why every Neo4j relationship must have a direction—and why that direction matters for accuracy, not just query convenience. This video teaches you how to choose between storing a single relationship type with properties versus splitting into multiple types, and when each approach makes your queries efficient and your schema readable.",
+   "summary": "Learn how to design relationships correctly in Neo4j by choosing direction based on real-world facts rather than query patterns, and by deciding when to split relationship types instead of using properties. You'll understand why direction matters despite equal traversal costs, how splitting types optimizes performance on dense nodes, and where to draw the line before your schema becomes unmaintainable.",
    "runs": "6:56",
    "chapters": [
     {
@@ -9048,15 +9051,13 @@ export const MODELLING: Lesson[] = [
    ],
    "tags": [
     "Neo4j",
-    "relationships",
-    "direction",
-    "schema design",
-    "granularity",
-    "relationship types",
     "graph database",
-    "Cypher",
+    "relationships",
+    "schema design",
+    "direction",
+    "relationship types",
     "properties",
-    "query performance"
+    "query optimization"
    ],
    "src": "/media/learn/modelling/modelling-04.mp4",
    "poster": "/media/learn/modelling/modelling-04.jpg",
@@ -9065,7 +9066,7 @@ export const MODELLING: Lesson[] = [
   {
    "n": 5,
    "title": "Reified Relationships: When to Promote a Relationship to a Node",
-   "summary": "Learn when a relationship between two nodes needs to become its own node—the key pattern is when a fact involves multiple properties, needs to connect to other things, or when the same pair has multiple instances. This video teaches the three signals that indicate when to reify a relationship and shows how this pattern appears throughout real-world data models like course enrollments and job applications.",
+   "summary": "Learn when a relationship between two nodes actually belongs on a third node instead, using the three signals that tell you it's time to reify. This video teaches you to recognize accumulating properties, the need for further connections, and repeated pairs—and shows you how Application, CourseOffering, and Enrollment nodes apply the same pattern across a graph.",
    "runs": "6:53",
    "chapters": [
     {
@@ -9106,16 +9107,16 @@ export const MODELLING: Lesson[] = [
     }
    ],
    "tags": [
-    "graph database",
+    "graph databases",
     "data modeling",
     "relationships",
-    "reification",
-    "graph patterns",
-    "database design",
-    "entities",
-    "properties",
+    "reified relationships",
     "many-to-many",
-    "join tables"
+    "database design",
+    "nodes",
+    "properties",
+    "schema design",
+    "normalization"
    ],
    "src": "/media/learn/modelling/modelling-05.mp4",
    "poster": "/media/learn/modelling/modelling-05.jpg",
@@ -9123,8 +9124,8 @@ export const MODELLING: Lesson[] = [
   },
   {
    "n": 6,
-   "title": "Modeling Time in Graph Databases: Three Patterns",
-   "summary": "Learn why overwriting historical data breaks your ability to answer \"how did this change over time\" questions, and explore three concrete patterns for storing temporal facts in graphs: validity windows on relationships, version nodes chained together, and building a time tree from calendar nodes. By the end, you'll know which pattern fits your query patterns and the three rules that keep your temporal model honest.",
+   "title": "Modeling Time in Graphs: Three Patterns for Historical Data",
+   "summary": "Learn three concrete patterns for storing historical data in graph databases without losing information to overwrites. You'll compare validity windows on relationships, version nodes in a linked list, and time trees as structured calendars—then apply each to real questions so you can choose the right pattern for your model's query needs.",
    "runs": "7:48",
    "chapters": [
     {
@@ -9167,14 +9168,14 @@ export const MODELLING: Lesson[] = [
    "tags": [
     "graph databases",
     "temporal modeling",
-    "time",
-    "versioning",
-    "historical data",
-    "property graphs",
-    "data modeling",
+    "data history",
+    "neo4j",
+    "schema design",
+    "time series",
     "bitemporality",
-    "graph patterns",
-    "Neo4j"
+    "validity windows",
+    "version control",
+    "data integrity"
    ],
    "src": "/media/learn/modelling/modelling-06.mp4",
    "poster": "/media/learn/modelling/modelling-06.jpg",
@@ -9182,8 +9183,8 @@ export const MODELLING: Lesson[] = [
   },
   {
    "n": 7,
-   "title": "Database Constraints: Enforcing Data Integrity in Neo4j",
-   "summary": "Learn how to prevent bad data from entering your Neo4j database by creating constraints that enforce your data model decisions. This lesson covers uniqueness constraints, node keys, existence constraints, and property type constraints—each designed to catch different kinds of data errors before they silently corrupt your graph. After watching, you'll know what kinds of constraints to use when, what they cannot enforce, and the critical insight that uniqueness constraints also create performance-boosting indexes.",
+   "title": "Constraints: Enforcing Your Graph Model",
+   "summary": "Learn the five types of constraints that keep your graph database honest: uniqueness, node keys, existence, and property type constraints. You'll discover how to prevent bad data from entering the database in the first place, protect your model decisions against drift, and gain hidden performance benefits through automatic indexing—while understanding exactly what constraints cannot do.",
    "runs": "9:39",
    "chapters": [
     {
@@ -9224,16 +9225,16 @@ export const MODELLING: Lesson[] = [
     }
    ],
    "tags": [
-    "Neo4j",
     "constraints",
-    "data integrity",
     "uniqueness",
     "node key",
-    "existence constraint",
-    "property type",
-    "database design",
+    "data integrity",
+    "Neo4j",
+    "graph database",
+    "schema",
     "validation",
-    "indexes"
+    "indexing",
+    "property type"
    ],
    "src": "/media/learn/modelling/modelling-07.mp4",
    "poster": "/media/learn/modelling/modelling-07.jpg",
@@ -9241,8 +9242,8 @@ export const MODELLING: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Indexes: When and What Kind to Build",
-   "summary": "Learn why indexes are a modeling decision made on day one, not a performance fix added later. This lesson covers range indexes for equality and comparison, composite indexes for multi-property lookups, text indexes for partial string matching, full-text indexes for ranked search, and relationship indexes—then shows how to measure whether each index actually serves a real question from your domain.",
+   "title": "Indexes: The Modelling Decision, Not the Performance Fix",
+   "summary": "Learn which index type serves each kind of question—range for equality and comparison, composite for paired properties, text for partial string matches, full-text for ranked search, and relationship indexes for questions anchored on connection properties. You'll see how to profile queries to measure the actual cost in db hits, and understand why every index you create slows writes and uses space, so each one must map back to a question you actually ask.",
    "runs": "9:36",
    "chapters": [
     {
@@ -9288,15 +9289,15 @@ export const MODELLING: Lesson[] = [
    ],
    "tags": [
     "indexes",
-    "database design",
+    "graph databases",
     "neo4j",
+    "query optimization",
     "range index",
     "composite index",
     "text index",
-    "full-text index",
-    "query optimization",
+    "full-text search",
     "database modeling",
-    "property lookup"
+    "query profiling"
    ],
    "src": "/media/learn/modelling/modelling-08.mp4",
    "poster": "/media/learn/modelling/modelling-08.jpg",
@@ -9304,8 +9305,8 @@ export const MODELLING: Lesson[] = [
   },
   {
    "n": 9,
-   "title": "Embeddings in Neo4j: Vector Search on the Graph",
-   "summary": "Learn how embeddings work in Neo4j to find meaning-based similarity rather than just following relationships. You'll understand how to structure embedding data as node properties, choose between similarity metrics, declare vector indexes, and combine vector search results with graph traversal to answer complex questions that neither vectors nor graphs alone can solve.",
+   "title": "Embeddings in Neo4j: Semantic Search on Graphs",
+   "summary": "Learn how to use embeddings—lists of numbers from machine learning models—to find similar meaning in graph data without following relationships. This video covers embedding storage, vector indexes, similarity metrics, and how to combine vector search results with graph traversal to answer complex queries that require both semantic matching and graph structure.",
    "runs": "8:28",
    "chapters": [
     {
@@ -9349,13 +9350,13 @@ export const MODELLING: Lesson[] = [
     "embeddings",
     "vector search",
     "Neo4j",
+    "semantic similarity",
     "cosine similarity",
-    "Euclidean distance",
-    "semantic search",
-    "vector indexes",
     "graph databases",
-    "similarity matching",
-    "node properties"
+    "machine learning",
+    "vector indexes",
+    "properties",
+    "data modeling"
    ],
    "src": "/media/learn/modelling/modelling-09.mp4",
    "poster": "/media/learn/modelling/modelling-09.jpg",
@@ -9363,8 +9364,8 @@ export const MODELLING: Lesson[] = [
   },
   {
    "n": 10,
-   "title": "Refactoring a Graph at Scale: From Properties to Nodes",
-   "summary": "Learn the five-step method for safely refactoring a live graph database when a property needs to become a node—adding, migrating, and verifying data without downtime or data loss. You'll understand why each step matters, how to batch changes across millions of rows, and how to apply this same pattern to three other common refactors.",
+   "title": "Refactoring a Live Graph: Properties to Nodes at Scale",
+   "summary": "Learn how to safely transform a graph property into a node and relationship while millions of users are actively using the system. This lesson teaches the five-step migration pattern—add alongside the old shape, batch changes, verify counts, run both in parallel, then remove—that keeps the database live and reversible at every step.",
    "runs": "8:07",
    "chapters": [
     {
@@ -9409,16 +9410,16 @@ export const MODELLING: Lesson[] = [
     }
    ],
    "tags": [
-    "graph database",
+    "graph refactoring",
     "schema migration",
-    "cypher",
+    "live database",
+    "cypher batching",
+    "database constraints",
+    "data modeling",
+    "transactions",
     "neo4j",
-    "data refactoring",
-    "constraints",
-    "batch processing",
-    "database design",
-    "live migration",
-    "data integrity"
+    "operational safety",
+    "scale"
    ],
    "src": "/media/learn/modelling/modelling-10.mp4",
    "poster": "/media/learn/modelling/modelling-10.jpg",
@@ -9429,8 +9430,8 @@ export const MODELLING: Lesson[] = [
 export const NEPTUNE: Lesson[] = [
   {
    "n": 1,
-   "title": "Neptune vs Neo4j: When to Migrate Your Graph Database",
-   "summary": "Learn the real differences between Neptune and Neo4j—from query language to operations to cost—using a real 40-million-node college-search graph as the example. This video walks through what each system actually is, where each wins, and gives you a five-question checklist to decide whether migration is worth it for your team. By the end you'll know what changes, what it costs, and what you keep and lose.",
+   "title": "Neptune vs Neo4j: When to Migrate and What Changes",
+   "summary": "Learn the real differences between AWS Neptune and Neo4j—not just hype, but concrete tradeoffs in architecture, tooling, operations, and cost. Using a 40-million-node college-search graph as a worked example, this lesson walks through what each system actually is, where Neptune wins, and the five-question checklist to decide whether migration makes sense for your team.",
    "runs": "8:28",
    "chapters": [
     {
@@ -9473,14 +9474,14 @@ export const NEPTUNE: Lesson[] = [
    "tags": [
     "Neptune",
     "Neo4j",
-    "graph database",
+    "database migration",
+    "graph databases",
     "Cypher",
     "Gremlin",
-    "migration",
-    "database comparison",
-    "query language",
-    "Aura",
-    "AWS"
+    "AWS",
+    "cost analysis",
+    "database architecture",
+    "tooling"
    ],
    "src": "/media/learn/neptune/neptune-01.mp4",
    "poster": "/media/learn/neptune/neptune-01.jpg",
@@ -9488,8 +9489,8 @@ export const NEPTUNE: Lesson[] = [
   },
   {
    "n": 2,
-   "title": "Same Model, Different Shape: Neptune vs Neo4j Property Graphs",
-   "summary": "Neptune and Neo4j both use the property graph model, but differ in five critical ways: labels, IDs, properties, types, and edges. This lesson walks through each difference, highlights the common migration bugs, and shows how to use these differences as an opportunity to improve your graph's design. After watching, you'll understand exactly where migrations break and have a mapping table for converting between the two systems.",
+   "title": "Same Model, Different Shape: The 5 Structural Differences Between Neptune and Neo4j",
+   "summary": "Both Neptune and Neo4j are property graphs, but they differ in five critical places where migrations break in practice: labels, IDs, properties, types, and edges. This lesson walks through each difference in detail, from Neptune's single-label-per-vertex constraint to Neo4j's stricter type system, and shows you how to use those differences as an opportunity to fix workarounds baked into your current graph design.",
    "runs": "8:47",
    "chapters": [
     {
@@ -9533,13 +9534,13 @@ export const NEPTUNE: Lesson[] = [
     "Neptune",
     "Neo4j",
     "property graph",
-    "graph database migration",
-    "labels",
-    "IDs",
-    "properties",
-    "schema mapping",
+    "database migration",
+    "graph modeling",
+    "schema design",
     "Gremlin",
-    "Cypher"
+    "Cypher",
+    "data mapping",
+    "graph databases"
    ],
    "src": "/media/learn/neptune/neptune-02.mp4",
    "poster": "/media/learn/neptune/neptune-02.jpg",
@@ -9547,8 +9548,8 @@ export const NEPTUNE: Lesson[] = [
   },
   {
    "n": 3,
-   "title": "Rewriting Gremlin Queries as Cypher: A Complete Translation Guide",
-   "summary": "Learn how to translate Gremlin graph queries into Cypher by understanding the fundamental differences between imperative and declarative query languages. This scene-by-scene breakdown covers lookups, filters, directions, aggregations, mutations, and common mistakes—so you can write idiomatic Cypher instead of Gremlin-in-syntax.",
+   "title": "Translating Gremlin Queries to Cypher",
+   "summary": "Learn how to rewrite Gremlin traversals as Cypher queries by understanding the fundamental difference between imperative and declarative languages. This video maps each major Gremlin operation—from basic lookups and filters to grouping and mutations—to its Cypher equivalent, highlighting where the translation is direct and where you'll need to think differently. You'll come away knowing how to write idiomatic Cypher instead of just translating Gremlin step-by-step.",
    "runs": "10:11",
    "chapters": [
     {
@@ -9597,16 +9598,16 @@ export const NEPTUNE: Lesson[] = [
     }
    ],
    "tags": [
-    "Cypher",
     "Gremlin",
-    "graph queries",
-    "query translation",
+    "Cypher",
+    "query rewrite",
+    "graph database migration",
     "Neo4j",
-    "graph databases",
-    "traversals",
-    "pattern matching",
-    "aggregation",
-    "query optimization"
+    "traversal patterns",
+    "declarative vs imperative",
+    "query translation",
+    "graph patterns",
+    "database fundamentals"
    ],
    "src": "/media/learn/neptune/neptune-03.mp4",
    "poster": "/media/learn/neptune/neptune-03.jpg",
@@ -9614,8 +9615,8 @@ export const NEPTUNE: Lesson[] = [
   },
   {
    "n": 4,
-   "title": "Migrating RDF to Neo4j: From SPARQL to Cypher",
-   "summary": "Learn how to convert RDF data models to property graphs by applying decision rules for predicates, blank nodes, reification, and named graphs. This video covers the technical patterns for translating SPARQL queries to Cypher and identifies three critical failure points where RDF migrations go wrong in practice.",
+   "title": "Migrating RDF to Neo4j: SPARQL to Cypher",
+   "summary": "Learn how to convert an RDF triple store to Neo4j's property graph model by applying two core rules: predicates with literal objects become properties, and predicates with resource objects become relationships. This video covers how to handle blank nodes, reification, named graphs, IRIs, and the gaps that cause real-world migrations to fail.",
    "runs": "9:35",
    "chapters": [
     {
@@ -9659,11 +9660,11 @@ export const NEPTUNE: Lesson[] = [
     "RDF",
     "SPARQL",
     "Neo4j",
+    "migration",
+    "property graph",
     "Cypher",
-    "graph migration",
-    "data modeling",
     "triples",
-    "property graphs",
+    "data modeling",
     "neosemantics",
     "graph databases"
    ],
@@ -9673,8 +9674,8 @@ export const NEPTUNE: Lesson[] = [
   },
   {
    "n": 5,
-   "title": "Exporting Large Neptune Graphs: Snapshots, Streams, and CSV",
-   "summary": "Learn the correct way to export a large graph database (40+ million nodes) without disrupting production services. This video walks through AWS Neptune's export workflow: enabling streams before snapshots, restoring to temporary instances, and validating the resulting CSV files for common data loss patterns like flattened multi-valued properties and dropped meta-properties.",
+   "title": "Exporting Large Neptune Graphs: Snapshot, Streams, and Safe Migration",
+   "summary": "Learn the production-safe strategy for exporting massive Neptune graphs without downtime by combining snapshots, streams, and AWS's export utility. This video walks through why simple Gremlin traversals fail at scale, how to structure a two-phase export that captures both historical state and live changes, and what data integrity issues to watch for in the CSV output.",
    "runs": "8:28",
    "chapters": [
     {
@@ -9715,12 +9716,12 @@ export const NEPTUNE: Lesson[] = [
     "graph database",
     "data export",
     "AWS",
-    "ETL",
+    "database migration",
+    "CSV export",
+    "change streams",
+    "data integrity",
     "Gremlin",
-    "CSV",
-    "streaming",
-    "large-scale databases",
-    "data migration"
+    "cluster snapshots"
    ],
    "src": "/media/learn/neptune/neptune-05.mp4",
    "poster": "/media/learn/neptune/neptune-05.jpg",
@@ -9728,8 +9729,8 @@ export const NEPTUNE: Lesson[] = [
   },
   {
    "n": 6,
-   "title": "Loading a Neptune Graph into Neo4j: The Right Order Matters",
-   "summary": "Learn why loading a 40-million-node graph in the wrong order takes three days instead of one hour, and how to avoid the silent failures that abandon migrations halfway through. This lesson covers constraint creation, node-before-relationship loading, the neo4j-admin import tool, batch sizing with CALL IN TRANSACTIONS, field mapping, and count reconciliation to verify the load succeeded.",
+   "title": "Bulk Loading Data Into Neo4j: Why Order Matters",
+   "summary": "Learn why loading a large graph into Neo4j in the wrong order can take three days instead of one hour, and master the exact sequence that makes it work. This lesson covers constraints, node labels, relationships, and the count reconciliation that proves your data arrived correctly.",
    "runs": "9:18",
    "chapters": [
     {
@@ -9767,15 +9768,15 @@ export const NEPTUNE: Lesson[] = [
    ],
    "tags": [
     "Neo4j",
-    "graph migration",
-    "Neptune",
-    "bulk load",
-    "data import",
-    "constraints",
+    "bulk loading",
+    "neo4j-admin import",
     "LOAD CSV",
-    "neo4j-admin",
-    "batch processing",
-    "reconciliation"
+    "constraints",
+    "migration",
+    "graph database",
+    "performance",
+    "data import",
+    "database optimization"
    ],
    "src": "/media/learn/neptune/neptune-06.mp4",
    "poster": "/media/learn/neptune/neptune-06.jpg",
@@ -9783,8 +9784,8 @@ export const NEPTUNE: Lesson[] = [
   },
   {
    "n": 7,
-   "title": "Migrating from Gremlin to Cypher: Rewriting the Application Layer",
-   "summary": "Learn what actually changes when you swap from Neptune's Gremlin to Neo4j's Cypher—spoiler: it's far more than just the query strings. This video covers the application layer differences: driver and session management, explicit transactions with retries, result shaping, parameterized queries, and how to run both engines in parallel during migration using an interface pattern and unified test suite.",
+   "title": "Migrating from Gremlin to Cypher: Rewriting Your Application Layer",
+   "summary": "Learn how to rewrite the application layer when migrating from Apache TinkerPop's Gremlin queries to Neo4j's Cypher—a task that takes roughly three times longer than simply swapping query strings. You'll understand the concrete changes needed in drivers, sessions, transactions, result handling, and read routing, plus the pattern for running both engines side-by-side during migration to reduce risk.",
    "runs": "7:11",
    "chapters": [
     {
@@ -9826,10 +9827,11 @@ export const NEPTUNE: Lesson[] = [
     "Cypher",
     "database migration",
     "graph database",
-    "transaction handling",
     "application architecture",
+    "transaction handling",
+    "API design",
     "testing",
-    "query parameterization"
+    "parameter binding"
    ],
    "src": "/media/learn/neptune/neptune-07.mp4",
    "poster": "/media/learn/neptune/neptune-07.jpg",
@@ -9837,8 +9839,8 @@ export const NEPTUNE: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Database Migration Without Downtime: The Five-Phase Cutover Plan",
-   "summary": "This lesson explains how to safely migrate from one graph database to another in production without downtime or data loss. You'll learn a five-phase approach—shadow reads, dual writes, staged read migration, role reversal, and decommissioning—that detects bugs early and lets you roll back instantly at any point. After watching, you'll understand how to measure success across all phases and why rushing any stage causes the real problems.",
+   "title": "Database Migration: The Five-Phase Cutover Strategy",
+   "summary": "Learn how to safely migrate from one graph database to another without a risky one-shot flip, using a five-phase approach that keeps the old system as a safety net throughout. You'll understand how to use shadow reads to catch bugs, manage dual writes with a clear source of truth, and migrate reads one query class at a time while maintaining the ability to roll back instantly. After watching, you'll know exactly how long a database migration actually takes, what metrics to watch, and the three ways teams commonly skip steps and regret it.",
    "runs": "6:36",
    "chapters": [
     {
@@ -9880,15 +9882,15 @@ export const NEPTUNE: Lesson[] = [
    ],
    "tags": [
     "database migration",
+    "graph databases",
     "Neo4j",
-    "zero-downtime cutover",
+    "Neptune",
+    "cutover strategy",
     "dual writes",
-    "shadow reads",
     "feature flags",
-    "rollback strategy",
-    "database verification",
-    "production safety",
-    "query migration"
+    "shadow reads",
+    "database rollback",
+    "production deployment"
    ],
    "src": "/media/learn/neptune/neptune-08.mp4",
    "poster": "/media/learn/neptune/neptune-08.jpg",
@@ -9899,8 +9901,8 @@ export const NEPTUNE: Lesson[] = [
 export const CYPHER: Lesson[] = [
   {
    "n": 1,
-   "title": "Cypher Patterns: From Joins to OPTIONAL MATCH",
-   "summary": "Learn how to read and write Cypher query patterns as single-line replacements for complex SQL join chains. This lesson covers pattern syntax, node/relationship naming, direction, comma-separated patterns, and the crucial OPTIONAL MATCH—the fix for the single most common surprise SQL users hit when writing real Cypher queries.",
+   "title": "Cypher Patterns: Writing Readable Graph Queries",
+   "summary": "Learn to write Cypher queries as intuitive pattern-based lines instead of fighting the syntax, moving beyond memorizing keywords to fluent query writing. This lesson covers pattern syntax, relationship direction, combining multiple patterns, filtering with labels and types, and the critical OPTIONAL MATCH operator that prevents silent errors when relationships may not exist. You'll understand why Cypher patterns elegantly replace SQL join plans and spot the three common mistakes that return wrong answers without throwing exceptions.",
    "runs": "9:00",
    "chapters": [
     {
@@ -9947,14 +9949,13 @@ export const CYPHER: Lesson[] = [
    "tags": [
     "Cypher",
     "Neo4j",
-    "query patterns",
-    "MATCH",
-    "OPTIONAL MATCH",
+    "pattern matching",
     "graph queries",
     "relationship direction",
-    "SQL to Cypher",
+    "OPTIONAL MATCH",
+    "query syntax",
     "graph databases",
-    "query syntax"
+    "SQL to Cypher"
    ],
    "src": "/media/learn/cypher/cypher-01.mp4",
    "poster": "/media/learn/cypher/cypher-01.jpg",
@@ -9962,8 +9963,8 @@ export const CYPHER: Lesson[] = [
   },
   {
    "n": 2,
-   "title": "WITH: The Middle Checkpoint in Cypher Queries",
-   "summary": "Learn how the WITH clause acts as a checkpoint in the middle of your Cypher query pipeline, letting you reshape, aggregate, and filter rows before passing them downstream. You'll discover why WITH is essential for comparing aggregates, understand the \"wall\" rule that blocks variables you don't explicitly carry through, and see how to use it for readability and performance—renaming with AS and limiting row counts early to avoid expensive operations.",
+   "title": "WITH in Cypher: The Middle Clause That Reshapes Rows",
+   "summary": "Learn how the WITH clause works as a checkpoint in the middle of your Cypher query pipeline, letting you aggregate rows, filter on aggregates, and reshape data before passing it downstream. This video teaches why WITH acts as a wall that blocks any variables you don't explicitly carry through, and shows you how to use it for renaming with AS, early filtering, and chaining multiple steps into readable queries.",
    "runs": "6:58",
    "chapters": [
     {
@@ -9997,14 +9998,13 @@ export const CYPHER: Lesson[] = [
    ],
    "tags": [
     "Cypher",
-    "Neo4j",
     "WITH clause",
-    "query pipeline",
+    "Neo4j",
+    "query clauses",
     "aggregation",
-    "HAVING equivalent",
-    "query optimization",
-    "variable scope",
-    "readability"
+    "row pipeline",
+    "query readability",
+    "database optimization"
    ],
    "src": "/media/learn/cypher/cypher-02.mp4",
    "poster": "/media/learn/cypher/cypher-02.jpg",
@@ -10012,8 +10012,8 @@ export const CYPHER: Lesson[] = [
   },
   {
    "n": 3,
-   "title": "Cypher Aggregation Without GROUP BY: Counting, Collecting, and Pitfalls",
-   "summary": "Learn how Cypher automatically infers grouping keys from non-aggregated columns in RETURN statements—a design that's convenient until you accidentally add a column and break your counts. This lesson covers the three flavors of count, the collect() aggregate, and the dangerous OPTIONAL MATCH phantom-zero trap that catches experienced SQL developers.",
+   "title": "Counting Properly in Cypher: Aggregation Without GROUP BY",
+   "summary": "Learn how Cypher's automatic grouping works: any non-aggregated column in your RETURN becomes a grouping key, which is convenient until you accidentally add a column and break your counts. This lesson covers the critical differences between count(*), count(x), and count(DISTINCT x); how to use collect() to build lists instead of counts; and the OPTIONAL MATCH trap that creates phantom zeros when nulls interact with aggregation.",
    "runs": "8:20",
    "chapters": [
     {
@@ -10055,10 +10055,11 @@ export const CYPHER: Lesson[] = [
     "GROUP BY",
     "count",
     "collect",
-    "NULL handling",
     "OPTIONAL MATCH",
+    "null handling",
     "Neo4j",
-    "SQL migration"
+    "grouping keys",
+    "SQL comparison"
    ],
    "src": "/media/learn/cypher/cypher-03.mp4",
    "poster": "/media/learn/cypher/cypher-03.jpg",
@@ -10066,8 +10067,8 @@ export const CYPHER: Lesson[] = [
   },
   {
    "n": 4,
-   "title": "Variable-Length Paths and Shortest Path Queries in Cypher",
-   "summary": "Learn how to find connections across multiple hops in graph databases using Cypher's variable-length path syntax and specialized path functions. You'll understand how to use the asterisk notation to specify hop ranges, name and inspect paths to see the actual chain of relationships, and use shortestPath and allShortestPaths to find minimal connections efficiently.",
+   "title": "Variable-Length Paths in Cypher: Finding Connections Across Graphs",
+   "summary": "Learn how to traverse relationships of unknown distance in Cypher using variable-length paths with the asterisk operator and bounds. Discover how to inspect complete paths, understand why shortestPath differs from LIMIT one, and avoid common performance pitfalls by filtering inside patterns rather than after them.",
    "runs": "8:15",
    "chapters": [
     {
@@ -10107,13 +10108,11 @@ export const CYPHER: Lesson[] = [
     "Cypher",
     "graph databases",
     "variable-length paths",
-    "shortest path",
-    "query optimization",
-    "Neo4j",
     "relationship traversal",
+    "shortestPath",
     "path queries",
-    "database performance",
-    "graph traversal"
+    "performance optimization",
+    "Neo4j"
    ],
    "src": "/media/learn/cypher/cypher-04.mp4",
    "poster": "/media/learn/cypher/cypher-04.jpg",
@@ -10121,8 +10120,8 @@ export const CYPHER: Lesson[] = [
   },
   {
    "n": 5,
-   "title": "The Part of Cypher That Isn't About the Graph",
-   "summary": "Learn the data-shaping side of Cypher: lists, maps, and comprehensions that let you format query results for APIs and web pages. You'll master list and pattern comprehensions, UNWIND, map projection, and the parameter habits that keep your queries safe and efficient.",
+   "title": "Data Shaping in Cypher: Lists, Maps, and Parameters",
+   "summary": "Learn the parts of Cypher that shape query results for real-world use—lists, maps, and parameters. This lesson covers list and pattern comprehensions, the UNWIND operator, map projection, and the crucial habit of using parameters to avoid injection vulnerabilities and cache query plans.",
    "runs": "6:48",
    "chapters": [
     {
@@ -10160,13 +10159,14 @@ export const CYPHER: Lesson[] = [
    ],
    "tags": [
     "Cypher",
-    "list comprehension",
-    "pattern comprehension",
+    "lists",
+    "maps",
+    "comprehensions",
     "UNWIND",
     "map projection",
-    "graph database",
-    "Neo4j",
+    "parameters",
     "query optimization",
+    "graph queries",
     "data shaping"
    ],
    "src": "/media/learn/cypher/cypher-05.mp4",
@@ -10176,7 +10176,7 @@ export const CYPHER: Lesson[] = [
   {
    "n": 6,
    "title": "Cypher Subqueries: EXISTS, COUNT, and CALL",
-   "summary": "Learn how to use Cypher subqueries to ask questions inside questions — eliminating the need for loops and expensive DISTINCT operations. This video teaches EXISTS for yes-or-no checks, COUNT for inline numbers, and CALL for per-row result computation, with a focus on solving real problems like finding the top N results per group in a single query.",
+   "summary": "Learn how to nest questions inside questions in Cypher using subqueries—EXISTS for yes-or-no checks, COUNT for inline numbers, and CALL for real row results per outer row. Replace slow application loops that fire off one query per row with a single efficient query that handles the entire problem in one round trip.",
    "runs": "6:03",
    "chapters": [
     {
@@ -10214,13 +10214,14 @@ export const CYPHER: Lesson[] = [
    ],
    "tags": [
     "Cypher",
-    "Neo4j",
     "subqueries",
     "EXISTS",
     "COUNT",
     "CALL",
+    "Neo4j",
     "query optimization",
-    "graph databases"
+    "database",
+    "pattern matching"
    ],
    "src": "/media/learn/cypher/cypher-06.mp4",
    "poster": "/media/learn/cypher/cypher-06.jpg",
@@ -10228,8 +10229,8 @@ export const CYPHER: Lesson[] = [
   },
   {
    "n": 7,
-   "title": "MERGE Patterns, ON CREATE SET, and Safe Updates in Cypher",
-   "summary": "Learn how MERGE actually works in Cypher—it matches the entire pattern or creates a duplicate, so you must merge on identifying properties alone and use ON CREATE SET and ON MATCH SET to control what gets created versus updated. You'll understand why merging relationships requires merging nodes first then the edge separately, and how constraints enforce the guarantees that make your data safe.",
+   "title": "MERGE, SET, and REMOVE: Keeping Your Graph Clean",
+   "summary": "When imports run twice or data arrives with slight variations, CREATE just makes duplicates—but MERGE is subtler than \"create if not exists.\" Learn when and how to use MERGE on identifying properties alone, split creation logic into ON CREATE SET and ON MATCH SET, manage updates with SET's three forms, and enforce uniqueness with constraints so your graph stays consistent.",
    "runs": "8:40",
    "chapters": [
     {
@@ -10266,16 +10267,16 @@ export const CYPHER: Lesson[] = [
     }
    ],
    "tags": [
-    "Cypher",
     "MERGE",
+    "SET",
+    "REMOVE",
+    "Cypher",
+    "constraints",
     "ON CREATE SET",
     "ON MATCH SET",
-    "database constraints",
-    "graph database",
-    "data integrity",
-    "property graph",
-    "relationships",
-    "Cypher updates"
+    "DELETE",
+    "DETACH DELETE",
+    "graph design"
    ],
    "src": "/media/learn/cypher/cypher-07.mp4",
    "poster": "/media/learn/cypher/cypher-07.jpg",
@@ -10283,8 +10284,8 @@ export const CYPHER: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Importing Data Into Neo4j: CSV to Graph",
-   "summary": "Learn the essentials of importing CSV files into Neo4j and building graph databases from scratch. This lesson covers constraints, batching strategies, type conversion, data validation, and the correct order for importing nodes and relationships to avoid duplicates and performance issues.",
+   "title": "Importing Data Into Neo4j: From CSV to Graph",
+   "summary": "Learn the practical workflow for importing CSV data into Neo4j, from setting up constraints and handling data types to structuring multi-pass imports and batching large files. This lesson covers the real-world patterns and pitfalls that separate imports that finish in minutes from ones that fail silently or run overnight, including verification techniques professionals actually use.",
    "runs": "8:50",
    "chapters": [
     {
@@ -10322,13 +10323,15 @@ export const CYPHER: Lesson[] = [
    ],
    "tags": [
     "Neo4j",
+    "CSV import",
     "LOAD CSV",
     "data import",
-    "graph database",
-    "constraints",
     "MERGE",
+    "constraints",
+    "indexing",
     "batching",
-    "data validation"
+    "CALL IN TRANSACTIONS",
+    "graph database"
    ],
    "src": "/media/learn/cypher/cypher-08.mp4",
    "poster": "/media/learn/cypher/cypher-08.jpg",
@@ -10336,8 +10339,8 @@ export const CYPHER: Lesson[] = [
   },
   {
    "n": 9,
-   "title": "Why Queries Get Slow: Indexes and Query Plans in Neo4j",
-   "summary": "Learn why the same query that runs fast on your laptop bogs down on production databases, and how indexes fix the problem. You'll understand what range indexes, composite indexes, text indexes, and constraints actually do, then master EXPLAIN and PROFILE to diagnose slowness by reading query plans and finding where the database wastes time.",
+   "title": "Neo4j Query Performance: Indexes and Reading Execution Plans",
+   "summary": "Learn why queries that work on a laptop suddenly become slow on production databases and how indexes fix that problem. This video teaches you to read execution plans with EXPLAIN and PROFILE, understand when range indexes, composite indexes, and text indexes actually help, and spot the operator mistakes that kill performance. By the end, you'll know exactly where to look when a query slows down and what to do about it.",
    "runs": "9:39",
    "chapters": [
     {
@@ -10386,16 +10389,16 @@ export const CYPHER: Lesson[] = [
     }
    ],
    "tags": [
-    "neo4j",
+    "Neo4j",
+    "database performance",
+    "query optimization",
     "indexes",
-    "query performance",
-    "database optimization",
+    "execution plans",
     "PROFILE",
     "EXPLAIN",
-    "query plans",
     "range index",
     "composite index",
-    "text index"
+    "database tuning"
    ],
    "src": "/media/learn/cypher/cypher-09.mp4",
    "poster": "/media/learn/cypher/cypher-09.jpg",
@@ -10403,8 +10406,8 @@ export const CYPHER: Lesson[] = [
   },
   {
    "n": 10,
-   "title": "Five Queries That Look Right But Run Wrong",
-   "summary": "Learn to identify five common Cypher query mistakes that compile and run without errors but produce wrong results or terrible performance. This lesson teaches you to recognize Cartesian products, unbounded traversals, incorrect counts, MERGE misuse, and label-based performance drops—the expensive bugs that ship to production. You'll learn to use PROFILE to catch these issues before they cost you a day.",
+   "title": "Five Queries That Look Correct But Aren't",
+   "summary": "Learn to identify and fix five common Cypher query mistakes that pass testing but fail in production—queries that run without error but return wrong results or cause timeouts. Each mistake has a specific symptom, root cause, and solution: unintended Cartesian products, unbounded traversals, incorrect COUNT logic, overly broad MERGE patterns, and unexpected planner behavior from label changes.",
    "runs": "9:06",
    "chapters": [
     {
@@ -10438,13 +10441,15 @@ export const CYPHER: Lesson[] = [
    ],
    "tags": [
     "Cypher",
-    "query mistakes",
+    "query optimization",
+    "common mistakes",
+    "Neo4j",
     "performance",
     "debugging",
     "MERGE",
-    "PROFILE",
-    "graph patterns",
-    "common errors"
+    "OPTIONAL MATCH",
+    "query planning",
+    "graph database"
    ],
    "src": "/media/learn/cypher/cypher-10.mp4",
    "poster": "/media/learn/cypher/cypher-10.jpg",
