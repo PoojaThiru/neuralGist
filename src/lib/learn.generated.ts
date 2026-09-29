@@ -1818,8 +1818,8 @@ export const SERVING: Lesson[] = [
 export const LEARNING: Lesson[] = [
   {
    "n": 1,
-   "title": "What Machine Learning Models Actually Do: Fitting vs. Memorizing",
-   "summary": "This video clarifies what it means for a machine learning model to \"learn\" from data by exploring the critical difference between fitting a genuine pattern and memorizing noise. You'll understand why a model that performs perfectly on training data can fail on new data, and learn the practical technique of train-test splitting to catch overfitting before it causes problems.",
+   "title": "What Does It Mean for a Model to Learn? Fitting vs. Memorizing",
+   "summary": "This video explains the fundamental difference between a model that learns a genuine pattern versus one that memorizes training data. Using apartment rental prices as an example, you'll discover why fitting a simple rule to data is valuable while memorizing exact points is a trap, and how to catch memorization using a test set.",
    "runs": "5:53",
    "chapters": [
     {
@@ -1850,13 +1850,14 @@ export const LEARNING: Lesson[] = [
    "tags": [
     "machine learning",
     "overfitting",
-    "train-test split",
-    "model fitting",
-    "generalization",
-    "memorization",
     "underfitting",
-    "regression",
-    "data science fundamentals"
+    "training and test sets",
+    "model fitting",
+    "memorization",
+    "generalization",
+    "machine learning fundamentals",
+    "supervised learning",
+    "predictive modeling"
    ],
    "src": "/media/learn/learning/learning-01.mp4",
    "poster": "/media/learn/learning/learning-01.jpg",
@@ -1864,8 +1865,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 2,
-   "title": "What Does 'Best Fit' Even Mean? — Linear Models & Sum of Squared Errors",
-   "summary": "Learn what \"best fit\" actually means in machine learning by building a linear model to predict rent from apartment size. You'll discover how residuals measure prediction errors, why we square them to get the sum of squared errors (SSE), and how finding the line with the smallest SSE defines the best-fitting model. After watching, you'll understand the mathematical goal behind fitting lines to data and avoid three common mistakes beginners make.",
+   "title": "What Does 'Best Fit' Even Mean? — Defining Linear Regression",
+   "summary": "Learn what \"best fit\" actually means in linear regression beyond just eyeballing a line through data. This video teaches you how to measure goodness of fit using residuals and the sum of squared errors (SSE), and shows you that the best line is simply the one that minimizes SSE.",
    "runs": "5:15",
    "chapters": [
     {
@@ -1899,14 +1900,13 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "linear regression",
-    "best fit line",
+    "best fit",
     "residuals",
     "sum of squared errors",
-    "model fitting",
-    "prediction error",
-    "machine learning basics",
-    "least squares",
-    "model evaluation"
+    "SSE",
+    "model prediction",
+    "fitting a line",
+    "regression basics"
    ],
    "src": "/media/learn/learning/learning-02.mp4",
    "poster": "/media/learn/learning/learning-02.jpg",
@@ -1915,7 +1915,7 @@ export const LEARNING: Lesson[] = [
   {
    "n": 3,
    "title": "How Models Learn: Loss Functions and Gradient Descent",
-   "summary": "This video explains the core mechanism of how machine learning models learn: defining a loss function to measure error, using calculus to find which direction to adjust parameters, and repeatedly stepping downhill via gradient descent. You'll learn why we can't just add up errors, how the gradient tells us which way to move, and the exact recipe for updating every knob in a model until predictions improve.",
+   "summary": "This video explains the fundamental mechanism of how machine learning models actually learn: defining a loss function to measure prediction errors, computing gradients to find the downhill direction, and using gradient descent to iteratively adjust the model's knobs. You'll understand the complete recipe for training—including the role of the learning rate, why simple error sums don't work, and common pitfalls like overshooting or underfitting—through a concrete rent-prediction example.",
    "runs": "7:08",
    "chapters": [
     {
@@ -1948,16 +1948,16 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "machine learning",
     "gradient descent",
     "loss function",
-    "learning rate",
+    "machine learning",
     "neural networks",
     "optimization",
-    "calculus",
-    "model training",
+    "learning rate",
     "mean squared error",
-    "parameters"
+    "parameters",
+    "training",
+    "calculus"
    ],
    "src": "/media/learn/learning/learning-03.mp4",
    "poster": "/media/learn/learning/learning-03.jpg",
@@ -1966,7 +1966,7 @@ export const LEARNING: Lesson[] = [
   {
    "n": 4,
    "title": "Overfitting vs. Underfitting: The Bias-Variance Tradeoff",
-   "summary": "Learn why a model that predicts training data perfectly can fail on new data, and how to catch the trap. This video teaches you to split your data into training, validation, and test sets, recognize overfitting and underfitting, and use regularization to build models that actually generalize.",
+   "summary": "Learn why a model with zero training error can still fail on new data, and how to balance model complexity to generalize well. This video teaches the bias-variance tradeoff, the difference between overfitting and underfitting, and practical techniques like train-validation-test splits and regularization to build models that actually work in the real world.",
    "runs": "6:24",
    "chapters": [
     {
@@ -2006,12 +2006,13 @@ export const LEARNING: Lesson[] = [
     "overfitting",
     "underfitting",
     "bias-variance tradeoff",
-    "generalization",
     "regularization",
+    "model validation",
+    "generalization",
     "training error",
     "test error",
-    "validation set",
-    "machine learning fundamentals"
+    "machine learning",
+    "model complexity"
    ],
    "src": "/media/learn/learning/learning-04.mp4",
    "poster": "/media/learn/learning/learning-04.jpg",
@@ -2019,8 +2020,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 5,
-   "title": "Classification: Predicting Categories with Logistic Regression",
-   "summary": "Learn how to predict categories instead of numbers using logistic regression. You'll discover why a straight line doesn't work for classification, how the sigmoid function squashes predictions into probabilities between zero and one, and how decision boundaries split your data into yes-or-no predictions.",
+   "title": "Classification with Logistic Regression: Predicting Categories, Not Numbers",
+   "summary": "Learn how to predict categories (like yes/no) instead of numbers using logistic regression. This video explains why a straight line fails for classification, how the sigmoid function constrains predictions between 0 and 1, and how decision boundaries split your data into predicted classes. You'll understand the core technique behind binary classification and the key mistakes to avoid.",
    "runs": "6:30",
    "chapters": [
     {
@@ -2057,11 +2058,12 @@ export const LEARNING: Lesson[] = [
     "classification",
     "sigmoid function",
     "decision boundary",
-    "probability prediction",
+    "binary classification",
     "machine learning",
+    "probability",
     "categorical prediction",
     "threshold",
-    "yes or no prediction"
+    "supervised learning"
    ],
    "src": "/media/learn/learning/learning-05.mp4",
    "poster": "/media/learn/learning/learning-05.jpg",
@@ -2069,8 +2071,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 6,
-   "title": "Why 92% Accuracy Can Be Useless: Precision, Recall & the Confusion Matrix",
-   "summary": "Accuracy can be dangerously misleading when your data is imbalanced. Learn how to build a confusion matrix and calculate precision and recall to truly evaluate your model's performance—and discover why testing on training data is a trap that destroys your results.",
+   "title": "Why 92% Accuracy Can Be Useless: Precision, Recall, and the Confusion Matrix",
+   "summary": "Learn why accuracy alone can be a misleading metric, especially when your data is imbalanced. This video teaches you how to use a confusion matrix to calculate precision and recall, spot a lazy model that just always predicts one class, and avoid the trap of testing on training data.",
    "runs": "6:37",
    "chapters": [
     {
@@ -2100,11 +2102,12 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "machine learning",
-    "model evaluation",
+    "accuracy",
     "confusion matrix",
-    "precision and recall",
-    "accuracy limitations",
+    "precision",
+    "recall",
     "class imbalance",
+    "model evaluation",
     "train-test split",
     "classification metrics"
    ],
@@ -2114,8 +2117,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 7,
-   "title": "The Model That Was Too Good: Understanding Data Leakage",
-   "summary": "Learn why a machine learning model that performs suspiciously well on test data may fail in real-world use. This video teaches the concept of data leakage—information sneaking into training that you wouldn't actually have at prediction time—and walks through practical examples like improperly scaled features, encoded categories, missing values, and features that contain future information. By the end, you'll understand how to spot leakage, prepare features correctly, and build models that genuinely work.",
+   "title": "Data Leakage: Why Your Model Tests Too Well",
+   "summary": "Learn to spot and prevent data leakage—when your model accidentally trains on information it wouldn't have at prediction time—that makes test performance suspiciously perfect but breaks in the real world. This video teaches you how to properly scale features, encode categories, handle missing values, and split data correctly so your model's impressive numbers actually mean something.",
    "runs": "7:56",
    "chapters": [
     {
@@ -2152,14 +2155,16 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "machine learning",
     "data leakage",
+    "machine learning",
     "feature engineering",
     "model validation",
+    "train-test split",
     "data preprocessing",
-    "overfitting",
-    "testing and training",
-    "predictive modeling"
+    "target encoding",
+    "scaling features",
+    "one-hot encoding",
+    "supervised learning"
    ],
    "src": "/media/learn/learning/learning-07.mp4",
    "poster": "/media/learn/learning/learning-07.jpg",
@@ -2167,8 +2172,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "The Full Machine Learning Pipeline: From Raw Data to Honest Predictions",
-   "summary": "Watch all seven pieces of the machine learning workflow run as one complete machine: data cleaning, feature engineering, model building, loss functions, gradient descent training, train-test splitting, and regularization. By the end you'll understand the correct order of every step and be able to build a model that makes trustworthy rent predictions on data it's never seen before.",
+   "title": "The Full Machine Learning Pipeline: Raw Data to Predictions",
+   "summary": "Watch all seven stages of a complete machine learning workflow come together on real apartment rental data. You'll see how data cleaning, feature engineering, model design, gradient descent, train-test splitting, and regularization work as one system to build a trustworthy rent prediction formula. By the end, you'll understand not just each piece individually, but the exact order and reasoning for running them together.",
    "runs": "5:02",
    "chapters": [
     {
@@ -2206,15 +2211,15 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "machine learning",
-    "gradient descent",
-    "regularization",
-    "train-test split",
-    "feature engineering",
     "linear regression",
-    "model training",
+    "gradient descent",
+    "data pipeline",
+    "train test split",
+    "regularization",
+    "feature engineering",
     "overfitting",
-    "loss function",
-    "data preprocessing"
+    "data cleaning",
+    "supervised learning"
    ],
    "src": "/media/learn/learning/learning-08.mp4",
    "poster": "/media/learn/learning/learning-08.jpg",
@@ -2223,7 +2228,7 @@ export const LEARNING: Lesson[] = [
   {
    "n": 9,
    "title": "K-Fold Cross-Validation: Testing Models Fairly",
-   "summary": "Learn why a single train-test split can be misleading and how k-fold cross-validation provides a more reliable model evaluation. This video teaches you to rotate through multiple data splits, average the results, and compare models fairly—while avoiding common pitfalls like data leakage during preprocessing.",
+   "summary": "Learn why a single train-test split can be misleading and how k-fold cross-validation gives you a more reliable estimate of model performance. This video shows you how to rotate through multiple data splits, average the results, and use this method to fairly compare different models—plus the two critical pitfalls to avoid.",
    "runs": "6:07",
    "chapters": [
     {
@@ -2259,11 +2264,11 @@ export const LEARNING: Lesson[] = [
     "cross-validation",
     "k-fold",
     "model evaluation",
+    "machine learning",
     "train-test split",
     "data leakage",
-    "machine learning",
     "model comparison",
-    "statistical testing"
+    "mean absolute error"
    ],
    "src": "/media/learn/learning/learning-09.mp4",
    "poster": "/media/learn/learning/learning-09.jpg",
@@ -2271,8 +2276,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 10,
-   "title": "Decision Trees: Splitting, Leaves, and Predicting Rent",
-   "summary": "Learn how decision trees make predictions by asking a series of yes-or-no questions about your data, starting from a root node and following branches down to leaf nodes that give the final answer. Discover how trees choose their questions by measuring variance (for regression) or impurity (for classification), and understand the critical danger of overfitting when trees grow too deep and memorize noise instead of learning real patterns.",
+   "title": "Decision Trees: Predicting Rent with Yes-or-No Questions",
+   "summary": "Learn how decision trees make predictions by asking a series of yes-or-no questions, starting from a root node and branching down to leaf nodes that give final answers. This video covers how trees choose which questions to ask (by minimizing variance or impurity), how they work for both numerical and categorical predictions, and the critical problem of overfitting when trees grow too deep. After watching, you'll understand how decision trees work, why they're useful, and how to prevent them from memorizing noise instead of learning real patterns.",
    "runs": "5:59",
    "chapters": [
     {
@@ -2302,15 +2307,15 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "decision trees",
-    "regression trees",
-    "classification trees",
-    "variance",
-    "impurity",
+    "machine learning",
+    "regression",
+    "classification",
     "overfitting",
     "prediction",
+    "variance",
+    "impurity",
     "tree splitting",
-    "machine learning",
-    "rent prediction"
+    "data science"
    ],
    "src": "/media/learn/learning/learning-10.mp4",
    "poster": "/media/learn/learning/learning-10.jpg",
@@ -2318,8 +2323,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 11,
-   "title": "Bagging and Random Forests: Why Many Weak Models Beat One Strong Model",
-   "summary": "Learn why a collection of mediocre decision trees often outperforms a single carefully-tuned tree. This video explains bootstrap sampling, bagging, and random forests using real apartment pricing data, then shows when these ensemble methods actually help and when they don't.",
+   "title": "Why Many Weak Trees Beat One Strong Tree: Bagging and Random Forests",
+   "summary": "Learn why training hundreds of simple, \"wobbly\" decision trees and averaging their predictions often outperforms a single carefully-tuned tree. This video explains bagging (bootstrap aggregating) and random forests using real apartment price data, showing how variance reduction through ensemble methods works and when they actually help.",
    "runs": "6:49",
    "chapters": [
     {
@@ -2358,14 +2363,13 @@ export const LEARNING: Lesson[] = [
    "tags": [
     "decision trees",
     "bagging",
-    "bootstrap sampling",
     "random forests",
     "ensemble methods",
-    "variance",
-    "bias-variance tradeoff",
+    "bootstrap sampling",
+    "bias variance tradeoff",
     "machine learning",
-    "regression",
-    "prediction"
+    "prediction",
+    "aggregation"
    ],
    "src": "/media/learn/learning/learning-11.mp4",
    "poster": "/media/learn/learning/learning-11.jpg",
@@ -2374,7 +2378,7 @@ export const LEARNING: Lesson[] = [
   {
    "n": 12,
    "title": "Hyperparameters: Choosing Settings Before Training",
-   "summary": "Learn the difference between parameters (learned during training) and hyperparameters (chosen before training), and why the numbers you pick for these settings matter enormously. This video teaches you how to use training, validation, and test sets to find good hyperparameter values through grid search and cross-validation, while avoiding common mistakes that lead to overfitting or underfitting.",
+   "summary": "Learn the crucial difference between parameters (learned during training) and hyperparameters (settings you choose beforehand), and why that distinction matters. You'll discover how to use validation sets and grid search to find the best hyperparameter values like learning rate and regularization strength, and avoid the three most common mistakes that leak information into your test set.",
    "runs": "6:20",
    "chapters": [
     {
@@ -2412,15 +2416,15 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "hyperparameters",
-    "parameters",
+    "model tuning",
     "validation set",
-    "test set",
     "grid search",
+    "overfitting",
+    "underfitting",
     "cross-validation",
+    "machine learning",
     "regularization",
-    "lambda",
-    "learning rate",
-    "overfitting"
+    "learning rate"
    ],
    "src": "/media/learn/learning/learning-12.mp4",
    "poster": "/media/learn/learning/learning-12.jpg",
@@ -2428,8 +2432,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 13,
-   "title": "Imbalanced Classes: When Accuracy Lies",
-   "summary": "Learn why accuracy is a misleading metric when predicting rare events, and how to evaluate models correctly using confusion matrices, precision, and recall. This video teaches you the precision-recall tradeoff, why accuracy can reach 99% while catching zero scams, and practical techniques like resampling and class weights to train models that actually work on imbalanced data.",
+   "title": "Imbalanced Classification: Beyond Accuracy",
+   "summary": "Learn why accuracy can be misleading when predicting rare events—a model that always guesses \"no scam\" looks 99% accurate while catching zero scams. This video teaches you the confusion matrix, precision, recall, and the threshold tradeoff, then shows practical fixes like resampling and class weights to train models that actually catch rare but important cases.",
    "runs": "7:17",
    "chapters": [
     {
@@ -2466,16 +2470,16 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "imbalanced classes",
-    "accuracy metric",
+    "imbalanced classification",
+    "accuracy trap",
     "precision recall",
     "confusion matrix",
     "class imbalance",
-    "machine learning evaluation",
     "rare events",
+    "decision threshold",
     "resampling",
     "class weights",
-    "decision threshold"
+    "model evaluation"
    ],
    "src": "/media/learn/learning/learning-13.mp4",
    "poster": "/media/learn/learning/learning-13.jpg",
@@ -2483,8 +2487,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 14,
-   "title": "Introduction to Unsupervised Learning and K-Means Clustering",
-   "summary": "Learn unsupervised learning: when you have data but no answer key to predict. This video covers clustering, the k-means algorithm, and how it groups similar data points together. You'll understand how to choose the right number of clusters, scale features properly, and avoid common mistakes like outliers that distort your results.",
+   "title": "Unsupervised Learning and K-Means Clustering",
+   "summary": "Learn what happens when your data has no answer key—how to find hidden structure and groupings in raw data using unsupervised learning. This video walks you through k-means clustering, the most common technique, including how to choose the right number of clusters, scale your features properly, and avoid common pitfalls like outliers that distort results.",
    "runs": "8:57",
    "chapters": [
     {
@@ -2518,14 +2522,15 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "unsupervised learning",
-    "clustering",
-    "k-means",
-    "machine learning",
-    "data science",
-    "centroids",
-    "elbow method",
+    "k-means clustering",
+    "clustering algorithms",
     "feature scaling",
-    "outliers"
+    "elbow method",
+    "data science",
+    "machine learning",
+    "pattern recognition",
+    "centroids",
+    "inertia"
    ],
    "src": "/media/learn/learning/learning-14.mp4",
    "poster": "/media/learn/learning/learning-14.jpg",
@@ -2533,8 +2538,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 15,
-   "title": "Dimensionality Reduction and Principal Component Analysis (PCA)",
-   "summary": "Learn why too many features in your dataset create problems—the curse of dimensionality and redundant columns—and how Principal Component Analysis (PCA) finds the most important directions in your data. After this video, you'll understand how PCA works under the hood with covariance matrices and eigenvectors, and you'll know the common mistakes to avoid when applying it to real datasets.",
+   "title": "Principal Component Analysis: Reducing Data Dimensionality",
+   "summary": "Learn how to handle datasets with too many features using Principal Component Analysis (PCA). This video explains the curse of dimensionality, how redundant columns inflate your data, and how PCA finds the most important directions to describe your data while reducing noise. By the end, you'll understand covariance matrices, eigenvectors, and how to properly standardize data before applying PCA to get meaningful results.",
    "runs": "8:01",
    "chapters": [
     {
@@ -2567,16 +2572,16 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "dimensionality reduction",
-    "principal component analysis",
     "PCA",
+    "principal component analysis",
+    "dimensionality reduction",
     "covariance matrix",
     "eigenvectors",
-    "feature engineering",
-    "data preprocessing",
+    "feature selection",
+    "data standardization",
     "variance",
-    "standardization",
-    "curse of dimensionality"
+    "machine learning",
+    "data preprocessing"
    ],
    "src": "/media/learn/learning/learning-15.mp4",
    "poster": "/media/learn/learning/learning-15.jpg",
@@ -2585,7 +2590,7 @@ export const LEARNING: Lesson[] = [
   {
    "n": 16,
    "title": "After Training: Calibration, Explanation, and Drift",
-   "summary": "Building a good model is just the start—you also need to ensure it's honest about its confidence, explainable to the people it affects, and stays relevant as the world changes. Learn three critical post-training checks (calibration, explanation, and drift detection) that separate models that work in the lab from models that work in the real world.",
+   "summary": "Once a machine learning model is built and tested, three critical challenges emerge before deployment: ensuring confidence scores are honest (calibration), explaining individual predictions to stakeholders (explanation), and monitoring whether new data matches the training distribution (drift). This video shows why accuracy on test data isn't enough, and teaches practical techniques like temperature scaling and SHAP values for addressing each challenge.",
    "runs": "6:59",
    "chapters": [
     {
@@ -2618,16 +2623,14 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
+    "machine learning",
     "model calibration",
-    "explainability",
+    "model explanation",
     "data drift",
-    "machine learning deployment",
-    "model monitoring",
-    "confidence scoring",
     "SHAP",
-    "prediction explanation",
-    "model reliability",
-    "production ML"
+    "temperature scaling",
+    "model deployment",
+    "loan prediction"
    ],
    "src": "/media/learn/learning/learning-16.mp4",
    "poster": "/media/learn/learning/learning-16.jpg",
@@ -2635,8 +2638,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 17,
-   "title": "Neural Networks: From Logistic Regression to Stacked Neurons",
-   "summary": "Discover how neural networks are built from logistic regression—a single neuron you've already learned. This video shows why stacking neurons without nonlinearity accomplishes nothing, but adding activation functions between layers unlocks new representational power. You'll understand the architecture, parameter count, and common mistakes through concrete examples and algebra.",
+   "title": "Neural Networks: From Logistic Regression to Stacked Layers",
+   "summary": "Learn how neural networks are built from logistic regression—a single neuron—and why stacking neurons only works when you add nonlinearity between layers. Through concrete rent prediction examples and algebra, discover why the squashing function is the key ingredient that lets networks solve problems straight lines cannot.",
    "runs": "6:58",
    "chapters": [
     {
@@ -2674,11 +2677,11 @@ export const LEARNING: Lesson[] = [
     "activation functions",
     "nonlinearity",
     "hidden layers",
-    "deep learning",
     "sigmoid",
-    "architecture",
-    "parameters",
-    "overfitting"
+    "deep learning fundamentals",
+    "machine learning",
+    "neurons",
+    "network architecture"
    ],
    "src": "/media/learn/learning/learning-17.mp4",
    "poster": "/media/learn/learning/learning-17.jpg",
@@ -2686,8 +2689,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 18,
-   "title": "Inside Hidden Layers: What Neural Networks Actually Learn",
-   "summary": "Learn what's happening inside a neural network's hidden units and why activation functions like ReLU are essential for training. You'll discover that hidden units learn weighted combinations of inputs (directions in your data) rather than single features, and come away understanding the real mechanics behind feature learning and the tradeoffs between network width and depth.",
+   "title": "What Hidden Units Actually Do: Features and Activation Functions",
+   "summary": "Learn what's happening inside a neural network's hidden layer by understanding activation functions and how hidden units learn weighted combinations of inputs rather than single features. After watching, you'll be able to explain what a hidden unit is computing, why ReLU outperforms sigmoid in practice, and the tradeoff between network width and depth.",
    "runs": "7:38",
    "chapters": [
     {
@@ -2733,14 +2736,14 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "neural networks",
-    "hidden layers",
+    "hidden units",
     "activation functions",
     "ReLU",
     "sigmoid",
     "feature learning",
-    "deep learning fundamentals",
     "gradient descent",
     "network architecture",
+    "deep learning",
     "backpropagation"
    ],
    "src": "/media/learn/learning/learning-18.mp4",
@@ -2749,8 +2752,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 19,
-   "title": "Backpropagation: Computing Gradients Through Hidden Layers",
-   "summary": "Learn how to compute gradients for weights buried deep in a neural network using the chain rule, applied layer by layer. This video walks through a complete forward and backward pass on a toy network with real numbers, showing exactly how backpropagation delivers gradients to every weight—and why vanishing and exploding gradients happen in deeper networks.",
+   "title": "Backpropagation: Computing Gradients Through Deep Networks",
+   "summary": "Learn how to compute gradients for weights buried deep in a neural network using the chain rule applied repeatedly. This video shows exactly how backpropagation works: forward pass computes and stores hidden values, backward pass uses the chain rule to find each weight's gradient, then gradient descent updates the weights using the standard update rule. You'll walk through a complete example by hand and understand why deep networks can suffer from vanishing or exploding gradients.",
    "runs": "7:54",
    "chapters": [
     {
@@ -2797,14 +2800,14 @@ export const LEARNING: Lesson[] = [
    "tags": [
     "backpropagation",
     "chain rule",
-    "gradient descent",
+    "gradient computation",
+    "deep learning",
     "neural networks",
+    "gradient descent",
     "forward pass",
     "backward pass",
     "vanishing gradients",
-    "ReLU activation",
-    "weight updates",
-    "deep learning"
+    "ReLU"
    ],
    "src": "/media/learn/learning/learning-19.mp4",
    "poster": "/media/learn/learning/learning-19.jpg",
@@ -2812,8 +2815,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 20,
-   "title": "Training Neural Networks: Hyperparameters and Practical Debugging",
-   "summary": "Learn the practical skills that turn gradient descent theory into a working model: weight initialization, learning rate, batch size, epochs, and regularization techniques. You'll discover how to read a loss curve to diagnose what's broken and fix the knobs that actually matter in deep learning training.",
+   "title": "Training a Network: From Initialization to Convergence",
+   "summary": "Gradient descent tells you the direction to step, but not where to start, how big a step to take, or when to stop—those are the knobs you have to turn manually. This lesson covers weight initialization, learning rate, batch size, epochs, regularization techniques, and how to read a loss curve to diagnose what's going wrong. You'll learn the practical decisions that turn math into a working model.",
    "runs": "9:52",
    "chapters": [
     {
@@ -2855,14 +2858,14 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "neural networks",
-    "training",
-    "hyperparameters",
+    "gradient descent",
     "learning rate",
     "batch size",
     "weight initialization",
-    "regularization",
-    "loss curves",
     "dropout",
+    "overfitting",
+    "loss curves",
+    "hyperparameters",
     "deep learning"
    ],
    "src": "/media/learn/learning/learning-20.mp4",
@@ -2871,8 +2874,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 21,
-   "title": "Why convolutions work: from pixels to features",
-   "summary": "Learn why fully connected layers fail on images and how convolutional neural networks fix the problem using small kernels that slide across pixels. You'll understand parameter sharing, locality, and translation invariance through concrete examples, and see how stacking convolutions builds features from edges to textures to parts.",
+   "title": "Convolutional Neural Networks: From Pixels to Patterns",
+   "summary": "Learn why fully connected layers fail on images and how convolutional layers solve the problem through weight sharing and local connections. This video walks you through the core ideas of convolutions—parameter sharing, locality, and translation invariance—and shows you how stacking these layers builds up from edges to textures to meaningful parts.",
    "runs": "8:47",
    "chapters": [
     {
@@ -2913,16 +2916,16 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "convolutional neural networks",
+    "convolutional networks",
+    "CNN",
     "image processing",
-    "convolution filters",
-    "kernels",
     "parameter sharing",
-    "translation invariance",
-    "edge detection",
+    "convolution kernel",
+    "neural networks",
     "deep learning",
-    "neural network architecture",
-    "machine learning"
+    "edge detection",
+    "translation invariance",
+    "image features"
    ],
    "src": "/media/learn/learning/learning-21.mp4",
    "poster": "/media/learn/learning/learning-21.jpg",
@@ -2930,8 +2933,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 22,
-   "title": "Word Embeddings: Turning Text into Numbers for Models",
-   "summary": "Learn why assigning integers or one-hot vectors to words doesn't work, and how dense embeddings trained from context capture meaningful relationships between words instead. You'll understand how embeddings squeeze word meaning into a smaller space of real-valued vectors and see the key limitation: a single vector per word can't capture multiple meanings.",
+   "title": "Word Embeddings: Turning Words Into Numbers for Machine Learning",
+   "summary": "Learn why you can't feed raw words directly into machine learning models and how embeddings solve this problem. This video walks through the failures of naive approaches (integer coding and one-hot vectors), then shows how to learn dense vectors from context so that related words cluster together in meaningful ways. You'll understand embeddings as a dimensionality reduction technique—like PCA for words—and see why one fixed vector per word still has limits.",
    "runs": "8:01",
    "chapters": [
     {
@@ -2977,15 +2980,15 @@ export const LEARNING: Lesson[] = [
    ],
    "tags": [
     "embeddings",
-    "word vectors",
+    "word embeddings",
     "natural language processing",
+    "vectorization",
     "categorical features",
     "one-hot encoding",
-    "PCA",
-    "machine learning fundamentals",
-    "text to numbers",
-    "neural networks",
-    "vector arithmetic"
+    "vector arithmetic",
+    "machine learning",
+    "dense vectors",
+    "context"
    ],
    "src": "/media/learn/learning/learning-22.mp4",
    "poster": "/media/learn/learning/learning-22.jpg",
@@ -2993,8 +2996,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 23,
-   "title": "Transformers: Building from the Fading Memory Problem",
-   "summary": "Learn how transformers solve the two fundamental problems of sequential processing: faded memories and inability to compute in parallel. This video builds the transformer architecture piece by piece—queries, keys, values, multi-head attention, and more—and explains how these components stack together to create large language models.",
+   "title": "Transformers and Attention: Building a Large Language Model from First Principles",
+   "summary": "This video builds a transformer from the ground up, starting with the real problem that inspired it: how to prevent information from fading as you process a sequence one step at a time. You'll learn how attention lets every position look at every other position simultaneously using queries, keys, and values, how multi-head attention captures different types of relationships, and how stacking these blocks with positional encoding creates a large language model trained to predict the next word.",
    "runs": "9:18",
    "chapters": [
     {
@@ -3041,14 +3044,12 @@ export const LEARNING: Lesson[] = [
    "tags": [
     "transformers",
     "attention mechanism",
+    "large language models",
     "neural networks",
-    "language models",
     "machine learning",
-    "deep learning",
-    "architecture",
-    "query key value",
-    "multi-head attention",
-    "positional encoding"
+    "sequence processing",
+    "deep learning architecture",
+    "query key value"
    ],
    "src": "/media/learn/learning/learning-23.mp4",
    "poster": "/media/learn/learning/learning-23.jpg",
@@ -3056,8 +3057,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 24,
-   "title": "When to Use Deep Learning vs. Boosting on Tabular Data",
-   "summary": "Deep learning isn't always the best choice—this video explains exactly when it wins and when simpler tools like gradient boosting outperform it. You'll learn the five questions to ask before choosing a model, why tables are different from images and text, and how to make the right tool selection for your data and constraints.",
+   "title": "When to Use Deep Learning vs. Gradient Boosting: A Practical Comparison",
+   "summary": "This video answers why deep learning isn't always the best choice by comparing it directly to gradient boosting for tabular data like rent prediction. You'll learn the five key questions to ask before choosing a model: data size, input type, compute budget, explainability needs, and whether pretrained models exist. After watching, you'll understand exactly when deep learning wins (images, audio, text with structure) and when simpler methods like boosting are the right tool.",
    "runs": "8:18",
    "chapters": [
     {
@@ -3108,14 +3109,14 @@ export const LEARNING: Lesson[] = [
    "tags": [
     "deep learning",
     "gradient boosting",
-    "model selection",
     "tabular data",
-    "machine learning decisions",
-    "when to use neural networks",
+    "model selection",
+    "neural networks",
+    "machine learning decision-making",
     "transfer learning",
     "model interpretability",
-    "data requirements",
-    "computational costs"
+    "practical machine learning",
+    "when to use deep learning"
    ],
    "src": "/media/learn/learning/learning-24.mp4",
    "poster": "/media/learn/learning/learning-24.jpg",
@@ -3123,8 +3124,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 25,
-   "title": "Time Series Data: Why Random Splits Leak the Future",
-   "summary": "Learn why standard train-test splits fail on time-ordered data like stock prices or rental trends, allowing models to train on future information. You'll master chronological splits and rolling-origin validation to properly evaluate models on sequential data, plus how to audit for hidden temporal leaks in features and labels.",
+   "title": "Time Series Splits: Why Random Cross-Validation Leaks the Future",
+   "summary": "When you have time-ordered data like a rent time series, random train-test splits let your model train on the future to predict the past—a subtle but critical form of leakage. Learn why this happens, how chronological splits and rolling-origin validation fix it, and what audit question to ask before trusting any data split.",
    "runs": "7:30",
    "chapters": [
     {
@@ -3167,14 +3168,14 @@ export const LEARNING: Lesson[] = [
    "tags": [
     "time series",
     "cross-validation",
+    "data leakage",
     "train-test split",
     "rolling-origin validation",
-    "data leakage",
+    "walk-forward validation",
     "autocorrelation",
-    "temporal data",
-    "machine learning",
-    "data validation",
-    "walk-forward validation"
+    "trend",
+    "seasonality",
+    "temporal data"
    ],
    "src": "/media/learn/learning/learning-25.mp4",
    "poster": "/media/learn/learning/learning-25.jpg",
@@ -3182,8 +3183,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 26,
-   "title": "Time Series Forecasting: From Persistence Baseline to Prediction Intervals",
-   "summary": "Learn how to forecast time series data like rent prices by starting with the deceptively powerful persistence baseline, then decomposing series into trend, seasonality, and remainder. You'll discover how lag features turn forecasting into ordinary supervised regression, master the right error metrics, and understand why honest prediction intervals beat false precision.",
+   "title": "Time Series Forecasting: From Persistence to Regression",
+   "summary": "Learn how to forecast future values in time series data by starting with a simple persistence baseline and building up to supervised learning models. This video shows you how to decompose trends and seasonality, engineer lag features to turn forecasting into ordinary regression, choose appropriate error metrics, and honestly quantify forecast uncertainty across different time horizons.",
    "runs": "7:26",
    "chapters": [
     {
@@ -3224,16 +3225,16 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "time series forecasting",
+    "forecasting",
+    "time series",
     "persistence baseline",
     "lag features",
-    "seasonality decomposition",
+    "seasonality",
+    "trend decomposition",
     "prediction intervals",
-    "RMSE MAPE",
-    "forecast horizon",
     "regression",
-    "supervised learning",
-    "forecasting errors"
+    "RMSE",
+    "MAE"
    ],
    "src": "/media/learn/learning/learning-26.mp4",
    "poster": "/media/learn/learning/learning-26.jpg",
@@ -3241,8 +3242,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 27,
-   "title": "Prediction vs. Causation: Why Good Models Can Be Wrong for Decisions",
-   "summary": "This video reveals why a model can predict rental prices perfectly based on doorman status—and still be completely wrong for deciding whether to hire one. You'll learn the crucial difference between observational questions (\"what will happen\") and causal questions (\"what will happen if I do this\"), and why standard prediction metrics like accuracy can't answer causal questions, no matter how good they look on held-out data.",
+   "title": "Prediction vs. Causation: Why Good Models Don't Always Guide Good Decisions",
+   "summary": "This video reveals the critical difference between predictive questions (\"what will happen?\") and causal questions (\"what will happen if I do this?\")—and why a model can score perfectly on test data yet be completely wrong for decision-making. You'll learn why confounders like building quality can make a variable like \"doorman\" predict rent beautifully without actually causing it, and how to identify which question you're really trying to answer before you build anything.",
    "runs": "5:35",
    "chapters": [
     {
@@ -3275,16 +3276,15 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "causality",
-    "confounding",
-    "prediction vs causation",
-    "causal inference",
+    "causation",
+    "prediction",
+    "confounders",
     "counterfactual",
-    "decision-making",
-    "machine learning",
-    "statistical modeling",
-    "intervention",
-    "confounders"
+    "causal inference",
+    "model evaluation",
+    "machine learning decisions",
+    "intervention vs observation",
+    "data-driven decisions"
    ],
    "src": "/media/learn/learning/learning-27.mp4",
    "poster": "/media/learn/learning/learning-27.jpg",
@@ -3292,8 +3292,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 28,
-   "title": "Causation Through Randomised Experiments",
-   "summary": "Learn why randomisation is the gold standard for discovering causal effects, using a university shuttle stop case study. This lesson explains how random assignment eliminates confounding, why you must randomise the right unit, and three critical mistakes that break an experiment. Afterward, you'll understand what makes an experiment trustworthy and why it sometimes cannot be used.",
+   "title": "Randomised Experiments: From Correlation to Causation",
+   "summary": "Learn how randomised experiments reveal true causal effects instead of just correlations—why a coin flip guarantees fair comparison, and what mistakes can destroy that guarantee. You'll see how to design a valid experiment, choose the right unit to randomise, interpret statistical and practical significance, and understand when experiments aren't possible.",
    "runs": "7:49",
    "chapters": [
     {
@@ -3334,15 +3334,16 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "causation",
-    "randomised experiments",
     "causal inference",
+    "randomised experiments",
     "experimental design",
-    "confounding",
     "statistical significance",
-    "treatment and control",
-    "shuttle stop experiment",
-    "research methods"
+    "correlation vs causation",
+    "confounding variables",
+    "treatment effect",
+    "sample size",
+    "research methods",
+    "p-hacking"
    ],
    "src": "/media/learn/learning/learning-28.mp4",
    "poster": "/media/learn/learning/learning-28.jpg",
@@ -3350,8 +3351,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 29,
-   "title": "Causal Inference: When Regression Isn't Enough",
-   "summary": "Learn three core techniques for causal inference when you can't run a randomized experiment: controlling for confounders, difference-in-differences, and matching. This video teaches you how to draw causal diagrams, identify what went wrong in your regression, and avoid the trap of controlling for mediating variables—so you can make honest causal claims from observational data.",
+   "title": "Did the Shuttle Really Change Rent? Causation Beyond Correlation",
+   "summary": "Learn three practical techniques for inferring causation from observational data: controlling for confounders, difference-in-differences, and matching. This video shows you how to build causal claims when you can't run a randomized experiment, and teaches the critical pitfall of controlling for the wrong variable.",
    "runs": "7:14",
    "chapters": [
     {
@@ -3384,15 +3385,15 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "causal inference",
-    "confounders",
-    "difference in differences",
-    "matching",
+    "causation",
+    "confounding",
     "regression",
-    "natural experiment",
-    "causal diagrams",
+    "difference-in-differences",
+    "matching",
     "observational data",
-    "mediators"
+    "causal inference",
+    "natural experiment",
+    "controlling variables"
    ],
    "src": "/media/learn/learning/learning-29.mp4",
    "poster": "/media/learn/learning/learning-29.jpg",
@@ -3400,8 +3401,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 30,
-   "title": "Q-Learning and Reinforcement Learning: When Data Depends on Your Decisions",
-   "summary": "Learn how reinforcement learning differs from supervised learning: instead of fixed datasets, your agent's actions shape what data it sees next. This video covers the core concepts of Q-learning through the lens of an apartment-pricing agent, including state-action values, credit assignment, and why you need a simulator to train these systems safely.",
+   "title": "Reinforcement Learning: Agents, States, and Q-Learning",
+   "summary": "This video introduces reinforcement learning by following an agent that must decide apartment rental prices month-to-month, learning from the rewards and consequences of its own decisions. You'll learn how value functions, Q-learning, and credit assignment let an agent predict the long-term impact of its choices—and why simulators are essential for training agents without costly real-world mistakes. After watching, you'll understand how agents learn when data isn't fixed beforehand but shaped by their own actions.",
    "runs": "7:41",
    "chapters": [
     {
@@ -3440,14 +3441,14 @@ export const LEARNING: Lesson[] = [
    "tags": [
     "reinforcement learning",
     "Q-learning",
-    "credit assignment",
+    "agent",
     "value function",
-    "state-action pairs",
+    "credit assignment",
     "policy",
-    "temporal discounting",
-    "simulator training",
-    "sequential decision making",
-    "reward"
+    "discount factor",
+    "simulator",
+    "Markov decision process",
+    "exploration"
    ],
    "src": "/media/learn/learning/learning-30.mp4",
    "poster": "/media/learn/learning/learning-30.jpg",
@@ -3455,8 +3456,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 31,
-   "title": "The Multi-Armed Bandit: Exploration vs. Exploitation",
-   "summary": "Learn how to make smart decisions when you have to choose between options one at a time, with real data coming from your own choices—like pricing an apartment to maximize rentals. You'll discover why always picking the best-looking option fails, and master algorithms like epsilon-greedy, decaying epsilon, and upper confidence bound (UCB) that balance exploring new options with exploiting what works best.",
+   "title": "The Explore-Exploit Dilemma: Bandits and Uncertainty",
+   "summary": "Learn how to make smart decisions when you have to choose between options one at a time, balancing between trying new things and doubling down on what works. This video teaches four real strategies—from simple epsilon-greedy to the more sophisticated UCB algorithm—that handle the tension between exploration and exploitation, with apartment rental pricing as the guiding example. You'll understand why always picking the current best option fails, how to let uncertainty itself guide your choices, and how to measure success using regret.",
    "runs": "7:22",
    "chapters": [
     {
@@ -3497,15 +3498,15 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "multi-armed bandit",
-    "exploration exploitation",
+    "explore-exploit",
+    "multi-armed bandits",
     "UCB",
     "epsilon-greedy",
     "Thompson sampling",
-    "decision-making",
-    "A/B testing",
+    "confidence intervals",
     "regret",
-    "online learning",
+    "A/B testing",
+    "decision making",
     "optimization"
    ],
    "src": "/media/learn/learning/learning-31.mp4",
@@ -3514,8 +3515,8 @@ export const LEARNING: Lesson[] = [
   },
   {
    "n": 32,
-   "title": "Four Questions, One Dataset: Matching Problems to ML Paradigms",
-   "summary": "Learn to recognize which machine learning paradigm—supervised, unsupervised, causal inference, or reinforcement learning—fits your actual question before you write any code. This final installment teaches you the strict requirements each paradigm demands and shows you how to avoid the common mistake of answering a causal question with a supervised model.",
+   "title": "Four Questions, One Dataset: Choosing Your Machine Learning Paradigm",
+   "summary": "Learn how to match your real-world question to the right machine learning approach before you write any code. This guide covers supervised learning for prediction, unsupervised learning for structure, causal inference for interventions, and reinforcement learning for repeated decision-making, using a rental apartment dataset as the running example. After watching, you'll know which paradigm fits your problem and what data requirements each one demands.",
    "runs": "7:42",
    "chapters": [
     {
@@ -3556,20 +3557,255 @@ export const LEARNING: Lesson[] = [
     }
    ],
    "tags": [
-    "machine learning paradigms",
+    "machine learning",
     "supervised learning",
     "unsupervised learning",
     "causal inference",
     "reinforcement learning",
     "problem-solving",
     "model selection",
-    "dataset analysis",
-    "rent prediction",
-    "decision framework"
+    "data requirements",
+    "regression",
+    "clustering"
    ],
    "src": "/media/learn/learning/learning-32.mp4",
    "poster": "/media/learn/learning/learning-32.jpg",
    "captions": "/media/learn/learning/learning-32.vtt"
+  },
+  {
+   "n": 33,
+   "title": "Ridge, Lasso, and Elastic Net: Regularizing Unconstrained Coefficients",
+   "summary": "Learn why ordinary linear regression coefficients can grow unconstrained and cancel each other out to chase noise, then master three regularization techniques to fix it. You'll see exactly how ridge regression shrinks coefficients smoothly, how lasso actually zeros some out entirely, and when to use elastic net to handle correlated features—plus the one standardization mistake that wastes hours of debugging.",
+   "runs": "8:57",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The gap in part four"
+    },
+    {
+     "at": "1:16",
+     "title": "Why unconstrained coefficients explode"
+    },
+    {
+     "at": "2:02",
+     "title": "Ridge: the squared penalty"
+    },
+    {
+     "at": "3:26",
+     "title": "Lasso: the absolute penalty"
+    },
+    {
+     "at": "5:09",
+     "title": "Saying it back"
+    },
+    {
+     "at": "5:47",
+     "title": "Elastic net: when two features are twins"
+    },
+    {
+     "at": "6:45",
+     "title": "Choosing lambda honestly"
+    },
+    {
+     "at": "7:21",
+     "title": "The mistake that wastes a day"
+    },
+    {
+     "at": "8:09",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "regularization",
+    "ridge regression",
+    "lasso",
+    "elastic net",
+    "overfitting",
+    "linear regression",
+    "lambda",
+    "feature selection",
+    "cross-validation",
+    "coefficient penalties"
+   ],
+   "src": "/media/learn/learning/learning-33.mp4",
+   "poster": "/media/learn/learning/learning-33.jpg",
+   "captions": "/media/learn/learning/learning-33.vtt"
+  },
+  {
+   "n": 34,
+   "title": "Gradient Boosting: Training Models to Fix Their Mistakes",
+   "summary": "Learn how gradient boosting differs fundamentally from bagging by training a sequence of weak models, each one correcting the errors of all previous ones. This video covers the core mechanism, why it's called \"gradient\" boosting, how it compares to AdaBoost, and what practical upgrades modern libraries like XGBoost add to the basic algorithm. Essential knowledge for anyone working with tabular data.",
+   "runs": "8:15",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Gap in the Coverage"
+    },
+    {
+     "at": "0:43",
+     "title": "Independent Opinions vs. A Chain of Corrections"
+    },
+    {
+     "at": "1:22",
+     "title": "Round One: One Bad Stump"
+    },
+    {
+     "at": "2:26",
+     "title": "Round Two: Fitting a Stump to the Errors"
+    },
+    {
+     "at": "3:26",
+     "title": "Five Rounds, Creeping Toward Truth"
+    },
+    {
+     "at": "4:16",
+     "title": "Where the Name Comes From"
+    },
+    {
+     "at": "4:58",
+     "title": "The Ancestor: AdaBoost"
+    },
+    {
+     "at": "5:38",
+     "title": "What Modern Libraries Bolt On"
+    },
+    {
+     "at": "6:31",
+     "title": "Where Boosting Bites You"
+    },
+    {
+     "at": "7:19",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "gradient boosting",
+    "boosting",
+    "XGBoost",
+    "AdaBoost",
+    "machine learning",
+    "ensemble methods",
+    "weak learners",
+    "decision trees",
+    "overfitting",
+    "tabular data"
+   ],
+   "src": "/media/learn/learning/learning-34.mp4",
+   "poster": "/media/learn/learning/learning-34.jpg",
+   "captions": "/media/learn/learning/learning-34.vtt"
+  },
+  {
+   "n": 35,
+   "title": "Clustering Part 2: Hierarchical & DBSCAN vs K-Means",
+   "summary": "K-means clustering assumes round groups and a fixed number of clusters chosen beforehand—assumptions that break on real data like apartment listings along distinct roads. This lesson covers hierarchical clustering, which builds a tree of merges you can inspect before choosing how many clusters, and DBSCAN, which groups by density and can follow any shape. You'll learn when each method works, what assumptions each makes, and how to pick the right tool for your data.",
+   "runs": "7:02",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "A coverage gap and a question"
+    },
+    {
+     "at": "0:47",
+     "title": "K-means cuts the bands the wrong way"
+    },
+    {
+     "at": "1:34",
+     "title": "Hierarchical clustering: start from the picture"
+    },
+    {
+     "at": "2:19",
+     "title": "Reading the dendrogram"
+    },
+    {
+     "at": "3:13",
+     "title": "Linkage: how do you measure 'closest cluster'?"
+    },
+    {
+     "at": "4:07",
+     "title": "DBSCAN: density, not roundness"
+    },
+    {
+     "at": "4:56",
+     "title": "The honest cost of DBSCAN"
+    },
+    {
+     "at": "5:40",
+     "title": "A table to choose by"
+    },
+    {
+     "at": "6:18",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "clustering",
+    "hierarchical clustering",
+    "DBSCAN",
+    "k-means",
+    "dendrogram",
+    "linkage",
+    "density-based clustering",
+    "machine learning",
+    "data analysis",
+    "unsupervised learning"
+   ],
+   "src": "/media/learn/learning/learning-35.mp4",
+   "poster": "/media/learn/learning/learning-35.jpg",
+   "captions": "/media/learn/learning/learning-35.vtt"
+  },
+  {
+   "n": 36,
+   "title": "Going Past PCA: t-SNE and UMAP for Curved Structure",
+   "summary": "Learn why PCA flattens curved patterns in data and discover two better tools—t-SNE and UMAP—that preserve neighbourhood relationships instead. You'll see how to actually read and interpret these visualizations, and when to use each tool for exploration versus modeling.",
+   "runs": "7:02",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The picture PCA can't draw"
+    },
+    {
+     "at": "0:55",
+     "title": "Watching PCA flatten the bend"
+    },
+    {
+     "at": "1:31",
+     "title": "t-SNE: keep neighbours as neighbours"
+    },
+    {
+     "at": "2:37",
+     "title": "Perplexity: how many neighbours to care about"
+    },
+    {
+     "at": "3:21",
+     "title": "UMAP: same job, faster, keeps more of the layout"
+    },
+    {
+     "at": "4:06",
+     "title": "The most important part: how to read the picture"
+    },
+    {
+     "at": "5:30",
+     "title": "The working rule"
+    },
+    {
+     "at": "6:10",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "PCA",
+    "t-SNE",
+    "UMAP",
+    "dimensionality reduction",
+    "data visualization",
+    "clustering",
+    "perplexity",
+    "nonlinear projection",
+    "data exploration"
+   ],
+   "src": "/media/learn/learning/learning-36.mp4",
+   "poster": "/media/learn/learning/learning-36.jpg",
+   "captions": "/media/learn/learning/learning-36.vtt"
   }
  ];
 
