@@ -1023,7 +1023,7 @@ export const LLM_EVAL: Lesson[] = [
   {
    "n": 1,
    "title": "Why Testing Language Models Is Different",
-   "summary": "Discover why testing language models requires a fundamentally different approach than testing traditional software. You'll learn four key challenges: the existence of multiple acceptable outputs, the difficulty of automatically evaluating meaning, model non-determinism, and varying degrees of wrongness including hallucinations. After watching, you'll understand why exact string matching and single-run tests fail for LLMs, and what actually needs to happen instead.",
+   "summary": "Learn why testing language models requires a completely different approach than traditional software testing. This video covers the fundamental challenges: multiple acceptable outputs, the difficulty of automated evaluation, non-deterministic behavior, and the spectrum of wrongness from minor flaws to dangerous hallucinations.",
    "runs": "7:06",
    "chapters": [
     {
@@ -1059,11 +1059,11 @@ export const LLM_EVAL: Lesson[] = [
     "language models",
     "testing",
     "LLM evaluation",
-    "software testing",
+    "quality assurance",
     "hallucination",
     "non-deterministic",
-    "oracle problem",
-    "AI quality assurance"
+    "software testing",
+    "AI testing"
    ],
    "src": "/media/learn/llm-eval/llm-eval-01.mp4",
    "poster": "/media/learn/llm-eval/llm-eval-01.jpg",
@@ -1168,8 +1168,8 @@ export const LLM_EVAL: Lesson[] = [
   },
   {
    "n": 4,
-   "title": "Judge Bias: Why Your Evaluation Model Lies in Systematic Ways",
-   "summary": "Judge models can pass calibration checks but still be wrong in predictable, repeatable ways. This video teaches four common biases in evaluation models—position bias, verbosity bias, self-preference bias, and failure to control for length—and how to catch them. You'll learn why average accuracy hides individual comparison errors and how to design tests that expose systematic bias.",
+   "title": "Judge Model Biases: Position, Verbosity, and Self-Preference",
+   "summary": "Learn why judge models that pass calibration checks can still be systematically biased in specific, predictable ways. This video covers four common biases—position bias, verbosity bias, self-preference bias, and mistakes in practice—and shows you how to detect them through direct testing and controlled experiments.",
    "runs": "5:19",
    "chapters": [
     {
@@ -1198,15 +1198,15 @@ export const LLM_EVAL: Lesson[] = [
     }
    ],
    "tags": [
-    "judge model",
-    "bias in evaluation",
+    "judge models",
+    "evaluation bias",
     "position bias",
     "verbosity bias",
     "self-preference bias",
+    "LLM evaluation",
     "model calibration",
     "pairwise comparison",
-    "LLM evaluation",
-    "systematic error"
+    "bias detection"
    ],
    "src": "/media/learn/llm-eval/llm-eval-04.mp4",
    "poster": "/media/learn/llm-eval/llm-eval-04.jpg",
@@ -1214,8 +1214,8 @@ export const LLM_EVAL: Lesson[] = [
   },
   {
    "n": 5,
-   "title": "Metrics That Mean Something: Why BLEU, ROUGE & Exact Match Fail",
-   "summary": "Learn why traditional NLP metrics like BLEU, ROUGE, and exact match measure surface-level word overlap rather than actual correctness—and what to use instead. This video shows you how to spot when a metric is giving you a false sense of confidence, and walks through three approaches that actually work: semantic similarity, LLM-as-judge evaluation, and task-based validation.",
+   "title": "Metrics That Mean Something: Why BLEU, ROUGE, and Exact Match Fail",
+   "summary": "Learn why common metrics borrowed from translation and summarization—exact match, BLEU, and ROUGE—measure surface-level word overlap rather than actual correctness or meaning. Discover what actually works instead: semantic similarity, LLM-as-judge, and task-based evaluation, plus the common mistakes teams make when evaluating model outputs.",
    "runs": "8:11",
    "chapters": [
     {
@@ -1253,15 +1253,13 @@ export const LLM_EVAL: Lesson[] = [
    ],
    "tags": [
     "metrics",
+    "evaluation",
     "BLEU",
     "ROUGE",
     "exact match",
-    "evaluation",
     "LLM evaluation",
     "semantic similarity",
-    "model assessment",
-    "NLP",
-    "benchmarking"
+    "model assessment"
    ],
    "src": "/media/learn/llm-eval/llm-eval-05.mp4",
    "poster": "/media/learn/llm-eval/llm-eval-05.jpg",
@@ -1269,8 +1267,8 @@ export const LLM_EVAL: Lesson[] = [
   },
   {
    "n": 6,
-   "title": "Scoring RAG Systems: Split Your Metrics, Find Your Bugs",
-   "summary": "When a RAG system fails, is it the retriever's fault or the generator's? Learn why a single end-to-end score tells you nothing, and how to split your evaluation into two independent measurements: retrieval quality (recall and precision) and generation quality (faithfulness and relevance). You'll be able to diagnose exactly which component broke and what to fix first.",
+   "title": "Diagnosing RAG Failures: Scoring the Retriever and Generator Separately",
+   "summary": "When a retrieval augmented generation (RAG) system gives a wrong answer, is it the search's fault or the language model's fault? Learn to split your evaluation into two independent scores: one for the retriever (using recall and precision against labeled passages) and one for the generator (checking faithfulness to retrieved passages). After watching, you'll be able to pinpoint exactly which component of your RAG pipeline is failing and know how to fix it.",
    "runs": "7:19",
    "chapters": [
     {
@@ -1302,13 +1300,13 @@ export const LLM_EVAL: Lesson[] = [
     "RAG",
     "retrieval augmented generation",
     "evaluation metrics",
-    "LLM",
-    "retriever",
-    "generator",
-    "recall",
-    "precision",
+    "retriever scoring",
+    "generator scoring",
     "faithfulness",
-    "debugging"
+    "recall at k",
+    "precision at k",
+    "LLM evaluation",
+    "diagnostic debugging"
    ],
    "src": "/media/learn/llm-eval/llm-eval-06.mp4",
    "poster": "/media/learn/llm-eval/llm-eval-06.jpg",
@@ -1316,8 +1314,8 @@ export const LLM_EVAL: Lesson[] = [
   },
   {
    "n": 7,
-   "title": "Building a Safety Net: Automated Model Evaluation in CI/CD",
-   "summary": "Learn how to set up continuous automated evaluation for your models so you catch problems the moment something changes, not weeks later. You'll build a golden set of real test examples, define quality thresholds, and integrate evaluation into your CI/CD pipeline to prevent broken changes from shipping. The video also covers the three common failure modes—stale test sets, threshold gaming, and ignored failures—and how to avoid them.",
+   "title": "Building a Safety Net: Automated Evaluation in CI/CD Pipelines",
+   "summary": "Learn the difference between a one-time study and a continuous safety net for evaluating AI models. This video teaches you how to build automated evaluation systems using a golden set of examples, metrics, and thresholds that integrate into your CI/CD pipeline to catch regressions before they reach customers, and how to avoid the three critical failure modes that compromise this approach.",
    "runs": "5:48",
    "chapters": [
     {
@@ -1346,16 +1344,16 @@ export const LLM_EVAL: Lesson[] = [
     }
    ],
    "tags": [
-    "model evaluation",
-    "CI/CD pipeline",
-    "golden set",
+    "AI evaluation",
     "safety net",
-    "metrics and thresholds",
-    "continuous evaluation",
-    "quality assurance",
-    "test automation",
-    "LLM evaluation",
-    "threshold gaming"
+    "golden set",
+    "CI/CD pipeline",
+    "automated testing",
+    "model evaluation",
+    "machine learning monitoring",
+    "threshold",
+    "continuous deployment",
+    "metrics"
    ],
    "src": "/media/learn/llm-eval/llm-eval-07.mp4",
    "poster": "/media/learn/llm-eval/llm-eval-07.jpg",
@@ -1364,7 +1362,7 @@ export const LLM_EVAL: Lesson[] = [
   {
    "n": 8,
    "title": "Why a High Test Score Doesn't Guarantee Model Safety",
-   "summary": "Learn why evaluation scores measure performance only on questions you tested, not on the infinite space of questions you didn't test. This video explains the critical difference between evaluation and red-teaming, and shows why treating a passing score as a safety guarantee is a common and expensive mistake.",
+   "summary": "Learn the critical difference between evaluation (testing a model on a fixed set of questions) and red-teaming (actively trying to break it with new attacks). This video explains why a passing score only tells you how your model performs on the questions you asked, not on the unlimited possibilities you didn't, and shows through real examples why both activities are essential and why red-teaming must be ongoing.",
    "runs": "5:01",
    "chapters": [
     {
@@ -1398,11 +1396,11 @@ export const LLM_EVAL: Lesson[] = [
     "AI safety",
     "test sets",
     "model validation",
-    "adversarial testing",
+    "security testing",
     "machine learning",
-    "robustness",
-    "deployment risks",
-    "evaluation vs red-teaming"
+    "adversarial testing",
+    "model limitations",
+    "safety assessment"
    ],
    "src": "/media/learn/llm-eval/llm-eval-08.mp4",
    "poster": "/media/learn/llm-eval/llm-eval-08.jpg",
@@ -1413,8 +1411,8 @@ export const LLM_EVAL: Lesson[] = [
 export const SERVING: Lesson[] = [
   {
    "n": 1,
-   "title": "Why Language Models Break Under Load on Sunday Nights",
-   "summary": "Learn why serving language model requests to hundreds of students is fundamentally different from running a normal web app. This video teaches you about autoregressive generation, batching, the latency-throughput tradeoff, and the key-value cache — the constraints that force engineers to choose between individual response speed and total system capacity.",
+   "title": "Why Language Models Break Under Load: Batching, Latency, and Memory",
+   "summary": "Learn why serving language models at scale is fundamentally different from running a normal web app. This video explains how token-by-token generation, GPU batching, the latency-throughput tradeoff, and the key-value cache create surprising constraints that break systems on busy nights.",
    "runs": "7:09",
    "chapters": [
     {
@@ -1448,15 +1446,14 @@ export const SERVING: Lesson[] = [
    ],
    "tags": [
     "language models",
-    "system design",
-    "GPU batching",
+    "GPU optimization",
+    "batching",
     "latency",
     "throughput",
     "key-value cache",
+    "system design",
     "inference",
-    "scaling",
-    "token generation",
-    "engineering constraints"
+    "scaling challenges"
    ],
    "src": "/media/learn/serving/serving-01.mp4",
    "poster": "/media/learn/serving/serving-01.jpg",
@@ -1464,8 +1461,8 @@ export const SERVING: Lesson[] = [
   },
   {
    "n": 2,
-   "title": "Batching and Continuous Batching in LLM Inference",
-   "summary": "Learn why naive static batching wastes GPU compute when processing multiple requests, and how continuous batching solves this by freeing up slots as soon as each request completes. You'll understand the difference between these two scheduling approaches and why continuous batching makes better use of the same hardware, plus the common misconceptions that trip people up.",
+   "title": "Batching and Continuous Batching: The Waiting Room Problem",
+   "summary": "Learn how static batching wastes GPU compute time by forcing fast requests to wait for slow ones, and how continuous batching solves this by reassigning freed slots to waiting requests. You'll understand why static batching is inefficient, how continuous batching reschedules at the token level, and why it doesn't eliminate queues or memory limits—just makes better use of the hardware you already have.",
    "runs": "6:22",
    "chapters": [
     {
@@ -1495,15 +1492,15 @@ export const SERVING: Lesson[] = [
    ],
    "tags": [
     "batching",
-    "LLM inference",
-    "static batching",
     "continuous batching",
+    "static batching",
     "GPU scheduling",
+    "LLM inference",
     "token generation",
-    "iteration-level scheduling",
+    "neural networks",
     "machine learning",
-    "model serving",
-    "compute efficiency"
+    "compute efficiency",
+    "batch processing"
    ],
    "src": "/media/learn/serving/serving-02.mp4",
    "poster": "/media/learn/serving/serving-02.jpg",
@@ -1511,8 +1508,8 @@ export const SERVING: Lesson[] = [
   },
   {
    "n": 3,
-   "title": "Why GPUs Run Out of Memory: KV Cache Fragmentation and Paging",
-   "summary": "Learn why large language model GPUs fill up so quickly even with unused capacity, and how a paging-based block allocation system can fix it. This video explains the KV cache memory problem, how fragmentation wastes space, and how operating-system-style paging with shared blocks lets you serve more concurrent requests efficiently.",
+   "title": "GPU Memory Management: Why KV Cache Runs Out, and How Paging Fixes It",
+   "summary": "Learn why GPU memory fills up so quickly when serving large language models—the culprit is the KV cache storing conversation history for every request. This video explains how memory fragmentation wastes space, and shows how paging (splitting cache into fixed-size blocks and tracking them in a lookup table) solves the problem while enabling requests to share blocks when they start with identical prompts.",
    "runs": "6:42",
    "chapters": [
     {
@@ -1547,11 +1544,13 @@ export const SERVING: Lesson[] = [
    "tags": [
     "GPU memory",
     "KV cache",
-    "fragmentation",
+    "memory fragmentation",
     "paging",
-    "memory allocation",
-    "LLM serving",
-    "block allocation",
+    "large language models",
+    "token allocation",
+    "memory optimization",
+    "block table",
+    "serving LLMs",
     "virtual memory"
    ],
    "src": "/media/learn/serving/serving-03.mp4",
@@ -1561,7 +1560,7 @@ export const SERVING: Lesson[] = [
   {
    "n": 4,
    "title": "Making Models Smaller: Quantization, Distillation, and Pruning",
-   "summary": "Learn three practical techniques for shrinking large language models to use less memory and run faster without losing knowledge: quantization (rounding numbers to fewer bits), distillation (training a small model to copy a large one), and pruning (removing barely-used parameters). Discover the common mistakes engineers make when compressing models and how to measure what actually matters for your use case.",
+   "summary": "Learn three practical techniques for reducing model size and latency without sacrificing too much capability: quantization (rounding parameter precision), distillation (training a small model to copy a large one), and pruning (removing barely-used parameters). You'll understand how each method works, why engineers use them, and the critical mistakes to avoid when compressing models for production.",
    "runs": "7:42",
    "chapters": [
     {
@@ -1594,12 +1593,12 @@ export const SERVING: Lesson[] = [
     "quantization",
     "distillation",
     "pruning",
-    "machine learning",
-    "large language models",
-    "optimization",
+    "machine learning optimization",
     "inference speed",
-    "neural networks",
-    "model efficiency"
+    "LLM efficiency",
+    "parameter reduction",
+    "model deployment",
+    "neural network compression"
    ],
    "src": "/media/learn/serving/serving-04.mp4",
    "poster": "/media/learn/serving/serving-04.jpg",
@@ -1607,8 +1606,8 @@ export const SERVING: Lesson[] = [
   },
   {
    "n": 5,
-   "title": "How Companies Run 500 Custom Language Models on One Machine",
-   "summary": "Learn the architecture companies use to serve hundreds of fine-tuned language models without needing hundreds of GPUs. This video explains how a single shared base model plus tiny adapters, smart routing, and strategic caching lets one machine handle multiple customers' custom AI models efficiently.",
+   "title": "How to Serve 500 Custom Models on One GPU",
+   "summary": "Learn how companies serve thousands of fine-tuned language models without running separate full copies on separate machines. This video teaches the adapter pattern: keeping one shared base model loaded while using tiny custom add-ons for each customer, plus the router that directs requests efficiently across your fleet.",
    "runs": "6:54",
    "chapters": [
     {
@@ -1649,12 +1648,11 @@ export const SERVING: Lesson[] = [
     "adapters",
     "fine-tuning",
     "GPU memory",
-    "router",
-    "inference",
-    "machine learning architecture",
-    "LLM deployment",
+    "scaling inference",
+    "model serving",
+    "routers",
     "cold starts",
-    "model serving"
+    "machine learning systems"
    ],
    "src": "/media/learn/serving/serving-05.mp4",
    "poster": "/media/learn/serving/serving-05.jpg",
@@ -1662,8 +1660,8 @@ export const SERVING: Lesson[] = [
   },
   {
    "n": 6,
-   "title": "Speculative Decoding: How Small Models Speed Up Big Ones",
-   "summary": "Learn how speculative decoding uses a small, fast draft model to guess ahead while a large target model verifies those guesses in a single pass—delivering multiple tokens without the usual per-token cost. You'll understand why this technique doesn't lower output quality, what mistakes teams make when implementing it, and how the math ensures the final answer remains exactly what the big model would have produced alone.",
+   "title": "Speculative Decoding: How Models Guess Ahead",
+   "summary": "Learn how speculative decoding speeds up language model inference by using a small draft model to guess several tokens at once, then having the large target model verify all guesses in a single pass. You'll understand why this technique maintains output quality while potentially delivering multiple tokens for the cost of one verification step, and what mistakes teams commonly make when implementing it.",
    "runs": "5:36",
    "chapters": [
     {
@@ -1695,13 +1693,10 @@ export const SERVING: Lesson[] = [
     "speculative decoding",
     "language models",
     "inference optimization",
-    "draft models",
+    "draft model",
+    "target model",
     "token generation",
-    "LLM efficiency",
-    "machine learning",
-    "model verification",
-    "throughput",
-    "AI performance"
+    "LLM performance"
    ],
    "src": "/media/learn/serving/serving-06.mp4",
    "poster": "/media/learn/serving/serving-06.jpg",
@@ -1709,8 +1704,8 @@ export const SERVING: Lesson[] = [
   },
   {
    "n": 7,
-   "title": "Three Ways to Scale AI Models Across Multiple GPUs",
-   "summary": "When one GPU isn't enough, there are actually three fundamentally different ways to add more: data parallelism (copies of the whole model), tensor parallelism (splitting individual calculations), and pipeline parallelism (splitting the model into stages). Learn which approach solves which problem, the common mistakes teams make, and how real systems combine all three together.",
+   "title": "Three Ways to Scale Models Across Multiple GPUs",
+   "summary": "When one GPU isn't enough, there are actually three distinct strategies for using multiple GPUs—each solving a different problem. Learn how data parallelism handles more requests, tensor parallelism fits huge models, and pipeline parallelism splits computation across stages, plus the common mistakes teams make with each approach.",
    "runs": "7:07",
    "chapters": [
     {
@@ -1751,12 +1746,10 @@ export const SERVING: Lesson[] = [
     "data parallelism",
     "tensor parallelism",
     "pipeline parallelism",
-    "AI scaling",
-    "deep learning",
-    "model training",
-    "distributed computing",
-    "GPU optimization",
-    "LLM inference"
+    "model scaling",
+    "distributed inference",
+    "machine learning systems",
+    "GPU optimization"
    ],
    "src": "/media/learn/serving/serving-07.mp4",
    "poster": "/media/learn/serving/serving-07.jpg",
@@ -1764,8 +1757,8 @@ export const SERVING: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Production LLM Guarantees: Latency, Scaling, and Cost",
-   "summary": "Learn what actually matters when deploying LLMs in production: tracking tail latency instead of averages, splitting time-to-first-token from total latency, and understanding why autoscaling responses are too slow for sudden traffic spikes. After watching, you'll be able to design monitoring dashboards and cost models that reflect real user experience and operational reality.",
+   "title": "The Questions Nobody Asks Before Launch: LLM Deployment in Production",
+   "summary": "Learn what actually breaks when a language model goes live and real users hit it. This video teaches you how to promise realistic performance (p99 latency, not averages), measure what matters (time-to-first-token separately from total time), set up dashboards that catch problems before they spiral, understand why autoscaling fails for GPU workloads, and calculate the real cost per answer. You'll know exactly which metrics to watch and what failure modes to guard against at 3 A.M.",
    "runs": "7:59",
    "chapters": [
     {
@@ -1804,14 +1797,14 @@ export const SERVING: Lesson[] = [
    "tags": [
     "LLM deployment",
     "production monitoring",
-    "latency optimization",
+    "latency metrics",
+    "p99 latency",
+    "time to first token",
     "autoscaling",
-    "tail latency",
-    "time-to-first-token",
     "cost per inference",
-    "dashboard metrics",
     "queue depth",
-    "throughput"
+    "GPU scaling",
+    "observability"
    ],
    "src": "/media/learn/serving/serving-08.mp4",
    "poster": "/media/learn/serving/serving-08.jpg",
@@ -8855,8 +8848,8 @@ export const SHIFT: Lesson[] = [
 export const MODELLING: Lesson[] = [
   {
    "n": 1,
-   "title": "Graph Modelling: Start from Questions, Not Entities",
-   "summary": "Learn why graph schemas need to be shaped by the questions your product needs answered, not by domain entities. This video teaches you to write questions as sentences, translate them into traversals, and only then decide which nouns become nodes—avoiding the relational habits that create slow, badly-shaped graphs where Application nodes and other join tables add unnecessary hops to every query.",
+   "title": "Graph Schemas Start From Questions, Not Entities",
+   "summary": "Learn why starting a graph model with nouns and entities leads to slow, poorly-shaped queries, and how to build a schema that makes your Cypher fast instead. This lesson teaches you to write your questions first as plain sentences, turn them into traversals, and let the actual data relationships emerge—keeping hop counts low and queries efficient.",
    "runs": "9:30",
    "chapters": [
     {
@@ -8897,16 +8890,16 @@ export const MODELLING: Lesson[] = [
     }
    ],
    "tags": [
-    "graph modelling",
-    "cypher",
-    "schema design",
     "graph database",
-    "traversal",
-    "query optimization",
-    "relational habits",
+    "graph modeling",
+    "schema design",
+    "cypher",
     "neo4j",
+    "database design",
+    "query performance",
+    "relationship modeling",
     "data modeling",
-    "database design"
+    "traversal patterns"
    ],
    "src": "/media/learn/modelling/modelling-01.mp4",
    "poster": "/media/learn/modelling/modelling-01.jpg",
@@ -8914,8 +8907,8 @@ export const MODELLING: Lesson[] = [
   },
   {
    "n": 2,
-   "title": "One Fact, Three Shapes: Modeling Data in Cypher",
-   "summary": "Learn how to model the same fact three different ways in a graph database — as a property, as a relationship to a shared node, or as a node with its own connections. This video teaches you the practical rules for deciding which shape fits each piece of your data, and how the questions you ask should drive your schema design, not the other way around.",
+   "title": "One Fact, Three Shapes: Modeling Data in Graph Databases",
+   "summary": "Learn how to model a single fact three different ways in Cypher: as a property, as a relationship to a shared node, or as a node with its own relationships. You'll discover the decision rules that determine which shape fits each fact, and how the questions you ask—not the facts themselves—determine the right structure for your graph.",
    "runs": "7:26",
    "chapters": [
     {
@@ -8959,12 +8952,11 @@ export const MODELLING: Lesson[] = [
     "Cypher",
     "graph databases",
     "data modeling",
-    "schema design",
     "Neo4j",
+    "schema design",
+    "properties vs nodes",
     "relationships",
-    "properties",
-    "nodes",
-    "query design"
+    "query patterns"
    ],
    "src": "/media/learn/modelling/modelling-02.mp4",
    "poster": "/media/learn/modelling/modelling-02.jpg",
@@ -8972,8 +8964,8 @@ export const MODELLING: Lesson[] = [
   },
   {
    "n": 3,
-   "title": "When to Use Labels in Cypher: The Right Way vs. Common Mistakes",
-   "summary": "Learn the single purpose of labels in Neo4j — to identify what kind of thing a node is — and discover three common misuses that create messy schemas. You'll see why status changes, values like location, and tenant IDs belong in properties instead, and when to stop labeling hierarchies and model them as nodes instead.",
+   "title": "When to Use Labels: Kinds, Not States or Values",
+   "summary": "Learn when labels actually belong in your graph and when they'll create problems. This lesson covers the one rule that governs labels—answering \"what kind of thing is this?\"—and shows three common mistakes: using labels for status, for values, and for tenant separation. You'll finish knowing how to model stable categories correctly and when to use properties or nodes instead.",
    "runs": "6:31",
    "chapters": [
     {
@@ -9010,16 +9002,16 @@ export const MODELLING: Lesson[] = [
     }
    ],
    "tags": [
-    "Cypher",
-    "Neo4j",
     "labels",
-    "graph design",
-    "schema",
-    "best practices",
+    "Neo4j",
+    "Cypher",
+    "graph modeling",
+    "schema design",
+    "database design",
     "properties",
-    "database modeling",
-    "query optimization",
-    "data structure"
+    "data modeling",
+    "best practices",
+    "relationships"
    ],
    "src": "/media/learn/modelling/modelling-03.mp4",
    "poster": "/media/learn/modelling/modelling-03.jpg",
@@ -9028,7 +9020,7 @@ export const MODELLING: Lesson[] = [
   {
    "n": 4,
    "title": "Relationship Direction and Granularity in Neo4j",
-   "summary": "Learn how to design relationships in Neo4j by choosing direction based on real-world facts rather than query patterns, and by deciding when to split relationship types versus storing properties. You'll understand why direction matters for data integrity, how splitting relationship types optimizes query performance on dense nodes, and how to find the right balance to keep your schema maintainable.",
+   "summary": "Learn why Neo4j relationships must have a direction and how to choose it based on what actually happened, not how you'll query it. Discover how relationship granularity—deciding between single types with properties versus multiple specialized types—directly impacts query performance on dense nodes, and how to avoid the common mistakes that trip up people coming from relational databases.",
    "runs": "6:56",
    "chapters": [
     {
@@ -9068,13 +9060,13 @@ export const MODELLING: Lesson[] = [
     "Neo4j",
     "relationships",
     "direction",
-    "graph database",
-    "schema design",
+    "graph design",
+    "granularity",
     "relationship types",
-    "Cypher",
-    "graph modeling",
-    "query optimization",
-    "data integrity"
+    "properties",
+    "query performance",
+    "graph schema",
+    "Cypher"
    ],
    "src": "/media/learn/modelling/modelling-04.mp4",
    "poster": "/media/learn/modelling/modelling-04.jpg",
@@ -9082,8 +9074,8 @@ export const MODELLING: Lesson[] = [
   },
   {
    "n": 5,
-   "title": "Reified Relationships: When Facts Need Their Own Nodes",
-   "summary": "Relationships in graph databases connect exactly two nodes, but what happens when a fact involves three things or accumulates multiple properties? Learn when and how to promote a relationship into its own node—a move called reification—and see the pattern appear in real examples like applications, course offerings, and enrollments.",
+   "title": "Reified Relationships: Promoting Facts to Nodes",
+   "summary": "When properties pile up on a relationship or a fact needs to connect to multiple things, the relationship itself becomes a node—a move called reification. You'll learn to recognize when this pattern is necessary, see how it applies across a college database (applications, course offerings, enrollments), and understand the real cost: an extra hop in every query that crosses it.",
    "runs": "6:53",
    "chapters": [
     {
@@ -9126,11 +9118,13 @@ export const MODELLING: Lesson[] = [
    "tags": [
     "graph databases",
     "data modeling",
-    "reified relationships",
-    "many-to-many",
     "relationships as nodes",
+    "reified relationships",
+    "entity-relationship modeling",
     "database design",
-    "graph patterns",
+    "many-to-many",
+    "join tables",
+    "properties",
     "schema design"
    ],
    "src": "/media/learn/modelling/modelling-05.mp4",
@@ -9139,8 +9133,8 @@ export const MODELLING: Lesson[] = [
   },
   {
    "n": 6,
-   "title": "Modeling Time in Neo4j: Three Approaches and When to Use Them",
-   "summary": "Learn three concrete ways to track how data changes over time in graph databases—validity windows on relationships, version nodes chained together, and calendar-shaped time trees—so you can query historical facts instead of just overwriting them. After watching, you'll know which approach fits your access patterns and the three rules that protect you from losing queryable history no matter which model you choose.",
+   "title": "Modeling Time in Graphs: Three Approaches",
+   "summary": "Learn three distinct ways to model historical data in a graph database so facts never get overwritten: validity windows on relationships, version nodes chained together, and time trees built from calendar nodes. After watching, you'll be able to choose the right temporal model for your questions and avoid the mistake of losing queryable history when data changes.",
    "runs": "7:48",
    "chapters": [
     {
@@ -9181,16 +9175,16 @@ export const MODELLING: Lesson[] = [
     }
    ],
    "tags": [
-    "neo4j",
-    "temporal modeling",
     "graph databases",
-    "time series",
+    "temporal modeling",
+    "time in graphs",
+    "data modeling",
     "validity windows",
     "version nodes",
-    "data modeling",
+    "time trees",
     "bitemporality",
     "historical data",
-    "query patterns"
+    "neo4j"
    ],
    "src": "/media/learn/modelling/modelling-06.mp4",
    "poster": "/media/learn/modelling/modelling-06.jpg",
@@ -9198,8 +9192,8 @@ export const MODELLING: Lesson[] = [
   },
   {
    "n": 7,
-   "title": "Constraints: Enforcing Your Graph Model in the Database",
-   "summary": "Learn how to enforce the data model decisions you've made by creating constraints that prevent bad data from entering your database. After this video, you'll be able to use uniqueness, node key, existence, and property type constraints to ensure your graph stays correct—and you'll understand what constraints cannot do and why one script before any data loads is the right approach.",
+   "title": "Constraints: Keeping Your Graph Model Correct",
+   "summary": "Learn how to use Neo4j constraints to enforce the structure you designed—uniqueness, node keys, existence checks, and property types—so your database refuses data that breaks your model. This video shows what each constraint type does, when to use it, and why constraints matter for both correctness and performance, plus what they can't do.",
    "runs": "9:39",
    "chapters": [
     {
@@ -9241,15 +9235,15 @@ export const MODELLING: Lesson[] = [
    ],
    "tags": [
     "constraints",
-    "uniqueness constraint",
+    "uniqueness",
     "node key",
-    "existence constraint",
+    "existence",
     "property type",
     "data validation",
-    "graph database",
     "Neo4j",
-    "data integrity",
-    "schema enforcement"
+    "database design",
+    "graph database",
+    "data integrity"
    ],
    "src": "/media/learn/modelling/modelling-07.mp4",
    "poster": "/media/learn/modelling/modelling-07.jpg",
@@ -9257,8 +9251,8 @@ export const MODELLING: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Indexes: Modelling Decisions, Not Performance Fixes",
-   "summary": "Learn when and why to add indexes to a graph database—a modelling choice made on day one, not a tuning fix applied later. This lesson covers range, composite, text, and full-text indexes; when to index relationships instead of nodes; and how to measure the real cost of every index you create against the queries that actually use it.",
+   "title": "Indexes: A Modelling Decision, Not a Performance Fix",
+   "summary": "Learn when and why to create indexes in Neo4j as a design choice from day one, not as a tuning afterthought. This lesson covers range, composite, text, full-text, and relationship indexes—what each solves, their limits, and the write and space costs they impose. You'll understand which property lookups need indexes, see the concrete difference in database hits with PROFILE, and learn to audit your indexes against actual questions.",
    "runs": "9:36",
    "chapters": [
     {
@@ -9303,25 +9297,83 @@ export const MODELLING: Lesson[] = [
     }
    ],
    "tags": [
-    "indexes",
-    "graph database",
     "Neo4j",
+    "indexes",
     "database modelling",
     "range index",
     "composite index",
     "text index",
     "full-text search",
-    "performance",
-    "query optimization"
+    "query optimization",
+    "database performance",
+    "graph databases"
    ],
    "src": "/media/learn/modelling/modelling-08.mp4",
    "poster": "/media/learn/modelling/modelling-08.jpg",
    "captions": "/media/learn/modelling/modelling-08.vtt"
   },
   {
+   "n": 9,
+   "title": "Vector Embeddings in Neo4j: Finding Similarity, Not Just Connections",
+   "summary": "Learn how to store and search vector embeddings in Neo4j to find similar items by meaning, not by graph connections. You'll understand when to use embeddings as properties versus separate nodes, how to declare vector indexes with the right dimensions and similarity metrics, and how to combine vector search results with graph traversal to answer complex questions that a vector database alone cannot.",
+   "runs": "8:28",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "What Is Like This"
+    },
+    {
+     "at": "0:46",
+     "title": "The Embedding as a Property"
+    },
+    {
+     "at": "1:34",
+     "title": "One Model, One Node — Until It Isn't"
+    },
+    {
+     "at": "2:50",
+     "title": "Dimensions Are Fixed by the Model"
+    },
+    {
+     "at": "3:34",
+     "title": "Cosine or Euclidean"
+    },
+    {
+     "at": "4:24",
+     "title": "Declaring the Index"
+    },
+    {
+     "at": "5:24",
+     "title": "Vector Search Proposes, the Graph Disposes"
+    },
+    {
+     "at": "6:29",
+     "title": "Where This Goes Wrong"
+    },
+    {
+     "at": "7:23",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "vector embeddings",
+    "semantic search",
+    "cosine similarity",
+    "Neo4j indexes",
+    "text embeddings",
+    "similarity search",
+    "graph database",
+    "embedding models",
+    "vector database"
+   ],
+   "src": "/media/learn/modelling/modelling-09.mp4",
+   "poster": "/media/learn/modelling/modelling-09.jpg",
+   "captions": "/media/learn/modelling/modelling-09.vtt"
+  },
+  {
    "n": 10,
-   "title": "Migrating a Property to a Node: The Five-Step Live Refactor",
-   "summary": "Learn the safe, reversible procedure for converting a string property into a full node when your data scale demands relationships—without taking the database down. You'll master the pattern of add, batch, verify, run parallel, then remove, which applies to any graph refactor from splitting relationships to promoting edges to nodes.",
+   "title": "Refactoring a Live Graph: Property to Relationship at Scale",
+   "summary": "Learn the five-step pattern for safely migrating data structures in a live graph database when properties need to become nodes and relationships—without taking the system down. This lesson covers how to add new shapes alongside old ones, batch changes across millions of rows, verify correctness with counts, and gradually retire the old structure while applications continue running.",
    "runs": "8:07",
    "chapters": [
     {
@@ -9366,16 +9418,16 @@ export const MODELLING: Lesson[] = [
     }
    ],
    "tags": [
-    "graph refactoring",
-    "schema migration",
+    "graph database",
+    "data migration",
+    "refactoring",
+    "schema evolution",
+    "batch processing",
     "Cypher",
-    "batching",
-    "live database",
     "constraints",
-    "data verification",
-    "property to node",
-    "MERGE",
-    "production safety"
+    "production systems",
+    "database design",
+    "live data"
    ],
    "src": "/media/learn/modelling/modelling-10.mp4",
    "poster": "/media/learn/modelling/modelling-10.jpg",
