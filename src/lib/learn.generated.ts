@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Getting Repair Manuals into an AI Assistant: Loaders, Splitting, Embeddings",
-   "summary": "Learn how to extract text from PDFs and HTML, split it intelligently so meaning survives the chunks, convert text to searchable vectors, and store everything so an AI assistant can find the exact line from a 200-page manual that answers a specific question. After watching, you'll understand the four-step pipeline—loaders, splitters, embeddings, and vector stores—and recognize the three main pitfalls that break this approach silently.",
+   "title": "Chunking and Searching Manuals: From PDF to Semantic Search",
+   "summary": "Learn how to load repair manuals into an AI assistant so it can answer specific questions by finding the exact line that matters. This video covers the full pipeline: extracting text with loaders, splitting documents intelligently (fixed size, recursive, and structure-aware), converting chunks to embeddings for semantic search, and storing them in a vector database so the model can retrieve and cite the right page.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "vector embeddings",
+    "embeddings",
+    "vector store",
     "text splitting",
-    "PDF loading",
     "semantic search",
-    "LLM tools",
-    "vector database",
-    "document retrieval",
-    "structure-aware splitting",
-    "Chroma"
+    "loaders",
+    "PDF",
+    "chunking",
+    "LangChain",
+    "retrieval"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
@@ -12171,6 +12171,60 @@ export const LANGGRAPH: Lesson[] = [
    "src": "/media/learn/langgraph/langgraph-05.mp4",
    "poster": "/media/learn/langgraph/langgraph-05.jpg",
    "captions": "/media/learn/langgraph/langgraph-05.vtt"
+  },
+  {
+   "n": 6,
+   "title": "Tool Execution and Error Handling in LangGraph Agents",
+   "summary": "Learn how ToolNode and tools_condition work together to execute tool calls in LangGraph agents, and discover the critical difference between handling read and write operations when tools fail. You'll understand why letting errors propagate crashes the graph, how handle_tool_errors allows the model to recover, and when validation matters more than retries.",
+   "runs": "8:09",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "What happens after the model decides to call a tool?"
+    },
+    {
+     "at": "0:46",
+     "title": "ToolNode: one class, runs every call, returns one message each"
+    },
+    {
+     "at": "2:15",
+     "title": "tools_condition: the standard edge"
+    },
+    {
+     "at": "3:01",
+     "title": "The default: a tool that raises kills the graph"
+    },
+    {
+     "at": "4:00",
+     "title": "The choice: return the error as a tool message"
+    },
+    {
+     "at": "5:19",
+     "title": "But not every tool should get an automatic retry"
+    },
+    {
+     "at": "6:33",
+     "title": "The boundary: read freely, write with a guard"
+    },
+    {
+     "at": "7:13",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "langgraph",
+    "agents",
+    "tool execution",
+    "error handling",
+    "ToolNode",
+    "tools_condition",
+    "tool_calls",
+    "read vs write",
+    "validation"
+   ],
+   "src": "/media/learn/langgraph/langgraph-06.mp4",
+   "poster": "/media/learn/langgraph/langgraph-06.jpg",
+   "captions": "/media/learn/langgraph/langgraph-06.vtt"
   },
   {
    "n": 7,
