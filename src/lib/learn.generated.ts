@@ -11596,8 +11596,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Turning Repair Manuals Into Searchable Knowledge for AI Assistants",
-   "summary": "Learn how to prepare PDFs and documents so an AI assistant can actually search and retrieve specific facts from them, like a torque spec buried in a 200-page manual. This video walks through the complete pipeline: loading documents, splitting them intelligently without breaking sentences or tables, converting text to embeddings for semantic search, and storing everything in a vector database that returns ranked results.",
+   "title": "Search Inside PDFs: Loading, Splitting, Embedding, and Vector Stores",
+   "summary": "Learn how to make repair manuals and other large documents searchable by an AI assistant. This video covers the complete pipeline: extracting text with loaders, splitting it into chunks at natural boundaries, converting chunks to embeddings for semantic search, and storing them in a vector database so the model can find the one-line answer buried in a 200-page PDF.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11634,16 +11634,16 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "RAG",
-    "vector database",
     "embeddings",
-    "document splitting",
-    "PDF processing",
+    "vector store",
+    "document loaders",
+    "text splitting",
     "semantic search",
-    "LangChain",
+    "RAG",
     "Chroma",
-    "AI assistants",
-    "text chunking"
+    "PDF processing",
+    "LLM",
+    "retrieval"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
@@ -12214,6 +12214,73 @@ export const LANGSMITH: Lesson[] = [
 
 export const MCP: Lesson[] = [
   {
+   "n": 2,
+   "title": "MCP Fundamentals: Host, Client, and Server Explained",
+   "summary": "Learn the three core roles in the Model Context Protocol: the host (your application), clients (one per server), and servers (data/system exposers). This video untangles the often-confused terminology and shows how they communicate via JSON-RPC 2.0, including the bidirectional requests, responses, and notifications that make MCP work without custom glue code.",
+   "runs": "12:06",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The word 'server' is doing too much work"
+    },
+    {
+     "at": "0:48",
+     "title": "The host: the app the user actually touches"
+    },
+    {
+     "at": "2:00",
+     "title": "Two servers for the shop, drawn"
+    },
+    {
+     "at": "3:16",
+     "title": "JSON-RPC 2.0: the actual wire format"
+    },
+    {
+     "at": "4:22",
+     "title": "A real request, on the wire"
+    },
+    {
+     "at": "5:27",
+     "title": "The response comes back with the same id"
+    },
+    {
+     "at": "6:08",
+     "title": "Notifications: no id, no answer expected"
+    },
+    {
+     "at": "7:14",
+     "title": "The direction everyone misses: servers can ask the client"
+    },
+    {
+     "at": "8:40",
+     "title": "Three things servers offer, three things clients offer"
+    },
+    {
+     "at": "9:46",
+     "title": "Common mix-ups"
+    },
+    {
+     "at": "10:39",
+     "title": "Recap: say it back"
+    }
+   ],
+   "tags": [
+    "MCP",
+    "Model Context Protocol",
+    "host client server",
+    "JSON-RPC",
+    "tool integration",
+    "LangChain",
+    "architecture",
+    "API design",
+    "protocol basics",
+    "bidirectional communication"
+   ],
+   "src": "/media/learn/mcp/mcp-02.mp4",
+   "poster": "/media/learn/mcp/mcp-02.jpg",
+   "captions": "/media/learn/mcp/mcp-02.vtt"
+  },
+  {
    "n": 4,
    "title": "MCP Handshake: Protocol Negotiation and Initialization",
    "summary": "Learn the three-message handshake that starts every MCP connection: how clients and servers exchange protocol versions and capabilities before any real work begins. You'll understand why capabilities matter more than version numbers, how to handle version mismatches, and why proper shutdown is essential for subprocess-based servers.",
@@ -12332,6 +12399,59 @@ export const MCP: Lesson[] = [
    "src": "/media/learn/mcp/mcp-05.mp4",
    "poster": "/media/learn/mcp/mcp-05.jpg",
    "captions": "/media/learn/mcp/mcp-05.vtt"
+  },
+  {
+   "n": 7,
+   "title": "Prompts: The Third MCP Primitive",
+   "summary": "Learn what prompts are—reusable, parameterized message templates that servers provide to shape conversations—and how they differ from tools and resources. Discover how to list prompts, retrieve them with arguments, use completions for autocomplete suggestions, and surface them as slash commands in your application.",
+   "runs": "8:48",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The interview nobody wrote down"
+    },
+    {
+     "at": "1:04",
+     "title": "What a prompt actually is"
+    },
+    {
+     "at": "2:30",
+     "title": "Listing prompts and their arguments"
+    },
+    {
+     "at": "3:37",
+     "title": "Getting a prompt filled in"
+    },
+    {
+     "at": "4:35",
+     "title": "Completions: autocomplete for arguments"
+    },
+    {
+     "at": "5:34",
+     "title": "Where prompts show up: slash commands"
+    },
+    {
+     "at": "6:39",
+     "title": "Where people get this wrong"
+    },
+    {
+     "at": "7:43",
+     "title": "Recap: the full picture"
+    }
+   ],
+   "tags": [
+    "MCP",
+    "prompts",
+    "model context protocol",
+    "slash commands",
+    "completions",
+    "server primitives",
+    "conversational templates",
+    "arguments"
+   ],
+   "src": "/media/learn/mcp/mcp-07.mp4",
+   "poster": "/media/learn/mcp/mcp-07.jpg",
+   "captions": "/media/learn/mcp/mcp-07.vtt"
   },
   {
    "n": 9,
@@ -12503,6 +12623,61 @@ export const SYSTEMONE: Lesson[] = [
    "src": "/media/learn/system-one/system-one-01.mp4",
    "poster": "/media/learn/system-one/system-one-01.jpg",
    "captions": "/media/learn/system-one/system-one-01.vtt"
+  },
+  {
+   "n": 2,
+   "title": "System One and Two as Architecture: Fast Decisions vs. Slow Agents",
+   "summary": "Learn how to implement the psychology of fast and slow thinking as actual software layers: System One as quick typed calls with confidence scores, and System Two as full LangGraph agents. You'll see concrete code examples, the three primitives for building reliable fast decisions, and how to safely route ambiguous cases to human review or deeper analysis.",
+   "runs": "8:22",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "0:48",
+     "title": "Fast and Slow, in One Honest Paragraph"
+    },
+    {
+     "at": "1:49",
+     "title": "The Architecture: Who Handles What"
+    },
+    {
+     "at": "3:19",
+     "title": "Seeing It in Code"
+    },
+    {
+     "at": "4:31",
+     "title": "Why Not Just Use a Chat Model?"
+    },
+    {
+     "at": "5:42",
+     "title": "Three Primitives, Mixed Freely"
+    },
+    {
+     "at": "6:28",
+     "title": "Where People Get This Wrong"
+    },
+    {
+     "at": "7:24",
+     "title": "Recap and the Test"
+    }
+   ],
+   "tags": [
+    "system one system two",
+    "software architecture",
+    "LangGraph",
+    "agent design",
+    "confidence scoring",
+    "decision routing",
+    "fast inference",
+    "Jev Choice primitive",
+    "RLHF limitations",
+    "triage pattern"
+   ],
+   "src": "/media/learn/system-one/system-one-02.mp4",
+   "poster": "/media/learn/system-one/system-one-02.jpg",
+   "captions": "/media/learn/system-one/system-one-02.vtt"
   },
   {
    "n": 3,
