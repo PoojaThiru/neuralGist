@@ -11725,6 +11725,55 @@ export const LANGSMITH: Lesson[] = [
    "src": "/media/learn/langsmith/langsmith-06.mp4",
    "poster": "/media/learn/langsmith/langsmith-06.jpg",
    "captions": "/media/learn/langsmith/langsmith-06.vtt"
+  },
+  {
+   "n": 7,
+   "title": "Closing the loop: human feedback and evaluator calibration",
+   "summary": "Learn how to attach human feedback to LLM runs, route uncertain cases to reviewers through annotation queues, and turn human labels into dataset examples. You'll also see how to calibrate your automated judge against human opinions to catch when it starts drifting off track.",
+   "runs": "7:36",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The problem with scores nobody checked"
+    },
+    {
+     "at": "0:56",
+     "title": "Attaching a human score to a run"
+    },
+    {
+     "at": "2:23",
+     "title": "Annotation queues: routing runs to a person"
+    },
+    {
+     "at": "3:44",
+     "title": "Turning a human label into a dataset example"
+    },
+    {
+     "at": "4:43",
+     "title": "Calibrating the judge against human labels"
+    },
+    {
+     "at": "5:39",
+     "title": "Small and regular beats heroic and rare"
+    },
+    {
+     "at": "6:29",
+     "title": "Recap: the loop closes"
+    }
+   ],
+   "tags": [
+    "LangSmith",
+    "human feedback",
+    "annotation queues",
+    "evaluator calibration",
+    "dataset creation",
+    "LLM evaluation",
+    "quality assurance",
+    "feedback loops"
+   ],
+   "src": "/media/learn/langsmith/langsmith-07.mp4",
+   "poster": "/media/learn/langsmith/langsmith-07.jpg",
+   "captions": "/media/learn/langsmith/langsmith-07.vtt"
   }
  ];
 
@@ -11788,6 +11837,68 @@ export const MCP: Lesson[] = [
    "captions": "/media/learn/mcp/mcp-04.vtt"
   },
   {
+   "n": 5,
+   "title": "Tools in the Model Context Protocol: Structure and Usage",
+   "summary": "Learn how MCP tools work—from the tool list the client receives after a handshake, through calling tools with arguments and interpreting their responses, to handling errors and managing tool availability at runtime. This video teaches the core building block of MCP: how tools are defined with names, descriptions, and JSON schemas, how they return content blocks and structured data, and how annotations guide whether they're safe to call automatically.",
+   "runs": "11:19",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question: What Does a Tool Actually Look Like?"
+    },
+    {
+     "at": "0:58",
+     "title": "tools/list: What the Model Actually Sees"
+    },
+    {
+     "at": "2:19",
+     "title": "Descriptions Are Prompt Engineering Wearing a Type Signature"
+    },
+    {
+     "at": "3:59",
+     "title": "Calling a Tool: Arguments In, Content Blocks Out"
+    },
+    {
+     "at": "5:05",
+     "title": "Structured Content Alongside the Text"
+    },
+    {
+     "at": "6:01",
+     "title": "Protocol Errors vs. a Tool That Ran and Failed"
+    },
+    {
+     "at": "7:38",
+     "title": "Annotations: Does This Tool Read or Write?"
+    },
+    {
+     "at": "8:32",
+     "title": "Tools That Appear at Run Time"
+    },
+    {
+     "at": "9:18",
+     "title": "Few Well-Named Tools Beat Many Overlapping Ones"
+    },
+    {
+     "at": "10:22",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "MCP",
+    "model context protocol",
+    "tools",
+    "function calling",
+    "schema",
+    "content blocks",
+    "tool annotations",
+    "client-server",
+    "LLM integration"
+   ],
+   "src": "/media/learn/mcp/mcp-05.mp4",
+   "poster": "/media/learn/mcp/mcp-05.jpg",
+   "captions": "/media/learn/mcp/mcp-05.vtt"
+  },
+  {
    "n": 11,
    "title": "Production-Ready Servers: Moving Beyond the Demo",
    "summary": "Learn the six critical practices that transform a working prototype into a server that can handle real-world demands: progress notifications, cancellation handling, pagination, ping heartbeats, protocol logging, and timeouts. This video walks through each requirement using a practical bike shop scenario, showing you the silent failures that only appear once you leave your own machine.",
@@ -11849,6 +11960,59 @@ export const MCP: Lesson[] = [
  ];
 
 export const SYSTEMONE: Lesson[] = [
+  {
+   "n": 3,
+   "title": "Decomposing Complex LLM Judgments into Atomic Questions",
+   "summary": "Learn why asking an LLM one complex question produces unreliable confidence scores, and how to break it into smaller atomic questions instead. You'll discover how to recombine those answers in plain code, making your business logic testable, diagnosable, and readable.",
+   "runs": "7:26",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question nobody can act on"
+    },
+    {
+     "at": "0:56",
+     "title": "The one-shot version, on screen"
+    },
+    {
+     "at": "1:50",
+     "title": "What decomposition actually means"
+    },
+    {
+     "at": "2:50",
+     "title": "The five atomic calls"
+    },
+    {
+     "at": "4:01",
+     "title": "Where the business rule actually lives"
+    },
+    {
+     "at": "4:56",
+     "title": "Side by side"
+    },
+    {
+     "at": "5:34",
+     "title": "Where people get this wrong"
+    },
+    {
+     "at": "6:33",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "decomposition",
+    "LLM",
+    "confidence scores",
+    "atomic questions",
+    "prompt engineering",
+    "business logic",
+    "judgment calls",
+    "reliability"
+   ],
+   "src": "/media/learn/system-one/system-one-03.mp4",
+   "poster": "/media/learn/system-one/system-one-03.jpg",
+   "captions": "/media/learn/system-one/system-one-03.vtt"
+  },
   {
    "n": 4,
    "title": "Choice: Routing Messages to the Right Handler",
