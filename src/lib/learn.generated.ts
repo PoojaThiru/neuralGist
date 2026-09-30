@@ -10467,3 +10467,847 @@ export const CYPHER: Lesson[] = [
    "captions": "/media/learn/cypher/cypher-10.vtt"
   }
  ];
+
+export const RELALG: Lesson[] = [
+  {
+   "n": 1,
+   "title": "Relational Algebra: Why It Matters and How It Works",
+   "summary": "Learn why relational algebra is essential for understanding queries, not just a shortcut to SQL. This lesson explains how relational algebra works as a true algebra—where every operator takes relations as input and produces relations as output—and why its explicit, ordered operations matter for query optimization and understanding how databases actually work.",
+   "runs": "8:59",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Why isn't this just SQL?"
+    },
+    {
+     "at": "1:00",
+     "title": "The catalogue we'll use for sixteen lessons"
+    },
+    {
+     "at": "2:12",
+     "title": "Why it's called an algebra"
+    },
+    {
+     "at": "3:08",
+     "title": "One expression, built inside out"
+    },
+    {
+     "at": "4:50",
+     "title": "Same question, why not just say it in SQL"
+    },
+    {
+     "at": "5:47",
+     "title": "Six operators, the whole map"
+    },
+    {
+     "at": "6:46",
+     "title": "Where people trip up early"
+    },
+    {
+     "at": "7:33",
+     "title": "What an answer actually looks like"
+    },
+    {
+     "at": "8:08",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "relational algebra",
+    "database fundamentals",
+    "SQL optimization",
+    "query operations",
+    "database theory",
+    "sigma operator",
+    "projection",
+    "how databases work"
+   ],
+   "src": "/media/learn/relational-algebra/relational-algebra-01.mp4",
+   "poster": "/media/learn/relational-algebra/relational-algebra-01.jpg",
+   "captions": "/media/learn/relational-algebra/relational-algebra-01.vtt"
+  },
+  {
+   "n": 2,
+   "title": "Relational Algebra: The Selection Operator",
+   "summary": "Learn the selection operator (sigma), the simplest building block of relational algebra, which filters rows from a table based on conditions while keeping all columns unchanged. You'll master the syntax, the six comparison operators, how to combine conditions with and/or/not, and common pitfalls like referencing non-existent columns—preparing you to write selection expressions for relational algebra assignments.",
+   "runs": "6:42",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question"
+    },
+    {
+     "at": "0:36",
+     "title": "The one rule: rows in, same columns out"
+    },
+    {
+     "at": "1:35",
+     "title": "One comparison at a time"
+    },
+    {
+     "at": "2:48",
+     "title": "And, or, not — and why the parentheses matter"
+    },
+    {
+     "at": "4:18",
+     "title": "The trap: a column that doesn't exist"
+    },
+    {
+     "at": "5:04",
+     "title": "Two selections in a row, or one with 'and'"
+    },
+    {
+     "at": "5:57",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "relational algebra",
+    "selection operator",
+    "sigma",
+    "filtering rows",
+    "SQL basics",
+    "database queries",
+    "query operators",
+    "comparison operators",
+    "logical operators"
+   ],
+   "src": "/media/learn/relational-algebra/relational-algebra-02.mp4",
+   "poster": "/media/learn/relational-algebra/relational-algebra-02.jpg",
+   "captions": "/media/learn/relational-algebra/relational-algebra-02.vtt"
+  },
+  {
+   "n": 3,
+   "title": "Projection: Keeping Columns, Dropping Rows",
+   "summary": "Learn the projection operator in relational algebra—how to keep only the columns you need while dropping the rest. Discover the critical difference from SQL SELECT: relational algebra treats tables as sets, so duplicate rows collapse into one. Master the safe pattern of filtering first and projecting last to avoid accidentally deleting columns you still need to filter on.",
+   "runs": "7:11",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Column Problem"
+    },
+    {
+     "at": "0:46",
+     "title": "Projection, Defined"
+    },
+    {
+     "at": "1:44",
+     "title": "Eleven Rows In, Four Rows Out"
+    },
+    {
+     "at": "3:12",
+     "title": "Selection Then Projection, Or the Other Way Around"
+    },
+    {
+     "at": "4:17",
+     "title": "The Column You Already Threw Away"
+    },
+    {
+     "at": "5:04",
+     "title": "Filter First, Project Last"
+    },
+    {
+     "at": "5:48",
+     "title": "Projection Answers 'Which Ones'"
+    },
+    {
+     "at": "6:27",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "relational algebra",
+    "projection",
+    "pi operator",
+    "SQL SELECT",
+    "filtering columns",
+    "duplicate rows",
+    "database queries",
+    "selection and projection",
+    "query order"
+   ],
+   "src": "/media/learn/relational-algebra/relational-algebra-03.mp4",
+   "poster": "/media/learn/relational-algebra/relational-algebra-03.jpg",
+   "captions": "/media/learn/relational-algebra/relational-algebra-03.vtt"
+  },
+  {
+   "n": 4,
+   "title": "Breaking Down Complex Queries with Relational Algebra Assignment",
+   "summary": "Learn how to replace frightening nested relational algebra expressions with short, named steps that are easy to read and debug. You'll master assignment notation to break your queries into testable pieces, and discover how naming intermediate relations turns your answer into code you can actually verify line by line.",
+   "runs": "6:47",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Line Nobody Can Read"
+    },
+    {
+     "at": "0:44",
+     "title": "Read The Nested Line Aloud"
+    },
+    {
+     "at": "1:53",
+     "title": "Assignment, Defined"
+    },
+    {
+     "at": "2:41",
+     "title": "The Same Query, Four Lines"
+    },
+    {
+     "at": "4:11",
+     "title": "The Debugging Walk"
+    },
+    {
+     "at": "5:22",
+     "title": "Name It Like You'll Read It Again"
+    },
+    {
+     "at": "5:56",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "relational algebra",
+    "assignment",
+    "query writing",
+    "debugging",
+    "nested expressions",
+    "database",
+    "SQL",
+    "intermediate relations",
+    "selection",
+    "projection"
+   ],
+   "src": "/media/learn/relational-algebra/relational-algebra-04.mp4",
+   "poster": "/media/learn/relational-algebra/relational-algebra-04.jpg",
+   "captions": "/media/learn/relational-algebra/relational-algebra-04.vtt"
+  },
+  {
+   "n": 5,
+   "title": "The Rename Operator (ρ): Handling Ambiguous Column Names",
+   "summary": "Learn to use the rename operator (ρ) to eliminate ambiguity when joining a table to itself or combining relations with conflicting column names. You'll master two essential applications: creating distinct copies for self-joins and aligning attribute names before unions and natural joins, so you can confidently resolve \"ambiguous column reference\" errors.",
+   "runs": "8:37",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Same Table, Twice"
+    },
+    {
+     "at": "1:09",
+     "title": "Why You Need Two Copies"
+    },
+    {
+     "at": "2:15",
+     "title": "Renaming a Whole Relation"
+    },
+    {
+     "at": "3:53",
+     "title": "Say It Back"
+    },
+    {
+     "at": "4:37",
+     "title": "Renaming Before Union"
+    },
+    {
+     "at": "5:50",
+     "title": "Renaming Before a Join"
+    },
+    {
+     "at": "6:37",
+     "title": "The Ambiguous Attribute Error"
+    },
+    {
+     "at": "7:36",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "rename operator",
+    "rho",
+    "self-join",
+    "ambiguous columns",
+    "union compatibility",
+    "natural join",
+    "relational algebra",
+    "database queries",
+    "SQL tutorials",
+    "query optimization"
+   ],
+   "src": "/media/learn/relational-algebra/relational-algebra-05.mp4",
+   "poster": "/media/learn/relational-algebra/relational-algebra-05.jpg",
+   "captions": "/media/learn/relational-algebra/relational-algebra-05.vtt"
+  },
+  {
+   "n": 6,
+   "title": "Joining Tables: Cross Product, Theta Join, and Multi-Table Queries",
+   "summary": "Learn how to combine two or more tables using relational algebra operators. This video covers cross product, theta join, and the practical technique of chaining joins for multi-table queries, with a focus on recognizing when your join has gone wrong.",
+   "runs": "8:24",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "How do you even put two tables together?"
+    },
+    {
+     "at": "0:56",
+     "title": "Cross product: every row with every row"
+    },
+    {
+     "at": "2:18",
+     "title": "Filtering the mess: cross product plus selection"
+    },
+    {
+     "at": "3:50",
+     "title": "The theta join: the same move, one symbol"
+    },
+    {
+     "at": "5:21",
+     "title": "Joining three relations"
+    },
+    {
+     "at": "6:19",
+     "title": "The sanity check: row count going UP"
+    },
+    {
+     "at": "7:29",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "relational algebra",
+    "join",
+    "cross product",
+    "theta join",
+    "SQL",
+    "database",
+    "tables",
+    "selection",
+    "foreign key"
+   ],
+   "src": "/media/learn/relational-algebra/relational-algebra-06.mp4",
+   "poster": "/media/learn/relational-algebra/relational-algebra-06.jpg",
+   "captions": "/media/learn/relational-algebra/relational-algebra-06.vtt"
+  },
+  {
+   "n": 7,
+   "title": "Natural Join: The Shortcut with Hidden Traps",
+   "summary": "Learn how natural join automatically combines relations on shared column names, saving typing compared to writing out theta joins by hand. Discover the two dangerous traps that make natural join fail silently—either joining on columns you didn't intend, or producing a useless cross product—and the single habit that prevents both.",
+   "runs": "6:30",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The shortcut everyone reaches for"
+    },
+    {
+     "at": "0:44",
+     "title": "What natural join actually does"
+    },
+    {
+     "at": "1:43",
+     "title": "Same rows, less typing"
+    },
+    {
+     "at": "2:27",
+     "title": "Case one: a name shared by accident"
+    },
+    {
+     "at": "3:40",
+     "title": "Case two: no shared name at all"
+    },
+    {
+     "at": "4:41",
+     "title": "The habit that prevents both traps"
+    },
+    {
+     "at": "5:30",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "natural join",
+    "relational algebra",
+    "database joins",
+    "theta join",
+    "SQL",
+    "column matching",
+    "database design",
+    "join conditions"
+   ],
+   "src": "/media/learn/relational-algebra/relational-algebra-07.mp4",
+   "poster": "/media/learn/relational-algebra/relational-algebra-07.jpg",
+   "captions": "/media/learn/relational-algebra/relational-algebra-07.vtt"
+  },
+  {
+   "n": 8,
+   "title": "Outer Joins: Left, Right, Full, and Theta",
+   "summary": "Learn why natural joins silently drop unmatched rows and how outer joins preserve them instead. This video covers left outer join, right outer join, full outer join, and their theta variants, plus the critical gotcha where nulls in filters can unexpectedly undo your outer join results.",
+   "runs": "6:08",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The console that sold nothing disappears"
+    },
+    {
+     "at": "0:57",
+     "title": "Left outer join: keep everything from the left"
+    },
+    {
+     "at": "2:07",
+     "title": "Right outer join: keep everything from the right"
+    },
+    {
+     "at": "2:56",
+     "title": "Full outer join: keep both, no matter what"
+    },
+    {
+     "at": "3:39",
+     "title": "Theta variants: outer join on your own condition"
+    },
+    {
+     "at": "4:14",
+     "title": "The trap: a null quietly undoes your outer join"
+    },
+    {
+     "at": "5:17",
+     "title": "When to reach for which one"
+    }
+   ],
+   "tags": [
+    "outer join",
+    "left outer join",
+    "right outer join",
+    "full outer join",
+    "theta join",
+    "SQL joins",
+    "null handling",
+    "database queries",
+    "relational algebra",
+    "join conditions"
+   ],
+   "src": "/media/learn/relational-algebra/relational-algebra-08.mp4",
+   "poster": "/media/learn/relational-algebra/relational-algebra-08.jpg",
+   "captions": "/media/learn/relational-algebra/relational-algebra-08.vtt"
+  },
+  {
+   "n": 9,
+   "title": "Set Operations in Relational Algebra: Union, Difference, Intersection",
+   "summary": "Learn the three fundamental set operations in relational algebra—union, difference, and intersection—and how to use them to answer 'or', 'not', and 'both' questions across database relations. This video teaches union compatibility, shows why difference is the key to expressing negation in relational algebra, and demonstrates practical examples of building and combining result sets from tables.",
+   "runs": "9:03",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question"
+    },
+    {
+     "at": "0:54",
+     "title": "The one rule: union compatibility"
+    },
+    {
+     "at": "2:45",
+     "title": "Union: answering an 'or' question"
+    },
+    {
+     "at": "3:57",
+     "title": "Difference: how you say 'not'"
+    },
+    {
+     "at": "4:39",
+     "title": "Working difference all the way through"
+    },
+    {
+     "at": "6:05",
+     "title": "Intersection: a convenience"
+    },
+    {
+     "at": "7:10",
+     "title": "Mistakes: duplicates and the count you were relying on"
+    },
+    {
+     "at": "8:05",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "relational algebra",
+    "set operations",
+    "union",
+    "difference",
+    "intersection",
+    "union compatibility",
+    "SQL",
+    "database queries",
+    "query logic",
+    "negation"
+   ],
+   "src": "/media/learn/relational-algebra/relational-algebra-09.mp4",
+   "poster": "/media/learn/relational-algebra/relational-algebra-09.jpg",
+   "captions": "/media/learn/relational-algebra/relational-algebra-09.vtt"
+  },
+  {
+   "n": 10,
+   "title": "The Last Mile: From English to Relational Algebra",
+   "summary": "Learn the systematic method for translating written queries into relational algebra expressions—the gap between learning operators and solving real assignments. This video teaches you how to read any question using four consistent moves, handle tricky patterns like division queries and self-joins, and debug when your expression runs but gives the wrong answer.",
+   "runs": "11:24",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Last Mile"
+    },
+    {
+     "at": "0:48",
+     "title": "The Four Moves"
+    },
+    {
+     "at": "1:43",
+     "title": "Sentence One — a plain join"
+    },
+    {
+     "at": "3:04",
+     "title": "Sentence Two — the word 'every', and a difference"
+    },
+    {
+     "at": "4:53",
+     "title": "Sentence Three — a self-join"
+    },
+    {
+     "at": "6:37",
+     "title": "Phrasebook: Words That Point At Operators"
+    },
+    {
+     "at": "7:22",
+     "title": "Debugging, Step One — Count The Rows"
+    },
+    {
+     "at": "8:17",
+     "title": "Debugging, Step Two — Columns, Duplicates, The Final Line"
+    },
+    {
+     "at": "9:09",
+     "title": "The Tool As A Microscope"
+    },
+    {
+     "at": "9:54",
+     "title": "The Habit That Makes The Next One Faster"
+    },
+    {
+     "at": "10:19",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "relational algebra",
+    "query translation",
+    "SQL",
+    "database",
+    "joins",
+    "selection",
+    "projection",
+    "self-join",
+    "difference operator",
+    "debugging"
+   ],
+   "src": "/media/learn/relational-algebra/relational-algebra-10.mp4",
+   "poster": "/media/learn/relational-algebra/relational-algebra-10.jpg",
+   "captions": "/media/learn/relational-algebra/relational-algebra-10.vtt"
+  },
+  {
+   "n": 11,
+   "title": "Six Practice Problems: Selection and Projection in Relational Algebra",
+   "summary": "Work through six real problems using only selection (sigma) and projection (pi) operators on a game catalogue database. You'll tackle filtering by year, multiple conditions with AND, OR with parentheses, distinct values, NOT conditions, and discover when you need to move beyond these two operators to joins.",
+   "runs": "8:33",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Time to actually do it"
+    },
+    {
+     "at": "0:37",
+     "title": "Problem one — titles after a given year"
+    },
+    {
+     "at": "1:38",
+     "title": "Problem two — one genre, one console, an and"
+    },
+    {
+     "at": "2:49",
+     "title": "Problem three — either genre, and the parentheses trap"
+    },
+    {
+     "at": "4:48",
+     "title": "Problem four — the distinct genres"
+    },
+    {
+     "at": "5:43",
+     "title": "Problem five — not a genre"
+    },
+    {
+     "at": "6:40",
+     "title": "Problem six — when selection and projection aren't enough"
+    },
+    {
+     "at": "7:41",
+     "title": "What the six problems showed"
+    }
+   ],
+   "tags": [
+    "relational algebra",
+    "selection",
+    "projection",
+    "sigma",
+    "pi",
+    "practice problems",
+    "filtering",
+    "databases",
+    "AND OR operators",
+    "hands-on"
+   ],
+   "src": "/media/learn/relational-algebra/relational-algebra-11.mp4",
+   "poster": "/media/learn/relational-algebra/relational-algebra-11.jpg",
+   "captions": "/media/learn/relational-algebra/relational-algebra-11.vtt"
+  },
+  {
+   "n": 12,
+   "title": "Five Joins, No Shortcuts",
+   "summary": "Learn to build database joins the right way by starting with cross products and selections, then moving to theta joins and natural joins only when safe. Work through five realistic problems—including accidental shared column names and non-equality conditions—while using row counts to verify your work at every step.",
+   "runs": "10:36",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Five Joins, No Shortcuts"
+    },
+    {
+     "at": "1:00",
+     "title": "Problem One — Title With Console Name"
+    },
+    {
+     "at": "3:17",
+     "title": "Problem Two — Title With Studio City"
+    },
+    {
+     "at": "4:29",
+     "title": "Problem Three — Title Through to Region Sales"
+    },
+    {
+     "at": "6:00",
+     "title": "Problem Four — The Accidental Shared Column"
+    },
+    {
+     "at": "7:28",
+     "title": "Problem Five — A Join That Isn't Equality"
+    },
+    {
+     "at": "8:57",
+     "title": "The Two-Line Rule"
+    },
+    {
+     "at": "9:41",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "database joins",
+    "SQL joins",
+    "cross product",
+    "theta join",
+    "natural join",
+    "relational algebra",
+    "debugging joins",
+    "shared columns",
+    "row count verification"
+   ],
+   "src": "/media/learn/relational-algebra/relational-algebra-12.mp4",
+   "poster": "/media/learn/relational-algebra/relational-algebra-12.jpg",
+   "captions": "/media/learn/relational-algebra/relational-algebra-12.vtt"
+  },
+  {
+   "n": 13,
+   "title": "Set Difference: Writing \"None\" and \"Every\" Queries in Relational Algebra",
+   "summary": "Learn how to write queries for \"none\" questions (like \"which consoles never sold in a region\") and \"every\" questions (like \"which consoles sold in every region\") using set difference operations. This video teaches the two-line recipe for \"none\" and the nested-difference pattern for \"every,\" with concrete examples showing how to build the right and left sides of each subtraction.",
+   "runs": "8:43",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question nobody can just 'select' their way to"
+    },
+    {
+     "at": "0:48",
+     "title": "The shape before the examples"
+    },
+    {
+     "at": "1:26",
+     "title": "Problem one: consoles that never sold in a region"
+    },
+    {
+     "at": "2:34",
+     "title": "Problem two: studios with no title in a genre"
+    },
+    {
+     "at": "3:33",
+     "title": "Problem three: comparing two regions directly"
+    },
+    {
+     "at": "4:24",
+     "title": "The one everyone dreads: 'every'"
+    },
+    {
+     "at": "5:01",
+     "title": "Building 'every' in five steps"
+    },
+    {
+     "at": "6:32",
+     "title": "Saying it back"
+    },
+    {
+     "at": "7:05",
+     "title": "Where this goes wrong"
+    },
+    {
+     "at": "7:59",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "relational algebra",
+    "set difference",
+    "SQL queries",
+    "none and every",
+    "database queries",
+    "set operations",
+    "query logic",
+    "logical negation",
+    "universal quantification",
+    "schema joins"
+   ],
+   "src": "/media/learn/relational-algebra/relational-algebra-13.mp4",
+   "poster": "/media/learn/relational-algebra/relational-algebra-13.jpg",
+   "captions": "/media/learn/relational-algebra/relational-algebra-13.vtt"
+  },
+  {
+   "n": 15,
+   "title": "Reading SQL Questions: Signal Words for the Right Operator",
+   "summary": "Learn to translate English questions into relational algebra operators by recognizing signal words like \"also\" (intersection), \"never\" (difference), \"including none\" (outer join), and \"every\" (double difference). This lesson teaches you to parse assignment questions and identify which operator is needed before you write any code, using a four-step method to map noun phrases and conditions to the correct shapes.",
+   "runs": "7:20",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question before the expression"
+    },
+    {
+     "at": "0:45",
+     "title": "\"That also\" — join or intersection"
+    },
+    {
+     "at": "1:28",
+     "title": "\"But not\" and \"never\" — difference"
+    },
+    {
+     "at": "1:58",
+     "title": "\"Including those with none\" — outer join"
+    },
+    {
+     "at": "2:35",
+     "title": "\"How many distinct\" — projection's duplicate removal"
+    },
+    {
+     "at": "3:07",
+     "title": "\"Every\" and \"all\" — the double-difference pattern"
+    },
+    {
+     "at": "3:41",
+     "title": "\"Either\" — union and the compatibility rule"
+    },
+    {
+     "at": "4:15",
+     "title": "Trap one — \"and\" that secretly wants a join"
+    },
+    {
+     "at": "4:56",
+     "title": "Trap two — \"or\" across two relations wants union"
+    },
+    {
+     "at": "5:38",
+     "title": "The signal list"
+    },
+    {
+     "at": "6:22",
+     "title": "The four-step method, as a screenshot card"
+    }
+   ],
+   "tags": [
+    "relational algebra",
+    "signal words",
+    "SQL translation",
+    "operators",
+    "intersection",
+    "difference",
+    "join",
+    "union",
+    "projection",
+    "query design"
+   ],
+   "src": "/media/learn/relational-algebra/relational-algebra-15.mp4",
+   "poster": "/media/learn/relational-algebra/relational-algebra-15.jpg",
+   "captions": "/media/learn/relational-algebra/relational-algebra-15.vtt"
+  },
+  {
+   "n": 16,
+   "title": "Relational Algebra: Exam Review & Common Mistakes",
+   "summary": "This lesson condenses the entire relational algebra language onto one reference page, then walks through six mark-losing mistakes and solves three exam-speed questions. You'll learn to catch errors before they cost points and develop two habits that make queries faster and easier to debug.",
+   "runs": "7:55",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The last ten minutes before the exam"
+    },
+    {
+     "at": "0:40",
+     "title": "The one page, part one: selection and projection"
+    },
+    {
+     "at": "1:24",
+     "title": "The one page, part two: rename, cross product, theta join, natural join"
+    },
+    {
+     "at": "2:20",
+     "title": "The one page, part three: outer joins and set operations"
+    },
+    {
+     "at": "3:06",
+     "title": "Mistake one: projecting away the column you still need"
+    },
+    {
+     "at": "3:44",
+     "title": "Mistakes two and three: forgotten duplicates, accidental natural join"
+    },
+    {
+     "at": "4:34",
+     "title": "Mistake four: a selection that undoes the outer join"
+    },
+    {
+     "at": "5:05",
+     "title": "Mistakes five and six: mismatched union, missing final answer"
+    },
+    {
+     "at": "5:50",
+     "title": "The timed run: three questions, no pausing"
+    },
+    {
+     "at": "7:01",
+     "title": "Two habits worth keeping"
+    }
+   ],
+   "tags": [
+    "relational algebra",
+    "database",
+    "selection",
+    "projection",
+    "join",
+    "exam prep",
+    "query mistakes",
+    "SQL",
+    "set operations",
+    "outer join"
+   ],
+   "src": "/media/learn/relational-algebra/relational-algebra-16.mp4",
+   "poster": "/media/learn/relational-algebra/relational-algebra-16.jpg",
+   "captions": "/media/learn/relational-algebra/relational-algebra-16.vtt"
+  }
+ ];

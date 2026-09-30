@@ -9,7 +9,7 @@
 	// scroll, not a menu — and on a phone, which is where this gets read, it is a very long scroll. The first series
 	// opens; the rest are one tap away and announce their size before you commit to them.
 	import { Play, Clock, ListVideo, ChevronDown } from '@lucide/svelte';
-	import { PROBABILITY, NEO4J, LLM_EVAL, SERVING, LEARNING, COUNTING, PATTERNS, CHANCE, SHIFT, CYPHER, MODELLING, NEPTUNE, type Lesson } from '$lib/learn.generated';
+	import { PROBABILITY, NEO4J, LLM_EVAL, SERVING, LEARNING, COUNTING, PATTERNS, CHANCE, SHIFT, CYPHER, MODELLING, NEPTUNE, RELALG, type Lesson } from '$lib/learn.generated';
 	import LessonPlayer from '$lib/components/LessonPlayer.svelte';
 
 	type Series = { key: string; eyebrow: string; title: string; blurb: string; lessons: Lesson[] };
@@ -113,6 +113,14 @@
 			blurb:
 				'Moving a live graph between engines, honestly: what actually differs, the two property-graph models, Gremlin and SPARQL translated to Cypher, getting forty million nodes out of Neptune and into Neo4j, rewriting the application layer, and a cutover with dual writes and a rollback you could actually use.',
 			lessons: NEPTUNE
+		},
+		{
+			key: 'relational-algebra',
+			eyebrow: 'Series 13',
+			title: 'Relational Algebra, End to End (Databases)',
+			blurb:
+				'The language behind every SQL query, taught for someone with an assignment in front of them: selection, projection, rename and assignment, cross products and every kind of join, the set operations and how difference expresses "none" and "every" — then six workshops that work real problems, a recognition quiz, and an exam-readiness pass. Every operator in both the Greek notation you read and the typed form a tool accepts.',
+			lessons: RELALG
 		}
 	];
 	const SERIES: Series[] = ALL.filter((s) => s.lessons.length > 0);
