@@ -11372,12 +11372,528 @@ export const RELALG: Lesson[] = [
   }
  ];
 
-export const LANGCHAIN: Lesson[] = [];
+export const LANGCHAIN: Lesson[] = [
+  {
+   "n": 2,
+   "title": "Chat Models: Messages, Methods, and Parameters",
+   "summary": "Learn why LangChain chat models work with message lists instead of plain strings, and how the four message types—system, human, AI, and tool—keep conversation roles separate. Discover the three ways to run a model (invoke, batch, and stream), master the key parameters that affect cost and behavior, and see how to include images alongside text in a single message.",
+   "runs": "9:06",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Why a list, not a string?"
+    },
+    {
+     "at": "0:52",
+     "title": "System, human, ai, tool"
+    },
+    {
+     "at": "2:11",
+     "title": "invoke — one call, one answer"
+    },
+    {
+     "at": "3:19",
+     "title": "batch — many calls, handled for you"
+    },
+    {
+     "at": "4:02",
+     "title": "stream — tokens as they arrive"
+    },
+    {
+     "at": "4:50",
+     "title": "The parameters that cost you something"
+    },
+    {
+     "at": "5:53",
+     "title": "A photo of a worn cassette"
+    },
+    {
+     "at": "7:10",
+     "title": "The trap: batch is not a loop"
+    },
+    {
+     "at": "8:04",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "LangChain",
+    "chat models",
+    "messages",
+    "invoke",
+    "batch",
+    "stream",
+    "temperature",
+    "ChatOpenAI",
+    "multimodal"
+   ],
+   "src": "/media/learn/langchain/langchain-02.mp4",
+   "poster": "/media/learn/langchain/langchain-02.jpg",
+   "captions": "/media/learn/langchain/langchain-02.vtt"
+  }
+ ];
 
-export const LANGGRAPH: Lesson[] = [];
+export const LANGGRAPH: Lesson[] = [
+  {
+   "n": 2,
+   "title": "Designing State in LangGraph: Schema, Reducers, and Data Flow",
+   "summary": "Learn how LangGraph's state schema is the foundation of reliable agent design—not a vague memory blob but a typed contract that governs how all nodes communicate. Discover how partial updates, reducers, and the MessagesState base class prevent data loss and keep your agent's information flow clean and predictable.",
+   "runs": "8:39",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question: what does the graph actually remember?"
+    },
+    {
+     "at": "0:45",
+     "title": "A typed schema, not a grab bag"
+    },
+    {
+     "at": "1:31",
+     "title": "Partial updates: return only what changed"
+    },
+    {
+     "at": "2:27",
+     "title": "The mistake: two nodes, one key, the second silently wins"
+    },
+    {
+     "at": "3:32",
+     "title": "Reducers: how an update combines, not replaces"
+    },
+    {
+     "at": "4:51",
+     "title": "MessagesState: the prebuilt shape for the common case"
+    },
+    {
+     "at": "5:30",
+     "title": "Designing the shop's state, honestly"
+    },
+    {
+     "at": "6:52",
+     "title": "Keep state small — it's all written, read, and checkpointed"
+    },
+    {
+     "at": "7:41",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "LangGraph",
+    "state management",
+    "TypedDict",
+    "reducers",
+    "MessagesState",
+    "agent design",
+    "data flow",
+    "schema design",
+    "typed contracts",
+    "partial updates"
+   ],
+   "src": "/media/learn/langgraph/langgraph-02.mp4",
+   "poster": "/media/learn/langgraph/langgraph-02.jpg",
+   "captions": "/media/learn/langgraph/langgraph-02.vtt"
+  },
+  {
+   "n": 7,
+   "title": "Persistence & Recovery: Making State Survive with Checkpointers",
+   "summary": "Learn how to use LangGraph's checkpointer to save conversation state after every step, so that your agent can recover from crashes and handle multi-turn conversations without manually managing history. You'll see how to compile a graph with different checkpointers (MemorySaver for testing, PostgresSaver or SqliteSaver for production), use thread IDs to keep customer conversations separate, and manage checkpoint retention policies.",
+   "runs": "9:09",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question: What Happens When It Crashes?"
+    },
+    {
+     "at": "0:55",
+     "title": "The Checkpointer: State Saved After Every Step"
+    },
+    {
+     "at": "2:05",
+     "title": "Threads: One Customer, One Conversation"
+    },
+    {
+     "at": "3:17",
+     "title": "Kill It and Resume — Watch This"
+    },
+    {
+     "at": "4:35",
+     "title": "In-Memory Versus Durable: What's In the Table"
+    },
+    {
+     "at": "6:03",
+     "title": "The Real Payoff: No More History Juggling"
+    },
+    {
+     "at": "7:15",
+     "title": "The Mistake: Checkpoints Pile Up Forever"
+    },
+    {
+     "at": "8:10",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "LangGraph",
+    "checkpointer",
+    "state persistence",
+    "crash recovery",
+    "thread_id",
+    "multi-turn conversation",
+    "PostgreSQL",
+    "conversation history",
+    "agent resilience"
+   ],
+   "src": "/media/learn/langgraph/langgraph-07.mp4",
+   "poster": "/media/learn/langgraph/langgraph-07.jpg",
+   "captions": "/media/learn/langgraph/langgraph-07.vtt"
+  },
+  {
+   "n": 11,
+   "title": "Concurrent Nodes in LangGraph: Static and Dynamic Fan-Out",
+   "summary": "Learn how to run independent node checks in parallel using LangGraph instead of sequentially. This lesson covers static fan-out with fixed edges, dynamic fan-out using the Send API for variable workloads, and when to actually apply these patterns for real performance gains.",
+   "runs": "9:39",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Why is everything happening one after another?"
+    },
+    {
+     "at": "1:02",
+     "title": "Static fan-out: one node, three edges out"
+    },
+    {
+     "at": "2:53",
+     "title": "Running it and reading the timing"
+    },
+    {
+     "at": "3:36",
+     "title": "The case static fan-out can't handle"
+    },
+    {
+     "at": "4:20",
+     "title": "The Send API: dynamic fan-out"
+    },
+    {
+     "at": "5:52",
+     "title": "Running the five-part request"
+    },
+    {
+     "at": "6:33",
+     "title": "When one branch fails"
+    },
+    {
+     "at": "7:50",
+     "title": "Is it actually worth it? Measure, don't assume"
+    },
+    {
+     "at": "8:41",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "LangGraph",
+    "concurrency",
+    "fan-out",
+    "parallelism",
+    "Send API",
+    "graph design",
+    "performance optimization",
+    "state management",
+    "routing"
+   ],
+   "src": "/media/learn/langgraph/langgraph-11.mp4",
+   "poster": "/media/learn/langgraph/langgraph-11.jpg",
+   "captions": "/media/learn/langgraph/langgraph-11.vtt"
+  }
+ ];
 
 export const LANGSMITH: Lesson[] = [];
 
-export const MCP: Lesson[] = [];
+export const MCP: Lesson[] = [
+  {
+   "n": 4,
+   "title": "The MCP Handshake: Initialize, Capabilities, and Lifecycle",
+   "summary": "Learn the three-message handshake that establishes every MCP connection: how clients and servers declare their protocol versions and capabilities, and why capability negotiation matters more than version matching. This video covers what happens when versions don't match, how to interpret the absence of capabilities as a real statement, and how to cleanly shut down an MCP connection.",
+   "runs": "8:31",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Why the first two messages matter"
+    },
+    {
+     "at": "0:52",
+     "title": "Message one: the initialize request"
+    },
+    {
+     "at": "1:46",
+     "title": "Message two: the server answers"
+    },
+    {
+     "at": "2:34",
+     "title": "Message three: initialized, and why it's a notification"
+    },
+    {
+     "at": "3:21",
+     "title": "Capability negotiation as the heart of it"
+    },
+    {
+     "at": "4:45",
+     "title": "When the version doesn't match"
+    },
+    {
+     "at": "5:41",
+     "title": "Lifecycle beyond start-up: shutdown"
+    },
+    {
+     "at": "6:38",
+     "title": "When a host says 'this server has no tools'"
+    },
+    {
+     "at": "7:28",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "MCP",
+    "protocol",
+    "handshake",
+    "initialize",
+    "capabilities",
+    "JSON-RPC",
+    "version negotiation",
+    "client-server communication",
+    "shutdown"
+   ],
+   "src": "/media/learn/mcp/mcp-04.mp4",
+   "poster": "/media/learn/mcp/mcp-04.jpg",
+   "captions": "/media/learn/mcp/mcp-04.vtt"
+  },
+  {
+   "n": 11,
+   "title": "Production-Ready Tools: Beyond the Demo",
+   "summary": "Learn the essential practices that separate a tool that works on your laptop from one that survives real-world use. This video covers progress notifications, cancellation handling, pagination, ping heartbeats, protocol logging, and timeouts—the invisible layer that keeps your server reliable when it matters. After watching, you'll have a checklist for shipping tools that won't silently fail the moment they leave your machine.",
+   "runs": "9:12",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The demo that dies in production"
+    },
+    {
+     "at": "0:43",
+     "title": "Progress notifications"
+    },
+    {
+     "at": "2:05",
+     "title": "Cancellation"
+    },
+    {
+     "at": "3:14",
+     "title": "Pagination with cursors"
+    },
+    {
+     "at": "4:21",
+     "title": "Ping and dead peers"
+    },
+    {
+     "at": "5:13",
+     "title": "Protocol logging, not print"
+    },
+    {
+     "at": "6:14",
+     "title": "Timeouts on both sides"
+    },
+    {
+     "at": "7:31",
+     "title": "Where this goes wrong"
+    },
+    {
+     "at": "8:14",
+     "title": "The pre-launch checklist"
+    }
+   ],
+   "tags": [
+    "MCP",
+    "tool reliability",
+    "production deployment",
+    "progress notifications",
+    "cancellation handling",
+    "pagination",
+    "timeout management",
+    "protocol logging",
+    "server design"
+   ],
+   "src": "/media/learn/mcp/mcp-11.mp4",
+   "poster": "/media/learn/mcp/mcp-11.jpg",
+   "captions": "/media/learn/mcp/mcp-11.vtt"
+  }
+ ];
 
-export const SYSTEMONE: Lesson[] = [];
+export const SYSTEMONE: Lesson[] = [
+  {
+   "n": 4,
+   "title": "Choice: Building Typed Decisions in Agentic Systems",
+   "summary": "Learn how to design and implement Choice—the first primitive for structured decision-making in AI agents. You'll discover how to build mutually exclusive, collectively exhaustive option lists that force the model to pick one category instead of generating free text, and how to recognize when a single choice has grown into two stacked decisions.",
+   "runs": "9:18",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Routing Problem"
+    },
+    {
+     "at": "1:04",
+     "title": "A First Pass at Choice"
+    },
+    {
+     "at": "2:22",
+     "title": "Mutually Exclusive, Collectively Exhaustive"
+    },
+    {
+     "at": "3:55",
+     "title": "Naming So Meaning Is Obvious"
+    },
+    {
+     "at": "4:48",
+     "title": "The Value of 'None of These'"
+    },
+    {
+     "at": "6:05",
+     "title": "When a List Gets Too Long"
+    },
+    {
+     "at": "7:21",
+     "title": "Where Choice Shows Up"
+    },
+    {
+     "at": "8:22",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "choice",
+    "routing",
+    "classification",
+    "triage",
+    "typed decisions",
+    "agentic systems",
+    "LangGraph",
+    "LLM patterns",
+    "decision design",
+    "workflow"
+   ],
+   "src": "/media/learn/system-one/system-one-04.mp4",
+   "poster": "/media/learn/system-one/system-one-04.jpg",
+   "captions": "/media/learn/system-one/system-one-04.vtt"
+  },
+  {
+   "n": 5,
+   "title": "Score: Rating Things Against Criteria",
+   "summary": "Learn how to use Score to rate individual items against your own criteria, not just pick between options. This video teaches you how to write criteria that actually produce consistent results, avoid common mistakes like averaging unlike scores, and use Score's real strength: reliably ordering items against each other rather than obtaining absolute truth values.",
+   "runs": "7:21",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question"
+    },
+    {
+     "at": "0:57",
+     "title": "Three ratings the shop needs"
+    },
+    {
+     "at": "1:44",
+     "title": "The criterion that produces noise"
+    },
+    {
+     "at": "2:42",
+     "title": "The criterion that names the ends"
+    },
+    {
+     "at": "3:44",
+     "title": "Fewer points, more agreement"
+    },
+    {
+     "at": "4:33",
+     "title": "Where score is strongest: ordering, not truth"
+    },
+    {
+     "at": "5:29",
+     "title": "The mistake: averaging unlike scores"
+    },
+    {
+     "at": "6:28",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "Score",
+    "rating criteria",
+    "LLM prompting",
+    "confidence scores",
+    "ranking",
+    "decision-making",
+    "prompt design",
+    "AI evaluation"
+   ],
+   "src": "/media/learn/system-one/system-one-05.mp4",
+   "poster": "/media/learn/system-one/system-one-05.jpg",
+   "captions": "/media/learn/system-one/system-one-05.vtt"
+  },
+  {
+   "n": 10,
+   "title": "Measuring System One: Latency, Cost, and Accuracy in Real Decisions",
+   "summary": "Learn how to measure whether a typed System One approach actually outperforms an agent in real-world conditions—not vendor claims. You'll build the same decision two ways and measure latency, cost per thousand decisions, and accuracy against your own labelled set, including the impact of escalation thresholds.",
+   "runs": "8:25",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Does This Actually Pay"
+    },
+    {
+     "at": "0:52",
+     "title": "The Same Decision, Two Ways"
+    },
+    {
+     "at": "1:48",
+     "title": "Measuring Latency"
+    },
+    {
+     "at": "2:43",
+     "title": "Cost Per Thousand Decisions"
+    },
+    {
+     "at": "3:39",
+     "title": "Accuracy Against the Labelled Set"
+    },
+    {
+     "at": "4:31",
+     "title": "The Effects That Usually Dominate"
+    },
+    {
+     "at": "5:31",
+     "title": "When This Is The Wrong Tool"
+    },
+    {
+     "at": "6:40",
+     "title": "The Final Architecture"
+    },
+    {
+     "at": "7:27",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "system one",
+    "measurement",
+    "latency",
+    "cost analysis",
+    "accuracy",
+    "labelled set",
+    "escalation",
+    "agent comparison",
+    "typed decisions",
+    "LangSmith"
+   ],
+   "src": "/media/learn/system-one/system-one-10.mp4",
+   "poster": "/media/learn/system-one/system-one-10.jpg",
+   "captions": "/media/learn/system-one/system-one-10.vtt"
+  }
+ ];
