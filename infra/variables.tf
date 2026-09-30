@@ -25,3 +25,11 @@ variable "lambda_memory" {
 variable "db_instance_class" {
   default = "db.t4g.micro"
 }
+
+# The CloudFront distribution of neuralknowledge.ai, which serves the same media bucket as a second origin. It is
+# declared in that project, so this only needs its id in order to grant it read access to the media (2026-09-30).
+variable "sibling_distribution_id" {
+  type        = string
+  default     = "E3OE3X36DPHKVD"
+  description = "CloudFront distribution id of the sibling site that plays this media"
+}

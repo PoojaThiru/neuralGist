@@ -48,7 +48,14 @@ resource "aws_s3_bucket_policy" "media" {
       Principal = { Service = "cloudfront.amazonaws.com" }
       Action    = "s3:GetObject"
       Resource  = "${aws_s3_bucket.media.arn}/media/*"
-      Condition = { StringEquals = { "AWS:SourceArn" = aws_cloudfront_distribution.app[0].arn } }
+      # TWO SITES SERVE THIS MEDIA (2026-09-30). neuralknowledge.ai has its own CloudFront distribution and takes
+      # this bucket as an origin, so every video on it returned 403 while the same file played on neuralgist.ai:
+      # the policy named one distribution. A list of source ARNs is the whole fix. The second is given as a plain
+      # id because that distribution is declared in the Neural Knowledge project, not this one.
+      Condition = { StringEquals = { "AWS:SourceArn" = [
+        aws_cloudfront_distribution.app[0].arn,
+        "arn:aws:cloudfront::${data.aws_caller_identity.me.account_id}:distribution/${var.sibling_distribution_id}",
+      ] } }
     }]
   })
 }
