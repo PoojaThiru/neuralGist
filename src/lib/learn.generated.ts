@@ -11651,8 +11651,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Getting Manual Data Into an AI: Loaders, Splitters, Embeddings, Vector Search",
-   "summary": "Learn how to make repair manuals searchable by AI using a four-step pipeline: loading text from PDFs, splitting it into chunks without losing meaning, converting text to embeddings for semantic search, and storing it in a vector database. You'll understand why fixed-size splitting fails, when to use recursive or structure-aware splitting, and how to avoid common pitfalls like mixing vector spaces or losing tables in the process.",
+   "title": "Chunking and Embeddings: Getting Your Repair Manual into an AI Model",
+   "summary": "Learn how to turn a large repair manual into searchable knowledge that an AI assistant can actually use to answer specific questions. This video covers the complete pipeline: loading documents, splitting them intelligently to preserve meaning, converting text to embeddings for semantic search, and storing everything in a vector database to retrieve the right information on demand.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11689,16 +11689,16 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "RAG",
     "embeddings",
     "vector search",
+    "RAG",
     "text splitting",
-    "loaders",
     "semantic search",
-    "document processing",
-    "LLM",
     "vector database",
-    "retrieval"
+    "document loading",
+    "chunking",
+    "LLM integration",
+    "information retrieval"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
@@ -11993,6 +11993,69 @@ export const LANGGRAPH: Lesson[] = [
    "captions": "/media/learn/langgraph/langgraph-04.vtt"
   },
   {
+   "n": 5,
+   "title": "Building Agent Loops: From Sketch to Code to One-Liner",
+   "summary": "Learn what actually makes an agent an agent: a loop where a model decides when to call tools, tools run, results return to the model, and the cycle repeats until the model stops. You'll sketch the agent loop by hand, write the model and tool nodes, set up the conditional edge that drives the cycle, watch it work on a real two-step question, then see how LangGraph's create_react_agent does it all in one line.",
+   "runs": "8:37",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question: what actually makes it an agent?"
+    },
+    {
+     "at": "0:55",
+     "title": "Drawing the cycle first"
+    },
+    {
+     "at": "1:44",
+     "title": "Writing the model node"
+    },
+    {
+     "at": "2:40",
+     "title": "Writing the tool node"
+    },
+    {
+     "at": "3:27",
+     "title": "The edge that decides: loop or stop"
+    },
+    {
+     "at": "4:20",
+     "title": "Running it: a question that needs two lookups"
+    },
+    {
+     "at": "5:32",
+     "title": "The recursion limit — and skipping it"
+    },
+    {
+     "at": "6:20",
+     "title": "The one-line version: create_react_agent"
+    },
+    {
+     "at": "7:09",
+     "title": "What you'd change first"
+    },
+    {
+     "at": "7:59",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "agent loop",
+    "LangGraph",
+    "model node",
+    "tool node",
+    "conditional edges",
+    "ToolNode",
+    "create_react_agent",
+    "recursion limit",
+    "ReAct agents",
+    "agentic AI"
+   ],
+   "src": "/media/learn/langgraph/langgraph-05.mp4",
+   "poster": "/media/learn/langgraph/langgraph-05.jpg",
+   "captions": "/media/learn/langgraph/langgraph-05.vtt"
+  },
+  {
    "n": 7,
    "title": "Persistence & Recovery: Making State Survive with Checkpointers",
    "summary": "Learn how to use LangGraph's checkpointer to save conversation state after every step, so that your agent can recover from crashes and handle multi-turn conversations without manually managing history. You'll see how to compile a graph with different checkpointers (MemorySaver for testing, PostgresSaver or SqliteSaver for production), use thread IDs to keep customer conversations separate, and manage checkpoint retention policies.",
@@ -12267,6 +12330,61 @@ export const LANGGRAPH: Lesson[] = [
 
 export const LANGSMITH: Lesson[] = [
   {
+   "n": 1,
+   "title": "LangSmith Tracing: Debug Wrong Answers in LLM Agents",
+   "summary": "Learn how LangSmith's trace trees reveal which nested step in your LLM agent went wrong, using a real example where a shop's assistant gave a customer the wrong part number without any logged error. Set up production-ready tracing in three environment variables with zero code changes to your LangChain or LangGraph application.",
+   "runs": "9:25",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Wrong Brake Pad"
+    },
+    {
+     "at": "1:01",
+     "title": "Why a Flat Log Can't Explain This"
+    },
+    {
+     "at": "2:14",
+     "title": "The Trace: A Tree of Runs"
+    },
+    {
+     "at": "3:37",
+     "title": "Wiring It Up: Zero Code Changes"
+    },
+    {
+     "at": "5:08",
+     "title": "Finding It in Under a Minute"
+    },
+    {
+     "at": "6:31",
+     "title": "Where People Go Wrong"
+    },
+    {
+     "at": "7:33",
+     "title": "Projects: Keeping Dev Traffic Separate"
+    },
+    {
+     "at": "8:17",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "LangSmith",
+    "LLM debugging",
+    "tracing",
+    "LangChain",
+    "LangGraph",
+    "agents",
+    "observability",
+    "monitoring",
+    "error detection",
+    "API logging"
+   ],
+   "src": "/media/learn/langsmith/langsmith-01.mp4",
+   "poster": "/media/learn/langsmith/langsmith-01.jpg",
+   "captions": "/media/learn/langsmith/langsmith-01.vtt"
+  },
+  {
    "n": 2,
    "title": "Reading LangSmith Traces: The Tree Structure and What to Look For",
    "summary": "Learn how to navigate a LangSmith trace by understanding its tree structure: root runs, node runs, and child runs at different levels. You'll discover what information to extract at each level (inputs, outputs, latency, tokens, cost), how to spot bottlenecks and errors, and how to filter and tag runs for future debugging.",
@@ -12374,6 +12492,135 @@ export const LANGSMITH: Lesson[] = [
    "src": "/media/learn/langsmith/langsmith-03.mp4",
    "poster": "/media/learn/langsmith/langsmith-03.jpg",
    "captions": "/media/learn/langsmith/langsmith-03.vtt"
+  },
+  {
+   "n": 4,
+   "title": "Building Evaluators: How to Grade LLM Outputs",
+   "summary": "Learn to build and deploy evaluators that grade your AI agent's outputs—from simple heuristic rules for exact matches to model-as-judge systems for open-ended text. You'll discover the four predictable biases judges introduce, how to calibrate them against human labels, and why pairwise comparisons outperform single scores.",
+   "runs": "10:31",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The number you can't trust yet"
+    },
+    {
+     "at": "0:51",
+     "title": "Heuristic evaluators: cheap and deterministic"
+    },
+    {
+     "at": "2:14",
+     "title": "Wiring it into an experiment"
+    },
+    {
+     "at": "3:03",
+     "title": "When there's no rule: model-as-judge"
+    },
+    {
+     "at": "4:22",
+     "title": "Writing the judge"
+    },
+    {
+     "at": "5:08",
+     "title": "The judge's biases, stated plainly"
+    },
+    {
+     "at": "6:30",
+     "title": "Calibrating the judge against humans"
+    },
+    {
+     "at": "7:21",
+     "title": "Pairwise beats scoring"
+    },
+    {
+     "at": "8:09",
+     "title": "Score retrieval and the answer separately"
+    },
+    {
+     "at": "9:03",
+     "title": "Where people get this wrong"
+    },
+    {
+     "at": "9:29",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "LLM evaluation",
+    "evaluators",
+    "heuristic scoring",
+    "model-as-judge",
+    "bias in evaluation",
+    "LangSmith",
+    "retrieval grading",
+    "prompt testing",
+    "AI quality assurance",
+    "pairwise comparison"
+   ],
+   "src": "/media/learn/langsmith/langsmith-04.mp4",
+   "poster": "/media/learn/langsmith/langsmith-04.jpg",
+   "captions": "/media/learn/langsmith/langsmith-04.vtt"
+  },
+  {
+   "n": 5,
+   "title": "Reading Evaluation Results Without Fooling Yourself",
+   "summary": "Learn how to run a real evaluation on an LLM assistant using LangSmith's evaluate() function and—more importantly—how to read the results honestly. You'll discover why a single aggregate score hides failures, how to spot problems by slicing results by category, and how to trace individual failures back to root causes in your system's logic.",
+   "runs": "10:04",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question: Does It Actually Work?"
+    },
+    {
+     "at": "0:51",
+     "title": "The Thing Under Test Is Just a Function"
+    },
+    {
+     "at": "1:57",
+     "title": "Calling evaluate()"
+    },
+    {
+     "at": "3:11",
+     "title": "The Aggregate Tells You Little"
+    },
+    {
+     "at": "4:06",
+     "title": "The Distribution Tells You More"
+    },
+    {
+     "at": "4:56",
+     "title": "The Individual Failures Tell You What To Fix"
+    },
+    {
+     "at": "5:53",
+     "title": "Comparing Two Prompts"
+    },
+    {
+     "at": "6:47",
+     "title": "How Many Examples Before It Means Anything"
+    },
+    {
+     "at": "7:57",
+     "title": "Evaluating the Graph, Not Just the Answer"
+    },
+    {
+     "at": "9:05",
+     "title": "Closing the Loop"
+    }
+   ],
+   "tags": [
+    "evaluation",
+    "LangSmith",
+    "LLM testing",
+    "metrics",
+    "debugging",
+    "prompt engineering",
+    "results analysis",
+    "intermediate state",
+    "experimental comparison"
+   ],
+   "src": "/media/learn/langsmith/langsmith-05.mp4",
+   "poster": "/media/learn/langsmith/langsmith-05.jpg",
+   "captions": "/media/learn/langsmith/langsmith-05.vtt"
   },
   {
    "n": 6,
@@ -12486,6 +12733,60 @@ export const LANGSMITH: Lesson[] = [
 
 export const MCP: Lesson[] = [
   {
+   "n": 1,
+   "title": "Nine Integrations and Counting: Why MCP",
+   "summary": "Learn why the Model Context Protocol solves the exponential integration problem: when multiple applications need to talk to the same backend systems, custom wrapper code for each pair explodes from N×M integrations to just N+M. You'll understand what MCP is, what it isn't, and when the overhead of running it actually pays off.",
+   "runs": "10:10",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Nine Integrations and Counting"
+    },
+    {
+     "at": "0:55",
+     "title": "Drawing the Grid: N Times M"
+    },
+    {
+     "at": "2:30",
+     "title": "What Twelve Integrations Actually Cost"
+    },
+    {
+     "at": "3:41",
+     "title": "The Protocol's Proposition: N Plus M"
+    },
+    {
+     "at": "5:27",
+     "title": "What MCP Is Not"
+    },
+    {
+     "at": "6:59",
+     "title": "The Honest Cost"
+    },
+    {
+     "at": "8:22",
+     "title": "The Moment It's Worth It"
+    },
+    {
+     "at": "9:12",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "MCP",
+    "Model Context Protocol",
+    "system integration",
+    "protocol design",
+    "backend architecture",
+    "tool calling",
+    "agent frameworks",
+    "API design",
+    "software scaling"
+   ],
+   "src": "/media/learn/mcp/mcp-01.mp4",
+   "poster": "/media/learn/mcp/mcp-01.jpg",
+   "captions": "/media/learn/mcp/mcp-01.vtt"
+  },
+  {
    "n": 2,
    "title": "MCP Fundamentals: Host, Client, and Server Explained",
    "summary": "Learn the three core roles in the Model Context Protocol: the host (your application), clients (one per server), and servers (data/system exposers). This video untangles the often-confused terminology and shows how they communicate via JSON-RPC 2.0, including the bidirectional requests, responses, and notifications that make MCP work without custom glue code.",
@@ -12551,6 +12852,65 @@ export const MCP: Lesson[] = [
    "src": "/media/learn/mcp/mcp-02.mp4",
    "poster": "/media/learn/mcp/mcp-02.jpg",
    "captions": "/media/learn/mcp/mcp-02.vtt"
+  },
+  {
+   "n": 3,
+   "title": "How MCP Messages Travel: Stdio vs Streamable HTTP",
+   "summary": "Learn how the Model Context Protocol actually transports messages between hosts and servers using two real-world transports: stdio (operating system pipes for local tools) and streamable HTTP (for remote servers). You'll understand when to use each one, see working examples of both, and learn why stdio is often the right default choice despite HTTP feeling more \"production.\"",
+   "runs": "10:43",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "How do the words actually get there?"
+    },
+    {
+     "at": "1:11",
+     "title": "The manuals server, over stdio"
+    },
+    {
+     "at": "2:41",
+     "title": "Running it and watching the bytes"
+    },
+    {
+     "at": "3:45",
+     "title": "Same server, remote: streamable HTTP"
+    },
+    {
+     "at": "5:26",
+     "title": "Calling the remote manuals server"
+    },
+    {
+     "at": "6:14",
+     "title": "Choosing, and the default people get wrong"
+    },
+    {
+     "at": "7:15",
+     "title": "Lifetime, concurrency, and dropped connections"
+    },
+    {
+     "at": "8:43",
+     "title": "Testing a server before any agent touches it"
+    },
+    {
+     "at": "9:34",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "MCP",
+    "Model Context Protocol",
+    "stdio",
+    "HTTP",
+    "messaging",
+    "transport",
+    "client-server",
+    "JSON-RPC",
+    "subprocess",
+    "architecture"
+   ],
+   "src": "/media/learn/mcp/mcp-03.mp4",
+   "poster": "/media/learn/mcp/mcp-03.jpg",
+   "captions": "/media/learn/mcp/mcp-03.vtt"
   },
   {
    "n": 4,
