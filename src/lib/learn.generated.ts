@@ -11374,6 +11374,61 @@ export const RELALG: Lesson[] = [
 
 export const LANGCHAIN: Lesson[] = [
   {
+   "n": 1,
+   "title": "What LangChain Actually Does: The ChatModel Interface",
+   "summary": "Learn what LangChain is really for: providing a consistent interface across different AI model providers. This video clarifies common misconceptions (like thinking LangChain builds agents), shows you the ChatModel interface that lets you swap OpenAI for Anthropic without rewriting code, and demonstrates how you get invoke, stream, and batch methods automatically—all through concrete examples with Northstar Cycles, a bicycle repair shop assistant you'll build throughout this course.",
+   "runs": "6:20",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Is LangChain the agent framework?"
+    },
+    {
+     "at": "0:54",
+     "title": "The saving-weeks part"
+    },
+    {
+     "at": "1:38",
+     "title": "The bicycle shop assistant"
+    },
+    {
+     "at": "2:35",
+     "title": "The interface, in real code"
+    },
+    {
+     "at": "3:23",
+     "title": "Streaming and batching for free"
+    },
+    {
+     "at": "4:03",
+     "title": "What it costs you"
+    },
+    {
+     "at": "4:46",
+     "title": "The mistake people make"
+    },
+    {
+     "at": "5:20",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "LangChain",
+    "ChatModel interface",
+    "AI agents",
+    "LLM framework",
+    "model abstraction",
+    "streaming",
+    "batching",
+    "LangGraph",
+    "OpenAI",
+    "Anthropic"
+   ],
+   "src": "/media/learn/langchain/langchain-01.mp4",
+   "poster": "/media/learn/langchain/langchain-01.jpg",
+   "captions": "/media/learn/langchain/langchain-01.vtt"
+  },
+  {
    "n": 2,
    "title": "Chat Models: Messages, Methods, and Parameters",
    "summary": "Learn why LangChain chat models work with message lists instead of plain strings, and how the four message types—system, human, AI, and tool—keep conversation roles separate. Discover the three ways to run a model (invoke, batch, and stream), master the key parameters that affect cost and behavior, and see how to include images alongside text in a single message.",
@@ -11433,8 +11488,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Vectorizing Documents: Search Repair Manuals by Meaning",
-   "summary": "Learn how to transform PDF manuals into searchable chunks that an AI assistant can actually use to answer specific questions. This video covers loaders, text splitting strategies (fixed, recursive, and structure-aware), embeddings, and vector stores—the complete pipeline for turning unstructured documents into meaningful search results.",
+   "title": "Retrieval Augmented Generation: Getting Manuals into an AI's Hands",
+   "summary": "Learn how to prepare repair manuals and other documents so an AI assistant can actually search them and answer questions about specific details like torque specs. This video walks through the four-step pipeline: loading text from PDFs and HTML, splitting documents intelligently without breaking facts apart, converting text into searchable vectors using embeddings, and storing everything in a vector database for fast similarity search.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11442,53 +11497,104 @@ export const LANGCHAIN: Lesson[] = [
      "title": "The manual is huge, the answer is one line"
     },
     {
-     "at": "1:02",
+     "at": "1:00",
      "title": "Loaders: getting text out, and what falls on the floor"
     },
     {
-     "at": "2:38",
+     "at": "2:34",
      "title": "Splitting, attempt one: fixed size, and where it fails"
     },
     {
-     "at": "4:12",
+     "at": "4:07",
      "title": "Recursive character splitting: cut at the nearest natural seam"
     },
     {
-     "at": "5:51",
-     "title": "Structure-aware splitting: use the manual's own headings"
-    },
-    {
-     "at": "7:24",
+     "at": "5:38",
      "title": "Embeddings: turning a chunk into a vector you can compare"
     },
     {
-     "at": "8:51",
+     "at": "7:03",
      "title": "Vector store: add, search, and score"
     },
     {
-     "at": "10:29",
+     "at": "8:39",
      "title": "The three ways this quietly breaks"
     },
     {
-     "at": "11:47",
+     "at": "9:57",
      "title": "Recap: four steps, one honest look at the output"
     }
    ],
    "tags": [
+    "retrieval augmented generation",
     "RAG",
-    "vector search",
-    "text splitting",
+    "document splitting",
     "embeddings",
-    "document loaders",
+    "vector store",
+    "PDF loaders",
     "semantic search",
     "LLM",
-    "vector database",
-    "PDF processing",
-    "information retrieval"
+    "manual search",
+    "vector database"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
    "captions": "/media/learn/langchain/langchain-08.vtt"
+  },
+  {
+   "n": 12,
+   "title": "Observing chains: streaming, events, callbacks, and logs",
+   "summary": "Learn how to show your work while an AI chain thinks, rather than leaving the user staring at a spinner. You'll use streaming for token-by-token output, astream_events to display each step as it happens, callbacks to log metrics like cost and timing, and tags/metadata to find specific runs later—without changing the chain itself.",
+   "runs": "9:42",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The spinner problem"
+    },
+    {
+     "at": "1:05",
+     "title": "Streaming tokens with .stream"
+    },
+    {
+     "at": "2:21",
+     "title": "astream_events — seeing the steps"
+    },
+    {
+     "at": "4:12",
+     "title": "Callbacks — logging, timing, cost"
+    },
+    {
+     "at": "5:36",
+     "title": "Tags and metadata — finding a run later"
+    },
+    {
+     "at": "6:42",
+     "title": "Where this goes wrong"
+    },
+    {
+     "at": "7:42",
+     "title": "Where a chain stops being enough"
+    },
+    {
+     "at": "8:41",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "LangChain",
+    "streaming",
+    "astream_events",
+    "callbacks",
+    "time-to-first-token",
+    "observability",
+    "logging",
+    "tags",
+    "metadata",
+    "chain execution"
+   ],
+   "src": "/media/learn/langchain/langchain-12.mp4",
+   "poster": "/media/learn/langchain/langchain-12.jpg",
+   "captions": "/media/learn/langchain/langchain-12.vtt"
   }
  ];
 
@@ -11607,6 +11713,55 @@ export const LANGGRAPH: Lesson[] = [
    "captions": "/media/learn/langgraph/langgraph-07.vtt"
   },
   {
+   "n": 10,
+   "title": "State History & Checkpoints: Debugging & Forking Conversations",
+   "summary": "Learn how to use state history checkpoints to rewind conversations, replay them from any point, and fork alternate timelines by editing state. You'll be able to reproduce customer complaints exactly, test fixes against real failures, and let humans correct individual steps without losing your conversation history.",
+   "runs": "8:18",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "What if you could rewind the conversation?"
+    },
+    {
+     "at": "1:06",
+     "title": "Part one: get_state_history"
+    },
+    {
+     "at": "2:30",
+     "title": "Part two: replaying from a checkpoint"
+    },
+    {
+     "at": "3:31",
+     "title": "Part three: editing state and forking"
+    },
+    {
+     "at": "5:08",
+     "title": "Part four: what this is actually for"
+    },
+    {
+     "at": "6:32",
+     "title": "Mistakes people make"
+    },
+    {
+     "at": "7:17",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "state history",
+    "checkpoints",
+    "conversation debugging",
+    "replay",
+    "fork",
+    "agentic workflows",
+    "version control",
+    "thread state"
+   ],
+   "src": "/media/learn/langgraph/langgraph-10.mp4",
+   "poster": "/media/learn/langgraph/langgraph-10.jpg",
+   "captions": "/media/learn/langgraph/langgraph-10.vtt"
+  },
+  {
    "n": 11,
    "title": "Concurrent Nodes in LangGraph: Static and Dynamic Fan-Out",
    "summary": "Learn how to run independent node checks in parallel using LangGraph instead of sequentially. This lesson covers static fan-out with fixed edges, dynamic fan-out using the Send API for variable workloads, and when to actually apply these patterns for real performance gains.",
@@ -11669,58 +11824,57 @@ export const LANGGRAPH: Lesson[] = [
 export const LANGSMITH: Lesson[] = [
   {
    "n": 6,
-   "title": "Automated Evaluation Gates in CI/CD",
-   "summary": "Learn how to set up automated evaluation runs that catch prompt and tool regressions before they reach production. This video teaches you to design effective gates using relative comparisons and per-category thresholds, and explains how to balance evaluation speed with thoroughness using hot and full test sets.",
-   "runs": "8:46",
+   "title": "Automated evaluation gates: catching prompt regressions in CI",
+   "summary": "Learn how to automatically catch when prompt or tool changes break your application by running evaluations in CI/CD pipelines. This video covers three approaches to setting quality thresholds—absolute numbers, relative comparisons to the last good version, and per-category floors—and shows how to balance thoroughness with speed using hot and nightly test sets.",
+   "runs": "8:35",
    "chapters": [
     {
      "at": "0:00",
      "title": "The fortnight nobody noticed"
     },
     {
-     "at": "0:52",
+     "at": "0:51",
      "title": "What triggers a run"
     },
     {
-     "at": "1:52",
+     "at": "1:50",
      "title": "The gate, attempt one: an absolute number"
     },
     {
-     "at": "2:40",
+     "at": "2:37",
      "title": "The gate, attempt two: compare to the last good run"
     },
     {
-     "at": "3:38",
+     "at": "3:33",
      "title": "The gate, attempt three: a floor per category"
     },
     {
-     "at": "4:42",
+     "at": "4:36",
      "title": "Keeping it fast: hot set now, full set tonight"
     },
     {
-     "at": "5:43",
+     "at": "5:36",
      "title": "The part teams skip: who looks, and what they do"
     },
     {
-     "at": "6:48",
+     "at": "6:40",
      "title": "Where this goes wrong"
     },
     {
-     "at": "7:44",
+     "at": "7:35",
      "title": "Recap"
     }
    ],
    "tags": [
     "evaluation",
     "CI/CD",
-    "automation",
-    "LLM testing",
-    "regression detection",
-    "prompt engineering",
     "quality gates",
+    "regression testing",
+    "LLM testing",
+    "prompt engineering",
+    "automated testing",
     "LangSmith",
-    "testing strategy",
-    "continuous integration"
+    "thresholds"
    ],
    "src": "/media/learn/langsmith/langsmith-06.mp4",
    "poster": "/media/learn/langsmith/langsmith-06.jpg",
@@ -11897,6 +12051,60 @@ export const MCP: Lesson[] = [
    "src": "/media/learn/mcp/mcp-05.mp4",
    "poster": "/media/learn/mcp/mcp-05.jpg",
    "captions": "/media/learn/mcp/mcp-05.vtt"
+  },
+  {
+   "n": 9,
+   "title": "Building an MCP Client: Connecting Agents to Servers",
+   "summary": "Learn how to build the client side of an MCP connection—the code that discovers tools from servers and wires them into a LangGraph agent. You'll understand the difference between the client (which handles protocol and discovery) and the host (which makes judgment calls about which tools to call and when), and see how a tiny shim function translates between MCP and LangGraph.",
+   "runs": "9:21",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Who's driving the car?"
+    },
+    {
+     "at": "1:05",
+     "title": "The client: connect, handshake, discover"
+    },
+    {
+     "at": "2:44",
+     "title": "Turning discovered tools into LangGraph tools"
+    },
+    {
+     "at": "4:11",
+     "title": "The host: the part that decides"
+    },
+    {
+     "at": "5:41",
+     "title": "Roots: telling a server where it's allowed to work"
+    },
+    {
+     "at": "6:33",
+     "title": "The mistakes people make"
+    },
+    {
+     "at": "7:35",
+     "title": "One host, many servers, one name collision"
+    },
+    {
+     "at": "8:30",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "MCP",
+    "LangGraph",
+    "agent",
+    "client-server",
+    "protocol",
+    "tool discovery",
+    "tool calling",
+    "host decisions",
+    "tool integration"
+   ],
+   "src": "/media/learn/mcp/mcp-09.mp4",
+   "poster": "/media/learn/mcp/mcp-09.jpg",
+   "captions": "/media/learn/mcp/mcp-09.vtt"
   },
   {
    "n": 11,
