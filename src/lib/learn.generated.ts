@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Extracting & Searching Large Documents with Embeddings and Vector Stores",
-   "summary": "Learn how to extract text from PDFs and other documents, split them intelligently to preserve meaning, and build a searchable vector store so an AI assistant can find and cite the exact information needed from hundreds of pages. After this video, you'll be able to set up a complete retrieval pipeline that turns unstructured manuals into semantic search, handling common pitfalls like tables, splitting strategies, and embedding model consistency.",
+   "title": "Turning Manuals into Searchable Knowledge: Loaders, Splitting, and Embeddings",
+   "summary": "Learn how to extract and process text from repair manuals so an AI assistant can actually find and use the right information. This video walks through the four-step pipeline—loaders, text splitting strategies, embeddings, and vector search—showing where each step commonly fails and how to fix it.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,20 +11748,75 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "embeddings",
-    "vector store",
-    "document retrieval",
     "RAG",
+    "vector search",
     "text splitting",
-    "PDF processing",
+    "embeddings",
+    "document loaders",
     "semantic search",
     "LangChain",
-    "Chroma",
-    "document loaders"
+    "manuals",
+    "knowledge retrieval",
+    "PDF processing"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
    "captions": "/media/learn/langchain/langchain-08.vtt"
+  },
+  {
+   "n": 10,
+   "title": "Keeping Vector Stores Fresh: Managing Document Updates with RecordManager",
+   "summary": "Learn how to efficiently handle manual and document updates in your vector store without creating duplicate chunks. This video teaches you how SQLRecordManager tracks source identity and content changes, and shows you when and how to use cleanup modes (none, incremental, full) to keep your retrieval system accurate as documents evolve.",
+   "runs": "8:44",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The manual that got edited"
+    },
+    {
+     "at": "1:11",
+     "title": "The RecordManager: a memory of what was written"
+    },
+    {
+     "at": "2:10",
+     "title": "The first load: everything is new"
+    },
+    {
+     "at": "3:19",
+     "title": "Three cleanup modes, three different deletions"
+    },
+    {
+     "at": "4:44",
+     "title": "Editing one page, re-running incremental"
+    },
+    {
+     "at": "5:36",
+     "title": "Three ways this quietly breaks"
+    },
+    {
+     "at": "7:03",
+     "title": "Scheduling it, and the cost of not"
+    },
+    {
+     "at": "7:54",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "vector store",
+    "document indexing",
+    "RecordManager",
+    "incremental updates",
+    "LangChain",
+    "content deduplication",
+    "data synchronization",
+    "retrieval augmented generation",
+    "document management",
+    "RAG"
+   ],
+   "src": "/media/learn/langchain/langchain-10.mp4",
+   "poster": "/media/learn/langchain/langchain-10.jpg",
+   "captions": "/media/learn/langchain/langchain-10.vtt"
   },
   {
    "n": 11,
