@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Getting Manuals Into an AI: Loaders, Splitting, Embeddings, and Search",
-   "summary": "Learn how to turn unstructured PDF manuals into searchable chunks that an AI can actually use to answer specific questions like torque specifications. This video walks through the complete pipeline: loading files, splitting text intelligently (fixed size, recursive, and structure-aware), embedding chunks as vectors, and storing them in a vector database for semantic search.",
+   "title": "RAG Pipeline: Loading, Splitting, Embedding, and Searching PDFs",
+   "summary": "Learn how to build a retrieval-augmented generation (RAG) system that lets an AI assistant search large manuals and find the exact information it needs to answer questions. This video walks through the complete pipeline: loading documents with metadata, splitting them smartly at natural boundaries, converting text to embeddings for semantic search, and storing everything in a vector database that returns ranked results.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "vector embeddings",
+    "embeddings",
+    "vector search",
     "text splitting",
-    "semantic search",
     "PDF loading",
-    "LangChain",
+    "semantic search",
     "vector store",
-    "Chroma",
     "document chunking",
-    "LLM"
+    "LLM tools",
+    "information retrieval"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
@@ -13148,6 +13148,61 @@ export const MCP: Lesson[] = [
    "src": "/media/learn/mcp/mcp-05.mp4",
    "poster": "/media/learn/mcp/mcp-05.jpg",
    "captions": "/media/learn/mcp/mcp-05.vtt"
+  },
+  {
+   "n": 6,
+   "title": "Resources vs Tools: When to Hand Data to Your Model",
+   "summary": "Learn the critical difference between tools (verbs the model decides to call) and resources (nouns your application reads and provides). This video teaches when to use resources instead of wrapping everything as tools, how to identify resources with URIs and templates, and why this distinction matters for building efficient AI assistants that fetch documents without wasting decision-making steps.",
+   "runs": "10:26",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "1:10",
+     "title": "Why Bother — the Manual Problem"
+    },
+    {
+     "at": "2:21",
+     "title": "URIs — Naming a Resource"
+    },
+    {
+     "at": "3:35",
+     "title": "Resource Templates — One Page Per Bike Year"
+    },
+    {
+     "at": "4:57",
+     "title": "Who Decides — Application, Not Model"
+    },
+    {
+     "at": "6:29",
+     "title": "Subscriptions — When a Manual Changes"
+    },
+    {
+     "at": "7:46",
+     "title": "Mistakes People Make"
+    },
+    {
+     "at": "9:02",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "resources",
+    "tools",
+    "API design",
+    "LLM applications",
+    "URIs",
+    "resource templates",
+    "AI assistants",
+    "tool calling",
+    "context management",
+    "system design"
+   ],
+   "src": "/media/learn/mcp/mcp-06.mp4",
+   "poster": "/media/learn/mcp/mcp-06.jpg",
+   "captions": "/media/learn/mcp/mcp-06.vtt"
   },
   {
    "n": 7,
