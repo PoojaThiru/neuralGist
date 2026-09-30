@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Turning Manuals into Searchable Knowledge: Loaders, Splitting, and Embeddings",
-   "summary": "Learn how to extract and process text from repair manuals so an AI assistant can actually find and use the right information. This video walks through the four-step pipeline—loaders, text splitting strategies, embeddings, and vector search—showing where each step commonly fails and how to fix it.",
+   "title": "Search repair manuals with RAG: loaders, splitting, embeddings, vector stores",
+   "summary": "Learn how to make an AI assistant actually know what's inside your shop's repair manuals by building a retrieval pipeline. This lesson covers loaders (extracting text from PDFs and HTML), text splitting strategies (from fixed-size to structure-aware), embeddings (turning text into searchable vectors), and vector stores, with common failure modes and how to avoid them.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,14 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "vector search",
+    "retrieval augmented generation",
+    "vector embeddings",
     "text splitting",
-    "embeddings",
-    "document loaders",
+    "PDF loaders",
+    "vector store",
     "semantic search",
     "LangChain",
-    "manuals",
-    "knowledge retrieval",
-    "PDF processing"
+    "Chroma"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
@@ -13427,6 +13426,69 @@ export const MCP: Lesson[] = [
    "src": "/media/learn/mcp/mcp-07.mp4",
    "poster": "/media/learn/mcp/mcp-07.jpg",
    "captions": "/media/learn/mcp/mcp-07.vtt"
+  },
+  {
+   "n": 8,
+   "title": "Building an MCP Server from Scratch: The Bike Shop Stock System",
+   "summary": "Learn how to build a complete MCP server in a single file using FastMCP, combining tools, resources, and prompts to create a working bike shop stock system. You'll write input validation, define structured error returns, test with the MCP Inspector before connecting to a real host, and understand how configuration and logging work in production. After this video, you'll be able to scaffold, test, and deploy a fully functional MCP server end to end.",
+   "runs": "9:19",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "0:46",
+     "title": "Scaffolding With an SDK"
+    },
+    {
+     "at": "1:41",
+     "title": "The Availability Tool"
+    },
+    {
+     "at": "3:01",
+     "title": "Errors the Model Can Act On"
+    },
+    {
+     "at": "3:46",
+     "title": "The Price List Resource"
+    },
+    {
+     "at": "4:37",
+     "title": "The Compatibility Interview Prompt"
+    },
+    {
+     "at": "5:18",
+     "title": "Testing Without a Host"
+    },
+    {
+     "at": "6:10",
+     "title": "Packaging, Config, and the Logging Bug"
+    },
+    {
+     "at": "7:28",
+     "title": "Connecting a Real Host"
+    },
+    {
+     "at": "8:27",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "MCP server",
+    "FastMCP",
+    "Python",
+    "tools",
+    "resources",
+    "prompts",
+    "validation",
+    "MCP Inspector",
+    "configuration",
+    "stdio transport"
+   ],
+   "src": "/media/learn/mcp/mcp-08.mp4",
+   "poster": "/media/learn/mcp/mcp-08.jpg",
+   "captions": "/media/learn/mcp/mcp-08.vtt"
   },
   {
    "n": 9,
