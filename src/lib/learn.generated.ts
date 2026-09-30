@@ -11487,9 +11487,117 @@ export const LANGCHAIN: Lesson[] = [
    "captions": "/media/learn/langchain/langchain-02.vtt"
   },
   {
+   "n": 3,
+   "title": "Beyond F-Strings: Prompt Templates in LangChain",
+   "summary": "Learn why hardcoded f-strings break down for complex AI prompts and how LangChain's template system solves it. You'll master PromptTemplate, ChatPromptTemplate with conversation history, partials for fixed values, and semantic similarity-based example selection to build maintainable, robust prompts that catch errors before they reach your users.",
+   "runs": "9:00",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Why not just an f-string?"
+    },
+    {
+     "at": "0:58",
+     "title": "PromptTemplate and the missing variable"
+    },
+    {
+     "at": "2:00",
+     "title": "ChatPromptTemplate: roles and history"
+    },
+    {
+     "at": "3:19",
+     "title": "Partials: baking in the fixed values"
+    },
+    {
+     "at": "4:17",
+     "title": "Few-shot with a fixed list — and its ceiling"
+    },
+    {
+     "at": "5:29",
+     "title": "Example selectors: pick by similarity"
+    },
+    {
+     "at": "7:00",
+     "title": "Where this goes wrong"
+    },
+    {
+     "at": "7:47",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "LangChain",
+    "prompt templates",
+    "PromptTemplate",
+    "ChatPromptTemplate",
+    "few-shot prompting",
+    "example selectors",
+    "semantic similarity",
+    "prompt engineering"
+   ],
+   "src": "/media/learn/langchain/langchain-03.mp4",
+   "poster": "/media/learn/langchain/langchain-03.jpg",
+   "captions": "/media/learn/langchain/langchain-03.vtt"
+  },
+  {
+   "n": 4,
+   "title": "Structured Output: Getting Objects, Not Sentences, From LLMs",
+   "summary": "Learn how to use LangChain's with_structured_output to get back actual Python objects from language models instead of strings you have to parse. You'll define Pydantic schemas, understand the two mechanisms underneath (tool calling and JSON mode), and handle validation errors gracefully in production.",
+   "runs": "8:44",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Problem With a Good Sentence"
+    },
+    {
+     "at": "0:58",
+     "title": "Defining the Shape: a Pydantic Model"
+    },
+    {
+     "at": "2:11",
+     "title": "with_structured_output: the Call"
+    },
+    {
+     "at": "3:18",
+     "title": "Pydantic Versus a Plain Dict Schema"
+    },
+    {
+     "at": "4:13",
+     "title": "How It Actually Works Underneath"
+    },
+    {
+     "at": "5:32",
+     "title": "When It Doesn't Validate"
+    },
+    {
+     "at": "6:56",
+     "title": "Mistakes People Actually Make"
+    },
+    {
+     "at": "7:41",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "LangChain",
+    "structured output",
+    "Pydantic",
+    "LLM",
+    "with_structured_output",
+    "validation",
+    "tool calling",
+    "JSON mode",
+    "API integration",
+    "production patterns"
+   ],
+   "src": "/media/learn/langchain/langchain-04.mp4",
+   "poster": "/media/learn/langchain/langchain-04.jpg",
+   "captions": "/media/learn/langchain/langchain-04.vtt"
+  },
+  {
    "n": 8,
-   "title": "Retrieval Augmented Generation: Getting Manuals into an AI's Hands",
-   "summary": "Learn how to prepare repair manuals and other documents so an AI assistant can actually search them and answer questions about specific details like torque specs. This video walks through the four-step pipeline: loading text from PDFs and HTML, splitting documents intelligently without breaking facts apart, converting text into searchable vectors using embeddings, and storing everything in a vector database for fast similarity search.",
+   "title": "Turning Repair Manuals Into Searchable Knowledge for AI Assistants",
+   "summary": "Learn how to prepare PDFs and documents so an AI assistant can actually search and retrieve specific facts from them, like a torque spec buried in a 200-page manual. This video walks through the complete pipeline: loading documents, splitting them intelligently without breaking sentences or tables, converting text to embeddings for semantic search, and storing everything in a vector database that returns ranked results.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11526,20 +11634,79 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "retrieval augmented generation",
     "RAG",
-    "document splitting",
+    "vector database",
     "embeddings",
-    "vector store",
-    "PDF loaders",
+    "document splitting",
+    "PDF processing",
     "semantic search",
-    "LLM",
-    "manual search",
-    "vector database"
+    "LangChain",
+    "Chroma",
+    "AI assistants",
+    "text chunking"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
    "captions": "/media/learn/langchain/langchain-08.vtt"
+  },
+  {
+   "n": 11,
+   "title": "Conversation Memory: Trimming, Summarizing, and Retrieving History",
+   "summary": "Learn three production-ready strategies for managing conversation history in stateless language model chains: trimming to a token budget while protecting critical messages, summarizing old turns into concise paragraphs, and retrieving semantically relevant past turns instead of just recent ones. You'll discover how to wire history into chains using RunnableWithMessageHistory, avoid common mistakes that break real applications, and understand when these techniques reach their limits with branching logic.",
+   "runs": "10:25",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Customer Who Comes Back"
+    },
+    {
+     "at": "0:51",
+     "title": "The Naive Version: Append Everything"
+    },
+    {
+     "at": "2:13",
+     "title": "Strategy One: Trimming"
+    },
+    {
+     "at": "3:48",
+     "title": "Strategy Two: Summarising Older Turns"
+    },
+    {
+     "at": "4:57",
+     "title": "Strategy Three: Retrieving Relevant Turns"
+    },
+    {
+     "at": "6:06",
+     "title": "Wiring History Into a Chain"
+    },
+    {
+     "at": "7:48",
+     "title": "The Mistakes People Make"
+    },
+    {
+     "at": "8:42",
+     "title": "Recap"
+    },
+    {
+     "at": "9:31",
+     "title": "Where This Runs Out"
+    }
+   ],
+   "tags": [
+    "conversation memory",
+    "message history",
+    "LangChain",
+    "context window",
+    "trimming",
+    "summarization",
+    "vector retrieval",
+    "RunnableWithMessageHistory",
+    "stateless chains",
+    "session management"
+   ],
+   "src": "/media/learn/langchain/langchain-11.mp4",
+   "poster": "/media/learn/langchain/langchain-11.jpg",
+   "captions": "/media/learn/langchain/langchain-11.vtt"
   },
   {
    "n": 12,
@@ -11657,6 +11824,65 @@ export const LANGGRAPH: Lesson[] = [
    "src": "/media/learn/langgraph/langgraph-02.mp4",
    "poster": "/media/learn/langgraph/langgraph-02.jpg",
    "captions": "/media/learn/langgraph/langgraph-02.vtt"
+  },
+  {
+   "n": 3,
+   "title": "Building Your First LangGraph: Nodes, Edges, and State",
+   "summary": "Learn how to build and run your first graph in LangGraph by wiring nodes together with edges. You'll write functions that transform state into partial updates, use invoke to get final results, and stream to watch each node finish in real time.",
+   "runs": "8:06",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question: what actually runs?"
+    },
+    {
+     "at": "0:52",
+     "title": "One node, wired start to end"
+    },
+    {
+     "at": "1:51",
+     "title": "Compile, then invoke"
+    },
+    {
+     "at": "2:40",
+     "title": "Adding a second node, watch the merge"
+    },
+    {
+     "at": "3:50",
+     "title": "Streaming: watch each node as it finishes"
+    },
+    {
+     "at": "4:41",
+     "title": "The shop's real pair: understand, then look up"
+    },
+    {
+     "at": "6:00",
+     "title": "The mistakes that bite"
+    },
+    {
+     "at": "6:43",
+     "title": "The habit that pays for itself"
+    },
+    {
+     "at": "7:21",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "LangGraph",
+    "nodes",
+    "edges",
+    "state management",
+    "invoke",
+    "stream",
+    "graph execution",
+    "Python functions",
+    "workflow",
+    "partial updates"
+   ],
+   "src": "/media/learn/langgraph/langgraph-03.mp4",
+   "poster": "/media/learn/langgraph/langgraph-03.jpg",
+   "captions": "/media/learn/langgraph/langgraph-03.vtt"
   },
   {
    "n": 7,
@@ -11822,6 +12048,61 @@ export const LANGGRAPH: Lesson[] = [
  ];
 
 export const LANGSMITH: Lesson[] = [
+  {
+   "n": 2,
+   "title": "Reading LangSmith Traces: The Tree Structure and What to Look For",
+   "summary": "Learn how to navigate a LangSmith trace by understanding its tree structure: root runs, node runs, and child runs at different levels. You'll discover what information to extract at each level (inputs, outputs, latency, tokens, cost), how to spot bottlenecks and errors, and how to filter and tag runs for future debugging.",
+   "runs": "7:46",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The trace is open. Now what?"
+    },
+    {
+     "at": "0:38",
+     "title": "Runs and spans: the tree"
+    },
+    {
+     "at": "1:45",
+     "title": "Every level has an input and an output"
+    },
+    {
+     "at": "3:04",
+     "title": "Latency, tokens, cost"
+    },
+    {
+     "at": "4:14",
+     "title": "When a run fails"
+    },
+    {
+     "at": "5:06",
+     "title": "Finding the run again: filter and tag"
+    },
+    {
+     "at": "6:02",
+     "title": "Where people go wrong reading traces"
+    },
+    {
+     "at": "6:50",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "LangSmith",
+    "traces",
+    "debugging",
+    "LangGraph",
+    "observability",
+    "latency",
+    "model runs",
+    "error handling",
+    "filtering",
+    "performance"
+   ],
+   "src": "/media/learn/langsmith/langsmith-02.mp4",
+   "poster": "/media/learn/langsmith/langsmith-02.jpg",
+   "captions": "/media/learn/langsmith/langsmith-02.vtt"
+  },
   {
    "n": 6,
    "title": "Automated evaluation gates: catching prompt regressions in CI",
@@ -12169,6 +12450,61 @@ export const MCP: Lesson[] = [
 
 export const SYSTEMONE: Lesson[] = [
   {
+   "n": 1,
+   "title": "Fast Decisions Without Chat: System One Models in Your Agent",
+   "summary": "Learn why chat models are the wrong tool for the small, structured decisions your system makes constantly—like classifying customer messages or checking compatibility—and how System One models like Jev return typed decisions with calibrated confidence instead of prose. You'll understand the cost and latency problems chat models create at scale, and how to integrate a fast decision layer into your LangGraph agent without replacing it.",
+   "runs": "7:13",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Forty decisions an hour"
+    },
+    {
+     "at": "1:07",
+     "title": "None of these want prose"
+    },
+    {
+     "at": "1:52",
+     "title": "What happens when you use a chat model anyway"
+    },
+    {
+     "at": "2:39",
+     "title": "Seconds and cents, forty times an hour"
+    },
+    {
+     "at": "3:29",
+     "title": "The confidence problem"
+    },
+    {
+     "at": "4:16",
+     "title": "A model built to decide, not to talk"
+    },
+    {
+     "at": "5:50",
+     "title": "Where people get this wrong"
+    },
+    {
+     "at": "6:30",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "system one models",
+    "decision classification",
+    "chat vs specialized models",
+    "calibrated confidence",
+    "LangGraph agents",
+    "API latency",
+    "structured decisions",
+    "TypeSafe AI",
+    "prompt engineering",
+    "model selection"
+   ],
+   "src": "/media/learn/system-one/system-one-01.mp4",
+   "poster": "/media/learn/system-one/system-one-01.jpg",
+   "captions": "/media/learn/system-one/system-one-01.vtt"
+  },
+  {
    "n": 3,
    "title": "Decomposing Complex LLM Judgments into Atomic Questions",
    "summary": "Learn why asking an LLM one complex question produces unreliable confidence scores, and how to break it into smaller atomic questions instead. You'll discover how to recombine those answers in plain code, making your business logic testable, diagnosable, and readable.",
@@ -12328,6 +12664,59 @@ export const SYSTEMONE: Lesson[] = [
    "src": "/media/learn/system-one/system-one-05.mp4",
    "poster": "/media/learn/system-one/system-one-05.jpg",
    "captions": "/media/learn/system-one/system-one-05.vtt"
+  },
+  {
+   "n": 8,
+   "title": "Calibration: Making Confidence Numbers Mean Something",
+   "summary": "Learn what calibration actually means for AI model confidence scores and why a 92% confidence claim is meaningless without it. You'll see how to check whether your model's reported confidence matches reality, using simple data logging and plotting, so you can trust thresholds like \"auto-approve if 90% confident.\"",
+   "runs": "9:00",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question"
+    },
+    {
+     "at": "0:54",
+     "title": "The Precise, Unglamorous Definition"
+    },
+    {
+     "at": "1:56",
+     "title": "Why Chat Confidence Usually Isn't"
+    },
+    {
+     "at": "3:11",
+     "title": "How You Check Calibration Yourself"
+    },
+    {
+     "at": "4:33",
+     "title": "The Plot for the Shop"
+    },
+    {
+     "at": "5:24",
+     "title": "What Miscalibration Actually Costs"
+    },
+    {
+     "at": "6:43",
+     "title": "The Mistakes People Make"
+    },
+    {
+     "at": "7:52",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "calibration",
+    "confidence scores",
+    "AI reliability",
+    "model evaluation",
+    "decision logging",
+    "thresholds",
+    "bias in AI",
+    "decision quality"
+   ],
+   "src": "/media/learn/system-one/system-one-08.mp4",
+   "poster": "/media/learn/system-one/system-one-08.jpg",
+   "captions": "/media/learn/system-one/system-one-08.vtt"
   },
   {
    "n": 10,
