@@ -9,7 +9,7 @@
 	// scroll, not a menu — and on a phone, which is where this gets read, it is a very long scroll. The first series
 	// opens; the rest are one tap away and announce their size before you commit to them.
 	import { Play, Clock, ListVideo, ChevronDown } from '@lucide/svelte';
-	import { PROBABILITY, NEO4J, LLM_EVAL, SERVING, LEARNING, COUNTING, PATTERNS, CHANCE, SHIFT, CYPHER, MODELLING, NEPTUNE, RELALG, type Lesson } from '$lib/learn.generated';
+	import { PROBABILITY, NEO4J, LLM_EVAL, SERVING, LEARNING, COUNTING, PATTERNS, CHANCE, SHIFT, CYPHER, MODELLING, NEPTUNE, RELALG, LANGCHAIN, LANGGRAPH, LANGSMITH, MCP, SYSTEMONE, type Lesson } from '$lib/learn.generated';
 	import LessonPlayer from '$lib/components/LessonPlayer.svelte';
 
 	type Series = { key: string; eyebrow: string; title: string; blurb: string; lessons: Lesson[] };
@@ -121,6 +121,41 @@
 			blurb:
 				'The language behind every SQL query, taught for someone with an assignment in front of them: selection, projection, rename and assignment, cross products and every kind of join, the set operations and how difference expresses "none" and "every" — then six workshops that work real problems, a recognition quiz, and an exam-readiness pass. Every operator in both the Greek notation you read and the typed form a tool accepts.',
 			lessons: RELALG
+		},
+		{
+			key: 'langchain', eyebrow: 'Series 14',
+			title: 'LangChain, Piece by Piece (Building with Language Models)',
+			blurb:
+				'The framework taken apart: models and messages, prompts as objects, structured output, composition with LCEL and the resilience that makes it production-ready, tools, retrieval from ingestion through the strategies that decide answer quality, keeping documents in sync, memory, and streaming. Built throughout on one system — a bicycle repair shop assistant.',
+			lessons: LANGCHAIN
+		},
+		{
+			key: 'langgraph', eyebrow: 'Series 15',
+			title: 'LangGraph: Agents That Hold State',
+			blurb:
+				'Where a chain stops being enough: state and reducers, nodes and routing, the agent loop written by hand before the prebuilt one, persistence that survives a crash, long-term memory, human-in-the-loop interrupts, time travel through a conversation, parallel fan-out, subgraphs and multi-agent handoffs, and operating a graph in production.',
+			lessons: LANGGRAPH
+		},
+		{
+			key: 'langsmith', eyebrow: 'Series 16',
+			title: 'LangSmith: Proving the Agent Works',
+			blurb:
+				'You cannot debug an agent by reading logs. Traces, datasets built from real traffic, evaluators and their biases, running an evaluation and reading it honestly, regression testing in CI, human feedback and annotation, and what to monitor once it is live.',
+			lessons: LANGSMITH
+		},
+		{
+			key: 'mcp', eyebrow: 'Series 17',
+			title: 'MCP: One Interface for Every Tool',
+			blurb:
+				'The Model Context Protocol end to end: hosts, clients and servers over JSON-RPC, transports, the handshake and capability negotiation, tools, resources and prompts, building both a server and a client, sampling and elicitation, the production plumbing, and the security lesson that matters most — a tool result is untrusted input.',
+			lessons: MCP
+		},
+		{
+			key: 'system-one', eyebrow: 'Series 18',
+			title: 'Deciding in Software: System One Models',
+			blurb:
+				'The decisions software makes forty times an hour, which a chat model is the wrong tool for. System One and System Two as an architecture, decomposing a judgement into atomic questions, the three primitives, what calibrated confidence actually means, designing act/defer/escalate thresholds, and proving the cost on your own decisions.',
+			lessons: SYSTEMONE
 		}
 	];
 	const SERIES: Series[] = ALL.filter((s) => s.lessons.length > 0);

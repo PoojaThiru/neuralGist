@@ -11371,3 +11371,13 @@ export const RELALG: Lesson[] = [
    "captions": "/media/learn/relational-algebra/relational-algebra-16.vtt"
   }
  ];
+
+export const LANGCHAIN: Lesson[] = [];
+
+export const LANGGRAPH: Lesson[] = [];
+
+export const LANGSMITH: Lesson[] = [];
+
+export const MCP: Lesson[] = [];
+
+export const SYSTEMONE: Lesson[] = [];
