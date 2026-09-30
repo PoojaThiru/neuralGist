@@ -11650,9 +11650,68 @@ export const LANGCHAIN: Lesson[] = [
    "captions": "/media/learn/langchain/langchain-05.vtt"
   },
   {
+   "n": 6,
+   "title": "Resilience in LangChain: Fallbacks, Retries, Caching, and Rate Limits",
+   "summary": "Learn how to build reliable LLM chains that handle real-world failures—rate limits, outages, and temporary errors. This video teaches fallbacks (switching to a backup model), retries with exponential backoff, caching identical requests, rate limiting to avoid throttling, and configurable fields to swap models between environments. You'll understand when to use each technique and how wrapping order affects behavior.",
+   "runs": "12:01",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "When the model provider has a bad afternoon"
+    },
+    {
+     "at": "1:02",
+     "title": "with_fallbacks — a second model waiting in the wings"
+    },
+    {
+     "at": "2:41",
+     "title": "with_retry — why backoff belongs in the library, not your loop"
+    },
+    {
+     "at": "4:14",
+     "title": "ConfigurableField — one chain, two environments"
+    },
+    {
+     "at": "5:38",
+     "title": "A cache, and the honest arithmetic of repeated questions"
+    },
+    {
+     "at": "7:06",
+     "title": "A rate limiter, and what a batch does without one"
+    },
+    {
+     "at": "8:32",
+     "title": "The order matters — fallbacks around retries versus retries around fallbacks"
+    },
+    {
+     "at": "10:04",
+     "title": "Where this goes wrong"
+    },
+    {
+     "at": "11:09",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "LangChain",
+    "fallbacks",
+    "retry",
+    "caching",
+    "rate limiting",
+    "error handling",
+    "LLM chains",
+    "resilience",
+    "configurable fields",
+    "backoff"
+   ],
+   "src": "/media/learn/langchain/langchain-06.mp4",
+   "poster": "/media/learn/langchain/langchain-06.jpg",
+   "captions": "/media/learn/langchain/langchain-06.vtt"
+  },
+  {
    "n": 8,
-   "title": "Chunking and Embeddings: Getting Your Repair Manual into an AI Model",
-   "summary": "Learn how to turn a large repair manual into searchable knowledge that an AI assistant can actually use to answer specific questions. This video covers the complete pipeline: loading documents, splitting them intelligently to preserve meaning, converting text to embeddings for semantic search, and storing everything in a vector database to retrieve the right information on demand.",
+   "title": "Getting Manuals Into an AI: Loaders, Splitting, Embeddings, and Search",
+   "summary": "Learn how to turn unstructured PDF manuals into searchable chunks that an AI can actually use to answer specific questions like torque specifications. This video walks through the complete pipeline: loading files, splitting text intelligently (fixed size, recursive, and structure-aware), embedding chunks as vectors, and storing them in a vector database for semantic search.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11689,16 +11748,16 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "embeddings",
-    "vector search",
     "RAG",
+    "vector embeddings",
     "text splitting",
     "semantic search",
-    "vector database",
-    "document loading",
-    "chunking",
-    "LLM integration",
-    "information retrieval"
+    "PDF loading",
+    "LangChain",
+    "vector store",
+    "Chroma",
+    "document chunking",
+    "LLM"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
@@ -11821,6 +11880,64 @@ export const LANGCHAIN: Lesson[] = [
  ];
 
 export const LANGGRAPH: Lesson[] = [
+  {
+   "n": 1,
+   "title": "Why LangGraph: When Chains Break",
+   "summary": "Learn why LangChain chains alone fall short and when you need LangGraph instead. This video walks through four critical limitations of chains—looping, branching, pausing for humans, and surviving restarts—then introduces the graph model of nodes and shared state that solves them. You'll see when to reach for a graph (and when chains are still the right choice).",
+   "runs": "8:31",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question"
+    },
+    {
+     "at": "1:06",
+     "title": "Need one: loop until it's good enough"
+    },
+    {
+     "at": "1:55",
+     "title": "Need two: branch on what it found"
+    },
+    {
+     "at": "2:49",
+     "title": "Need three: pause for a human"
+    },
+    {
+     "at": "3:46",
+     "title": "Need four: survive a restart"
+    },
+    {
+     "at": "4:40",
+     "title": "The model: nodes, shared state, edges"
+    },
+    {
+     "at": "5:58",
+     "title": "Drawing the shop assistant before code"
+    },
+    {
+     "at": "6:54",
+     "title": "Mistakes people make"
+    },
+    {
+     "at": "7:44",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "LangGraph",
+    "LangChain",
+    "chains vs graphs",
+    "multi-step workflows",
+    "conditional logic",
+    "agent design",
+    "state management",
+    "when to use graphs",
+    "system design"
+   ],
+   "src": "/media/learn/langgraph/langgraph-01.mp4",
+   "poster": "/media/learn/langgraph/langgraph-01.jpg",
+   "captions": "/media/learn/langgraph/langgraph-01.vtt"
+  },
   {
    "n": 2,
    "title": "Designing State in LangGraph: Schema, Reducers, and Data Flow",
