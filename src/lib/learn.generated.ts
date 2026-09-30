@@ -11595,9 +11595,64 @@ export const LANGCHAIN: Lesson[] = [
    "captions": "/media/learn/langchain/langchain-04.vtt"
   },
   {
+   "n": 5,
+   "title": "LCEL: Composing LangChain Pieces into One System",
+   "summary": "Learn how to connect separate LangChain components—prompts, models, and parsers—into a single unified system using the Runnable interface and the pipe operator. You'll master LCEL (LangChain Expression Language) patterns including pipes, parallel execution, passthrough, and lambda functions to build efficient, composable chains.",
+   "runs": "7:48",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question: how do pieces become one system"
+    },
+    {
+     "at": "0:45",
+     "title": "The Runnable contract"
+    },
+    {
+     "at": "1:47",
+     "title": "The pipe: prompt into model into parser"
+    },
+    {
+     "at": "2:59",
+     "title": "RunnableParallel: two lookups at once"
+    },
+    {
+     "at": "4:08",
+     "title": "RunnablePassthrough: carrying the original input along"
+    },
+    {
+     "at": "5:10",
+     "title": "RunnableLambda: a plain function in the middle"
+    },
+    {
+     "at": "5:54",
+     "title": "Where people trip up"
+    },
+    {
+     "at": "6:47",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "LangChain",
+    "LCEL",
+    "Runnable",
+    "pipe operator",
+    "composition",
+    "chain building",
+    "parallel execution",
+    "LLM",
+    "prompt engineering",
+    "output parsing"
+   ],
+   "src": "/media/learn/langchain/langchain-05.mp4",
+   "poster": "/media/learn/langchain/langchain-05.jpg",
+   "captions": "/media/learn/langchain/langchain-05.vtt"
+  },
+  {
    "n": 8,
-   "title": "Search Inside PDFs: Loading, Splitting, Embedding, and Vector Stores",
-   "summary": "Learn how to make repair manuals and other large documents searchable by an AI assistant. This video covers the complete pipeline: extracting text with loaders, splitting it into chunks at natural boundaries, converting chunks to embeddings for semantic search, and storing them in a vector database so the model can find the one-line answer buried in a 200-page PDF.",
+   "title": "Getting Manual Data Into an AI: Loaders, Splitters, Embeddings, Vector Search",
+   "summary": "Learn how to make repair manuals searchable by AI using a four-step pipeline: loading text from PDFs, splitting it into chunks without losing meaning, converting text to embeddings for semantic search, and storing it in a vector database. You'll understand why fixed-size splitting fails, when to use recursive or structure-aware splitting, and how to avoid common pitfalls like mixing vector spaces or losing tables in the process.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11634,15 +11689,15 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "embeddings",
-    "vector store",
-    "document loaders",
-    "text splitting",
-    "semantic search",
     "RAG",
-    "Chroma",
-    "PDF processing",
+    "embeddings",
+    "vector search",
+    "text splitting",
+    "loaders",
+    "semantic search",
+    "document processing",
     "LLM",
+    "vector database",
     "retrieval"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
@@ -11885,6 +11940,59 @@ export const LANGGRAPH: Lesson[] = [
    "captions": "/media/learn/langgraph/langgraph-03.vtt"
   },
   {
+   "n": 4,
+   "title": "Conditional Edges: Routing Decisions in LangGraph",
+   "summary": "Learn how to make graphs that branch based on state, using conditional edges and routing functions to send requests down different paths. You'll see how to return single or multiple destinations, use the Command object to let nodes decide their own next step, and avoid common pitfalls like unmapped strings and reducer bugs that silently lose data.",
+   "runs": "8:51",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The fork in the road"
+    },
+    {
+     "at": "0:50",
+     "title": "A function that names the next node"
+    },
+    {
+     "at": "2:24",
+     "title": "Running it both ways"
+    },
+    {
+     "at": "3:08",
+     "title": "Returning a list: fan-out"
+    },
+    {
+     "at": "4:14",
+     "title": "Command: update state and route in one move"
+    },
+    {
+     "at": "5:56",
+     "title": "Worked example: the escalation path"
+    },
+    {
+     "at": "6:48",
+     "title": "Where this goes wrong"
+    },
+    {
+     "at": "7:55",
+     "title": "Recap: the readability rule"
+    }
+   ],
+   "tags": [
+    "LangGraph",
+    "conditional edges",
+    "routing functions",
+    "fan-out",
+    "Command",
+    "state management",
+    "decision trees",
+    "graph workflows"
+   ],
+   "src": "/media/learn/langgraph/langgraph-04.mp4",
+   "poster": "/media/learn/langgraph/langgraph-04.jpg",
+   "captions": "/media/learn/langgraph/langgraph-04.vtt"
+  },
+  {
    "n": 7,
    "title": "Persistence & Recovery: Making State Survive with Checkpointers",
    "summary": "Learn how to use LangGraph's checkpointer to save conversation state after every step, so that your agent can recover from crashes and handle multi-turn conversations without manually managing history. You'll see how to compile a graph with different checkpointers (MemorySaver for testing, PostgresSaver or SqliteSaver for production), use thread IDs to keep customer conversations separate, and manage checkpoint retention policies.",
@@ -11937,6 +12045,61 @@ export const LANGGRAPH: Lesson[] = [
    "src": "/media/learn/langgraph/langgraph-07.mp4",
    "poster": "/media/learn/langgraph/langgraph-07.jpg",
    "captions": "/media/learn/langgraph/langgraph-07.vtt"
+  },
+  {
+   "n": 8,
+   "title": "Memory Across Conversations: Building Persistent Customer Profiles",
+   "summary": "This video shows how to build agent memory that survives across separate conversations with the same customer. You'll learn the difference between checkpointers (which remember a single conversation) and the Store (which persists data across threads using namespaced keys), and how to write meaningful data to the Store either explicitly during conversation flow or through background summarization. The video covers semantic search over stored memories and the judgment calls required to avoid common mistakes like storing too much noise or namespacing incorrectly.",
+   "runs": "7:55",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Customer Who Comes Back"
+    },
+    {
+     "at": "0:56",
+     "title": "Quick Boundary: What the Checkpointer Already Does"
+    },
+    {
+     "at": "1:37",
+     "title": "The Store: Namespaced, Shared, Persistent"
+    },
+    {
+     "at": "2:46",
+     "title": "Using It Inside the Graph"
+    },
+    {
+     "at": "3:43",
+     "title": "Who Writes the Memory — Explicit Node vs Background Step"
+    },
+    {
+     "at": "4:47",
+     "title": "Making 'What Do We Know About This Customer' a Query"
+    },
+    {
+     "at": "5:48",
+     "title": "Where This Goes Wrong"
+    },
+    {
+     "at": "7:00",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "langgraph",
+    "agent memory",
+    "persistent storage",
+    "customer profiles",
+    "store",
+    "namespacing",
+    "semantic search",
+    "embeddings",
+    "state management",
+    "multi-turn conversations"
+   ],
+   "src": "/media/learn/langgraph/langgraph-08.mp4",
+   "poster": "/media/learn/langgraph/langgraph-08.jpg",
+   "captions": "/media/learn/langgraph/langgraph-08.vtt"
   },
   {
    "n": 10,
@@ -12044,6 +12207,61 @@ export const LANGGRAPH: Lesson[] = [
    "src": "/media/learn/langgraph/langgraph-11.mp4",
    "poster": "/media/learn/langgraph/langgraph-11.jpg",
    "captions": "/media/learn/langgraph/langgraph-11.vtt"
+  },
+  {
+   "n": 14,
+   "title": "Deploying LangGraph: From Notebook to Production",
+   "summary": "Learn what changes when a LangGraph agent moves from development to production: switching checkpointers from SQLite to Postgres, implementing authentication and streaming through your own API, and understanding the role of managed platforms. This lesson covers the Functional API as an alternative to StateGraph, common deployment mistakes, and when a graph is actually worth the complexity.",
+   "runs": "8:26",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Last Mile"
+    },
+    {
+     "at": "0:57",
+     "title": "The Functional API: entrypoint and task"
+    },
+    {
+     "at": "2:27",
+     "title": "Where checkpoints actually live"
+    },
+    {
+     "at": "3:28",
+     "title": "Authentication and streaming through your own API"
+    },
+    {
+     "at": "4:22",
+     "title": "What a managed platform adds"
+    },
+    {
+     "at": "5:56",
+     "title": "Where teams get this wrong"
+    },
+    {
+     "at": "6:49",
+     "title": "Recap: what deploying actually means"
+    },
+    {
+     "at": "7:28",
+     "title": "Closing the course"
+    }
+   ],
+   "tags": [
+    "LangGraph",
+    "production deployment",
+    "Functional API",
+    "checkpointing",
+    "streaming",
+    "authentication",
+    "managed platforms",
+    "agent architecture",
+    "thread IDs",
+    "persistence"
+   ],
+   "src": "/media/learn/langgraph/langgraph-14.mp4",
+   "poster": "/media/learn/langgraph/langgraph-14.jpg",
+   "captions": "/media/learn/langgraph/langgraph-14.vtt"
   }
  ];
 
@@ -12102,6 +12320,60 @@ export const LANGSMITH: Lesson[] = [
    "src": "/media/learn/langsmith/langsmith-02.mp4",
    "poster": "/media/learn/langsmith/langsmith-02.jpg",
    "captions": "/media/learn/langsmith/langsmith-02.vtt"
+  },
+  {
+   "n": 3,
+   "title": "Building a Real-World Test Dataset for LLM Applications",
+   "summary": "Learn how to build an effective test dataset for evaluating LLM applications by collecting real traces instead of inventing examples at your desk. This video teaches you how to select good, bad, and awkward runs, create examples with inputs and reference outputs, split your dataset for development vs. evaluation, and version your changes so historical scores remain meaningful. You'll also discover how to grow your dataset over time by turning customer complaints into test coverage.",
+   "runs": "8:23",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The desk-invented test set"
+    },
+    {
+     "at": "1:11",
+     "title": "Selecting runs: good, bad, and awkward"
+    },
+    {
+     "at": "2:34",
+     "title": "Adding an example: inputs and reference outputs"
+    },
+    {
+     "at": "4:05",
+     "title": "Splits: what you tune on vs what you judge on"
+    },
+    {
+     "at": "5:13",
+     "title": "Versioning: so a change doesn't silently break yesterday's numbers"
+    },
+    {
+     "at": "6:10",
+     "title": "Growing the dataset: complaints become coverage"
+    },
+    {
+     "at": "6:52",
+     "title": "Common mistakes"
+    },
+    {
+     "at": "7:32",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "LLM testing",
+    "test dataset",
+    "LangSmith",
+    "AI evaluation",
+    "dataset versioning",
+    "examples",
+    "reference outputs",
+    "regression testing",
+    "prompt optimization"
+   ],
+   "src": "/media/learn/langsmith/langsmith-03.mp4",
+   "poster": "/media/learn/langsmith/langsmith-03.jpg",
+   "captions": "/media/learn/langsmith/langsmith-03.vtt"
   },
   {
    "n": 6,
@@ -12839,6 +13111,56 @@ export const SYSTEMONE: Lesson[] = [
    "src": "/media/learn/system-one/system-one-05.mp4",
    "poster": "/media/learn/system-one/system-one-05.jpg",
    "captions": "/media/learn/system-one/system-one-05.vtt"
+  },
+  {
+   "n": 6,
+   "title": "Noul: Verify Claims Against Context",
+   "summary": "Learn Noul, the third primitive function that checks whether a specific claim is supported by provided context. This lesson covers how to write falsifiable claims, common mistakes in using Noul, and how to use it as a guardrail before your agent's answer reaches users—verifying risky facts against the exact passages they came from.",
+   "runs": "7:48",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The question nobody asks until it's too late"
+    },
+    {
+     "at": "0:59",
+     "title": "A claim, some context, a verdict"
+    },
+    {
+     "at": "2:05",
+     "title": "Not a fact oracle, not a search engine"
+    },
+    {
+     "at": "3:14",
+     "title": "Writing a claim that can actually be checked"
+    },
+    {
+     "at": "4:30",
+     "title": "The highest-value use: grounding the answer before it goes out"
+    },
+    {
+     "at": "6:07",
+     "title": "Where people get this wrong"
+    },
+    {
+     "at": "7:00",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "Noul",
+    "claim verification",
+    "context checking",
+    "LangGraph agents",
+    "guardrail",
+    "fact-checking",
+    "retrieval-augmented generation",
+    "falsifiable claims",
+    "agent design"
+   ],
+   "src": "/media/learn/system-one/system-one-06.mp4",
+   "poster": "/media/learn/system-one/system-one-06.jpg",
+   "captions": "/media/learn/system-one/system-one-06.vtt"
   },
   {
    "n": 8,
