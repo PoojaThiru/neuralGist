@@ -104,14 +104,17 @@ resource "aws_cloudfront_distribution" "app" {
   }
 
   # Radio audio and other media from S3, cached at the edge (keys are immutable).
+  # CORS headers so other sites of ours (neuralknowledge.ai) can play these files with captions,
+  # which browsers only allow on a cross-origin media element when the response permits it.
   ordered_cache_behavior {
-    path_pattern           = "/media/*"
-    target_origin_id       = "media"
-    viewer_protocol_policy = "redirect-to-https"
-    allowed_methods        = ["GET", "HEAD", "OPTIONS"]
-    cached_methods         = ["GET", "HEAD"]
-    compress               = false
-    cache_policy_id        = data.aws_cloudfront_cache_policy.optimized.id
+    path_pattern               = "/media/*"
+    target_origin_id           = "media"
+    viewer_protocol_policy     = "redirect-to-https"
+    allowed_methods            = ["GET", "HEAD", "OPTIONS"]
+    cached_methods             = ["GET", "HEAD"]
+    compress                   = false
+    cache_policy_id            = data.aws_cloudfront_cache_policy.optimized.id
+    response_headers_policy_id = "60669652-455b-4ae9-85a4-c4c02393f86c" # Managed-SimpleCORS
     function_association {
       event_type   = "viewer-request"
       function_arn = aws_cloudfront_function.canonical_host.arn
