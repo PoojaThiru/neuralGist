@@ -11430,6 +11430,65 @@ export const LANGCHAIN: Lesson[] = [
    "src": "/media/learn/langchain/langchain-02.mp4",
    "poster": "/media/learn/langchain/langchain-02.jpg",
    "captions": "/media/learn/langchain/langchain-02.vtt"
+  },
+  {
+   "n": 8,
+   "title": "Vectorizing Documents: Search Repair Manuals by Meaning",
+   "summary": "Learn how to transform PDF manuals into searchable chunks that an AI assistant can actually use to answer specific questions. This video covers loaders, text splitting strategies (fixed, recursive, and structure-aware), embeddings, and vector stores—the complete pipeline for turning unstructured documents into meaningful search results.",
+   "runs": "13:18",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The manual is huge, the answer is one line"
+    },
+    {
+     "at": "1:02",
+     "title": "Loaders: getting text out, and what falls on the floor"
+    },
+    {
+     "at": "2:38",
+     "title": "Splitting, attempt one: fixed size, and where it fails"
+    },
+    {
+     "at": "4:12",
+     "title": "Recursive character splitting: cut at the nearest natural seam"
+    },
+    {
+     "at": "5:51",
+     "title": "Structure-aware splitting: use the manual's own headings"
+    },
+    {
+     "at": "7:24",
+     "title": "Embeddings: turning a chunk into a vector you can compare"
+    },
+    {
+     "at": "8:51",
+     "title": "Vector store: add, search, and score"
+    },
+    {
+     "at": "10:29",
+     "title": "The three ways this quietly breaks"
+    },
+    {
+     "at": "11:47",
+     "title": "Recap: four steps, one honest look at the output"
+    }
+   ],
+   "tags": [
+    "RAG",
+    "vector search",
+    "text splitting",
+    "embeddings",
+    "document loaders",
+    "semantic search",
+    "LLM",
+    "vector database",
+    "PDF processing",
+    "information retrieval"
+   ],
+   "src": "/media/learn/langchain/langchain-08.mp4",
+   "poster": "/media/learn/langchain/langchain-08.jpg",
+   "captions": "/media/learn/langchain/langchain-08.vtt"
   }
  ];
 
@@ -11607,13 +11666,73 @@ export const LANGGRAPH: Lesson[] = [
   }
  ];
 
-export const LANGSMITH: Lesson[] = [];
+export const LANGSMITH: Lesson[] = [
+  {
+   "n": 6,
+   "title": "Automated Evaluation Gates in CI/CD",
+   "summary": "Learn how to set up automated evaluation runs that catch prompt and tool regressions before they reach production. This video teaches you to design effective gates using relative comparisons and per-category thresholds, and explains how to balance evaluation speed with thoroughness using hot and full test sets.",
+   "runs": "8:46",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The fortnight nobody noticed"
+    },
+    {
+     "at": "0:52",
+     "title": "What triggers a run"
+    },
+    {
+     "at": "1:52",
+     "title": "The gate, attempt one: an absolute number"
+    },
+    {
+     "at": "2:40",
+     "title": "The gate, attempt two: compare to the last good run"
+    },
+    {
+     "at": "3:38",
+     "title": "The gate, attempt three: a floor per category"
+    },
+    {
+     "at": "4:42",
+     "title": "Keeping it fast: hot set now, full set tonight"
+    },
+    {
+     "at": "5:43",
+     "title": "The part teams skip: who looks, and what they do"
+    },
+    {
+     "at": "6:48",
+     "title": "Where this goes wrong"
+    },
+    {
+     "at": "7:44",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "evaluation",
+    "CI/CD",
+    "automation",
+    "LLM testing",
+    "regression detection",
+    "prompt engineering",
+    "quality gates",
+    "LangSmith",
+    "testing strategy",
+    "continuous integration"
+   ],
+   "src": "/media/learn/langsmith/langsmith-06.mp4",
+   "poster": "/media/learn/langsmith/langsmith-06.jpg",
+   "captions": "/media/learn/langsmith/langsmith-06.vtt"
+  }
+ ];
 
 export const MCP: Lesson[] = [
   {
    "n": 4,
-   "title": "The MCP Handshake: Initialize, Capabilities, and Lifecycle",
-   "summary": "Learn the three-message handshake that establishes every MCP connection: how clients and servers declare their protocol versions and capabilities, and why capability negotiation matters more than version matching. This video covers what happens when versions don't match, how to interpret the absence of capabilities as a real statement, and how to cleanly shut down an MCP connection.",
+   "title": "MCP Handshake: Protocol Negotiation and Initialization",
+   "summary": "Learn the three-message handshake that starts every MCP connection: how clients and servers exchange protocol versions and capabilities before any real work begins. You'll understand why capabilities matter more than version numbers, how to handle version mismatches, and why proper shutdown is essential for subprocess-based servers.",
    "runs": "8:31",
    "chapters": [
     {
@@ -11655,14 +11774,14 @@ export const MCP: Lesson[] = [
    ],
    "tags": [
     "MCP",
-    "protocol",
-    "handshake",
-    "initialize",
-    "capabilities",
-    "JSON-RPC",
-    "version negotiation",
+    "protocol handshake",
+    "initialization",
+    "capabilities negotiation",
+    "protocol version",
     "client-server communication",
-    "shutdown"
+    "JSON-RPC",
+    "connection lifecycle",
+    "subprocess management"
    ],
    "src": "/media/learn/mcp/mcp-04.mp4",
    "poster": "/media/learn/mcp/mcp-04.jpg",
@@ -11670,8 +11789,8 @@ export const MCP: Lesson[] = [
   },
   {
    "n": 11,
-   "title": "Production-Ready Tools: Beyond the Demo",
-   "summary": "Learn the essential practices that separate a tool that works on your laptop from one that survives real-world use. This video covers progress notifications, cancellation handling, pagination, ping heartbeats, protocol logging, and timeouts—the invisible layer that keeps your server reliable when it matters. After watching, you'll have a checklist for shipping tools that won't silently fail the moment they leave your machine.",
+   "title": "Production-Ready Servers: Moving Beyond the Demo",
+   "summary": "Learn the six critical practices that transform a working prototype into a server that can handle real-world demands: progress notifications, cancellation handling, pagination, ping heartbeats, protocol logging, and timeouts. This video walks through each requirement using a practical bike shop scenario, showing you the silent failures that only appear once you leave your own machine.",
    "runs": "9:12",
    "chapters": [
     {
@@ -11713,14 +11832,15 @@ export const MCP: Lesson[] = [
    ],
    "tags": [
     "MCP",
-    "tool reliability",
-    "production deployment",
+    "production",
+    "server design",
     "progress notifications",
-    "cancellation handling",
+    "cancellation",
     "pagination",
-    "timeout management",
+    "ping",
     "protocol logging",
-    "server design"
+    "timeouts",
+    "best practices"
    ],
    "src": "/media/learn/mcp/mcp-11.mp4",
    "poster": "/media/learn/mcp/mcp-11.jpg",
@@ -11731,54 +11851,54 @@ export const MCP: Lesson[] = [
 export const SYSTEMONE: Lesson[] = [
   {
    "n": 4,
-   "title": "Choice: Building Typed Decisions in Agentic Systems",
-   "summary": "Learn how to design and implement Choice—the first primitive for structured decision-making in AI agents. You'll discover how to build mutually exclusive, collectively exhaustive option lists that force the model to pick one category instead of generating free text, and how to recognize when a single choice has grown into two stacked decisions.",
-   "runs": "9:18",
+   "title": "Choice: Routing Messages to the Right Handler",
+   "summary": "Learn how to build a Choice primitive that routes incoming messages to the correct handler by selecting from a fixed list of options. You'll discover how to design mutually exclusive, collectively exhaustive categories that cover all cases—including when nothing fits—and how to use confidence scores to detect when your categories need redesign.",
+   "runs": "9:07",
    "chapters": [
     {
      "at": "0:00",
      "title": "The Routing Problem"
     },
     {
-     "at": "1:04",
+     "at": "1:02",
      "title": "A First Pass at Choice"
     },
     {
-     "at": "2:22",
+     "at": "2:19",
      "title": "Mutually Exclusive, Collectively Exhaustive"
     },
     {
-     "at": "3:55",
+     "at": "3:50",
      "title": "Naming So Meaning Is Obvious"
     },
     {
-     "at": "4:48",
+     "at": "4:42",
      "title": "The Value of 'None of These'"
     },
     {
-     "at": "6:05",
+     "at": "5:57",
      "title": "When a List Gets Too Long"
     },
     {
-     "at": "7:21",
+     "at": "7:12",
      "title": "Where Choice Shows Up"
     },
     {
-     "at": "8:22",
+     "at": "8:12",
      "title": "Recap"
     }
    ],
    "tags": [
-    "choice",
+    "Choice",
     "routing",
-    "classification",
-    "triage",
-    "typed decisions",
-    "agentic systems",
+    "message classification",
     "LangGraph",
-    "LLM patterns",
-    "decision design",
-    "workflow"
+    "mutually exclusive",
+    "collectively exhaustive",
+    "confidence scores",
+    "workflow branching",
+    "categorization",
+    "LLM primitives"
    ],
    "src": "/media/learn/system-one/system-one-04.mp4",
    "poster": "/media/learn/system-one/system-one-04.jpg",
