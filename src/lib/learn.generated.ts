@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Chunking and Embedding: Making Manual Data Searchable for AI",
-   "summary": "Learn how to extract text from repair manuals and other documents, split them into searchable chunks, and convert them into embeddings so an AI assistant can find and return the exact information needed. This video walks through four key steps—loading, splitting, embedding, and vector storage—and shows where each approach succeeds and fails in practice.",
+   "title": "Getting Repair Manuals into an AI Assistant: Loaders, Splitting, Embeddings",
+   "summary": "Learn how to extract text from PDFs and HTML, split it intelligently so meaning survives the chunks, convert text to searchable vectors, and store everything so an AI assistant can find the exact line from a 200-page manual that answers a specific question. After watching, you'll understand the four-step pipeline—loaders, splitters, embeddings, and vector stores—and recognize the three main pitfalls that break this approach silently.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,16 +11748,16 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "embeddings",
-    "vector search",
-    "text splitting",
-    "document loading",
     "RAG",
+    "vector embeddings",
+    "text splitting",
+    "PDF loading",
     "semantic search",
-    "PDF processing",
-    "vector stores",
-    "Chroma",
-    "LLM"
+    "LLM tools",
+    "vector database",
+    "document retrieval",
+    "structure-aware splitting",
+    "Chroma"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
@@ -13374,6 +13374,62 @@ export const MCP: Lesson[] = [
    "captions": "/media/learn/mcp/mcp-09.vtt"
   },
   {
+   "n": 10,
+   "title": "Sampling & Elicitation: When the Server Needs Help",
+   "summary": "Learn how MCP servers can request model calls and user input through the client instead of handling them directly. Understand the sampling and elicitation patterns, why clients should show approval prompts, and how to build fallbacks when capabilities aren't available.",
+   "runs": "9:39",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Who's Actually Running the Model?"
+    },
+    {
+     "at": "1:07",
+     "title": "Sampling: The Server Has No Model"
+    },
+    {
+     "at": "2:26",
+     "title": "The createMessage Request, On Screen"
+    },
+    {
+     "at": "3:43",
+     "title": "The Client Should Show You First"
+    },
+    {
+     "at": "4:34",
+     "title": "Elicitation: The Server Asks the User"
+    },
+    {
+     "at": "5:37",
+     "title": "The Schema, On Screen"
+    },
+    {
+     "at": "6:40",
+     "title": "Both Are Optional — What Then?"
+    },
+    {
+     "at": "7:39",
+     "title": "Where People Get This Wrong"
+    },
+    {
+     "at": "8:38",
+     "title": "Recap: Two Servers, Two Requests"
+    }
+   ],
+   "tags": [
+    "MCP",
+    "sampling",
+    "elicitation",
+    "client-server",
+    "model preferences",
+    "user permissions",
+    "protocol design"
+   ],
+   "src": "/media/learn/mcp/mcp-10.mp4",
+   "poster": "/media/learn/mcp/mcp-10.jpg",
+   "captions": "/media/learn/mcp/mcp-10.vtt"
+  },
+  {
    "n": 11,
    "title": "Production-Ready Servers: Moving Beyond the Demo",
    "summary": "Learn the six critical practices that transform a working prototype into a server that can handle real-world demands: progress notifications, cancellation handling, pagination, ping heartbeats, protocol logging, and timeouts. This video walks through each requirement using a practical bike shop scenario, showing you the silent failures that only appear once you leave your own machine.",
@@ -13431,6 +13487,69 @@ export const MCP: Lesson[] = [
    "src": "/media/learn/mcp/mcp-11.mp4",
    "poster": "/media/learn/mcp/mcp-11.jpg",
    "captions": "/media/learn/mcp/mcp-11.vtt"
+  },
+  {
+   "n": 12,
+   "title": "Prompt Injection Through Tool Results: Detection and Defense",
+   "summary": "This lesson explains how untrusted data from external tools—like supplier product descriptions—can be weaponized to inject malicious instructions into an AI model's context window. You'll learn three practical defenses: tagging untrusted supplier text as data only, requiring human confirmation before writes execute, and applying OAuth scoping and least privilege to isolate server permissions.",
+   "runs": "10:44",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question Nobody Asks Until It's Too Late"
+    },
+    {
+     "at": "0:59",
+     "title": "Drawing the Line: Who Do You Trust?"
+    },
+    {
+     "at": "2:02",
+     "title": "The Attack: Injection Through a Tool Result"
+    },
+    {
+     "at": "3:32",
+     "title": "Defence One: Results Are Data, Not Instruction"
+    },
+    {
+     "at": "4:37",
+     "title": "Defence Two: No Read Silently Triggers a Write"
+    },
+    {
+     "at": "5:37",
+     "title": "Defence Three: Human Approval On Anything That Changes the World"
+    },
+    {
+     "at": "6:30",
+     "title": "Authorization for HTTP Servers: OAuth 2.1 and Scoped Tokens"
+    },
+    {
+     "at": "7:33",
+     "title": "Confused Deputy: When Several Servers Get Involved"
+    },
+    {
+     "at": "8:31",
+     "title": "Closing Hygiene: Least Privilege, Audit Logs, Pinning"
+    },
+    {
+     "at": "9:38",
+     "title": "Recap: The Rule to Remember"
+    }
+   ],
+   "tags": [
+    "prompt injection",
+    "tool results",
+    "security",
+    "untrusted data",
+    "authorization",
+    "OAuth 2.1",
+    "least privilege",
+    "audit logging",
+    "LLM safety",
+    "agent security"
+   ],
+   "src": "/media/learn/mcp/mcp-12.mp4",
+   "poster": "/media/learn/mcp/mcp-12.jpg",
+   "captions": "/media/learn/mcp/mcp-12.vtt"
   }
  ];
 
@@ -13808,6 +13927,64 @@ export const SYSTEMONE: Lesson[] = [
    "src": "/media/learn/system-one/system-one-08.mp4",
    "poster": "/media/learn/system-one/system-one-08.jpg",
    "captions": "/media/learn/system-one/system-one-08.vtt"
+  },
+  {
+   "n": 9,
+   "title": "Using Confidence Scores: Setting Thresholds That Actually Work",
+   "summary": "Learn how to turn a calibrated confidence score into real decision-making logic by splitting predictions into three bands: act automatically, take a safer middle path, or escalate to a human. You'll discover how to set thresholds based on the actual costs of errors versus human review, why one global threshold fails, and how to monitor whether your system is behaving correctly in production.",
+   "runs": "10:08",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The Question: What Do You Do With a Number?"
+    },
+    {
+     "at": "0:55",
+     "title": "Why Two Bands Isn't Enough"
+    },
+    {
+     "at": "2:15",
+     "title": "Three Bands in Code"
+    },
+    {
+     "at": "3:28",
+     "title": "The Arithmetic Behind the Line"
+    },
+    {
+     "at": "4:52",
+     "title": "One Number Doesn't Fit Every Decision"
+    },
+    {
+     "at": "5:57",
+     "title": "Watching the Escalation Rate"
+    },
+    {
+     "at": "7:12",
+     "title": "The Path You Never Test — And Must"
+    },
+    {
+     "at": "8:15",
+     "title": "Thresholds Aren't Set Once"
+    },
+    {
+     "at": "9:10",
+     "title": "Recap: The Boundary in One Breath"
+    }
+   ],
+   "tags": [
+    "confidence scores",
+    "thresholds",
+    "decision boundaries",
+    "model deployment",
+    "escalation logic",
+    "cost analysis",
+    "production monitoring",
+    "machine learning systems",
+    "automated decision-making"
+   ],
+   "src": "/media/learn/system-one/system-one-09.mp4",
+   "poster": "/media/learn/system-one/system-one-09.jpg",
+   "captions": "/media/learn/system-one/system-one-09.vtt"
   },
   {
    "n": 10,
