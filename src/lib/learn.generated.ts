@@ -11183,6 +11183,63 @@ export const RELALG: Lesson[] = [
    "captions": "/media/learn/relational-algebra/relational-algebra-13.vtt"
   },
   {
+   "n": 14,
+   "title": "Self-Joins: Comparing a Table to Itself",
+   "summary": "Learn how to join a table to a renamed copy of itself to compare rows side by side. This video teaches the self-join pattern used to find pairs of items matching on certain criteria—like games released the same year on the same console, or consoles from the same maker at different prices. You'll see how renaming, theta joins, and ordering conditions work together to eliminate duplicate and self-paired results.",
+   "runs": "9:47",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "Comparing a Table to Itself"
+    },
+    {
+     "at": "0:51",
+     "title": "Why You Need Two Copies"
+    },
+    {
+     "at": "2:03",
+     "title": "Attempt One: The Ambiguous Query"
+    },
+    {
+     "at": "3:19",
+     "title": "Fixing It With Rename"
+    },
+    {
+     "at": "4:40",
+     "title": "One Condition, Two Problems Solved"
+    },
+    {
+     "at": "5:49",
+     "title": "A Console Cheaper Than Another, Same Maker"
+    },
+    {
+     "at": "7:08",
+     "title": "Scaling Up: Three Copies"
+    },
+    {
+     "at": "8:05",
+     "title": "Where This Goes Wrong"
+    },
+    {
+     "at": "8:59",
+     "title": "Recap"
+    }
+   ],
+   "tags": [
+    "self-join",
+    "rename",
+    "theta join",
+    "relational algebra",
+    "SQL",
+    "comparing rows",
+    "duplicate elimination",
+    "database queries"
+   ],
+   "src": "/media/learn/relational-algebra/relational-algebra-14.mp4",
+   "poster": "/media/learn/relational-algebra/relational-algebra-14.jpg",
+   "captions": "/media/learn/relational-algebra/relational-algebra-14.vtt"
+  },
+  {
    "n": 15,
    "title": "Reading the Question: Signal Words for Database Operators",
    "summary": "Learn how to translate English phrases in assignment questions into the correct relational algebra operators. This lesson teaches you to recognize signal words like \"also,\" \"never,\" \"including those with none,\" and \"every\" so you can identify whether a question needs intersection, difference, outer join, projection, union, or join before you write a single line of code.",
