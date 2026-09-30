@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Retrieval-Augmented Generation: Embedding Repair Manuals for AI Search",
-   "summary": "Learn how to convert unstructured documents like repair manuals into searchable knowledge an AI assistant can use. This lesson walks through the complete pipeline: loading text from PDFs, splitting it intelligently to preserve meaning, converting chunks into embeddings, and storing them in a vector database for semantic search.",
+   "title": "Turning Repair Manuals into AI Search: Loaders, Splitters, Embeddings, and Vector Stores",
+   "summary": "Learn how to convert unstructured documents like repair manuals into searchable data that an AI assistant can actually use. This video walks through the complete pipeline: extracting text with loaders, splitting it intelligently without losing meaning, embedding chunks as vectors to enable semantic search, and storing everything in a vector database for real-time retrieval.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "retrieval-augmented generation",
-    "embeddings",
-    "vector search",
+    "vector embeddings",
+    "document loaders",
     "text splitting",
-    "PDF processing",
+    "vector stores",
     "semantic search",
-    "vector database",
-    "LLM tools",
-    "document loading"
+    "PDF processing",
+    "LLM",
+    "information retrieval",
+    "Chroma"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
@@ -12387,6 +12387,68 @@ export const LANGGRAPH: Lesson[] = [
    "src": "/media/learn/langgraph/langgraph-11.mp4",
    "poster": "/media/learn/langgraph/langgraph-11.jpg",
    "captions": "/media/learn/langgraph/langgraph-11.vtt"
+  },
+  {
+   "n": 13,
+   "title": "LangGraph in Production: Streaming, Retries, Caching, and Recursion Limits",
+   "summary": "Learn five essential production patterns for running LangGraph applications at scale: streaming modes (values, updates, messages, custom) to control what watchers see; retry policies for flaky but safe operations; caching to avoid recomputing unchanged answers; recursion limits to prevent runaway loops; and config patterns to isolate per-run settings. After this video, you'll be able to configure your graph to survive real traffic, streaming the right information to the right places without colliding requests or climbing bills.",
+   "runs": "12:33",
+   "chapters": [
+    {
+     "at": "0:00",
+     "title": "The graph works. Now what?"
+    },
+    {
+     "at": "0:54",
+     "title": "Four ways to watch the same run"
+    },
+    {
+     "at": "2:05",
+     "title": "Updates and messages"
+    },
+    {
+     "at": "3:08",
+     "title": "Custom: your own progress events"
+    },
+    {
+     "at": "4:13",
+     "title": "Retries: the stock API flakes, the model doesn't need to"
+    },
+    {
+     "at": "5:48",
+     "title": "Caching: stop paying twice for the same compatibility check"
+    },
+    {
+     "at": "7:26",
+     "title": "Recursion limits: what a runaway loop costs before it stops"
+    },
+    {
+     "at": "8:53",
+     "title": "Config, not globals"
+    },
+    {
+     "at": "10:07",
+     "title": "Where this goes wrong"
+    },
+    {
+     "at": "11:05",
+     "title": "Five knobs, one graph"
+    }
+   ],
+   "tags": [
+    "LangGraph",
+    "production",
+    "streaming",
+    "retry policy",
+    "caching",
+    "recursion limits",
+    "config",
+    "agent deployment",
+    "error handling"
+   ],
+   "src": "/media/learn/langgraph/langgraph-13.mp4",
+   "poster": "/media/learn/langgraph/langgraph-13.jpg",
+   "captions": "/media/learn/langgraph/langgraph-13.vtt"
   },
   {
    "n": 14,
