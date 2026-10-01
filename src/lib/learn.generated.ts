@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Getting Text from PDFs into an AI Search Pipeline",
-   "summary": "Learn how to extract knowledge from unstructured documents like repair manuals so an AI assistant can find and answer specific questions about them. This video covers the full pipeline: loading text from PDFs, splitting it intelligently (fixed-size, recursive, and structure-aware), converting text to searchable vectors, and storing everything in a vector database for semantic search.",
+   "title": "Searching repair manuals with embeddings and vector search",
+   "summary": "Learn how to turn repair manuals into searchable data that an AI assistant can actually use. This video covers the complete pipeline: loading PDFs, splitting them smartly at natural boundaries, converting text to embeddings so searches work by meaning rather than keywords, and storing everything in a vector database for fast retrieval.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11750,14 +11750,14 @@ export const LANGCHAIN: Lesson[] = [
    "tags": [
     "embeddings",
     "vector search",
-    "document loaders",
-    "text splitting",
-    "semantic search",
     "RAG",
-    "PDF processing",
+    "text splitting",
+    "PDF loading",
+    "semantic search",
+    "langchain",
     "vector store",
-    "chunking strategy",
-    "LLM tools"
+    "document processing",
+    "LLM"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
