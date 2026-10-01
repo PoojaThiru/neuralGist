@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Chunking, Embedding, and Vector Search for PDFs",
-   "summary": "Learn how to make large PDFs searchable so an AI assistant can find and use specific information—like torque specs—instead of just guessing. This video covers the four-step pipeline: loading documents, splitting them intelligently (fixed-size vs. recursive vs. structure-aware), converting text to embeddings, and storing vectors for semantic search.",
+   "title": "Building a RAG Pipeline: Loading, Splitting, Embedding, and Searching Documents",
+   "summary": "Learn how to make repair manuals and other large documents searchable and usable by AI assistants. This video covers the complete pipeline: loading documents with loaders, splitting them smartly (fixed size, recursive, and structure-aware methods), converting text to vectors via embeddings, and storing everything in a vector database for semantic search.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,13 +11749,13 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "vector search",
-    "embeddings",
-    "text chunking",
-    "PDF processing",
+    "vector embeddings",
+    "document loading",
+    "text splitting",
+    "vector store",
     "semantic search",
     "LangChain",
-    "Chroma",
+    "PDF processing",
     "document retrieval",
     "AI assistants"
    ],
