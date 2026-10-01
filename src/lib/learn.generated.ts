@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Retrieval-Augmented Generation: Getting Manual Knowledge Into an AI Assistant",
-   "summary": "Learn how to make an AI assistant answer questions from your private documents by building a retrieval pipeline: loaders extract text, splitters preserve meaning, embeddings enable semantic search, and vector stores deliver the exact chunk the model needs. After this video, you'll understand the four-step process to turn a 200-page PDF into reliable, sourceable answers to specific questions like \"what's the torque spec for the rear hub axle nut?\"",
+   "title": "Turning Manuals into Search: Loaders, Splitting, Embeddings, Vector Stores",
+   "summary": "Learn how to prepare large PDFs and documents for AI-powered search by loading them, splitting them intelligently, converting them to embeddings, and storing them in a vector database. By the end, you'll understand the complete pipeline for letting an AI assistant answer specific questions from your repair manuals by finding the exact relevant passage and reading just that section.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "retrieval-augmented generation",
+    "retrieval augmented generation",
     "embeddings",
-    "vector database",
+    "vector store",
     "text splitting",
+    "document loaders",
+    "Chroma",
     "semantic search",
-    "PDF processing",
-    "LangChain",
-    "assistant tools",
-    "knowledge retrieval"
+    "LLM",
+    "PDF processing"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
