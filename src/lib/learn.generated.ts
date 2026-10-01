@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Turning Manuals Into Searchable Context for AI Assistants",
-   "summary": "Learn how to load PDFs and documents into a vector store so an AI assistant can search them by meaning and retrieve the exact information needed to answer questions accurately. You'll walk through loaders, text splitting strategies (fixed, recursive, and structure-aware), embeddings, and vector stores, then see where this pipeline quietly breaks and how to fix it.",
+   "title": "Getting Manual Text into an AI: Loaders, Splitting, Embeddings, Vector Search",
+   "summary": "Learn how to transform a repair manual PDF into searchable, AI-ready chunks that let your assistant answer specific questions like \"what's the torque for the rear hub axle nut?\" This lesson covers four essential steps: loading documents, splitting them intelligently (fixed-size vs. recursive vs. structure-aware), converting text to vector embeddings for semantic search, and storing everything in a vector database for fast retrieval with confidence scores.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "vector database",
+    "vector search",
     "embeddings",
     "text splitting",
-    "PDF loading",
+    "document loaders",
     "semantic search",
-    "Chroma",
-    "LangChain",
-    "retrieval-augmented generation",
-    "document chunking"
+    "vector database",
+    "PDF processing",
+    "LLM",
+    "AI"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
