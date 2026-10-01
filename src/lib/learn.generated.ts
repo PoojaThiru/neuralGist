@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Retrieval-Augmented Generation: Getting Knowledge into the Model",
-   "summary": "Learn how to extract text from manuals and documents, split them intelligently, convert them to embeddings, and store them in a vector database so an AI assistant can search and retrieve relevant chunks to answer specific questions. You'll discover three splitting strategies—fixed size, recursive, and structure-aware—and understand where each one fails, plus the three common mistakes that break retrieval in production.",
+   "title": "Chunking, Embedding, and Searching Manuals with RAG",
+   "summary": "Learn how to extract text from PDFs, split documents wisely, and search by meaning rather than keywords using embeddings and vector stores. After this video, you'll understand the complete pipeline for retrieval-augmented generation (RAG): loaders, splitters, embeddings, and vector search—and the three ways it quietly breaks in practice.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,16 +11748,16 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "retrieval-augmented generation",
     "RAG",
-    "text splitting",
     "embeddings",
-    "vector store",
+    "vector search",
+    "document splitting",
     "PDF loaders",
     "semantic search",
-    "Chroma",
-    "LangChain",
-    "knowledge retrieval"
+    "retrieval",
+    "LLM tools",
+    "vector stores",
+    "natural language processing"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
