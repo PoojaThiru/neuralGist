@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Embedding PDFs into Vector Stores for LLM Search",
-   "summary": "Learn the four-step pipeline for making searchable knowledge from unstructured documents like repair manuals. This video covers loaders, text splitting strategies, embeddings, and vector stores, and shows where each approach breaks down in practice so you can build search systems that actually work.",
+   "title": "Retrieval-Augmented Generation: Getting Manuals Into a Vector Store",
+   "summary": "Learn how to prepare unstructured documents like repair manuals so an AI assistant can search them and answer specific questions. This video walks through the complete pipeline: loading files, splitting them intelligently (fixed-size, recursive, or structure-aware), converting text to embeddings, and storing chunks in a vector database for semantic search.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,16 +11748,16 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "embeddings",
-    "vector store",
     "RAG",
+    "vector store",
+    "embeddings",
     "text splitting",
-    "PDF loaders",
+    "PDF processing",
     "semantic search",
-    "Chroma",
-    "LLM",
-    "document retrieval",
-    "RecursiveCharacterTextSplitter"
+    "LangChain",
+    "retrieval",
+    "prompt engineering",
+    "document handling"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
