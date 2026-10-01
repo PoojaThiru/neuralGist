@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Getting Manual Data into an AI: Loaders, Splitting, Embeddings, Vector Search",
-   "summary": "Learn how to transform raw repair manuals into searchable vectors so your AI assistant can answer specific technical questions like torque specs. This video covers the full pipeline: loading PDFs, splitting text wisely (fixed-size vs. recursive vs. structure-aware), embedding text into vectors, and storing them in a vector database for semantic search.",
+   "title": "Getting Text into a Vector Store: Loaders, Splitters, and Search",
+   "summary": "Learn how to turn unstructured documents like repair manuals into searchable chunks that an AI assistant can actually use. This video covers the complete pipeline: loading PDFs and web pages, splitting text intelligently (fixed-size, recursive, and structure-aware methods), converting chunks to embeddings, and storing them in a vector store for semantic search.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,14 +11748,13 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "RAG",
-    "vector embeddings",
-    "PDF loaders",
-    "text splitting",
-    "semantic search",
     "vector store",
-    "LLM",
-    "retrieval",
+    "embeddings",
+    "text splitting",
+    "PDF loading",
+    "semantic search",
+    "LLM retrieval",
+    "document processing",
     "Chroma",
     "RecursiveCharacterTextSplitter"
    ],
