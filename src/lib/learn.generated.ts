@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Embedding and Searching Documents: Turning Manuals into Vectors",
-   "summary": "Learn how to make a large repair manual searchable by an AI assistant using embeddings and vector stores. This video walks through the complete pipeline: loading documents, splitting them into chunks without breaking meaning, converting text to vectors, and storing them so semantic search works. You'll understand why naive splitting fails, how structure-aware splitting helps, and how to build a real question-answering system that can find and cite exact pages.",
+   "title": "Retrieval-Augmented Generation: From PDF to Vector Search",
+   "summary": "Learn how to extract knowledge from unstructured documents like repair manuals so an AI assistant can find and cite specific answers. This video walks through the complete pipeline: loading documents, splitting them intelligently, embedding text as vectors, and storing them for semantic search.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,16 +11748,16 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "embeddings",
-    "vector search",
-    "document splitting",
     "RAG",
+    "vector search",
+    "embeddings",
+    "text splitting",
+    "document loaders",
     "semantic search",
-    "PDF loaders",
-    "vector stores",
-    "Chroma",
-    "text chunking",
-    "AI assistants"
+    "LLM",
+    "retrieval",
+    "PDF processing",
+    "ChromaDB"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
