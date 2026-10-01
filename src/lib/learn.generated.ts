@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Chunking and embedding repair manuals for AI search",
-   "summary": "Learn how to make large PDF manuals searchable by an AI assistant through chunking, embeddings, and vector storage. This video walks through the complete pipeline: loading documents, splitting them intelligently (fixed-size vs. recursive vs. structure-aware), converting chunks to embeddings, and storing them in a vector database so the model can find the exact line it needs to answer technical questions like torque specifications.",
+   "title": "Retrieval-Augmented Generation: Loading, Splitting, Embedding, and Searching Documents",
+   "summary": "Learn how to get proprietary knowledge—like repair manual content—into an AI assistant's reach through a four-step pipeline: loading text from PDFs and HTML, splitting documents intelligently (fixed-size, recursive, and structure-aware), converting chunks to embeddings for semantic search, and storing them in a vector database. You'll see where this pipeline breaks in real conditions and walk away able to build a working system that lets an assistant answer specific questions by retrieving the right line from a two-hundred-page manual.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,16 +11748,15 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
+    "retrieval-augmented generation",
     "RAG",
-    "vector embeddings",
-    "text chunking",
-    "PDF parsing",
-    "semantic search",
-    "vector database",
-    "LangChain",
     "document loading",
-    "repair manuals",
-    "AI retrieval"
+    "text splitting",
+    "embeddings",
+    "vector search",
+    "vector database",
+    "semantic search",
+    "LangChain"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
