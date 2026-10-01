@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Getting Manual Data Into AI Models: The RAG Pipeline",
-   "summary": "Learn how to make unstructured documents like repair manuals searchable for AI assistants by building a Retrieval-Augmented Generation (RAG) pipeline. This video walks through the four essential steps—loading documents, splitting them intelligently, embedding text into vectors, and storing them in a vector database—so your model can find and cite specific information from hundreds of pages.",
+   "title": "Turning Repair Manuals into Searchable Knowledge for AI",
+   "summary": "Learn the four-step pipeline to extract searchable knowledge from PDFs and documents so an AI assistant can answer specific questions like \"what's the torque for the rear hub axle nut\" by retrieving the exact relevant line. You'll understand loaders, text splitting strategies, embeddings, and vector stores—and see where each step can break if you're not careful.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,14 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "embeddings",
-    "vector store",
-    "document splitting",
-    "retrieval",
-    "LLM",
-    "text chunking",
+    "vector embeddings",
+    "document processing",
+    "PDF loaders",
+    "text splitting",
     "semantic search",
-    "vector database",
-    "prompt engineering"
+    "vector stores",
+    "LLM knowledge",
+    "information retrieval"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
