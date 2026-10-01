@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Turning Manuals into Searchable Chunks for AI Assistants",
-   "summary": "Learn how to load, split, and embed text from repair manuals so an AI assistant can search them by meaning and return specific answers like torque specifications. This video walks through the complete pipeline: document loaders, three splitting strategies (fixed-size, recursive, and structure-aware), embedding models, and vector stores, plus three common mistakes that silently break the system.",
+   "title": "Retrieval-Augmented Generation: Loading, Splitting, Embedding, and Searching Documents",
+   "summary": "Learn how to make AI assistants answer questions about proprietary documents like repair manuals by converting them into searchable vectors. This video covers the complete pipeline: loading files with metadata, splitting text intelligently (fixed-size, recursive, and structure-aware approaches), converting chunks to embeddings, and storing them in a vector database for semantic search.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
+    "retrieval-augmented generation",
+    "embeddings",
     "vector search",
     "text splitting",
-    "embeddings",
     "document loaders",
-    "LLM tools",
     "semantic search",
-    "Chroma",
-    "manual retrieval",
-    "RecursiveCharacterTextSplitter"
+    "vector database",
+    "LLM tools",
+    "Chroma"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
