@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Retrieval-Augmented Generation: Turning Manuals into Searchable Knowledge",
-   "summary": "Learn how to make large documents like repair manuals searchable by an AI assistant through four core steps: loading text, splitting it intelligently, converting chunks to embeddings, and storing them in a vector database. You'll understand why naive splitting fails, how different splitting strategies preserve meaning, and the common pitfalls that break this pipeline in practice.",
+   "title": "Turning PDFs Into Searchable Knowledge: Loaders, Splitters, and Vector Search",
+   "summary": "Learn how to extract knowledge from repair manuals and other long documents so an AI assistant can actually search and answer questions about them. This video walks through the full pipeline: loading PDF text, splitting it into the right-sized chunks without breaking sentences or tables, converting text to embeddings that capture meaning, and storing everything in a vector database for semantic search.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11750,14 +11750,14 @@ export const LANGCHAIN: Lesson[] = [
    "tags": [
     "RAG",
     "embeddings",
-    "vector store",
-    "text splitting",
-    "document retrieval",
-    "PDF processing",
+    "vector search",
+    "document splitting",
+    "PDF loaders",
     "semantic search",
-    "LLM tools",
-    "Chroma",
-    "chunk optimization"
+    "vector databases",
+    "text chunking",
+    "AI assistants",
+    "LLM"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
