@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Turning manuals into searchable vectors: RAG with PDFs",
-   "summary": "Learn how to extract text from PDFs and other documents, split them intelligently without breaking critical information, convert chunks into embeddings, and build a searchable vector store so an AI assistant can find the right passage from a 200-page manual in milliseconds. This video covers loaders, splitting strategies (fixed, recursive, and structure-aware), embeddings, and vector stores—and the three common ways this pipeline breaks in production.",
+   "title": "Chunking and Embedding Repair Manuals for AI Assistants",
+   "summary": "Learn how to prepare a large manual so an AI assistant can search it, find the relevant passage, and use that specific information to answer questions accurately. This video walks through the complete pipeline: loading documents, splitting them the right way (fixed-size, recursive, or structure-aware), converting text to embeddings for semantic search, and storing everything in a vector database where you can retrieve answers with confidence scores and source citations.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,14 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "vector database",
     "embeddings",
-    "PDF processing",
-    "text splitting",
-    "retrieval augmented generation",
     "vector search",
-    "document loaders",
-    "LLM"
+    "document splitting",
+    "loaders",
+    "semantic search",
+    "manual retrieval",
+    "LangChain",
+    "AI assistants",
+    "vector databases"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
