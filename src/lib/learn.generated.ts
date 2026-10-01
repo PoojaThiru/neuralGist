@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Searching repair manuals with RAG: loaders, splitting, embeddings, vector stores",
-   "summary": "Learn how to make a large PDF repair manual searchable so an AI assistant can answer specific questions like \"what's the torque for the rear hub axle nut?\" by getting the right single line into the model's hands. This video walks through the complete pipeline: loading text from PDFs, splitting it intelligently (fixed-size vs. recursive vs. structure-aware), converting chunks to embeddings, and storing them in a vector database where they can be retrieved by semantic meaning rather than keyword matching.",
+   "title": "Turning repair manuals into searchable context for AI",
+   "summary": "Learn the complete pipeline for loading, splitting, embedding, and storing technical documents so an AI assistant can find and answer specific questions from repair manuals. You'll understand why naive text splitting fails, how semantic search works, and what breaks quietly when you build this system for real.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,13 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "retrieval-augmented generation",
-    "embeddings",
-    "vector database",
+    "vector embeddings",
     "text splitting",
-    "PDF loaders",
     "semantic search",
-    "LLM tools",
-    "repair manuals",
-    "document processing"
+    "PDF loading",
+    "vector store",
+    "LLM context",
+    "document indexing"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
