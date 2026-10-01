@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Retrieval-Augmented Generation: Getting Manuals Into a Vector Store",
-   "summary": "Learn how to prepare unstructured documents like repair manuals so an AI assistant can search them and answer specific questions. This video walks through the complete pipeline: loading files, splitting them intelligently (fixed-size, recursive, or structure-aware), converting text to embeddings, and storing chunks in a vector database for semantic search.",
+   "title": "Retrieval-Augmented Generation: Getting Knowledge into the Model",
+   "summary": "Learn how to extract text from manuals and documents, split them intelligently, convert them to embeddings, and store them in a vector database so an AI assistant can search and retrieve relevant chunks to answer specific questions. You'll discover three splitting strategies—fixed size, recursive, and structure-aware—and understand where each one fails, plus the three common mistakes that break retrieval in production.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,16 +11748,16 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
+    "retrieval-augmented generation",
     "RAG",
-    "vector store",
-    "embeddings",
     "text splitting",
-    "PDF processing",
+    "embeddings",
+    "vector store",
+    "PDF loaders",
     "semantic search",
+    "Chroma",
     "LangChain",
-    "retrieval",
-    "prompt engineering",
-    "document handling"
+    "knowledge retrieval"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
