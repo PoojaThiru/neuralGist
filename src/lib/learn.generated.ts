@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Retrieval-Augmented Generation: Getting LLMs to Search Your Repair Manuals",
-   "summary": "Learn how to make an LLM answer specific questions by searching through large documents like repair manuals and feeding it only the relevant chunks. This video walks through the complete pipeline: loading text from PDFs, splitting it intelligently (fixed-size, recursive, and structure-aware approaches), converting chunks to embeddings for semantic search, and storing them in a vector database for fast retrieval.",
+   "title": "Retrieval-Augmented Generation: Turning Manuals into Searchable Knowledge",
+   "summary": "Learn how to make an AI assistant actually search through your repair manuals by loading PDFs into chunks, embedding them as vectors, and storing them in a searchable database. You'll understand why naive splitting fails, when to use recursive or structure-aware chunking, and how to build a pipeline that finds the exact page and answer a user needs.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11750,13 +11750,13 @@ export const LANGCHAIN: Lesson[] = [
    "tags": [
     "RAG",
     "retrieval-augmented generation",
+    "vector search",
     "embeddings",
-    "vector database",
     "text splitting",
+    "PDF loading",
     "LLM",
     "semantic search",
-    "PDF loading",
-    "document processing"
+    "vector database"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
