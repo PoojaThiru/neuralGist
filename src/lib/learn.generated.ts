@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Loading and splitting documents to feed repair manuals to AI assistants",
-   "summary": "Learn how to extract text from PDFs and web pages, split them into searchable chunks, convert them to embeddings, and store them in a vector database so an AI assistant can answer specific questions about your documentation. You'll understand the trade-offs between fixed-size, recursive, and structure-aware splitting, and see three critical mistakes that break this pipeline in production.",
+   "title": "Getting Manual Text into LLMs: Loaders, Splitting, Embeddings, and Search",
+   "summary": "Learn how to make proprietary repair manuals searchable and usable by language models. This video walks through the complete pipeline—loading PDFs, splitting text intelligently (fixed, recursive, and structure-aware), embedding chunks into vectors, and storing them in a vector database—so your AI assistant can find the exact line it needs and answer specific technical questions accurately.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,16 +11748,16 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "document loading",
-    "text splitting",
+    "LLM",
+    "RAG",
     "embeddings",
     "vector database",
-    "RAG",
-    "PDF processing",
+    "text splitting",
+    "PDF loaders",
     "semantic search",
     "Chroma",
-    "LLM",
-    "retrieval"
+    "manual",
+    "technical documentation"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
