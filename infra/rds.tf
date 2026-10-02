@@ -16,6 +16,40 @@ data "aws_subnets" "app" {
   }
 }
 
+# WHERE THE FUNCTION'S ENIs GO, which is not the same question as where the database may live.
+#
+# The set above is every subnet in the default VPC: right for an RDS subnet group, wrong for a Lambda. Three of
+# those five are the legacy default subnets, whose only route out is an internet gateway — and a Lambda ENI has
+# no public address, so an ENI placed in one has no outbound path whatsoever. Three invocations in five could
+# not reach the internet, which stayed invisible for as long as the site called nothing outside the VPC. The
+# moment it had to read its signing key from SSM, those invocations hung for the full 30 seconds and the page
+# answered 504 (2026-10-02).
+#
+# Selecting by route table is what makes this correct rather than a list of ids that drifts: a subnet qualifies
+# because it routes through the NAT gateway, which is the property actually required.
+data "aws_route_tables" "natted" {
+  vpc_id = data.aws_vpc.default.id
+  filter {
+    name   = "route.nat-gateway-id"
+    values = ["*"]
+  }
+}
+
+# describe-subnets has no route-table filter, so the association is read from the route table's own side: each
+# natted table is fetched and the subnets associated with it are the ones a function may sit in.
+data "aws_route_table" "natted" {
+  for_each       = toset(data.aws_route_tables.natted.ids)
+  route_table_id = each.value
+}
+
+locals {
+  private_subnet_ids = sort(flatten([
+    for rt in data.aws_route_table.natted : [
+      for a in rt.associations : a.subnet_id if a.subnet_id != ""
+    ]
+  ]))
+}
+
 resource "aws_security_group" "lambda" {
   name        = "neuralgist-lambda"
   description = "Neuralgist app (Lambda)"
