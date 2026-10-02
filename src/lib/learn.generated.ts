@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Retrieval-Augmented Generation: Splitting and Embedding Manual Text",
-   "summary": "Learn how to prepare PDF manuals so an AI assistant can search them and answer specific questions by extracting text, splitting it intelligently, converting chunks to embeddings, and storing them in a vector database. After this video, you'll understand the four-step pipeline for retrieval-augmented generation and how to avoid common mistakes like broken tables and misaligned embedding models.",
+   "title": "Getting Text into an AI: Loaders, Splitting, Embeddings, and Vector Search",
+   "summary": "Learn how to make repair manuals and other large documents searchable by an AI assistant. This video walks through the complete pipeline: extracting text with loaders, splitting documents intelligently, converting text to vectors with embeddings, and storing them in a vector database for semantic search.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "embeddings",
-    "vector store",
+    "vector embeddings",
+    "document loaders",
     "text splitting",
-    "PDF loaders",
+    "vector store",
     "semantic search",
+    "Chroma",
     "LangChain",
-    "manuals",
-    "retrieval-augmented generation",
-    "vector database"
+    "PDF processing",
+    "AI retrieval"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
