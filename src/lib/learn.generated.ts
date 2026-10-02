@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Getting Your Repair Manual into a Search Engine",
-   "summary": "Learn how to prepare large PDFs like repair manuals so an AI assistant can search them and retrieve specific facts (like torque specs) from hundreds of pages. This video walks through the four-step pipeline: loading documents, splitting them intelligently, converting text to searchable vectors via embeddings, and storing everything in a vector database for fast, meaning-aware retrieval.",
+   "title": "RAG: Loading, Splitting, and Embedding Manuals for LLM Search",
+   "summary": "Learn how to transform unstructured PDFs and documents into searchable chunks that an LLM can use to answer specific questions. This video covers loaders that extract text, splitting strategies (fixed, recursive, and structure-aware) that preserve meaning, embeddings that turn text into comparable vectors, and vector stores that enable semantic search—the full pipeline for retrieval-augmented generation.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,14 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "vector search",
-    "embeddings",
+    "vector embeddings",
+    "PDF loading",
     "text splitting",
-    "PDF",
-    "document loading",
     "semantic search",
+    "vector store",
     "LLM",
-    "manual retrieval"
+    "document retrieval",
+    "Chroma",
+    "LangChain"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
