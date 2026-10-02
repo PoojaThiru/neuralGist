@@ -12,6 +12,41 @@
 	let video: HTMLVideoElement | null = $state(null);
 	let big = $state(false);
 
+	// THE ADDRESS IS ASKED FOR, NOT WRITTEN DOWN. The CDN requires a signature on media/learn, so the path in the
+	// generated catalogue is not playable on its own — the server turns it into a short-lived URL when a lesson is
+	// actually opened. One round trip per lesson, and a link that escapes expires on its own.
+	let src = $state('');
+	let poster = $state('');
+	let captions = $state('');
+
+	async function addressFor(path: string): Promise<string> {
+		if (!path || path.startsWith('http')) return path;
+		try {
+			const r = await fetch(`/api/media?path=${encodeURIComponent(path)}`);
+			return (await r.json())?.url ?? path;
+		} catch {
+			return path;   // unsigned is still worth trying: a blank player tells the viewer nothing
+		}
+	}
+
+	// keyed on the lesson, so opening another one re-signs rather than replaying the last address
+	$effect(() => {
+		const want = lesson.src;
+		src = poster = captions = '';
+		void Promise.all([addressFor(lesson.src), addressFor(lesson.poster), addressFor(lesson.captions)]).then(
+			([v, p, c]) => {
+				if (lesson.src !== want) return;   // they moved on while we were asking
+				src = v;
+				poster = p;
+				captions = c;
+				queueMicrotask(() => {
+					video?.load();
+					void video?.play().catch(() => {});
+				});
+			}
+		);
+	});
+
 	const seek = (at: string) => {
 		const [m, s] = at.split(':').map(Number);
 		if (video) {
@@ -77,8 +112,8 @@
 			<div class="flex justify-center bg-black">
 				<video
 					bind:this={video}
-					src={lesson.src}
-					poster={lesson.poster}
+					src={src}
+					poster={poster}
 					controls
 					autoplay
 					preload="metadata"
@@ -86,7 +121,7 @@
 					class="h-auto w-auto max-h-[calc(100dvh-11rem)] max-w-full"
 					style="aspect-ratio: 16 / 9"
 				>
-					<track kind="captions" src={lesson.captions} srclang="en" label="English" default />
+					{#if captions}<track kind="captions" src={captions} srclang="en" label="English" default />{/if}
 				</video>
 			</div>
 

@@ -5,6 +5,27 @@ variable "domain" {
   default = "neuralgist.ai"
 }
 # Where the Postgres migrations/seed are run from (this Mac). Only this CIDR + the Lambda may reach the DB.
+# THE SIGNING KEY IS SHARED AND IS NOT MANAGED HERE. It was created for neuralknowledge.ai and both sites sign
+# with it, because both serve the same library through their own CDN. Terraform in one repo must not own a key the
+# other depends on, so these name what exists. Rotating means a new public key in the group, then these two values.
+variable "media_key_group_id" {
+  type        = string
+  default     = "8215b3f9-3d9b-48a7-b240-8a7d15899c37" # key group "neuralknowledge-media"
+  description = "CloudFront key group whose signature /media/learn/* requires."
+}
+
+variable "media_key_id" {
+  type        = string
+  default     = "K1K7E8YDUAMBD" # public key "neuralknowledge-media"
+  description = "The Key-Pair-Id the site puts in a signed URL."
+}
+
+variable "media_key_ssm" {
+  type        = string
+  default     = "/vansur/cf_signing"
+  description = "SSM parameter holding the RSA private key that pairs with media_key_id. Written by hand."
+}
+
 variable "admin_cidr" {
   type = string
 }

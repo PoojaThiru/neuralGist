@@ -103,6 +103,29 @@ resource "aws_cloudfront_distribution" "app" {
     }
   }
 
+  # THE COURSE LIBRARY IS LOCKED, AND HAS TO BE LOCKED HERE TOO. media/learn is the shared lesson library, and
+  # this distribution and neuralknowledge.ai's sit in front of the SAME bucket. neuralknowledge.ai requires a
+  # signature on it so a visitor gets two minutes and a member gets the lesson — and on 2026-10-02 the same file
+  # answered 403 there and 206 here, unsigned, which makes that lock a formality. One key group, both doors.
+  #
+  # This block comes BEFORE /media/* on purpose: ordered behaviours are matched in order, so the open one would
+  # otherwise swallow these paths and nothing below would ever apply.
+  ordered_cache_behavior {
+    path_pattern               = "/media/learn/*"
+    target_origin_id           = "media"
+    viewer_protocol_policy     = "redirect-to-https"
+    allowed_methods            = ["GET", "HEAD", "OPTIONS"]
+    cached_methods             = ["GET", "HEAD"]
+    compress                   = false
+    cache_policy_id            = data.aws_cloudfront_cache_policy.optimized.id
+    response_headers_policy_id = "60669652-455b-4ae9-85a4-c4c02393f86c" # Managed-SimpleCORS
+    trusted_key_groups         = [var.media_key_group_id]
+    function_association {
+      event_type   = "viewer-request"
+      function_arn = aws_cloudfront_function.canonical_host.arn
+    }
+  }
+
   # Radio audio and other media from S3, cached at the edge (keys are immutable).
   # CORS headers so other sites of ours (neuralknowledge.ai) can play these files with captions,
   # which browsers only allow on a cross-origin media element when the response permits it.

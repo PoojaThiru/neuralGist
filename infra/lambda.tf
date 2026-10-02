@@ -24,6 +24,21 @@ resource "aws_iam_role_policy_attachment" "vpc" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole"
 }
 
+# ONE PARAMETER, READ-ONLY. The signing key is the only secret this function fetches at runtime, so the policy
+# names it rather than the prefix: a wildcard here would also hand over every other service's parameters.
+resource "aws_iam_role_policy" "cf_signing" {
+  name = "cf-signing-key"
+  role = aws_iam_role.lambda.id
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Effect   = "Allow"
+      Action   = ["ssm:GetParameter"]
+      Resource = "arn:aws:ssm:${var.region}:${data.aws_caller_identity.me.account_id}:parameter${var.media_key_ssm}"
+    }]
+  })
+}
+
 resource "aws_cloudwatch_log_group" "app" {
   name              = "/aws/lambda/neuralgist"
   retention_in_days = 30
@@ -71,6 +86,10 @@ resource "aws_lambda_function" "app" {
       ADMIN_EMAILS         = var.admin_emails
       PUBLIC_SITE_URL      = "https://${var.domain}"
       RADIO_SECRET         = random_password.radio_secret.result
+      # signing the lesson library: the key id is public, the key itself is read from SSM once per container
+      CF_KEY_ID          = var.media_key_id
+      CF_PRIVATE_KEY_SSM = var.media_key_ssm
+      CF_MEDIA_DOMAIN    = "https://${var.domain}"
     }
   }
 
