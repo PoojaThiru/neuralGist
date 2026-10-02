@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Retrieval-Augmented Generation: Getting Text Into Your LLM",
-   "summary": "Learn how to make large language models searchable across your own documents by building a retrieval pipeline. You'll understand loaders, text splitting strategies, embeddings, and vector stores—the four-step process to turn any manual or document into a searchable knowledge source your assistant can actually use.",
+   "title": "Retrieval-Augmented Generation: Turning Manuals into AI-Searchable Knowledge",
+   "summary": "Learn how to turn a large PDF manual into a searchable knowledge base that an AI assistant can query accurately. This lesson covers the four-step pipeline: loading text from documents, splitting it wisely (fixed, recursive, or structure-aware), converting text to embeddings, and storing it in a vector database for semantic search.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,14 +11749,13 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "vector database",
     "embeddings",
+    "vector database",
     "text splitting",
-    "document loaders",
     "semantic search",
+    "document loaders",
     "LLM",
-    "ChromaDB",
-    "retrieval"
+    "retrieval augmented generation"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
