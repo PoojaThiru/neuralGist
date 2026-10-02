@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Getting Data into LLMs: Loaders, Splitters, Embeddings & Vector Search",
-   "summary": "Learn how to make large documents searchable for language models by loading files, splitting them intelligently, converting text to embeddings, and storing them in a vector database. After this video, you'll understand the four-step pipeline for finding the right chunk of a 200-page manual and passing it to an AI—and you'll know where that pipeline breaks if you're not careful.",
+   "title": "Turning Repair Manuals into AI Search: Loaders, Splitting, and Embeddings",
+   "summary": "Learn how to convert unstructured PDFs and documents into searchable vectors so an AI assistant can answer specific questions like \"what's the torque for the rear hub axle nut?\" This lesson walks through the complete pipeline: extracting text with loaders, splitting it smartly with recursive and structure-aware methods, converting chunks to embeddings, and storing them in a vector database for semantic search.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11752,12 +11752,12 @@ export const LANGCHAIN: Lesson[] = [
     "embeddings",
     "vector search",
     "text splitting",
-    "PDF",
+    "PDF processing",
+    "semantic search",
     "vector database",
     "LLM",
-    "retrieval",
-    "semantic search",
-    "document loading"
+    "document loading",
+    "Chroma"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
