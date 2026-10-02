@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Getting Repair Manuals into an AI: Loaders, Splitters, Embeddings & Search",
-   "summary": "Learn how to turn a static PDF manual into searchable text that an AI assistant can actually use to answer specific questions. This lesson covers the four-step pipeline: loading documents, splitting them without breaking facts, embedding text as vectors for semantic search, and storing everything in a vector database for fast retrieval.",
+   "title": "Embedding Documents: From PDF to Searchable Vector Store",
+   "summary": "Learn how to extract text from repair manuals and other documents, split them into searchable chunks, convert them to embeddings, and store them in a vector database. By the end, you'll understand the complete pipeline for letting an AI assistant find and retrieve specific facts from large unstructured documents—and where this approach quietly breaks.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,16 +11748,16 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
+    "embeddings",
+    "vector store",
     "RAG",
-    "vector embeddings",
-    "PDF parsing",
+    "document loading",
     "text splitting",
     "semantic search",
-    "vector store",
-    "document loaders",
-    "AI search",
-    "LangChain",
-    "retrieval augmented generation"
+    "chroma",
+    "PDF",
+    "LLM",
+    "retrieval"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
