@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Retrieval-Augmented Generation: Loading, Splitting, and Embedding Documents",
-   "summary": "Learn how to turn unstructured documents like repair manuals into searchable vectors so an AI assistant can retrieve and answer specific questions about them. This video covers the complete pipeline: loaders that extract text from PDFs and HTML, text splitting strategies (fixed, recursive, and structure-aware), embedding models that turn text into comparable vectors, and vector stores for semantic search.",
+   "title": "Retrieval-Augmented Generation: Getting AI Models to Use Your Manuals",
+   "summary": "Learn how to make large language models answer questions from your own documents by building a retrieval pipeline: loading PDFs, splitting them intelligently, converting text to searchable vectors, and storing them in a vector database. After this video, you'll understand why naive text splitting fails, how embedding models work, and the full four-step process to feed the right information from a 200-page manual to an AI assistant.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11751,12 +11751,12 @@ export const LANGCHAIN: Lesson[] = [
     "RAG",
     "retrieval-augmented generation",
     "embeddings",
-    "vector store",
+    "vector database",
     "text splitting",
-    "document loaders",
+    "PDF loaders",
     "semantic search",
-    "LLM integration",
-    "PDF processing"
+    "LLM",
+    "prompt engineering"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
