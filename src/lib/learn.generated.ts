@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Turning Manuals into Searchable Knowledge: Loaders, Splitting, Embeddings, and Vector Search",
-   "summary": "Learn how to ingest dense technical manuals into an AI system so it can answer specific questions like \"what's the torque for the rear hub axle nut?\" This video walks through the complete pipeline: loading PDFs, splitting them smartly (fixed-size, recursive, and structure-aware), converting chunks to embeddings, and storing them in a vector database for semantic search. You'll understand where this approach breaks and how to handle edge cases like tables and model switching.",
+   "title": "Retrieving Facts from PDF Manuals with Vector Search",
+   "summary": "Learn how to extract information from large repair manuals so an AI assistant can answer specific questions like \"what's the torque for the rear hub axle nut?\" You'll master the four-step pipeline: loading text from PDFs, splitting it intelligently (fixed size vs. recursive vs. structure-aware), converting chunks to vector embeddings for semantic search, and querying a vector store to retrieve the right passage with metadata intact.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,16 +11748,15 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "embeddings",
-    "vector database",
-    "document splitting",
-    "PDF loaders",
+    "vector search",
+    "PDF parsing",
+    "text embeddings",
+    "RAG",
+    "document chunking",
     "semantic search",
-    "retrieval augmented generation",
-    "manuals",
-    "knowledge retrieval",
+    "vector store",
     "Chroma",
-    "LangChain"
+    "retrieval augmented generation"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
