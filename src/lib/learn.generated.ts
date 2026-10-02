@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Retrieving Facts from Manuals: Loaders, Splitters, Embeddings & Search",
-   "summary": "Learn the complete pipeline for turning large PDFs and manuals into searchable, queryable data that an AI assistant can actually use. You'll build retrieval-augmented generation (RAG) by mastering loaders, text splitting strategies, embeddings, and vector stores — and discover the three critical mistakes to avoid when building this for real.",
+   "title": "Retrieval-Augmented Generation: Turning Manuals into Searchable Knowledge",
+   "summary": "Learn how to make large documents like repair manuals searchable by AI assistants. This video walks through the complete pipeline: loading text from PDFs, splitting it intelligently (fixed-size, recursive, or structure-aware), converting chunks into vector embeddings for semantic search, and storing them in a vector database for retrieval.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,14 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "vector search",
-    "embeddings",
-    "text splitting",
-    "PDF loaders",
+    "retrieval-augmented generation",
+    "vector embeddings",
     "semantic search",
-    "LLM",
-    "vector stores",
-    "document retrieval",
-    "Chroma"
+    "document splitting",
+    "vector database",
+    "LangChain",
+    "PDF processing",
+    "knowledge retrieval"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
