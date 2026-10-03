@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Turning Manuals into Searchable Knowledge: Loaders, Splitters, Embeddings",
-   "summary": "Learn how to make a language model answer questions from your organization's manuals by converting documents into searchable chunks, embedding them as vectors, and storing them in a vector database. After this lesson, you'll understand the full pipeline—from loading PDFs and HTML, through text splitting strategies, to semantic search—and know the common mistakes that silently break this system.",
+   "title": "Turning Repair Manuals into Searchable Context for LLMs",
+   "summary": "Learn how to extract text from PDFs and HTML, split it intelligently without breaking meaning, convert it to embeddings, and store it in a vector database so an LLM can answer specific questions like torque specs with exact citations. You'll see three common mistakes that break this pipeline and how to avoid them when building a real retrieval system.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "vector embeddings",
-    "text splitting",
-    "semantic search",
-    "PDFLoader",
-    "RecursiveCharacterTextSplitter",
     "vector database",
-    "document loading",
-    "chunking strategies",
-    "LLM knowledge retrieval"
+    "embeddings",
+    "text splitting",
+    "PDF processing",
+    "LLM",
+    "retrieval",
+    "Chroma",
+    "semantic search",
+    "document chunking"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
