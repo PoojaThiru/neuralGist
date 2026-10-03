@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Getting Manual Knowledge into an AI Assistant",
-   "summary": "Learn how to make an LLM assistant actually know what's in your repair manuals by loading PDFs, splitting them intelligently, converting them to embeddings, and storing them in a vector database. You'll see exactly where naive approaches fail—like splitting mid-unit or losing tables—and build a working pipeline to search manuals by meaning instead of keywords.",
+   "title": "Getting Text into an LLM: Loaders, Splitters, Embeddings, and Vector Search",
+   "summary": "Learn how to feed unstructured documents like repair manuals into a language model by loading them, splitting them intelligently, converting them to embeddings, and searching them with a vector store. After this video, you'll understand the complete pipeline for retrieving the right line from a 200-page PDF and giving it to an LLM to answer specific questions accurately.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,14 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "vector databases",
+    "vector search",
     "embeddings",
-    "text splitting",
-    "PDF loading",
-    "LLM tools",
-    "semantic search",
-    "Chroma",
-    "RecursiveCharacterTextSplitter",
-    "MarkdownHeaderTextSplitter"
+    "text splitters",
+    "document loaders",
+    "LLM",
+    "vector stores",
+    "ChromaDB",
+    "semantic search"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
