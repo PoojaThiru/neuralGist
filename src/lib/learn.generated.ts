@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Turning PDFs into searchable chunks: loaders, splitters, embeddings, and vector stores",
-   "summary": "Learn how to extract text from manuals and documents, split them intelligently into searchable chunks, and use embeddings and vector stores to find the right information by meaning rather than keywords. After this video you'll understand the complete pipeline for getting an AI assistant to answer questions from your own documents without hallucinating.",
+   "title": "Retrieving Knowledge from PDFs: Loaders, Splitting, Embeddings, and Vector Search",
+   "summary": "Learn how to make repair manuals and large PDFs searchable so an AI assistant can find and return the exact information needed to answer specific questions. This video walks through the complete pipeline: extracting text with loaders, splitting documents intelligently to preserve meaning, converting text to embeddings for semantic search, and storing everything in a vector database for fast retrieval with relevance scoring.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,14 +11749,14 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "vector store",
+    "retrieval-augmented generation",
+    "vector search",
     "embeddings",
-    "text splitting",
-    "PDF loader",
+    "document splitting",
+    "PDF loaders",
+    "vector store",
     "semantic search",
-    "LLM",
-    "document retrieval",
-    "chunks",
+    "LLM knowledge",
     "Chroma"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
