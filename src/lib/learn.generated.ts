@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Getting Manual Text into a Searchable System for AI Assistants",
-   "summary": "Learn the complete pipeline for making large repair manuals searchable so that AI assistants can retrieve specific information like torque specifications. You'll build a system using loaders to extract text, splitters to break documents into meaningful chunks, embeddings to match questions by semantic meaning, and vector stores to search and retrieve the most relevant passages with confidence scores.",
+   "title": "Retrieval-Augmented Generation: Loading, Splitting, and Embedding Documents",
+   "summary": "Learn how to take unstructured documents like repair manuals and transform them into a searchable system that an AI assistant can query by meaning, not just keywords. This video walks through the complete pipeline: loading files with metadata, splitting them intelligently without breaking up facts, embedding chunks as vectors, and storing them in a vector database for semantic search.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "vector embeddings",
+    "retrieval-augmented generation",
+    "embeddings",
+    "vector search",
     "text splitting",
     "document loaders",
-    "vector database",
     "semantic search",
-    "LangChain",
-    "manual search",
-    "retrieval augmented generation",
-    "AI assistants"
+    "vector database",
+    "LLM",
+    "langchain"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
