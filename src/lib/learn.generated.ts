@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Turning Repair Manuals Into AI-Searchable Knowledge",
-   "summary": "Learn how to chunk, embed, and store technical documents so an AI assistant can search them by meaning and answer specific questions like \"what's the torque spec for the rear hub axle nut?\" This video walks through loaders, text splitters, embeddings, and vector stores—the complete pipeline for making large PDFs queryable by an AI model.",
+   "title": "Getting Text Into a Vector Store: PDFs, Splitting, and Embeddings",
+   "summary": "Learn how to extract text from PDFs and other documents, split it intelligently, convert it to embeddings, and store it in a vector database so an AI assistant can search and answer questions about your repair manuals. You'll see the full pipeline from loaders through vector search, understand where each step fails, and learn three ways to split documents—fixed size, recursive, and structure-aware.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,14 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
+    "vector store",
     "embeddings",
-    "vector search",
-    "text splitting",
-    "PDF processing",
-    "vector database",
+    "document splitting",
+    "PDF loading",
     "semantic search",
-    "document chunking",
-    "LangChain"
+    "LangChain",
+    "Chroma",
+    "recursive splitting",
+    "AI retrieval"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
