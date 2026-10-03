@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Turning Repair Manuals into AI-Searchable Documents",
-   "summary": "Learn how to extract knowledge from repair manuals and make it accessible to an AI assistant through a four-step pipeline: loading text from PDFs, splitting it intelligently to preserve meaning, converting chunks to searchable vectors, and storing them for fast retrieval. After watching, you'll understand why fixed-size splitting fails, how recursive and structure-aware splitting work better, and the real gotchas that break this approach in production.",
+   "title": "Getting Text from Manuals into an AI Search Pipeline",
+   "summary": "Learn how to turn a 200-page repair manual into searchable chunks that an AI assistant can actually use to answer specific questions like \"what's the torque for the rear hub axle nut?\" This video walks through the complete pipeline: loaders to extract text, splitting strategies (fixed, recursive, and structure-aware), embeddings to encode meaning as vectors, and vector stores to search by similarity and return scored results.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11753,11 +11753,11 @@ export const LANGCHAIN: Lesson[] = [
     "text splitting",
     "embeddings",
     "PDF processing",
-    "LangChain",
-    "semantic search",
-    "manual knowledge",
     "document chunking",
-    "Chroma"
+    "semantic search",
+    "LLM",
+    "retrieval",
+    "manual processing"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
