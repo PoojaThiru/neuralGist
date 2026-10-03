@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Getting Text into a Chatbot: Loaders, Splitting, Embeddings, Vector Search",
-   "summary": "Learn how to make a chatbot actually understand your repair manuals by converting documents into searchable text chunks and vector embeddings. This video walks through the complete pipeline: loading PDFs and web content, splitting text intelligently (fixed-size, recursive, and structure-aware methods), converting chunks to embeddings for semantic search, and storing everything in a vector database so the model can find and return the exact line it needs.",
+   "title": "Getting Repair Manuals into an AI Search System",
+   "summary": "Learn how to break down large PDFs and documents into searchable chunks that an AI assistant can use to answer specific questions accurately. This video walks through loaders, text splitting strategies, embeddings, and vector stores—the four-step pipeline for converting unstructured manuals into a system where the AI can find and cite the exact page you need.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11752,12 +11752,12 @@ export const LANGCHAIN: Lesson[] = [
     "vector search",
     "embeddings",
     "text splitting",
-    "PDF loaders",
+    "loaders",
+    "PDF parsing",
+    "LLM",
     "semantic search",
-    "vector database",
-    "Chroma",
-    "LangChain",
-    "document retrieval"
+    "vector store",
+    "document chunking"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
