@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Turning Manuals into Searchable Knowledge: Loaders, Splitting, Embeddings, and Vector Stores",
-   "summary": "Learn how to convert unstructured documents like repair manuals into searchable vectors so an AI assistant can answer specific questions accurately. This video walks through the four-step pipeline: loading text from PDFs, splitting it intelligently to preserve meaning, converting chunks to embeddings, and storing them in a vector database for semantic search. After watching, you'll understand how to extract the right information from large documents and serve it to an AI model, plus recognize three common mistakes that silently break this process.",
+   "title": "Turning Repair Manuals into Searchable Embeddings",
+   "summary": "Learn how to load PDFs and documents, split them intelligently, convert text into embeddings, and store them in a vector database so an AI assistant can find and cite the exact manual pages needed to answer technical questions. This video walks through each step of the retrieval pipeline—loaders, splitters, embeddings, and vector stores—and shows where naive approaches fail on real manuals.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,16 +11748,16 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
+    "embeddings",
+    "vector search",
     "RAG",
-    "vector embeddings",
-    "document splitting",
-    "vector store",
+    "document loading",
+    "text splitting",
+    "PDF processing",
     "semantic search",
-    "PDF loading",
     "LangChain",
-    "information retrieval",
-    "AI assistants",
-    "knowledge base"
+    "vector database",
+    "manual retrieval"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
