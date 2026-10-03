@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Turning PDFs into searchable knowledge: loaders, splitting, embeddings, and vector stores",
-   "summary": "Learn how to make LLM assistants search through large manuals by breaking them into chunks, converting them to vector embeddings, and storing them in a searchable database. This video walks through the full pipeline—from loading PDFs and HTML to splitting text intelligently, embedding chunks as vectors, and retrieving the most relevant pieces by semantic similarity rather than keyword matching.",
+   "title": "Getting Text into a Chatbot: Loaders, Splitting, Embeddings, Vector Search",
+   "summary": "Learn how to make a chatbot actually understand your repair manuals by converting documents into searchable text chunks and vector embeddings. This video walks through the complete pipeline: loading PDFs and web content, splitting text intelligently (fixed-size, recursive, and structure-aware methods), converting chunks to embeddings for semantic search, and storing everything in a vector database so the model can find and return the exact line it needs.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "vector embeddings",
+    "vector search",
+    "embeddings",
     "text splitting",
-    "document loading",
+    "PDF loaders",
     "semantic search",
-    "vector stores",
+    "vector database",
     "Chroma",
-    "PDF processing",
-    "LLM knowledge base",
-    "information retrieval"
+    "LangChain",
+    "document retrieval"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
