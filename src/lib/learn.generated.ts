@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Turning Repair Manuals into Searchable Context: Loaders, Splitting, and Embeddings",
-   "summary": "Learn how to extract text from PDFs and web pages, split documents intelligently, convert them to embeddings, and store them in a vector database so an AI assistant can search and retrieve the exact information needed from your repair manuals. You'll see three splitting strategies—fixed size, recursive, and structure-aware—and understand the pitfalls of each, so your assistant can answer specific questions like \"what's the torque for the rear hub axle nut?\" with the right line from a 200-page manual.",
+   "title": "Turning Repair Manuals into Searchable Knowledge: Loaders, Splitting, and Embeddings",
+   "summary": "Learn how to make repair manuals and large PDFs searchable by an AI assistant using a four-step pipeline: loading documents, splitting them intelligently, converting text to embeddings, and storing in a vector database. After this video you'll understand why simple text search fails on unstructured documents and how to build a system that finds the right line from a 200-page manual to answer specific technical questions accurately.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,16 +11748,16 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
+    "RAG",
     "retrieval augmented generation",
-    "vector embeddings",
+    "embeddings",
+    "vector store",
     "text splitting",
-    "PDF loaders",
+    "PDF processing",
     "semantic search",
-    "vector database",
-    "repair manuals",
-    "document chunking",
-    "cosine similarity",
-    "LLM context"
+    "LLM",
+    "document loaders",
+    "Chroma"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
