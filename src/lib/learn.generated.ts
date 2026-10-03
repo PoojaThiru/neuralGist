@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Getting Text Into a Vector Store: PDFs, Splitting, and Embeddings",
-   "summary": "Learn how to extract text from PDFs and other documents, split it intelligently, convert it to embeddings, and store it in a vector database so an AI assistant can search and answer questions about your repair manuals. You'll see the full pipeline from loaders through vector search, understand where each step fails, and learn three ways to split documents—fixed size, recursive, and structure-aware.",
+   "title": "Turning Manuals into Searchable Knowledge: Loaders, Splitters, Embeddings",
+   "summary": "Learn how to make a language model answer questions from your organization's manuals by converting documents into searchable chunks, embedding them as vectors, and storing them in a vector database. After this lesson, you'll understand the full pipeline—from loading PDFs and HTML, through text splitting strategies, to semantic search—and know the common mistakes that silently break this system.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "vector store",
-    "embeddings",
-    "document splitting",
-    "PDF loading",
+    "vector embeddings",
+    "text splitting",
     "semantic search",
-    "LangChain",
-    "Chroma",
-    "recursive splitting",
-    "AI retrieval"
+    "PDFLoader",
+    "RecursiveCharacterTextSplitter",
+    "vector database",
+    "document loading",
+    "chunking strategies",
+    "LLM knowledge retrieval"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
