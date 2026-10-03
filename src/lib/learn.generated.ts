@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Embedding and Searching Text: Getting Answers from Repair Manuals",
-   "summary": "Learn how to make repair manuals searchable by their meaning, not just keywords. This lesson covers the four-step pipeline—loaders, text splitting, embeddings, and vector stores—that turns a 200-page PDF into a system where an AI assistant can find exactly the right line and cite the page number.",
+   "title": "RAG Pipeline: Embedding & Searching Documents in Vector Stores",
+   "summary": "Learn how to extract text from PDFs and HTML, split documents intelligently without breaking facts, convert chunks into searchable vectors, and query a vector store to find the most relevant manual sections. By the end, you'll understand the four-step pipeline for answering questions about documents the model has never seen, from loaders through embeddings to vector search.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,16 +11748,16 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "embeddings",
-    "vector search",
-    "text splitting",
-    "semantic search",
-    "LLM",
     "RAG",
-    "vector database",
+    "vector store",
+    "embeddings",
+    "document splitting",
+    "semantic search",
+    "PDF loaders",
+    "LangChain",
     "Chroma",
-    "document loading",
-    "NLP"
+    "text chunking",
+    "retrieval"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
