@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Getting Text into an LLM: Loaders, Splitters, Embeddings, and Vector Search",
-   "summary": "Learn how to feed unstructured documents like repair manuals into a language model by loading them, splitting them intelligently, converting them to embeddings, and searching them with a vector store. After this video, you'll understand the complete pipeline for retrieving the right line from a 200-page PDF and giving it to an LLM to answer specific questions accurately.",
+   "title": "Getting Repair Manuals Into an AI's Hands: Loaders, Splitters, Embeddings, and Search",
+   "summary": "Learn how to transform unstructured documents like repair manuals into searchable data that an AI assistant can actually use. This video walks through the complete pipeline: loading PDFs and HTML, splitting text intelligently (from naive fixed-size chunks to structure-aware methods), converting text to embeddings, and querying a vector store to find the exact line that matters.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11751,12 +11751,13 @@ export const LANGCHAIN: Lesson[] = [
     "RAG",
     "vector search",
     "embeddings",
-    "text splitters",
+    "text splitting",
     "document loaders",
     "LLM",
-    "vector stores",
-    "ChromaDB",
-    "semantic search"
+    "PDF processing",
+    "semantic search",
+    "vector database",
+    "AI tools"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
