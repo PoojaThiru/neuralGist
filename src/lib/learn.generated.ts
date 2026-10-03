@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Getting Manual Text into an AI Assistant: Loaders, Splitting, and Vector Search",
-   "summary": "Learn how to extract text from repair manuals and PDFs, split them into meaningful chunks, and make them searchable by an AI model using embeddings and vector stores. This video covers the complete pipeline—from loading documents through choosing the right splitting strategy (fixed, recursive, or structure-aware) to storing vectors for semantic search—so your assistant can find the exact line in a two-hundred-page manual and answer questions like \"what's the torque for the rear hub axle nut?\"",
+   "title": "Getting Repair Manuals Into an AI Assistant: Loaders, Splitting, and Vector Search",
+   "summary": "Learn how to turn a 200-page PDF repair manual into searchable chunks that an AI model can actually use to answer specific technical questions. This lesson walks through loaders, text splitting strategies (fixed, recursive, and structure-aware), embeddings, and vector stores—the complete pipeline for retrieving the one line from a manual that matters and giving it to your model.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,16 +11748,16 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "RAG",
+    "retrieval-augmented generation",
     "vector search",
-    "embeddings",
     "text splitting",
-    "PDF loading",
+    "embeddings",
+    "PDF loaders",
     "semantic search",
     "LLM",
     "document processing",
-    "vector store",
-    "Chroma"
+    "langchain",
+    "RAG pipeline"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
