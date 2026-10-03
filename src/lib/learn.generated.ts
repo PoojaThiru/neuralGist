@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Retrieval-Augmented Generation: Getting Manual Content into an LLM",
-   "summary": "Learn how to make repair manuals and other long documents searchable and accessible to AI assistants using RAG (Retrieval-Augmented Generation). This video walks through the complete pipeline: loading PDFs and HTML, splitting text the right way, converting text to vector embeddings, and querying a vector store to feed the model just the relevant facts it needs to answer questions like \"what's the torque spec for the rear hub axle nut?\"",
+   "title": "Turning Repair Manuals into Vector Search: Loaders, Splitters, and Embeddings",
+   "summary": "Learn how to convert unstructured PDFs and HTML documents into searchable chunks that an AI assistant can use to answer specific technical questions. This video walks through the complete pipeline—loading documents, splitting them intelligently, converting text to embeddings, and storing everything in a vector database—so a model can find and return the exact line from a 200-page manual that answers queries like \"what's the torque for the rear hub axle nut.\"",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,15 +11748,15 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "RAG",
-    "retrieval-augmented generation",
-    "vector embeddings",
-    "LLM",
-    "PDF parsing",
+    "vector search",
+    "embeddings",
+    "document loaders",
     "text splitting",
-    "vector database",
+    "RAG",
     "semantic search",
-    "documentation",
+    "LangChain",
+    "PDF processing",
+    "repair manuals",
     "AI assistants"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
