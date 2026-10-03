@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Getting Manual Data into an AI: Loaders, Splitters, Embeddings, and Vector Search",
-   "summary": "Learn how to make a large technical manual searchable by an AI assistant by breaking it into chunks, converting text to embeddings, and storing it in a vector database. This video covers four essential steps—loading documents, splitting text intelligently, embedding chunks as vectors, and querying a vector store—so you can answer specific questions like \"what's the torque for the rear hub axle nut\" by retrieving only the relevant line from a 200-page PDF.",
+   "title": "RAG Pipeline: Embedding and Searching a Repair Manual",
+   "summary": "Learn how to make private repair manuals searchable by an AI assistant. This video walks through the complete pipeline: loading documents, splitting them intelligently, converting text to vector embeddings, and storing them in a vector database so specific facts can be retrieved by semantic meaning, not just keywords.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,14 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "vector search",
     "embeddings",
-    "document loading",
-    "text splitting",
     "vector store",
+    "text splitting",
+    "document loaders",
     "semantic search",
-    "langchain",
-    "information retrieval",
-    "AI assistants"
+    "Chroma",
+    "LLM",
+    "retrieval augmented generation"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
