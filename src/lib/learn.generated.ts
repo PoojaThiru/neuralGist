@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Turning PDF Manuals into Searchable Knowledge for AI Assistants",
-   "summary": "Learn how to prepare technical manuals so that an AI assistant can actually search them and answer specific questions like \"what's the torque for the rear hub axle nut?\" This video walks through four essential steps: loading text from PDFs, splitting documents smartly without breaking facts apart, converting text to vectors so meaning can be matched, and storing everything in a searchable vector database. You'll see exactly where naive approaches fail and how to build a real-world pipeline that hands the model just the right line from a 200-page manual.",
+   "title": "Getting Manual Knowledge into an AI Assistant",
+   "summary": "Learn how to make an LLM assistant actually know what's in your repair manuals by loading PDFs, splitting them intelligently, converting them to embeddings, and storing them in a vector database. You'll see exactly where naive approaches fail—like splitting mid-unit or losing tables—and build a working pipeline to search manuals by meaning instead of keywords.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "vector search",
+    "vector databases",
     "embeddings",
-    "document loaders",
     "text splitting",
-    "vector store",
-    "PDF processing",
+    "PDF loading",
+    "LLM tools",
     "semantic search",
-    "knowledge retrieval",
-    "AI assistants"
+    "Chroma",
+    "RecursiveCharacterTextSplitter",
+    "MarkdownHeaderTextSplitter"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
