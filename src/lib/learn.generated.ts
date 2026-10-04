@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Retrieval-Augmented Generation: Loading, Splitting, and Searching Documents",
-   "summary": "Learn how to turn unstructured documents like repair manuals into searchable knowledge that an AI assistant can actually use. This video walks through the complete pipeline: loading files with the right tools, splitting text intelligently (fixed-size, recursive, and structure-aware), converting text to embeddings, and storing vectors in a searchable database—plus three common mistakes to avoid.",
+   "title": "Turning Repair Manuals into Searchable Knowledge for AI Assistants",
+   "summary": "Learn the complete pipeline for loading, splitting, and embedding text from repair manuals so an AI assistant can answer specific technical questions with exact references. This lesson covers four core steps—loaders, text splitting strategies, embeddings, and vector stores—along with three common mistakes that break the system silently.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "retrieval-augmented generation",
-    "text embedding",
-    "vector search",
-    "document splitting",
-    "loaders",
-    "chunking",
-    "vector store",
-    "LLM",
-    "semantic search"
+    "vector embeddings",
+    "text splitting",
+    "PDF loading",
+    "semantic search",
+    "vector stores",
+    "AI assistants",
+    "information retrieval",
+    "document processing",
+    "LLM tools"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
