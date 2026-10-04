@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Retrieval-Augmented Generation: Getting Text into a Vector Store",
-   "summary": "Learn how to take unstructured documents like repair manuals and turn them into a searchable vector store so an AI assistant can find and cite exact information. This video walks through loaders, text splitting strategies, embeddings, and vector stores—the four-step pipeline for building a retrieval system that actually works.",
+   "title": "Turning PDFs into Searchable Knowledge: Loaders, Splitters, Embeddings",
+   "summary": "Learn the four-step pipeline for making large documents like repair manuals searchable and queryable by an AI assistant. You'll understand how to extract text with loaders, split it intelligently without breaking meaning, convert chunks to embeddings for semantic search, and store them in a vector database—plus the three common mistakes that silently break this approach.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "vector store",
+    "document processing",
     "embeddings",
+    "vector search",
+    "PDF loaders",
     "text splitting",
-    "document loaders",
     "semantic search",
-    "Chroma",
-    "LangChain",
-    "retrieval",
-    "AI"
+    "vector database",
+    "LLM retrieval",
+    "document indexing"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
