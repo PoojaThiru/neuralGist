@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "RAG Pipeline: Embedding and Searching Document Chunks with Vector Stores",
-   "summary": "Learn how to turn repair manuals and other large documents into searchable data that an AI assistant can actually use. This lesson covers loaders, text splitting strategies (fixed, recursive, and structure-aware), embeddings, and vector stores—the complete pipeline for finding the one line that matters in a 200-page PDF and handing it to your model.",
+   "title": "Searching repair manuals with embeddings and vector stores",
+   "summary": "Learn how to extract text from PDFs and HTML, split documents intelligently, convert chunks into vector embeddings, and search a vector store to find the exact line from a manual that answers a question. After this video, you'll understand the complete pipeline for making an AI assistant that can actually search your shop's manuals and cite the page it found the answer on.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,16 +11748,16 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "RAG",
-    "vector search",
     "embeddings",
+    "vector store",
+    "PDF loader",
     "text splitting",
     "semantic search",
     "LangChain",
-    "document chunking",
-    "vector stores",
-    "AI assistants",
-    "information retrieval"
+    "Chroma",
+    "RAG",
+    "document retrieval",
+    "neural search"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
