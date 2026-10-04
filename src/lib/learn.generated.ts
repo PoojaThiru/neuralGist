@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Getting Text into AI: Loaders, Splitting, Embeddings, and Search",
-   "summary": "Learn how to take raw documents like repair manuals and prepare them so an AI assistant can actually search and answer questions about their contents. This video walks through the complete pipeline: extracting text with loaders, splitting it intelligently to preserve meaning, converting chunks to searchable vectors with embeddings, and storing them in a vector database.",
+   "title": "Retrieval-Augmented Generation: Getting Manuals Into Your AI Assistant",
+   "summary": "Learn how to make AI assistants answer questions about large documents like repair manuals by loading, splitting, and embedding text into a searchable vector store. This video walks through the complete pipeline—from pulling text out of PDFs to finding the single relevant chunk and returning it with source attribution—so your model can give specific, accurate answers instead of guessing.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "embeddings",
     "vector search",
+    "embeddings",
     "text splitting",
-    "document loaders",
+    "PDF processing",
+    "LangChain",
     "semantic search",
-    "vector database",
-    "Chroma",
-    "LLM integration",
-    "information retrieval"
+    "document retrieval",
+    "vector stores",
+    "AI assistants"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
