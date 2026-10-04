@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Building a RAG Pipeline: Turning Manuals into Searchable Knowledge",
-   "summary": "Learn how to extract facts from large documents like repair manuals and make them searchable by an AI assistant. You'll build a complete four-step pipeline: loading text, splitting it smartly, converting chunks to vectors, and storing them in a vector database for semantic search.",
+   "title": "Getting Data into an LLM: Text Splitting and Embeddings",
+   "summary": "Learn how to make repair manuals and other large documents searchable by an AI assistant. This lesson covers loading text, splitting it intelligently without breaking facts, embedding chunks into vectors for semantic search, and storing them in a vector database—the essential pipeline for answering questions grounded in your own documents.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,15 +11748,16 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "RAG",
-    "retrieval-augmented generation",
-    "vector database",
+    "LLM",
     "embeddings",
+    "vector database",
     "text splitting",
-    "semantic search",
+    "RAG",
     "document loading",
+    "semantic search",
     "Chroma",
-    "LLM integration"
+    "PDF processing",
+    "prompt engineering"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
