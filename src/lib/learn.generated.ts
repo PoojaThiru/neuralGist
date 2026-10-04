@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Turning Manuals into Vector Search: Load, Split, Embed, Store",
-   "summary": "Learn the complete pipeline for making repair manuals searchable by an AI assistant: how to extract text with loaders, split documents without breaking key facts, embed text into vectors for semantic search, and store everything in a vector database. After this video, you'll understand why fixed-size splitting fails, when structure-aware splitting matters, and how to set up a system that finds the right manual excerpt to answer specific questions like \"what's the torque for the rear hub axle nut?\"",
+   "title": "Getting Manual Text Into an AI Search System",
+   "summary": "Learn how to load PDF repair manuals, split them intelligently, convert text to searchable vectors, and store them so an AI assistant can actually answer specific questions like \"what's the torque for the rear hub axle nut?\" This video walks through four essential steps—loaders, text splitting strategies, embeddings, and vector storage—showing you common mistakes and how to avoid them.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11751,13 +11751,13 @@ export const LANGCHAIN: Lesson[] = [
     "RAG",
     "vector search",
     "embeddings",
-    "text splitting",
     "PDF loading",
+    "text splitting",
+    "LLM tools",
     "semantic search",
-    "vector stores",
-    "LangChain",
-    "documentation",
-    "AI assistants"
+    "vector store",
+    "Chroma",
+    "document processing"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
