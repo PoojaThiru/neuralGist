@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "RAG Pipeline: Loading, Splitting, and Embedding Documents for Search",
-   "summary": "Learn how to turn PDF manuals and documents into searchable chunks that an AI assistant can actually use to answer specific questions. This video walks through the four-step pipeline: loaders that extract text, splitters that preserve meaning, embeddings that enable semantic search, and vector stores that match queries to the right chunk of the manual.",
+   "title": "Turning Repair Manuals Into AI Search: Loaders, Splitting, Embeddings, and Vectors",
+   "summary": "Learn how to convert unstructured documents like repair manuals into a searchable, AI-ready format that lets a language model answer specific questions with exact citations. You'll build a complete pipeline: loading PDFs, splitting text at natural boundaries without breaking facts, embedding chunks into vectors for semantic search, and storing them in a vector database.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "retrieval-augmented-generation",
     "embeddings",
-    "vector-store",
-    "text-splitting",
-    "PDF-processing",
-    "semantic-search",
-    "document-loading",
+    "vector search",
+    "text splitting",
+    "document loaders",
+    "semantic search",
     "LLM",
-    "AI"
+    "PDF processing",
+    "vector store",
+    "Chroma"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
