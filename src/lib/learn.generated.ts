@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "RAG Pipeline: Loading, Splitting, Embedding, and Searching Manuals",
-   "summary": "Learn how to extract knowledge from unstructured documents like repair manuals so an AI assistant can search them and answer specific questions. This video walks through the complete pipeline: loading text from PDFs and HTML, splitting it intelligently (fixed-size vs. recursive vs. structure-aware), converting chunks to embeddings for semantic search, and storing everything in a vector database. You'll understand why naive approaches fail and see the real-world gotchas—tables, metadata consistency, and embedding model choice—that trip up production systems.",
+   "title": "Getting Repair Manual Text Into an AI Assistant",
+   "summary": "Learn how to extract text from PDFs and HTML, split it intelligently into searchable chunks, convert it to embeddings, and store it in a vector database so an AI assistant can find and answer specific questions from your repair manuals. After this video, you'll understand the four-step pipeline for feeding large documents into AI models and know which splitting method (fixed-size, recursive, or structure-aware) works best for different document types.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,15 +11748,16 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "RAG",
-    "retrieval-augmented generation",
-    "vector embeddings",
-    "semantic search",
+    "vector databases",
+    "embeddings",
+    "PDF processing",
     "text splitting",
-    "PDF loading",
-    "vector database",
-    "LLM tools",
-    "document processing"
+    "RAG",
+    "semantic search",
+    "LangChain",
+    "Chroma",
+    "AI retrieval",
+    "document chunking"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
