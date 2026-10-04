@@ -123,6 +123,8 @@ resource "aws_db_instance" "db" {
 }
 
 locals {
+  # THE MASTER URL. Kept for migrations and for anything that genuinely needs to administer the instance —
+  # and no longer handed to the running application. See below.
   database_url = "postgresql://${aws_db_instance.db.username}:${random_password.db.result}@${aws_db_instance.db.address}:5432/${aws_db_instance.db.db_name}?sslmode=require"
 }
 
@@ -131,4 +133,18 @@ resource "aws_ssm_parameter" "database_url" {
   name  = "/neuralgist/database_url"
   type  = "SecureString"
   value = local.database_url
+}
+
+# WHAT THE APPLICATION ACTUALLY CONNECTS AS, which is deliberately not the master.
+#
+# The RDS master role carries rds_superuser, so it can read every database on the instance — and this instance
+# is shared with neuralknowledge and, since 2026-10-04, with a site holding children's profiles. Putting the
+# master credential in a web application's environment therefore means a leak of that environment exposes other
+# products' data, including children's. So the application connects as ng_app: a role that owns this database
+# and cannot connect to any other.
+#
+# The role and its password are made by hand in SQL — Terraform has no Postgres provider here, and putting a
+# role password in a variable would put it in state. This reads what was written, and never writes it.
+data "aws_ssm_parameter" "app_database_url" {
+  name = "/neuralgist/app_database_url"
 }
