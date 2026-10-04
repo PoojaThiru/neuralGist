@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Getting Data into an LLM: Text Splitting and Embeddings",
-   "summary": "Learn how to make repair manuals and other large documents searchable by an AI assistant. This lesson covers loading text, splitting it intelligently without breaking facts, embedding chunks into vectors for semantic search, and storing them in a vector database—the essential pipeline for answering questions grounded in your own documents.",
+   "title": "Turning Repair Manuals into Searchable Knowledge for AI Assistants",
+   "summary": "Learn how to convert unstructured documents like repair manuals into vectors and embeddings so an AI assistant can search them by meaning and return accurate, page-specific answers. This video covers the four-step pipeline: loaders to extract text, splitters to chunk it intelligently (recursive and structure-aware methods), embeddings to turn chunks into comparable vectors, and vector stores to enable semantic search with scoring.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,16 +11748,15 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "LLM",
-    "embeddings",
-    "vector database",
-    "text splitting",
     "RAG",
-    "document loading",
+    "embeddings",
+    "vector search",
+    "document loaders",
+    "text splitting",
     "semantic search",
-    "Chroma",
-    "PDF processing",
-    "prompt engineering"
+    "vector store",
+    "LLM",
+    "knowledge retrieval"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
