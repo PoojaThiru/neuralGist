@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Turning Manuals into Searchable Context for AI Assistants",
-   "summary": "Learn how to extract and structure documents so an AI assistant can find the one relevant line from a 200-page manual and answer questions accurately. This video covers the complete pipeline: loading PDFs and HTML, splitting text with recursive and structure-aware methods, converting chunks to embeddings for semantic search, and storing everything in a vector database.",
+   "title": "Retrieval Augmented Generation: Loading, Splitting, Embedding, and Searching Documents",
+   "summary": "Learn how to make large documents like repair manuals searchable by an AI assistant. This video walks through the complete pipeline: loading text from PDFs, splitting it intelligently without breaking facts, converting text to vectors for semantic search, and retrieving the right passage to answer specific questions accurately.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "vector search",
-    "embeddings",
-    "document processing",
+    "retrieval augmented generation",
+    "document loading",
     "text splitting",
-    "PDF loaders",
+    "embeddings",
+    "vector store",
     "semantic search",
-    "LLM context",
-    "manual retrieval",
-    "vector stores"
+    "LangChain",
+    "PDFs",
+    "information retrieval"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
