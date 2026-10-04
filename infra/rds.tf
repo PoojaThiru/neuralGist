@@ -73,6 +73,17 @@ resource "aws_security_group" "db" {
     protocol        = "tcp"
     security_groups = [aws_security_group.lambda.id]
   }
+  # ANOTHER PRODUCT ON THE SAME INSTANCE. learningbrains has its own database here and its own role, which
+  # cannot reach this one — but its function still has to be let through the door. The allowance lives here,
+  # rather than as a rule added from that stack, because this group's ingress is written inline: a rule added
+  # elsewhere would be silently removed the next time this is applied.
+  ingress {
+    description     = "learningbrains app"
+    from_port       = 5432
+    to_port         = 5432
+    protocol        = "tcp"
+    security_groups = [var.sibling_lambda_sg]
+  }
   ingress {
     description = "admin (migrations/seed)"
     from_port   = 5432

@@ -54,3 +54,10 @@ variable "sibling_distribution_id" {
   default     = "E3OE3X36DPHKVD"
   description = "CloudFront distribution id of the sibling site that plays this media"
 }
+
+# The security group of the learningbrains web function, which shares this Postgres instance with its own
+# database and its own role. Named here because this group's ingress is written inline.
+variable "sibling_lambda_sg" {
+  type    = string
+  default = "sg-051e40ca2c2a429dc"
+}
