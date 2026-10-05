@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Getting PDF Data Into a Vector Store for RAG Search",
-   "summary": "Learn how to turn unstructured documents like repair manuals into searchable vectors so an AI assistant can find and cite the exact information needed. You'll work through four key steps—loading, splitting, embedding, and storing—and see where naive approaches fail and how to fix them.",
+   "title": "Getting Repair Manuals Into an LLM: Loaders, Splitting, Embeddings, Vector Search",
+   "summary": "Learn how to prepare large technical documents like repair manuals so an LLM can search them, find the exact information needed, and answer specific questions with page references. This video walks through the complete pipeline: loading documents, splitting them intelligently (fixed-size, recursive, and structure-aware approaches), converting text to searchable vectors using embeddings, and querying results from a vector store.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,16 +11748,16 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "RAG",
-    "vector store",
+    "vector search",
     "embeddings",
-    "PDF parsing",
     "text splitting",
-    "semantic search",
+    "document loaders",
+    "RAG",
     "LLM",
-    "document loading",
-    "chunking",
-    "langchain"
+    "repair manuals",
+    "semantic search",
+    "vector database",
+    "document retrieval"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
