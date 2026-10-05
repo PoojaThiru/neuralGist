@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "RAG Pipeline: Get Text from PDFs Into LLM Context",
-   "summary": "Learn how to build a retrieval pipeline that extracts text from repair manuals and other documents, splits them intelligently, converts them to searchable vectors, and feeds only the relevant chunks to an LLM. After this video, you'll understand loaders, text splitters (fixed-size, recursive, and structure-aware), embeddings, and vector stores—and where each one commonly fails.",
+   "title": "Getting Manual Data Into Your AI: Loaders, Splitting, and Vector Search",
+   "summary": "Learn how to convert unstructured documents like repair manuals into searchable chunks that an AI assistant can use to answer specific questions. This video walks through the complete pipeline: loading PDFs and HTML, splitting text intelligently (fixed-size, recursive, and structure-aware methods), converting chunks into embeddings for semantic search, and storing everything in a vector database for retrieval with relevance scoring.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11749,15 +11749,15 @@ export const LANGCHAIN: Lesson[] = [
    ],
    "tags": [
     "RAG",
-    "retrieval augmented generation",
-    "vector store",
     "embeddings",
-    "PDF",
+    "vector search",
+    "document loading",
     "text splitting",
-    "LLM",
     "semantic search",
-    "Chroma",
-    "document processing"
+    "LangChain",
+    "retrieval augmented generation",
+    "manual search",
+    "vector database"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
