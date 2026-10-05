@@ -11710,8 +11710,8 @@ export const LANGCHAIN: Lesson[] = [
   },
   {
    "n": 8,
-   "title": "Embedding repair manuals: search documents by meaning",
-   "summary": "Learn how to make AI assistants answer questions by searching inside large PDF manuals—without training the model on them. You'll build a complete pipeline: loaders to extract text, splitters to preserve meaning, embeddings to search by semantic similarity, and vector stores to retrieve the right passages from hundreds of pages.",
+   "title": "Turning Repair Manuals into Searchable Knowledge for AI Assistants",
+   "summary": "Learn how to extract text from repair manuals and prepare it so an AI assistant can find and answer specific questions like \"what's the torque for the rear hub axle nut?\" This video walks through the complete pipeline: loading documents, splitting text intelligently (fixed size, recursive, and structure-aware methods), converting chunks to embeddings, and storing them in a vector database for semantic search.",
    "runs": "13:18",
    "chapters": [
     {
@@ -11748,16 +11748,16 @@ export const LANGCHAIN: Lesson[] = [
     }
    ],
    "tags": [
-    "embeddings",
-    "vector search",
     "RAG",
-    "LangChain",
-    "PDF",
-    "semantic search",
+    "vector embeddings",
     "text splitting",
-    "vector database",
-    "prompt engineering",
-    "AI tools"
+    "PDF loaders",
+    "vector stores",
+    "semantic search",
+    "document processing",
+    "LLM",
+    "AI assistants",
+    "document retrieval"
    ],
    "src": "/media/learn/langchain/langchain-08.mp4",
    "poster": "/media/learn/langchain/langchain-08.jpg",
